@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Александр Смолей — Редактор</title>
+<meta name="description" content="Александр Смолей — создаю контент и сайты на ноукоде.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>
+(function(){
+  var dark=matchMedia('(prefers-color-scheme:dark)').matches;
+  var m=document.querySelector('meta[name="theme-color"]');
+  if(m)m.content=dark?'#0a0a0a':'#faf9f7';
+  matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(e){
+    if(m)m.content=e.matches?'#0a0a0a':'#faf9f7';
+  });
+})();
+</script>
+<style>
+:root{
+  --bg:#0a0a0a;--fg:#f0efe9;--accent:#0047FF;
+  --muted:rgba(240,239,233,.35);--line:rgba(240,239,233,.08);
+  --grid:rgba(240,239,233,.03);--wash:rgba(240,239,233,.02);
+  --serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'Space Mono',monospace;
+}
+@media(prefers-color-scheme:light){
+  :root{--bg:#faf9f7;--fg:#1a1a18;--muted:rgba(26,26,24,.4);--line:rgba(26,26,24,.08);--grid:rgba(26,26,24,.025);--wash:rgba(26,26,24,.02);}
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.6;overflow-x:clip;overflow-wrap:break-word;-webkit-font-smoothing:antialiased;}
+::selection{background:var(--accent);color:#fff}
+a{color:inherit;text-decoration:none}
+.bg-grid{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(to right,var(--grid) 1px,transparent 1px);background-size:80px 80px;}
+.bg-glow{position:fixed;top:-20vh;right:-10vw;width:70vw;height:70vw;max-width:900px;max-height:900px;z-index:-1;pointer-events:none;background:radial-gradient(circle,rgba(0,71,255,.14),transparent 62%);filter:blur(40px);}
+.section-title{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,5vw,4.5rem);line-height:1;letter-spacing:-.02em;color:var(--muted);}
+.sticky-head{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line);padding:28px 80px;display:flex;align-items:baseline;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;}
+.head-count{font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.25em;color:var(--accent);}
+.hero{width:100%;min-height:100svh;display:grid;grid-template-columns:1fr 420px;align-items:end;padding:160px 80px 120px;gap:96px;border-bottom:1px solid var(--line);}
+.hero-tag{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--accent);margin-bottom:48px;display:flex;align-items:center;gap:14px;font-weight:700;}
+.hero-tag::before{content:'';width:56px;height:1px;background:var(--accent);flex-shrink:0}
+.hero-tag-sep{opacity:.4}
+.hero-loc{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;transition:color .2s;}
+.hero-loc:hover{color:var(--fg)}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(5rem,14vw,13rem);line-height:.82;letter-spacing:-.02em;margin-bottom:36px;}
+.hero h1 em{font-style:italic;font-weight:400;display:block;color:var(--accent)}
+.hero-status{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:10px 20px 10px 16px;margin-bottom:44px;max-width:100%;}
+.hero-status::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0;box-shadow:0 0 0 0 rgba(0,71,255,.55);animation:pulse 2.4s infinite;}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(0,71,255,.5)}
+  70%{box-shadow:0 0 0 9px rgba(0,71,255,0)}
+  100%{box-shadow:0 0 0 0 rgba(0,71,255,0)}
+}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.hbtn{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;padding:18px 40px;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;transition:background .2s,color .2s,border-color .2s;}
+.hbtn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s;}
+.hbtn:hover svg{transform:translate(3px,-3px)}
+.hbtn:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.hbtn.solid{background:var(--accent);color:#fff;border-color:var(--accent)}
+.hbtn.solid:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.hero-photo-wrap{width:100%;height:560px;border:1px solid var(--line);padding:14px;transition:border-color .3s;}
+.hero-photo-wrap:hover{border-color:var(--accent)}
+.hero-photo{width:100%;height:100%;object-fit:cover;display:block;object-position:center 18%;filter:grayscale(1) contrast(1.05);transition:filter .5s cubic-bezier(.16,1,.3,1);}
+.hero-photo-wrap:hover .hero-photo{filter:none}
+.projects{width:100%;padding:0 80px 180px;border-bottom:1px solid var(--line);}
+.site{display:grid;grid-template-columns:72px 1fr auto;gap:0 48px;padding:72px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--fg);position:relative;align-items:baseline;opacity:0;transform:translateY(18px);transition:opacity .55s cubic-bezier(.16,1,.3,1) var(--d,0s),transform .55s cubic-bezier(.16,1,.3,1) var(--d,0s),padding-left .25s cubic-bezier(.16,1,.3,1),background-color .25s;}
+.site.in{opacity:1;transform:none}
+.site::before{content:'';position:absolute;left:-24px;right:-24px;top:0;bottom:0;background:var(--wash);opacity:0;transition:opacity .25s;pointer-events:none;}
+.site:hover::before{opacity:1}
+.site:hover{padding-left:28px}
+.site:hover .site-name{color:var(--accent)}
+.site-num{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.15em;align-self:start;padding-top:10px;}
+.site-body{min-width:0}
+.site-name{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,5vw,4.8rem);line-height:.9;letter-spacing:-.01em;margin-bottom:18px;transition:color .2s;}
+.site-desc{font-size:14px;color:var(--muted);line-height:1.7;max-width:520px}
+.site-link{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);white-space:nowrap;font-weight:700;align-self:center;display:flex;align-items:center;gap:10px;transition:color .2s;}
+.site-link svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.site:hover .site-link{color:var(--accent)}
+footer{border-top:1px solid var(--line)}
+.footer-contacts{padding:56px 80px 0;display:flex;align-items:baseline;gap:20px 44px;flex-wrap:wrap;}
+.footer-label{font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.3em;color:var(--muted);}
+.footer-links{display:flex;flex-wrap:wrap;gap:14px 32px}
+.footer-links a{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--fg);border-bottom:1px solid var(--line);padding-bottom:3px;transition:color .2s,border-color .2s;}
+.footer-links a:hover{color:var(--accent);border-color:var(--accent)}
+.footer-bottom{padding:44px 80px 52px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);font-weight:700;}
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;padding:120px 40px 80px;gap:56px}
+  .hero-photo-wrap{height:440px;order:-1;padding:12px}
+  .sticky-head{padding:24px 40px}
+  .projects{padding:0 40px 140px}
+  .site{grid-template-columns:56px 1fr auto;gap:0 32px;padding:56px 0}
+  .footer-contacts{padding:44px 40px 0}
+  .footer-bottom{padding:36px 40px 44px}
+}
+@media(max-width:600px){
+  .bg-grid{background-size:40px 40px}
+  .bg-glow{top:-10vh;right:-30vw;width:110vw;height:110vw}
+  .hero{padding:100px 20px 64px;gap:48px}
+  .hero-photo-wrap{height:380px;padding:10px}
+  .hero-photo{object-position:center 15%}
+  .hero-tag{font-size:10px;margin-bottom:28px;gap:10px;letter-spacing:.25em}
+  .hero-tag::before{width:32px}
+  .hero h1{font-size:clamp(3.2rem,15vw,4.8rem);margin-bottom:28px}
+  .hero-status{font-size:11px;padding:9px 16px 9px 14px;margin-bottom:32px;line-height:1.4;align-items:flex-start;gap:10px;}
+  .hero-status::before{margin-top:6px}
+  .hero-btns{flex-direction:column;width:100%}
+  .hbtn{width:100%;justify-content:center;padding:17px 24px}
+  .sticky-head{padding:20px 20px}
+  .section-title{font-size:clamp(2.2rem,9vw,3.2rem)}
+  .projects{padding:0 20px 96px}
+  .site{grid-template-columns:1fr 44px;grid-template-rows:auto 1fr;gap:0 16px;padding:40px 0;align-items:start;}
+  .site::before{left:-12px;right:-12px}
+  .site-num{grid-column:1/-1;grid-row:1;font-size:10px;padding-top:0;margin-bottom:10px;letter-spacing:.2em;}
+  .site-body{grid-column:1;grid-row:2}
+  .site-name{font-size:clamp(1.7rem,7vw,2.4rem);margin-bottom:12px}
+  .site-desc{font-size:13px}
+  .site-link{grid-column:2;grid-row:2;justify-content:center;align-self:center;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;font-size:0;gap:0;}
+  .site-link svg{width:16px;height:16px}
+  .site:hover .site-link{background:var(--accent);border-color:var(--accent);color:#fff}
+  .site:hover{padding-left:14px}
+  .footer-contacts{padding:36px 20px 0;gap:14px 28px}
+  .footer-bottom{padding:32px 20px 40px;font-size:10px;letter-spacing:.15em}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .site{opacity:1;transform:none}
+}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500&family=Space+Mono:wght@400;700&display=swap"></noscript>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+<div class="hero">
+  <div>
+    <div class="hero-tag">Редактор<span class="hero-tag-sep">·</span><a href="https://www.uplab.ru" target="_blank" class="hero-loc">uplab</a></div>
+    <h1>Александр<br><em>Смолей</em></h1>
+    <div class="hero-status">Создаю контент и&nbsp;сайты на&nbsp;ноукоде</div>
+    <div class="hero-btns">
+      <a href="https://t.me/alexsmoley" target="_blank" class="hbtn solid">Telegram</a>
+      <a href="mailto:av.smoley@gmail.com" class="hbtn">Почта</a>
+    </div>
+  </div>
+  <div class="hero-photo-wrap">
+    <img src="https://z-cdn-media.chatglm.cn/files/3603dcdc-4066-49c1-8b90-6fff127c68bf.jpeg?auth_key=1884578312-ed6b4996b5094a979d2f8b348e57c9b6-0-f8c3b26e5f372a0c9003bdb389fce754" alt="Александр Смолей" class="hero-photo" width="420" height="560" fetchpriority="high" decoding="async">
+  </div>
+</div>
+<div class="projects-wrap">
+  <div class="sticky-head"><h2 class="section-title">Кейсы</h2><span class="head-count">10 проектов</span></div>
+  <section class="projects">
+    <a href="https://www.aluminas.ru/" target="_blank" class="site" style="--d:0s"><div class="site-num">01</div><div class="site-body"><div class="site-name">Алюминиевая Ассоциация</div><div class="site-desc">Объединение ведущих производителей и&nbsp;переработчиков алюминия в&nbsp;России и&nbsp;СНГ</div></div><div class="site-link">aluminas.ru<svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+    <a href="https://atriumnn.ru/" target="_blank" class="site" style="--d:.05s"><div class="site-num">02</div><div class="site-body"><div class="site-name">ГК&nbsp;Атриум</div><div class="site-desc">Производитель котельных и&nbsp;промышленных горелок</div></div><div class="site-link">atriumnn.ru<svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+    <a href="https://cherkizovo-foundation.com/" target="_blank" class="site"><div class="site-num">03</div><div class="site-body"><div class="site-name">Фонд Черкизово</div><div class="site-desc">Благотворительный фонд поддержки социальных и&nbsp;образовательных инициатив</div></div><div class="site-link">cherkizovo-foundation.com<svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+    <a href="https://ntechlab.ru/" target="_blank" class="site"><div class="site-num">04</div><div class="site-body"><div class="site-name">NTechLab</div><div class="site-desc">Технологии искусственного интеллекта и&nbsp;системы распознавания лиц</div></div><div class="site-link">ntechlab.ru<svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+    <a href="https://www.cleanexpo-moscow.ru/ru-RU/" target="_blank" class="site"><div class="site-num">05</div><div class="site-body"><div class="site-name">Международная выставочная компания</div><div class="site-desc">Крупнейший организатор выставок в&nbsp;России и&nbsp;СНГ</div></div><div class="site-link">cleanexpo-moscow.ru<svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+    <a href="https://imunorix.ru/" target="_blank" class="site"><div class="site-num">06</div><div class="site-body"><div class="site-name">Имунорикс</div><div class="site-desc">Иммуномодулирующий препарат для детей и&nbsp;взрослых</div></div><div class="site-link">imunorix.ru<svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+    <a href="https://kraseco24.ru/" target="_blank" class="site"><div class="site-num">07</div><div class="site-body"><div class="site-name">КрасЭКо</div><div class="site-desc">Одно из&nbsp;крупнейших энергетических предприятий Красноярского края</div></div><div class="site-link">kraseco24.ru<svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+    <a href="https://mv.legal/" target="_blank" class="site"><div class="site-num">08</div><div class="site-body"><div class="site-name">Melling, Voitishkin &amp;&nbsp;Partners</div><div class="site-desc">Международная юридическая фирма, ex.&nbsp;Baker McKenzie</div></div><div class="site-link">mv.legal<svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+    <a href="https://intraz.ru/" target="_blank" class="site"><div class="site-num">09</div><div class="site-body"><div class="site-name">Интраз</div><div class="site-desc">Производитель навигационного оборудования</div></div><div class="site-link">intraz.ru<svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+    <a href="https://evmcentr.com/" target="_blank" class="site"><div class="site-num">10</div><div class="site-body"><div class="site-name">ЕВМ&nbsp;Центр</div><div class="site-desc">Психологический центр Екатерины Маденко</div></div><div class="site-link">evmcentr.com<svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></div></a>
+  </section>
+</div>
+<footer>
+  <div class="footer-contacts">
+    <span class="footer-label">Связь</span>
+    <div class="footer-links">
+      <a href="https://t.me/alexsmoley" target="_blank">t.me/alexsmoley</a>
+      <a href="mailto:av.smoley@gmail.com">av.smoley@gmail.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>©&nbsp;Александр Смолей</span><span>2026</span></div>
+</footer>
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});},{threshold:.15});
+document.querySelectorAll('.site').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
