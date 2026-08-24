@@ -1,0 +1,1281 @@
+<title>Знаки Машбюро</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ink: #14110F;
+    --paper: #F2ECE1;
+    --ribbon: #C8402E;
+    --ground: #E5E1D7;
+    --surface: #F4F0E7;
+    --text: #14110F;
+    --muted: #6C665E;
+    --rule: rgba(20,17,15,.16);
+    --shadow: 0 1px 0 rgba(20,17,15,.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #141416;
+      --surface: #1D1D20;
+      --text: #ECE7DC;
+      --muted: #969087;
+      --ribbon: #DC5642;
+      --rule: rgba(236,231,220,.16);
+      --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #141416;
+    --surface: #1D1D20;
+    --text: #ECE7DC;
+    --muted: #969087;
+    --ribbon: #DC5642;
+    --rule: rgba(236,231,220,.16);
+    --shadow: none;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--text);
+    font: 400 17px/1.6 "PT Serif", Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px 96px; }
+
+  header.top {
+    border-bottom: 2px solid var(--text);
+    padding: 40px 0 18px;
+    display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: flex-end;
+    justify-content: space-between;
+  }
+  h1 {
+    font: 700 clamp(38px, 7vw, 76px)/0.95 "PT Sans Narrow", "Arial Narrow", sans-serif;
+    text-transform: uppercase; letter-spacing: .01em;
+    margin: 0; text-wrap: balance;
+  }
+  h1 span { color: var(--ribbon); }
+  .stamp {
+    font: 500 12px/1.5 "IBM Plex Mono", ui-monospace, monospace;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+    text-align: right;
+  }
+  .lede {
+    margin: 28px 0 0; max-width: 62ch; font-size: 19px;
+  }
+  .lede em { color: var(--ribbon); font-style: italic; }
+
+  h2 {
+    font: 700 clamp(24px, 3.4vw, 34px)/1.1 "PT Sans Narrow", "Arial Narrow", sans-serif;
+    text-transform: uppercase; letter-spacing: .02em;
+    margin: 0; padding-bottom: 10px; border-bottom: 1px solid var(--rule);
+  }
+  section { margin-top: 72px; }
+  .section-head { display: flex; align-items: baseline; gap: 16px; justify-content: space-between; }
+  .section-head .count { font: 500 12px/1 "IBM Plex Mono", monospace; color: var(--muted); letter-spacing: .08em; }
+
+  .grid {
+    display: grid; gap: 40px 32px; margin-top: 36px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .card { display: flex; flex-direction: column; gap: 16px; }
+  .plate {
+    border-radius: 999px; overflow: hidden; aspect-ratio: 1; box-shadow: var(--shadow);
+    border: 1px solid var(--rule);
+  }
+  .plate svg { display: block; width: 100%; height: auto; }
+  .crops { display: flex; align-items: center; gap: 12px; }
+  .crop { display: block; border-radius: 999px; overflow: hidden; flex: none; border: 1px solid var(--rule); }
+  .crop svg { display: block; width: 100%; height: 100%; }
+  .c96 { width: 60px; height: 60px; }
+  .c48 { width: 40px; height: 40px; }
+  .c28 { width: 24px; height: 24px; }
+  .cropnote, .file {
+    font: 400 11px/1.4 "IBM Plex Mono", monospace; color: var(--muted); letter-spacing: .05em;
+  }
+  .meta h3 {
+    font: 700 26px/1.1 "PT Sans Narrow", "Arial Narrow", sans-serif;
+    text-transform: uppercase; margin: 2px 0 10px;
+  }
+  .eyebrow {
+    font: 500 11px/1 "IBM Plex Mono", monospace; text-transform: uppercase;
+    letter-spacing: .12em; color: var(--ribbon); margin: 0;
+  }
+  .reads { margin: 0 0 14px; }
+  dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 15px; }
+  dt {
+    font: 500 11px/1.7 "IBM Plex Mono", monospace; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--muted); white-space: nowrap;
+  }
+  dd { margin: 0; color: var(--text); }
+  .file { margin: 14px 0 0; }
+  code { font-family: "IBM Plex Mono", monospace; font-size: 12px; }
+
+  .pick {
+    margin-top: 36px; display: grid; gap: 32px;
+    grid-template-columns: minmax(180px, 240px) 1fr; align-items: start;
+  }
+  .pick .plate { max-width: 240px; }
+  .pick p { margin: 0 0 14px; max-width: 60ch; }
+  .pick p:last-child { margin-bottom: 0; }
+
+  .swatches { display: grid; gap: 16px; margin-top: 36px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+  .sw { border: 1px solid var(--rule); background: var(--surface); }
+  .sw i { display: block; height: 92px; }
+  .sw div { padding: 12px 14px; }
+  .sw b { display: block; font: 700 15px/1.3 "PT Sans Narrow", sans-serif; text-transform: uppercase; letter-spacing: .04em; }
+  .sw code { color: var(--muted); }
+  .sw p { margin: 6px 0 0; font-size: 14px; color: var(--muted); line-height: 1.45; }
+
+  ol.next { margin: 28px 0 0; padding-left: 0; list-style: none; counter-reset: n; display: grid; gap: 18px; max-width: 68ch; }
+  ol.next li { counter-increment: n; display: grid; grid-template-columns: 34px 1fr; gap: 14px; }
+  ol.next li::before {
+    content: counter(n, decimal-leading-zero);
+    font: 500 12px/1.7 "IBM Plex Mono", monospace; color: var(--ribbon); letter-spacing: .04em;
+  }
+  footer { margin-top: 80px; padding-top: 18px; border-top: 1px solid var(--rule); color: var(--muted); font: 400 13px/1.6 "IBM Plex Mono", monospace; }
+  @media (max-width: 620px) { .pick { grid-template-columns: 1fr; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Машбюро<br><span>восемь знаков</span></h1>
+    <p class="stamp">Аватарки без текста<br>Проба · 24.08.2026<br>Саша Смолей</p>
+  </header>
+
+  <p class="lede">Восемь марок на одной палитре: типографская чёрная, бумага и <em>красная лента печатной машинки</em>.
+  Каждая — отдельный стиль, чтобы выбрать не картинку, а направление всего фирстиля. Текста в знаках нет: имя должно
+  работать рядом со знаком, а не внутри него.</p>
+
+  <section>
+    <div class="section-head"><h2>Знаки</h2><span class="count">08 вариантов</span></div>
+    <div class="grid">
+      <article class="card">
+        <div class="plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: клавиша с курсором">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <circle cx="256" cy="256" r="152" fill="none" stroke="#14110F" stroke-width="22"/>
+  <circle cx="256" cy="256" r="108" fill="#14110F"/>
+  <rect x="245" y="211" width="22" height="90" rx="4" fill="#C8402E"/>
+</svg>
+</div>
+        <div class="crops">
+          <span class="crop c96"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: клавиша с курсором">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <circle cx="256" cy="256" r="152" fill="none" stroke="#14110F" stroke-width="22"/>
+  <circle cx="256" cy="256" r="108" fill="#14110F"/>
+  <rect x="245" y="211" width="22" height="90" rx="4" fill="#C8402E"/>
+</svg>
+</span>
+          <span class="crop c48"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: клавиша с курсором">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <circle cx="256" cy="256" r="152" fill="none" stroke="#14110F" stroke-width="22"/>
+  <circle cx="256" cy="256" r="108" fill="#14110F"/>
+  <rect x="245" y="211" width="22" height="90" rx="4" fill="#C8402E"/>
+</svg>
+</span>
+          <span class="crop c28"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: клавиша с курсором">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <circle cx="256" cy="256" r="152" fill="none" stroke="#14110F" stroke-width="22"/>
+  <circle cx="256" cy="256" r="108" fill="#14110F"/>
+  <rect x="245" y="211" width="22" height="90" rx="4" fill="#C8402E"/>
+</svg>
+</span>
+          <span class="cropnote">96 · 48 · 28 px</span>
+        </div>
+        <div class="meta">
+          <p class="eyebrow">Швейцарская геометрия</p>
+          <h3>Клавиша</h3>
+          <p class="reads">Клавиша машинки, а в ней — курсор. Старый корпус, новая начинка: ровно то, что продаёт «Машбюро».</p>
+          <dl>
+            <dt>Сильна в</dt><dd>Читается с 24 пикселей, живёт одним контуром, легко превращается в иконки услуг.</dd>
+            <dt>Слабое место</dt><dd>На беглый взгляд рифмуется с кнопкой записи и «плей-паузой». Проверить на людях вне контекста.</dd>
+          </dl>
+          <p class="file"><code>01-klavisha.svg</code></p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: возврат каретки">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g fill="none" stroke="#14110F" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M356 140 V 300 H 196"/>
+  </g>
+  <path d="M254 236 L 186 300 L 254 364" fill="none" stroke="#C8402E" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+        <div class="crops">
+          <span class="crop c96"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: возврат каретки">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g fill="none" stroke="#14110F" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M356 140 V 300 H 196"/>
+  </g>
+  <path d="M254 236 L 186 300 L 254 364" fill="none" stroke="#C8402E" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+          <span class="crop c48"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: возврат каретки">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g fill="none" stroke="#14110F" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M356 140 V 300 H 196"/>
+  </g>
+  <path d="M254 236 L 186 300 L 254 364" fill="none" stroke="#C8402E" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+          <span class="crop c28"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: возврат каретки">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g fill="none" stroke="#14110F" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M356 140 V 300 H 196"/>
+  </g>
+  <path d="M254 236 L 186 300 L 254 364" fill="none" stroke="#C8402E" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+          <span class="cropnote">96 · 48 · 28 px</span>
+        </div>
+        <div class="meta">
+          <p class="eyebrow">Монолинейный знак</p>
+          <h3>Каретка</h3>
+          <p class="reads">Возврат каретки и клавиша Enter — один и тот же символ. Полвека между ними, а жест не изменился.</p>
+          <dl>
+            <dt>Сильна в</dt><dd>Самый ясный из восьми: понятен без объяснения и в ленте, и в фавиконе.</dd>
+            <dt>Слабое место</dt><dd>Символ общеупотребимый, целиком его не защитить. Отличать придётся цветом, толщиной и посадкой.</dd>
+          </dl>
+          <p class="file"><code>02-karetka.svg</code></p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: удар литеры">
+  <rect width="512" height="512" fill="#C8402E"/>
+  <rect x="104" y="352" width="304" height="26" rx="13" fill="#F2ECE1"/>
+  <g transform="rotate(-34 292 348)">
+    <rect x="278" y="168" width="28" height="180" rx="14" fill="#F2ECE1"/>
+    <rect x="252" y="140" width="80" height="48" rx="12" fill="#F2ECE1"/>
+  </g>
+  <g stroke="#F2ECE1" stroke-width="16" stroke-linecap="round">
+    <path d="M330 328 L 366 306"/>
+    <path d="M348 292 L 366 254"/>
+    <path d="M356 334 L 400 330"/>
+  </g>
+</svg>
+</div>
+        <div class="crops">
+          <span class="crop c96"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: удар литеры">
+  <rect width="512" height="512" fill="#C8402E"/>
+  <rect x="104" y="352" width="304" height="26" rx="13" fill="#F2ECE1"/>
+  <g transform="rotate(-34 292 348)">
+    <rect x="278" y="168" width="28" height="180" rx="14" fill="#F2ECE1"/>
+    <rect x="252" y="140" width="80" height="48" rx="12" fill="#F2ECE1"/>
+  </g>
+  <g stroke="#F2ECE1" stroke-width="16" stroke-linecap="round">
+    <path d="M330 328 L 366 306"/>
+    <path d="M348 292 L 366 254"/>
+    <path d="M356 334 L 400 330"/>
+  </g>
+</svg>
+</span>
+          <span class="crop c48"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: удар литеры">
+  <rect width="512" height="512" fill="#C8402E"/>
+  <rect x="104" y="352" width="304" height="26" rx="13" fill="#F2ECE1"/>
+  <g transform="rotate(-34 292 348)">
+    <rect x="278" y="168" width="28" height="180" rx="14" fill="#F2ECE1"/>
+    <rect x="252" y="140" width="80" height="48" rx="12" fill="#F2ECE1"/>
+  </g>
+  <g stroke="#F2ECE1" stroke-width="16" stroke-linecap="round">
+    <path d="M330 328 L 366 306"/>
+    <path d="M348 292 L 366 254"/>
+    <path d="M356 334 L 400 330"/>
+  </g>
+</svg>
+</span>
+          <span class="crop c28"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: удар литеры">
+  <rect width="512" height="512" fill="#C8402E"/>
+  <rect x="104" y="352" width="304" height="26" rx="13" fill="#F2ECE1"/>
+  <g transform="rotate(-34 292 348)">
+    <rect x="278" y="168" width="28" height="180" rx="14" fill="#F2ECE1"/>
+    <rect x="252" y="140" width="80" height="48" rx="12" fill="#F2ECE1"/>
+  </g>
+  <g stroke="#F2ECE1" stroke-width="16" stroke-linecap="round">
+    <path d="M330 328 L 366 306"/>
+    <path d="M348 292 L 366 254"/>
+    <path d="M356 334 L 400 330"/>
+  </g>
+</svg>
+</span>
+          <span class="cropnote">96 · 48 · 28 px</span>
+        </div>
+        <div class="meta">
+          <p class="eyebrow">Советский производственный знак</p>
+          <h3>Литера</h3>
+          <p class="reads">Литера бьёт по строке. Знак о работе, а не о технологии: машина стучит, строка появляется.</p>
+          <dl>
+            <dt>Сильна в</dt><dd>Держит красный фон, хорош на плашках, наклейках и обложках каруселей.</dd>
+            <dt>Слабое место</dt><dd>Молоток тянет ассоциацию к аукциону и суду. Форму головки стоит увести дальше от киянки.</dd>
+          </dl>
+          <p class="file"><code>03-litera.svg</code></p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: перфокарта">
+  <rect width="512" height="512" fill="#14110F"/>
+  <path d="M0 0 H 96 L 0 96 Z" fill="#F2ECE1"/>
+    <rect x="157" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="385" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="81" y="174" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="233" y="174" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="174" width="46" height="66" rx="8" fill="#C8402E"/>
+    <rect x="157" y="272" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="233" y="272" width="46" height="66" rx="8" fill="#C8402E"/>
+    <rect x="385" y="272" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="81" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="385" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+</svg>
+</div>
+        <div class="crops">
+          <span class="crop c96"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: перфокарта">
+  <rect width="512" height="512" fill="#14110F"/>
+  <path d="M0 0 H 96 L 0 96 Z" fill="#F2ECE1"/>
+    <rect x="157" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="385" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="81" y="174" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="233" y="174" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="174" width="46" height="66" rx="8" fill="#C8402E"/>
+    <rect x="157" y="272" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="233" y="272" width="46" height="66" rx="8" fill="#C8402E"/>
+    <rect x="385" y="272" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="81" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="385" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+</svg>
+</span>
+          <span class="crop c48"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: перфокарта">
+  <rect width="512" height="512" fill="#14110F"/>
+  <path d="M0 0 H 96 L 0 96 Z" fill="#F2ECE1"/>
+    <rect x="157" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="385" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="81" y="174" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="233" y="174" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="174" width="46" height="66" rx="8" fill="#C8402E"/>
+    <rect x="157" y="272" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="233" y="272" width="46" height="66" rx="8" fill="#C8402E"/>
+    <rect x="385" y="272" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="81" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="385" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+</svg>
+</span>
+          <span class="crop c28"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: перфокарта">
+  <rect width="512" height="512" fill="#14110F"/>
+  <path d="M0 0 H 96 L 0 96 Z" fill="#F2ECE1"/>
+    <rect x="157" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="385" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="81" y="174" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="233" y="174" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="174" width="46" height="66" rx="8" fill="#C8402E"/>
+    <rect x="157" y="272" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="233" y="272" width="46" height="66" rx="8" fill="#C8402E"/>
+    <rect x="385" y="272" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="81" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="385" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+</svg>
+</span>
+          <span class="cropnote">96 · 48 · 28 px</span>
+        </div>
+        <div class="meta">
+          <p class="eyebrow">Брутализм</p>
+          <h3>Перфокарта</h3>
+          <p class="reads">Первая машина, которой диктовали текст. Прямая отсылка к тому, что настройки — это данные.</p>
+          <dl>
+            <dt>Сильна в</dt><dd>Работает как паттерн: тянется на подложки, сторис и фоны без потери смысла.</dd>
+            <dt>Слабое место</dt><dd>Как отдельный знак опознаётся хуже других — это скорее текстура фирстиля, чем аватарка.</dd>
+          </dl>
+          <p class="file"><code>04-perfokarta.svg</code></p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: курсор точечной матрицей">
+  <rect width="512" height="512" fill="#14110F"/>
+    <circle cx="86" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="358" r="11" fill="#C8402E"/>
+    <circle cx="358" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="426" r="5" fill="#6E6862"/>
+</svg>
+</div>
+        <div class="crops">
+          <span class="crop c96"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: курсор точечной матрицей">
+  <rect width="512" height="512" fill="#14110F"/>
+    <circle cx="86" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="358" r="11" fill="#C8402E"/>
+    <circle cx="358" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="426" r="5" fill="#6E6862"/>
+</svg>
+</span>
+          <span class="crop c48"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: курсор точечной матрицей">
+  <rect width="512" height="512" fill="#14110F"/>
+    <circle cx="86" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="358" r="11" fill="#C8402E"/>
+    <circle cx="358" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="426" r="5" fill="#6E6862"/>
+</svg>
+</span>
+          <span class="crop c28"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: курсор точечной матрицей">
+  <rect width="512" height="512" fill="#14110F"/>
+    <circle cx="86" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="86" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="120" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="154" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="154" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="188" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="188" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="222" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="222" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="256" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="256" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="290" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="290" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="324" r="11" fill="#F2ECE1"/>
+    <circle cx="358" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="324" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="222" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="256" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="290" cy="358" r="11" fill="#F2ECE1"/>
+    <circle cx="324" cy="358" r="11" fill="#C8402E"/>
+    <circle cx="358" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="358" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="392" r="5" fill="#6E6862"/>
+    <circle cx="86" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="120" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="154" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="188" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="222" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="256" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="290" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="324" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="358" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="392" cy="426" r="5" fill="#6E6862"/>
+    <circle cx="426" cy="426" r="5" fill="#6E6862"/>
+</svg>
+</span>
+          <span class="cropnote">96 · 48 · 28 px</span>
+        </div>
+        <div class="meta">
+          <p class="eyebrow">Ретро-терминал</p>
+          <h3>Матрица</h3>
+          <p class="reads">Курсор, набранный точками матричного принтера. Красная точка — место, где сейчас идёт правка.</p>
+          <dl>
+            <dt>Сильна в</dt><dd>Тёмный вариант в наборе: выделяется в светлой ленте, хорош для тёмной темы.</dd>
+            <dt>Слабое место</dt><dd>Красная точка пропадает уже на 48 пикселях. Для мелких размеров нужна упрощённая версия.</dd>
+          </dl>
+          <p class="file"><code>05-matritsa.svg</code></p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: лист в валике, оттиск со смещением">
+  <defs>
+    <filter id="grain21" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="11" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="a"><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feComposite in="a" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g transform="rotate(-5 256 250)">
+    <path d="M166 104 H 300 L 346 150 V 350 H 166 Z" fill="none" stroke="#C8402E" stroke-width="16" transform="translate(12 -12)"/>
+    <path d="M166 104 H 300 L 346 150 V 350 H 166 Z" fill="#F2ECE1" stroke="#14110F" stroke-width="16"/>
+    <path d="M300 104 L 346 150 H 300 Z" fill="#14110F"/>
+    <g fill="#14110F">
+      <rect x="196" y="196" width="120" height="15" rx="7"/>
+      <rect x="196" y="232" width="120" height="15" rx="7"/>
+      <rect x="196" y="268" width="74" height="15" rx="7"/>
+    </g>
+  </g>
+  <rect x="66" y="330" width="380" height="88" rx="44" fill="#14110F"/>
+  <rect x="24" y="356" width="52" height="36" rx="18" fill="#14110F"/>
+  <rect x="436" y="356" width="52" height="36" rx="18" fill="#14110F"/>
+  <rect width="512" height="512" fill="#14110F" filter="url(#grain21)" opacity="0.5"/>
+</svg>
+</div>
+        <div class="crops">
+          <span class="crop c96"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: лист в валике, оттиск со смещением">
+  <defs>
+    <filter id="grain22" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="11" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="a"><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feComposite in="a" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g transform="rotate(-5 256 250)">
+    <path d="M166 104 H 300 L 346 150 V 350 H 166 Z" fill="none" stroke="#C8402E" stroke-width="16" transform="translate(12 -12)"/>
+    <path d="M166 104 H 300 L 346 150 V 350 H 166 Z" fill="#F2ECE1" stroke="#14110F" stroke-width="16"/>
+    <path d="M300 104 L 346 150 H 300 Z" fill="#14110F"/>
+    <g fill="#14110F">
+      <rect x="196" y="196" width="120" height="15" rx="7"/>
+      <rect x="196" y="232" width="120" height="15" rx="7"/>
+      <rect x="196" y="268" width="74" height="15" rx="7"/>
+    </g>
+  </g>
+  <rect x="66" y="330" width="380" height="88" rx="44" fill="#14110F"/>
+  <rect x="24" y="356" width="52" height="36" rx="18" fill="#14110F"/>
+  <rect x="436" y="356" width="52" height="36" rx="18" fill="#14110F"/>
+  <rect width="512" height="512" fill="#14110F" filter="url(#grain22)" opacity="0.5"/>
+</svg>
+</span>
+          <span class="crop c48"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: лист в валике, оттиск со смещением">
+  <defs>
+    <filter id="grain23" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="11" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="a"><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feComposite in="a" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g transform="rotate(-5 256 250)">
+    <path d="M166 104 H 300 L 346 150 V 350 H 166 Z" fill="none" stroke="#C8402E" stroke-width="16" transform="translate(12 -12)"/>
+    <path d="M166 104 H 300 L 346 150 V 350 H 166 Z" fill="#F2ECE1" stroke="#14110F" stroke-width="16"/>
+    <path d="M300 104 L 346 150 H 300 Z" fill="#14110F"/>
+    <g fill="#14110F">
+      <rect x="196" y="196" width="120" height="15" rx="7"/>
+      <rect x="196" y="232" width="120" height="15" rx="7"/>
+      <rect x="196" y="268" width="74" height="15" rx="7"/>
+    </g>
+  </g>
+  <rect x="66" y="330" width="380" height="88" rx="44" fill="#14110F"/>
+  <rect x="24" y="356" width="52" height="36" rx="18" fill="#14110F"/>
+  <rect x="436" y="356" width="52" height="36" rx="18" fill="#14110F"/>
+  <rect width="512" height="512" fill="#14110F" filter="url(#grain23)" opacity="0.5"/>
+</svg>
+</span>
+          <span class="crop c28"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: лист в валике, оттиск со смещением">
+  <defs>
+    <filter id="grain24" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="11" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="a"><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feComposite in="a" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g transform="rotate(-5 256 250)">
+    <path d="M166 104 H 300 L 346 150 V 350 H 166 Z" fill="none" stroke="#C8402E" stroke-width="16" transform="translate(12 -12)"/>
+    <path d="M166 104 H 300 L 346 150 V 350 H 166 Z" fill="#F2ECE1" stroke="#14110F" stroke-width="16"/>
+    <path d="M300 104 L 346 150 H 300 Z" fill="#14110F"/>
+    <g fill="#14110F">
+      <rect x="196" y="196" width="120" height="15" rx="7"/>
+      <rect x="196" y="232" width="120" height="15" rx="7"/>
+      <rect x="196" y="268" width="74" height="15" rx="7"/>
+    </g>
+  </g>
+  <rect x="66" y="330" width="380" height="88" rx="44" fill="#14110F"/>
+  <rect x="24" y="356" width="52" height="36" rx="18" fill="#14110F"/>
+  <rect x="436" y="356" width="52" height="36" rx="18" fill="#14110F"/>
+  <rect width="512" height="512" fill="#14110F" filter="url(#grain24)" opacity="0.5"/>
+</svg>
+</span>
+          <span class="cropnote">96 · 48 · 28 px</span>
+        </div>
+        <div class="meta">
+          <p class="eyebrow">Леттерпресс</p>
+          <h3>Валик</h3>
+          <p class="reads">Лист в валике и красный оттиск, ушедший на два миллиметра. Ошибка приводки — подпись ремесла.</p>
+          <dl>
+            <dt>Сильна в</dt><dd>Самая тёплая и «ручная» из восьми. Хорошо ложится на печатные носители и обложки статей.</dd>
+            <dt>Слабое место</dt><dd>Много деталей: на 24 пикселях лист превращается в пятно. Нужен упрощённый дубль.</dd>
+          </dl>
+          <p class="file"><code>06-valik.svg</code></p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: абзац с правленой строкой">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g fill="#14110F">
+    <rect x="106" y="150" width="300" height="30" rx="15"/>
+    <rect x="106" y="212" width="252" height="30" rx="15"/>
+    <rect x="106" y="336" width="300" height="30" rx="15"/>
+    <rect x="106" y="398" width="168" height="30" rx="15"/>
+  </g>
+  <rect x="106" y="274" width="216" height="30" rx="15" fill="#C8402E"/>
+</svg>
+</div>
+        <div class="crops">
+          <span class="crop c96"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: абзац с правленой строкой">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g fill="#14110F">
+    <rect x="106" y="150" width="300" height="30" rx="15"/>
+    <rect x="106" y="212" width="252" height="30" rx="15"/>
+    <rect x="106" y="336" width="300" height="30" rx="15"/>
+    <rect x="106" y="398" width="168" height="30" rx="15"/>
+  </g>
+  <rect x="106" y="274" width="216" height="30" rx="15" fill="#C8402E"/>
+</svg>
+</span>
+          <span class="crop c48"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: абзац с правленой строкой">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g fill="#14110F">
+    <rect x="106" y="150" width="300" height="30" rx="15"/>
+    <rect x="106" y="212" width="252" height="30" rx="15"/>
+    <rect x="106" y="336" width="300" height="30" rx="15"/>
+    <rect x="106" y="398" width="168" height="30" rx="15"/>
+  </g>
+  <rect x="106" y="274" width="216" height="30" rx="15" fill="#C8402E"/>
+</svg>
+</span>
+          <span class="crop c28"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: абзац с правленой строкой">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g fill="#14110F">
+    <rect x="106" y="150" width="300" height="30" rx="15"/>
+    <rect x="106" y="212" width="252" height="30" rx="15"/>
+    <rect x="106" y="336" width="300" height="30" rx="15"/>
+    <rect x="106" y="398" width="168" height="30" rx="15"/>
+  </g>
+  <rect x="106" y="274" width="216" height="30" rx="15" fill="#C8402E"/>
+</svg>
+</span>
+          <span class="cropnote">96 · 48 · 28 px</span>
+        </div>
+        <div class="meta">
+          <p class="eyebrow">Редакционный минимализм</p>
+          <h3>Абзац</h3>
+          <p class="reads">Четыре строки машины и одна — правленая. Знак про то, кто ставит последнее слово.</p>
+          <dl>
+            <dt>Сильна в</dt><dd>Читается на любом размере, легко анимируется: строки набираются, красная приходит последней.</dd>
+            <dt>Слабое место</dt><dd>Форма абстрактная: без подписи её прочтут как «текст вообще», а не как имя бренда.</dd>
+          </dl>
+          <p class="file"><code>07-abzats.svg</code></p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: валик в гравюрной штриховке">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <defs><clipPath id="ball29"><circle cx="256" cy="256" r="168"/></clipPath></defs>
+  <g clip-path="url(#ball29)">
+    <line x1="70" y1="104" x2="442" y2="104" stroke="#14110F" stroke-width="3.0"/>
+    <line x1="70" y1="118" x2="442" y2="118" stroke="#14110F" stroke-width="3.0"/>
+    <line x1="70" y1="131" x2="442" y2="131" stroke="#14110F" stroke-width="3.1"/>
+    <line x1="70" y1="144" x2="442" y2="144" stroke="#14110F" stroke-width="3.3"/>
+    <line x1="70" y1="158" x2="442" y2="158" stroke="#14110F" stroke-width="3.5"/>
+    <line x1="70" y1="172" x2="442" y2="172" stroke="#14110F" stroke-width="3.7"/>
+    <line x1="70" y1="185" x2="442" y2="185" stroke="#14110F" stroke-width="4.1"/>
+    <line x1="70" y1="198" x2="442" y2="198" stroke="#14110F" stroke-width="4.4"/>
+    <line x1="70" y1="212" x2="442" y2="212" stroke="#14110F" stroke-width="4.9"/>
+    <line x1="70" y1="226" x2="442" y2="226" stroke="#14110F" stroke-width="5.4"/>
+    <line x1="70" y1="239" x2="442" y2="239" stroke="#14110F" stroke-width="6.0"/>
+    <line x1="70" y1="252" x2="442" y2="252" stroke="#14110F" stroke-width="6.6"/>
+    <line x1="70" y1="266" x2="442" y2="266" stroke="#14110F" stroke-width="7.3"/>
+    <line x1="70" y1="280" x2="442" y2="280" stroke="#14110F" stroke-width="8.0"/>
+    <line x1="70" y1="293" x2="442" y2="293" stroke="#14110F" stroke-width="8.8"/>
+    <line x1="70" y1="306" x2="442" y2="306" stroke="#14110F" stroke-width="9.7"/>
+    <line x1="70" y1="320" x2="442" y2="320" stroke="#14110F" stroke-width="10.6"/>
+    <line x1="70" y1="334" x2="442" y2="334" stroke="#14110F" stroke-width="11.5"/>
+    <line x1="70" y1="347" x2="442" y2="347" stroke="#14110F" stroke-width="12.6"/>
+    <line x1="70" y1="360" x2="442" y2="360" stroke="#14110F" stroke-width="13.7"/>
+    <line x1="70" y1="374" x2="442" y2="374" stroke="#14110F" stroke-width="14.8"/>
+    <line x1="70" y1="388" x2="442" y2="388" stroke="#14110F" stroke-width="16.0"/>
+    <line x1="70" y1="401" x2="442" y2="401" stroke="#14110F" stroke-width="17.3"/>
+  </g>
+  <rect x="34" y="243" width="444" height="26" rx="13" fill="#C8402E"/>
+</svg>
+</div>
+        <div class="crops">
+          <span class="crop c96"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: валик в гравюрной штриховке">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <defs><clipPath id="ball30"><circle cx="256" cy="256" r="168"/></clipPath></defs>
+  <g clip-path="url(#ball30)">
+    <line x1="70" y1="104" x2="442" y2="104" stroke="#14110F" stroke-width="3.0"/>
+    <line x1="70" y1="118" x2="442" y2="118" stroke="#14110F" stroke-width="3.0"/>
+    <line x1="70" y1="131" x2="442" y2="131" stroke="#14110F" stroke-width="3.1"/>
+    <line x1="70" y1="144" x2="442" y2="144" stroke="#14110F" stroke-width="3.3"/>
+    <line x1="70" y1="158" x2="442" y2="158" stroke="#14110F" stroke-width="3.5"/>
+    <line x1="70" y1="172" x2="442" y2="172" stroke="#14110F" stroke-width="3.7"/>
+    <line x1="70" y1="185" x2="442" y2="185" stroke="#14110F" stroke-width="4.1"/>
+    <line x1="70" y1="198" x2="442" y2="198" stroke="#14110F" stroke-width="4.4"/>
+    <line x1="70" y1="212" x2="442" y2="212" stroke="#14110F" stroke-width="4.9"/>
+    <line x1="70" y1="226" x2="442" y2="226" stroke="#14110F" stroke-width="5.4"/>
+    <line x1="70" y1="239" x2="442" y2="239" stroke="#14110F" stroke-width="6.0"/>
+    <line x1="70" y1="252" x2="442" y2="252" stroke="#14110F" stroke-width="6.6"/>
+    <line x1="70" y1="266" x2="442" y2="266" stroke="#14110F" stroke-width="7.3"/>
+    <line x1="70" y1="280" x2="442" y2="280" stroke="#14110F" stroke-width="8.0"/>
+    <line x1="70" y1="293" x2="442" y2="293" stroke="#14110F" stroke-width="8.8"/>
+    <line x1="70" y1="306" x2="442" y2="306" stroke="#14110F" stroke-width="9.7"/>
+    <line x1="70" y1="320" x2="442" y2="320" stroke="#14110F" stroke-width="10.6"/>
+    <line x1="70" y1="334" x2="442" y2="334" stroke="#14110F" stroke-width="11.5"/>
+    <line x1="70" y1="347" x2="442" y2="347" stroke="#14110F" stroke-width="12.6"/>
+    <line x1="70" y1="360" x2="442" y2="360" stroke="#14110F" stroke-width="13.7"/>
+    <line x1="70" y1="374" x2="442" y2="374" stroke="#14110F" stroke-width="14.8"/>
+    <line x1="70" y1="388" x2="442" y2="388" stroke="#14110F" stroke-width="16.0"/>
+    <line x1="70" y1="401" x2="442" y2="401" stroke="#14110F" stroke-width="17.3"/>
+  </g>
+  <rect x="34" y="243" width="444" height="26" rx="13" fill="#C8402E"/>
+</svg>
+</span>
+          <span class="crop c48"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: валик в гравюрной штриховке">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <defs><clipPath id="ball31"><circle cx="256" cy="256" r="168"/></clipPath></defs>
+  <g clip-path="url(#ball31)">
+    <line x1="70" y1="104" x2="442" y2="104" stroke="#14110F" stroke-width="3.0"/>
+    <line x1="70" y1="118" x2="442" y2="118" stroke="#14110F" stroke-width="3.0"/>
+    <line x1="70" y1="131" x2="442" y2="131" stroke="#14110F" stroke-width="3.1"/>
+    <line x1="70" y1="144" x2="442" y2="144" stroke="#14110F" stroke-width="3.3"/>
+    <line x1="70" y1="158" x2="442" y2="158" stroke="#14110F" stroke-width="3.5"/>
+    <line x1="70" y1="172" x2="442" y2="172" stroke="#14110F" stroke-width="3.7"/>
+    <line x1="70" y1="185" x2="442" y2="185" stroke="#14110F" stroke-width="4.1"/>
+    <line x1="70" y1="198" x2="442" y2="198" stroke="#14110F" stroke-width="4.4"/>
+    <line x1="70" y1="212" x2="442" y2="212" stroke="#14110F" stroke-width="4.9"/>
+    <line x1="70" y1="226" x2="442" y2="226" stroke="#14110F" stroke-width="5.4"/>
+    <line x1="70" y1="239" x2="442" y2="239" stroke="#14110F" stroke-width="6.0"/>
+    <line x1="70" y1="252" x2="442" y2="252" stroke="#14110F" stroke-width="6.6"/>
+    <line x1="70" y1="266" x2="442" y2="266" stroke="#14110F" stroke-width="7.3"/>
+    <line x1="70" y1="280" x2="442" y2="280" stroke="#14110F" stroke-width="8.0"/>
+    <line x1="70" y1="293" x2="442" y2="293" stroke="#14110F" stroke-width="8.8"/>
+    <line x1="70" y1="306" x2="442" y2="306" stroke="#14110F" stroke-width="9.7"/>
+    <line x1="70" y1="320" x2="442" y2="320" stroke="#14110F" stroke-width="10.6"/>
+    <line x1="70" y1="334" x2="442" y2="334" stroke="#14110F" stroke-width="11.5"/>
+    <line x1="70" y1="347" x2="442" y2="347" stroke="#14110F" stroke-width="12.6"/>
+    <line x1="70" y1="360" x2="442" y2="360" stroke="#14110F" stroke-width="13.7"/>
+    <line x1="70" y1="374" x2="442" y2="374" stroke="#14110F" stroke-width="14.8"/>
+    <line x1="70" y1="388" x2="442" y2="388" stroke="#14110F" stroke-width="16.0"/>
+    <line x1="70" y1="401" x2="442" y2="401" stroke="#14110F" stroke-width="17.3"/>
+  </g>
+  <rect x="34" y="243" width="444" height="26" rx="13" fill="#C8402E"/>
+</svg>
+</span>
+          <span class="crop c28"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: валик в гравюрной штриховке">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <defs><clipPath id="ball32"><circle cx="256" cy="256" r="168"/></clipPath></defs>
+  <g clip-path="url(#ball32)">
+    <line x1="70" y1="104" x2="442" y2="104" stroke="#14110F" stroke-width="3.0"/>
+    <line x1="70" y1="118" x2="442" y2="118" stroke="#14110F" stroke-width="3.0"/>
+    <line x1="70" y1="131" x2="442" y2="131" stroke="#14110F" stroke-width="3.1"/>
+    <line x1="70" y1="144" x2="442" y2="144" stroke="#14110F" stroke-width="3.3"/>
+    <line x1="70" y1="158" x2="442" y2="158" stroke="#14110F" stroke-width="3.5"/>
+    <line x1="70" y1="172" x2="442" y2="172" stroke="#14110F" stroke-width="3.7"/>
+    <line x1="70" y1="185" x2="442" y2="185" stroke="#14110F" stroke-width="4.1"/>
+    <line x1="70" y1="198" x2="442" y2="198" stroke="#14110F" stroke-width="4.4"/>
+    <line x1="70" y1="212" x2="442" y2="212" stroke="#14110F" stroke-width="4.9"/>
+    <line x1="70" y1="226" x2="442" y2="226" stroke="#14110F" stroke-width="5.4"/>
+    <line x1="70" y1="239" x2="442" y2="239" stroke="#14110F" stroke-width="6.0"/>
+    <line x1="70" y1="252" x2="442" y2="252" stroke="#14110F" stroke-width="6.6"/>
+    <line x1="70" y1="266" x2="442" y2="266" stroke="#14110F" stroke-width="7.3"/>
+    <line x1="70" y1="280" x2="442" y2="280" stroke="#14110F" stroke-width="8.0"/>
+    <line x1="70" y1="293" x2="442" y2="293" stroke="#14110F" stroke-width="8.8"/>
+    <line x1="70" y1="306" x2="442" y2="306" stroke="#14110F" stroke-width="9.7"/>
+    <line x1="70" y1="320" x2="442" y2="320" stroke="#14110F" stroke-width="10.6"/>
+    <line x1="70" y1="334" x2="442" y2="334" stroke="#14110F" stroke-width="11.5"/>
+    <line x1="70" y1="347" x2="442" y2="347" stroke="#14110F" stroke-width="12.6"/>
+    <line x1="70" y1="360" x2="442" y2="360" stroke="#14110F" stroke-width="13.7"/>
+    <line x1="70" y1="374" x2="442" y2="374" stroke="#14110F" stroke-width="14.8"/>
+    <line x1="70" y1="388" x2="442" y2="388" stroke="#14110F" stroke-width="16.0"/>
+    <line x1="70" y1="401" x2="442" y2="401" stroke="#14110F" stroke-width="17.3"/>
+  </g>
+  <rect x="34" y="243" width="444" height="26" rx="13" fill="#C8402E"/>
+</svg>
+</span>
+          <span class="cropnote">96 · 48 · 28 px</span>
+        </div>
+        <div class="meta">
+          <p class="eyebrow">Штриховка</p>
+          <h3>Гравюра</h3>
+          <p class="reads">Валик, набранный штрихом, и красная лента поперёк. Старая печатная графика без ретро-открытки.</p>
+          <dl>
+            <dt>Сильна в</dt><dd>Дороже других выглядит в крупном размере: обложки, шапка сайта, титул презентации.</dd>
+            <dt>Слабое место</dt><dd>Штрих слипается в серое пятно на мелких размерах — для аватарки нужна огрублённая версия.</dd>
+          </dl>
+          <p class="file"><code>08-gravyura.svg</code></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Что брать в работу</h2><span class="count">рекомендация</span></div>
+    <div class="pick">
+      <div class="plate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Машбюро: возврат каретки">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g fill="none" stroke="#14110F" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M356 140 V 300 H 196"/>
+  </g>
+  <path d="M254 236 L 186 300 L 254 364" fill="none" stroke="#C8402E" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+      <div>
+        <p><b>Каретка.</b> Возврат каретки и клавиша Enter — один знак с разницей в полвека. Это и есть продукт:
+        бюро осталось, машина сменилась. Клиенту не нужно объяснять символ — он нажимает его каждый день.</p>
+        <p>Знак выживает в фавиконе, в кружке сторис и на визитке, строится одной толщиной линии и легко
+        собирается в систему: стрелка задаёт направление в макетах, красный отмечает то, что сделала машина.</p>
+        <p>Запасной — <b>Клавиша</b>: собственная форма, которую можно защитить, но ей нужна проверка на людях,
+        чтобы не читалась как кнопка записи. <b>Абзац</b> и <b>Перфокарта</b> в любом случае идут в систему
+        как паттерн и текстура, даже если аватаркой станет другой знак.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Палитра</h2><span class="count">3 цвета</span></div>
+    <div class="swatches">
+      <div class="sw"><i style="background:#14110F"></i><div><b>Чернильная</b> <code>#14110F</code>
+        <p>Основной цвет: знак, заголовки, текст. Не чистый чёрный — тёплый, как оттиск на бумаге.</p></div></div>
+      <div class="sw"><i style="background:#F2ECE1"></i><div><b>Бумага</b> <code>#F2ECE1</code>
+        <p>Фон знаков и макетов. Тёплая, чуть желтоватая: рядом с ней белый экран выглядит холодным.</p></div></div>
+      <div class="sw"><i style="background:#C8402E"></i><div><b>Лента</b> <code>#C8402E</code>
+        <p>Вторая половина ленты печатной машинки. Только для правки, акцента и одного элемента в макете.</p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Что дальше</h2><span class="count">шаги</span></div>
+    <ol class="next">
+      <li><span>Выбрать знак и показать его трём людям вне проекта: что видят за пять секунд, без подсказки.</span></li>
+      <li><span>Подобрать шрифт для написания имени рядом со знаком — узкий гротеск для вывески и моноширинный для служебных строк.</span></li>
+      <li><span>Сделать упрощённые версии для мелких размеров там, где детали слипаются: валик, гравюра, матрица.</span></li>
+      <li><span>Перенести палитру в генератор каруселей: сейчас он рисует другими цветами.</span></li>
+      <li><span>Проверить имя и знак на занятость: домен, ники, Роспатент по классам 35 и 41.</span></li>
+    </ol>
+  </section>
+
+  <footer>Исходники: brand/mashburo/avatars — SVG и PNG 512×512. Правки вносим в SVG, PNG пересобираются из них.</footer>
+</div>
