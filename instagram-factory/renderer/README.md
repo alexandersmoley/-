@@ -48,6 +48,8 @@ The build fails on schema errors, missing assets/fonts, incorrect photo checksum
 
 The GitHub Action publishes the successful `output/` bundle through GitHub Pages. Stable production URL pattern:
 
+It runs automatically after relevant pushes to the default branch and can also be started manually with `workflow_dispatch`.
+
 ```text
 https://alexandersmoley.github.io/-/<post-id>.png
 ```
