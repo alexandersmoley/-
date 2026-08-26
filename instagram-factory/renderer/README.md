@@ -46,7 +46,9 @@ The build fails on schema errors, missing assets/fonts, incorrect photo checksum
 
 ## HTTPS output
 
-The GitHub Action publishes the successful `output/` bundle through GitHub Pages. Stable production URL pattern:
+After successful render and QA, the GitHub Action commits generated PNG files and the output index back to `output/` on the default branch. This keeps the repository-native raw HTTPS URL current without requiring GitHub Pages.
+
+When Pages is enabled, the same Action also publishes the successful `output/` bundle through GitHub Pages. Stable Pages URL pattern:
 
 It runs automatically after relevant pushes to the default branch and can also be started manually with `workflow_dispatch`.
 
@@ -60,7 +62,7 @@ For this benchmark:
 https://alexandersmoley.github.io/-/pinned-intro.png
 ```
 
-GitHub Pages must be enabled once in repository settings with **Source: GitHub Actions**. Until Pages is enabled, a committed PNG also has the repository-native raw URL:
+GitHub Pages must be enabled once in repository settings with **Source: GitHub Actions**. Until Pages is enabled, the automatically committed PNG has the repository-native raw URL:
 
 ```text
 https://raw.githubusercontent.com/alexandersmoley/-/claude/tilde-skills-connectors-wkqjmo/instagram-factory/output/pinned-intro.png
