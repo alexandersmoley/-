@@ -16,7 +16,7 @@ on:
       - ".github/workflows/render-instagram.yml"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -26,6 +26,8 @@ concurrency:
 
 jobs:
   render:
+    outputs:
+      pages-enabled: ${{ steps.pages-configure.outcome == 'success' }}
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -57,6 +59,17 @@ jobs:
       - name: Render, QA and build Pages bundle
         run: pnpm run pipeline
 
+      - name: Commit rendered PNG output
+        if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/*.png output/index.html output/.nojekyll
+          if ! git diff --cached --quiet; then
+            git commit -m "Render approved Instagram posts [skip ci]"
+            git push
+          fi
+
       - name: Upload renderer artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -65,17 +78,19 @@ jobs:
           include-hidden-files: true
 
       - name: Configure GitHub Pages
+        id: pages-configure
         if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        continue-on-error: true
         uses: actions/configure-pages@v5
 
       - name: Upload GitHub Pages artifact
-        if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        if: steps.pages-configure.outcome == 'success'
         uses: actions/upload-pages-artifact@v4
         with:
           path: instagram-factory/output
 
   deploy:
-    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    if: needs.render.outputs.pages-enabled == 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
