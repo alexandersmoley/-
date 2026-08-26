@@ -3,12 +3,13 @@ id: pinned-intro
 platform: instagram
 format: single-post
 status: approved-for-production
-visual_asset: MAHTX_B6J9k
-references:
-  - MAHTX_X8-OI
-  - MAHTX9HScio
-  - MAHTXzaCKC0
-  - MAHTX8uYNbo
+visual_source:
+  canva_asset_name: alexsmoley-photo-mountains-son
+  canva_asset_id: MAHTZduqLyI
+master_reference:
+  canva_asset_name: alexsmoley-master-reference-human-to-system
+  canva_asset_id: MAHTZVECUo4
+  github_spec: instagram-factory/master-reference-pinned-intro.md
 ---
 
 # Caption
@@ -29,11 +30,31 @@ references:
 
 В общем, это эксперимент не только с контент-заводом, но и с собственным блогом. Посмотрим, что из этого получится.
 
+# Text on visual
+
+Только этот текст. Не добавлять, не сокращать и не переписывать без отдельного approval:
+
+Привет,
+*я Саша Смолей*
+
+**редактор**
+
+Писал для Kaspersky, Сбера
+и кандидатов в президенты —
+
+*теперь строю
+контент-завод*
+
 # Production notes
 
-- Это утверждённый исходный текст. Codex не переписывает caption без отдельного запроса пользователя.
-- Визуал создаётся в фирстиле alexsmoley по `brand-system.md`.
-- Допустимы 2–3 композиционных эксперимента в рамках фирстиля.
-- Использовать фото `alexsmoley-photo-chair` / asset `MAHTX_B6J9k`.
-- Использовать загруженные референсы, перечисленные в front matter.
+- Это утверждённый caption. Codex не переписывает его без отдельного запроса пользователя.
+- Главный арт-дирекшен описан в `instagram-factory/master-reference-pinned-intro.md`.
+- Использовать только исходное фото `alexsmoley-photo-mountains-son` / Canva asset `MAHTZduqLyI`.
+- Master visual benchmark: `alexsmoley-master-reference-human-to-system` / Canva asset `MAHTZVECUo4`.
+- Формат production-версии: строго 1080×1440 (3:4).
+- Production-версию собирать детерминированно, а не image generation: HTML/CSS/SVG или другой кодовый renderer.
+- Только реальные Inter Regular + Cormorant Garamond Regular/Italic.
+- Не перекрывать лица и фигуры.
+- Не добавлять новый текст, CTA, стрелки, иконки или декоративные элементы.
+- Смысловая идея обязательна: `человек → редактор → система`; слово `редактор` связывает фотографический слой и системную editorial-зону.
 - Не публиковать без отдельного approval.
