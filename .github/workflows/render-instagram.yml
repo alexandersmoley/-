@@ -1,0 +1,87 @@
+name: Render approved Instagram posts
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "instagram-factory/assets/**"
+      - "instagram-factory/content/**"
+      - "instagram-factory/posts/**"
+      - "instagram-factory/renderer/**"
+      - "instagram-factory/schemas/**"
+      - "instagram-factory/scripts/**"
+      - "instagram-factory/package.json"
+      - "instagram-factory/pnpm-lock.yaml"
+      - "instagram-factory/pnpm-workspace.yaml"
+      - ".github/workflows/render-instagram.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: instagram-factory
+    env:
+      OUTPUT_BASE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.19.0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: instagram-factory/pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Render, QA and build Pages bundle
+        run: pnpm run pipeline
+
+      - name: Upload renderer artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: rendered-instagram-posts
+          path: instagram-factory/output
+          include-hidden-files: true
+
+      - name: Configure GitHub Pages
+        if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: instagram-factory/output
+
+  deploy:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: render
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

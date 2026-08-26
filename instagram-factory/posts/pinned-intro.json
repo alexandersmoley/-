@@ -1,0 +1,56 @@
+{
+  "$schema": "../schemas/post.schema.json",
+  "schemaVersion": 1,
+  "id": "pinned-intro",
+  "status": "approved-for-render",
+  "platform": "instagram",
+  "format": "single-post-3x4",
+  "benchmark": true,
+  "layout": {
+    "family": "human-to-system",
+    "variant": "benchmark-a",
+    "photoHeight": 780,
+    "photoPosition": 30,
+    "intro": { "x": 58, "y": 112, "width": 344 },
+    "bridge": { "x": 56, "y": 688, "size": 188 },
+    "gridOffsetTop": 92,
+    "proof": { "x": 60, "y": 1015, "size": 31 },
+    "future": { "x": 700, "y": 1124, "size": 55 },
+    "figureShieldClipPath": "polygon(31% 28%, 36% 18%, 44% 13%, 51% 18%, 58% 17%, 64% 27%, 68% 46%, 68% 100%, 32% 100%)"
+  },
+  "asset": {
+    "path": "assets/photos/pinned-intro-mountains-son.jpeg",
+    "canvaAssetId": "MAHTZduqLyI",
+    "sha256": "8cc0c06d9c3c0d049a8cac15d25bf7e13b9d07204b4cfcf2a8bfb77d47146805",
+    "width": 1152,
+    "height": 1536
+  },
+  "content": {
+    "intro": {
+      "roman": "Привет,",
+      "italic": "я Саша Смолей"
+    },
+    "bridge": "редактор",
+    "proof": [
+      "Писал для Kaspersky, Сбера",
+      "и кандидатов в президенты —"
+    ],
+    "future": [
+      "теперь строю",
+      "контент-завод"
+    ]
+  },
+  "captionSource": "content/pinned-intro.md",
+  "designTokens": {
+    "ink": "#101010",
+    "paper": "#f4f1e9",
+    "blue": "#1546e8",
+    "grid": "rgba(21, 70, 232, 0.105)"
+  },
+  "qa": {
+    "protectedZones": [
+      { "name": "child-face", "x": 410, "y": 220, "width": 115, "height": 175 },
+      { "name": "sasha-face", "x": 505, "y": 250, "width": 165, "height": 205 }
+    ]
+  }
+}

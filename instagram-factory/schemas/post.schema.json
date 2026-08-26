@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://alexsmoley.github.io/-/schemas/post.schema.json",
+  "title": "Alex Smoley structured Instagram post",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "status",
+    "platform",
+    "format",
+    "layout",
+    "asset",
+    "content",
+    "captionSource",
+    "designTokens",
+    "qa"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "status": {
+      "enum": ["draft", "approved-for-render", "rendered", "approved-for-publish"]
+    },
+    "platform": { "const": "instagram" },
+    "format": { "const": "single-post-3x4" },
+    "benchmark": { "type": "boolean" },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "variant",
+        "photoHeight",
+        "photoPosition",
+        "intro",
+        "bridge",
+        "gridOffsetTop",
+        "proof",
+        "future",
+        "figureShieldClipPath"
+      ],
+      "properties": {
+        "family": { "const": "human-to-system" },
+        "variant": { "type": "string", "minLength": 1 },
+        "photoHeight": { "type": "integer", "minimum": 650, "maximum": 840 },
+        "photoPosition": { "type": "integer", "minimum": 20, "maximum": 45 },
+        "gridOffsetTop": { "type": "integer", "minimum": 70, "maximum": 150 },
+        "figureShieldClipPath": { "type": "string", "pattern": "^polygon\\(" },
+        "intro": { "$ref": "#/$defs/positionedBlock" },
+        "bridge": { "$ref": "#/$defs/displayBlock" },
+        "proof": { "$ref": "#/$defs/textBlock" },
+        "future": { "$ref": "#/$defs/displayBlock" }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "canvaAssetId", "sha256", "width", "height"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^assets/photos/" },
+        "canvaAssetId": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "width": { "const": 1152 },
+        "height": { "const": 1536 }
+      }
+    },
+    "content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["intro", "bridge", "proof", "future"],
+      "properties": {
+        "intro": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["roman", "italic"],
+          "properties": {
+            "roman": { "type": "string", "minLength": 1 },
+            "italic": { "type": "string", "minLength": 1 }
+          }
+        },
+        "bridge": { "type": "string", "minLength": 1 },
+        "proof": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "future": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "captionSource": { "type": "string", "pattern": "^content/.+\\.md$" },
+    "designTokens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ink", "paper", "blue", "grid"],
+      "properties": {
+        "ink": { "const": "#101010" },
+        "paper": { "const": "#f4f1e9" },
+        "blue": { "const": "#1546e8" },
+        "grid": { "const": "rgba(21, 70, 232, 0.105)" }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["protectedZones"],
+      "properties": {
+        "protectedZones": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/rect" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "positionedBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "width"],
+      "properties": {
+        "x": { "type": "integer", "minimum": 40, "maximum": 900 },
+        "y": { "type": "integer", "minimum": 40, "maximum": 1320 },
+        "width": { "type": "integer", "minimum": 200, "maximum": 960 }
+      }
+    },
+    "displayBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "size"],
+      "properties": {
+        "x": { "type": "integer", "minimum": 40, "maximum": 900 },
+        "y": { "type": "integer", "minimum": 40, "maximum": 1320 },
+        "size": { "type": "integer", "minimum": 42, "maximum": 220 }
+      }
+    },
+    "textBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "size"],
+      "properties": {
+        "x": { "type": "integer", "minimum": 40, "maximum": 900 },
+        "y": { "type": "integer", "minimum": 40, "maximum": 1320 },
+        "size": { "type": "integer", "minimum": 28, "maximum": 48 }
+      }
+    },
+    "rect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "x", "y", "width", "height"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "x": { "type": "integer", "minimum": 0, "maximum": 1080 },
+        "y": { "type": "integer", "minimum": 0, "maximum": 1440 },
+        "width": { "type": "integer", "minimum": 1, "maximum": 1080 },
+        "height": { "type": "integer", "minimum": 1, "maximum": 1440 }
+      }
+    }
+  }
+}

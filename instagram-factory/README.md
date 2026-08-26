@@ -17,7 +17,7 @@
 
 ## Производственный принцип
 
-Идея → исследование → текст → редактура → дизайн по мастер-шаблону → утверждение → публикация → метрики → выводы → следующий цикл.
+Идея → исследование → текст → редактура → structured post → code renderer → automated QA → утверждение → публикация → метрики → выводы → следующий цикл.
 
 ИИ не должен самовольно добавлять декоративный копирайтинг, менять фирменные цвета, шрифты или композиционную систему.
 
@@ -28,3 +28,18 @@
 - `factory-workflow.md` — роли и автоматизация.
 - `design-brief-pinned-post.md` — бриф первого закрепа.
 - `codex-brief.md` — инструкция Codex по работе с проектом.
+- `posts/*.json` — structured posts и статус допуска к рендеру.
+- `schemas/post.schema.json` — машинный контракт structured post.
+- `renderer/` — reusable HTML/CSS/SVG layout families и Chromium renderer.
+- `output/` — PNG 1080×1440, QA reports и GitHub Pages bundle.
+
+## Production render
+
+```bash
+cd instagram-factory
+pnpm install
+pnpm exec playwright install chromium
+pnpm run pipeline
+```
+
+Подробности: [`renderer/README.md`](renderer/README.md).

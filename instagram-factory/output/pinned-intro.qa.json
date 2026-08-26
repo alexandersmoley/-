@@ -1,0 +1,219 @@
+{
+  "pipelineVersion": 1,
+  "postId": "pinned-intro",
+  "layoutFamily": "human-to-system",
+  "variant": "benchmark-a",
+  "benchmark": true,
+  "source": "posts/pinned-intro.json",
+  "generatedAt": "2026-08-26T17:12:57.177Z",
+  "passed": true,
+  "checks": {
+    "structuredPostValid": true,
+    "approvedForRender": true,
+    "assetChecksumExact": true,
+    "captionUnchanged": true,
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "fontFloor": true,
+    "sourceDimensions": true,
+    "bridgeCrossesBoundary": true,
+    "bridgeIsDominant": true,
+    "figureShieldAboveBridge": true,
+    "introAvoidsProtectedZones": true,
+    "gridStartsInSystemZone": true,
+    "gridIsSingleSystemElement": true,
+    "textInsideCanvas": true,
+    "noUnapprovedEffects": true,
+    "noDecorativeControls": true
+  },
+  "failedChecks": [],
+  "artifacts": {
+    "png": "output/pinned-intro.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "a132f3ca55413e9aa1f33be9a8b190cef9208fa80f6e58020fe014a0a9592695"
+  },
+  "integrity": {
+    "canvaAssetId": "MAHTZduqLyI",
+    "assetSha256": "8cc0c06d9c3c0d049a8cac15d25bf7e13b9d07204b4cfcf2a8bfb77d47146805",
+    "captionSource": "content/pinned-intro.md",
+    "captionSha256": "b172748a555cb4b48a035872fccd2090b54013dafe4f73c967cfea33d7831718"
+  },
+  "browserQa": {
+    "posterRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "bridgeRect": {
+      "x": 56,
+      "y": 688,
+      "width": 592.578125,
+      "height": 146.625,
+      "top": 688,
+      "right": 648.578125,
+      "bottom": 834.625,
+      "left": 56
+    },
+    "gridRect": {
+      "x": 0,
+      "y": 872,
+      "width": 1080,
+      "height": 920,
+      "top": 872,
+      "right": 1080,
+      "bottom": 1792,
+      "left": 0
+    },
+    "visibleText": [
+      "Привет,",
+      "я Саша Смолей",
+      "редактор",
+      "Писал для Kaspersky, Сбера",
+      "и кандидатов в президенты —",
+      "теперь строю",
+      "контент-завод"
+    ],
+    "type": [
+      {
+        "className": "intro-roman",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 34,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 81,
+          "y": 129,
+          "width": 298,
+          "height": 36.71875,
+          "top": 129,
+          "right": 379,
+          "bottom": 165.71875,
+          "left": 81
+        }
+      },
+      {
+        "className": "intro-italic",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 50,
+        "style": "italic",
+        "weight": "400",
+        "rect": {
+          "x": 81,
+          "y": 168.71875,
+          "width": 298,
+          "height": 49,
+          "top": 168.71875,
+          "right": 379,
+          "bottom": 217.71875,
+          "left": 81
+        }
+      },
+      {
+        "className": "bridge",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 188,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 56,
+          "y": 688,
+          "width": 592.578125,
+          "height": 146.625,
+          "top": 688,
+          "right": 648.578125,
+          "bottom": 834.625,
+          "left": 56
+        }
+      },
+      {
+        "className": "proof",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 31,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 60,
+          "y": 1015,
+          "width": 430.03125,
+          "height": 83.0625,
+          "top": 1015,
+          "right": 490.03125,
+          "bottom": 1098.0625,
+          "left": 60
+        }
+      },
+      {
+        "className": "future",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 55,
+        "style": "italic",
+        "weight": "400",
+        "rect": {
+          "x": 700,
+          "y": 1124,
+          "width": 300.796875,
+          "height": 103.375,
+          "top": 1124,
+          "right": 1000.796875,
+          "bottom": 1227.375,
+          "left": 700
+        }
+      }
+    ],
+    "sourceDimensions": {
+      "width": 1152,
+      "height": 1536
+    },
+    "introProtectedIntersections": [],
+    "shieldClipPath": "polygon(31% 28%, 36% 18%, 44% 13%, 51% 18%, 58% 17%, 64% 27%, 68% 46%, 68% 100%, 32% 100%)",
+    "visualEffects": [
+      {
+        "className": "poster",
+        "boxShadow": "none",
+        "backgroundImage": "none",
+        "filter": "none"
+      },
+      {
+        "className": "system-zone",
+        "boxShadow": "none",
+        "backgroundImage": "none",
+        "filter": "none"
+      },
+      {
+        "className": "intro",
+        "boxShadow": "none",
+        "backgroundImage": "none",
+        "filter": "none"
+      },
+      {
+        "className": "bridge",
+        "boxShadow": "none",
+        "backgroundImage": "none",
+        "filter": "none"
+      },
+      {
+        "className": "proof",
+        "boxShadow": "none",
+        "backgroundImage": "none",
+        "filter": "none"
+      },
+      {
+        "className": "future",
+        "boxShadow": "none",
+        "backgroundImage": "none",
+        "filter": "none"
+      }
+    ]
+  }
+}

@@ -4,7 +4,7 @@
 
 Canva не является основным генератором дизайна. Основной production path — кодовый renderer в репозитории:
 
-approved content → art-direction selection → HTML/CSS/SVG layout → automated QA → PNG 1080×1350 → human approval → publishing.
+structured post (`approved-for-render`) → HTML/CSS/SVG layout family → automated QA → PNG 1080×1440 → output/HTTPS artifact → human approval → optional publishing.
 
 Canva может использоваться как дополнительный ручной редактор/экспорт, но не как source of truth.
 
@@ -17,6 +17,8 @@ Canva может использоваться как дополнительны�
 - `brand-system.md` — дизайн-токены и неизменяемые правила.
 - `design-direction.md` — арт-дирекшен и допустимая вариативность.
 - `content/*.md` — утверждённые тексты и production notes.
+- `posts/*.json` — машиночитаемые structured posts, asset checksum, layout family и ограниченные параметры композиции.
+- `schemas/post.schema.json` — исполняемый контракт structured post.
 - `assets/` — фотографии/иллюстрации.
 - `renderer/` — код дизайн-системы и рендера.
 
@@ -33,9 +35,9 @@ Canva может использоваться как дополнительны�
 
 ## Canvas
 
-Instagram portrait: 1080×1350 px (4:5).
+Instagram portrait: 1080×1440 px (3:4).
 
-Внутренний layout строится в CSS pixels 1080×1350 без responsive scaling при финальном рендере.
+Внутренний layout строится в CSS pixels 1080×1440 без responsive scaling при финальном рендере.
 
 ## Design tokens
 
@@ -61,14 +63,18 @@ Instagram portrait: 1080×1350 px (4:5).
 
 ## Layout families
 
-Renderer должен поддерживать минимум 6 семейств, а не один универсальный template:
+Первое production-семейство:
 
-1. `photo-editorial` — full-bleed или dominant photo + крупная цветовая/типографическая плоскость.
-2. `type-editorial` — typography-led, большой Cormorant headline, Roman/Italic contrast.
-3. `diagram-editorial` — wireframe/схема + типографический тезис.
-4. `split-editorial` — асимметричный split photo/text.
-5. `quote-editorial` — один сильный тезис, много воздуха, display typography.
-6. `carousel-editorial` — система последовательных слайдов с общей сеткой, но меняющейся композицией.
+1. `human-to-system` — human/photo zone + профессия как типографический мост + системная editorial-zone. Семейство фиксирует утверждённую грамматику, но принимает structured content, approved photo и ограниченные layout-параметры.
+
+Renderer должен оставаться registry-based и расширяться другими семействами, а не превращаться в один универсальный template. Roadmap:
+
+2. `photo-editorial` — full-bleed или dominant photo + крупная цветовая/типографическая плоскость.
+3. `type-editorial` — typography-led, большой Cormorant headline, Roman/Italic contrast.
+4. `diagram-editorial` — wireframe/схема + типографический тезис.
+5. `split-editorial` — асимметричный split photo/text.
+6. `quote-editorial` — один сильный тезис, много воздуха, display typography.
+7. `carousel-editorial` — система последовательных слайдов с общей сеткой, но меняющейся композицией.
 
 Каждое семейство должно иметь параметры вариативности: crop, alignment, text scale, blue-plane proportion, whitespace ratio, grid visibility, image position. Эти параметры должны иметь ограниченные art-directed диапазоны, а не случайные значения.
 
@@ -111,19 +117,22 @@ Renderer должен поддерживать минимум 6 семейств
 
 После технического QA агент делает visual self-review по `design-direction.md` и отклоняет слабый вариант до показа пользователю.
 
-## Pinned intro v1
+## Pinned intro benchmark
 
 Первый benchmark renderer-а — `content/pinned-intro.md`.
 
-Собрать три варианта:
+Канонический арт-дирекшен задаёт `master-reference-pinned-intro.md` и он имеет приоритет над историческими pinned-intro указаниями в старых документах:
 
-A. Reference-faithful photo editorial: фото в кресле full bleed; label `КТО Я`; крупная синяя плоскость поверх нижней/средней части фотографии; крупный белый Cormorant headline.
+- только `alexsmoley-photo-mountains-son` / Canva asset `MAHTZduqLyI`;
+- строго 1080×1440;
+- идея `человек → редактор → система`;
+- `редактор` — крупнейшая доминанта и пересекает фото/system boundary;
+- лица и фигуры не перекрываются;
+- нижняя сетка используется как рабочая система выравнивания;
+- только Inter Regular и Cormorant Garamond Regular/Italic;
+- никаких новых текстов, CTA, иконок или декора.
 
-B. More experimental photo editorial: тот же asset и фирстиль, но иная пропорция/позиция синей плоскости и более смелая typography-image interaction.
-
-C. Type-led editorial: светлая editorial surface + крупная типографика + фотография как вторичный, но крупный композиционный элемент.
-
-Вариант A должен служить benchmark: если он визуально заметно слабее пользовательского референса, renderer не считается готовым.
+`posts/pinned-intro.json` — первый executable benchmark семейства `human-to-system`.
 
 ## Human approval
 
@@ -131,19 +140,20 @@ C. Type-led editorial: светлая editorial surface + крупная тип�
 
 Pipeline:
 
-`approved-for-production` → render candidates → user selects/requests revision → `approved-for-publish` → publishing connector.
+`draft` → `approved-for-render` → automated render + QA → human review → `approved-for-publish` → publishing connector.
 
 Только после накопления стабильных шаблонов и QA можно разрешать автоматическую публикацию для повторяемых форматов.
 
 ## Задача Codex
 
 1. Прочитать `brand-system.md`, `design-direction.md`, этот spec и `content/pinned-intro.md`.
-2. Создать `renderer/` как самостоятельный production module.
-3. Реализовать design tokens и минимум первые три layout families.
-4. Реализовать deterministic PNG export 1080×1350.
-5. Реализовать QA checks.
-6. Сгенерировать три pinned-intro candidates.
-7. Сохранить preview PNG и source рядом в `output/pinned-intro/`.
-8. Не публиковать.
-9. Не менять утверждённый caption.
-10. В README renderer-а описать одну команду для локального/агентского production run.
+2. Поддерживать `renderer/` как самостоятельный production module.
+3. Реализовать design tokens и registry layout families, начиная с `human-to-system`.
+4. Реализовать deterministic PNG export 1080×1440.
+5. Реализовать schema validation и automated QA gates.
+6. Рендерить только structured posts со статусом `approved-for-render`.
+7. Сохранять PNG и QA reports в `output/`.
+8. Публиковать успешный output через GitHub Pages для машинного HTTPS-доступа.
+9. Не добавлять в renderer автоматическую публикацию в соцсети.
+10. Не менять утверждённый caption.
+11. В README renderer-а описать одну команду для локального/CI production run.
