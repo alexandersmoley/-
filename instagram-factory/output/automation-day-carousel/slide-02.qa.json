@@ -4,7 +4,7 @@
   "slideId": "slide-02",
   "layoutFamily": "process-diagram-carousel",
   "mode": "pipeline",
-  "generatedAt": "2026-08-27T09:13:40.612Z",
+  "generatedAt": "2026-08-27T09:22:59.968Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -36,7 +36,7 @@
     "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-02.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "7acf6b0e4281e67b5ff9ebfcd669f0e42fe4a78e27f266be37ae9bca9f876287"
+    "sha256": "82fbcd38dbcc283ac7f9e7be97a3300cfe3e35437db4ef060dbaabe0769e81e0"
   },
   "browserQa": {
     "canvasRect": {
@@ -141,14 +141,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 224.5,
+          "x": 224.484375,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 258.5,
+          "right": 258.484375,
           "bottom": 579.5,
-          "left": 224.5
+          "left": 224.484375
         }
       },
       {
@@ -163,14 +163,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 258.546875,
+          "x": 258.53125,
           "y": 541.34375,
           "width": 86.953125,
           "height": 42.296875,
           "top": 541.34375,
-          "right": 345.5,
+          "right": 345.484375,
           "bottom": 583.640625,
-          "left": 258.546875
+          "left": 258.53125
         }
       },
       {
@@ -185,14 +185,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 345.5625,
+          "x": 345.53125,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 379.5625,
+          "right": 379.53125,
           "bottom": 579.5,
-          "left": 345.5625
+          "left": 345.53125
         }
       },
       {
@@ -207,14 +207,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 379.625,
+          "x": 379.578125,
           "y": 541.34375,
           "width": 115.5625,
           "height": 42.296875,
           "top": 541.34375,
-          "right": 495.1875,
+          "right": 495.140625,
           "bottom": 583.640625,
-          "left": 379.625
+          "left": 379.578125
         }
       },
       {
@@ -229,14 +229,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 495.234375,
+          "x": 495.1875,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 529.234375,
+          "right": 529.1875,
           "bottom": 579.5,
-          "left": 495.234375
+          "left": 495.1875
         }
       },
       {
@@ -251,14 +251,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 529.296875,
+          "x": 529.234375,
           "y": 541.34375,
           "width": 195.3125,
           "height": 42.296875,
           "top": 541.34375,
-          "right": 724.609375,
+          "right": 724.546875,
           "bottom": 583.640625,
-          "left": 529.296875
+          "left": 529.234375
         }
       },
       {
@@ -273,14 +273,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 724.65625,
+          "x": 724.59375,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 758.65625,
+          "right": 758.59375,
           "bottom": 579.5,
-          "left": 724.65625
+          "left": 724.59375
         }
       },
       {
@@ -295,14 +295,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 758.71875,
+          "x": 758.640625,
           "y": 541.34375,
           "width": 171.28125,
           "height": 42.296875,
           "top": 541.34375,
-          "right": 930,
+          "right": 929.921875,
           "bottom": 583.640625,
-          "left": 758.71875
+          "left": 758.640625
         }
       },
       {

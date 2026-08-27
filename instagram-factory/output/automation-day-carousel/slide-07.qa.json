@@ -4,7 +4,7 @@
   "slideId": "slide-07",
   "layoutFamily": "process-diagram-carousel",
   "mode": "pipeline",
-  "generatedAt": "2026-08-27T09:13:42.492Z",
+  "generatedAt": "2026-08-27T09:23:00.766Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -36,7 +36,7 @@
     "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-07.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "d737b08f885f820ae71d7dd5bea9dc4a77988dfcedf398d6987573d89912c0b9"
+    "sha256": "a144d7a78bc879480651aef20d9238a39118f8b750ecd13e11d49d1260e1580c"
   },
   "browserQa": {
     "canvasRect": {
@@ -146,8 +146,8 @@
         "family": "\"Inter Production\", sans-serif",
         "size": 28,
         "lineHeight": 28,
-        "clientWidth": 30,
-        "scrollWidth": 30,
+        "clientWidth": 26,
+        "scrollWidth": 26,
         "clientHeight": 28,
         "scrollHeight": 31,
         "style": "normal",
@@ -155,10 +155,10 @@
         "rect": {
           "x": 318,
           "y": 283,
-          "width": 30.0625,
+          "width": 26,
           "height": 28,
           "top": 283,
-          "right": 348.0625,
+          "right": 344,
           "bottom": 311,
           "left": 318
         }
@@ -190,8 +190,8 @@
         "family": "\"Inter Production\", sans-serif",
         "size": 28,
         "lineHeight": 28,
-        "clientWidth": 30,
-        "scrollWidth": 30,
+        "clientWidth": 26,
+        "scrollWidth": 26,
         "clientHeight": 28,
         "scrollHeight": 31,
         "style": "normal",
@@ -199,10 +199,10 @@
         "rect": {
           "x": 318,
           "y": 394.828125,
-          "width": 30.0625,
+          "width": 26,
           "height": 28,
           "top": 394.828125,
-          "right": 348.0625,
+          "right": 344,
           "bottom": 422.828125,
           "left": 318
         }
@@ -220,12 +220,12 @@
         "weight": "400",
         "rect": {
           "x": 318,
-          "y": 442.671875,
+          "y": 442.65625,
           "width": 307.953125,
           "height": 44.171875,
-          "top": 442.671875,
+          "top": 442.65625,
           "right": 625.953125,
-          "bottom": 486.84375,
+          "bottom": 486.828125,
           "left": 318
         }
       },
@@ -234,20 +234,20 @@
         "family": "\"Inter Production\", sans-serif",
         "size": 28,
         "lineHeight": 28,
-        "clientWidth": 30,
-        "scrollWidth": 30,
+        "clientWidth": 26,
+        "scrollWidth": 26,
         "clientHeight": 28,
         "scrollHeight": 31,
         "style": "normal",
         "weight": "400",
         "rect": {
           "x": 318,
-          "y": 506.671875,
-          "width": 30.0625,
+          "y": 506.65625,
+          "width": 26,
           "height": 28,
-          "top": 506.671875,
-          "right": 348.0625,
-          "bottom": 534.671875,
+          "top": 506.65625,
+          "right": 344,
+          "bottom": 534.65625,
           "left": 318
         }
       },
@@ -264,12 +264,12 @@
         "weight": "400",
         "rect": {
           "x": 318,
-          "y": 554.5,
+          "y": 554.484375,
           "width": 143.390625,
           "height": 44.171875,
-          "top": 554.5,
+          "top": 554.484375,
           "right": 461.390625,
-          "bottom": 598.671875,
+          "bottom": 598.65625,
           "left": 318
         }
       },
@@ -278,20 +278,20 @@
         "family": "\"Inter Production\", sans-serif",
         "size": 28,
         "lineHeight": 28,
-        "clientWidth": 30,
-        "scrollWidth": 30,
+        "clientWidth": 26,
+        "scrollWidth": 26,
         "clientHeight": 28,
         "scrollHeight": 31,
         "style": "normal",
         "weight": "400",
         "rect": {
           "x": 318,
-          "y": 618.5,
-          "width": 30.0625,
+          "y": 618.484375,
+          "width": 26,
           "height": 28,
-          "top": 618.5,
-          "right": 348.0625,
-          "bottom": 646.5,
+          "top": 618.484375,
+          "right": 344,
+          "bottom": 646.484375,
           "left": 318
         }
       },
@@ -308,12 +308,12 @@
         "weight": "400",
         "rect": {
           "x": 318,
-          "y": 666.328125,
+          "y": 666.3125,
           "width": 351.4375,
           "height": 44.171875,
-          "top": 666.328125,
+          "top": 666.3125,
           "right": 669.4375,
-          "bottom": 710.5,
+          "bottom": 710.484375,
           "left": 318
         }
       },
@@ -322,20 +322,20 @@
         "family": "\"Inter Production\", sans-serif",
         "size": 28,
         "lineHeight": 28,
-        "clientWidth": 30,
-        "scrollWidth": 30,
+        "clientWidth": 26,
+        "scrollWidth": 26,
         "clientHeight": 28,
         "scrollHeight": 31,
         "style": "normal",
         "weight": "400",
         "rect": {
           "x": 318,
-          "y": 730.328125,
-          "width": 30.0625,
+          "y": 730.3125,
+          "width": 26,
           "height": 28,
-          "top": 730.328125,
-          "right": 348.0625,
-          "bottom": 758.328125,
+          "top": 730.3125,
+          "right": 344,
+          "bottom": 758.3125,
           "left": 318
         }
       },
@@ -352,12 +352,12 @@
         "weight": "400",
         "rect": {
           "x": 318,
-          "y": 778.15625,
+          "y": 778.140625,
           "width": 292.984375,
           "height": 44.171875,
-          "top": 778.15625,
+          "top": 778.140625,
           "right": 610.984375,
-          "bottom": 822.328125,
+          "bottom": 822.3125,
           "left": 318
         }
       },
@@ -366,20 +366,20 @@
         "family": "\"Inter Production\", sans-serif",
         "size": 28,
         "lineHeight": 28,
-        "clientWidth": 30,
-        "scrollWidth": 30,
+        "clientWidth": 26,
+        "scrollWidth": 26,
         "clientHeight": 28,
         "scrollHeight": 31,
         "style": "normal",
         "weight": "400",
         "rect": {
           "x": 318,
-          "y": 842.171875,
-          "width": 30.0625,
+          "y": 842.140625,
+          "width": 26,
           "height": 28,
-          "top": 842.171875,
-          "right": 348.0625,
-          "bottom": 870.171875,
+          "top": 842.140625,
+          "right": 344,
+          "bottom": 870.140625,
           "left": 318
         }
       },
@@ -396,12 +396,12 @@
         "weight": "400",
         "rect": {
           "x": 318,
-          "y": 890,
+          "y": 889.96875,
           "width": 170.546875,
           "height": 44.171875,
-          "top": 890,
+          "top": 889.96875,
           "right": 488.546875,
-          "bottom": 934.171875,
+          "bottom": 934.140625,
           "left": 318
         }
       },
@@ -410,20 +410,20 @@
         "family": "\"Inter Production\", sans-serif",
         "size": 28,
         "lineHeight": 28,
-        "clientWidth": 30,
-        "scrollWidth": 30,
+        "clientWidth": 26,
+        "scrollWidth": 26,
         "clientHeight": 28,
         "scrollHeight": 31,
         "style": "normal",
         "weight": "400",
         "rect": {
           "x": 318,
-          "y": 954,
-          "width": 30.0625,
+          "y": 953.96875,
+          "width": 26,
           "height": 28,
-          "top": 954,
-          "right": 348.0625,
-          "bottom": 982,
+          "top": 953.96875,
+          "right": 344,
+          "bottom": 981.96875,
           "left": 318
         }
       },
@@ -440,12 +440,12 @@
         "weight": "400",
         "rect": {
           "x": 318,
-          "y": 1001.828125,
+          "y": 1001.796875,
           "width": 173.140625,
           "height": 44.171875,
-          "top": 1001.828125,
+          "top": 1001.796875,
           "right": 491.140625,
-          "bottom": 1046,
+          "bottom": 1045.96875,
           "left": 318
         }
       },

@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "carouselId": "automation-day-carousel",
   "source": "carousels/automation-day-carousel.json",
-  "generatedAt": "2026-08-27T09:13:43.343Z",
+  "generatedAt": "2026-08-27T09:23:01.259Z",
   "passed": true,
   "checks": {
     "structuredCarouselValid": true,
@@ -38,7 +38,7 @@
     "url": "https://alexandersmoley.github.io/-/automation-day-carousel/contact-sheet.png",
     "width": 744,
     "height": 960,
-    "sha256": "02501ca87c3c9db09da92fc74a37c8b070661ec9d41c8fce62c88b8b01e4c120"
+    "sha256": "407c8b7cd75f6948390ad0d994f5e9acbfa1fab027811f08e172002e1ad4523f"
   },
   "slides": [
     {
@@ -47,7 +47,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-01.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-01.png",
-      "sha256": "34c8144db6b10521acb95122cec5c84ed724553d1f8019be4aae71d01ac0abcd",
+      "sha256": "8c3ee4cb05519da6ce8c6ca5da423c519ae5d67894ba55348439fbc80a9194c4",
       "qa": "slide-01.qa.json"
     },
     {
@@ -56,7 +56,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-02.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-02.png",
-      "sha256": "7acf6b0e4281e67b5ff9ebfcd669f0e42fe4a78e27f266be37ae9bca9f876287",
+      "sha256": "82fbcd38dbcc283ac7f9e7be97a3300cfe3e35437db4ef060dbaabe0769e81e0",
       "qa": "slide-02.qa.json"
     },
     {
@@ -65,7 +65,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-03.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-03.png",
-      "sha256": "3b3b2f25d8a5dd812cd22427d199c695f8bd81f5db6c52c4019769c00a21a94b",
+      "sha256": "12654c6bda8e789675f579c345a96cc985e7074fbd9f3f45b1fb74a98681127a",
       "qa": "slide-03.qa.json"
     },
     {
@@ -74,7 +74,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-04.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-04.png",
-      "sha256": "a854d57aad1f2d30db85f1bf011f11c0786100ace84d88f279edead272574881",
+      "sha256": "9d5ee374b51817a41d8bdd310e2e83b317a24ac374f86079d2ab421e0ce09e77",
       "qa": "slide-04.qa.json"
     },
     {
@@ -83,7 +83,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-05.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-05.png",
-      "sha256": "79c5380cb23fc51024c5980e6650d7584fb561484df1ead8f559e255247aa351",
+      "sha256": "bd48307a14b0a7205bead1b37b75c2a802ee5c7ff5b05358698d7427c035b1f8",
       "qa": "slide-05.qa.json"
     },
     {
@@ -92,7 +92,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-06.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-06.png",
-      "sha256": "e540482e2bb7158893a3b847f0034fe8494eff72fe50a99dfbf3af15ad3633e4",
+      "sha256": "32e7d8a594bff9c3458845c1fa396802b5ab045166bdf54d1fdc7ec5619ae356",
       "qa": "slide-06.qa.json"
     },
     {
@@ -101,7 +101,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-07.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-07.png",
-      "sha256": "d737b08f885f820ae71d7dd5bea9dc4a77988dfcedf398d6987573d89912c0b9",
+      "sha256": "a144d7a78bc879480651aef20d9238a39118f8b750ecd13e11d49d1260e1580c",
       "qa": "slide-07.qa.json"
     },
     {
@@ -110,7 +110,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-08.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-08.png",
-      "sha256": "81a16fd4d74bb58e934d14f53f32459529967419243f1a44a4cb1eb3619c94b7",
+      "sha256": "3e706a651f6c1b40c55c4b23e964442666ddde69bb19777adda260a51ef5c222",
       "qa": "slide-08.qa.json"
     },
     {
@@ -119,7 +119,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-09.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-09.png",
-      "sha256": "6ccb61cfa59ae950a9bbae136586f4ae3d3469311e83bbb9f4f127c9ece9f601",
+      "sha256": "b95a906b4b68e4bce6e1c1edc79ac2d205ec852acdd86ff543901da63fd94ecf",
       "qa": "slide-09.qa.json"
     }
   ]
