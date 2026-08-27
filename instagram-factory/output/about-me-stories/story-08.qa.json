@@ -4,7 +4,7 @@
   "storyId": "story-08",
   "role": "closing / promise",
   "layoutFamily": "story-closing-list",
-  "generatedAt": "2026-08-27T03:18:15.570Z",
+  "generatedAt": "2026-08-27T05:17:01.145Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/story-08.png",
     "width": 1080,
     "height": 1920,
-    "sha256": "c3e5e7da1fc406ed4d4c8a3fe42411f056d2f2e1241f5838af6e681d292de39e"
+    "sha256": "574daafff32848e52a56a3afbd39cc2b51263c61d1edb651f664f0524ded8cb0"
   },
   "browserQa": {
     "canvasRect": {
@@ -53,7 +53,6 @@
       "Здесь я буду:",
       "— строить контент-завод",
       "— разбирать коммуникации брендов",
-      "— учиться вести блог",
       "Посмотрим, что из этого выйдет."
     ],
     "type": [
@@ -99,30 +98,13 @@
         "weight": "400",
         "rect": {
           "x": 148,
-          "y": 858.46875,
+          "y": 857.96875,
           "width": 860,
           "height": 124.0625,
-          "top": 858.46875,
+          "top": 857.96875,
           "right": 1008,
-          "bottom": 982.53125,
+          "bottom": 982.03125,
           "left": 148
-        }
-      },
-      {
-        "className": "closing-line display-serif text-block",
-        "family": "\"Cormorant Garamond Production\", serif",
-        "size": 73,
-        "style": "normal",
-        "weight": "400",
-        "rect": {
-          "x": 72,
-          "y": 1165.6875,
-          "width": 569.484375,
-          "height": 68.609375,
-          "top": 1165.6875,
-          "right": 641.484375,
-          "bottom": 1234.296875,
-          "left": 72
         }
       },
       {

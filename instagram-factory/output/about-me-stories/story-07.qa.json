@@ -4,7 +4,7 @@
   "storyId": "story-07",
   "role": "human-layer",
   "layoutFamily": "story-photo-editorial",
-  "generatedAt": "2026-08-27T03:18:15.406Z",
+  "generatedAt": "2026-08-27T05:17:00.980Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/story-07.png",
     "width": 1080,
     "height": 1920,
-    "sha256": "4ae4815f05ef6b3d918aad0755410c6728d3f1e0349491a4e7c70eafa17a9662"
+    "sha256": "0ceb8fec9f1381fe66332d40e24e985a0f6120028c35b3de5d17e64fff3bf3b2"
   },
   "browserQa": {
     "canvasRect": {
@@ -51,9 +51,9 @@
     },
     "visibleText": [
       "Но превращать блог",
-      "в корпоративный канал про ИИ",
+      "в типичный канал про ИИ",
       "я тоже не собираюсь.",
-      "семья / работа из дома / зал / дизайн / путешествия"
+      "семья / удалёнка / зал / дизайн / путешествия"
     ],
     "type": [
       {

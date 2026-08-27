@@ -4,7 +4,7 @@
   "storyId": "story-04",
   "role": "unexpected-turn",
   "layoutFamily": "story-statement",
-  "generatedAt": "2026-08-27T03:18:10.368Z",
+  "generatedAt": "2026-08-27T05:16:56.228Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/story-04.png",
     "width": 1080,
     "height": 1920,
-    "sha256": "488122daa49ef173ceb55e2e781534a64b0c742ab32cca6365e4740b60655107"
+    "sha256": "e40fd02dda768d59b232d405014626f1e6e5db7e7a742d01f56c2358116491ed"
   },
   "browserQa": {
     "canvasRect": {
@@ -51,7 +51,7 @@
     },
     "visibleText": [
       "А ещё я занимаюсь выборами.",
-      "Пишу агитацию и делаю материалы",
+      "Создаю агитматериалы",
       "в том числе для кандидатов в президенты."
     ],
     "type": [
