@@ -12,6 +12,11 @@
 - Stories QA gates passed: 11/11
 - Stories contact sheet: [output/about-me-stories/contact-sheet.png](https://alexandersmoley.github.io/-/about-me-stories/contact-sheet.png)
 
+- Approved carousel slides rendered: 9
+- Carousel canvas: 1080×1440
+- Carousel QA gates passed: 16/16
+- Carousel contact sheet: [output/automation-day-carousel/contact-sheet.png](https://alexandersmoley.github.io/-/automation-day-carousel/contact-sheet.png)
+
 ## pinned-intro
 
 - Layout family: `human-to-system`

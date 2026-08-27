@@ -8,6 +8,7 @@ on:
       - "instagram-factory/content/**"
       - "instagram-factory/posts/**"
       - "instagram-factory/stories/**"
+      - "instagram-factory/carousels/**"
       - "instagram-factory/renderer/**"
       - "instagram-factory/schemas/**"
       - "instagram-factory/scripts/**"

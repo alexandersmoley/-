@@ -1,0 +1,152 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "automation-day-carousel",
+  "slideId": "slide-06",
+  "layoutFamily": "process-diagram-carousel",
+  "mode": "breakpoint",
+  "generatedAt": "2026-08-27T08:27:09.260Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "mobileReadable": true,
+    "textInsideSafeZone": true,
+    "approvedColorsOnly": true,
+    "noPhotography": true,
+    "functionalArrowsOnly": true,
+    "noEmoji": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/automation-day-carousel/slide-06.png",
+    "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-06.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "2941e6bee7138b75edadb02840b1a624807e6d9f6998b92958772327484bde03"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 72,
+      "top": 72,
+      "right": 1008,
+      "bottom": 1368
+    },
+    "visibleText": [
+      "Потом я поправил текст.",
+      "И система снова остановилась.",
+      "Но на этот раз — правильно: она увидела, что исходник уже изменился, а макет собирается по старой версии.",
+      "Старый вариант в публикацию не ушёл.",
+      "И это, пожалуй, был первый момент, когда завод повёл себя как завод, а не как набор случайных инструментов."
+    ],
+    "type": [
+      {
+        "className": "qa-opening-line display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 91,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 82,
+          "width": 900,
+          "height": 81.890625,
+          "top": 82,
+          "right": 972,
+          "bottom": 163.890625,
+          "left": 72
+        }
+      },
+      {
+        "className": "qa-opening-line display-serif qa-stopped text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 91,
+        "style": "italic",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 195.890625,
+          "width": 900,
+          "height": 163.78125,
+          "top": 195.890625,
+          "right": 972,
+          "bottom": 359.671875,
+          "left": 72
+        }
+      },
+      {
+        "className": "qa-explanation text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 36,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 290,
+          "y": 509,
+          "width": 656,
+          "height": 131.71875,
+          "top": 509,
+          "right": 946,
+          "bottom": 640.71875,
+          "left": 290
+        }
+      },
+      {
+        "className": "qa-result display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 75,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 835,
+          "width": 780,
+          "height": 141,
+          "top": 835,
+          "right": 852,
+          "bottom": 976,
+          "left": 72
+        }
+      },
+      {
+        "className": "qa-principle text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 35,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 228,
+          "y": 1085,
+          "width": 780,
+          "height": 169.0625,
+          "top": 1085,
+          "right": 1008,
+          "bottom": 1254.0625,
+          "left": 228
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "arrowCount": 0,
+    "svgCount": 0
+  }
+}

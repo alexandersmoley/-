@@ -8,6 +8,7 @@ const outputDirectory = path.join(factoryRoot, 'output');
 const summaryPath = path.join(outputDirectory, 'qa-summary.json');
 const summary = JSON.parse(await fs.readFile(summaryPath, 'utf8'));
 const storySummaryPath = path.join(outputDirectory, 'about-me-stories', 'qa-summary.json');
+const carouselSummaryPath = path.join(outputDirectory, 'automation-day-carousel', 'qa-summary.json');
 
 if (!summary.passed || summary.posts.length === 0) {
   throw new Error('Pages build requires a successful renderer QA summary with at least one post.');
@@ -32,6 +33,18 @@ try {
   if (error.code !== 'ENOENT') throw error;
 }
 
+let carouselSummary = null;
+try {
+  carouselSummary = JSON.parse(await fs.readFile(carouselSummaryPath, 'utf8'));
+  if (!carouselSummary.passed || carouselSummary.slides.length !== 9) {
+    throw new Error('Pages build requires all nine carousel slides to pass QA.');
+  }
+  await fs.access(path.join(outputDirectory, 'automation-day-carousel', 'contact-sheet.png'));
+  for (const slide of carouselSummary.slides) await fs.access(path.join(factoryRoot, slide.png));
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+}
+
 const cards = summary.posts.map((post) => `
   <article>
     <img src="./${post.id}.png" width="270" height="360" alt="${post.id}">
@@ -51,6 +64,15 @@ const storySection = storySummary ? `
     <p><a href="./about-me-stories/series.qa.json">Stories QA report</a></p>
   </section>` : '';
 
+const carouselSection = carouselSummary ? `
+  <section class="carousel-preview">
+    <h2>Automation day · Carousel</h2>
+    <a class="carousel-contact-sheet" href="./automation-day-carousel/contact-sheet.png"><img src="./automation-day-carousel/contact-sheet.png" width="372" height="480" alt="automation-day-carousel contact sheet"></a>
+    <div class="carousel-grid-preview">${carouselSummary.slides.map((slide) => `
+      <a href="./automation-day-carousel/${slide.id}.png"><img src="./automation-day-carousel/${slide.id}.png" width="135" height="180" alt="${slide.id}"></a>`).join('')}</div>
+    <p><a href="./automation-day-carousel/carousel.qa.json">Carousel QA report</a></p>
+  </section>` : '';
+
 const html = `<!doctype html>
 <html lang="en">
 <head>
@@ -60,10 +82,10 @@ const html = `<!doctype html>
   <style>
     body{margin:0;padding:48px;font:16px/1.5 system-ui,sans-serif;color:#101010;background:#f4f1e9}
     main{max-width:1080px;margin:auto}article{display:grid;grid-template-columns:270px 1fr;gap:32px;align-items:start;margin:32px 0}
-    article img{display:block;width:270px;height:360px;object-fit:cover}.stories{margin-top:72px}.contact-sheet img{display:block;width:630px;height:534px}.story-grid{display:grid;grid-template-columns:repeat(4,135px);gap:24px;margin-top:32px}.story-grid img{display:block;width:135px;height:240px;object-fit:cover}a{color:#1546e8}code{word-break:break-all}
+    article img{display:block;width:270px;height:360px;object-fit:cover}.stories,.carousel-preview{margin-top:72px}.contact-sheet img{display:block;width:630px;height:534px}.story-grid{display:grid;grid-template-columns:repeat(4,135px);gap:24px;margin-top:32px}.story-grid img{display:block;width:135px;height:240px;object-fit:cover}.carousel-contact-sheet img{display:block;width:372px;height:480px}.carousel-grid-preview{display:grid;grid-template-columns:repeat(5,135px);gap:24px;margin-top:32px}.carousel-grid-preview img{display:block;width:135px;height:180px;object-fit:cover}a{color:#1546e8}code{word-break:break-all}
   </style>
 </head>
-<body><main><h1>Rendered Instagram posts</h1>${cards}${storySection}<p><a href="./qa-summary.json">Pipeline QA summary</a> · <a href="./pipeline-report.md">Human-readable report</a></p></main></body>
+<body><main><h1>Rendered Instagram posts</h1>${cards}${storySection}${carouselSection}<p><a href="./qa-summary.json">Pipeline QA summary</a> · <a href="./pipeline-report.md">Human-readable report</a></p></main></body>
 </html>`;
 
 const reportMarkdown = `# Instagram renderer pipeline report
@@ -79,6 +101,11 @@ ${storySummary ? `- Approved Stories rendered: ${storySummary.stories.length}
 - Stories canvas: 1080×1920
 - Stories QA gates passed: ${Object.values(storySummary.checks).filter(Boolean).length}/${Object.keys(storySummary.checks).length}
 - Stories contact sheet: [${storySummary.contactSheet.path}](${storySummary.contactSheet.url})` : '- Stories: no approved series found'}
+
+${carouselSummary ? `- Approved carousel slides rendered: ${carouselSummary.slides.length}
+- Carousel canvas: 1080×1440
+- Carousel QA gates passed: ${Object.values(carouselSummary.checks).filter(Boolean).length}/${Object.keys(carouselSummary.checks).length}
+- Carousel contact sheet: [${carouselSummary.contactSheet.path}](${carouselSummary.contactSheet.url})` : '- Carousels: no approved series found'}
 
 ${reports.map((report) => `## ${report.postId}
 

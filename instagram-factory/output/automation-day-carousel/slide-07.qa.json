@@ -1,0 +1,368 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "automation-day-carousel",
+  "slideId": "slide-07",
+  "layoutFamily": "process-diagram-carousel",
+  "mode": "pipeline",
+  "generatedAt": "2026-08-27T08:27:09.687Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "mobileReadable": true,
+    "textInsideSafeZone": true,
+    "approvedColorsOnly": true,
+    "noPhotography": true,
+    "functionalArrowsOnly": true,
+    "noEmoji": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/automation-day-carousel/slide-07.png",
+    "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-07.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "7c0e4ca0a1454ac038e0351b5b51404d77b4c34c94e75ca3b6bfbe99402b1a31"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 72,
+      "top": 72,
+      "right": 1008,
+      "bottom": 1368
+    },
+    "visibleText": [
+      "В итоге схема стала такой:",
+      "идея",
+      "↓",
+      "арт-дирекшен",
+      "↓",
+      "контент в GitHub",
+      "↓",
+      "renderer",
+      "↓",
+      "автоматический QA",
+      "↓",
+      "публичный PNG",
+      "↓",
+      "Metricool",
+      "↓",
+      "Instagram",
+      "А Codex нужен не для каждого поста, а только чтобы строить и улучшать саму систему."
+    ],
+    "type": [
+      {
+        "className": "architecture-intro text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 35,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 72,
+          "width": 520,
+          "height": 35,
+          "top": 72,
+          "right": 592,
+          "bottom": 107,
+          "left": 72
+        }
+      },
+      {
+        "className": "architecture-stage display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 47,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 174,
+          "width": 77.75,
+          "height": 47,
+          "top": 174,
+          "right": 363.75,
+          "bottom": 221,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-arrow functional-arrow text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 242.421875,
+          "width": 30.0625,
+          "height": 28,
+          "top": 242.421875,
+          "right": 316.0625,
+          "bottom": 270.421875,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-stage display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 47,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 291.859375,
+          "width": 247.1875,
+          "height": 47,
+          "top": 291.859375,
+          "right": 533.1875,
+          "bottom": 338.859375,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-arrow functional-arrow text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 360.28125,
+          "width": 30.0625,
+          "height": 28,
+          "top": 360.28125,
+          "right": 316.0625,
+          "bottom": 388.28125,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-stage display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 47,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 409.71875,
+          "width": 307.953125,
+          "height": 47,
+          "top": 409.71875,
+          "right": 593.953125,
+          "bottom": 456.71875,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-arrow functional-arrow text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 478.140625,
+          "width": 30.0625,
+          "height": 28,
+          "top": 478.140625,
+          "right": 316.0625,
+          "bottom": 506.140625,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-stage display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 47,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 527.578125,
+          "width": 143.390625,
+          "height": 47,
+          "top": 527.578125,
+          "right": 429.390625,
+          "bottom": 574.578125,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-arrow functional-arrow text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 596,
+          "width": 30.0625,
+          "height": 28,
+          "top": 596,
+          "right": 316.0625,
+          "bottom": 624,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-stage display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 47,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 645.421875,
+          "width": 351.4375,
+          "height": 47,
+          "top": 645.421875,
+          "right": 637.4375,
+          "bottom": 692.421875,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-arrow functional-arrow text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 713.859375,
+          "width": 30.0625,
+          "height": 28,
+          "top": 713.859375,
+          "right": 316.0625,
+          "bottom": 741.859375,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-stage display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 47,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 763.28125,
+          "width": 292.984375,
+          "height": 47,
+          "top": 763.28125,
+          "right": 578.984375,
+          "bottom": 810.28125,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-arrow functional-arrow text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 831.71875,
+          "width": 30.0625,
+          "height": 28,
+          "top": 831.71875,
+          "right": 316.0625,
+          "bottom": 859.71875,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-stage display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 47,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 881.140625,
+          "width": 170.546875,
+          "height": 47,
+          "top": 881.140625,
+          "right": 456.546875,
+          "bottom": 928.140625,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-arrow functional-arrow text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 949.578125,
+          "width": 30.0625,
+          "height": 28,
+          "top": 949.578125,
+          "right": 316.0625,
+          "bottom": 977.578125,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-stage display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 47,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 999,
+          "width": 173.140625,
+          "height": 47,
+          "top": 999,
+          "right": 459.140625,
+          "bottom": 1046,
+          "left": 286
+        }
+      },
+      {
+        "className": "architecture-conclusion-line text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 34,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 286,
+          "y": 1170,
+          "width": 664,
+          "height": 124.40625,
+          "top": 1170,
+          "right": 950,
+          "bottom": 1294.40625,
+          "left": 286
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "arrowCount": 7,
+    "svgCount": 1
+  }
+}

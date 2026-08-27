@@ -21,6 +21,8 @@ Canva может использоваться как дополнительны�
 - `schemas/post.schema.json` — исполняемый контракт structured post.
 - `stories/*.json` — машиночитаемые серии Stories, точный текст, safe zones, asset checksum и layout family.
 - `schemas/story-series.schema.json` — исполняемый контракт серии Stories.
+- `carousels/*.json` — машиночитаемые карусели, exact slide copy, caption checksum и композиционные режимы.
+- `schemas/carousel-series.schema.json` — исполняемый контракт карусели.
 - `assets/` — фотографии/иллюстрации.
 - `renderer/` — код дизайн-системы и рендера.
 
@@ -81,6 +83,8 @@ Renderer должен оставаться registry-based и расширять�
 7. `carousel-editorial` — система последовательных слайдов с общей сеткой, но меняющейся композицией.
 
 Для Stories registry включает самостоятельные семейства: `story-type-intro`, `story-type-list`, `story-proof-list`, `story-statement`, `story-process-diagram`, `story-manifesto`, `story-photo-editorial`, `story-closing-list`. Они используют общие токены, но не являются восемью перестановками одного шаблона.
+
+Для process case studies registry включает reusable family `process-diagram-carousel` с режимами `statement`, `pipeline`, `breakpoint`, `criteria-list`, `closing`. Режимы меняют композицию, но сохраняют общую типографику, палитру и process-грамматику.
 
 Каждое семейство должно иметь параметры вариативности: crop, alignment, text scale, blue-plane proportion, whitespace ratio, grid visibility, image position. Эти параметры должны иметь ограниченные art-directed диапазоны, а не случайные значения.
 

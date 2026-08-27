@@ -1,0 +1,244 @@
+@font-face {
+  font-family: "Inter Production";
+  src: url("__INTER_FONT_URL__") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond Production";
+  src: url("__CORMORANT_REGULAR_URL__") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond Production";
+  src: url("__CORMORANT_ITALIC_URL__") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: block;
+}
+
+:root { --canvas-width: 1080px; --canvas-height: 1440px; }
+* { box-sizing: border-box; }
+html, body {
+  width: var(--canvas-width);
+  height: var(--canvas-height);
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper);
+}
+body { -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+.carousel-slide, .composition {
+  position: relative;
+  width: var(--canvas-width);
+  height: var(--canvas-height);
+  overflow: hidden;
+}
+.carousel-slide { isolation: isolate; color: var(--ink); background: var(--paper); }
+.composition { z-index: 1; }
+.text-block { position: relative; z-index: 4; }
+.display-serif { font-family: "Cormorant Garamond Production", serif; font-weight: 400; }
+.text-sans { font-family: "Inter Production", sans-serif; font-weight: 400; }
+.blue-italic { color: var(--blue); font-style: italic; }
+.carousel-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 1080px;
+  height: 1440px;
+  fill: none;
+  stroke: var(--grid);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+.grid-soft { opacity: .72; }
+.grid-strong { opacity: 1; }
+
+/* 01 — promise */
+.cover-composition { background: var(--paper); }
+.cover-head { position: absolute; left: 72px; top: 130px; width: 936px; z-index: 3; }
+.cover-line { font-size: 125px; line-height: .82; letter-spacing: -.062em; white-space: nowrap; }
+.cover-line + .cover-line { margin-top: 24px; }
+.cover-head .cover-line:nth-child(2) { margin-left: 78px; font-size: 104px; }
+.cover-head .cover-accent { margin-top: 50px; font-size: 190px; color: var(--blue); font-style: italic; }
+.cover-support {
+  position: absolute;
+  z-index: 3;
+  left: 72px;
+  top: 1050px;
+  width: 936px;
+  min-height: 245px;
+  padding: 58px 78px;
+  color: var(--paper);
+  background: var(--blue);
+}
+.cover-support-line { width: 660px; font-size: 42px; line-height: 1.18; letter-spacing: -.032em; }
+
+/* 02 — first clean pipeline */
+.simple-pipeline-composition { background: var(--paper); }
+.simple-pipeline-intro {
+  position: absolute; left: 72px; top: 105px; width: 790px;
+  font-size: 45px; line-height: 1.16; letter-spacing: -.035em;
+}
+.simple-pipeline-row {
+  position: absolute; z-index: 3; left: 72px; top: 440px; width: 936px; min-height: 245px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 45px 30px; color: var(--paper); background: var(--blue);
+}
+.pipeline-stage { font-size: 45px; line-height: 1; letter-spacing: -.035em; white-space: nowrap; }
+.pipeline-arrow { font-size: 34px; line-height: 1; color: var(--paper); }
+.simple-pipeline-foot {
+  position: absolute; left: 228px; top: 850px; width: 780px;
+  font-size: 66px; line-height: .98; letter-spacing: -.046em;
+}
+
+/* 03 — criteria, not bullets */
+.criteria-composition { color: var(--paper); background: var(--blue); }
+.criteria-head { position: absolute; left: 72px; top: 88px; width: 936px; }
+.criteria-title { font-size: 118px; line-height: .87; letter-spacing: -.058em; }
+.criteria-context { margin-top: 48px; width: 840px; font-size: 34px; line-height: 1.23; letter-spacing: -.028em; }
+.criteria-list {
+  position: absolute; left: 72px; top: 535px; width: 936px; height: 830px;
+  padding: 12px 60px; color: var(--ink); background: var(--paper);
+}
+.criteria-item {
+  min-height: 155px; display: flex; align-items: center;
+  border-bottom: 1px solid var(--blue);
+  font-size: 52px; line-height: .98; letter-spacing: -.04em;
+}
+.criteria-item:last-child { border-bottom: 0; color: var(--blue); font-style: italic; }
+.criteria-item:nth-child(even) { padding-left: 78px; }
+
+/* 04 — dependency break */
+.codex-breakpoint-composition { background: var(--paper); }
+.breakpoint-title {
+  position: absolute; left: 72px; top: 100px; width: 900px;
+  font-size: 132px; line-height: .86; letter-spacing: -.06em;
+}
+.breakpoint-kicker {
+  position: absolute; left: 72px; top: 365px; width: 600px;
+  font-size: 34px; line-height: 1.15; letter-spacing: -.028em;
+}
+.breakpoint-gap {
+  position: absolute; left: 72px; top: 535px; width: 936px; height: 42px;
+  border-top: 1px solid var(--blue); border-bottom: 1px solid var(--blue);
+  background: var(--paper);
+}
+.breakpoint-gap::after {
+  content: ""; position: absolute; left: 455px; top: -2px; width: 86px; height: 44px; background: var(--paper);
+}
+.breakpoint-core { position: absolute; left: 228px; top: 660px; width: 780px; }
+.breakpoint-core-line { font-size: 79px; line-height: .94; letter-spacing: -.048em; }
+.breakpoint-core-line + .breakpoint-core-line { margin-top: 34px; }
+.breakpoint-core-accent { color: var(--blue); font-style: italic; }
+.breakpoint-conclusion {
+  position: absolute; left: 72px; top: 1135px; width: 780px;
+  font-size: 37px; line-height: 1.2; letter-spacing: -.032em;
+}
+
+/* 05 — ready is not published */
+.publication-breakpoint-composition { background: var(--paper); }
+.publication-title {
+  position: absolute; left: 72px; top: 88px; width: 890px;
+  font-size: 84px; line-height: .92; letter-spacing: -.05em;
+}
+.publication-fact {
+  position: absolute; left: 228px; top: 375px; width: 780px;
+  font-size: 38px; line-height: 1.23; letter-spacing: -.032em;
+}
+.publication-fact .blue-italic { font: italic 400 92px/.6 "Cormorant Garamond Production", serif; }
+.publication-gap {
+  position: absolute; z-index: 3; left: 72px; top: 700px; width: 936px; height: 285px;
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+}
+.publication-side { font-size: 61px; line-height: .96; letter-spacing: -.045em; }
+.publication-ready { padding-right: 65px; }
+.publication-live { padding-left: 85px; color: var(--blue); font-style: italic; }
+.broken-connection {
+  position: absolute; left: 390px; top: 141px; width: 156px; height: 1px; background: var(--blue);
+}
+.broken-connection::after { content: ""; position: absolute; left: 66px; top: -10px; width: 24px; height: 21px; background: var(--paper); }
+.publication-layer {
+  position: absolute; left: 72px; top: 1115px; width: 800px;
+  font-size: 39px; line-height: 1.22; letter-spacing: -.032em;
+}
+
+/* 06 — stop as a gate */
+.qa-breakpoint-composition { background: var(--paper); }
+.qa-opening { position: absolute; left: 72px; top: 82px; width: 900px; }
+.qa-opening-line { font-size: 91px; line-height: .9; letter-spacing: -.052em; }
+.qa-opening-line + .qa-opening-line { margin-top: 32px; }
+.qa-stopped { color: var(--blue); font-style: italic; }
+.qa-gate {
+  position: absolute; z-index: 3; left: 228px; top: 455px; width: 780px; min-height: 280px;
+  padding: 54px 62px; color: var(--paper); background: var(--blue);
+}
+.qa-explanation { font-size: 36px; line-height: 1.22; letter-spacing: -.03em; }
+.qa-result {
+  position: absolute; left: 72px; top: 835px; width: 780px;
+  font-size: 75px; line-height: .94; letter-spacing: -.048em;
+}
+.qa-principle {
+  position: absolute; left: 228px; top: 1085px; width: 780px;
+  padding-top: 40px; border-top: 1px solid var(--blue);
+  font-size: 35px; line-height: 1.22; letter-spacing: -.03em;
+}
+
+/* 07 — production architecture */
+.architecture-composition { color: var(--paper); background: var(--blue); }
+.architecture-intro {
+  position: absolute; left: 72px; top: 72px; width: 520px;
+  font-size: 35px; line-height: 1; letter-spacing: -.03em;
+}
+.architecture-flow {
+  position: absolute; z-index: 3; left: 228px; top: 145px; width: 780px; height: 930px;
+  display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;
+  padding: 28px 58px; border-top: 1px solid var(--paper); border-bottom: 1px solid var(--paper);
+}
+.architecture-stage { font-size: 47px; line-height: 1; letter-spacing: -.035em; white-space: nowrap; }
+.architecture-arrow { font-size: 28px; line-height: 1; color: var(--paper); padding-left: 12px; }
+.architecture-conclusion {
+  position: absolute; z-index: 3; left: 228px; top: 1125px; width: 780px; min-height: 240px;
+  padding: 45px 58px; color: var(--ink); background: var(--paper);
+}
+.architecture-conclusion-line { font-size: 34px; line-height: 1.22; letter-spacing: -.03em; }
+
+/* 08 — principle */
+.principle-composition { background: var(--paper); }
+.principle-kicker {
+  position: absolute; left: 72px; top: 92px; width: 450px;
+  font-size: 34px; line-height: 1; letter-spacing: -.03em;
+}
+.principle-title {
+  position: absolute; left: 72px; top: 225px; width: 936px;
+  font-size: 111px; line-height: .84; letter-spacing: -.058em;
+}
+.principle-support {
+  position: absolute; z-index: 3; left: 228px; top: 800px; width: 780px; min-height: 505px;
+  padding: 58px 62px; color: var(--paper); background: var(--blue);
+}
+.principle-support-short { width: 560px; font-size: 34px; line-height: 1.2; letter-spacing: -.03em; }
+.principle-support-long { margin-top: 85px; font-size: 52px; line-height: .99; letter-spacing: -.04em; }
+
+/* 09 — quiet ending */
+.carousel-closing-composition { background: var(--paper); }
+.closing-start {
+  position: absolute; left: 72px; top: 95px; width: 700px;
+  font-size: 39px; line-height: 1.2; letter-spacing: -.032em;
+}
+.closing-pause {
+  position: absolute; left: 228px; top: 345px; width: 780px;
+  font-size: 91px; line-height: .9; letter-spacing: -.052em;
+}
+.closing-divider {
+  position: absolute; left: 72px; top: 600px; width: 936px; height: 1px; background: var(--blue);
+}
+.closing-end {
+  position: absolute; left: 72px; top: 700px; width: 936px;
+  font-size: 77px; line-height: .93; letter-spacing: -.047em;
+}
+.closing-muted { color: var(--ink); }

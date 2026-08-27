@@ -1,0 +1,116 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "automation-day-carousel",
+  "slideId": "slide-09",
+  "layoutFamily": "process-diagram-carousel",
+  "mode": "closing",
+  "generatedAt": "2026-08-27T08:27:10.539Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "mobileReadable": true,
+    "textInsideSafeZone": true,
+    "approvedColorsOnly": true,
+    "noPhotography": true,
+    "functionalArrowsOnly": true,
+    "noEmoji": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/automation-day-carousel/slide-09.png",
+    "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-09.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "720af06524a4c89315859045cfd397db90bd3f8ef22bc305cd7ae379fa7a7738"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 72,
+      "top": 72,
+      "right": 1008,
+      "bottom": 1368
+    },
+    "visibleText": [
+      "Вчера я почти целый день автоматизировал один пост.",
+      "Звучит не очень эффективно.",
+      "Но именно после этого у меня впервые начал появляться не набор нейросетей, а настоящий контент-завод."
+    ],
+    "type": [
+      {
+        "className": "closing-start text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 39,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 95,
+          "width": 700,
+          "height": 93.59375,
+          "top": 95,
+          "right": 772,
+          "bottom": 188.59375,
+          "left": 72
+        }
+      },
+      {
+        "className": "closing-pause display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 91,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 228,
+          "y": 345,
+          "width": 780,
+          "height": 163.78125,
+          "top": 345,
+          "right": 1008,
+          "bottom": 508.78125,
+          "left": 228
+        }
+      },
+      {
+        "className": "closing-end display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 77,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 700,
+          "width": 936,
+          "height": 286.4375,
+          "top": 700,
+          "right": 1008,
+          "bottom": 986.4375,
+          "left": 72
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "arrowCount": 0,
+    "svgCount": 0
+  }
+}

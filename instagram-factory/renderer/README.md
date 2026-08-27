@@ -12,7 +12,7 @@ pnpm exec playwright install chromium
 pnpm run pipeline
 ```
 
-The command renders every `posts/*.json` and `stories/*.json` file whose status is exactly `approved-for-render`.
+The command renders every `posts/*.json`, `stories/*.json` and `carousels/*.json` file whose status is exactly `approved-for-render`.
 
 ## Source model
 
@@ -20,8 +20,11 @@ The command renders every `posts/*.json` and `stories/*.json` file whose status 
 - `schemas/post.schema.json` — machine-enforced structured-post contract.
 - `stories/*.json` — structured 1080×1920 story series, safe zones, exact text and approved assets.
 - `schemas/story-series.schema.json` — machine-enforced story-series contract.
+- `carousels/*.json` — structured 1080×1440 carousel series with exact slide copy, caption checksum and render status.
+- `schemas/carousel-series.schema.json` — machine-enforced carousel contract.
 - `renderer/families/` — reusable layout families. Post-specific copy does not live here.
 - `renderer/story-families/` — registry of compositionally distinct story layout families.
+- `renderer/carousel-families/` — reusable carousel families with art-directed composition modes.
 - `assets/` — approved source photography. Each post pins a SHA-256 checksum.
 - `content/*.md` — caption source. Renderer records its checksum and never writes to it.
 - `output/` — PNG, per-post QA report, pipeline summary and Pages index.
@@ -64,6 +67,12 @@ Each family owns a distinct composition while sharing the canonical paper, ink, 
 
 Story QA fails the build for incorrect dimensions, overflow, text outside the safe zone, substituted or unapproved fonts, source-text mismatch, unapproved colors/effects/elements, incorrect source photography or an overlay intersecting the protected face/figure zones.
 
+## Process diagram carousel
+
+`process-diagram-carousel` is a reusable 1080×1440 family for editorial process case studies. It supports five controlled modes — `statement`, `pipeline`, `breakpoint`, `criteria-list` and `closing` — while keeping one visual grammar across the sequence.
+
+The first benchmark is `automation-day-carousel`: nine slides, no photography, functional arrows only on pipeline slides, exact copy and caption verified directly against `content/automation-day-carousel.md`. The build produces nine PNGs, individual QA reports, a carousel summary and a contact sheet under `output/automation-day-carousel/`.
+
 ## HTTPS output
 
 After successful render and QA, the GitHub Action commits generated PNG files and the output index back to `output/` on the default branch. This keeps the repository-native raw HTTPS URL current without requiring GitHub Pages.
@@ -80,6 +89,12 @@ Story series use:
 
 ```text
 https://alexandersmoley.github.io/-/<series-id>/<story-id>.png
+```
+
+Carousel slides use the same nested URL pattern:
+
+```text
+https://alexandersmoley.github.io/-/<carousel-id>/<slide-id>.png
 ```
 
 For this benchmark:

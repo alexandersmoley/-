@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://alexandersmoley.github.io/-/schemas/carousel-series.schema.json",
+  "title": "Alex Smoley structured Instagram carousel",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "platform",
+    "format",
+    "status",
+    "publish",
+    "canvas",
+    "safeZone",
+    "contentSource",
+    "captionSha256",
+    "designTokens",
+    "layoutFamily",
+    "caption",
+    "slides"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "id": { "const": "automation-day-carousel" },
+    "platform": { "const": "instagram" },
+    "format": { "const": "carousel-3x4" },
+    "status": { "enum": ["draft", "approved-for-render", "rendered"] },
+    "publish": { "const": false },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "const": 1080 },
+        "height": { "const": 1440 }
+      }
+    },
+    "safeZone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["top", "right", "bottom", "left"],
+      "properties": {
+        "top": { "const": 72 },
+        "right": { "const": 72 },
+        "bottom": { "const": 72 },
+        "left": { "const": 72 }
+      }
+    },
+    "contentSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "const": "content/automation-day-carousel.md" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "captionSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "designTokens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ink", "paper", "blue", "grid"],
+      "properties": {
+        "ink": { "const": "#101010" },
+        "paper": { "const": "#f4f1e9" },
+        "blue": { "const": "#1546e8" },
+        "grid": { "const": "rgba(21, 70, 232, 0.105)" }
+      }
+    },
+    "layoutFamily": { "const": "process-diagram-carousel" },
+    "caption": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "slides": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": { "$ref": "#/$defs/slide" }
+    }
+  },
+  "$defs": {
+    "slide": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "mode", "text"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^slide-0[1-9]$" },
+        "mode": { "enum": ["statement", "pipeline", "breakpoint", "criteria-list", "closing"] },
+        "text": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 20,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}
