@@ -1,6 +1,6 @@
 {
   "pipelineVersion": 1,
-  "generatedAt": "2026-08-26T17:12:57.268Z",
+  "generatedAt": "2026-08-27T03:10:33.393Z",
   "passed": true,
   "approvedPostCount": 1,
   "pagesBaseUrl": "https://alexandersmoley.github.io/-/",
@@ -12,7 +12,7 @@
       "passed": true,
       "png": "output/pinned-intro.png",
       "url": "https://alexandersmoley.github.io/-/pinned-intro.png",
-      "sha256": "a132f3ca55413e9aa1f33be9a8b190cef9208fa80f6e58020fe014a0a9592695",
+      "sha256": "f0ff48d5b9bb072cbbd8fa834324640ee5fd083203c7c3b7da90e8bc5fe41c9d",
       "qa": "pinned-intro.qa.json"
     }
   ]

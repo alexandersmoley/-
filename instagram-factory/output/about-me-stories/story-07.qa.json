@@ -4,7 +4,7 @@
   "storyId": "story-07",
   "role": "human-layer",
   "layoutFamily": "story-photo-editorial",
-  "generatedAt": "2026-08-27T02:58:20.230Z",
+  "generatedAt": "2026-08-27T03:10:39.300Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/story-07.png",
     "width": 1080,
     "height": 1920,
-    "sha256": "5aee2a2c521738ee64d80629f056b2305cece5fc77afb4400b459d44946530d7"
+    "sha256": "4ae4815f05ef6b3d918aad0755410c6728d3f1e0349491a4e7c70eafa17a9662"
   },
   "browserQa": {
     "canvasRect": {

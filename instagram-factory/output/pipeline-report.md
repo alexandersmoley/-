@@ -18,7 +18,7 @@
 - Variant: `benchmark-a`
 - Benchmark: yes
 - PNG: [output/pinned-intro.png](https://alexandersmoley.github.io/-/pinned-intro.png)
-- SHA-256: `a132f3ca55413e9aa1f33be9a8b190cef9208fa80f6e58020fe014a0a9592695`
+- SHA-256: `f0ff48d5b9bb072cbbd8fa834324640ee5fd083203c7c3b7da90e8bc5fe41c9d`
 - Source photo Canva asset: `MAHTZduqLyI`
 - Caption source unchanged: yes
 - QA gates passed: 21/21

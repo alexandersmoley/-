@@ -4,7 +4,7 @@
   "storyId": "story-08",
   "role": "closing / promise",
   "layoutFamily": "story-closing-list",
-  "generatedAt": "2026-08-27T02:58:20.516Z",
+  "generatedAt": "2026-08-27T03:10:39.467Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/story-08.png",
     "width": 1080,
     "height": 1920,
-    "sha256": "bd04e7e5a1058f0a609877e2bba58bf2239f194432124e9a7a96a248323df175"
+    "sha256": "c3e5e7da1fc406ed4d4c8a3fe42411f056d2f2e1241f5838af6e681d292de39e"
   },
   "browserQa": {
     "canvasRect": {

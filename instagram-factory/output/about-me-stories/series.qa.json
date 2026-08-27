@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "seriesId": "about-me-stories",
   "source": "stories/about-me-stories.json",
-  "generatedAt": "2026-08-27T02:58:20.597Z",
+  "generatedAt": "2026-08-27T03:10:39.669Z",
   "passed": true,
   "checks": {
     "structuredSeriesValid": true,
@@ -29,7 +29,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/contact-sheet.png",
     "width": 1260,
     "height": 1068,
-    "sha256": "8465e52ddb20c186babd82f583fde5db70ae7c0d80a8c1f49b37c3374b255525"
+    "sha256": "52cc7247817e1b55d2833b2f2a4828f92a68534a1a8cd6a73dbd37d81059c502"
   },
   "stories": [
     {
@@ -38,7 +38,7 @@
       "passed": true,
       "png": "output/about-me-stories/story-01.png",
       "url": "https://alexandersmoley.github.io/-/about-me-stories/story-01.png",
-      "sha256": "45a872989433da059e18517742d838adc91afdab07a726dc69ee1554d188d246",
+      "sha256": "88a86069b8f7dc8a407e54b2d0c13ed9e0801418013678b4e904a82814c6febe",
       "qa": "story-01.qa.json"
     },
     {
@@ -47,7 +47,7 @@
       "passed": true,
       "png": "output/about-me-stories/story-02.png",
       "url": "https://alexandersmoley.github.io/-/about-me-stories/story-02.png",
-      "sha256": "902091813f1a121a0fc1450fe7033f54a97ad0d27144c660a3deee0930bf5a77",
+      "sha256": "ad54c38babb616b0c18dc94b6842ad7f62978dfd97fc8d347a8341d1103e8eef",
       "qa": "story-02.qa.json"
     },
     {
@@ -56,7 +56,7 @@
       "passed": true,
       "png": "output/about-me-stories/story-03.png",
       "url": "https://alexandersmoley.github.io/-/about-me-stories/story-03.png",
-      "sha256": "6c870d4c96fb7d258ade76038fb708f8a49e95171792627c5dcfd21c8665d952",
+      "sha256": "4a2ed11020ec28e8eb30aa1d0355716912f7e8515bb14680f70887dab81c3789",
       "qa": "story-03.qa.json"
     },
     {
@@ -65,7 +65,7 @@
       "passed": true,
       "png": "output/about-me-stories/story-04.png",
       "url": "https://alexandersmoley.github.io/-/about-me-stories/story-04.png",
-      "sha256": "adbd213c1db9752d275aba4d5f7c2c741cf52e5e6860fd88f4d002cd7ac3fdc8",
+      "sha256": "488122daa49ef173ceb55e2e781534a64b0c742ab32cca6365e4740b60655107",
       "qa": "story-04.qa.json"
     },
     {
@@ -74,7 +74,7 @@
       "passed": true,
       "png": "output/about-me-stories/story-05.png",
       "url": "https://alexandersmoley.github.io/-/about-me-stories/story-05.png",
-      "sha256": "757beff9627d66ea12b45854103619aad608abbcc539bcff08a6147ae0b6739a",
+      "sha256": "3375db7178ae67765346a5baa7d18d4d2c70bcd8bdb305d8c33ab3066dfae973",
       "qa": "story-05.qa.json"
     },
     {
@@ -83,7 +83,7 @@
       "passed": true,
       "png": "output/about-me-stories/story-06.png",
       "url": "https://alexandersmoley.github.io/-/about-me-stories/story-06.png",
-      "sha256": "0e7d71b301c9e153f234adb096db25f0ee2ed2f6a1a7ed31c3aef5f284bf9e55",
+      "sha256": "ebd2301f59496a65b2b42a2795f1353ab22a07e4f4c25c89b995fb3e9945e3f0",
       "qa": "story-06.qa.json"
     },
     {
@@ -92,7 +92,7 @@
       "passed": true,
       "png": "output/about-me-stories/story-07.png",
       "url": "https://alexandersmoley.github.io/-/about-me-stories/story-07.png",
-      "sha256": "5aee2a2c521738ee64d80629f056b2305cece5fc77afb4400b459d44946530d7",
+      "sha256": "4ae4815f05ef6b3d918aad0755410c6728d3f1e0349491a4e7c70eafa17a9662",
       "qa": "story-07.qa.json"
     },
     {
@@ -101,7 +101,7 @@
       "passed": true,
       "png": "output/about-me-stories/story-08.png",
       "url": "https://alexandersmoley.github.io/-/about-me-stories/story-08.png",
-      "sha256": "bd04e7e5a1058f0a609877e2bba58bf2239f194432124e9a7a96a248323df175",
+      "sha256": "c3e5e7da1fc406ed4d4c8a3fe42411f056d2f2e1241f5838af6e681d292de39e",
       "qa": "story-08.qa.json"
     }
   ]

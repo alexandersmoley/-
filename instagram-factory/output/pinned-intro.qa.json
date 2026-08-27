@@ -5,7 +5,7 @@
   "variant": "benchmark-a",
   "benchmark": true,
   "source": "posts/pinned-intro.json",
-  "generatedAt": "2026-08-26T17:12:57.177Z",
+  "generatedAt": "2026-08-27T03:10:33.371Z",
   "passed": true,
   "checks": {
     "structuredPostValid": true,
@@ -36,13 +36,13 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "a132f3ca55413e9aa1f33be9a8b190cef9208fa80f6e58020fe014a0a9592695"
+    "sha256": "f0ff48d5b9bb072cbbd8fa834324640ee5fd083203c7c3b7da90e8bc5fe41c9d"
   },
   "integrity": {
     "canvaAssetId": "MAHTZduqLyI",
     "assetSha256": "8cc0c06d9c3c0d049a8cac15d25bf7e13b9d07204b4cfcf2a8bfb77d47146805",
     "captionSource": "content/pinned-intro.md",
-    "captionSha256": "b172748a555cb4b48a035872fccd2090b54013dafe4f73c967cfea33d7831718"
+    "captionSha256": "5d9b7b91209b41cfa29f3ff0bb112dcb3ab23379cfd8c45f2759332bb82ba845"
   },
   "browserQa": {
     "posterRect": {

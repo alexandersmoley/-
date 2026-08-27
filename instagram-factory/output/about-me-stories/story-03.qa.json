@@ -4,7 +4,7 @@
   "storyId": "story-03",
   "role": "proof / experience",
   "layoutFamily": "story-proof-list",
-  "generatedAt": "2026-08-27T02:58:16.901Z",
+  "generatedAt": "2026-08-27T03:10:34.449Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/story-03.png",
     "width": 1080,
     "height": 1920,
-    "sha256": "6c870d4c96fb7d258ade76038fb708f8a49e95171792627c5dcfd21c8665d952"
+    "sha256": "4a2ed11020ec28e8eb30aa1d0355716912f7e8515bb14680f70887dab81c3789"
   },
   "browserQa": {
     "canvasRect": {

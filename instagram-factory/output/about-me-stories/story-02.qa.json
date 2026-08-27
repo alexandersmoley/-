@@ -4,7 +4,7 @@
   "storyId": "story-02",
   "role": "what-i-do",
   "layoutFamily": "story-type-list",
-  "generatedAt": "2026-08-27T02:58:16.582Z",
+  "generatedAt": "2026-08-27T03:10:34.273Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/story-02.png",
     "width": 1080,
     "height": 1920,
-    "sha256": "902091813f1a121a0fc1450fe7033f54a97ad0d27144c660a3deee0930bf5a77"
+    "sha256": "ad54c38babb616b0c18dc94b6842ad7f62978dfd97fc8d347a8341d1103e8eef"
   },
   "browserQa": {
     "canvasRect": {

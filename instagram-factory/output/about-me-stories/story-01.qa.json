@@ -4,7 +4,7 @@
   "storyId": "story-01",
   "role": "hook / заход",
   "layoutFamily": "story-type-intro",
-  "generatedAt": "2026-08-27T02:58:16.261Z",
+  "generatedAt": "2026-08-27T03:10:34.093Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/story-01.png",
     "width": 1080,
     "height": 1920,
-    "sha256": "45a872989433da059e18517742d838adc91afdab07a726dc69ee1554d188d246"
+    "sha256": "88a86069b8f7dc8a407e54b2d0c13ed9e0801418013678b4e904a82814c6febe"
   },
   "browserQa": {
     "canvasRect": {

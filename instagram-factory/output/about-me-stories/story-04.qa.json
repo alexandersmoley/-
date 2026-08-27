@@ -4,7 +4,7 @@
   "storyId": "story-04",
   "role": "unexpected-turn",
   "layoutFamily": "story-statement",
-  "generatedAt": "2026-08-27T02:58:17.201Z",
+  "generatedAt": "2026-08-27T03:10:34.616Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/story-04.png",
     "width": 1080,
     "height": 1920,
-    "sha256": "adbd213c1db9752d275aba4d5f7c2c741cf52e5e6860fd88f4d002cd7ac3fdc8"
+    "sha256": "488122daa49ef173ceb55e2e781534a64b0c742ab32cca6365e4740b60655107"
   },
   "browserQa": {
     "canvasRect": {

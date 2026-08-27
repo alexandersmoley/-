@@ -4,7 +4,7 @@
   "storyId": "story-06",
   "role": "position / manifesto",
   "layoutFamily": "story-manifesto",
-  "generatedAt": "2026-08-27T02:58:17.838Z",
+  "generatedAt": "2026-08-27T03:10:34.933Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/story-06.png",
     "width": 1080,
     "height": 1920,
-    "sha256": "0e7d71b301c9e153f234adb096db25f0ee2ed2f6a1a7ed31c3aef5f284bf9e55"
+    "sha256": "ebd2301f59496a65b2b42a2795f1353ab22a07e4f4c25c89b995fb3e9945e3f0"
   },
   "browserQa": {
     "canvasRect": {

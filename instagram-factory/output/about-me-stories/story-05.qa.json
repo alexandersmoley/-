@@ -4,7 +4,7 @@
   "storyId": "story-05",
   "role": "current-experiment",
   "layoutFamily": "story-process-diagram",
-  "generatedAt": "2026-08-27T02:58:17.517Z",
+  "generatedAt": "2026-08-27T03:10:34.769Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/about-me-stories/story-05.png",
     "width": 1080,
     "height": 1920,
-    "sha256": "757beff9627d66ea12b45854103619aad608abbcc539bcff08a6147ae0b6739a"
+    "sha256": "3375db7178ae67765346a5baa7d18d4d2c70bcd8bdb305d8c33ab3066dfae973"
   },
   "browserQa": {
     "canvasRect": {
