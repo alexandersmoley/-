@@ -15,6 +15,7 @@ on:
       - "instagram-factory/pnpm-lock.yaml"
       - "instagram-factory/pnpm-workspace.yaml"
       - ".github/workflows/render-instagram.yml"
+      - ".github/workflows/deploy-instagram-pages.yml"
 
 permissions:
   contents: write
