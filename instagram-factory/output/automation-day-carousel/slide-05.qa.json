@@ -4,7 +4,7 @@
   "slideId": "slide-05",
   "layoutFamily": "process-diagram-carousel",
   "mode": "breakpoint",
-  "generatedAt": "2026-08-27T08:27:08.816Z",
+  "generatedAt": "2026-08-27T08:35:44.437Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-05.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "510e654d997c5f79016a5a95a0d46ef93496a49060bb9108b75ee52217b576f8"
+    "sha256": "ec828d437adc4c647cd7fbbb61568fc987767fbbcbf3d43e6c2da7394bcfee8e"
   },
   "browserQa": {
     "canvasRect": {

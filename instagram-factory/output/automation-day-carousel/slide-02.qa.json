@@ -4,7 +4,7 @@
   "slideId": "slide-02",
   "layoutFamily": "process-diagram-carousel",
   "mode": "pipeline",
-  "generatedAt": "2026-08-27T08:27:07.572Z",
+  "generatedAt": "2026-08-27T08:35:43.916Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -30,7 +30,7 @@
     "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-02.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "5b347d54bb93571ad18708f7e12563da597f20417efcf05dbc9b7aca1999055d"
+    "sha256": "cfc9084982e5e47b6a857f8e7b85d47430a87353065f63663a8b5bb28030a01b"
   },
   "browserQa": {
     "canvasRect": {
@@ -104,14 +104,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 188.5,
+          "x": 188.484375,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 222.5,
+          "right": 222.484375,
           "bottom": 579.5,
-          "left": 188.5
+          "left": 188.484375
         }
       },
       {
@@ -121,14 +121,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 234.546875,
+          "x": 234.53125,
           "y": 540,
           "width": 86.953125,
           "height": 45,
           "top": 540,
-          "right": 321.5,
+          "right": 321.484375,
           "bottom": 585,
-          "left": 234.546875
+          "left": 234.53125
         }
       },
       {
@@ -138,14 +138,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 333.5625,
+          "x": 333.53125,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 367.5625,
+          "right": 367.53125,
           "bottom": 579.5,
-          "left": 333.5625
+          "left": 333.53125
         }
       },
       {
@@ -155,14 +155,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 379.625,
+          "x": 379.578125,
           "y": 540,
           "width": 115.5625,
           "height": 45,
           "top": 540,
-          "right": 495.1875,
+          "right": 495.140625,
           "bottom": 585,
-          "left": 379.625
+          "left": 379.578125
         }
       },
       {
@@ -172,14 +172,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 507.234375,
+          "x": 507.1875,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 541.234375,
+          "right": 541.1875,
           "bottom": 579.5,
-          "left": 507.234375
+          "left": 507.1875
         }
       },
       {
@@ -189,14 +189,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 553.296875,
+          "x": 553.234375,
           "y": 540,
           "width": 195.3125,
           "height": 45,
           "top": 540,
-          "right": 748.609375,
+          "right": 748.546875,
           "bottom": 585,
-          "left": 553.296875
+          "left": 553.234375
         }
       },
       {
@@ -206,14 +206,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 760.65625,
+          "x": 760.59375,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 794.65625,
+          "right": 794.59375,
           "bottom": 579.5,
-          "left": 760.65625
+          "left": 760.59375
         }
       },
       {
@@ -223,14 +223,14 @@
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 806.71875,
+          "x": 806.640625,
           "y": 540,
           "width": 171.28125,
           "height": 45,
           "top": 540,
-          "right": 978,
+          "right": 977.921875,
           "bottom": 585,
-          "left": 806.71875
+          "left": 806.640625
         }
       },
       {
