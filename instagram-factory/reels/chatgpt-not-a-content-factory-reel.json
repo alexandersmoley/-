@@ -20,7 +20,7 @@
   },
   "contentSource": {
     "path": "content/chatgpt-not-a-content-factory-reel.md",
-    "sha256": "dd2833e9fdf2d67da916e4113e1afd201e6229aa4b247b90d9289a5b8e5e94a4"
+    "sha256": "11af2737d775a557040141e1c2812026c928d9b0ec0ba9efeca2131c6303d3dd"
   },
   "captionSha256": "5c4a821ce1c680f49c837f846b0e59d47a9e356e887ae612a8dac45b0d1b0bec",
   "designTokens": {
@@ -107,7 +107,7 @@
   "cover": {
     "layoutFamily": "reel-cover-editorial",
     "text": [
-      "ChatGPT написать пост —",
+      "Написать пост через ChatGPT —",
       "не контент-завод"
     ]
   },

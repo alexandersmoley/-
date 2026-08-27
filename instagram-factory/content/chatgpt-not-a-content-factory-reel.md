@@ -144,7 +144,7 @@ qa:
 # Cover
 
 ## text_on_cover
-- "ChatGPT написать пост —"
+- "Написать пост через ChatGPT —"
 - "не контент-завод"
 
 ## cover_direction

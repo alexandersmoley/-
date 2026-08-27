@@ -171,9 +171,26 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
 
 /* cover */
 .reel-cover { color: var(--ink); background: var(--paper); }
-.reel-cover-kicker { left: 120px; top: 310px; width: 720px; font-size: 52px; letter-spacing: -.036em; }
+.reel-cover-kicker { left: 120px; top: 310px; width: 780px; font-size: 48px; letter-spacing: -.036em; }
 .reel-cover-title { left: 120px; top: 650px; width: 780px; font-size: 154px; letter-spacing: -.06em; }
 .cover-system-line { position: absolute; z-index: 3; left: 120px; top: 540px; width: 780px; height: 2px; background: var(--blue); }
-.cover-pipeline { position: absolute; z-index: 3; left: 260px; top: 1380px; width: 640px; height: 90px; display: flex; align-items: center; justify-content: space-between; }
-.cover-pipeline::before { content: ""; position: absolute; left: 0; right: 0; top: 44px; height: 2px; background: var(--blue); }
-.cover-pipeline i { position: relative; z-index: 2; width: 18px; height: 18px; border: 2px solid var(--blue); background: var(--paper); }
+.cover-illustration {
+  position: absolute; z-index: 3; left: 120px; top: 1160px; width: 780px; height: 340px;
+  overflow: hidden; background: var(--blue);
+}
+.cover-machine-rail { position: absolute; left: 54px; right: 54px; height: 2px; background: var(--paper); }
+.cover-machine-rail-a { top: 84px; }
+.cover-machine-rail-b { top: 170px; }
+.cover-machine-rail-c { top: 256px; }
+.cover-machine-node { position: absolute; width: 22px; height: 22px; margin: -10px 0 0 -10px; border: 2px solid var(--paper); background: var(--blue); }
+.cover-machine-node-1, .cover-machine-node-5, .cover-machine-node-9 { left: 88px; }
+.cover-machine-node-2, .cover-machine-node-6, .cover-machine-node-10 { left: 236px; }
+.cover-machine-node-3, .cover-machine-node-7, .cover-machine-node-11 { left: 384px; }
+.cover-machine-node-4, .cover-machine-node-8, .cover-machine-node-12 { left: 532px; }
+.cover-machine-node-1, .cover-machine-node-2, .cover-machine-node-3, .cover-machine-node-4 { top: 84px; }
+.cover-machine-node-5, .cover-machine-node-6, .cover-machine-node-7, .cover-machine-node-8 { top: 170px; }
+.cover-machine-node-9, .cover-machine-node-10, .cover-machine-node-11, .cover-machine-node-12 { top: 256px; }
+.cover-machine-block { position: absolute; right: 54px; width: 120px; height: 44px; border: 2px solid var(--paper); background: var(--paper); }
+.cover-machine-block-a { top: 62px; }
+.cover-machine-block-b { top: 148px; }
+.cover-machine-block-c { top: 234px; }

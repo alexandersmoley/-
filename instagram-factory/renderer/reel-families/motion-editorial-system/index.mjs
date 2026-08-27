@@ -98,8 +98,14 @@ export function renderCover(reel) {
     <div class="cover-system-line" data-color aria-hidden="true"></div>
     ${contentNode(reel.cover.text[0], 'reel-cover-kicker text-sans')}
     ${contentNode(reel.cover.text[1], 'reel-cover-title display-serif', accent)}
-    <div class="cover-pipeline" data-color aria-hidden="true">
-      <i></i><i></i><i></i><i></i><i></i>
+    <div class="cover-illustration" data-color aria-hidden="true">
+      <i class="cover-machine-rail cover-machine-rail-a"></i>
+      <i class="cover-machine-rail cover-machine-rail-b"></i>
+      <i class="cover-machine-rail cover-machine-rail-c"></i>
+      ${Array.from({ length: 12 }, (_, index) => `<b class="cover-machine-node cover-machine-node-${index + 1}"></b>`).join('')}
+      <span class="cover-machine-block cover-machine-block-a"></span>
+      <span class="cover-machine-block cover-machine-block-b"></span>
+      <span class="cover-machine-block cover-machine-block-c"></span>
     </div>
   </section>`;
 }
