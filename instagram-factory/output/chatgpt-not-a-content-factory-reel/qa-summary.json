@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "chatgpt-not-a-content-factory-reel",
   "source": "reels/chatgpt-not-a-content-factory-reel.json",
-  "generatedAt": "2026-08-27T13:45:06.458Z",
+  "generatedAt": "2026-08-27T13:55:05.638Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -37,7 +37,7 @@
     "preview": {
       "path": "output/chatgpt-not-a-content-factory-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/preview.mp4",
-      "sha256": "a0f7174e5544cce3c953e2ac56812cee4100c06cc805da1f88ccc5be5cba9fd3",
+      "sha256": "fcead57b45bb4c005dae260df374f2e864f57c32e4ba27e1f32d93034b02bd65",
       "duration": 25,
       "fps": "30/1"
     },
@@ -51,7 +51,7 @@
     "storyboard": {
       "path": "output/chatgpt-not-a-content-factory-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/storyboard.png",
-      "sha256": "5bbc4ed69028f8b52c48e55a000727bec249f4bc124421dbe29f53709ab8aba2",
+      "sha256": "a2a7a78ac2a7954b2a71824cc6753cc24f5d7b2a5ca9b2cabc2cf8568b9ea4ec",
       "width": 930,
       "height": 1050
     },
@@ -187,9 +187,9 @@
         },
         {
           "className": "build-stage build-stage-1",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 55,
-          "lineHeight": 51.7
+          "family": "\"Inter Production\", sans-serif",
+          "size": 47,
+          "lineHeight": 58.28
         },
         {
           "className": "build-arrow build-arrow-1",
@@ -199,9 +199,9 @@
         },
         {
           "className": "build-stage build-stage-2",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 55,
-          "lineHeight": 51.7
+          "family": "\"Inter Production\", sans-serif",
+          "size": 47,
+          "lineHeight": 58.28
         },
         {
           "className": "build-arrow build-arrow-2",
@@ -211,9 +211,9 @@
         },
         {
           "className": "build-stage build-stage-3",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 55,
-          "lineHeight": 51.7
+          "family": "\"Inter Production\", sans-serif",
+          "size": 47,
+          "lineHeight": 58.28
         },
         {
           "className": "build-arrow build-arrow-3",
@@ -223,9 +223,9 @@
         },
         {
           "className": "build-stage build-stage-4",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 55,
-          "lineHeight": 51.7
+          "family": "\"Inter Production\", sans-serif",
+          "size": 47,
+          "lineHeight": 58.28
         },
         {
           "className": "build-arrow build-arrow-4",
@@ -235,9 +235,9 @@
         },
         {
           "className": "build-stage build-stage-5",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 55,
-          "lineHeight": 51.7
+          "family": "\"Inter Production\", sans-serif",
+          "size": 47,
+          "lineHeight": 58.28
         },
         {
           "className": "build-arrow build-arrow-5",
@@ -247,9 +247,9 @@
         },
         {
           "className": "build-stage build-stage-6",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 55,
-          "lineHeight": 51.7
+          "family": "\"Inter Production\", sans-serif",
+          "size": 47,
+          "lineHeight": 58.28
         },
         {
           "className": "build-arrow build-arrow-6",
@@ -259,9 +259,9 @@
         },
         {
           "className": "build-stage build-stage-7",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 55,
-          "lineHeight": 51.7
+          "family": "\"Inter Production\", sans-serif",
+          "size": 47,
+          "lineHeight": 58.28
         },
         {
           "className": "build-arrow build-arrow-7",
@@ -271,9 +271,9 @@
         },
         {
           "className": "build-stage build-stage-8",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 55,
-          "lineHeight": 51.7
+          "family": "\"Inter Production\", sans-serif",
+          "size": 47,
+          "lineHeight": 58.28
         },
         {
           "className": "build-conclusion display-serif blue-italic reel-copy",
