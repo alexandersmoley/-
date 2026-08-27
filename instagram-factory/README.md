@@ -31,7 +31,8 @@
 - `posts/*.json` — structured posts и статус допуска к рендеру.
 - `schemas/post.schema.json` — машинный контракт structured post.
 - `renderer/` — reusable HTML/CSS/SVG layout families и Chromium renderer.
-- `output/` — PNG 1080×1440, QA reports и GitHub Pages bundle.
+- `reels/*.json` — structured Reels с точной timeline, экранным текстом, cover и audio policy.
+- `output/` — PNG/MP4, QA reports и GitHub Pages bundle.
 
 ## Production render
 

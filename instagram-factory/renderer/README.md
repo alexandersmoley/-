@@ -2,7 +2,7 @@
 
 Deterministic pipeline:
 
-`structured content → HTML/CSS/SVG family → Chromium screenshot → automated QA → production PNG → output`
+`structured content → HTML/CSS/SVG family → Chromium frames → automated QA → production PNG/MP4 → output`
 
 ## One command
 
@@ -12,7 +12,7 @@ pnpm exec playwright install chromium
 pnpm run pipeline
 ```
 
-The command renders every `posts/*.json`, `stories/*.json` and `carousels/*.json` file whose status is exactly `approved-for-render`.
+The command renders every `posts/*.json`, `stories/*.json`, `carousels/*.json` and `reels/*.json` file whose status is exactly `approved-for-render`.
 
 ## Source model
 
@@ -22,12 +22,16 @@ The command renders every `posts/*.json`, `stories/*.json` and `carousels/*.json
 - `schemas/story-series.schema.json` — machine-enforced story-series contract.
 - `carousels/*.json` — structured 1080×1440 carousel series with exact slide copy, caption checksum and render status.
 - `schemas/carousel-series.schema.json` — machine-enforced carousel contract.
+- `reels/*.json` — structured 1080×1920 motion timelines with exact scene/cover copy, caption checksum and audio policy.
+- `schemas/reel.schema.json` — machine-enforced Reel contract, including 30 fps, duration, safe zones and publishing lock.
 - `renderer/families/` — reusable layout families. Post-specific copy does not live here.
 - `renderer/story-families/` — registry of compositionally distinct story layout families.
 - `renderer/carousel-families/` — reusable carousel families with art-directed composition modes.
+- `renderer/reel-families/` — deterministic motion-editorial families rendered at exact timeline positions.
 - `assets/` — approved source photography. Each post pins a SHA-256 checksum.
 - `content/*.md` — caption source. Renderer records its checksum and never writes to it.
 - `output/` — PNG, per-post QA report, pipeline summary and Pages index.
+- `output/<reel-id>/` — MP4 preview, cover PNG, storyboard and machine-readable Reel QA.
 
 ## `human-to-system`
 
@@ -75,6 +79,16 @@ The first benchmark is `automation-day-carousel`: nine slides, no photography, f
 
 Editorial typography is enforced in the renderer: headline roles cannot end in a period, 1080×1440 carousel text stays inside a 120 px safe zone, display/body leading uses the shared `0.94`/`1.24` tokens, and Russian short words receive non-breaking spaces without changing canonical copy comparison.
 
+## Motion editorial Reel
+
+`motion-editorial-system` is the reusable 1080×1920 family for motion-first Reels without talking head or voice-over. It renders every frame deterministically in Chromium, pipes the PNG frame stream to FFmpeg at 30 fps and adds a deterministic original stereo instrumental bed. The first benchmark, `chatgpt-not-a-content-factory-reel`, uses six scene families inside one narrative system and remains locked to `publish: false`.
+
+Reel QA verifies schema/status, exact scene and cover copy, unchanged caption/source checksums, fonts, brand colors, safe zones, overflow/effects, continuous timeline, distinct motion frames, MP4 dimensions/frame rate/duration, stereo audio, cover size and storyboard creation. Run only the Reel renderer with:
+
+```bash
+pnpm run render:reels
+```
+
 ## HTTPS output
 
 After successful render and QA, the GitHub Action commits generated PNG files and the output index back to `output/` on the default branch. This keeps the repository-native raw HTTPS URL current without requiring GitHub Pages.
@@ -97,6 +111,14 @@ Carousel slides use the same nested URL pattern:
 
 ```text
 https://alexandersmoley.github.io/-/<carousel-id>/<slide-id>.png
+```
+
+Reel media uses:
+
+```text
+https://alexandersmoley.github.io/-/<reel-id>/preview.mp4
+https://alexandersmoley.github.io/-/<reel-id>/cover.png
+https://alexandersmoley.github.io/-/<reel-id>/storyboard.png
 ```
 
 For this benchmark:

@@ -23,6 +23,8 @@ Canva может использоваться как дополнительны�
 - `schemas/story-series.schema.json` — исполняемый контракт серии Stories.
 - `carousels/*.json` — машиночитаемые карусели, exact slide copy, caption checksum и композиционные режимы.
 - `schemas/carousel-series.schema.json` — исполняемый контракт карусели.
+- `reels/*.json` — машиночитаемые motion timelines, точный экранный текст/cover/caption и audio policy.
+- `schemas/reel.schema.json` — исполняемый контракт Reels.
 - `assets/` — фотографии/иллюстрации.
 - `renderer/` — код дизайн-системы и рендера.
 
@@ -44,6 +46,8 @@ Instagram portrait: 1080×1440 px (3:4).
 Внутренний layout строится в CSS pixels 1080×1440 без responsive scaling при финальном рендере.
 
 Instagram Stories: 1080×1920 px (9:16). Ключевой текст и управляющие смыслом элементы остаются внутри указанной в structured series безопасной области; фотография может быть full-bleed. Финальный рендер также выполняется без responsive scaling.
+
+Instagram Reels: 1080×1920 px (9:16), 30 fps. Каждая сцена рендерится в точной позиции общей timeline, затем кадры собираются в MP4. Cover рендерится отдельно как 1080×1920 PNG. Ключевой текст остаётся внутри Reel safe zone.
 
 ## Design tokens
 
@@ -85,6 +89,8 @@ Renderer должен оставаться registry-based и расширять�
 Для Stories registry включает самостоятельные семейства: `story-type-intro`, `story-type-list`, `story-proof-list`, `story-statement`, `story-process-diagram`, `story-manifesto`, `story-photo-editorial`, `story-closing-list`. Они используют общие токены, но не являются восемью перестановками одного шаблона.
 
 Для process case studies registry включает reusable family `process-diagram-carousel` с режимами `statement`, `pipeline`, `breakpoint`, `criteria-list`, `closing`. Режимы меняют композицию, но сохраняют общую типографику, палитру и process-грамматику.
+
+Для Reels registry включает `motion-editorial-system`: семейство сцен `reel-thesis-hook`, `reel-minimal-process`, `reel-system-build`, `reel-process-contrast`, `reel-production-pipeline`, `reel-editorial-closing` и отдельную cover-композицию. Движение задаётся детерминированной timeline, без генеративного видео и случайных параметров.
 
 Каждое семейство должно иметь параметры вариативности: crop, alignment, text scale, blue-plane proportion, whitespace ratio, grid visibility, image position. Эти параметры должны иметь ограниченные art-directed диапазоны, а не случайные значения.
 
@@ -132,6 +138,7 @@ Renderer должен оставаться registry-based и расширять�
 - contrast достаточен;
 - нет случайных стрелок/иконок/теней/градиентов;
 - caption не изменён renderer-ом.
+- для Reels — continuous timeline, точные duration/fps, наличие разрешённой аудиодорожки, distinct motion frames, валидные MP4/cover/storyboard;
 
 После технического QA агент делает visual self-review по `design-direction.md` и отклоняет слабый вариант до показа пользователю.
 
@@ -175,3 +182,4 @@ Pipeline:
 9. Не добавлять в renderer автоматическую публикацию в соцсети.
 10. Не менять утверждённый caption.
 11. В README renderer-а описать одну команду для локального/CI production run.
+12. Для Reels сохранять `preview.mp4`, `cover.png`, `storyboard.png` и `reel.qa.json`; не добавлять talking head/voice-over, если brief их запрещает.

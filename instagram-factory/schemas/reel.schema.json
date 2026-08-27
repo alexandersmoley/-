@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://alexandersmoley.github.io/-/schemas/reel.schema.json",
+  "title": "Alex Smoley structured Instagram Reel",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "platform",
+    "format",
+    "status",
+    "publish",
+    "canvas",
+    "safeZone",
+    "contentSource",
+    "captionSha256",
+    "designTokens",
+    "audio",
+    "layoutFamily",
+    "scenes",
+    "cover",
+    "caption"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "id": { "const": "chatgpt-not-a-content-factory-reel" },
+    "platform": { "const": "instagram" },
+    "format": { "const": "reels" },
+    "status": { "enum": ["draft", "approved-for-render", "rendered"] },
+    "publish": { "const": false },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height", "fps", "durationSeconds"],
+      "properties": {
+        "width": { "const": 1080 },
+        "height": { "const": 1920 },
+        "fps": { "const": 30 },
+        "durationSeconds": { "const": 25 }
+      }
+    },
+    "safeZone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["top", "right", "bottom", "left"],
+      "properties": {
+        "top": { "const": 180 },
+        "right": { "const": 180 },
+        "bottom": { "const": 300 },
+        "left": { "const": 120 }
+      }
+    },
+    "contentSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "const": "content/chatgpt-not-a-content-factory-reel.md" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "captionSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "designTokens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ink", "paper", "blue", "grid"],
+      "properties": {
+        "ink": { "const": "#101010" },
+        "paper": { "const": "#f4f1e9" },
+        "blue": { "const": "#1546e8" },
+        "grid": { "const": "rgba(21, 70, 232, 0.105)" }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "voiceOver", "talkingHead", "sampleRate"],
+      "properties": {
+        "mode": { "const": "original-instrumental-only" },
+        "voiceOver": { "const": false },
+        "talkingHead": { "const": false },
+        "sampleRate": { "const": 48000 }
+      }
+    },
+    "layoutFamily": { "const": "motion-editorial-system" },
+    "scenes": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "$ref": "#/$defs/scene" }
+    },
+    "cover": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["layoutFamily", "text"],
+      "properties": {
+        "layoutFamily": { "const": "reel-cover-editorial" },
+        "text": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "caption": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "scene": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "start", "end", "goal", "layoutFamily", "text"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^scene-0[1-6]$" },
+        "start": { "type": "number", "minimum": 0, "maximum": 25 },
+        "end": { "type": "number", "exclusiveMinimum": 0, "maximum": 25 },
+        "goal": { "type": "string", "minLength": 1 },
+        "layoutFamily": {
+          "enum": [
+            "reel-kinetic-statement",
+            "reel-process-minimal",
+            "reel-process-build",
+            "reel-contrast-statement",
+            "reel-system-diagram",
+            "reel-closing-editorial"
+          ]
+        },
+        "text": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

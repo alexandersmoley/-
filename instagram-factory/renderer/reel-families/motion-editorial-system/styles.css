@@ -1,0 +1,156 @@
+@font-face {
+  font-family: "Inter Production";
+  src: url("__INTER_FONT_URL__") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond Production";
+  src: url("__CORMORANT_REGULAR_URL__") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond Production";
+  src: url("__CORMORANT_ITALIC_URL__") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: block;
+}
+
+:root {
+  --ink: #101010;
+  --paper: #f4f1e9;
+  --blue: #1546e8;
+  --grid: rgba(21, 70, 232, .105);
+  --display-leading: .94;
+  --body-leading: 1.24;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  width: 1080px;
+  height: 1920px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper);
+}
+body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+.reel-frame, .reel-scene, .reel-cover {
+  position: absolute;
+  inset: 0;
+  width: 1080px;
+  height: 1920px;
+  overflow: hidden;
+}
+.reel-frame { isolation: isolate; background: var(--paper); }
+.reel-scene { opacity: 0; visibility: hidden; will-change: opacity; }
+.reel-copy { position: absolute; z-index: 5; margin: 0; }
+.display-serif {
+  font-family: "Cormorant Garamond Production", serif;
+  font-weight: 400;
+  line-height: var(--display-leading);
+}
+.text-sans {
+  font-family: "Inter Production", sans-serif;
+  font-weight: 400;
+  line-height: var(--body-leading);
+}
+.blue-italic { color: var(--blue); font-style: italic; }
+[data-motion-item] { will-change: transform, opacity, clip-path; }
+.reel-grid { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.reel-grid i { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--grid); }
+.system-axis {
+  position: absolute; z-index: 2; left: 0; top: 0; width: 720px; height: 2px;
+  transform-origin: left center; background: var(--blue); opacity: .72; will-change: transform;
+}
+
+/* 01 — thesis enters as one editorial field */
+.scene-hook { color: var(--ink); background: var(--paper); }
+.hook-rule { position: absolute; z-index: 3; left: 120px; top: 290px; width: 160px; height: 2px; background: var(--blue); }
+.hook-kicker { left: 120px; top: 360px; width: 780px; font-size: 48px; letter-spacing: -.034em; }
+.hook-statement { left: 120px; top: 650px; width: 780px; font-size: 142px; letter-spacing: -.058em; }
+
+/* 02 — intentionally short model */
+.scene-minimal { color: var(--paper); background: var(--blue); }
+.minimal-rail { position: absolute; z-index: 2; left: 120px; top: 860px; width: calc(720px * var(--rail-progress, 0)); height: 2px; background: var(--paper); }
+.minimal-pipeline {
+  left: 120px; top: 690px; width: 780px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 108px; letter-spacing: -.052em; white-space: nowrap;
+}
+.minimal-pipeline .pipeline-arrow { padding: 0 34px; color: var(--paper); font-family: "Inter Production", sans-serif; font-size: 48px; font-style: normal; }
+.minimal-note { position: absolute; z-index: 4; left: 260px; top: 1120px; width: 640px; min-height: 250px; padding: 56px 60px; color: var(--ink); background: var(--paper); }
+.minimal-caption { position: relative; width: 520px; font-size: 39px; letter-spacing: -.032em; }
+
+/* 03 — the simple line grows into production */
+.scene-build { color: var(--ink); background: var(--paper); }
+.build-rail { position: absolute; z-index: 2; left: 539px; top: 245px; width: 2px; height: calc(1030px * var(--rail-progress, 0)); background: var(--blue); }
+.build-pipeline { left: 120px; top: 250px; width: 780px; height: 1040px; font-size: 55px; }
+.build-stage {
+  position: absolute; width: 350px; min-height: 105px; padding: 20px 24px 18px;
+  display: flex; align-items: baseline;
+  border-top: 1px solid var(--blue); font-family: "Cormorant Garamond Production", serif;
+  font-size: 55px; line-height: .94; letter-spacing: -.04em;
+}
+.build-stage-1, .build-stage-3, .build-stage-5, .build-stage-7 { left: 0; }
+.build-stage-2, .build-stage-4, .build-stage-6, .build-stage-8 { right: 0; }
+.build-stage-1, .build-stage-2 { top: 0; }
+.build-stage-3, .build-stage-4 { top: 250px; }
+.build-stage-5, .build-stage-6 { top: 500px; }
+.build-stage-7, .build-stage-8 { top: 750px; }
+.build-arrow { position: absolute; left: 372px; width: 36px; color: var(--blue); font: 400 30px/1 "Inter Production", sans-serif; text-align: center; }
+.build-arrow-1 { top: 72px; transform: rotate(90deg); }
+.build-arrow-2 { top: 188px; transform: rotate(90deg); }
+.build-arrow-3 { top: 322px; transform: rotate(90deg); }
+.build-arrow-4 { top: 438px; transform: rotate(90deg); }
+.build-arrow-5 { top: 572px; transform: rotate(90deg); }
+.build-arrow-6 { top: 688px; transform: rotate(90deg); }
+.build-arrow-7 { top: 822px; transform: rotate(90deg); }
+.build-conclusion { left: 260px; top: 1390px; width: 640px; font-size: 78px; letter-spacing: -.05em; }
+
+/* 04 — the field itself is rewritten */
+.scene-contrast { color: var(--ink); background: var(--paper); }
+.contrast-paper { position: absolute; inset: 0; z-index: 1; background: var(--paper); }
+.contrast-blue {
+  position: absolute; z-index: 2; left: 0; right: 0; bottom: 0;
+  height: calc(960px * var(--panel-progress, 0)); background: var(--blue);
+}
+.contrast-first { left: 120px; top: 330px; width: 780px; font-size: 103px; letter-spacing: -.052em; }
+.contrast-second { left: 120px; top: 1110px; width: 780px; color: var(--paper); font-size: 112px; letter-spacing: -.054em; }
+.contrast-second .blue-italic { color: var(--paper); }
+.contrast-rule { position: absolute; z-index: 4; left: 120px; top: 960px; width: 780px; height: 2px; background: var(--paper); }
+
+/* 05 — complete system */
+.scene-system { color: var(--paper); background: var(--blue); }
+.scene-system .reel-grid i { background: rgba(244, 241, 233, .17); }
+.system-rail { position: absolute; z-index: 2; left: 283px; top: 260px; width: 2px; height: calc(1180px * var(--rail-progress, 0)); background: var(--paper); }
+.system-pipeline { left: 260px; top: 240px; width: 640px; height: 1240px; font-size: 61px; }
+.system-stage {
+  position: relative; min-height: 112px; padding: 18px 0 20px 72px;
+  display: flex; align-items: baseline;
+  border-bottom: 1px solid rgba(244, 241, 233, .55);
+  font-size: 61px; letter-spacing: -.043em;
+}
+.system-stage:last-child { color: var(--paper); font-style: italic; border-bottom: 0; }
+.system-arrow { display: block; height: 34px; padding-left: 76px; color: var(--paper); font: 400 24px/1 "Inter Production", sans-serif; transform: rotate(90deg); transform-origin: 86px 12px; }
+
+/* 06 — quiet closure */
+.scene-closing { color: var(--ink); background: var(--paper); }
+.closing-intro { left: 120px; top: 380px; width: 640px; font-size: 43px; letter-spacing: -.034em; }
+.closing-title { left: 120px; top: 650px; width: 780px; font-size: 158px; letter-spacing: -.06em; }
+.closing-rule { position: absolute; z-index: 4; left: 120px; top: 1135px; width: 780px; height: 2px; background: var(--blue); }
+.closing-postscript { left: 260px; top: 1240px; width: 640px; font-size: 37px; letter-spacing: -.03em; }
+
+/* cover */
+.reel-cover { color: var(--ink); background: var(--paper); }
+.reel-cover-kicker { left: 120px; top: 310px; width: 720px; font-size: 52px; letter-spacing: -.036em; }
+.reel-cover-title { left: 120px; top: 650px; width: 780px; font-size: 154px; letter-spacing: -.06em; }
+.cover-system-line { position: absolute; z-index: 3; left: 120px; top: 540px; width: 780px; height: 2px; background: var(--blue); }
+.cover-pipeline { position: absolute; z-index: 3; left: 260px; top: 1380px; width: 640px; height: 90px; display: flex; align-items: center; justify-content: space-between; }
+.cover-pipeline::before { content: ""; position: absolute; left: 0; right: 0; top: 44px; height: 2px; background: var(--blue); }
+.cover-pipeline i { position: relative; z-index: 2; width: 18px; height: 18px; border: 2px solid var(--blue); background: var(--paper); }

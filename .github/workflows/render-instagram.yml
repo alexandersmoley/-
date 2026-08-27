@@ -9,6 +9,7 @@ on:
       - "instagram-factory/posts/**"
       - "instagram-factory/stories/**"
       - "instagram-factory/carousels/**"
+      - "instagram-factory/reels/**"
       - "instagram-factory/renderer/**"
       - "instagram-factory/schemas/**"
       - "instagram-factory/scripts/**"
@@ -58,7 +59,7 @@ jobs:
       - name: Render, QA and build Pages bundle
         run: pnpm run pipeline
 
-      - name: Commit rendered PNG output
+      - name: Commit rendered media output
         if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
         run: |
           git config user.name "github-actions[bot]"

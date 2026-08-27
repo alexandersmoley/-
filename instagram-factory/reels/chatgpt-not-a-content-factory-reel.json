@@ -1,0 +1,122 @@
+{
+  "$schema": "../schemas/reel.schema.json",
+  "schemaVersion": 1,
+  "id": "chatgpt-not-a-content-factory-reel",
+  "platform": "instagram",
+  "format": "reels",
+  "status": "approved-for-render",
+  "publish": false,
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationSeconds": 25
+  },
+  "safeZone": {
+    "top": 180,
+    "right": 180,
+    "bottom": 300,
+    "left": 120
+  },
+  "contentSource": {
+    "path": "content/chatgpt-not-a-content-factory-reel.md",
+    "sha256": "dd2833e9fdf2d67da916e4113e1afd201e6229aa4b247b90d9289a5b8e5e94a4"
+  },
+  "captionSha256": "5c4a821ce1c680f49c837f846b0e59d47a9e356e887ae612a8dac45b0d1b0bec",
+  "designTokens": {
+    "ink": "#101010",
+    "paper": "#f4f1e9",
+    "blue": "#1546e8",
+    "grid": "rgba(21, 70, 232, 0.105)"
+  },
+  "audio": {
+    "mode": "original-instrumental-only",
+    "voiceOver": false,
+    "talkingHead": false,
+    "sampleRate": 48000
+  },
+  "layoutFamily": "motion-editorial-system",
+  "scenes": [
+    {
+      "id": "scene-01",
+      "start": 0,
+      "end": 3,
+      "goal": "hook",
+      "layoutFamily": "reel-kinetic-statement",
+      "text": [
+        "Написать пост через ChatGPT —",
+        "это ещё не контент-завод"
+      ]
+    },
+    {
+      "id": "scene-02",
+      "start": 3,
+      "end": 6,
+      "goal": "show the simplistic model",
+      "layoutFamily": "reel-process-minimal",
+      "text": [
+        "промпт → текст",
+        "Автоматизирован только один кусок"
+      ]
+    },
+    {
+      "id": "scene-03",
+      "start": 6,
+      "end": 12,
+      "goal": "expand the real process",
+      "layoutFamily": "reel-process-build",
+      "text": [
+        "тема → фактура → текст → редактура → дизайн → QA → публикация → аналитика",
+        "Вот где начинается производство"
+      ]
+    },
+    {
+      "id": "scene-04",
+      "start": 12,
+      "end": 17,
+      "goal": "state the core idea",
+      "layoutFamily": "reel-contrast-statement",
+      "text": [
+        "Автоматизировать нужно не пост",
+        "Нужно автоматизировать процесс"
+      ]
+    },
+    {
+      "id": "scene-05",
+      "start": 17,
+      "end": 22,
+      "goal": "show the actual factory pipeline",
+      "layoutFamily": "reel-system-diagram",
+      "text": [
+        "идея → арт-дирекшен → GitHub → renderer → QA → PNG → Metricool → Instagram"
+      ]
+    },
+    {
+      "id": "scene-06",
+      "start": 22,
+      "end": 25,
+      "goal": "closing",
+      "layoutFamily": "reel-closing-editorial",
+      "text": [
+        "Вот это я и называю",
+        "контент-заводом",
+        "И пока он всё ещё ломается"
+      ]
+    }
+  ],
+  "cover": {
+    "layoutFamily": "reel-cover-editorial",
+    "text": [
+      "ChatGPT написать пост —",
+      "не контент-завод"
+    ]
+  },
+  "caption": [
+    "Написать пост через ChatGPT сегодня могут почти все.",
+    "Но это ещё не контент-завод.",
+    "Контент-завод начинается не там, где появляется черновик текста, а там, где появляется система: тема, фактура, редактура, дизайн, проверка, публикация и аналитика.",
+    "После вчерашнего опыта я ещё раз убедился, что автоматизировать нужно не один пост, а всю производственную цепочку вокруг него.",
+    "Сейчас как раз этим и занимаюсь: пытаюсь собрать систему, которая помогает делать хороший контент быстрее и не даёт выпускать брак.",
+    "Пока получается не идеально. Но это уже гораздо больше похоже на завод, чем просто набор нейросетей."
+  ]
+}
