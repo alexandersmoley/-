@@ -74,6 +74,29 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
 .hook-rule { position: absolute; z-index: 3; left: 120px; top: 290px; width: 160px; height: 2px; background: var(--blue); }
 .hook-kicker { left: 120px; top: 360px; width: 780px; font-size: 48px; letter-spacing: -.034em; }
 .hook-statement { left: 120px; top: 650px; width: 780px; font-size: 142px; letter-spacing: -.058em; }
+.hook-illustration {
+  position: absolute; z-index: 3; left: 120px; top: 1160px; width: 780px; height: 340px;
+  overflow: hidden; background: var(--blue);
+}
+.hook-machine-rail { position: absolute; left: 54px; right: 54px; height: 2px; transform-origin: left center; background: var(--paper); }
+.hook-machine-rail-a { top: 84px; }
+.hook-machine-rail-b { top: 170px; }
+.hook-machine-rail-c { top: 256px; }
+.hook-machine-node {
+  position: absolute; width: 22px; height: 22px; margin: -10px 0 0 -10px;
+  border: 2px solid var(--paper); background: var(--blue);
+}
+.hook-machine-node-1, .hook-machine-node-5, .hook-machine-node-9 { left: 88px; }
+.hook-machine-node-2, .hook-machine-node-6, .hook-machine-node-10 { left: 236px; }
+.hook-machine-node-3, .hook-machine-node-7, .hook-machine-node-11 { left: 384px; }
+.hook-machine-node-4, .hook-machine-node-8, .hook-machine-node-12 { left: 532px; }
+.hook-machine-node-1, .hook-machine-node-2, .hook-machine-node-3, .hook-machine-node-4 { top: 84px; }
+.hook-machine-node-5, .hook-machine-node-6, .hook-machine-node-7, .hook-machine-node-8 { top: 170px; }
+.hook-machine-node-9, .hook-machine-node-10, .hook-machine-node-11, .hook-machine-node-12 { top: 256px; }
+.hook-machine-block { position: absolute; right: 54px; width: 120px; height: 44px; border: 2px solid var(--paper); background: var(--paper); }
+.hook-machine-block-a { top: 62px; }
+.hook-machine-block-b { top: 148px; }
+.hook-machine-block-c { top: 234px; }
 
 /* 02 — intentionally short model */
 .scene-minimal { color: var(--paper); background: var(--blue); }
@@ -94,8 +117,8 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
 .build-stage {
   position: absolute; width: 350px; min-height: 105px; padding: 20px 24px 18px;
   display: flex; align-items: baseline;
-  border-top: 1px solid var(--blue); font-family: "Cormorant Garamond Production", serif;
-  font-size: 55px; line-height: .94; letter-spacing: -.04em;
+  border-top: 1px solid var(--blue); font-family: "Inter Production", sans-serif;
+  font-size: 47px; line-height: 1.24; letter-spacing: -.035em;
 }
 .build-stage-1, .build-stage-3, .build-stage-5, .build-stage-7 { left: 0; }
 .build-stage-2, .build-stage-4, .build-stage-6, .build-stage-8 { right: 0; }

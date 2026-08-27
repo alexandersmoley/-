@@ -9,6 +9,15 @@ function sceneOne(scene) {
     <div class="hook-rule" data-color aria-hidden="true"></div>
     ${contentNode(scene.text[0], 'hook-kicker text-sans', null, animated('.08', '.46', 'left'))}
     ${contentNode(scene.text[1], 'hook-statement display-serif', statement, animated('.42', '.72', 'clip'))}
+    <div class="hook-illustration" data-color aria-hidden="true">
+      <i class="hook-machine-rail hook-machine-rail-a" data-motion-item data-at=".78" data-duration=".58" data-from="clip"></i>
+      <i class="hook-machine-rail hook-machine-rail-b" data-motion-item data-at=".96" data-duration=".58" data-from="clip"></i>
+      <i class="hook-machine-rail hook-machine-rail-c" data-motion-item data-at="1.14" data-duration=".58" data-from="clip"></i>
+      ${Array.from({ length: 12 }, (_, index) => `<b class="hook-machine-node hook-machine-node-${index + 1}" data-motion-item data-at="${(1.08 + index * .055).toFixed(2)}" data-duration=".34" data-from="scale"></b>`).join('')}
+      <span class="hook-machine-block hook-machine-block-a" data-motion-item data-at="1.42" data-duration=".46" data-from="up"></span>
+      <span class="hook-machine-block hook-machine-block-b" data-motion-item data-at="1.58" data-duration=".46" data-from="up"></span>
+      <span class="hook-machine-block hook-machine-block-c" data-motion-item data-at="1.74" data-duration=".46" data-from="up"></span>
+    </div>
   </section>`;
 }
 
