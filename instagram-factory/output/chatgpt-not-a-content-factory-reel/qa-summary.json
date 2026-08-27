@@ -1,0 +1,476 @@
+{
+  "pipelineVersion": 1,
+  "reelId": "chatgpt-not-a-content-factory-reel",
+  "source": "reels/chatgpt-not-a-content-factory-reel.json",
+  "generatedAt": "2026-08-27T13:45:06.458Z",
+  "passed": true,
+  "checks": {
+    "structuredReelValid": true,
+    "approvedForRender": true,
+    "publishDisabled": true,
+    "sceneCountExact": true,
+    "timelineExact": true,
+    "contentSourceChecksumExact": true,
+    "contentSourceUnchanged": true,
+    "sourceCopyExact": true,
+    "coverCopyExact": true,
+    "captionSourceExact": true,
+    "captionChecksumExact": true,
+    "browserQaPassed": true,
+    "coverBrowserQaPassed": true,
+    "mp4DimensionsExact": true,
+    "frameRateExact": true,
+    "durationWithinBrief": true,
+    "audioStreamPresent": true,
+    "musicOnlyConfiguration": true,
+    "motionFramesDistinct": true,
+    "storyboardCreated": true,
+    "coverDimensionsExact": true
+  },
+  "failedChecks": [],
+  "integrity": {
+    "contentSource": "content/chatgpt-not-a-content-factory-reel.md",
+    "contentSha256": "dd2833e9fdf2d67da916e4113e1afd201e6229aa4b247b90d9289a5b8e5e94a4",
+    "captionSha256": "5c4a821ce1c680f49c837f846b0e59d47a9e356e887ae612a8dac45b0d1b0bec"
+  },
+  "media": {
+    "preview": {
+      "path": "output/chatgpt-not-a-content-factory-reel/preview.mp4",
+      "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/preview.mp4",
+      "sha256": "a0f7174e5544cce3c953e2ac56812cee4100c06cc805da1f88ccc5be5cba9fd3",
+      "duration": 25,
+      "fps": "30/1"
+    },
+    "cover": {
+      "path": "output/chatgpt-not-a-content-factory-reel/cover.png",
+      "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/cover.png",
+      "sha256": "56f75ab871912a2d777868d5c2c38765dc4e7b70cb9eb72a46c984daaf101e17",
+      "width": 1080,
+      "height": 1920
+    },
+    "storyboard": {
+      "path": "output/chatgpt-not-a-content-factory-reel/storyboard.png",
+      "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/storyboard.png",
+      "sha256": "5bbc4ed69028f8b52c48e55a000727bec249f4bc124421dbe29f53709ab8aba2",
+      "width": 930,
+      "height": 1050
+    },
+    "audio": {
+      "codec": "aac",
+      "sampleRate": "48000",
+      "channels": 2,
+      "mode": "original-instrumental-only"
+    }
+  },
+  "browserQa": {
+    "checks": {
+      "canvasExact": true,
+      "sceneCountExact": true,
+      "sceneTextExact": true,
+      "fontsLoaded": true,
+      "onlyApprovedFonts": true,
+      "mobileReadable": true,
+      "lineHeightByRoleExact": true,
+      "safeZoneExact": true,
+      "approvedColorsOnly": true,
+      "noPhotography": true,
+      "noUnauthorizedElements": true,
+      "noUnauthorizedEffects": true,
+      "renderFunctionAvailable": true
+    },
+    "details": {
+      "sourceText": [
+        {
+          "id": "scene-01",
+          "text": [
+            "Написать пост через ChatGPT —",
+            "это ещё не контент-завод"
+          ]
+        },
+        {
+          "id": "scene-02",
+          "text": [
+            "промпт → текст",
+            "Автоматизирован только один кусок"
+          ]
+        },
+        {
+          "id": "scene-03",
+          "text": [
+            "тема → фактура → текст → редактура → дизайн → QA → публикация → аналитика",
+            "Вот где начинается производство"
+          ]
+        },
+        {
+          "id": "scene-04",
+          "text": [
+            "Автоматизировать нужно не пост",
+            "Нужно автоматизировать процесс"
+          ]
+        },
+        {
+          "id": "scene-05",
+          "text": [
+            "идея → арт-дирекшен → GitHub → renderer → QA → PNG → Metricool → Instagram"
+          ]
+        },
+        {
+          "id": "scene-06",
+          "text": [
+            "Вот это я и называю",
+            "контент-заводом",
+            "И пока он всё ещё ломается"
+          ]
+        }
+      ],
+      "safeRect": {
+        "left": 120,
+        "top": 180,
+        "right": 900,
+        "bottom": 1620
+      },
+      "safeZoneFailures": [],
+      "type": [
+        {
+          "className": "hook-kicker text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 48,
+          "lineHeight": 59.52
+        },
+        {
+          "className": "hook-statement display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 142,
+          "lineHeight": 133.48
+        },
+        {
+          "className": "blue-italic",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 142,
+          "lineHeight": 133.48
+        },
+        {
+          "className": "minimal-pipeline display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 108,
+          "lineHeight": 101.52
+        },
+        {
+          "className": "pipeline-node",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 108,
+          "lineHeight": 101.52
+        },
+        {
+          "className": "pipeline-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 48,
+          "lineHeight": 45.12
+        },
+        {
+          "className": "pipeline-node",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 108,
+          "lineHeight": 101.52
+        },
+        {
+          "className": "minimal-caption text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 39,
+          "lineHeight": 48.36
+        },
+        {
+          "className": "build-pipeline text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 55,
+          "lineHeight": 68.2
+        },
+        {
+          "className": "build-stage build-stage-1",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 55,
+          "lineHeight": 51.7
+        },
+        {
+          "className": "build-arrow build-arrow-1",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 30,
+          "lineHeight": 30
+        },
+        {
+          "className": "build-stage build-stage-2",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 55,
+          "lineHeight": 51.7
+        },
+        {
+          "className": "build-arrow build-arrow-2",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 30,
+          "lineHeight": 30
+        },
+        {
+          "className": "build-stage build-stage-3",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 55,
+          "lineHeight": 51.7
+        },
+        {
+          "className": "build-arrow build-arrow-3",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 30,
+          "lineHeight": 30
+        },
+        {
+          "className": "build-stage build-stage-4",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 55,
+          "lineHeight": 51.7
+        },
+        {
+          "className": "build-arrow build-arrow-4",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 30,
+          "lineHeight": 30
+        },
+        {
+          "className": "build-stage build-stage-5",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 55,
+          "lineHeight": 51.7
+        },
+        {
+          "className": "build-arrow build-arrow-5",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 30,
+          "lineHeight": 30
+        },
+        {
+          "className": "build-stage build-stage-6",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 55,
+          "lineHeight": 51.7
+        },
+        {
+          "className": "build-arrow build-arrow-6",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 30,
+          "lineHeight": 30
+        },
+        {
+          "className": "build-stage build-stage-7",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 55,
+          "lineHeight": 51.7
+        },
+        {
+          "className": "build-arrow build-arrow-7",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 30,
+          "lineHeight": 30
+        },
+        {
+          "className": "build-stage build-stage-8",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 55,
+          "lineHeight": 51.7
+        },
+        {
+          "className": "build-conclusion display-serif blue-italic reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 78,
+          "lineHeight": 73.32
+        },
+        {
+          "className": "contrast-first display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 103,
+          "lineHeight": 96.82
+        },
+        {
+          "className": "contrast-second display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 112,
+          "lineHeight": 105.28
+        },
+        {
+          "className": "blue-italic",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 112,
+          "lineHeight": 105.28
+        },
+        {
+          "className": "system-pipeline display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 61,
+          "lineHeight": 57.34
+        },
+        {
+          "className": "system-stage",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 61,
+          "lineHeight": 57.34
+        },
+        {
+          "className": "system-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 24,
+          "lineHeight": 24
+        },
+        {
+          "className": "system-stage",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 61,
+          "lineHeight": 57.34
+        },
+        {
+          "className": "system-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 24,
+          "lineHeight": 24
+        },
+        {
+          "className": "system-stage",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 61,
+          "lineHeight": 57.34
+        },
+        {
+          "className": "system-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 24,
+          "lineHeight": 24
+        },
+        {
+          "className": "system-stage",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 61,
+          "lineHeight": 57.34
+        },
+        {
+          "className": "system-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 24,
+          "lineHeight": 24
+        },
+        {
+          "className": "system-stage",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 61,
+          "lineHeight": 57.34
+        },
+        {
+          "className": "system-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 24,
+          "lineHeight": 24
+        },
+        {
+          "className": "system-stage",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 61,
+          "lineHeight": 57.34
+        },
+        {
+          "className": "system-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 24,
+          "lineHeight": 24
+        },
+        {
+          "className": "system-stage",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 61,
+          "lineHeight": 57.34
+        },
+        {
+          "className": "system-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 24,
+          "lineHeight": 24
+        },
+        {
+          "className": "system-stage",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 61,
+          "lineHeight": 57.34
+        },
+        {
+          "className": "closing-intro text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 43,
+          "lineHeight": 53.32
+        },
+        {
+          "className": "closing-title display-serif blue-italic reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 158,
+          "lineHeight": 148.52
+        },
+        {
+          "className": "closing-postscript text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 37,
+          "lineHeight": 45.88
+        }
+      ],
+      "unapprovedColors": [],
+      "effectFailures": [],
+      "sampleTimes": [
+        1.45,
+        4.45,
+        9.25,
+        14.45,
+        19.45,
+        23.55
+      ]
+    }
+  },
+  "coverBrowserQa": {
+    "checks": {
+      "canvasExact": true,
+      "textExact": true,
+      "safeZoneExact": true,
+      "fontsLoaded": true,
+      "headlineWithoutTerminalPeriod": true,
+      "noPhotography": true
+    },
+    "details": {
+      "actualText": [
+        "ChatGPT написать пост —",
+        "не контент-завод"
+      ],
+      "safeRect": {
+        "left": 120,
+        "top": 180,
+        "right": 900,
+        "bottom": 1620
+      },
+      "safeZoneFailures": []
+    }
+  },
+  "probe": {
+    "programs": [],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "avg_frame_rate": "30/1"
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "avg_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "25.000000"
+    }
+  }
+}

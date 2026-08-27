@@ -17,6 +17,13 @@
 - Carousel QA gates passed: 21/21
 - Carousel contact sheet: [output/automation-day-carousel/contact-sheet.png](https://alexandersmoley.github.io/-/automation-day-carousel/contact-sheet.png)
 
+- Approved Reels rendered: 1
+- Reel canvas: 1080×1920, 30/1 fps
+- Reel duration: 25 seconds
+- Reel QA gates passed: 21/21
+- Reel MP4: [output/chatgpt-not-a-content-factory-reel/preview.mp4](https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/preview.mp4)
+- Reel storyboard: [output/chatgpt-not-a-content-factory-reel/storyboard.png](https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/storyboard.png)
+
 ## pinned-intro
 
 - Layout family: `human-to-system`
