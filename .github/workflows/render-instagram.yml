@@ -63,7 +63,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add output
           if ! git diff --cached --quiet; then
-            git commit -m "Render approved Instagram posts [skip ci]"
+            git commit -m "Render approved Instagram output"
             git push
           fi
 
