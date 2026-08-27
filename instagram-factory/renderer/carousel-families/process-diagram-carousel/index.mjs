@@ -1,6 +1,11 @@
 import { contentNode, escapeHtml, grid } from '../shared.mjs';
 
-const node = (slide, index, className, html = null) => contentNode(slide.text[index], className, html);
+const node = (slide, index, className, html = null) => contentNode(
+  slide.text[index],
+  className,
+  html,
+  { headline: slide.headlineIndexes.includes(index) }
+);
 
 function cover(slide) {
   return `<section class="composition cover-composition" data-color>
@@ -114,7 +119,6 @@ function principle(slide) {
 
 function closing(slide) {
   const ending = escapeHtml(slide.text[2])
-    .replace('не набор нейросетей', '<span class="closing-muted">не набор нейросетей</span>')
     .replace('настоящий контент-завод', '<span class="blue-italic">настоящий контент-завод</span>');
   return `<section class="composition carousel-closing-composition" data-color>
     ${node(slide, 0, 'closing-start text-sans')}

@@ -4,17 +4,23 @@
   "slideId": "slide-04",
   "layoutFamily": "process-diagram-carousel",
   "mode": "breakpoint",
-  "generatedAt": "2026-08-27T08:35:44.268Z",
+  "generatedAt": "2026-08-27T09:13:41.377Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
     "canvasExact": true,
     "noOverflow": true,
+    "noTextInternalOverflow": true,
     "textExact": true,
     "fontsLoaded": true,
     "onlyApprovedFonts": true,
     "mobileReadable": true,
+    "safeZoneMinimum120": true,
     "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
     "approvedColorsOnly": true,
     "noPhotography": true,
     "functionalArrowsOnly": true,
@@ -30,7 +36,7 @@
     "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-04.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "7837991a5317c564f0e0e7a380eec6fb6288ec69bc3e3d3f10c79bb3377b88f1"
+    "sha256": "a854d57aad1f2d30db85f1bf011f11c0786100ace84d88f279edead272574881"
   },
   "browserQa": {
     "canvasRect": {
@@ -44,102 +50,139 @@
       "left": 0
     },
     "safeRect": {
-      "left": 72,
-      "top": 72,
-      "right": 1008,
-      "bottom": 1368
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
     },
     "visibleText": [
-      "Потом закончился Codex.",
+      "Потом закончился Codex",
       "И тут вскрылась важная вещь:",
       "если для выпуска каждого поста нужен Codex,",
-      "то это не контент-завод.",
+      "то это не контент-завод",
       "Это просто ручное производство с дорогим помощником."
+    ],
+    "rawVisibleText": [
+      "Потом закончился Codex",
+      "И тут вскрылась важная вещь:",
+      "если для выпуска каждого поста нужен Codex,",
+      "то это не контент-завод",
+      "Это просто ручное производство с дорогим помощником."
+    ],
+    "headlineTexts": [
+      "Потом закончился Codex",
+      "если для выпуска каждого поста нужен Codex,",
+      "то это не контент-завод"
     ],
     "type": [
       {
         "className": "breakpoint-title display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 132,
+        "lineHeight": 124.08,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 248,
+        "scrollHeight": 266,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 72,
-          "y": 100,
-          "width": 900,
-          "height": 227.03125,
-          "top": 100,
-          "right": 972,
-          "bottom": 327.03125,
-          "left": 72
+          "x": 120,
+          "y": 120,
+          "width": 840,
+          "height": 248.15625,
+          "top": 120,
+          "right": 960,
+          "bottom": 368.15625,
+          "left": 120
         }
       },
       {
         "className": "breakpoint-kicker text-sans text-block",
         "family": "\"Inter Production\", sans-serif",
         "size": 34,
+        "lineHeight": 42.16,
+        "clientWidth": 600,
+        "scrollWidth": 600,
+        "clientHeight": 42,
+        "scrollHeight": 42,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 72,
+          "x": 120,
           "y": 365,
           "width": 600,
-          "height": 39.09375,
+          "height": 42.15625,
           "top": 365,
-          "right": 672,
-          "bottom": 404.09375,
-          "left": 72
+          "right": 720,
+          "bottom": 407.15625,
+          "left": 120
         }
       },
       {
         "className": "breakpoint-core-line display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 79,
+        "lineHeight": 74.26,
+        "clientWidth": 700,
+        "scrollWidth": 700,
+        "clientHeight": 223,
+        "scrollHeight": 234,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 228,
+          "x": 260,
           "y": 660,
-          "width": 780,
-          "height": 148.5,
+          "width": 700,
+          "height": 222.75,
           "top": 660,
-          "right": 1008,
-          "bottom": 808.5,
-          "left": 228
+          "right": 960,
+          "bottom": 882.75,
+          "left": 260
         }
       },
       {
         "className": "breakpoint-core-line display-serif breakpoint-core-accent text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 79,
+        "lineHeight": 74.26,
+        "clientWidth": 700,
+        "scrollWidth": 700,
+        "clientHeight": 74,
+        "scrollHeight": 85,
         "style": "italic",
         "weight": "400",
         "rect": {
-          "x": 228,
-          "y": 842.5,
-          "width": 780,
+          "x": 260,
+          "y": 906.75,
+          "width": 700,
           "height": 74.25,
-          "top": 842.5,
-          "right": 1008,
-          "bottom": 916.75,
-          "left": 228
+          "top": 906.75,
+          "right": 960,
+          "bottom": 981,
+          "left": 260
         }
       },
       {
         "className": "breakpoint-conclusion text-sans text-block",
         "family": "\"Inter Production\", sans-serif",
         "size": 37,
+        "lineHeight": 45.88,
+        "clientWidth": 780,
+        "scrollWidth": 780,
+        "clientHeight": 92,
+        "scrollHeight": 92,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 72,
+          "x": 120,
           "y": 1135,
           "width": 780,
-          "height": 88.78125,
+          "height": 91.75,
           "top": 1135,
-          "right": 852,
-          "bottom": 1223.78125,
-          "left": 72
+          "right": 900,
+          "bottom": 1226.75,
+          "left": 120
         }
       }
     ],

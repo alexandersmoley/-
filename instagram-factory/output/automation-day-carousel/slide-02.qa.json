@@ -4,17 +4,23 @@
   "slideId": "slide-02",
   "layoutFamily": "process-diagram-carousel",
   "mode": "pipeline",
-  "generatedAt": "2026-08-27T08:35:43.916Z",
+  "generatedAt": "2026-08-27T09:13:40.612Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
     "canvasExact": true,
     "noOverflow": true,
+    "noTextInternalOverflow": true,
     "textExact": true,
     "fontsLoaded": true,
     "onlyApprovedFonts": true,
     "mobileReadable": true,
+    "safeZoneMinimum120": true,
     "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
     "approvedColorsOnly": true,
     "noPhotography": true,
     "functionalArrowsOnly": true,
@@ -30,7 +36,7 @@
     "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-02.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "cfc9084982e5e47b6a857f8e7b85d47430a87353065f63663a8b5bb28030a01b"
+    "sha256": "7acf6b0e4281e67b5ff9ebfcd669f0e42fe4a78e27f266be37ae9bca9f876287"
   },
   "browserQa": {
     "canvasRect": {
@@ -44,10 +50,10 @@
       "left": 0
     },
     "safeRect": {
-      "left": 72,
-      "top": 72,
-      "right": 1008,
-      "bottom": 1368
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
     },
     "visibleText": [
       "Когда я задумывал контент-завод, всё выглядело просто:",
@@ -62,192 +68,263 @@
       "аналитика",
       "Хотелось собрать систему, в которой человек не делает всё руками, а принимает решения."
     ],
+    "rawVisibleText": [
+      "Когда я задумывал контент-завод, всё выглядело просто:",
+      "идея",
+      "→",
+      "текст",
+      "→",
+      "дизайн",
+      "→",
+      "публикация",
+      "→",
+      "аналитика",
+      "Хотелось собрать систему, в которой человек не делает всё руками, а принимает решения."
+    ],
+    "headlineTexts": [
+      "Когда я задумывал контент-завод, всё выглядело просто:"
+    ],
     "type": [
       {
         "className": "simple-pipeline-intro text-sans text-block",
         "family": "\"Inter Production\", sans-serif",
         "size": 45,
+        "lineHeight": 55.8,
+        "clientWidth": 790,
+        "scrollWidth": 790,
+        "clientHeight": 112,
+        "scrollHeight": 112,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 72,
-          "y": 105,
+          "x": 120,
+          "y": 120,
           "width": 790,
-          "height": 104.375,
-          "top": 105,
-          "right": 862,
-          "bottom": 209.375,
-          "left": 72
+          "height": 111.59375,
+          "top": 120,
+          "right": 910,
+          "bottom": 231.59375,
+          "left": 120
         }
       },
       {
         "className": "pipeline-stage display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 45,
+        "lineHeight": 42.3,
+        "clientWidth": 74,
+        "scrollWidth": 74,
+        "clientHeight": 42,
+        "scrollHeight": 48,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 102,
-          "y": 540,
+          "x": 150,
+          "y": 541.34375,
           "width": 74.4375,
-          "height": 45,
-          "top": 540,
-          "right": 176.4375,
-          "bottom": 585,
-          "left": 102
+          "height": 42.296875,
+          "top": 541.34375,
+          "right": 224.4375,
+          "bottom": 583.640625,
+          "left": 150
         }
       },
       {
         "className": "pipeline-arrow functional-arrow text-sans text-block",
         "family": "\"Inter Production\", sans-serif",
         "size": 34,
+        "lineHeight": 34,
+        "clientWidth": 34,
+        "scrollWidth": 34,
+        "clientHeight": 34,
+        "scrollHeight": 37,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 188.484375,
+          "x": 224.5,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 222.484375,
+          "right": 258.5,
           "bottom": 579.5,
-          "left": 188.484375
+          "left": 224.5
         }
       },
       {
         "className": "pipeline-stage display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 45,
+        "lineHeight": 42.3,
+        "clientWidth": 87,
+        "scrollWidth": 87,
+        "clientHeight": 42,
+        "scrollHeight": 48,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 234.53125,
-          "y": 540,
+          "x": 258.546875,
+          "y": 541.34375,
           "width": 86.953125,
-          "height": 45,
-          "top": 540,
-          "right": 321.484375,
-          "bottom": 585,
-          "left": 234.53125
+          "height": 42.296875,
+          "top": 541.34375,
+          "right": 345.5,
+          "bottom": 583.640625,
+          "left": 258.546875
         }
       },
       {
         "className": "pipeline-arrow functional-arrow text-sans text-block",
         "family": "\"Inter Production\", sans-serif",
         "size": 34,
+        "lineHeight": 34,
+        "clientWidth": 34,
+        "scrollWidth": 34,
+        "clientHeight": 34,
+        "scrollHeight": 37,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 333.53125,
+          "x": 345.5625,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 367.53125,
+          "right": 379.5625,
           "bottom": 579.5,
-          "left": 333.53125
+          "left": 345.5625
         }
       },
       {
         "className": "pipeline-stage display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 45,
+        "lineHeight": 42.3,
+        "clientWidth": 116,
+        "scrollWidth": 116,
+        "clientHeight": 42,
+        "scrollHeight": 48,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 379.578125,
-          "y": 540,
+          "x": 379.625,
+          "y": 541.34375,
           "width": 115.5625,
-          "height": 45,
-          "top": 540,
-          "right": 495.140625,
-          "bottom": 585,
-          "left": 379.578125
+          "height": 42.296875,
+          "top": 541.34375,
+          "right": 495.1875,
+          "bottom": 583.640625,
+          "left": 379.625
         }
       },
       {
         "className": "pipeline-arrow functional-arrow text-sans text-block",
         "family": "\"Inter Production\", sans-serif",
         "size": 34,
+        "lineHeight": 34,
+        "clientWidth": 34,
+        "scrollWidth": 34,
+        "clientHeight": 34,
+        "scrollHeight": 37,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 507.1875,
+          "x": 495.234375,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 541.1875,
+          "right": 529.234375,
           "bottom": 579.5,
-          "left": 507.1875
+          "left": 495.234375
         }
       },
       {
         "className": "pipeline-stage display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 45,
+        "lineHeight": 42.3,
+        "clientWidth": 195,
+        "scrollWidth": 195,
+        "clientHeight": 42,
+        "scrollHeight": 48,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 553.234375,
-          "y": 540,
+          "x": 529.296875,
+          "y": 541.34375,
           "width": 195.3125,
-          "height": 45,
-          "top": 540,
-          "right": 748.546875,
-          "bottom": 585,
-          "left": 553.234375
+          "height": 42.296875,
+          "top": 541.34375,
+          "right": 724.609375,
+          "bottom": 583.640625,
+          "left": 529.296875
         }
       },
       {
         "className": "pipeline-arrow functional-arrow text-sans text-block",
         "family": "\"Inter Production\", sans-serif",
         "size": 34,
+        "lineHeight": 34,
+        "clientWidth": 34,
+        "scrollWidth": 34,
+        "clientHeight": 34,
+        "scrollHeight": 37,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 760.59375,
+          "x": 724.65625,
           "y": 545.5,
           "width": 34,
           "height": 34,
           "top": 545.5,
-          "right": 794.59375,
+          "right": 758.65625,
           "bottom": 579.5,
-          "left": 760.59375
+          "left": 724.65625
         }
       },
       {
         "className": "pipeline-stage display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 45,
+        "lineHeight": 42.3,
+        "clientWidth": 171,
+        "scrollWidth": 171,
+        "clientHeight": 42,
+        "scrollHeight": 48,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 806.640625,
-          "y": 540,
+          "x": 758.71875,
+          "y": 541.34375,
           "width": 171.28125,
-          "height": 45,
-          "top": 540,
-          "right": 977.921875,
-          "bottom": 585,
-          "left": 806.640625
+          "height": 42.296875,
+          "top": 541.34375,
+          "right": 930,
+          "bottom": 583.640625,
+          "left": 758.71875
         }
       },
       {
         "className": "simple-pipeline-foot display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 66,
+        "lineHeight": 62.04,
+        "clientWidth": 700,
+        "scrollWidth": 700,
+        "clientHeight": 248,
+        "scrollHeight": 257,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 228,
+          "x": 260,
           "y": 850,
-          "width": 780,
-          "height": 194.015625,
+          "width": 700,
+          "height": 248.125,
           "top": 850,
-          "right": 1008,
-          "bottom": 1044.015625,
-          "left": 228
+          "right": 960,
+          "bottom": 1098.125,
+          "left": 260
         }
       }
     ],

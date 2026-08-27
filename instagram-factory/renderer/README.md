@@ -73,6 +73,8 @@ Story QA fails the build for incorrect dimensions, overflow, text outside the sa
 
 The first benchmark is `automation-day-carousel`: nine slides, no photography, functional arrows only on pipeline slides, exact copy and caption verified directly against `content/automation-day-carousel.md`. The build produces nine PNGs, individual QA reports, a carousel summary and a contact sheet under `output/automation-day-carousel/`.
 
+Editorial typography is enforced in the renderer: headline roles cannot end in a period, 1080×1440 carousel text stays inside a 120 px safe zone, display/body leading uses the shared `0.94`/`1.24` tokens, and Russian short words receive non-breaking spaces without changing canonical copy comparison.
+
 ## HTTPS output
 
 After successful render and QA, the GitHub Action commits generated PNG files and the output index back to `output/` on the default branch. This keeps the repository-native raw HTTPS URL current without requiring GitHub Pages.

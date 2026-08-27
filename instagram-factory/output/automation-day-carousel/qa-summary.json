@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "carouselId": "automation-day-carousel",
   "source": "carousels/automation-day-carousel.json",
-  "generatedAt": "2026-08-27T08:35:45.248Z",
+  "generatedAt": "2026-08-27T09:13:43.343Z",
   "passed": true,
   "checks": {
     "structuredCarouselValid": true,
@@ -18,6 +18,11 @@
     "captionUnchanged": true,
     "allSlidesPassed": true,
     "allPngDimensionsExact": true,
+    "noTextInternalOverflow": true,
+    "allHeadlinesWithoutTerminalPeriods": true,
+    "safeZoneMinimum120": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
     "slide07PipelineOrderExact": true,
     "noPhotography": true,
     "contactSheetCreated": true
@@ -25,7 +30,7 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/automation-day-carousel.md",
-    "contentSha256": "d857a2b9e9396be23c10e429e4ae604c9746020ea589d74e9a932fd44157ee3a",
+    "contentSha256": "60d2bf8aa7f1629b07541dc2edad0fb0842fc6a4996b8d5094757578e3d13b47",
     "captionSha256": "f8bce9ef45a2841aa10194d729e38fe08ba88db1691c278577ef5500f53db4bf"
   },
   "contactSheet": {
@@ -33,7 +38,7 @@
     "url": "https://alexandersmoley.github.io/-/automation-day-carousel/contact-sheet.png",
     "width": 744,
     "height": 960,
-    "sha256": "f68bb879aa6844fb956df35d99b6a3a51e1830408b3aee65b7da622f6a2c0dce"
+    "sha256": "02501ca87c3c9db09da92fc74a37c8b070661ec9d41c8fce62c88b8b01e4c120"
   },
   "slides": [
     {
@@ -42,7 +47,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-01.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-01.png",
-      "sha256": "8bbd4a20b25f447cc8665a1ae267e4597a41488a882bc28d7f85ffd881943a55",
+      "sha256": "34c8144db6b10521acb95122cec5c84ed724553d1f8019be4aae71d01ac0abcd",
       "qa": "slide-01.qa.json"
     },
     {
@@ -51,7 +56,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-02.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-02.png",
-      "sha256": "cfc9084982e5e47b6a857f8e7b85d47430a87353065f63663a8b5bb28030a01b",
+      "sha256": "7acf6b0e4281e67b5ff9ebfcd669f0e42fe4a78e27f266be37ae9bca9f876287",
       "qa": "slide-02.qa.json"
     },
     {
@@ -60,7 +65,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-03.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-03.png",
-      "sha256": "38d346e79ee0e1d719184e524582702c13cb2c53692a1db7469de34d08c0d42a",
+      "sha256": "3b3b2f25d8a5dd812cd22427d199c695f8bd81f5db6c52c4019769c00a21a94b",
       "qa": "slide-03.qa.json"
     },
     {
@@ -69,7 +74,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-04.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-04.png",
-      "sha256": "7837991a5317c564f0e0e7a380eec6fb6288ec69bc3e3d3f10c79bb3377b88f1",
+      "sha256": "a854d57aad1f2d30db85f1bf011f11c0786100ace84d88f279edead272574881",
       "qa": "slide-04.qa.json"
     },
     {
@@ -78,7 +83,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-05.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-05.png",
-      "sha256": "ec828d437adc4c647cd7fbbb61568fc987767fbbcbf3d43e6c2da7394bcfee8e",
+      "sha256": "79c5380cb23fc51024c5980e6650d7584fb561484df1ead8f559e255247aa351",
       "qa": "slide-05.qa.json"
     },
     {
@@ -87,7 +92,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-06.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-06.png",
-      "sha256": "d85e999d1dd71533b43c20952bceb2eca23576183106c2b52b2b51168ccc421d",
+      "sha256": "e540482e2bb7158893a3b847f0034fe8494eff72fe50a99dfbf3af15ad3633e4",
       "qa": "slide-06.qa.json"
     },
     {
@@ -96,7 +101,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-07.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-07.png",
-      "sha256": "23f8a960035adc0a610e0b01064f4b1589eec45db4e881203a9ddda1de274149",
+      "sha256": "d737b08f885f820ae71d7dd5bea9dc4a77988dfcedf398d6987573d89912c0b9",
       "qa": "slide-07.qa.json"
     },
     {
@@ -105,7 +110,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-08.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-08.png",
-      "sha256": "210bb381343cd0c85bd0b13f624d243296705a998d97010ffdb886f29a676860",
+      "sha256": "81a16fd4d74bb58e934d14f53f32459529967419243f1a44a4cb1eb3619c94b7",
       "qa": "slide-08.qa.json"
     },
     {
@@ -114,7 +119,7 @@
       "passed": true,
       "png": "output/automation-day-carousel/slide-09.png",
       "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-09.png",
-      "sha256": "c929d7e665bf5c15306c3f9a902e6d9e06bce351c780c1466ca81098f401839a",
+      "sha256": "6ccb61cfa59ae950a9bbae136586f4ae3d3469311e83bbb9f4f127c9ece9f601",
       "qa": "slide-09.qa.json"
     }
   ]

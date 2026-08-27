@@ -4,17 +4,23 @@
   "slideId": "slide-09",
   "layoutFamily": "process-diagram-carousel",
   "mode": "closing",
-  "generatedAt": "2026-08-27T08:35:45.070Z",
+  "generatedAt": "2026-08-27T09:13:43.242Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
     "canvasExact": true,
     "noOverflow": true,
+    "noTextInternalOverflow": true,
     "textExact": true,
     "fontsLoaded": true,
     "onlyApprovedFonts": true,
     "mobileReadable": true,
+    "safeZoneMinimum120": true,
     "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
     "approvedColorsOnly": true,
     "noPhotography": true,
     "functionalArrowsOnly": true,
@@ -30,7 +36,7 @@
     "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-09.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "c929d7e665bf5c15306c3f9a902e6d9e06bce351c780c1466ca81098f401839a"
+    "sha256": "6ccb61cfa59ae950a9bbae136586f4ae3d3469311e83bbb9f4f127c9ece9f601"
   },
   "browserQa": {
     "canvasRect": {
@@ -44,66 +50,90 @@
       "left": 0
     },
     "safeRect": {
-      "left": 72,
-      "top": 72,
-      "right": 1008,
-      "bottom": 1368
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
     },
     "visibleText": [
       "Вчера я почти целый день автоматизировал один пост.",
-      "Звучит не очень эффективно.",
-      "Но именно после этого у меня впервые начал появляться не набор нейросетей, а настоящий контент-завод."
+      "Звучит не очень эффективно",
+      "Но именно после этого у меня впервые начал появляться настоящий контент-завод"
+    ],
+    "rawVisibleText": [
+      "Вчера я почти целый день автоматизировал один пост.",
+      "Звучит не очень эффективно",
+      "Но именно после этого у меня впервые начал появляться настоящий контент-завод"
+    ],
+    "headlineTexts": [
+      "Звучит не очень эффективно",
+      "Но именно после этого у меня впервые начал появляться настоящий контент-завод"
     ],
     "type": [
       {
         "className": "closing-start text-sans text-block",
         "family": "\"Inter Production\", sans-serif",
         "size": 39,
+        "lineHeight": 48.36,
+        "clientWidth": 700,
+        "scrollWidth": 700,
+        "clientHeight": 97,
+        "scrollHeight": 97,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 72,
-          "y": 95,
+          "x": 120,
+          "y": 120,
           "width": 700,
-          "height": 93.59375,
-          "top": 95,
-          "right": 772,
-          "bottom": 188.59375,
-          "left": 72
+          "height": 96.71875,
+          "top": 120,
+          "right": 820,
+          "bottom": 216.71875,
+          "left": 120
         }
       },
       {
         "className": "closing-pause display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 91,
+        "lineHeight": 85.54,
+        "clientWidth": 700,
+        "scrollWidth": 700,
+        "clientHeight": 171,
+        "scrollHeight": 183,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 228,
+          "x": 260,
           "y": 345,
-          "width": 780,
-          "height": 163.78125,
+          "width": 700,
+          "height": 171.0625,
           "top": 345,
-          "right": 1008,
-          "bottom": 508.78125,
-          "left": 228
+          "right": 960,
+          "bottom": 516.0625,
+          "left": 260
         }
       },
       {
         "className": "closing-end display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 77,
+        "lineHeight": 72.38,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 217,
+        "scrollHeight": 227,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 72,
+          "x": 120,
           "y": 700,
-          "width": 936,
-          "height": 286.4375,
+          "width": 840,
+          "height": 217.125,
           "top": 700,
-          "right": 1008,
-          "bottom": 986.4375,
-          "left": 72
+          "right": 960,
+          "bottom": 917.125,
+          "left": 120
         }
       }
     ],

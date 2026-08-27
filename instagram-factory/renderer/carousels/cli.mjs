@@ -172,6 +172,11 @@ async function renderCarousel({ browser, carousel, sourcePath, stylesheet }) {
     captionUnchanged: captionBefore === captionAfter,
     allSlidesPassed: slideReports.every((report) => report.passed),
     allPngDimensionsExact: slideReports.every((report) => report.artifact.width === 1080 && report.artifact.height === 1440),
+    noTextInternalOverflow: slideReports.every((report) => report.checks.noTextInternalOverflow),
+    allHeadlinesWithoutTerminalPeriods: slideReports.every((report) => report.checks.headlinesWithoutTerminalPeriods),
+    safeZoneMinimum120: slideReports.every((report) => report.checks.safeZoneMinimum120 && report.checks.textInsideSafeZone),
+    lineHeightByRoleExact: slideReports.every((report) => report.checks.lineHeightByRoleExact),
+    nonBreakingSpacesApplied: slideReports.every((report) => report.checks.nonBreakingSpacesApplied),
     slide07PipelineOrderExact: JSON.stringify(slide07.text.slice(1, 16)) === JSON.stringify(slide07Expected),
     noPhotography: slideReports.every((report) => report.checks.noPhotography),
     contactSheetCreated: contactSheetDimensions.width === 744 && contactSheetDimensions.height === 960

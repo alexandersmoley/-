@@ -4,17 +4,23 @@
   "slideId": "slide-03",
   "layoutFamily": "process-diagram-carousel",
   "mode": "criteria-list",
-  "generatedAt": "2026-08-27T08:35:44.104Z",
+  "generatedAt": "2026-08-27T09:13:40.995Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
     "canvasExact": true,
     "noOverflow": true,
+    "noTextInternalOverflow": true,
     "textExact": true,
     "fontsLoaded": true,
     "onlyApprovedFonts": true,
     "mobileReadable": true,
+    "safeZoneMinimum120": true,
     "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
     "approvedColorsOnly": true,
     "noPhotography": true,
     "functionalArrowsOnly": true,
@@ -30,7 +36,7 @@
     "url": "https://alexandersmoley.github.io/-/automation-day-carousel/slide-03.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "38d346e79ee0e1d719184e524582702c13cb2c53692a1db7469de34d08c0d42a"
+    "sha256": "3b3b2f25d8a5dd812cd22427d199c695f8bd81f5db6c52c4019769c00a21a94b"
   },
   "browserQa": {
     "canvasRect": {
@@ -44,13 +50,13 @@
       "left": 0
     },
     "safeRect": {
-      "left": 72,
-      "top": 72,
-      "right": 1008,
-      "bottom": 1368
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
     },
     "visibleText": [
-      "Первым сломался дизайн.",
+      "Первым сломался дизайн",
       "Оказалось, что ИИ может помочь с идеей макета, но это ещё не значит, что он умеет стабильно собирать хорошие карточки:",
       "— в нужном стиле",
       "— с нормальной типографикой",
@@ -58,124 +64,171 @@
       "— с правильным фото",
       "— и точно по утверждённому тексту"
     ],
+    "rawVisibleText": [
+      "Первым сломался дизайн",
+      "Оказалось, что ИИ может помочь с идеей макета, но это ещё не значит, что он умеет стабильно собирать хорошие карточки:",
+      "— в нужном стиле",
+      "— с нормальной типографикой",
+      "— без случайного декора",
+      "— с правильным фото",
+      "— и точно по утверждённому тексту"
+    ],
+    "headlineTexts": [
+      "Первым сломался дизайн"
+    ],
     "type": [
       {
         "className": "criteria-title display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 118,
+        "lineHeight": 110.92,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 222,
+        "scrollHeight": 237,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 72,
-          "y": 88,
-          "width": 936,
-          "height": 205.3125,
-          "top": 88,
-          "right": 1008,
-          "bottom": 293.3125,
-          "left": 72
+          "x": 120,
+          "y": 120,
+          "width": 840,
+          "height": 221.8125,
+          "top": 120,
+          "right": 960,
+          "bottom": 341.8125,
+          "left": 120
         }
       },
       {
         "className": "criteria-context text-sans text-block",
         "family": "\"Inter Production\", sans-serif",
         "size": 34,
+        "lineHeight": 42.16,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 126,
+        "scrollHeight": 126,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 72,
-          "y": 341.3125,
+          "x": 120,
+          "y": 389.8125,
           "width": 840,
-          "height": 125.4375,
-          "top": 341.3125,
-          "right": 912,
-          "bottom": 466.75,
-          "left": 72
+          "height": 126.46875,
+          "top": 389.8125,
+          "right": 960,
+          "bottom": 516.28125,
+          "left": 120
         }
       },
       {
         "className": "criteria-item criteria-item-1 display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 52,
+        "lineHeight": 48.88,
+        "clientWidth": 720,
+        "scrollWidth": 720,
+        "clientHeight": 149,
+        "scrollHeight": 149,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 132,
+          "x": 180,
           "y": 547,
-          "width": 816,
-          "height": 155,
+          "width": 720,
+          "height": 150,
           "top": 547,
-          "right": 948,
-          "bottom": 702,
-          "left": 132
+          "right": 900,
+          "bottom": 697,
+          "left": 180
         }
       },
       {
         "className": "criteria-item criteria-item-2 display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 52,
+        "lineHeight": 48.88,
+        "clientWidth": 720,
+        "scrollWidth": 720,
+        "clientHeight": 149,
+        "scrollHeight": 149,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 132,
-          "y": 702,
-          "width": 816,
-          "height": 155,
-          "top": 702,
-          "right": 948,
-          "bottom": 857,
-          "left": 132
+          "x": 180,
+          "y": 697,
+          "width": 720,
+          "height": 150,
+          "top": 697,
+          "right": 900,
+          "bottom": 847,
+          "left": 180
         }
       },
       {
         "className": "criteria-item criteria-item-3 display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 52,
+        "lineHeight": 48.88,
+        "clientWidth": 720,
+        "scrollWidth": 720,
+        "clientHeight": 149,
+        "scrollHeight": 149,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 132,
-          "y": 857,
-          "width": 816,
-          "height": 155,
-          "top": 857,
-          "right": 948,
-          "bottom": 1012,
-          "left": 132
+          "x": 180,
+          "y": 847,
+          "width": 720,
+          "height": 150,
+          "top": 847,
+          "right": 900,
+          "bottom": 997,
+          "left": 180
         }
       },
       {
         "className": "criteria-item criteria-item-4 display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 52,
+        "lineHeight": 48.88,
+        "clientWidth": 720,
+        "scrollWidth": 720,
+        "clientHeight": 149,
+        "scrollHeight": 149,
         "style": "normal",
         "weight": "400",
         "rect": {
-          "x": 132,
-          "y": 1012,
-          "width": 816,
-          "height": 155,
-          "top": 1012,
-          "right": 948,
-          "bottom": 1167,
-          "left": 132
+          "x": 180,
+          "y": 997,
+          "width": 720,
+          "height": 150,
+          "top": 997,
+          "right": 900,
+          "bottom": 1147,
+          "left": 180
         }
       },
       {
         "className": "criteria-item criteria-item-5 display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
         "size": 52,
+        "lineHeight": 48.88,
+        "clientWidth": 720,
+        "scrollWidth": 720,
+        "clientHeight": 150,
+        "scrollHeight": 150,
         "style": "italic",
         "weight": "400",
         "rect": {
-          "x": 132,
-          "y": 1167,
-          "width": 816,
-          "height": 155,
-          "top": 1167,
-          "right": 948,
-          "bottom": 1322,
-          "left": 132
+          "x": 180,
+          "y": 1147,
+          "width": 720,
+          "height": 150,
+          "top": 1147,
+          "right": 900,
+          "bottom": 1297,
+          "left": 180
         }
       }
     ],
