@@ -1,0 +1,329 @@
+@font-face {
+  font-family: "Inter Production";
+  src: url("__INTER_FONT_URL__") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond Production";
+  src: url("__CORMORANT_REGULAR_URL__") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond Production";
+  src: url("__CORMORANT_ITALIC_URL__") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: block;
+}
+
+:root {
+  --canvas-width: 1080px;
+  --canvas-height: 1920px;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  width: var(--canvas-width);
+  height: var(--canvas-height);
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.story,
+.composition {
+  position: relative;
+  width: var(--canvas-width);
+  height: var(--canvas-height);
+  overflow: hidden;
+}
+
+.story {
+  isolation: isolate;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.composition { z-index: 1; }
+.text-block { position: relative; z-index: 4; }
+.display-serif { font-family: "Cormorant Garamond Production", serif; font-weight: 400; }
+.text-sans { font-family: "Inter Production", sans-serif; font-weight: 400; }
+.italic-blue { color: var(--blue); font-style: italic; }
+
+.story-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 1080px;
+  height: 1920px;
+  fill: none;
+  stroke: var(--grid);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.grid-soft { opacity: .72; }
+.grid-strong { opacity: 1; }
+
+/* 01 — type-led opening */
+.intro-composition { background: var(--paper); }
+.intro-lead {
+  position: absolute;
+  left: 72px;
+  top: 300px;
+  width: 900px;
+  font-size: 194px;
+  line-height: .84;
+  letter-spacing: -.065em;
+  white-space: nowrap;
+}
+.intro-turn {
+  position: absolute;
+  left: 228px;
+  top: 720px;
+  width: 780px;
+}
+.intro-turn-line {
+  font-size: 112px;
+  line-height: .9;
+  letter-spacing: -.045em;
+}
+.intro-turn-line + .intro-turn-line { margin-top: 20px; }
+.intro-signature {
+  position: absolute;
+  left: 72px;
+  top: 1578px;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -.025em;
+}
+
+/* 02 — modular skill list */
+.type-list-composition { background: var(--paper); }
+.skill-list { position: absolute; inset: 220px 72px 260px; }
+.skill-module {
+  position: relative;
+  height: 350px;
+  border-bottom: 1px solid var(--blue);
+  display: flex;
+  align-items: center;
+}
+.skill-module:first-child { border-top: 1px solid var(--blue); }
+.skill-line { line-height: .92; letter-spacing: -.045em; }
+.skill-1 .skill-line { margin-left: 0; font-size: 110px; }
+.skill-2 .skill-line { margin-left: 78px; font-size: 76px; }
+.skill-3 .skill-line { margin-left: 0; font-size: 108px; }
+.skill-4 .skill-line { margin-left: 40px; font-size: 87px; }
+
+/* 03 — proof as editorial rhythm */
+.proof-list-composition { color: var(--paper); background: var(--blue); }
+.proof-names { position: absolute; inset: 230px 72px auto; }
+.proof-name {
+  font-size: 150px;
+  line-height: .82;
+  letter-spacing: -.06em;
+  white-space: nowrap;
+}
+.proof-name-2 { margin: 88px 0 0 156px; font-style: italic; }
+.proof-name-3 { margin-top: 92px; }
+.proof-name-4 { margin: 92px 0 0 156px; font-style: italic; }
+.proof-footnote {
+  position: absolute;
+  left: 72px;
+  top: 1572px;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -.025em;
+  color: var(--paper);
+}
+
+/* 04 — hard narrative turn */
+.statement-composition { background: var(--paper); }
+.statement-blue {
+  position: absolute;
+  inset: 0 0 790px 0;
+  color: var(--paper);
+  background: var(--blue);
+}
+.statement-lead {
+  position: absolute;
+  left: 72px;
+  top: 285px;
+  width: 895px;
+  font-size: 146px;
+  line-height: .88;
+  letter-spacing: -.055em;
+}
+.statement-paper {
+  position: absolute;
+  inset: 1130px 0 0 0;
+  padding: 105px 72px 0 228px;
+  color: var(--ink);
+  background: var(--paper);
+}
+.statement-detail {
+  font-size: 43px;
+  line-height: 1.22;
+  letter-spacing: -.035em;
+  white-space: nowrap;
+}
+.statement-detail + .statement-detail { margin-top: 14px; }
+
+/* 05 — the system appears */
+.process-composition { background: var(--paper); }
+.process-title {
+  position: absolute;
+  left: 72px;
+  top: 250px;
+  width: 900px;
+  z-index: 3;
+}
+.process-lead {
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+.process-name {
+  margin-top: 28px;
+  font-size: 140px;
+  line-height: .84;
+  letter-spacing: -.055em;
+}
+.process-panel {
+  position: absolute;
+  z-index: 3;
+  left: 72px;
+  top: 850px;
+  width: 936px;
+  min-height: 600px;
+  padding: 70px 72px;
+  color: var(--paper);
+  background: var(--blue);
+}
+.process-flow {
+  font-size: 54px;
+  line-height: 1.55;
+  letter-spacing: -.028em;
+}
+
+/* 06 — manifesto contrast */
+.manifesto-composition { background: var(--paper); }
+.manifesto-question {
+  position: absolute;
+  left: 72px;
+  top: 260px;
+  width: 700px;
+  padding-bottom: 42px;
+  border-bottom: 1px solid var(--blue);
+}
+.manifesto-question-line {
+  font-size: 46px;
+  line-height: 1.18;
+  letter-spacing: -.035em;
+}
+.manifesto-answer {
+  position: absolute;
+  left: 190px;
+  top: 850px;
+  width: 818px;
+}
+.manifesto-answer-line {
+  font-size: 82px;
+  line-height: .96;
+  letter-spacing: -.045em;
+}
+.manifesto-answer-line + .manifesto-answer-line { margin-top: 22px; }
+.manifesto-emphasis { color: var(--blue); font-style: italic; }
+
+/* 07 — human layer */
+.photo-composition { background: var(--ink); }
+.story-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 1080px;
+  height: 1920px;
+  object-fit: cover;
+  object-position: 66% 50%;
+}
+.photo-copy {
+  position: absolute;
+  z-index: 3;
+  left: 72px;
+  top: 220px;
+  width: 575px;
+  padding: 40px 42px 44px;
+  color: var(--ink);
+  background: var(--paper);
+}
+.photo-copy-line {
+  font-size: 55px;
+  line-height: .94;
+  letter-spacing: -.038em;
+}
+.photo-copy-line + .photo-copy-line { margin-top: 10px; }
+.photo-life {
+  position: absolute;
+  z-index: 3;
+  left: 72px;
+  top: 1515px;
+  width: 936px;
+  padding: 30px 34px 32px;
+  color: var(--ink);
+  background: var(--paper);
+}
+.photo-life-line {
+  font-size: 29px;
+  line-height: 1.15;
+  letter-spacing: -.026em;
+  white-space: nowrap;
+}
+
+/* 08 — quiet promise */
+.closing-composition { background: var(--paper); }
+.closing-intro {
+  position: absolute;
+  left: 72px;
+  top: 235px;
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: -.035em;
+}
+.closing-list { position: absolute; left: 72px; top: 500px; width: 936px; }
+.closing-row {
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--blue);
+}
+.closing-row:last-child { border-bottom: 1px solid var(--blue); }
+.closing-line {
+  max-width: 920px;
+  font-size: 73px;
+  line-height: .94;
+  letter-spacing: -.044em;
+}
+.closing-row-2 .closing-line { margin-left: 76px; font-size: 66px; }
+.closing-promise {
+  position: absolute;
+  left: 384px;
+  top: 1465px;
+  width: 624px;
+  font-size: 62px;
+  line-height: .96;
+  letter-spacing: -.035em;
+}

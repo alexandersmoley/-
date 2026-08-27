@@ -1,0 +1,108 @@
+{
+  "pipelineVersion": 1,
+  "seriesId": "about-me-stories",
+  "source": "stories/about-me-stories.json",
+  "generatedAt": "2026-08-27T02:58:20.597Z",
+  "passed": true,
+  "checks": {
+    "structuredSeriesValid": true,
+    "approvedForRender": true,
+    "storyCountExact": true,
+    "allLayoutFamiliesUnique": true,
+    "contentSourceChecksumExact": true,
+    "contentSourceUnchanged": true,
+    "approvedPhotoChecksumExact": true,
+    "allStoriesPassed": true,
+    "allPngDimensionsExact": true,
+    "photoOnlyUsedByStory07": true,
+    "contactSheetCreated": true
+  },
+  "failedChecks": [],
+  "integrity": {
+    "contentSource": "content/about-me-stories.md",
+    "contentSha256": "738c274d9d33d7191b2ac874795ca5a2cfdb87141b701e340f389bebb126514e",
+    "canvaAssetId": "MAHTZduqLyI",
+    "photoSha256": "8cc0c06d9c3c0d049a8cac15d25bf7e13b9d07204b4cfcf2a8bfb77d47146805"
+  },
+  "contactSheet": {
+    "path": "output/about-me-stories/contact-sheet.png",
+    "url": "https://alexandersmoley.github.io/-/about-me-stories/contact-sheet.png",
+    "width": 1260,
+    "height": 1068,
+    "sha256": "8465e52ddb20c186babd82f583fde5db70ae7c0d80a8c1f49b37c3374b255525"
+  },
+  "stories": [
+    {
+      "id": "story-01",
+      "layoutFamily": "story-type-intro",
+      "passed": true,
+      "png": "output/about-me-stories/story-01.png",
+      "url": "https://alexandersmoley.github.io/-/about-me-stories/story-01.png",
+      "sha256": "45a872989433da059e18517742d838adc91afdab07a726dc69ee1554d188d246",
+      "qa": "story-01.qa.json"
+    },
+    {
+      "id": "story-02",
+      "layoutFamily": "story-type-list",
+      "passed": true,
+      "png": "output/about-me-stories/story-02.png",
+      "url": "https://alexandersmoley.github.io/-/about-me-stories/story-02.png",
+      "sha256": "902091813f1a121a0fc1450fe7033f54a97ad0d27144c660a3deee0930bf5a77",
+      "qa": "story-02.qa.json"
+    },
+    {
+      "id": "story-03",
+      "layoutFamily": "story-proof-list",
+      "passed": true,
+      "png": "output/about-me-stories/story-03.png",
+      "url": "https://alexandersmoley.github.io/-/about-me-stories/story-03.png",
+      "sha256": "6c870d4c96fb7d258ade76038fb708f8a49e95171792627c5dcfd21c8665d952",
+      "qa": "story-03.qa.json"
+    },
+    {
+      "id": "story-04",
+      "layoutFamily": "story-statement",
+      "passed": true,
+      "png": "output/about-me-stories/story-04.png",
+      "url": "https://alexandersmoley.github.io/-/about-me-stories/story-04.png",
+      "sha256": "adbd213c1db9752d275aba4d5f7c2c741cf52e5e6860fd88f4d002cd7ac3fdc8",
+      "qa": "story-04.qa.json"
+    },
+    {
+      "id": "story-05",
+      "layoutFamily": "story-process-diagram",
+      "passed": true,
+      "png": "output/about-me-stories/story-05.png",
+      "url": "https://alexandersmoley.github.io/-/about-me-stories/story-05.png",
+      "sha256": "757beff9627d66ea12b45854103619aad608abbcc539bcff08a6147ae0b6739a",
+      "qa": "story-05.qa.json"
+    },
+    {
+      "id": "story-06",
+      "layoutFamily": "story-manifesto",
+      "passed": true,
+      "png": "output/about-me-stories/story-06.png",
+      "url": "https://alexandersmoley.github.io/-/about-me-stories/story-06.png",
+      "sha256": "0e7d71b301c9e153f234adb096db25f0ee2ed2f6a1a7ed31c3aef5f284bf9e55",
+      "qa": "story-06.qa.json"
+    },
+    {
+      "id": "story-07",
+      "layoutFamily": "story-photo-editorial",
+      "passed": true,
+      "png": "output/about-me-stories/story-07.png",
+      "url": "https://alexandersmoley.github.io/-/about-me-stories/story-07.png",
+      "sha256": "5aee2a2c521738ee64d80629f056b2305cece5fc77afb4400b459d44946530d7",
+      "qa": "story-07.qa.json"
+    },
+    {
+      "id": "story-08",
+      "layoutFamily": "story-closing-list",
+      "passed": true,
+      "png": "output/about-me-stories/story-08.png",
+      "url": "https://alexandersmoley.github.io/-/about-me-stories/story-08.png",
+      "sha256": "bd04e7e5a1058f0a609877e2bba58bf2239f194432124e9a7a96a248323df175",
+      "qa": "story-08.qa.json"
+    }
+  ]
+}

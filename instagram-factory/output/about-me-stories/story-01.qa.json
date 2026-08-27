@@ -1,0 +1,135 @@
+{
+  "pipelineVersion": 1,
+  "seriesId": "about-me-stories",
+  "storyId": "story-01",
+  "role": "hook / заход",
+  "layoutFamily": "story-type-intro",
+  "generatedAt": "2026-08-27T02:58:16.261Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "fontFloor": true,
+    "textInsideSafeZone": true,
+    "approvedColorsOnly": true,
+    "photoPolicyExact": true,
+    "protectedFacesClear": true,
+    "noEmoji": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/about-me-stories/story-01.png",
+    "url": "https://alexandersmoley.github.io/-/about-me-stories/story-01.png",
+    "width": 1080,
+    "height": 1920,
+    "sha256": "45a872989433da059e18517742d838adc91afdab07a726dc69ee1554d188d246"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1920,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 72,
+      "top": 200,
+      "right": 1008,
+      "bottom": 1660
+    },
+    "visibleText": [
+      "Я редактор.",
+      "Хотя это слово уже",
+      "не очень точное.",
+      "Саша Смолей"
+    ],
+    "type": [
+      {
+        "className": "intro-lead display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 194,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 300,
+          "width": 900,
+          "height": 162.953125,
+          "top": 300,
+          "right": 972,
+          "bottom": 462.953125,
+          "left": 72
+        }
+      },
+      {
+        "className": "intro-turn-line display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 112,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 228,
+          "y": 720,
+          "width": 780,
+          "height": 100.796875,
+          "top": 720,
+          "right": 1008,
+          "bottom": 820.796875,
+          "left": 228
+        }
+      },
+      {
+        "className": "intro-turn-line display-serif italic-blue text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 112,
+        "style": "italic",
+        "weight": "400",
+        "rect": {
+          "x": 228,
+          "y": 840.796875,
+          "width": 780,
+          "height": 100.796875,
+          "top": 840.796875,
+          "right": 1008,
+          "bottom": 941.59375,
+          "left": 228
+        }
+      },
+      {
+        "className": "intro-signature text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 34,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 1578,
+          "width": 222.078125,
+          "height": 34,
+          "top": 1578,
+          "right": 294.078125,
+          "bottom": 1612,
+          "left": 72
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "photo": null,
+    "photoSlots": null,
+    "svgCount": 1
+  }
+}

@@ -6,8 +6,8 @@
   <title>alexsmoley Instagram factory output</title>
   <style>
     body{margin:0;padding:48px;font:16px/1.5 system-ui,sans-serif;color:#101010;background:#f4f1e9}
-    main{max-width:960px;margin:auto}article{display:grid;grid-template-columns:270px 1fr;gap:32px;align-items:start;margin:32px 0}
-    img{display:block;width:270px;height:360px;object-fit:cover}a{color:#1546e8}code{word-break:break-all}
+    main{max-width:1080px;margin:auto}article{display:grid;grid-template-columns:270px 1fr;gap:32px;align-items:start;margin:32px 0}
+    article img{display:block;width:270px;height:360px;object-fit:cover}.stories{margin-top:72px}.contact-sheet img{display:block;width:630px;height:534px}.story-grid{display:grid;grid-template-columns:repeat(4,135px);gap:24px;margin-top:32px}.story-grid img{display:block;width:135px;height:240px;object-fit:cover}a{color:#1546e8}code{word-break:break-all}
   </style>
 </head>
 <body><main><h1>Rendered Instagram posts</h1>
@@ -18,5 +18,19 @@
       <p>human-to-system · benchmark</p>
       <p><a href="./pinned-intro.png">PNG 1080×1440</a> · <a href="./pinned-intro.qa.json">QA report</a></p>
     </div>
-  </article><p><a href="./qa-summary.json">Pipeline QA summary</a> · <a href="./pipeline-report.md">Human-readable report</a></p></main></body>
+  </article>
+  <section class="stories">
+    <h2>About me · Stories</h2>
+    <a class="contact-sheet" href="./about-me-stories/contact-sheet.png"><img src="./about-me-stories/contact-sheet.png" width="630" height="534" alt="about-me-stories contact sheet"></a>
+    <div class="story-grid">
+      <a href="./about-me-stories/story-01.png"><img src="./about-me-stories/story-01.png" width="135" height="240" alt="story-01"></a>
+      <a href="./about-me-stories/story-02.png"><img src="./about-me-stories/story-02.png" width="135" height="240" alt="story-02"></a>
+      <a href="./about-me-stories/story-03.png"><img src="./about-me-stories/story-03.png" width="135" height="240" alt="story-03"></a>
+      <a href="./about-me-stories/story-04.png"><img src="./about-me-stories/story-04.png" width="135" height="240" alt="story-04"></a>
+      <a href="./about-me-stories/story-05.png"><img src="./about-me-stories/story-05.png" width="135" height="240" alt="story-05"></a>
+      <a href="./about-me-stories/story-06.png"><img src="./about-me-stories/story-06.png" width="135" height="240" alt="story-06"></a>
+      <a href="./about-me-stories/story-07.png"><img src="./about-me-stories/story-07.png" width="135" height="240" alt="story-07"></a>
+      <a href="./about-me-stories/story-08.png"><img src="./about-me-stories/story-08.png" width="135" height="240" alt="story-08"></a></div>
+    <p><a href="./about-me-stories/series.qa.json">Stories QA report</a></p>
+  </section><p><a href="./qa-summary.json">Pipeline QA summary</a> · <a href="./pipeline-report.md">Human-readable report</a></p></main></body>
 </html>

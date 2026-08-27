@@ -1,0 +1,153 @@
+{
+  "pipelineVersion": 1,
+  "seriesId": "about-me-stories",
+  "storyId": "story-06",
+  "role": "position / manifesto",
+  "layoutFamily": "story-manifesto",
+  "generatedAt": "2026-08-27T02:58:17.838Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "fontFloor": true,
+    "textInsideSafeZone": true,
+    "approvedColorsOnly": true,
+    "photoPolicyExact": true,
+    "protectedFacesClear": true,
+    "noEmoji": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/about-me-stories/story-06.png",
+    "url": "https://alexandersmoley.github.io/-/about-me-stories/story-06.png",
+    "width": 1080,
+    "height": 1920,
+    "sha256": "0e7d71b301c9e153f234adb096db25f0ee2ed2f6a1a7ed31c3aef5f284bf9e55"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1920,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 72,
+      "top": 200,
+      "right": 1008,
+      "bottom": 1660
+    },
+    "visibleText": [
+      "Мне неинтересно,",
+      "может ли ИИ написать пост.",
+      "Интересно, может ли он помочь",
+      "построить систему, которая стабильно",
+      "делает хороший контент."
+    ],
+    "type": [
+      {
+        "className": "manifesto-question-line text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 46,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 260,
+          "width": 700,
+          "height": 54.265625,
+          "top": 260,
+          "right": 772,
+          "bottom": 314.265625,
+          "left": 72
+        }
+      },
+      {
+        "className": "manifesto-question-line text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 46,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 314.265625,
+          "width": 700,
+          "height": 54.265625,
+          "top": 314.265625,
+          "right": 772,
+          "bottom": 368.53125,
+          "left": 72
+        }
+      },
+      {
+        "className": "manifesto-answer-line display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 82,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 190,
+          "y": 850,
+          "width": 818,
+          "height": 157.4375,
+          "top": 850,
+          "right": 1008,
+          "bottom": 1007.4375,
+          "left": 190
+        }
+      },
+      {
+        "className": "manifesto-answer-line display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 82,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 190,
+          "y": 1029.4375,
+          "width": 818,
+          "height": 157.4375,
+          "top": 1029.4375,
+          "right": 1008,
+          "bottom": 1186.875,
+          "left": 190
+        }
+      },
+      {
+        "className": "manifesto-answer-line display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 82,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 190,
+          "y": 1208.875,
+          "width": 818,
+          "height": 78.71875,
+          "top": 1208.875,
+          "right": 1008,
+          "bottom": 1287.59375,
+          "left": 190
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "photo": null,
+    "photoSlots": null,
+    "svgCount": 0
+  }
+}

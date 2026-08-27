@@ -1,0 +1,85 @@
+{
+  "$schema": "../schemas/story-series.schema.json",
+  "schemaVersion": 1,
+  "id": "about-me-stories",
+  "platform": "instagram",
+  "format": "stories-9x16",
+  "status": "approved-for-render",
+  "canvas": {
+    "width": 1080,
+    "height": 1920
+  },
+  "contentSource": {
+    "path": "content/about-me-stories.md",
+    "sha256": "738c274d9d33d7191b2ac874795ca5a2cfdb87141b701e340f389bebb126514e"
+  },
+  "designTokens": {
+    "ink": "#101010",
+    "paper": "#f4f1e9",
+    "blue": "#1546e8",
+    "grid": "rgba(21, 70, 232, 0.105)"
+  },
+  "safeZone": {
+    "top": 200,
+    "right": 72,
+    "bottom": 260,
+    "left": 72
+  },
+  "photoAsset": {
+    "path": "assets/photos/pinned-intro-mountains-son.jpeg",
+    "canvaAssetId": "MAHTZduqLyI",
+    "sha256": "8cc0c06d9c3c0d049a8cac15d25bf7e13b9d07204b4cfcf2a8bfb77d47146805",
+    "width": 1152,
+    "height": 1536
+  },
+  "stories": [
+    {
+      "id": "story-01",
+      "role": "hook / заход",
+      "layoutFamily": "story-type-intro",
+      "text": ["Я редактор.", "Хотя это слово уже", "не очень точное.", "Саша Смолей"]
+    },
+    {
+      "id": "story-02",
+      "role": "what-i-do",
+      "layoutFamily": "story-type-list",
+      "text": ["Пишу тексты.", "Проектирую интерфейсы.", "Собираю сайты.", "Понемногу вайбкожу."]
+    },
+    {
+      "id": "story-03",
+      "role": "proof / experience",
+      "layoutFamily": "story-proof-list",
+      "text": ["Kaspersky", "Сбер", "СИБУР", "NtechLab", "и другие большие компании"]
+    },
+    {
+      "id": "story-04",
+      "role": "unexpected-turn",
+      "layoutFamily": "story-statement",
+      "text": ["А ещё я занимаюсь выборами.", "Пишу агитацию и делаю материалы", "в том числе для кандидатов в президенты."]
+    },
+    {
+      "id": "story-05",
+      "role": "current-experiment",
+      "layoutFamily": "story-process-diagram",
+      "text": ["Сейчас строю", "контент-завод.", "тема → фактура → текст → дизайн → публикация → аналитика"]
+    },
+    {
+      "id": "story-06",
+      "role": "position / manifesto",
+      "layoutFamily": "story-manifesto",
+      "text": ["Мне неинтересно,", "может ли ИИ написать пост.", "Интересно, может ли он помочь", "построить систему, которая стабильно", "делает хороший контент."]
+    },
+    {
+      "id": "story-07",
+      "role": "human-layer",
+      "layoutFamily": "story-photo-editorial",
+      "text": ["Но превращать блог", "в корпоративный канал про ИИ", "я тоже не собираюсь.", "семья / работа из дома / зал / дизайн / путешествия"]
+    },
+    {
+      "id": "story-08",
+      "role": "closing / promise",
+      "layoutFamily": "story-closing-list",
+      "text": ["Здесь я буду:", "— строить контент-завод", "— разбирать коммуникации брендов", "— учиться вести блог", "Посмотрим, что из этого выйдет."]
+    }
+  ]
+}

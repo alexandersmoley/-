@@ -4,7 +4,7 @@
 
 Canva не является основным генератором дизайна. Основной production path — кодовый renderer в репозитории:
 
-structured post (`approved-for-render`) → HTML/CSS/SVG layout family → automated QA → PNG 1080×1440 → output/HTTPS artifact → human approval → optional publishing.
+structured content (`approved-for-render`) → HTML/CSS/SVG layout family → automated QA → production PNG → output/HTTPS artifact → human approval → optional publishing.
 
 Canva может использоваться как дополнительный ручной редактор/экспорт, но не как source of truth.
 
@@ -19,6 +19,8 @@ Canva может использоваться как дополнительны�
 - `content/*.md` — утверждённые тексты и production notes.
 - `posts/*.json` — машиночитаемые structured posts, asset checksum, layout family и ограниченные параметры композиции.
 - `schemas/post.schema.json` — исполняемый контракт structured post.
+- `stories/*.json` — машиночитаемые серии Stories, точный текст, safe zones, asset checksum и layout family.
+- `schemas/story-series.schema.json` — исполняемый контракт серии Stories.
 - `assets/` — фотографии/иллюстрации.
 - `renderer/` — код дизайн-системы и рендера.
 
@@ -38,6 +40,8 @@ Canva может использоваться как дополнительны�
 Instagram portrait: 1080×1440 px (3:4).
 
 Внутренний layout строится в CSS pixels 1080×1440 без responsive scaling при финальном рендере.
+
+Instagram Stories: 1080×1920 px (9:16). Ключевой текст и управляющие смыслом элементы остаются внутри указанной в structured series безопасной области; фотография может быть full-bleed. Финальный рендер также выполняется без responsive scaling.
 
 ## Design tokens
 
@@ -76,6 +80,8 @@ Renderer должен оставаться registry-based и расширять�
 6. `quote-editorial` — один сильный тезис, много воздуха, display typography.
 7. `carousel-editorial` — система последовательных слайдов с общей сеткой, но меняющейся композицией.
 
+Для Stories registry включает самостоятельные семейства: `story-type-intro`, `story-type-list`, `story-proof-list`, `story-statement`, `story-process-diagram`, `story-manifesto`, `story-photo-editorial`, `story-closing-list`. Они используют общие токены, но не являются восемью перестановками одного шаблона.
+
 Каждое семейство должно иметь параметры вариативности: crop, alignment, text scale, blue-plane proportion, whitespace ratio, grid visibility, image position. Эти параметры должны иметь ограниченные art-directed диапазоны, а не случайные значения.
 
 ## Art-direction selection
@@ -103,7 +109,7 @@ Renderer должен оставаться registry-based и расширять�
 
 Перед финальным экспортом автоматические проверки должны валить build при критических ошибках:
 
-- canvas ровно 1080×1350;
+- canvas ровно 1080×1440 для постов или 1080×1920 для Stories;
 - нет overflow за canvas;
 - нет отсутствующих шрифтов/assets;
 - нет текста меньше минимально допустимого размера;
@@ -111,6 +117,7 @@ Renderer должен оставаться registry-based и расширять�
 - используются только разрешённые цвета;
 - правильный source image;
 - безопасные поля для ключевого текста;
+- для Stories — соблюдение Instagram UI safe zones;
 - contrast достаточен;
 - нет случайных стрелок/иконок/теней/градиентов;
 - caption не изменён renderer-ом.

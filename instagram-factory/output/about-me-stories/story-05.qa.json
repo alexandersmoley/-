@@ -1,0 +1,117 @@
+{
+  "pipelineVersion": 1,
+  "seriesId": "about-me-stories",
+  "storyId": "story-05",
+  "role": "current-experiment",
+  "layoutFamily": "story-process-diagram",
+  "generatedAt": "2026-08-27T02:58:17.517Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "fontFloor": true,
+    "textInsideSafeZone": true,
+    "approvedColorsOnly": true,
+    "photoPolicyExact": true,
+    "protectedFacesClear": true,
+    "noEmoji": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/about-me-stories/story-05.png",
+    "url": "https://alexandersmoley.github.io/-/about-me-stories/story-05.png",
+    "width": 1080,
+    "height": 1920,
+    "sha256": "757beff9627d66ea12b45854103619aad608abbcc539bcff08a6147ae0b6739a"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1920,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 72,
+      "top": 200,
+      "right": 1008,
+      "bottom": 1660
+    },
+    "visibleText": [
+      "Сейчас строю",
+      "контент-завод.",
+      "тема → фактура → текст → дизайн → публикация → аналитика"
+    ],
+    "type": [
+      {
+        "className": "process-lead text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 48,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 250,
+          "width": 900,
+          "height": 48,
+          "top": 250,
+          "right": 972,
+          "bottom": 298,
+          "left": 72
+        }
+      },
+      {
+        "className": "process-name display-serif italic-blue text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 140,
+        "style": "italic",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 326,
+          "width": 900,
+          "height": 117.59375,
+          "top": 326,
+          "right": 972,
+          "bottom": 443.59375,
+          "left": 72
+        }
+      },
+      {
+        "className": "process-flow text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 54,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 144,
+          "y": 920,
+          "width": 792,
+          "height": 251.0625,
+          "top": 920,
+          "right": 936,
+          "bottom": 1171.0625,
+          "left": 144
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "photo": null,
+    "photoSlots": null,
+    "svgCount": 1
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "pipelineVersion": 1,
+  "seriesId": "about-me-stories",
+  "storyId": "story-02",
+  "role": "what-i-do",
+  "layoutFamily": "story-type-list",
+  "generatedAt": "2026-08-27T02:58:16.582Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "fontFloor": true,
+    "textInsideSafeZone": true,
+    "approvedColorsOnly": true,
+    "photoPolicyExact": true,
+    "protectedFacesClear": true,
+    "noEmoji": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/about-me-stories/story-02.png",
+    "url": "https://alexandersmoley.github.io/-/about-me-stories/story-02.png",
+    "width": 1080,
+    "height": 1920,
+    "sha256": "902091813f1a121a0fc1450fe7033f54a97ad0d27144c660a3deee0930bf5a77"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1920,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 72,
+      "top": 200,
+      "right": 1008,
+      "bottom": 1660
+    },
+    "visibleText": [
+      "Пишу тексты.",
+      "Проектирую интерфейсы.",
+      "Собираю сайты.",
+      "Понемногу вайбкожу."
+    ],
+    "type": [
+      {
+        "className": "skill-line display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 110,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 344.40625,
+          "width": 562.21875,
+          "height": 101.1875,
+          "top": 344.40625,
+          "right": 634.21875,
+          "bottom": 445.59375,
+          "left": 72
+        }
+      },
+      {
+        "className": "skill-line display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 76,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 150,
+          "y": 709.546875,
+          "width": 730.296875,
+          "height": 69.90625,
+          "top": 709.546875,
+          "right": 880.296875,
+          "bottom": 779.453125,
+          "left": 150
+        }
+      },
+      {
+        "className": "skill-line display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 108,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 1044.8125,
+          "width": 646.609375,
+          "height": 99.359375,
+          "top": 1044.8125,
+          "right": 718.609375,
+          "bottom": 1144.171875,
+          "left": 72
+        }
+      },
+      {
+        "className": "skill-line display-serif italic-blue text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 87,
+        "style": "italic",
+        "weight": "400",
+        "rect": {
+          "x": 112,
+          "y": 1404.484375,
+          "width": 644.0625,
+          "height": 80.03125,
+          "top": 1404.484375,
+          "right": 756.0625,
+          "bottom": 1484.515625,
+          "left": 112
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "photo": null,
+    "photoSlots": null,
+    "svgCount": 0
+  }
+}

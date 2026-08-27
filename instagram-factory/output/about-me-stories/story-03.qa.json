@@ -1,0 +1,153 @@
+{
+  "pipelineVersion": 1,
+  "seriesId": "about-me-stories",
+  "storyId": "story-03",
+  "role": "proof / experience",
+  "layoutFamily": "story-proof-list",
+  "generatedAt": "2026-08-27T02:58:16.901Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "fontFloor": true,
+    "textInsideSafeZone": true,
+    "approvedColorsOnly": true,
+    "photoPolicyExact": true,
+    "protectedFacesClear": true,
+    "noEmoji": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/about-me-stories/story-03.png",
+    "url": "https://alexandersmoley.github.io/-/about-me-stories/story-03.png",
+    "width": 1080,
+    "height": 1920,
+    "sha256": "6c870d4c96fb7d258ade76038fb708f8a49e95171792627c5dcfd21c8665d952"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1920,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 72,
+      "top": 200,
+      "right": 1008,
+      "bottom": 1660
+    },
+    "visibleText": [
+      "Kaspersky",
+      "Сбер",
+      "СИБУР",
+      "NtechLab",
+      "и другие большие компании"
+    ],
+    "type": [
+      {
+        "className": "proof-name proof-name-1 display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 150,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 230,
+          "width": 936,
+          "height": 123,
+          "top": 230,
+          "right": 1008,
+          "bottom": 353,
+          "left": 72
+        }
+      },
+      {
+        "className": "proof-name proof-name-2 display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 150,
+        "style": "italic",
+        "weight": "400",
+        "rect": {
+          "x": 228,
+          "y": 441,
+          "width": 780,
+          "height": 123,
+          "top": 441,
+          "right": 1008,
+          "bottom": 564,
+          "left": 228
+        }
+      },
+      {
+        "className": "proof-name proof-name-3 display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 150,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 656,
+          "width": 936,
+          "height": 123,
+          "top": 656,
+          "right": 1008,
+          "bottom": 779,
+          "left": 72
+        }
+      },
+      {
+        "className": "proof-name proof-name-4 display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 150,
+        "style": "italic",
+        "weight": "400",
+        "rect": {
+          "x": 228,
+          "y": 871,
+          "width": 780,
+          "height": 123,
+          "top": 871,
+          "right": 1008,
+          "bottom": 994,
+          "left": 228
+        }
+      },
+      {
+        "className": "proof-footnote text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 34,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 1572,
+          "width": 453.484375,
+          "height": 37.390625,
+          "top": 1572,
+          "right": 525.484375,
+          "bottom": 1609.390625,
+          "left": 72
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "photo": null,
+    "photoSlots": null,
+    "svgCount": 0
+  }
+}

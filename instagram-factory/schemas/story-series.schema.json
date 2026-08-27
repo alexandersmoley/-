@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://alexandersmoley.github.io/-/schemas/story-series.schema.json",
+  "title": "Alex Smoley structured Instagram Stories series",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "platform",
+    "format",
+    "status",
+    "canvas",
+    "contentSource",
+    "designTokens",
+    "safeZone",
+    "photoAsset",
+    "stories"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "id": { "const": "about-me-stories" },
+    "platform": { "const": "instagram" },
+    "format": { "const": "stories-9x16" },
+    "status": { "enum": ["draft", "approved-for-render", "rendered"] },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "const": 1080 },
+        "height": { "const": 1920 }
+      }
+    },
+    "contentSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "const": "content/about-me-stories.md" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "designTokens": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ink", "paper", "blue", "grid"],
+      "properties": {
+        "ink": { "const": "#101010" },
+        "paper": { "const": "#f4f1e9" },
+        "blue": { "const": "#1546e8" },
+        "grid": { "const": "rgba(21, 70, 232, 0.105)" }
+      }
+    },
+    "safeZone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["top", "right", "bottom", "left"],
+      "properties": {
+        "top": { "const": 200 },
+        "right": { "const": 72 },
+        "bottom": { "const": 260 },
+        "left": { "const": 72 }
+      }
+    },
+    "photoAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "canvaAssetId", "sha256", "width", "height"],
+      "properties": {
+        "path": { "const": "assets/photos/pinned-intro-mountains-son.jpeg" },
+        "canvaAssetId": { "const": "MAHTZduqLyI" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "width": { "const": 1152 },
+        "height": { "const": 1536 }
+      }
+    },
+    "stories": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": { "$ref": "#/$defs/story" }
+    }
+  },
+  "$defs": {
+    "story": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "role", "layoutFamily", "text"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^story-0[1-8]$" },
+        "role": { "type": "string", "minLength": 1 },
+        "layoutFamily": {
+          "enum": [
+            "story-type-intro",
+            "story-type-list",
+            "story-proof-list",
+            "story-statement",
+            "story-process-diagram",
+            "story-manifesto",
+            "story-photo-editorial",
+            "story-closing-list"
+          ]
+        },
+        "text": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 6,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

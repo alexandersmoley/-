@@ -7,6 +7,7 @@ on:
       - "instagram-factory/assets/**"
       - "instagram-factory/content/**"
       - "instagram-factory/posts/**"
+      - "instagram-factory/stories/**"
       - "instagram-factory/renderer/**"
       - "instagram-factory/schemas/**"
       - "instagram-factory/scripts/**"
@@ -64,7 +65,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add output/*.png output/index.html output/.nojekyll
+          git add output
           if ! git diff --cached --quiet; then
             git commit -m "Render approved Instagram posts [skip ci]"
             git push

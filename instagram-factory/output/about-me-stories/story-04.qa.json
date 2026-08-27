@@ -1,0 +1,117 @@
+{
+  "pipelineVersion": 1,
+  "seriesId": "about-me-stories",
+  "storyId": "story-04",
+  "role": "unexpected-turn",
+  "layoutFamily": "story-statement",
+  "generatedAt": "2026-08-27T02:58:17.201Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "fontFloor": true,
+    "textInsideSafeZone": true,
+    "approvedColorsOnly": true,
+    "photoPolicyExact": true,
+    "protectedFacesClear": true,
+    "noEmoji": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/about-me-stories/story-04.png",
+    "url": "https://alexandersmoley.github.io/-/about-me-stories/story-04.png",
+    "width": 1080,
+    "height": 1920,
+    "sha256": "adbd213c1db9752d275aba4d5f7c2c741cf52e5e6860fd88f4d002cd7ac3fdc8"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1920,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1920,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 72,
+      "top": 200,
+      "right": 1008,
+      "bottom": 1660
+    },
+    "visibleText": [
+      "А ещё я занимаюсь выборами.",
+      "Пишу агитацию и делаю материалы",
+      "в том числе для кандидатов в президенты."
+    ],
+    "type": [
+      {
+        "className": "statement-lead display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 146,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 72,
+          "y": 285,
+          "width": 895,
+          "height": 385.40625,
+          "top": 285,
+          "right": 967,
+          "bottom": 670.40625,
+          "left": 72
+        }
+      },
+      {
+        "className": "statement-detail text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 43,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 228,
+          "y": 1235,
+          "width": 780,
+          "height": 52.453125,
+          "top": 1235,
+          "right": 1008,
+          "bottom": 1287.453125,
+          "left": 228
+        }
+      },
+      {
+        "className": "statement-detail text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 43,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 228,
+          "y": 1301.453125,
+          "width": 780,
+          "height": 52.453125,
+          "top": 1301.453125,
+          "right": 1008,
+          "bottom": 1353.90625,
+          "left": 228
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "photo": null,
+    "photoSlots": null,
+    "svgCount": 0
+  }
+}

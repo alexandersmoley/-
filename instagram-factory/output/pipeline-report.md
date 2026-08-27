@@ -7,6 +7,11 @@
 - Pages base URL: https://alexandersmoley.github.io/-/
 - Social publishing: not included and not executed
 
+- Approved Stories rendered: 8
+- Stories canvas: 1080×1920
+- Stories QA gates passed: 11/11
+- Stories contact sheet: [output/about-me-stories/contact-sheet.png](https://alexandersmoley.github.io/-/about-me-stories/contact-sheet.png)
+
 ## pinned-intro
 
 - Layout family: `human-to-system`
