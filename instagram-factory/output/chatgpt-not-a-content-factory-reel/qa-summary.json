@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "chatgpt-not-a-content-factory-reel",
   "source": "reels/chatgpt-not-a-content-factory-reel.json",
-  "generatedAt": "2026-08-27T13:55:05.638Z",
+  "generatedAt": "2026-08-27T14:10:45.771Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -30,7 +30,7 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/chatgpt-not-a-content-factory-reel.md",
-    "contentSha256": "dd2833e9fdf2d67da916e4113e1afd201e6229aa4b247b90d9289a5b8e5e94a4",
+    "contentSha256": "11af2737d775a557040141e1c2812026c928d9b0ec0ba9efeca2131c6303d3dd",
     "captionSha256": "5c4a821ce1c680f49c837f846b0e59d47a9e356e887ae612a8dac45b0d1b0bec"
   },
   "media": {
@@ -44,7 +44,7 @@
     "cover": {
       "path": "output/chatgpt-not-a-content-factory-reel/cover.png",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/cover.png",
-      "sha256": "56f75ab871912a2d777868d5c2c38765dc4e7b70cb9eb72a46c984daaf101e17",
+      "sha256": "abe5d333efd6527e06ea443f040f18a024480168840b081e8ea6f901f0978691",
       "width": 1080,
       "height": 1920
     },
@@ -437,7 +437,7 @@
     },
     "details": {
       "actualText": [
-        "ChatGPT написать пост —",
+        "Написать пост через ChatGPT —",
         "не контент-завод"
       ],
       "safeRect": {
