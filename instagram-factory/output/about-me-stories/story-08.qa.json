@@ -4,7 +4,7 @@
   "storyId": "story-08",
   "role": "closing / promise",
   "layoutFamily": "story-closing-list",
-  "generatedAt": "2026-08-28T19:33:49.447Z",
+  "generatedAt": "2026-08-28T20:01:07.805Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,

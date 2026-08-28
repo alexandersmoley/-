@@ -4,7 +4,7 @@
   "itemId": "slide-05",
   "kind": "production-slide",
   "mode": "process-map",
-  "generatedAt": "2026-08-28T19:33:56.166Z",
+  "generatedAt": "2026-08-28T20:01:14.344Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -44,7 +44,7 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-05.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "2d7c1d3297848b6ea47b395aeb2db49458daabb0b09bba64a3f3d31fbb773386"
+    "sha256": "930efbc31b78c0f19f5446fe6b2111b48000af1edaff94973e5c40642bd37136"
   },
   "browserQa": {
     "canvasRect": {
@@ -64,7 +64,7 @@
       "bottom": 1320
     },
     "visibleText": [
-      "От темы до аналитики",
+      "Весь путь материала",
       "тема",
       "фактура",
       "текст",
@@ -75,7 +75,7 @@
       "По каждому этапу фиксирую, что можно автоматизировать, а что нужно проверить самому"
     ],
     "rawVisibleText": [
-      "От темы до аналитики",
+      "Весь путь материала",
       "тема",
       "фактура",
       "текст",
@@ -86,7 +86,7 @@
       "По каждому этапу фиксирую, что можно автоматизировать, а что нужно проверить самому"
     ],
     "headlineTexts": [
-      "От темы до аналитики"
+      "Весь путь материала"
     ],
     "type": [
       {

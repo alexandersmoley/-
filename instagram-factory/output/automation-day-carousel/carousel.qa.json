@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "carouselId": "automation-day-carousel",
   "source": "carousels/automation-day-carousel.json",
-  "generatedAt": "2026-08-28T19:33:52.140Z",
+  "generatedAt": "2026-08-28T20:01:10.220Z",
   "passed": true,
   "checks": {
     "structuredCarouselValid": true,
