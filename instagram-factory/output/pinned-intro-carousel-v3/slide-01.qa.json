@@ -4,7 +4,7 @@
   "itemId": "slide-01",
   "kind": "production-cover",
   "mode": "identity-cover",
-  "generatedAt": "2026-08-28T19:26:15.079Z",
+  "generatedAt": "2026-08-28T19:33:55.579Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -44,7 +44,7 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-01.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "0317c1925ed53b97430b544feb2b30285f797de6e0ecc9cbb4961a022285acd0"
+    "sha256": "75427d2658af156252ad1ea5625e515a31cf9d57ea9baf31a518590ea7976ece"
   },
   "browserQa": {
     "canvasRect": {
