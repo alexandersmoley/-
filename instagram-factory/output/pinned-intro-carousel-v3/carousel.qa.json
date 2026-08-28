@@ -1,7 +1,7 @@
 {
   "pipelineVersion": 1,
   "carouselId": "pinned-intro-carousel-v3",
-  "generatedAt": "2026-08-28T13:54:28.059Z",
+  "generatedAt": "2026-08-28T14:04:21.146Z",
   "passed": true,
   "checks": {
     "structuredSourceValid": true,
@@ -46,14 +46,14 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/contact-sheet.png",
     "width": 984,
     "height": 648,
-    "sha256": "e594a18b863672fe581eb7f9ca3d4c8bd422b1966c4d9f187058cf10638ee44d"
+    "sha256": "a98c1bf513c12f3e27c6be9b57bda0b635e642dac7d66aa53bc79f04c6e96169"
   },
   "coverPreview": {
     "path": "output/pinned-intro-carousel-v3/cover-preview.png",
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/cover-preview.png",
     "width": 360,
     "height": 460,
-    "sha256": "3463799294946eca8497f037f2387e4e2426bceb8b9659cccc13691afa48e715"
+    "sha256": "377603494e5f9609e8385077a13e791d7358d9e365dd73b966df633ad5ba43aa"
   },
   "slides": [
     {
