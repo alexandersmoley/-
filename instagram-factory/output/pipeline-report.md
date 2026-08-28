@@ -17,6 +17,12 @@
 - Carousel QA gates passed: 21/21
 - Carousel contact sheet: [output/automation-day-carousel/contact-sheet.png](https://alexandersmoley.github.io/-/automation-day-carousel/contact-sheet.png)
 
+- Pinned intro v2 slides rendered: 9
+- Pinned intro v2 cover directions: 3
+- Pinned intro v2 QA gates passed: 24/24
+- Pinned intro v2 contact sheet: [output/pinned-intro-carousel-v2/contact-sheet.png](https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/contact-sheet.png)
+- Pinned intro v2 cover sheet: [output/pinned-intro-carousel-v2/thumbnail-sheet.png](https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/thumbnail-sheet.png)
+
 - Approved Reels rendered: 1
 - Reel canvas: 1080×1920, 30/1 fps
 - Reel duration: 25 seconds

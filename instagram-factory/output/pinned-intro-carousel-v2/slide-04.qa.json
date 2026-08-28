@@ -1,0 +1,199 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v2",
+  "itemId": "slide-04",
+  "kind": "production-slide",
+  "mode": "reveal",
+  "generatedAt": "2026-08-27T18:05:46.658Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "visualCorePresent": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v2/slide-04.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-04.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "f02878d0e058133e600b74aeb2ed84993f86d26bc7e63f738093b7f42fc0d8bd"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Почему я вообще полез в это",
+      "Все уже умеют попросить ChatGPT написать пост",
+      "промпт",
+      "текст",
+      "Мне интереснее другое: можно ли автоматизировать производство целиком, а не только черновик текста"
+    ],
+    "rawVisibleText": [
+      "Почему я вообще полез в это",
+      "Все уже умеют попросить ChatGPT написать пост",
+      "промпт",
+      "текст",
+      "Мне интереснее другое: можно ли автоматизировать производство целиком, а не только черновик текста"
+    ],
+    "headlineTexts": [
+      "Почему я вообще полез в это"
+    ],
+    "type": [
+      {
+        "className": "reveal-title display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 94,
+        "lineHeight": 88.36,
+        "clientWidth": 740,
+        "scrollWidth": 740,
+        "clientHeight": 177,
+        "scrollHeight": 189,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 120,
+          "width": 740,
+          "height": 176.71875,
+          "top": 120,
+          "right": 860,
+          "bottom": 296.71875,
+          "left": 120
+        }
+      },
+      {
+        "className": "reveal-given text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 34,
+        "lineHeight": 42.16,
+        "clientWidth": 650,
+        "scrollWidth": 650,
+        "clientHeight": 84,
+        "scrollHeight": 84,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 350,
+          "width": 650,
+          "height": 84.3125,
+          "top": 350,
+          "right": 770,
+          "bottom": 434.3125,
+          "left": 120
+        }
+      },
+      {
+        "className": "mini-machine-node mini-prompt text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 128,
+        "scrollWidth": 128,
+        "clientHeight": 65,
+        "scrollHeight": 65,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 146,
+          "y": 639,
+          "width": 130,
+          "height": 66.71875,
+          "top": 639,
+          "right": 276,
+          "bottom": 705.71875,
+          "left": 146
+        }
+      },
+      {
+        "className": "mini-machine-node mini-text text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 123,
+        "scrollWidth": 123,
+        "clientHeight": 65,
+        "scrollHeight": 65,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 356,
+          "y": 639,
+          "width": 125,
+          "height": 66.71875,
+          "top": 639,
+          "right": 481,
+          "bottom": 705.71875,
+          "left": 356
+        }
+      },
+      {
+        "className": "reveal-question display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 61,
+        "lineHeight": 57.34,
+        "clientWidth": 720,
+        "scrollWidth": 720,
+        "clientHeight": 229,
+        "scrollHeight": 237,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 178,
+          "y": 900,
+          "width": 720,
+          "height": 229.3125,
+          "top": 900,
+          "right": 898,
+          "bottom": 1129.3125,
+          "left": 178
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 0,
+    "approvedImageCount": 0,
+    "imageDimensions": [],
+    "visualCoreCount": 3,
+    "svgCount": 1
+  }
+}

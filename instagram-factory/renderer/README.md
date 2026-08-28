@@ -79,6 +79,20 @@ The first benchmark is `automation-day-carousel`: nine slides, no photography, f
 
 Editorial typography is enforced in the renderer: headline roles cannot end in a period, 1080×1440 carousel text stays inside a 120 px safe zone, display/body leading uses the shared `0.94`/`1.24` tokens, and Russian short words receive non-breaking spaces without changing canonical copy comparison.
 
+## Pinned intro editorial carousel
+
+`pinned-intro-editorial` is a reusable 1080×1440 family for a human-led introduction that moves from a person and evidence toward a working system. Its benchmark, `pinned-intro-carousel-v2`, has three compositionally distinct cover directions and nine production slides. Cover B is the selected first slide.
+
+The renderer reads `carousels/pinned-intro-carousel-v2/source.json`, checks every visible text node and the caption against the final copy freeze in `content/pinned-intro-carousel-v2.md`, pins the approved Canva photo asset `MAHTX_B6J9k` by checksum, and renders HTML/CSS/SVG without generative imagery. It produces all slide PNGs, all cover variants, a contact sheet, a profile-scale cover sheet and machine-readable QA under `output/pinned-intro-carousel-v2/`.
+
+Run only this benchmark with:
+
+```bash
+pnpm run render:pinned-intro-v2
+```
+
+The QA gates enforce exact 1080×1440 output, the 120 px safe zone, Inter/Cormorant Garamond Regular/Italic only, exact copy, approved colors, correct source photography, non-breaking spaces, no terminal headline periods, no overflow, no invented interface elements and no publishing controls.
+
 ## Motion editorial Reel
 
 `motion-editorial-system` is the reusable 1080×1920 family for motion-first Reels without talking head or voice-over. It renders every frame deterministically in Chromium, pipes the PNG frame stream to FFmpeg at 30 fps and adds a deterministic original stereo instrumental bed. The first benchmark, `chatgpt-not-a-content-factory-reel`, uses six scene families inside one narrative system and remains locked to `publish: false`.

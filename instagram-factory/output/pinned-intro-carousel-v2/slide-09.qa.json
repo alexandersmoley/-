@@ -1,0 +1,182 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v2",
+  "itemId": "slide-09",
+  "kind": "production-slide",
+  "mode": "closing",
+  "generatedAt": "2026-08-27T18:05:48.227Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "visualCorePresent": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v2/slide-09.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-09.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "b6512a1ac0e48d5884c4dd851923e570562acf11f986b9af85e9bf4634ee4cb8"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Много",
+      "Удобно",
+      "Не стыдно публиковать",
+      "Если получится на собственном блоге — следующим шагом буду собирать такие системы для брендов"
+    ],
+    "rawVisibleText": [
+      "Много",
+      "Удобно",
+      "Не стыдно публиковать",
+      "Если получится на собственном блоге — следующим шагом буду собирать такие системы для брендов"
+    ],
+    "headlineTexts": [
+      "Много",
+      "Удобно",
+      "Не стыдно публиковать"
+    ],
+    "type": [
+      {
+        "className": "closing-title-line display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 104,
+        "lineHeight": 97.76,
+        "clientWidth": 630,
+        "scrollWidth": 630,
+        "clientHeight": 98,
+        "scrollHeight": 111,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 120,
+          "width": 630,
+          "height": 97.75,
+          "top": 120,
+          "right": 750,
+          "bottom": 217.75,
+          "left": 120
+        }
+      },
+      {
+        "className": "closing-title-line display-serif closing-title-blue text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 104,
+        "lineHeight": 97.76,
+        "clientWidth": 630,
+        "scrollWidth": 630,
+        "clientHeight": 98,
+        "scrollHeight": 111,
+        "style": "italic",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 241.75,
+          "width": 630,
+          "height": 97.75,
+          "top": 241.75,
+          "right": 750,
+          "bottom": 339.5,
+          "left": 120
+        }
+      },
+      {
+        "className": "closing-title-line display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 104,
+        "lineHeight": 97.76,
+        "clientWidth": 630,
+        "scrollWidth": 630,
+        "clientHeight": 196,
+        "scrollHeight": 209,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 363.5,
+          "width": 630,
+          "height": 195.5,
+          "top": 363.5,
+          "right": 750,
+          "bottom": 559,
+          "left": 120
+        }
+      },
+      {
+        "className": "closing-copy text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 32,
+        "lineHeight": 39.68,
+        "clientWidth": 700,
+        "scrollWidth": 700,
+        "clientHeight": 119,
+        "scrollHeight": 119,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 260,
+          "y": 1055,
+          "width": 700,
+          "height": 119.015625,
+          "top": 1055,
+          "right": 960,
+          "bottom": 1174.015625,
+          "left": 260
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 1,
+    "approvedImageCount": 1,
+    "imageDimensions": [
+      {
+        "width": 150,
+        "height": 200
+      }
+    ],
+    "visualCoreCount": 2,
+    "svgCount": 1
+  }
+}

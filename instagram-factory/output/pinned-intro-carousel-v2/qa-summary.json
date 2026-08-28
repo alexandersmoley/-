@@ -1,0 +1,153 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v2",
+  "generatedAt": "2026-08-27T18:05:48.400Z",
+  "passed": true,
+  "checks": {
+    "structuredSourceValid": true,
+    "approvedForRender": true,
+    "publishDisabled": true,
+    "canvasExact": true,
+    "safeZoneExact": true,
+    "threeCoverVariants": true,
+    "coverDirectionsDistinct": true,
+    "selectedCoverExact": true,
+    "slideCountExact": true,
+    "layoutFamilyExact": true,
+    "copyFreezeExact": true,
+    "captionFreezeExact": true,
+    "contentSourceChecksumExact": true,
+    "captionChecksumExact": true,
+    "approvedAssetIdExact": true,
+    "approvedAssetChecksumExact": true,
+    "approvedAssetDimensionsExact": true,
+    "allCoversPassed": true,
+    "allSlidesPassed": true,
+    "visualFirstMinimum": true,
+    "adjacentCompositionsDistinct": true,
+    "contactSheetCreated": true,
+    "thumbnailSheetCreated": true,
+    "socialPublishingNotExecuted": true
+  },
+  "failedChecks": [],
+  "integrity": {
+    "contentSha256": "333dcd3dd6e6165dbbfe70c3da4708fc4bf7ebec40cf7cfed35f868fd30aea40",
+    "captionSha256": "847550b7119256681a5a83bd4e7ad4f098084bbb9d79d8655b6cb40dff590a7e",
+    "assetId": "MAHTX_B6J9k",
+    "assetSha256": "6315d9f64f0fff131bd400d0631129bd45488a33e47610c4d8b1259caee21b83"
+  },
+  "contactSheet": {
+    "path": "output/pinned-intro-carousel-v2/contact-sheet.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/contact-sheet.png",
+    "width": 744,
+    "height": 960,
+    "sha256": "f7a44f42a09ebd73fb8272383d5615bda65dcddf98f5ef801e5677de0c1609b3"
+  },
+  "thumbnailSheet": {
+    "path": "output/pinned-intro-carousel-v2/thumbnail-sheet.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/thumbnail-sheet.png",
+    "width": 1020,
+    "height": 460,
+    "sha256": "5f26fcedf9156fccbc1db84f526493b29f29b683b5535dafa594da86f42b1cdf"
+  },
+  "covers": [
+    {
+      "id": "cover-a",
+      "mode": "cover-photo",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/covers/cover-a.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/covers/cover-a.png",
+      "qa": "covers/cover-a.qa.json"
+    },
+    {
+      "id": "cover-b",
+      "mode": "cover-mission",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/covers/cover-b.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/covers/cover-b.png",
+      "qa": "covers/cover-b.qa.json"
+    },
+    {
+      "id": "cover-c",
+      "mode": "cover-human-system",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/covers/cover-c.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/covers/cover-c.png",
+      "qa": "covers/cover-c.qa.json"
+    }
+  ],
+  "slides": [
+    {
+      "id": "slide-01",
+      "mode": "cover-mission",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/slide-01.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-01.png",
+      "qa": "slide-01.qa.json"
+    },
+    {
+      "id": "slide-02",
+      "mode": "skills-collage",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/slide-02.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-02.png",
+      "qa": "slide-02.qa.json"
+    },
+    {
+      "id": "slide-03",
+      "mode": "evidence-wall",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/slide-03.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-03.png",
+      "qa": "slide-03.qa.json"
+    },
+    {
+      "id": "slide-04",
+      "mode": "reveal",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/slide-04.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-04.png",
+      "qa": "slide-04.qa.json"
+    },
+    {
+      "id": "slide-05",
+      "mode": "factory-map",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/slide-05.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-05.png",
+      "qa": "slide-05.qa.json"
+    },
+    {
+      "id": "slide-06",
+      "mode": "approval-contrast",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/slide-06.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-06.png",
+      "qa": "slide-06.qa.json"
+    },
+    {
+      "id": "slide-07",
+      "mode": "quality-contrast",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/slide-07.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-07.png",
+      "qa": "slide-07.qa.json"
+    },
+    {
+      "id": "slide-08",
+      "mode": "route-map",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/slide-08.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-08.png",
+      "qa": "slide-08.qa.json"
+    },
+    {
+      "id": "slide-09",
+      "mode": "closing",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v2/slide-09.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-09.png",
+      "qa": "slide-09.qa.json"
+    }
+  ]
+}

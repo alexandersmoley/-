@@ -1,0 +1,176 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v2",
+  "itemId": "slide-07",
+  "kind": "production-slide",
+  "mode": "quality-contrast",
+  "generatedAt": "2026-08-27T18:05:47.622Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "visualCorePresent": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v2/slide-07.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-07.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "99994aa30c6ac5646797740bca4243fc81365beaf92f9b4ee4bdc0a73dba9880"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Но есть условие",
+      "Много ≠ хорошо",
+      "Если автоматизация просто ускоряет выпуск посредственного контента, такой завод мне не нужен",
+      "БРАК"
+    ],
+    "rawVisibleText": [
+      "Но есть условие",
+      "Много ≠ хорошо",
+      "Если автоматизация просто ускоряет выпуск посредственного контента, такой завод мне не нужен",
+      "БРАК"
+    ],
+    "headlineTexts": [
+      "Но есть условие",
+      "Много ≠ хорошо"
+    ],
+    "type": [
+      {
+        "className": "quality-kicker text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 29,
+        "lineHeight": 35.96,
+        "clientWidth": 300,
+        "scrollWidth": 300,
+        "clientHeight": 36,
+        "scrollHeight": 36,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 120,
+          "width": 300,
+          "height": 35.953125,
+          "top": 120,
+          "right": 420,
+          "bottom": 155.953125,
+          "left": 120
+        }
+      },
+      {
+        "className": "quality-title display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 150,
+        "lineHeight": 141,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 282,
+        "scrollHeight": 302,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 200,
+          "width": 840,
+          "height": 282,
+          "top": 200,
+          "right": 960,
+          "bottom": 482,
+          "left": 120
+        }
+      },
+      {
+        "className": "quality-body text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 32,
+        "lineHeight": 39.68,
+        "clientWidth": 720,
+        "scrollWidth": 720,
+        "clientHeight": 119,
+        "scrollHeight": 119,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 470,
+          "width": 720,
+          "height": 119.015625,
+          "top": 470,
+          "right": 840,
+          "bottom": 589.015625,
+          "left": 120
+        }
+      },
+      {
+        "className": "reject-stamp text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 30,
+        "lineHeight": 37.2,
+        "clientWidth": 146,
+        "scrollWidth": 146,
+        "clientHeight": 61,
+        "scrollHeight": 61,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 266.1937255859375,
+          "y": 974.8792114257812,
+          "width": 157.612548828125,
+          "height": 85.42913818359375,
+          "top": 974.8792114257812,
+          "right": 423.8062744140625,
+          "bottom": 1060.308349609375,
+          "left": 266.1937255859375
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 0,
+    "approvedImageCount": 0,
+    "imageDimensions": [],
+    "visualCoreCount": 6,
+    "svgCount": 0
+  }
+}

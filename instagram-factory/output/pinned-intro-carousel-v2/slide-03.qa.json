@@ -1,0 +1,247 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v2",
+  "itemId": "slide-03",
+  "kind": "production-slide",
+  "mode": "evidence-wall",
+  "generatedAt": "2026-08-27T18:05:46.341Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "visualCorePresent": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v2/slide-03.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-03.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "633f535d9e6be38327b9a1bd37922e719137a4ce0a9fc769cf2a3db21f78bcb8"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Где я успел поработать",
+      "Kaspersky",
+      "Сбер",
+      "СИБУР",
+      "NtechLab",
+      "Черкизово",
+      "Параллельно занимаюсь выборами и создаю агитматериалы — в том числе для кандидатов в президенты"
+    ],
+    "rawVisibleText": [
+      "Где я успел поработать",
+      "Kaspersky",
+      "Сбер",
+      "СИБУР",
+      "NtechLab",
+      "Черкизово",
+      "Параллельно занимаюсь выборами и создаю агитматериалы — в том числе для кандидатов в президенты"
+    ],
+    "headlineTexts": [
+      "Где я успел поработать"
+    ],
+    "type": [
+      {
+        "className": "evidence-title display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 92,
+        "lineHeight": 86.48,
+        "clientWidth": 700,
+        "scrollWidth": 700,
+        "clientHeight": 173,
+        "scrollHeight": 184,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 120,
+          "width": 700,
+          "height": 172.9375,
+          "top": 120,
+          "right": 820,
+          "bottom": 292.9375,
+          "left": 120
+        }
+      },
+      {
+        "className": "evidence-brand brand-one display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 72,
+        "lineHeight": 67.68,
+        "clientWidth": 468,
+        "scrollWidth": 468,
+        "clientHeight": 96,
+        "scrollHeight": 96,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 340,
+          "width": 470,
+          "height": 97.671875,
+          "top": 340,
+          "right": 590,
+          "bottom": 437.671875,
+          "left": 120
+        }
+      },
+      {
+        "className": "evidence-brand brand-two display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 72,
+        "lineHeight": 67.68,
+        "clientWidth": 328,
+        "scrollWidth": 328,
+        "clientHeight": 96,
+        "scrollHeight": 96,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 630,
+          "y": 385,
+          "width": 330,
+          "height": 97.671875,
+          "top": 385,
+          "right": 960,
+          "bottom": 482.671875,
+          "left": 630
+        }
+      },
+      {
+        "className": "evidence-brand brand-three display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 72,
+        "lineHeight": 67.68,
+        "clientWidth": 348,
+        "scrollWidth": 348,
+        "clientHeight": 96,
+        "scrollHeight": 96,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 220,
+          "y": 530,
+          "width": 350,
+          "height": 97.671875,
+          "top": 530,
+          "right": 570,
+          "bottom": 627.671875,
+          "left": 220
+        }
+      },
+      {
+        "className": "evidence-brand brand-four display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 72,
+        "lineHeight": 67.68,
+        "clientWidth": 353,
+        "scrollWidth": 353,
+        "clientHeight": 96,
+        "scrollHeight": 96,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 605,
+          "y": 570,
+          "width": 355,
+          "height": 97.671875,
+          "top": 570,
+          "right": 960,
+          "bottom": 667.671875,
+          "left": 605
+        }
+      },
+      {
+        "className": "evidence-brand brand-five display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 72,
+        "lineHeight": 67.68,
+        "clientWidth": 513,
+        "scrollWidth": 513,
+        "clientHeight": 96,
+        "scrollHeight": 96,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 735,
+          "width": 515,
+          "height": 97.671875,
+          "top": 735,
+          "right": 635,
+          "bottom": 832.671875,
+          "left": 120
+        }
+      },
+      {
+        "className": "evidence-politics-copy text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 31,
+        "lineHeight": 38.44,
+        "clientWidth": 620,
+        "scrollWidth": 620,
+        "clientHeight": 115,
+        "scrollHeight": 115,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 285,
+          "y": 1107,
+          "width": 620,
+          "height": 115.3125,
+          "top": 1107,
+          "right": 905,
+          "bottom": 1222.3125,
+          "left": 285
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 0,
+    "approvedImageCount": 0,
+    "imageDimensions": [],
+    "visualCoreCount": 4,
+    "svgCount": 1
+  }
+}

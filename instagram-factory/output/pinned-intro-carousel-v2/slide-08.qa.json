@@ -1,0 +1,271 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v2",
+  "itemId": "slide-08",
+  "kind": "production-slide",
+  "mode": "route-map",
+  "generatedAt": "2026-08-27T18:05:47.907Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "visualCorePresent": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v2/slide-08.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-08.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "1bb663c735022bcb73e008805fb7286221e71258527f803651c847d2bcb56a6f"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Что я буду проверять здесь",
+      "как искать темы",
+      "как собирать фактуру",
+      "как писать и редактировать",
+      "как делать дизайн",
+      "как переиспользовать один смысл в разных форматах",
+      "как публиковать",
+      "как возвращать аналитику обратно в следующий цикл"
+    ],
+    "rawVisibleText": [
+      "Что я буду проверять здесь",
+      "как искать темы",
+      "как собирать фактуру",
+      "как писать и редактировать",
+      "как делать дизайн",
+      "как переиспользовать один смысл в разных форматах",
+      "как публиковать",
+      "как возвращать аналитику обратно в следующий цикл"
+    ],
+    "headlineTexts": [
+      "Что я буду проверять здесь"
+    ],
+    "type": [
+      {
+        "className": "route-title display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 96,
+        "lineHeight": 90.24,
+        "clientWidth": 780,
+        "scrollWidth": 780,
+        "clientHeight": 180,
+        "scrollHeight": 193,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 120,
+          "width": 780,
+          "height": 180.46875,
+          "top": 120,
+          "right": 900,
+          "bottom": 300.46875,
+          "left": 120
+        }
+      },
+      {
+        "className": "route-node route-node-1 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 248,
+        "scrollWidth": 248,
+        "clientHeight": 93,
+        "scrollHeight": 93,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 390,
+          "width": 250,
+          "height": 95.4375,
+          "top": 390,
+          "right": 370,
+          "bottom": 485.4375,
+          "left": 120
+        }
+      },
+      {
+        "className": "route-node route-node-2 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 258,
+        "scrollWidth": 258,
+        "clientHeight": 93,
+        "scrollHeight": 93,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 420,
+          "y": 505,
+          "width": 260,
+          "height": 95.4375,
+          "top": 505,
+          "right": 680,
+          "bottom": 600.4375,
+          "left": 420
+        }
+      },
+      {
+        "className": "route-node route-node-3 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 290,
+        "scrollWidth": 290,
+        "clientHeight": 93,
+        "scrollHeight": 93,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 668,
+          "y": 645,
+          "width": 292,
+          "height": 95.4375,
+          "top": 645,
+          "right": 960,
+          "bottom": 740.4375,
+          "left": 668
+        }
+      },
+      {
+        "className": "route-node route-node-4 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 268,
+        "scrollWidth": 268,
+        "clientHeight": 93,
+        "scrollHeight": 93,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 200,
+          "y": 785,
+          "width": 270,
+          "height": 95.4375,
+          "top": 785,
+          "right": 470,
+          "bottom": 880.4375,
+          "left": 200
+        }
+      },
+      {
+        "className": "route-node route-node-5 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 388,
+        "scrollWidth": 388,
+        "clientHeight": 128,
+        "scrollHeight": 128,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 480,
+          "y": 920,
+          "width": 390,
+          "height": 130.15625,
+          "top": 920,
+          "right": 870,
+          "bottom": 1050.15625,
+          "left": 480
+        }
+      },
+      {
+        "className": "route-node route-node-6 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 238,
+        "scrollWidth": 238,
+        "clientHeight": 93,
+        "scrollHeight": 93,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 1060,
+          "width": 240,
+          "height": 95.4375,
+          "top": 1060,
+          "right": 360,
+          "bottom": 1155.4375,
+          "left": 120
+        }
+      },
+      {
+        "className": "route-node route-node-7 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 353,
+        "scrollWidth": 353,
+        "clientHeight": 128,
+        "scrollHeight": 128,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 605,
+          "y": 1085,
+          "width": 355,
+          "height": 130.15625,
+          "top": 1085,
+          "right": 960,
+          "bottom": 1215.15625,
+          "left": 605
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 0,
+    "approvedImageCount": 0,
+    "imageDimensions": [],
+    "visualCoreCount": 1,
+    "svgCount": 2
+  }
+}

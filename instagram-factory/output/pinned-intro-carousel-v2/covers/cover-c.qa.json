@@ -1,0 +1,108 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v2",
+  "itemId": "cover-c",
+  "kind": "cover-variant",
+  "mode": "cover-human-system",
+  "generatedAt": "2026-08-27T18:05:45.390Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "visualCorePresent": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v2/covers/cover-c.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/covers/cover-c.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "a8314734c671a2194cdafb881018e05aad108e97715e81e741f8539fdffee380"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Редактор. Теперь строю завод"
+    ],
+    "rawVisibleText": [
+      "Редактор. Теперь строю завод"
+    ],
+    "headlineTexts": [
+      "Редактор. Теперь строю завод"
+    ],
+    "type": [
+      {
+        "className": "cover-c-title display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 84,
+        "lineHeight": 78.96,
+        "clientWidth": 370,
+        "scrollWidth": 370,
+        "clientHeight": 237,
+        "scrollHeight": 248,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 590,
+          "y": 185,
+          "width": 370,
+          "height": 236.859375,
+          "top": 185,
+          "right": 960,
+          "bottom": 421.859375,
+          "left": 590
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 1,
+    "approvedImageCount": 1,
+    "imageDimensions": [
+      {
+        "width": 150,
+        "height": 200
+      }
+    ],
+    "visualCoreCount": 2,
+    "svgCount": 1
+  }
+}

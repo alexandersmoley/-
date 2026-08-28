@@ -9,6 +9,7 @@ const summaryPath = path.join(outputDirectory, 'qa-summary.json');
 const summary = JSON.parse(await fs.readFile(summaryPath, 'utf8'));
 const storySummaryPath = path.join(outputDirectory, 'about-me-stories', 'qa-summary.json');
 const carouselSummaryPath = path.join(outputDirectory, 'automation-day-carousel', 'qa-summary.json');
+const pinnedIntroV2SummaryPath = path.join(outputDirectory, 'pinned-intro-carousel-v2', 'qa-summary.json');
 const reelSummaryPath = path.join(outputDirectory, 'chatgpt-not-a-content-factory-reel', 'qa-summary.json');
 
 if (!summary.passed || summary.posts.length === 0) {
@@ -42,6 +43,21 @@ try {
   }
   await fs.access(path.join(outputDirectory, 'automation-day-carousel', 'contact-sheet.png'));
   for (const slide of carouselSummary.slides) await fs.access(path.join(factoryRoot, slide.png));
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+}
+
+let pinnedIntroV2Summary = null;
+try {
+  pinnedIntroV2Summary = JSON.parse(await fs.readFile(pinnedIntroV2SummaryPath, 'utf8'));
+  if (!pinnedIntroV2Summary.passed || pinnedIntroV2Summary.slides.length !== 9 || pinnedIntroV2Summary.covers.length !== 3) {
+    throw new Error('Pages build requires all pinned intro v2 covers and slides to pass QA.');
+  }
+  for (const file of ['contact-sheet.png', 'thumbnail-sheet.png', 'carousel.qa.json']) {
+    await fs.access(path.join(outputDirectory, 'pinned-intro-carousel-v2', file));
+  }
+  for (const cover of pinnedIntroV2Summary.covers) await fs.access(path.join(factoryRoot, cover.png));
+  for (const slide of pinnedIntroV2Summary.slides) await fs.access(path.join(factoryRoot, slide.png));
 } catch (error) {
   if (error.code !== 'ENOENT') throw error;
 }
@@ -87,6 +103,16 @@ const carouselSection = carouselSummary ? `
     <p><a href="./automation-day-carousel/carousel.qa.json">Carousel QA report</a></p>
   </section>` : '';
 
+const pinnedIntroV2Section = pinnedIntroV2Summary ? `
+  <section class="carousel-preview">
+    <h2>Pinned intro v2 · Carousel</h2>
+    <a class="carousel-cover-sheet" href="./pinned-intro-carousel-v2/thumbnail-sheet.png"><img src="./pinned-intro-carousel-v2/thumbnail-sheet.png" width="765" height="345" alt="pinned-intro-carousel-v2 cover variants"></a>
+    <a class="carousel-contact-sheet" href="./pinned-intro-carousel-v2/contact-sheet.png"><img src="./pinned-intro-carousel-v2/contact-sheet.png" width="372" height="480" alt="pinned-intro-carousel-v2 contact sheet"></a>
+    <div class="carousel-grid-preview">${pinnedIntroV2Summary.slides.map((slide) => `
+      <a href="./pinned-intro-carousel-v2/${slide.id}.png"><img src="./pinned-intro-carousel-v2/${slide.id}.png" width="135" height="180" alt="${slide.id}"></a>`).join('')}</div>
+    <p><a href="./pinned-intro-carousel-v2/carousel.qa.json">Pinned intro v2 QA report</a></p>
+  </section>` : '';
+
 const reelSection = reelSummary ? `
   <section class="reel-preview">
     <h2>ChatGPT не контент-завод · Reel</h2>
@@ -108,10 +134,10 @@ const html = `<!doctype html>
   <style>
     body{margin:0;padding:48px;font:16px/1.5 system-ui,sans-serif;color:#101010;background:#f4f1e9}
     main{max-width:1080px;margin:auto}article{display:grid;grid-template-columns:270px 1fr;gap:32px;align-items:start;margin:32px 0}
-    article img{display:block;width:270px;height:360px;object-fit:cover}.stories,.carousel-preview,.reel-preview{margin-top:72px}.contact-sheet img{display:block;width:630px;height:534px}.story-grid{display:grid;grid-template-columns:repeat(4,135px);gap:24px;margin-top:32px}.story-grid img{display:block;width:135px;height:240px;object-fit:cover}.carousel-contact-sheet img{display:block;width:372px;height:480px}.carousel-grid-preview{display:grid;grid-template-columns:repeat(5,135px);gap:24px;margin-top:32px}.carousel-grid-preview img{display:block;width:135px;height:180px;object-fit:cover}.reel-media{display:flex;gap:32px;align-items:flex-start}.reel-media video{display:block;width:270px;height:480px;background:#101010}.reel-media img{display:block;width:425px;height:480px;object-fit:contain;background:#deddd7}a{color:#1546e8}code{word-break:break-all}
+    article img{display:block;width:270px;height:360px;object-fit:cover}.stories,.carousel-preview,.reel-preview{margin-top:72px}.contact-sheet img{display:block;width:630px;height:534px}.story-grid{display:grid;grid-template-columns:repeat(4,135px);gap:24px;margin-top:32px}.story-grid img{display:block;width:135px;height:240px;object-fit:cover}.carousel-cover-sheet img{display:block;width:765px;height:345px;object-fit:contain;margin-bottom:32px}.carousel-contact-sheet img{display:block;width:372px;height:480px}.carousel-grid-preview{display:grid;grid-template-columns:repeat(5,135px);gap:24px;margin-top:32px}.carousel-grid-preview img{display:block;width:135px;height:180px;object-fit:cover}.reel-media{display:flex;gap:32px;align-items:flex-start}.reel-media video{display:block;width:270px;height:480px;background:#101010}.reel-media img{display:block;width:425px;height:480px;object-fit:contain;background:#deddd7}a{color:#1546e8}code{word-break:break-all}
   </style>
 </head>
-<body><main><h1>Rendered Instagram posts</h1>${cards}${storySection}${carouselSection}${reelSection}<p><a href="./qa-summary.json">Pipeline QA summary</a> · <a href="./pipeline-report.md">Human-readable report</a></p></main></body>
+<body><main><h1>Rendered Instagram posts</h1>${cards}${storySection}${pinnedIntroV2Section}${carouselSection}${reelSection}<p><a href="./qa-summary.json">Pipeline QA summary</a> · <a href="./pipeline-report.md">Human-readable report</a></p></main></body>
 </html>`;
 
 const reportMarkdown = `# Instagram renderer pipeline report
@@ -132,6 +158,12 @@ ${carouselSummary ? `- Approved carousel slides rendered: ${carouselSummary.slid
 - Carousel canvas: 1080×1440
 - Carousel QA gates passed: ${Object.values(carouselSummary.checks).filter(Boolean).length}/${Object.keys(carouselSummary.checks).length}
 - Carousel contact sheet: [${carouselSummary.contactSheet.path}](${carouselSummary.contactSheet.url})` : '- Carousels: no approved series found'}
+
+${pinnedIntroV2Summary ? `- Pinned intro v2 slides rendered: ${pinnedIntroV2Summary.slides.length}
+- Pinned intro v2 cover directions: ${pinnedIntroV2Summary.covers.length}
+- Pinned intro v2 QA gates passed: ${Object.values(pinnedIntroV2Summary.checks).filter(Boolean).length}/${Object.keys(pinnedIntroV2Summary.checks).length}
+- Pinned intro v2 contact sheet: [${pinnedIntroV2Summary.contactSheet.path}](${pinnedIntroV2Summary.contactSheet.url})
+- Pinned intro v2 cover sheet: [${pinnedIntroV2Summary.thumbnailSheet.path}](${pinnedIntroV2Summary.thumbnailSheet.url})` : '- Pinned intro v2: no approved series found'}
 
 ${reelSummary ? `- Approved Reels rendered: 1
 - Reel canvas: 1080×1920, ${reelSummary.media.preview.fps} fps

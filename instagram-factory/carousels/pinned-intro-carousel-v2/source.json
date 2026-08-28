@@ -1,0 +1,230 @@
+{
+  "$schema": "../../schemas/pinned-intro-carousel-v2.schema.json",
+  "schemaVersion": 1,
+  "id": "pinned-intro-carousel-v2",
+  "platform": "instagram",
+  "format": "carousel-3x4",
+  "status": "approved-for-render",
+  "publish": false,
+  "canvas": { "width": 1080, "height": 1440 },
+  "safeZone": { "top": 120, "right": 120, "bottom": 120, "left": 120 },
+  "contentSource": {
+    "path": "content/pinned-intro-carousel-v2.md",
+    "sha256": "333dcd3dd6e6165dbbfe70c3da4708fc4bf7ebec40cf7cfed35f868fd30aea40",
+    "freezeHeading": "# 15. Final copy freeze"
+  },
+  "captionSha256": "847550b7119256681a5a83bd4e7ad4f098084bbb9d79d8655b6cb40dff590a7e",
+  "designTokens": {
+    "ink": "#101010",
+    "paper": "#f4f1e9",
+    "blue": "#1546e8",
+    "grid": "rgba(21, 70, 232, 0.105)"
+  },
+  "layoutFamily": "pinned-intro-editorial",
+  "selectedCover": "cover-b",
+  "asset": {
+    "id": "MAHTX_B6J9k",
+    "name": "alexsmoley-photo-chair",
+    "path": "assets/photos/alexsmoley-photo-chair-thumb.jpg",
+    "sha256": "6315d9f64f0fff131bd400d0631129bd45488a33e47610c4d8b1259caee21b83",
+    "source": "Canva approved asset thumbnail",
+    "width": 150,
+    "height": 200,
+    "treatment": "intentional low-resolution editorial raster; no generative redraw"
+  },
+  "caption": [
+    "Привет, я Саша. Я редактор, хотя это слово уже не очень точно описывает мою работу.",
+    "Пишу тексты, проектирую интерфейсы, собираю сайты, использую ноукод и понемногу вайбкожу. Работал с Kaspersky, Сбером, СИБУРом, NtechLab, Черкизово и другими большими компаниями. Параллельно занимаюсь выборами и создаю агитматериалы — в том числе для кандидатов в президенты.",
+    "Сейчас мой главный эксперимент — контент-завод для собственного блога.",
+    "Не в смысле «пусть ChatGPT пишет за меня посты». Это как раз самая простая часть.",
+    "Мне интересно найти такую модель производства, где система помогает искать темы, собирать фактуру, делать текст и дизайн, проверять результат, публиковать и возвращать аналитику в следующий цикл. А я постепенно перестаю руками таскать материал между всеми этими этапами и подключаюсь только там, где действительно нужно принять решение.",
+    "В идеале интерфейс такого завода для меня выглядит почти смешно: несколько раз посмотреть на результат и сказать «ок».",
+    "Но есть условие: на выходе должен оставаться контент, который я сам готов публиковать. Не больше нейрослопа, а больше нормальных материалов.",
+    "Здесь и буду проверять, насколько это вообще возможно."
+  ],
+  "coverVariants": [
+    {
+      "id": "cover-a",
+      "mode": "cover-photo",
+      "headlineIndexes": [0],
+      "text": ["Строю контент-завод на себе", "Привет, я Саша"],
+      "visualType": "photo",
+      "usesApprovedPhoto": true,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 2
+    },
+    {
+      "id": "cover-b",
+      "mode": "cover-mission",
+      "headlineIndexes": [0],
+      "text": ["Хочу делать контент парой «ОК»", "Проверяю, возможно ли это без нейрослопа"],
+      "visualType": "photo-diagram",
+      "usesApprovedPhoto": true,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 5
+    },
+    {
+      "id": "cover-c",
+      "mode": "cover-human-system",
+      "headlineIndexes": [0],
+      "text": ["Редактор. Теперь строю завод"],
+      "visualType": "photo-process",
+      "usesApprovedPhoto": true,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 2
+    }
+  ],
+  "slides": [
+    {
+      "id": "slide-01",
+      "mode": "cover-mission",
+      "headlineIndexes": [0],
+      "text": ["Хочу делать контент парой «ОК»", "Проверяю, возможно ли это без нейрослопа"],
+      "visualType": "photo-diagram",
+      "usesApprovedPhoto": true,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 5
+    },
+    {
+      "id": "slide-02",
+      "mode": "skills-collage",
+      "headlineIndexes": [0],
+      "text": [
+        "Я редактор. Но давно не только пишу тексты",
+        "Пишу тексты, проектирую интерфейсы, собираю сайты, использую ноукод и понемногу вайбкожу",
+        "текст",
+        "интерфейсы",
+        "сайты",
+        "ноукод"
+      ],
+      "visualType": "collage",
+      "usesApprovedPhoto": true,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 5
+    },
+    {
+      "id": "slide-03",
+      "mode": "evidence-wall",
+      "headlineIndexes": [0],
+      "text": [
+        "Где я успел поработать",
+        "Kaspersky",
+        "Сбер",
+        "СИБУР",
+        "NtechLab",
+        "Черкизово",
+        "Параллельно занимаюсь выборами и создаю агитматериалы — в том числе для кандидатов в президенты"
+      ],
+      "visualType": "evidence",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 4
+    },
+    {
+      "id": "slide-04",
+      "mode": "reveal",
+      "headlineIndexes": [0],
+      "text": [
+        "Почему я вообще полез в это",
+        "Все уже умеют попросить ChatGPT написать пост",
+        "промпт",
+        "текст",
+        "Мне интереснее другое: можно ли автоматизировать производство целиком, а не только черновик текста"
+      ],
+      "visualType": "diagram",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 3
+    },
+    {
+      "id": "slide-05",
+      "mode": "factory-map",
+      "headlineIndexes": [0, 1],
+      "text": [
+        "Вот мой эксперимент",
+        "Я строю первый контент-завод на собственном Instagram",
+        "Хочу найти наиболее рабочую модель: чтобы хороший контент выходил много, удобно и предсказуемо",
+        "идея",
+        "фактура",
+        "текст",
+        "дизайн",
+        "QA",
+        "публикация",
+        "аналитика"
+      ],
+      "visualType": "process",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 2
+    },
+    {
+      "id": "slide-06",
+      "mode": "approval-contrast",
+      "headlineIndexes": [0],
+      "text": [
+        "Идеальный интерфейс для меня — пара «ОК»",
+        "цель эксперимента",
+        "Не хочу руками собирать каждый пост. В идеале система сама проходит рутину, а я подключаюсь там, где нужно принять решение: тема, смысл, финальный вариант",
+        "тема",
+        "смысл",
+        "финальный вариант",
+        "ОК",
+        "ОК",
+        "ОК"
+      ],
+      "visualType": "contrast",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 3
+    },
+    {
+      "id": "slide-07",
+      "mode": "quality-contrast",
+      "headlineIndexes": [0, 1],
+      "text": [
+        "Но есть условие",
+        "Много ≠ хорошо",
+        "Если автоматизация просто ускоряет выпуск посредственного контента, такой завод мне не нужен",
+        "БРАК"
+      ],
+      "visualType": "contrast",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 6
+    },
+    {
+      "id": "slide-08",
+      "mode": "route-map",
+      "headlineIndexes": [0],
+      "text": [
+        "Что я буду проверять здесь",
+        "как искать темы",
+        "как собирать фактуру",
+        "как писать и редактировать",
+        "как делать дизайн",
+        "как переиспользовать один смысл в разных форматах",
+        "как публиковать",
+        "как возвращать аналитику обратно в следующий цикл"
+      ],
+      "visualType": "process",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 1
+    },
+    {
+      "id": "slide-09",
+      "mode": "closing",
+      "headlineIndexes": [0, 1, 2],
+      "text": [
+        "Много",
+        "Удобно",
+        "Не стыдно публиковать",
+        "Если получится на собственном блоге — следующим шагом буду собирать такие системы для брендов"
+      ],
+      "visualType": "photo-process",
+      "usesApprovedPhoto": true,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 2
+    }
+  ]
+}

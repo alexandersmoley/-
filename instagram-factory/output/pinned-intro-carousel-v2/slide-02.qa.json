@@ -1,0 +1,228 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v2",
+  "itemId": "slide-02",
+  "kind": "production-slide",
+  "mode": "skills-collage",
+  "generatedAt": "2026-08-27T18:05:46.010Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "visualCorePresent": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v2/slide-02.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-02.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "cec913992d37584f02487508f464ffd9e4ee2409a83b39caa53fd9945ff62c65"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Я редактор. Но давно не только пишу тексты",
+      "Пишу тексты, проектирую интерфейсы, собираю сайты, использую ноукод и понемногу вайбкожу",
+      "текст",
+      "интерфейсы",
+      "сайты",
+      "ноукод"
+    ],
+    "rawVisibleText": [
+      "Я редактор. Но давно не только пишу тексты",
+      "Пишу тексты, проектирую интерфейсы, собираю сайты, использую ноукод и понемногу вайбкожу",
+      "текст",
+      "интерфейсы",
+      "сайты",
+      "ноукод"
+    ],
+    "headlineTexts": [
+      "Я редактор. Но давно не только пишу тексты"
+    ],
+    "type": [
+      {
+        "className": "skills-title display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 88,
+        "lineHeight": 82.72,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 165,
+        "scrollHeight": 177,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 120,
+          "width": 840,
+          "height": 165.4375,
+          "top": 120,
+          "right": 960,
+          "bottom": 285.4375,
+          "left": 120
+        }
+      },
+      {
+        "className": "skills-body text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 32,
+        "lineHeight": 39.68,
+        "clientWidth": 560,
+        "scrollWidth": 560,
+        "clientHeight": 159,
+        "scrollHeight": 159,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 388,
+          "width": 560,
+          "height": 158.6875,
+          "top": 388,
+          "right": 680,
+          "bottom": 546.6875,
+          "left": 120
+        }
+      },
+      {
+        "className": "skill-label text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 70,
+        "scrollWidth": 70,
+        "clientHeight": 35,
+        "scrollHeight": 35,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 145,
+          "y": 759,
+          "width": 69.703125,
+          "height": 34.71875,
+          "top": 759,
+          "right": 214.703125,
+          "bottom": 793.71875,
+          "left": 145
+        }
+      },
+      {
+        "className": "skill-label text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 162,
+        "scrollWidth": 162,
+        "clientHeight": 35,
+        "scrollHeight": 35,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 475,
+          "y": 759,
+          "width": 162.21875,
+          "height": 34.71875,
+          "top": 759,
+          "right": 637.21875,
+          "bottom": 793.71875,
+          "left": 475
+        }
+      },
+      {
+        "className": "skill-label text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 80,
+        "scrollWidth": 80,
+        "clientHeight": 35,
+        "scrollHeight": 35,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 145,
+          "y": 1044,
+          "width": 79.6875,
+          "height": 34.71875,
+          "top": 1044,
+          "right": 224.6875,
+          "bottom": 1078.71875,
+          "left": 145
+        }
+      },
+      {
+        "className": "skill-label text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 94,
+        "scrollWidth": 94,
+        "clientHeight": 35,
+        "scrollHeight": 35,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 685,
+          "y": 1044,
+          "width": 93.609375,
+          "height": 34.71875,
+          "top": 1044,
+          "right": 778.609375,
+          "bottom": 1078.71875,
+          "left": 685
+        }
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 1,
+    "approvedImageCount": 1,
+    "imageDimensions": [
+      {
+        "width": 150,
+        "height": 200
+      }
+    ],
+    "visualCoreCount": 5,
+    "svgCount": 1
+  }
+}
