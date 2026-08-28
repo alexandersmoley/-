@@ -1,7 +1,7 @@
 {
   "pipelineVersion": 1,
   "carouselId": "pinned-intro-carousel-v3",
-  "generatedAt": "2026-08-28T14:04:21.146Z",
+  "generatedAt": "2026-08-28T19:26:16.331Z",
   "passed": true,
   "checks": {
     "structuredSourceValid": true,
@@ -36,7 +36,7 @@
   },
   "failedChecks": [],
   "integrity": {
-    "contentSha256": "315586d72bb8c4be7841815c75b68c9d5e473a1ee35084fd5b8a866238f7dd19",
+    "contentSha256": "2d76d1e03bce8fe28743688031b6d86f0e46da81c19c68337a528457a015d775",
     "captionSha256": "805d41fc580b7d7c06794b107657bd377b40c9e7bf68dcd5e61b8327e1fb6391",
     "assetId": "MAHTX_B6J9k",
     "assetSha256": "6315d9f64f0fff131bd400d0631129bd45488a33e47610c4d8b1259caee21b83"
