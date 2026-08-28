@@ -10,7 +10,7 @@
   "safeZone": { "top": 120, "right": 120, "bottom": 120, "left": 120 },
   "contentSource": {
     "path": "content/pinned-intro-carousel-v3.md",
-    "sha256": "315586d72bb8c4be7841815c75b68c9d5e473a1ee35084fd5b8a866238f7dd19",
+    "sha256": "2d76d1e03bce8fe28743688031b6d86f0e46da81c19c68337a528457a015d775",
     "freezeHeading": "# Exact copy freeze"
   },
   "captionSha256": "805d41fc580b7d7c06794b107657bd377b40c9e7bf68dcd5e61b8327e1fb6391",
