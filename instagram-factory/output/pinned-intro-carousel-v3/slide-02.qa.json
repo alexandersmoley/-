@@ -1,0 +1,230 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v3",
+  "itemId": "slide-02",
+  "kind": "production-slide",
+  "mode": "full-photo-work",
+  "generatedAt": "2026-08-28T08:36:27.335Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "italicOnlyWhereSpecified": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "approvedPhotoFullFrame": true,
+    "photoTextClearsFigures": true,
+    "visualCoreExact": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noForcedCta": true,
+    "noEmptyConnectors": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v3/slide-02.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-02.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "b53531c8d3ef0e303ec0c43c9d5f41d8cadd536a448253422f7ecb1a6e9473e4"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Что я делаю",
+      "Пишу тексты",
+      "Проектирую интерфейсы",
+      "Собираю сайты",
+      "Понемногу вайбкожу"
+    ],
+    "rawVisibleText": [
+      "Что я делаю",
+      "Пишу тексты",
+      "Проектирую интерфейсы",
+      "Собираю сайты",
+      "Понемногу вайбкожу"
+    ],
+    "headlineTexts": [
+      "Что я делаю"
+    ],
+    "type": [
+      {
+        "className": "photo-work-title display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 70,
+        "lineHeight": 65.8,
+        "clientWidth": 768,
+        "scrollWidth": 768,
+        "clientHeight": 66,
+        "scrollHeight": 75,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 156,
+          "y": 148,
+          "width": 768,
+          "height": 65.796875,
+          "top": 148,
+          "right": 924,
+          "bottom": 213.796875,
+          "left": 156
+        }
+      },
+      {
+        "className": "photo-work-item photo-work-item-1 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "clientHeight": 35,
+        "scrollHeight": 35,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 156,
+          "y": 265,
+          "width": 360,
+          "height": 34.71875,
+          "top": 265,
+          "right": 516,
+          "bottom": 299.71875,
+          "left": 156
+        }
+      },
+      {
+        "className": "photo-work-item photo-work-item-2 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "clientHeight": 35,
+        "scrollHeight": 35,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 564,
+          "y": 265,
+          "width": 360,
+          "height": 34.71875,
+          "top": 265,
+          "right": 924,
+          "bottom": 299.71875,
+          "left": 564
+        }
+      },
+      {
+        "className": "photo-work-item photo-work-item-3 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "clientHeight": 35,
+        "scrollHeight": 35,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 156,
+          "y": 319,
+          "width": 360,
+          "height": 34.71875,
+          "top": 319,
+          "right": 516,
+          "bottom": 353.71875,
+          "left": 156
+        }
+      },
+      {
+        "className": "photo-work-item photo-work-item-4 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 28,
+        "lineHeight": 34.72,
+        "clientWidth": 360,
+        "scrollWidth": 360,
+        "clientHeight": 35,
+        "scrollHeight": 35,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 564,
+          "y": 319,
+          "width": 360,
+          "height": 34.71875,
+          "top": 319,
+          "right": 924,
+          "bottom": 353.71875,
+          "left": 564
+        }
+      }
+    ],
+    "inlineEmphasis": [],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 1,
+    "approvedImageCount": 1,
+    "photoPresentation": [
+      {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1080,
+          "height": 1440,
+          "top": 0,
+          "right": 1080,
+          "bottom": 1440,
+          "left": 0
+        },
+        "objectFit": "contain",
+        "objectPosition": "50% 50%"
+      }
+    ],
+    "photoPanelRect": {
+      "x": 120,
+      "y": 120,
+      "width": 840,
+      "height": 300,
+      "top": 120,
+      "right": 960,
+      "bottom": 420,
+      "left": 120
+    },
+    "visualCoreCount": 1,
+    "svgCount": 0
+  }
+}

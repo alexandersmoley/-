@@ -93,6 +93,20 @@ pnpm run render:pinned-intro-v2
 
 The QA gates enforce exact 1080×1440 output, the 120 px safe zone, Inter/Cormorant Garamond Regular/Italic only, exact copy, approved colors, correct source photography, non-breaking spaces, no terminal headline periods, no overflow, no invented interface elements and no publishing controls.
 
+## Calm human-to-system carousel
+
+`human-to-system-calm` is the writing-contract version of the same semantic family. Its benchmark, `pinned-intro-carousel-v3`, renders seven 1080×1440 slides from exact approved copy.
+
+The original Canva photo `MAHTZduqLyI` appears exactly once, full-frame on slide 02 with `object-fit: contain`. The 3:4 composition, hands and figures are preserved. The remaining slides use typography, an evidence table and functional process diagrams. No generative imagery is used.
+
+Run only this benchmark with:
+
+```bash
+pnpm run render:pinned-intro-v3
+```
+
+QA checks exact copy and caption, the writing contract, fonts, colors, safe zones, non-breaking spaces, source-photo checksum and dimensions, single-use full-frame photo composition, contact sheet and cover preview.
+
 ## Motion editorial Reel
 
 `motion-editorial-system` is the reusable 1080×1920 family for motion-first Reels without talking head or voice-over. It renders every frame deterministically in Chromium, pipes the PNG frame stream to FFmpeg at 30 fps and adds a deterministic original stereo instrumental bed. The first benchmark, `chatgpt-not-a-content-factory-reel`, uses six scene families inside one narrative system and remains locked to `publish: false`.

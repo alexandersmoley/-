@@ -1,0 +1,206 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v3",
+  "itemId": "slide-07",
+  "kind": "production-slide",
+  "mode": "blog-closing",
+  "generatedAt": "2026-08-28T08:36:28.988Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "italicOnlyWhereSpecified": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "approvedPhotoFullFrame": true,
+    "photoTextClearsFigures": true,
+    "visualCoreExact": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noForcedCta": true,
+    "noEmptyConnectors": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v3/slide-07.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-07.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "529392264ccda95e3d647c9f97033890061885dd72794bd948912c97ea6ce1ef"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Что будет в блоге",
+      "что сработало",
+      "где система ошиблась",
+      "что я переделал руками",
+      "Показываю результаты на реальных материалах"
+    ],
+    "rawVisibleText": [
+      "Что будет в блоге",
+      "что сработало",
+      "где система ошиблась",
+      "что я переделал руками",
+      "Показываю результаты на реальных материалах"
+    ],
+    "headlineTexts": [
+      "Что будет в блоге"
+    ],
+    "type": [
+      {
+        "className": "blog-title display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 110,
+        "lineHeight": 103.4,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 103,
+        "scrollHeight": 118,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 120,
+          "width": 840,
+          "height": 103.390625,
+          "top": 120,
+          "right": 960,
+          "bottom": 223.390625,
+          "left": 120
+        }
+      },
+      {
+        "className": "blog-item blog-item-1 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 36,
+        "lineHeight": 44.64,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 129,
+        "scrollHeight": 129,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 421,
+          "width": 840,
+          "height": 130,
+          "top": 421,
+          "right": 960,
+          "bottom": 551,
+          "left": 120
+        }
+      },
+      {
+        "className": "blog-item blog-item-2 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 36,
+        "lineHeight": 44.64,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 129,
+        "scrollHeight": 129,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 551,
+          "width": 840,
+          "height": 130,
+          "top": 551,
+          "right": 960,
+          "bottom": 681,
+          "left": 120
+        }
+      },
+      {
+        "className": "blog-item blog-item-3 text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 36,
+        "lineHeight": 44.64,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 129,
+        "scrollHeight": 129,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 681,
+          "width": 840,
+          "height": 130,
+          "top": 681,
+          "right": 960,
+          "bottom": 811,
+          "left": 120
+        }
+      },
+      {
+        "className": "blog-body display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 68,
+        "lineHeight": 63.92,
+        "clientWidth": 760,
+        "scrollWidth": 760,
+        "clientHeight": 128,
+        "scrollHeight": 137,
+        "style": "italic",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 930,
+          "width": 760,
+          "height": 127.8125,
+          "top": 930,
+          "right": 880,
+          "bottom": 1057.8125,
+          "left": 120
+        }
+      }
+    ],
+    "inlineEmphasis": [],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 0,
+    "approvedImageCount": 0,
+    "photoPresentation": [],
+    "photoPanelRect": null,
+    "visualCoreCount": 1,
+    "svgCount": 0
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v3",
+  "generatedAt": "2026-08-28T08:36:29.140Z",
+  "passed": true,
+  "checks": {
+    "structuredSourceValid": true,
+    "approvedForRender": true,
+    "publishDisabled": true,
+    "canvasExact": true,
+    "safeZoneExact": true,
+    "slideCountExact": true,
+    "layoutFamilyExact": true,
+    "copyFreezeExact": true,
+    "captionFreezeExact": true,
+    "contentSourceChecksumExact": true,
+    "captionChecksumExact": true,
+    "approvedAssetIdExact": true,
+    "approvedAssetChecksumExact": true,
+    "approvedAssetDimensionsExact": true,
+    "productionPhotoUsedOnce": true,
+    "productionPhotoOnlyOnSlide02": true,
+    "productionCoverHasNoPhoto": true,
+    "allSlidesPassed": true,
+    "photoCompositionPassed": true,
+    "adjacentCompositionsDistinct": true,
+    "clientExperienceWordingExact": true,
+    "noBrandSalesPromise": true,
+    "noEmptyWritingConnectors": true,
+    "contactSheetCreated": true,
+    "coverPreviewCreated": true,
+    "socialPublishingNotExecuted": true
+  },
+  "failedChecks": [],
+  "integrity": {
+    "contentSha256": "a976559d57872231480ae69b3a1d457d2581ef4073ae003871dd2501487d267c",
+    "captionSha256": "ceebe0b82b6ceeb043868159a3255c1bbd7d557fb40bf674579f347478347705",
+    "assetId": "MAHTZduqLyI",
+    "assetSha256": "8cc0c06d9c3c0d049a8cac15d25bf7e13b9d07204b4cfcf2a8bfb77d47146805"
+  },
+  "contactSheet": {
+    "path": "output/pinned-intro-carousel-v3/contact-sheet.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/contact-sheet.png",
+    "width": 984,
+    "height": 648,
+    "sha256": "843d350dc8e7cde6a26b4adeb82e884cbc5b55430df41d1c37cd40eb799aeca8"
+  },
+  "coverPreview": {
+    "path": "output/pinned-intro-carousel-v3/cover-preview.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/cover-preview.png",
+    "width": 360,
+    "height": 460,
+    "sha256": "4225a69a8711083acf1ff0f1e7d86e8deae5a4e515ca0037e919a51a78277217"
+  },
+  "slides": [
+    {
+      "id": "slide-01",
+      "mode": "identity-cover",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v3/slide-01.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-01.png",
+      "qa": "slide-01.qa.json"
+    },
+    {
+      "id": "slide-02",
+      "mode": "full-photo-work",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v3/slide-02.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-02.png",
+      "qa": "slide-02.qa.json"
+    },
+    {
+      "id": "slide-03",
+      "mode": "client-proof",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v3/slide-03.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-03.png",
+      "qa": "slide-03.qa.json"
+    },
+    {
+      "id": "slide-04",
+      "mode": "current-task",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v3/slide-04.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-04.png",
+      "qa": "slide-04.qa.json"
+    },
+    {
+      "id": "slide-05",
+      "mode": "process-map",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v3/slide-05.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-05.png",
+      "qa": "slide-05.qa.json"
+    },
+    {
+      "id": "slide-06",
+      "mode": "author-control",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v3/slide-06.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-06.png",
+      "qa": "slide-06.qa.json"
+    },
+    {
+      "id": "slide-07",
+      "mode": "blog-closing",
+      "passed": true,
+      "png": "output/pinned-intro-carousel-v3/slide-07.png",
+      "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-07.png",
+      "qa": "slide-07.qa.json"
+    }
+  ]
+}

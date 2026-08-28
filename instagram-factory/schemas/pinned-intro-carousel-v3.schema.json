@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://alexandersmoley.github.io/-/schemas/pinned-intro-carousel-v3.schema.json",
+  "title": "Pinned intro carousel v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion", "id", "platform", "format", "status", "publish", "canvas", "safeZone",
+    "contentSource", "captionSha256", "designTokens", "layoutFamily", "asset", "caption", "slides"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "id": { "const": "pinned-intro-carousel-v3" },
+    "platform": { "const": "instagram" },
+    "format": { "const": "carousel-3x4" },
+    "status": { "const": "approved-for-render" },
+    "publish": { "const": false },
+    "canvas": {
+      "type": "object", "additionalProperties": false, "required": ["width", "height"],
+      "properties": { "width": { "const": 1080 }, "height": { "const": 1440 } }
+    },
+    "safeZone": {
+      "type": "object", "additionalProperties": false, "required": ["top", "right", "bottom", "left"],
+      "properties": {
+        "top": { "const": 120 }, "right": { "const": 120 },
+        "bottom": { "const": 120 }, "left": { "const": 120 }
+      }
+    },
+    "contentSource": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256", "freezeHeading"],
+      "properties": {
+        "path": { "const": "content/pinned-intro-carousel-v3.md" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "freezeHeading": { "const": "# Exact copy freeze" }
+      }
+    },
+    "captionSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "designTokens": {
+      "type": "object", "additionalProperties": false, "required": ["ink", "paper", "blue", "grid"],
+      "properties": {
+        "ink": { "const": "#101010" }, "paper": { "const": "#f4f1e9" },
+        "blue": { "const": "#1546e8" }, "grid": { "const": "rgba(21, 70, 232, 0.105)" }
+      }
+    },
+    "layoutFamily": { "const": "human-to-system-calm" },
+    "asset": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "name", "path", "sha256", "source", "width", "height", "treatment"],
+      "properties": {
+        "id": { "const": "MAHTZduqLyI" },
+        "name": { "const": "alexsmoley-photo-mountains-son" },
+        "path": { "const": "assets/photos/pinned-intro-mountains-son.jpeg" },
+        "sha256": { "const": "8cc0c06d9c3c0d049a8cac15d25bf7e13b9d07204b4cfcf2a8bfb77d47146805" },
+        "source": { "const": "Canva approved original photo" },
+        "width": { "const": 1152 }, "height": { "const": 1536 },
+        "treatment": { "const": "single-use full-frame original photo; object-fit contain; no crop; hands and figures preserved; no generative redraw" }
+      }
+    },
+    "caption": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "slides": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": { "$ref": "#/$defs/item" }
+    }
+  },
+  "$defs": {
+    "item": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "mode", "headlineIndexes", "text", "visualType", "usesApprovedPhoto", "expectedArrowCount", "visualCoreCount"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^slide-0[1-7]$" },
+        "mode": { "enum": ["identity-cover", "full-photo-work", "client-proof", "current-task", "process-map", "author-control", "blog-closing"] },
+        "headlineIndexes": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": { "type": "integer", "minimum": 0, "maximum": 12 }
+        },
+        "text": {
+          "type": "array", "minItems": 1, "maxItems": 12,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "visualType": { "enum": ["typography", "photo", "evidence", "system", "process", "decision", "list"] },
+        "usesApprovedPhoto": { "type": "boolean" },
+        "expectedArrowCount": { "const": 0 },
+        "visualCoreCount": { "type": "integer", "minimum": 1, "maximum": 8 }
+      }
+    }
+  }
+}

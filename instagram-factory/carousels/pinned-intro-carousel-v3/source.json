@@ -1,0 +1,112 @@
+{
+  "$schema": "../../schemas/pinned-intro-carousel-v3.schema.json",
+  "schemaVersion": 1,
+  "id": "pinned-intro-carousel-v3",
+  "platform": "instagram",
+  "format": "carousel-3x4",
+  "status": "approved-for-render",
+  "publish": false,
+  "canvas": { "width": 1080, "height": 1440 },
+  "safeZone": { "top": 120, "right": 120, "bottom": 120, "left": 120 },
+  "contentSource": {
+    "path": "content/pinned-intro-carousel-v3.md",
+    "sha256": "a976559d57872231480ae69b3a1d457d2581ef4073ae003871dd2501487d267c",
+    "freezeHeading": "# Exact copy freeze"
+  },
+  "captionSha256": "ceebe0b82b6ceeb043868159a3255c1bbd7d557fb40bf674579f347478347705",
+  "designTokens": {
+    "ink": "#101010",
+    "paper": "#f4f1e9",
+    "blue": "#1546e8",
+    "grid": "rgba(21, 70, 232, 0.105)"
+  },
+  "layoutFamily": "human-to-system-calm",
+  "asset": {
+    "id": "MAHTZduqLyI",
+    "name": "alexsmoley-photo-mountains-son",
+    "path": "assets/photos/pinned-intro-mountains-son.jpeg",
+    "sha256": "8cc0c06d9c3c0d049a8cac15d25bf7e13b9d07204b4cfcf2a8bfb77d47146805",
+    "source": "Canva approved original photo",
+    "width": 1152,
+    "height": 1536,
+    "treatment": "single-use full-frame original photo; object-fit contain; no crop; hands and figures preserved; no generative redraw"
+  },
+  "caption": [
+    "Привет, я Саша Смолей. Работаю редактором в IT. Пишу тексты, проектирую интерфейсы, собираю сайты и понемногу вайбкожу.",
+    "Писал для Kaspersky, Сбера, СИБУРа, NtechLab, Черкизово и других компаний. Ещё делаю агитматериалы для политических кампаний, в том числе для кандидатов в президенты.",
+    "Сейчас проверяю, как использовать AI для производства контента. Не только генерировать текст, а выстроить процесс: найти тему, собрать фактуру, сделать текст и дизайн, проверить материал, опубликовать и разобрать результаты.",
+    "Я проверяю этот процесс на собственном блоге. Здесь буду показывать, что сработало, где система ошиблась и что пришлось переделать руками."
+  ],
+  "slides": [
+    {
+      "id": "slide-01",
+      "mode": "identity-cover",
+      "headlineIndexes": [0],
+      "text": ["Я Саша Смолей", "Редактор в IT"],
+      "visualType": "typography",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 1
+    },
+    {
+      "id": "slide-02",
+      "mode": "full-photo-work",
+      "headlineIndexes": [0],
+      "text": ["Что я делаю", "Пишу тексты", "Проектирую интерфейсы", "Собираю сайты", "Понемногу вайбкожу"],
+      "visualType": "photo",
+      "usesApprovedPhoto": true,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 1
+    },
+    {
+      "id": "slide-03",
+      "mode": "client-proof",
+      "headlineIndexes": [0],
+      "text": ["Для кого я писал", "Kaspersky", "Сбер", "СИБУР", "NtechLab", "Черкизово", "Делаю агитматериалы для политических кампаний, в том числе для кандидатов в президенты"],
+      "visualType": "evidence",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 1
+    },
+    {
+      "id": "slide-04",
+      "mode": "current-task",
+      "headlineIndexes": [0],
+      "text": ["Сейчас проверяю, как использовать AI для производства контента", "Не только генерировать текст, а выстроить процесс от темы до готовой публикации"],
+      "visualType": "system",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 1
+    },
+    {
+      "id": "slide-05",
+      "mode": "process-map",
+      "headlineIndexes": [0],
+      "text": ["От темы до аналитики", "тема", "фактура", "текст", "дизайн", "проверка", "публикация", "аналитика", "По каждому этапу фиксирую, что можно автоматизировать, а что нужно проверить самому"],
+      "visualType": "process",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 1
+    },
+    {
+      "id": "slide-06",
+      "mode": "author-control",
+      "headlineIndexes": [0],
+      "text": ["Что оставляю за собой", "выбор темы", "смысл", "финальная проверка", "Рутину хочу передать системе. Тему, смысл и финальный материал проверяю сам"],
+      "visualType": "decision",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 3
+    },
+    {
+      "id": "slide-07",
+      "mode": "blog-closing",
+      "headlineIndexes": [0],
+      "text": ["Что будет в блоге", "что сработало", "где система ошиблась", "что я переделал руками", "Показываю результаты на реальных материалах"],
+      "visualType": "list",
+      "usesApprovedPhoto": false,
+      "expectedArrowCount": 0,
+      "visualCoreCount": 1
+    }
+  ]
+}

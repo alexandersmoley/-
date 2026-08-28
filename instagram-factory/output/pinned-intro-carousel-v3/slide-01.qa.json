@@ -1,0 +1,140 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v3",
+  "itemId": "slide-01",
+  "kind": "production-cover",
+  "mode": "identity-cover",
+  "generatedAt": "2026-08-28T08:36:26.874Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "italicOnlyWhereSpecified": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "approvedPhotoFullFrame": true,
+    "photoTextClearsFigures": true,
+    "visualCoreExact": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noForcedCta": true,
+    "noEmptyConnectors": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v3/slide-01.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-01.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "6beb8b2eb81232dd6015fb7743f0215e11f0b92727b89b78354533f74a63de87"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Я Саша Смолей",
+      "Редактор в IT"
+    ],
+    "rawVisibleText": [
+      "Я Саша Смолей",
+      "Редактор в IT"
+    ],
+    "headlineTexts": [
+      "Я Саша Смолей"
+    ],
+    "type": [
+      {
+        "className": "identity-title display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 150,
+        "lineHeight": 141,
+        "clientWidth": 760,
+        "scrollWidth": 760,
+        "clientHeight": 282,
+        "scrollHeight": 302,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 160,
+          "width": 760,
+          "height": 282,
+          "top": 160,
+          "right": 880,
+          "bottom": 442,
+          "left": 120
+        }
+      },
+      {
+        "className": "identity-role display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 112,
+        "lineHeight": 105.28,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 105,
+        "scrollHeight": 120,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 760,
+          "width": 840,
+          "height": 105.265625,
+          "top": 760,
+          "right": 960,
+          "bottom": 865.265625,
+          "left": 120
+        }
+      }
+    ],
+    "inlineEmphasis": [
+      {
+        "family": "\"Cormorant Garamond Production\", serif",
+        "style": "italic",
+        "weight": "400"
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 0,
+    "approvedImageCount": 0,
+    "photoPresentation": [],
+    "photoPanelRect": null,
+    "visualCoreCount": 1,
+    "svgCount": 0
+  }
+}

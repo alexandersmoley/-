@@ -8,14 +8,15 @@
     "node": ">=22"
   },
   "scripts": {
-    "render": "node renderer/cli.mjs && node renderer/stories/cli.mjs && node renderer/carousels/cli.mjs && node renderer/carousels/pinned-intro-v2-cli.mjs && node renderer/reels/cli.mjs",
+    "render": "node renderer/cli.mjs && node renderer/stories/cli.mjs && node renderer/carousels/cli.mjs && node renderer/carousels/pinned-intro-v2-cli.mjs && node renderer/carousels/pinned-intro-v3-cli.mjs && node renderer/reels/cli.mjs",
     "render:posts": "node renderer/cli.mjs",
     "render:stories": "node renderer/stories/cli.mjs",
     "render:carousels": "node renderer/carousels/cli.mjs",
     "render:pinned-intro-v2": "node renderer/carousels/pinned-intro-v2-cli.mjs",
+    "render:pinned-intro-v3": "node renderer/carousels/pinned-intro-v3-cli.mjs",
     "render:reels": "node renderer/reels/cli.mjs",
     "pages": "node scripts/build-pages.mjs",
-    "pipeline": "node renderer/cli.mjs && node renderer/stories/cli.mjs && node renderer/carousels/cli.mjs && node renderer/carousels/pinned-intro-v2-cli.mjs && node renderer/reels/cli.mjs && node scripts/build-pages.mjs"
+    "pipeline": "node renderer/cli.mjs && node renderer/stories/cli.mjs && node renderer/carousels/cli.mjs && node renderer/carousels/pinned-intro-v2-cli.mjs && node renderer/carousels/pinned-intro-v3-cli.mjs && node renderer/reels/cli.mjs && node scripts/build-pages.mjs"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "5.2.8",

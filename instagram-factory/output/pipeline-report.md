@@ -23,6 +23,12 @@
 - Pinned intro v2 contact sheet: [output/pinned-intro-carousel-v2/contact-sheet.png](https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/contact-sheet.png)
 - Pinned intro v2 cover sheet: [output/pinned-intro-carousel-v2/thumbnail-sheet.png](https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/thumbnail-sheet.png)
 
+- Pinned intro v3 slides rendered: 7
+- Pinned intro v3 QA gates passed: 26/26
+- Pinned intro v3 photo asset: MAHTZduqLyI
+- Pinned intro v3 contact sheet: [output/pinned-intro-carousel-v3/contact-sheet.png](https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/contact-sheet.png)
+- Pinned intro v3 cover preview: [output/pinned-intro-carousel-v3/cover-preview.png](https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/cover-preview.png)
+
 - Approved Reels rendered: 1
 - Reel canvas: 1080×1920, 30/1 fps
 - Reel duration: 25 seconds

@@ -1,0 +1,140 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v3",
+  "itemId": "slide-04",
+  "kind": "production-slide",
+  "mode": "current-task",
+  "generatedAt": "2026-08-28T08:36:27.975Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "italicOnlyWhereSpecified": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "approvedPhotoFullFrame": true,
+    "photoTextClearsFigures": true,
+    "visualCoreExact": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noForcedCta": true,
+    "noEmptyConnectors": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v3/slide-04.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-04.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "66c56cb559d8679222dd1a397b806009a7ad7cf3c064b37bde1498c06dfc75f1"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Сейчас проверяю, как использовать AI для производства контента",
+      "Не только генерировать текст, а выстроить процесс от темы до готовой публикации"
+    ],
+    "rawVisibleText": [
+      "Сейчас проверяю, как использовать AI для производства контента",
+      "Не только генерировать текст, а выстроить процесс от темы до готовой публикации"
+    ],
+    "headlineTexts": [
+      "Сейчас проверяю, как использовать AI для производства контента"
+    ],
+    "type": [
+      {
+        "className": "task-title display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 88,
+        "lineHeight": 82.72,
+        "clientWidth": 760,
+        "scrollWidth": 760,
+        "clientHeight": 331,
+        "scrollHeight": 342,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 120,
+          "width": 760,
+          "height": 330.875,
+          "top": 120,
+          "right": 880,
+          "bottom": 450.875,
+          "left": 120
+        }
+      },
+      {
+        "className": "task-body text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 38,
+        "lineHeight": 47.12,
+        "clientWidth": 720,
+        "scrollWidth": 720,
+        "clientHeight": 141,
+        "scrollHeight": 141,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 650,
+          "width": 720,
+          "height": 141.328125,
+          "top": 650,
+          "right": 840,
+          "bottom": 791.328125,
+          "left": 120
+        }
+      }
+    ],
+    "inlineEmphasis": [
+      {
+        "family": "\"Cormorant Garamond Production\", serif",
+        "style": "italic",
+        "weight": "400"
+      }
+    ],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 0,
+    "approvedImageCount": 0,
+    "photoPresentation": [],
+    "photoPanelRect": null,
+    "visualCoreCount": 1,
+    "svgCount": 0
+  }
+}

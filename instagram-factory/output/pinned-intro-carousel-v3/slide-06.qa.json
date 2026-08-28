@@ -1,0 +1,206 @@
+{
+  "pipelineVersion": 1,
+  "carouselId": "pinned-intro-carousel-v3",
+  "itemId": "slide-06",
+  "kind": "production-slide",
+  "mode": "author-control",
+  "generatedAt": "2026-08-28T08:36:28.639Z",
+  "passed": true,
+  "checks": {
+    "pngDimensionsExact": true,
+    "canvasExact": true,
+    "noOverflow": true,
+    "noTextInternalOverflow": true,
+    "textExact": true,
+    "fontsLoaded": true,
+    "onlyApprovedFonts": true,
+    "onlyRegularWeights": true,
+    "italicOnlyWhereSpecified": true,
+    "mobileReadable": true,
+    "safeZoneMinimum120": true,
+    "textInsideSafeZone": true,
+    "headlinesWithoutTerminalPeriods": true,
+    "headlineMetadataExact": true,
+    "lineHeightByRoleExact": true,
+    "nonBreakingSpacesApplied": true,
+    "approvedColorsOnly": true,
+    "approvedPhotoPolicy": true,
+    "approvedPhotoSourceExact": true,
+    "approvedPhotoFullFrame": true,
+    "photoTextClearsFigures": true,
+    "visualCoreExact": true,
+    "noEmoji": true,
+    "noTextArrows": true,
+    "noForcedCta": true,
+    "noEmptyConnectors": true,
+    "noUnapprovedEffects": true,
+    "noUnapprovedElements": true,
+    "svgPolicyExact": true,
+    "noPublishingControls": true
+  },
+  "failedChecks": [],
+  "artifact": {
+    "png": "output/pinned-intro-carousel-v3/slide-06.png",
+    "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-06.png",
+    "width": 1080,
+    "height": 1440,
+    "sha256": "6fd672d8418da482b74446d87098e7c4c59ac8b55c6af022909e2e9ad273013a"
+  },
+  "browserQa": {
+    "canvasRect": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1440,
+      "top": 0,
+      "right": 1080,
+      "bottom": 1440,
+      "left": 0
+    },
+    "safeRect": {
+      "left": 120,
+      "top": 120,
+      "right": 960,
+      "bottom": 1320
+    },
+    "visibleText": [
+      "Что оставляю за собой",
+      "выбор темы",
+      "смысл",
+      "финальная проверка",
+      "Рутину хочу передать системе. Тему, смысл и финальный материал проверяю сам"
+    ],
+    "rawVisibleText": [
+      "Что оставляю за собой",
+      "выбор темы",
+      "смысл",
+      "финальная проверка",
+      "Рутину хочу передать системе. Тему, смысл и финальный материал проверяю сам"
+    ],
+    "headlineTexts": [
+      "Что оставляю за собой"
+    ],
+    "type": [
+      {
+        "className": "control-title display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 98,
+        "lineHeight": 92.12,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 92,
+        "scrollHeight": 105,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 120,
+          "width": 840,
+          "height": 92.109375,
+          "top": 120,
+          "right": 960,
+          "bottom": 212.109375,
+          "left": 120
+        }
+      },
+      {
+        "className": "control-label display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 50,
+        "lineHeight": 47,
+        "clientWidth": 210,
+        "scrollWidth": 210,
+        "clientHeight": 94,
+        "scrollHeight": 100,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 145,
+          "y": 611,
+          "width": 210,
+          "height": 94,
+          "top": 611,
+          "right": 355,
+          "bottom": 705,
+          "left": 145
+        }
+      },
+      {
+        "className": "control-label display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 50,
+        "lineHeight": 47,
+        "clientWidth": 210,
+        "scrollWidth": 210,
+        "clientHeight": 47,
+        "scrollHeight": 53,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 435,
+          "y": 611,
+          "width": 210,
+          "height": 47,
+          "top": 611,
+          "right": 645,
+          "bottom": 658,
+          "left": 435
+        }
+      },
+      {
+        "className": "control-label display-serif text-block",
+        "family": "\"Cormorant Garamond Production\", serif",
+        "size": 50,
+        "lineHeight": 47,
+        "clientWidth": 210,
+        "scrollWidth": 210,
+        "clientHeight": 94,
+        "scrollHeight": 100,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 725,
+          "y": 611,
+          "width": 210,
+          "height": 94,
+          "top": 611,
+          "right": 935,
+          "bottom": 705,
+          "left": 725
+        }
+      },
+      {
+        "className": "control-body text-sans text-block",
+        "family": "\"Inter Production\", sans-serif",
+        "size": 40,
+        "lineHeight": 49.6,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 131,
+        "scrollHeight": 131,
+        "style": "normal",
+        "weight": "400",
+        "rect": {
+          "x": 120,
+          "y": 930,
+          "width": 840,
+          "height": 133.1875,
+          "top": 930,
+          "right": 960,
+          "bottom": 1063.1875,
+          "left": 120
+        }
+      }
+    ],
+    "inlineEmphasis": [],
+    "safeZoneFailures": [],
+    "unapprovedColors": [],
+    "effectFailures": [],
+    "imageCount": 0,
+    "approvedImageCount": 0,
+    "photoPresentation": [],
+    "photoPanelRect": null,
+    "visualCoreCount": 3,
+    "svgCount": 0
+  }
+}
