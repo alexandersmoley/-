@@ -1,5 +1,5 @@
 export async function runPinnedIntroCarouselV3Qa(page, { project, item, expectedAssetUrl }) {
-  return page.evaluate(({ itemId, expectedText, expectedHeadlineIndexes, safeZone, expectedVisualCoreCount, usesApprovedPhoto, expectedAssetUrl }) => {
+  return page.evaluate(({ itemId, expectedText, expectedHeadlineIndexes, safeZone, expectedVisualCoreCount, usesApprovedPhoto, expectedAssetUrl, expectedAssetWidth, expectedAssetHeight }) => {
     const rect = (value) => ({
       x: value.x, y: value.y, width: value.width, height: value.height,
       top: value.top, right: value.right, bottom: value.bottom, left: value.left
@@ -79,7 +79,7 @@ export async function runPinnedIntroCarouselV3Qa(page, { project, item, expected
     });
     const images = [...document.querySelectorAll('img')];
     const approvedImages = images.filter((image) => image.dataset.approvedAsset === 'MAHTX_B6J9k');
-    const photoSourceExact = approvedImages.every((image) => image.src === expectedAssetUrl && image.naturalWidth === 150 && image.naturalHeight === 200);
+    const photoSourceExact = approvedImages.every((image) => image.src === expectedAssetUrl && image.naturalWidth === expectedAssetWidth && image.naturalHeight === expectedAssetHeight);
     const photoPresentation = approvedImages.map((image) => {
       const style = getComputedStyle(image);
       return { rect: rect(image.getBoundingClientRect()), objectFit: style.objectFit, objectPosition: style.objectPosition };
@@ -169,6 +169,8 @@ export async function runPinnedIntroCarouselV3Qa(page, { project, item, expected
     safeZone: project.safeZone,
     expectedVisualCoreCount: item.visualCoreCount,
     usesApprovedPhoto: item.usesApprovedPhoto,
-    expectedAssetUrl
+    expectedAssetUrl,
+    expectedAssetWidth: project.asset.width,
+    expectedAssetHeight: project.asset.height
   });
 }
