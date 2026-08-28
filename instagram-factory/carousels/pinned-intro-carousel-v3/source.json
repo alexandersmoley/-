@@ -10,10 +10,10 @@
   "safeZone": { "top": 120, "right": 120, "bottom": 120, "left": 120 },
   "contentSource": {
     "path": "content/pinned-intro-carousel-v3.md",
-    "sha256": "a976559d57872231480ae69b3a1d457d2581ef4073ae003871dd2501487d267c",
+    "sha256": "315586d72bb8c4be7841815c75b68c9d5e473a1ee35084fd5b8a866238f7dd19",
     "freezeHeading": "# Exact copy freeze"
   },
-  "captionSha256": "ceebe0b82b6ceeb043868159a3255c1bbd7d557fb40bf674579f347478347705",
+  "captionSha256": "805d41fc580b7d7c06794b107657bd377b40c9e7bf68dcd5e61b8327e1fb6391",
   "designTokens": {
     "ink": "#101010",
     "paper": "#f4f1e9",
@@ -22,18 +22,18 @@
   },
   "layoutFamily": "human-to-system-calm",
   "asset": {
-    "id": "MAHTZduqLyI",
-    "name": "alexsmoley-photo-mountains-son",
-    "path": "assets/photos/pinned-intro-mountains-son.jpeg",
-    "sha256": "8cc0c06d9c3c0d049a8cac15d25bf7e13b9d07204b4cfcf2a8bfb77d47146805",
-    "source": "Canva approved original photo",
-    "width": 1152,
-    "height": 1536,
-    "treatment": "single-use full-frame original photo; object-fit contain; no crop; hands and figures preserved; no generative redraw"
+    "id": "MAHTX_B6J9k",
+    "name": "alexsmoley-photo-chair",
+    "path": "assets/photos/alexsmoley-photo-chair-thumb.jpg",
+    "sha256": "6315d9f64f0fff131bd400d0631129bd45488a33e47610c4d8b1259caee21b83",
+    "source": "Canva approved asset thumbnail; original asset metadata 1152x1536",
+    "width": 150,
+    "height": 200,
+    "treatment": "single-use editorial portrait on slide 01; 3:4 composition preserved; no generative redraw"
   },
   "caption": [
     "Привет, я Саша Смолей. Работаю редактором в IT. Пишу тексты, проектирую интерфейсы, собираю сайты и понемногу вайбкожу.",
-    "Писал для Kaspersky, Сбера, СИБУРа, NtechLab, Черкизово и других компаний. Ещё делаю агитматериалы для политических кампаний, в том числе для кандидатов в президенты.",
+    "Писал для Kaspersky, Сбера, СИБУРа, NtechLab, Черкизово, Алюминиевой Ассоциации и других компаний. Ещё делаю агитматериалы для политических кампаний, в том числе для кандидатов в президенты.",
     "Сейчас проверяю, как использовать AI для производства контента. Не только генерировать текст, а выстроить процесс: найти тему, собрать фактуру, сделать текст и дизайн, проверить материал, опубликовать и разобрать результаты.",
     "Я проверяю этот процесс на собственном блоге. Здесь буду показывать, что сработало, где система ошиблась и что пришлось переделать руками."
   ],
@@ -43,18 +43,18 @@
       "mode": "identity-cover",
       "headlineIndexes": [0],
       "text": ["Я Саша Смолей", "Редактор в IT"],
-      "visualType": "typography",
-      "usesApprovedPhoto": false,
+      "visualType": "photo",
+      "usesApprovedPhoto": true,
       "expectedArrowCount": 0,
       "visualCoreCount": 1
     },
     {
       "id": "slide-02",
-      "mode": "full-photo-work",
+      "mode": "work-list",
       "headlineIndexes": [0],
       "text": ["Что я делаю", "Пишу тексты", "Проектирую интерфейсы", "Собираю сайты", "Понемногу вайбкожу"],
-      "visualType": "photo",
-      "usesApprovedPhoto": true,
+      "visualType": "typography",
+      "usesApprovedPhoto": false,
       "expectedArrowCount": 0,
       "visualCoreCount": 1
     },
@@ -62,7 +62,7 @@
       "id": "slide-03",
       "mode": "client-proof",
       "headlineIndexes": [0],
-      "text": ["Для кого я писал", "Kaspersky", "Сбер", "СИБУР", "NtechLab", "Черкизово", "Делаю агитматериалы для политических кампаний, в том числе для кандидатов в президенты"],
+      "text": ["Для кого я писал", "Kaspersky", "Сбер", "СИБУР", "NtechLab", "Черкизово", "Алюминиевая Ассоциация", "Делаю агитматериалы для политических кампаний, в том числе для кандидатов в президенты"],
       "visualType": "evidence",
       "usesApprovedPhoto": false,
       "expectedArrowCount": 0,
@@ -102,7 +102,7 @@
       "id": "slide-07",
       "mode": "blog-closing",
       "headlineIndexes": [0],
-      "text": ["Что будет в блоге", "что сработало", "где система ошиблась", "что я переделал руками", "Показываю результаты на реальных материалах"],
+      "text": ["Что будет в блоге", "что сработало", "где система ошиблась", "что я переделал руками", "Подписывайтесь — буду показывать весь процесс на реальных материалах"],
       "visualType": "list",
       "usesApprovedPhoto": false,
       "expectedArrowCount": 0,

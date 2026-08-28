@@ -4,7 +4,7 @@
   "itemId": "slide-01",
   "kind": "production-cover",
   "mode": "identity-cover",
-  "generatedAt": "2026-08-28T08:43:46.858Z",
+  "generatedAt": "2026-08-28T13:54:25.171Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -26,12 +26,12 @@
     "approvedColorsOnly": true,
     "approvedPhotoPolicy": true,
     "approvedPhotoSourceExact": true,
-    "approvedPhotoFullFrame": true,
+    "approvedPhotoEditorialPlacement": true,
     "photoTextClearsFigures": true,
     "visualCoreExact": true,
     "noEmoji": true,
     "noTextArrows": true,
-    "noForcedCta": true,
+    "ctaOnlyOnClosingSlide": true,
     "noEmptyConnectors": true,
     "noUnapprovedEffects": true,
     "noUnapprovedElements": true,
@@ -44,7 +44,7 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-01.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "b284ece51022c9b33be821fa407e83e960e7c1de2c9f8dfe7ce27b9f06164081"
+    "sha256": "fa78b21274629dedcea29efd2870d912687a12c24e9c1587b45abadebdfdeb3b"
   },
   "browserQa": {
     "canvasRect": {
@@ -78,44 +78,44 @@
       {
         "className": "identity-title display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
-        "size": 150,
-        "lineHeight": 141,
-        "clientWidth": 760,
-        "scrollWidth": 760,
-        "clientHeight": 282,
-        "scrollHeight": 302,
+        "size": 126,
+        "lineHeight": 118.44,
+        "clientWidth": 840,
+        "scrollWidth": 840,
+        "clientHeight": 118,
+        "scrollHeight": 135,
         "style": "normal",
         "weight": "400",
         "rect": {
           "x": 120,
-          "y": 160,
-          "width": 760,
-          "height": 282,
-          "top": 160,
-          "right": 880,
-          "bottom": 442,
+          "y": 900,
+          "width": 840,
+          "height": 118.4375,
+          "top": 900,
+          "right": 960,
+          "bottom": 1018.4375,
           "left": 120
         }
       },
       {
         "className": "identity-role display-serif text-block",
         "family": "\"Cormorant Garamond Production\", serif",
-        "size": 112,
-        "lineHeight": 105.28,
+        "size": 94,
+        "lineHeight": 88.36,
         "clientWidth": 840,
         "scrollWidth": 840,
-        "clientHeight": 105,
-        "scrollHeight": 120,
+        "clientHeight": 88,
+        "scrollHeight": 101,
         "style": "normal",
         "weight": "400",
         "rect": {
           "x": 120,
-          "y": 760,
+          "y": 1100,
           "width": 840,
-          "height": 105.265625,
-          "top": 760,
+          "height": 88.359375,
+          "top": 1100,
           "right": 960,
-          "bottom": 865.265625,
+          "bottom": 1188.359375,
           "left": 120
         }
       }
@@ -130,10 +130,25 @@
     "safeZoneFailures": [],
     "unapprovedColors": [],
     "effectFailures": [],
-    "imageCount": 0,
-    "approvedImageCount": 0,
-    "photoPresentation": [],
-    "photoPanelRect": null,
+    "imageCount": 1,
+    "approvedImageCount": 1,
+    "photoPresentation": [
+      {
+        "rect": {
+          "x": 420,
+          "y": 150,
+          "width": 510,
+          "height": 680,
+          "top": 150,
+          "right": 930,
+          "bottom": 830,
+          "left": 420
+        },
+        "objectFit": "contain",
+        "objectPosition": "50% 50%"
+      }
+    ],
+    "photoTextOverlap": false,
     "visualCoreCount": 1,
     "svgCount": 0
   }

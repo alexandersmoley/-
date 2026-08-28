@@ -4,7 +4,7 @@
   "itemId": "slide-05",
   "kind": "production-slide",
   "mode": "process-map",
-  "generatedAt": "2026-08-28T08:43:47.833Z",
+  "generatedAt": "2026-08-28T13:54:27.006Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -26,12 +26,12 @@
     "approvedColorsOnly": true,
     "approvedPhotoPolicy": true,
     "approvedPhotoSourceExact": true,
-    "approvedPhotoFullFrame": true,
+    "approvedPhotoEditorialPlacement": true,
     "photoTextClearsFigures": true,
     "visualCoreExact": true,
     "noEmoji": true,
     "noTextArrows": true,
-    "noForcedCta": true,
+    "ctaOnlyOnClosingSlide": true,
     "noEmptyConnectors": true,
     "noUnapprovedEffects": true,
     "noUnapprovedElements": true,
@@ -44,7 +44,7 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-05.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "2d7c1d3297848b6ea47b395aeb2db49458daabb0b09bba64a3f3d31fbb773386"
+    "sha256": "00d896f752a8f0464f562f699f4b01382848251c8585e2006dcdf2c627f331c0"
   },
   "browserQa": {
     "canvasRect": {
@@ -295,7 +295,7 @@
     "imageCount": 0,
     "approvedImageCount": 0,
     "photoPresentation": [],
-    "photoPanelRect": null,
+    "photoTextOverlap": false,
     "visualCoreCount": 1,
     "svgCount": 2
   }

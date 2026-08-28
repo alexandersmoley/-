@@ -48,13 +48,13 @@
       "type": "object", "additionalProperties": false,
       "required": ["id", "name", "path", "sha256", "source", "width", "height", "treatment"],
       "properties": {
-        "id": { "const": "MAHTZduqLyI" },
-        "name": { "const": "alexsmoley-photo-mountains-son" },
-        "path": { "const": "assets/photos/pinned-intro-mountains-son.jpeg" },
-        "sha256": { "const": "8cc0c06d9c3c0d049a8cac15d25bf7e13b9d07204b4cfcf2a8bfb77d47146805" },
-        "source": { "const": "Canva approved original photo" },
-        "width": { "const": 1152 }, "height": { "const": 1536 },
-        "treatment": { "const": "single-use full-frame original photo; object-fit contain; no crop; hands and figures preserved; no generative redraw" }
+        "id": { "const": "MAHTX_B6J9k" },
+        "name": { "const": "alexsmoley-photo-chair" },
+        "path": { "const": "assets/photos/alexsmoley-photo-chair-thumb.jpg" },
+        "sha256": { "const": "6315d9f64f0fff131bd400d0631129bd45488a33e47610c4d8b1259caee21b83" },
+        "source": { "const": "Canva approved asset thumbnail; original asset metadata 1152x1536" },
+        "width": { "const": 150 }, "height": { "const": 200 },
+        "treatment": { "const": "single-use editorial portrait on slide 01; 3:4 composition preserved; no generative redraw" }
       }
     },
     "caption": {
@@ -72,7 +72,7 @@
       "required": ["id", "mode", "headlineIndexes", "text", "visualType", "usesApprovedPhoto", "expectedArrowCount", "visualCoreCount"],
       "properties": {
         "id": { "type": "string", "pattern": "^slide-0[1-7]$" },
-        "mode": { "enum": ["identity-cover", "full-photo-work", "client-proof", "current-task", "process-map", "author-control", "blog-closing"] },
+        "mode": { "enum": ["identity-cover", "work-list", "client-proof", "current-task", "process-map", "author-control", "blog-closing"] },
         "headlineIndexes": {
           "type": "array", "minItems": 1, "uniqueItems": true,
           "items": { "type": "integer", "minimum": 0, "maximum": 12 }

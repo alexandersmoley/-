@@ -11,27 +11,27 @@ const approvedPhoto = (assetUrl) => `<img
   class="approved-photo"
   src="${escapeHtml(assetUrl)}"
   alt=""
-  data-approved-asset="MAHTZduqLyI"
+  data-approved-asset="MAHTX_B6J9k"
   data-visual-core>`;
 
-function identityCover(item) {
+function identityCover(item, assetUrl) {
   return `<section class="composition identity-composition" data-color>
+    <div class="identity-photo-mat" data-color></div>
+    ${approvedPhoto(assetUrl)}
     ${node(item, 0, 'identity-title display-serif')}
     ${node(item, 1, 'identity-role display-serif', {
       html: `${escapeHtml('Редактор')} <em>${escapeHtml('в IT')}</em>`
     })}
-    <div class="identity-rule" data-color data-visual-core></div>
   </section>`;
 }
 
-function fullPhotoWork(item, assetUrl) {
-  return `<section class="composition photo-work-composition" data-color>
-    ${approvedPhoto(assetUrl)}
-    <div class="photo-copy-panel" data-color>
-      ${node(item, 0, 'photo-work-title display-serif')}
-      <div class="photo-work-list">
-        ${item.text.slice(1).map((_, index) => node(item, index + 1, `photo-work-item photo-work-item-${index + 1} text-sans`)).join('')}
-      </div>
+function workList(item) {
+  return `<section class="composition work-composition" data-color>
+    ${node(item, 0, 'work-title display-serif')}
+    <div class="work-list" data-color data-visual-core>
+      ${item.text.slice(1).map((_, index) => `<div class="work-row work-row-${index + 1}" data-color>
+        ${node(item, index + 1, `work-item work-item-${index + 1} display-serif`)}
+      </div>`).join('')}
     </div>
   </section>`;
 }
@@ -40,9 +40,9 @@ function clientProof(item) {
   return `<section class="composition proof-composition" data-color>
     ${node(item, 0, 'proof-title display-serif')}
     <div class="proof-table" data-color data-visual-core>
-      ${item.text.slice(1, 6).map((_, index) => node(item, index + 1, `proof-client proof-client-${index + 1} display-serif`)).join('')}
+      ${item.text.slice(1, 7).map((_, index) => node(item, index + 1, `proof-client proof-client-${index + 1} text-sans`)).join('')}
     </div>
-    ${node(item, 6, 'proof-politics text-sans')}
+    ${node(item, 7, 'proof-politics text-sans')}
   </section>`;
 }
 
@@ -100,8 +100,8 @@ function blogClosing(item) {
 }
 
 export function renderHumanToSystemCalm(item, { assetUrl }) {
-  if (item.mode === 'identity-cover') return identityCover(item);
-  if (item.mode === 'full-photo-work') return fullPhotoWork(item, assetUrl);
+  if (item.mode === 'identity-cover') return identityCover(item, assetUrl);
+  if (item.mode === 'work-list') return workList(item);
   if (item.mode === 'client-proof') return clientProof(item);
   if (item.mode === 'current-task') return currentTask(item);
   if (item.mode === 'process-map') return processMap(item);

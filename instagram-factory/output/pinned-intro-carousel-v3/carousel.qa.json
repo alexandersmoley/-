@@ -1,7 +1,7 @@
 {
   "pipelineVersion": 1,
   "carouselId": "pinned-intro-carousel-v3",
-  "generatedAt": "2026-08-28T08:43:48.322Z",
+  "generatedAt": "2026-08-28T13:54:28.059Z",
   "passed": true,
   "checks": {
     "structuredSourceValid": true,
@@ -19,12 +19,15 @@
     "approvedAssetChecksumExact": true,
     "approvedAssetDimensionsExact": true,
     "productionPhotoUsedOnce": true,
-    "productionPhotoOnlyOnSlide02": true,
-    "productionCoverHasNoPhoto": true,
+    "productionPhotoOnlyOnSlide01": true,
+    "productionCoverHasPhoto": true,
+    "mountainPhotoExcluded": true,
     "allSlidesPassed": true,
     "photoCompositionPassed": true,
     "adjacentCompositionsDistinct": true,
     "clientExperienceWordingExact": true,
+    "aluminiumAssociationCaseIncluded": true,
+    "ctaOnlyOnClosingSlide": true,
     "noBrandSalesPromise": true,
     "noEmptyWritingConnectors": true,
     "contactSheetCreated": true,
@@ -33,24 +36,24 @@
   },
   "failedChecks": [],
   "integrity": {
-    "contentSha256": "a976559d57872231480ae69b3a1d457d2581ef4073ae003871dd2501487d267c",
-    "captionSha256": "ceebe0b82b6ceeb043868159a3255c1bbd7d557fb40bf674579f347478347705",
-    "assetId": "MAHTZduqLyI",
-    "assetSha256": "8cc0c06d9c3c0d049a8cac15d25bf7e13b9d07204b4cfcf2a8bfb77d47146805"
+    "contentSha256": "315586d72bb8c4be7841815c75b68c9d5e473a1ee35084fd5b8a866238f7dd19",
+    "captionSha256": "805d41fc580b7d7c06794b107657bd377b40c9e7bf68dcd5e61b8327e1fb6391",
+    "assetId": "MAHTX_B6J9k",
+    "assetSha256": "6315d9f64f0fff131bd400d0631129bd45488a33e47610c4d8b1259caee21b83"
   },
   "contactSheet": {
     "path": "output/pinned-intro-carousel-v3/contact-sheet.png",
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/contact-sheet.png",
     "width": 984,
     "height": 648,
-    "sha256": "35c33103833a1b440f7c77ec48a8a1607414117e4f3305be4614a35e5982849a"
+    "sha256": "e594a18b863672fe581eb7f9ca3d4c8bd422b1966c4d9f187058cf10638ee44d"
   },
   "coverPreview": {
     "path": "output/pinned-intro-carousel-v3/cover-preview.png",
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/cover-preview.png",
     "width": 360,
     "height": 460,
-    "sha256": "f0b4022edcafc1798f152ea497dab54d72ff9b85d611248756d6b5b10a2d1a2f"
+    "sha256": "3463799294946eca8497f037f2387e4e2426bceb8b9659cccc13691afa48e715"
   },
   "slides": [
     {
@@ -63,7 +66,7 @@
     },
     {
       "id": "slide-02",
-      "mode": "full-photo-work",
+      "mode": "work-list",
       "passed": true,
       "png": "output/pinned-intro-carousel-v3/slide-02.png",
       "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-02.png",

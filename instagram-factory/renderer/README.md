@@ -97,7 +97,7 @@ The QA gates enforce exact 1080×1440 output, the 120 px safe zone, Inter/Cormor
 
 `human-to-system-calm` is the writing-contract version of the same semantic family. Its benchmark, `pinned-intro-carousel-v3`, renders seven 1080×1440 slides from exact approved copy.
 
-The original Canva photo `MAHTZduqLyI` appears exactly once, full-frame on slide 02 with `object-fit: contain`. The 3:4 composition, hands and figures are preserved. The remaining slides use typography, an evidence table and functional process diagrams. No generative imagery is used.
+The approved Canva chair portrait `MAHTX_B6J9k` appears exactly once as a large 3:4 editorial fragment on slide 01. Slide 02 is typography-only, and the mountains-and-son photo is excluded from this version. The remaining slides use typography, an Inter evidence table and functional process diagrams. No generative imagery is used.
 
 Run only this benchmark with:
 
@@ -105,7 +105,7 @@ Run only this benchmark with:
 pnpm run render:pinned-intro-v3
 ```
 
-QA checks exact copy and caption, the writing contract, fonts, colors, safe zones, non-breaking spaces, source-photo checksum and dimensions, single-use full-frame photo composition, contact sheet and cover preview.
+QA checks exact copy and caption, the writing contract, fonts, colors, safe zones, non-breaking spaces, the approved chair-asset checksum, single-use photo placement, the Aluminium Association case, closing-slide-only CTA, contact sheet and cover preview.
 
 ## Motion editorial Reel
 

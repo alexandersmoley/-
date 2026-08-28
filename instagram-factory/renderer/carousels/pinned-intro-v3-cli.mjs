@@ -200,16 +200,21 @@ async function main() {
     captionFreezeExact,
     contentSourceChecksumExact: contentSha === project.contentSource.sha256,
     captionChecksumExact: captionSha === project.captionSha256,
-    approvedAssetIdExact: project.asset.id === 'MAHTZduqLyI',
+    approvedAssetIdExact: project.asset.id === 'MAHTX_B6J9k',
     approvedAssetChecksumExact: assetSha === project.asset.sha256,
     approvedAssetDimensionsExact: assetMetadata.width === project.asset.width && assetMetadata.height === project.asset.height,
     productionPhotoUsedOnce: photoSlides.length === 1,
-    productionPhotoOnlyOnSlide02: photoSlides[0]?.id === 'slide-02',
-    productionCoverHasNoPhoto: project.slides[0].usesApprovedPhoto === false,
+    productionPhotoOnlyOnSlide01: photoSlides[0]?.id === 'slide-01',
+    productionCoverHasPhoto: project.slides[0].usesApprovedPhoto === true,
+    mountainPhotoExcluded: project.asset.id !== 'MAHTZduqLyI' && !project.asset.path.includes('mountains-son'),
     allSlidesPassed: slideResults.every(({ report }) => report.passed),
-    photoCompositionPassed: slideResults.find(({ report }) => report.itemId === 'slide-02')?.report.checks.approvedPhotoFullFrame === true,
+    photoCompositionPassed: slideResults.find(({ report }) => report.itemId === 'slide-01')?.report.checks.approvedPhotoEditorialPlacement === true,
     adjacentCompositionsDistinct: project.slides.every((item, index, slides) => index === 0 || item.mode !== slides[index - 1].mode),
     clientExperienceWordingExact: flattenedCopy.includes('Для кого я писал') && flattenedCopy.includes('Писал для') && !/работал[аи]? (?:в|с)/iu.test(flattenedCopy),
+    aluminiumAssociationCaseIncluded: project.slides.find((item) => item.id === 'slide-03')?.text.includes('Алюминиевая Ассоциация') === true,
+    ctaOnlyOnClosingSlide: project.slides.every((item) => item.id === 'slide-07'
+      ? item.text.some((value) => /подписывайтесь/iu.test(value))
+      : item.text.every((value) => !/подпиш/iu.test(value))),
     noBrandSalesPromise: !/(прода\p{L}*|услуг\p{L}*|систем\p{L}*)[^.]{0,60}бренд/iu.test(flattenedCopy),
     noEmptyWritingConnectors: !/(мне интересно другое|вообще-то|почему-то|давайте разбер)/iu.test(flattenedCopy),
     contactSheetCreated: contactSheet.width === 984 && contactSheet.height === 648,
@@ -230,7 +235,7 @@ async function main() {
   };
   await fs.writeFile(path.join(outputDirectory, 'carousel.qa.json'), `${JSON.stringify(report, null, 2)}\n`);
   await fs.writeFile(path.join(outputDirectory, 'qa-summary.json'), `${JSON.stringify(report, null, 2)}\n`);
-  const selfReview = `# Pinned intro carousel v3 — self-review\n\n- Writing contract: PASS\n- Approved exact copy: PASS\n- Original photo used once, on slide 02: PASS\n- Photo shown full-frame with hands and figures preserved: PASS\n- Client wording uses “писал для”: PASS\n- Brand-sales promise removed: PASS\n- Seven distinct calm editorial compositions: PASS\n- Social publishing: NOT EXECUTED\n`;
+  const selfReview = `# Pinned intro carousel v3 — self-review\n\n- Writing contract: PASS\n- Exact copy freeze: PASS\n- Approved chair photo used once, on slide 01: PASS\n- Mountain-and-son photo excluded: PASS\n- Portrait composition preserved without generative redraw: PASS\n- Slide 02 uses typography only: PASS\n- Aluminium Association case included on slide 03: PASS\n- Client wording uses “писал для”: PASS\n- CTA appears only on closing slide: PASS\n- Brand-sales promise removed: PASS\n- Seven distinct calm editorial compositions: PASS\n- Social publishing: NOT EXECUTED\n`;
   await fs.writeFile(path.join(outputDirectory, 'self-review.md'), selfReview);
   if (!report.passed) {
     for (const { report: itemReport } of slideResults) {
