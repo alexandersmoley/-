@@ -4,7 +4,7 @@
   "itemId": "cover-c",
   "kind": "cover-variant",
   "mode": "cover-human-system",
-  "generatedAt": "2026-08-27T18:05:45.390Z",
+  "generatedAt": "2026-08-28T02:49:55.491Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -39,7 +39,7 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/covers/cover-c.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "a8314734c671a2194cdafb881018e05aad108e97715e81e741f8539fdffee380"
+    "sha256": "ff5558f28ea68b9e82fb00b713eb9438b52adb4c8e2e8a31e129c09e7720b532"
   },
   "browserQa": {
     "canvasRect": {

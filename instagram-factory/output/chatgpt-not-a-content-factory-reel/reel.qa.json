@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "chatgpt-not-a-content-factory-reel",
   "source": "reels/chatgpt-not-a-content-factory-reel.json",
-  "generatedAt": "2026-08-27T14:10:45.771Z",
+  "generatedAt": "2026-08-28T02:51:02.676Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -30,14 +30,14 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/chatgpt-not-a-content-factory-reel.md",
-    "contentSha256": "11af2737d775a557040141e1c2812026c928d9b0ec0ba9efeca2131c6303d3dd",
+    "contentSha256": "ce8b26d1f986ddf02a48d21488f410b4860b659c6433ebf5c5a71013bc11db98",
     "captionSha256": "5c4a821ce1c680f49c837f846b0e59d47a9e356e887ae612a8dac45b0d1b0bec"
   },
   "media": {
     "preview": {
       "path": "output/chatgpt-not-a-content-factory-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/preview.mp4",
-      "sha256": "fcead57b45bb4c005dae260df374f2e864f57c32e4ba27e1f32d93034b02bd65",
+      "sha256": "b30ccc759f202da839c21ffdbc10b8f6369213fff7871b3d1067bab94ab0f854",
       "duration": 25,
       "fps": "30/1"
     },

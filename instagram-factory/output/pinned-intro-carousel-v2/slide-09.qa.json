@@ -4,7 +4,7 @@
   "itemId": "slide-09",
   "kind": "production-slide",
   "mode": "closing",
-  "generatedAt": "2026-08-27T18:05:48.227Z",
+  "generatedAt": "2026-08-28T02:49:56.895Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -39,7 +39,7 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/slide-09.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "b6512a1ac0e48d5884c4dd851923e570562acf11f986b9af85e9bf4634ee4cb8"
+    "sha256": "0bab1ab0ae2ed41a0ecd16880d27686e65194932ffd8ef07fca522d6e5fcc838"
   },
   "browserQa": {
     "canvasRect": {

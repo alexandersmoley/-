@@ -4,7 +4,7 @@
   "itemId": "cover-a",
   "kind": "cover-variant",
   "mode": "cover-photo",
-  "generatedAt": "2026-08-27T18:05:44.710Z",
+  "generatedAt": "2026-08-28T02:49:55.130Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -39,7 +39,7 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v2/covers/cover-a.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "368591c1e6445d450b087e6aaf4870ada9a6b81f6bc2f9a43933227d23d514b1"
+    "sha256": "1ffd544184082b509b013ba0f6de6afae5cbafff583befc3ebc6a97f27ae23aa"
   },
   "browserQa": {
     "canvasRect": {
