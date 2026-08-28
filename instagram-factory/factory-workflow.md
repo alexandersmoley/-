@@ -14,7 +14,7 @@
 
 ## Архитектура
 
-`чат/редакционная работа → GitHub brief → code renderer → automated QA → human approval → publishing service → Instagram → analytics → learning → следующий эксперимент`
+`чат/редакционная работа → GitHub brief → writing QA → copy approval → code renderer → automated QA → human approval → publishing service → Instagram → analytics → learning → следующий эксперимент`
 
 GitHub — source of truth. Чат и кодовый агент могут меняться, но production-контракт и решения остаются в репозитории.
 
@@ -112,8 +112,9 @@ Metricool или другой подключённый публикационн�
 На текущем этапе обязательны минимум три человеческих ворот:
 
 1. утверждение темы/brief;
-2. утверждение визуального результата;
-3. утверждение публикации.
+2. утверждение exact copy после проверки по `writing-contract.md`;
+3. утверждение визуального результата;
+4. утверждение публикации.
 
 Позже число ворот можно уменьшать только на основании стабильных результатов экспериментов, а не ради самой автоматизации.
 

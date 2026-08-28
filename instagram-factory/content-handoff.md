@@ -39,6 +39,9 @@ experiment:
 # Exact copy
 Утверждённый экранный текст/caption. Если не утверждён — это должно быть явно отмечено.
 
+# Writing QA
+Результат проверки по `writing-contract.md`. До утверждения copy статус остаётся `brief-review`.
+
 # Narrative
 Слайды/сцены и смысловой прогресс.
 
@@ -76,7 +79,7 @@ Thumbnail, contact sheet, overflow, readability, performance structure.
 Редакционным чатом может быть ChatGPT или Claude.
 
 1. Обсуждает с пользователем конкретный вопрос/эксперимент.
-2. Проверяет human-first и reader-value критерии.
+2. Проверяет human-first, reader-value и `writing-contract.md`.
 3. Собирает фактуру и не придумывает недостающие факты.
 4. Готовит структуру/copy/art direction.
 5. После явного approval фиксирует решения в GitHub.
@@ -96,6 +99,8 @@ Thumbnail, contact sheet, overflow, readability, performance structure.
 8. Для feed обязательно делает thumbnail preview; для карусели — contact sheet.
 9. Передаёт результат на `design-review`.
 10. Не публикует.
+
+Если `copy_approval` не равен `approved`, кодовый агент не создаёт structured source и не запускает renderer.
 
 ## Визуальный handoff
 
