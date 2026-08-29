@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "claude-code-posting-reel",
   "source": "reels/claude-code-posting-reel.json",
-  "generatedAt": "2026-08-29T18:00:46.715Z",
+  "generatedAt": "2026-08-29T18:56:07.269Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -26,34 +26,34 @@
     "motionFramesDistinct": true,
     "storyboardCreated": true,
     "coverDimensionsExact": true,
-    "coverAssetChecksumExact": true,
-    "coverAssetDimensionsExact": true
+    "photoAssetChecksumExact": true,
+    "photoAssetDimensionsExact": true
   },
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/claude-code-posting-reel.md",
-    "contentSha256": "372a4d06cc10880200f8ce4159b64fda918d734f42312b0a5ee9a6773f31b40b",
-    "captionSha256": "838234618b20a6e08b0307465d35ed20db5da273249072efcb652b6a130259c0"
+    "contentSha256": "30ed898c2a3bd587c0c66810699179cea7c9a77d637dbdb84fb2bfe622d86d7f",
+    "captionSha256": "0cc7cec20252bbe1ee3b3aa1981cc02bf90b02291f91ed1df19ad50ce5c2db99"
   },
   "media": {
     "preview": {
       "path": "output/claude-code-posting-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/claude-code-posting-reel/preview.mp4",
-      "sha256": "f5cfed343f36ab043985165f903c448e28afa790175fdc50879807763d956578",
-      "duration": 25,
+      "sha256": "71df444d8dee3e4bb6d12dfac48d543b15e359daacb752071dc7ac6d4a3544e0",
+      "duration": 30,
       "fps": "30/1"
     },
     "cover": {
       "path": "output/claude-code-posting-reel/cover.png",
       "url": "https://alexandersmoley.github.io/-/claude-code-posting-reel/cover.png",
-      "sha256": "f9ed9bc370551e602d1f8ca5da43f3a36dc2f969a2abae26b1d79cd62784e3bb",
+      "sha256": "995d00f84ce2894ce6df80311ae2117562bf6d8615ce1da8c354530c794e726c",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
       "path": "output/claude-code-posting-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/claude-code-posting-reel/storyboard.png",
-      "sha256": "f8a72f8a87ffbbc939c8e914aab51bf5a3b33b9b70fcd0b98f19738e2c614651",
+      "sha256": "ea78cf14b1f78b33607c2b034882741c4f2debb02e3014ecad45457a93c4aac3",
       "width": 930,
       "height": 1050
     },
@@ -76,8 +76,10 @@
       "mobileReadable": true,
       "lineHeightByRoleExact": true,
       "safeZoneExact": true,
+      "everySampledFrameCarriesCopy": true,
       "approvedColorsOnly": true,
-      "noPhotography": true,
+      "approvedPhotographyOnly": true,
+      "noGeneratedMedia": true,
       "noUnauthorizedElements": true,
       "noUnauthorizedEffects": true,
       "renderFunctionAvailable": true
@@ -87,48 +89,48 @@
         {
           "id": "scene-01",
           "text": [
-            "Я перестал выкладывать посты руками",
-            "Идея → публикация → аналитика",
-            "Четыре сервиса, один процесс"
+            "Я не нажимаю «опубликовать»",
+            "Пишу задачу → дальше всё сам",
+            "Четыре шага — показываю каждый"
           ]
         },
         {
           "id": "scene-02",
           "text": [
-            "Идея лежит в Todoist",
-            "тема → фактура → срок",
-            "Оттуда её забирает Claude Code"
+            "Шаг 1. Записываю идею",
+            "В обычный список дел — Todoist",
+            "идея → задача в списке"
           ]
         },
         {
           "id": "scene-03",
           "text": [
-            "Материал собирается в GitHub",
-            "Текст заморожен контрольной суммой",
-            "бриф → copy freeze → рендер"
+            "Шаг 2. Утверждаю текст",
+            "Дальше его нельзя поменять незаметно — ни мне, ни роботу",
+            "мой текст → GitHub ← робот"
           ]
         },
         {
           "id": "scene-04",
           "text": [
-            "Дальше работает Claude Code",
-            "сборка → рендер → QA",
-            "Красный прогон — публикации нет"
+            "Шаг 3. Картинки делает робот",
+            "Claude Code → картинки → проверка",
+            "Если что-то не так — пост не выйдет"
           ]
         },
         {
           "id": "scene-05",
           "text": [
-            "Публикует Metricool",
-            "Todoist → GitHub → Claude Code → Metricool → Instagram",
-            "Моё участие — одно «ок»"
+            "Шаг 4. Публикует Metricool",
+            "Todoist → GitHub → Claude Code → Metricool",
+            "От меня — одно «ок»"
           ]
         },
         {
           "id": "scene-06",
           "text": [
-            "Аналитика возвращается в план",
-            "и цикл идёт заново",
+            "Дальше смотрю, что зашло",
+            "цифры → следующая идея",
             "Подписывайтесь — показываю, что ломается и как чиню"
           ]
         }
@@ -140,6 +142,7 @@
         "bottom": 1620
       },
       "safeZoneFailures": [],
+      "blankFrames": [],
       "type": [
         {
           "className": "plan-title display-serif reel-copy",
@@ -149,18 +152,6 @@
         },
         {
           "className": "plan-pipeline text-sans reel-copy",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 42,
-          "lineHeight": 52.08
-        },
-        {
-          "className": "pipeline-node",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 42,
-          "lineHeight": 52.08
-        },
-        {
-          "className": "pipeline-arrow",
           "family": "\"Inter Production\", sans-serif",
           "size": 42,
           "lineHeight": 52.08
@@ -203,6 +194,18 @@
         },
         {
           "className": "topic-pipeline text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 37,
+          "lineHeight": 45.88
+        },
+        {
+          "className": "pipeline-node",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 37,
+          "lineHeight": 45.88
+        },
+        {
+          "className": "pipeline-arrow",
           "family": "\"Inter Production\", sans-serif",
           "size": 37,
           "lineHeight": 45.88
@@ -364,18 +367,6 @@
           "lineHeight": 44.64
         },
         {
-          "className": "publish-arrow",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 36,
-          "lineHeight": 44.64
-        },
-        {
-          "className": "publish-stage",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 36,
-          "lineHeight": 44.64
-        },
-        {
           "className": "publish-approval text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
           "size": 40,
@@ -400,22 +391,36 @@
           "lineHeight": 49.6
         },
         {
+          "className": "pipeline-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
+          "className": "pipeline-node",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
           "className": "loop-cta text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
-          "size": 52,
-          "lineHeight": 64.48
+          "size": 54,
+          "lineHeight": 66.96
         }
       ],
       "unapprovedColors": [],
       "effectFailures": [],
       "sampleTimes": [
-        3.1,
-        7.2,
-        11.8,
-        16.2,
-        20.4,
-        23.55
-      ]
+        3.75,
+        8.75,
+        13.75,
+        18.75,
+        23.75,
+        28.75
+      ],
+      "imageCount": 0,
+      "approvedPhotoExact": true
     }
   },
   "coverBrowserQa": {
@@ -425,7 +430,7 @@
       "safeZoneExact": true,
       "fontsLoaded": true,
       "headlineWithoutTerminalPeriod": true,
-      "approvedPhotoExact": true,
+      "noPhotography": true,
       "noGeneratedMedia": true
     },
     "details": {
@@ -440,8 +445,7 @@
         "bottom": 1620
       },
       "safeZoneFailures": [],
-      "imageCount": 0,
-      "approvedPhotoExact": true
+      "mediaCount": 0
     }
   },
   "probe": {
@@ -465,7 +469,7 @@
       }
     ],
     "format": {
-      "duration": "25.000000"
+      "duration": "30.000000"
     }
   }
 }

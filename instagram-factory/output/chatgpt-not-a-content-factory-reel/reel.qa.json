@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "chatgpt-not-a-content-factory-reel",
   "source": "reels/chatgpt-not-a-content-factory-reel.json",
-  "generatedAt": "2026-08-29T17:59:40.471Z",
+  "generatedAt": "2026-08-29T18:54:48.996Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -26,34 +26,34 @@
     "motionFramesDistinct": true,
     "storyboardCreated": true,
     "coverDimensionsExact": true,
-    "coverAssetChecksumExact": true,
-    "coverAssetDimensionsExact": true
+    "photoAssetChecksumExact": true,
+    "photoAssetDimensionsExact": true
   },
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/chatgpt-not-a-content-factory-reel.md",
-    "contentSha256": "123ecefa021fa87ba20b0ad4c7afa1a8cd43e237fec51ec5317105dd4e0ae2eb",
+    "contentSha256": "5a532b52c6210c9e73090f09c2c8a12abbe3e3e5e2351a74ff53d5e6e0c6e43b",
     "captionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "media": {
     "preview": {
       "path": "output/chatgpt-not-a-content-factory-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/preview.mp4",
-      "sha256": "30ffe1c47ed72a1fe02bb7fd06c72371f51689e8dd4d1a00f2b40bb002fd0269",
+      "sha256": "250c0229e67267b6aad2992bc91a8e327a64296b13b8f1f112e7264a3da14642",
       "duration": 25,
       "fps": "30/1"
     },
     "cover": {
       "path": "output/chatgpt-not-a-content-factory-reel/cover.png",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/cover.png",
-      "sha256": "1a89905876c44cc415acf74dd769e2bf7b014c3434e447b83f8da5c755b2ca71",
+      "sha256": "924e577a56ac138105cd6d75e08872f6a6bc74743ff9b907ec4a4cc47ec98235",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
       "path": "output/chatgpt-not-a-content-factory-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/storyboard.png",
-      "sha256": "e2c4e0e80da0e59e42ef07f24c228911e15745a2a414d3ce050a9edc1e4fe2a5",
+      "sha256": "6ffb15f1b25d13c2fab0c00c926d8fa98de0bfaa49d8beb4eff032279dbc77b1",
       "width": 930,
       "height": 1050
     },
@@ -76,8 +76,10 @@
       "mobileReadable": true,
       "lineHeightByRoleExact": true,
       "safeZoneExact": true,
+      "everySampledFrameCarriesCopy": true,
       "approvedColorsOnly": true,
-      "noPhotography": true,
+      "approvedPhotographyOnly": true,
+      "noGeneratedMedia": true,
       "noUnauthorizedElements": true,
       "noUnauthorizedEffects": true,
       "renderFunctionAvailable": true
@@ -144,6 +146,7 @@
         "bottom": 1620
       },
       "safeZoneFailures": [],
+      "blankFrames": [],
       "type": [
         {
           "className": "plan-title display-serif reel-copy",
@@ -490,8 +493,8 @@
         {
           "className": "loop-cta text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
-          "size": 52,
-          "lineHeight": 64.48
+          "size": 54,
+          "lineHeight": 66.96
         },
         {
           "className": "loop-full text-sans reel-copy",
@@ -647,13 +650,15 @@
       "unapprovedColors": [],
       "effectFailures": [],
       "sampleTimes": [
-        3.1,
-        7.2,
-        11.8,
-        16.2,
-        20.4,
-        23.55
-      ]
+        3,
+        7,
+        11.38,
+        15.88,
+        20,
+        24
+      ],
+      "imageCount": 1,
+      "approvedPhotoExact": true
     }
   },
   "coverBrowserQa": {
@@ -663,7 +668,7 @@
       "safeZoneExact": true,
       "fontsLoaded": true,
       "headlineWithoutTerminalPeriod": true,
-      "approvedPhotoExact": true,
+      "noPhotography": true,
       "noGeneratedMedia": true
     },
     "details": {
@@ -678,8 +683,7 @@
         "bottom": 1620
       },
       "safeZoneFailures": [],
-      "imageCount": 1,
-      "approvedPhotoExact": true
+      "mediaCount": 0
     }
   },
   "probe": {
