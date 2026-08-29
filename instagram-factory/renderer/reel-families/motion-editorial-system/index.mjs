@@ -185,10 +185,12 @@ export function timelineScript() {
           if (scene.dataset.sceneId === 'scene-06') {
             const finalProgress = ease((local - 1.25) / .28);
             const finalExit = ease((local - 2.72) / .24);
-            const ctaProgress = ease((local - 2.72) / .28);
             const intro = scene.querySelector('[data-loop-intro]');
             const finalLoop = scene.querySelector('[data-final-loop]');
             const cta = scene.querySelector('[data-loop-cta-phase]');
+            // Without a final loop the call to action takes over the window that loop
+            // would have filled, otherwise the intro fades into an empty screen.
+            const ctaProgress = ease((local - (finalLoop ? 2.72 : 1.25)) / .28);
             if (intro) intro.style.opacity = String(1 - finalProgress);
             if (finalLoop) finalLoop.style.opacity = String(finalProgress * (1 - finalExit));
             if (cta) cta.style.opacity = String(ctaProgress);
