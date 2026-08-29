@@ -1,7 +1,7 @@
 {
   "pipelineVersion": 1,
   "carouselId": "pinned-intro-carousel-v3",
-  "generatedAt": "2026-08-29T07:18:23.855Z",
+  "generatedAt": "2026-08-29T07:24:34.164Z",
   "passed": true,
   "checks": {
     "structuredSourceValid": true,
@@ -36,8 +36,8 @@
   },
   "failedChecks": [],
   "integrity": {
-    "contentSha256": "c6132fbf7201cd5f348dbd20a389376ac135489a0f04aa77d72643c0a3c6b33e",
-    "captionSha256": "2775aeac133c5768a49341b643892f85506ac2a9d5361ba6ddff042f3e92ab4d",
+    "contentSha256": "6efd0a2cbe36afb7b5e1b570e4c317f845a1e5e73de6c7fda0c4bd3cc8f1b4ac",
+    "captionSha256": "d2b9532e66383bccf84fc70713bb42fb638f4451577cf66fa782449a9d6af728",
     "assetId": "MAHTX_B6J9k",
     "assetSha256": "266a019b6d3758edc8d22216ad1a0b5acb6e1a57ae64f7c42475de3a17a187b8"
   },
@@ -46,7 +46,7 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/contact-sheet.png",
     "width": 984,
     "height": 648,
-    "sha256": "bf7fd5d0c706f56061d9d58f436d70b708429c57fec42f3c743c84c8fa3f491e"
+    "sha256": "05a2fbb36f818d05eb34fbc77d2c295db00f906a649e316816783fb19df2092f"
   },
   "coverPreview": {
     "path": "output/pinned-intro-carousel-v3/cover-preview.png",

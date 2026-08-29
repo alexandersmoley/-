@@ -4,7 +4,7 @@
   "itemId": "slide-04",
   "kind": "production-slide",
   "mode": "current-task",
-  "generatedAt": "2026-08-29T07:18:23.222Z",
+  "generatedAt": "2026-08-29T07:24:33.472Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -44,7 +44,7 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-04.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "a99ad9bd0703796386982bd3bfa2cb68d447b6b7317d4615d5c4c59debfaa32e"
+    "sha256": "2ce08406075a14ea53dfd6301a78488d8e8cce77d988a9030314ee62936e75b8"
   },
   "browserQa": {
     "canvasRect": {
@@ -64,15 +64,15 @@
       "bottom": 1320
     },
     "visibleText": [
-      "Сейчас сам строю контент-завод с AI",
+      "Сейчас строю контент-завод с AI",
       "Чтобы не только генерировать посты, а выстроить процесс от темы до аналитики"
     ],
     "rawVisibleText": [
-      "Сейчас сам строю контент-завод с AI",
+      "Сейчас строю контент-завод с AI",
       "Чтобы не только генерировать посты, а выстроить процесс от темы до аналитики"
     ],
     "headlineTexts": [
-      "Сейчас сам строю контент-завод с AI"
+      "Сейчас строю контент-завод с AI"
     ],
     "type": [
       {
