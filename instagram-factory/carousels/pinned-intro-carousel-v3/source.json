@@ -24,11 +24,11 @@
   "asset": {
     "id": "MAHTX_B6J9k",
     "name": "alexsmoley-photo-chair",
-    "path": "assets/photos/alexsmoley-photo-chair-thumb.jpg",
-    "sha256": "6315d9f64f0fff131bd400d0631129bd45488a33e47610c4d8b1259caee21b83",
-    "source": "Canva approved asset thumbnail; original asset metadata 1152x1536",
-    "width": 150,
-    "height": 200,
+    "path": "assets/photos/alexsmoley-photo-chair.jpg",
+    "sha256": "266a019b6d3758edc8d22216ad1a0b5acb6e1a57ae64f7c42475de3a17a187b8",
+    "source": "Approved original portrait supplied by the author; 3:4 master at 1440x1920",
+    "width": 1440,
+    "height": 1920,
     "treatment": "single-use editorial portrait on slide 01; 3:4 composition preserved; no generative redraw"
   },
   "caption": [

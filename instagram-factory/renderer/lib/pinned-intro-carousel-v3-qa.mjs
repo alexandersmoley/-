@@ -79,7 +79,9 @@ export async function runPinnedIntroCarouselV3Qa(page, { project, item, expected
     });
     const images = [...document.querySelectorAll('img')];
     const approvedImages = images.filter((image) => image.dataset.approvedAsset === 'MAHTX_B6J9k');
-    const photoSourceExact = approvedImages.every((image) => image.src === expectedAssetUrl && image.naturalWidth === expectedAssetWidth && image.naturalHeight === expectedAssetHeight);
+    const photoSourceExact = approvedImages.every((image) => image.src === expectedAssetUrl
+      && image.naturalWidth === expectedAssetWidth
+      && image.naturalHeight === expectedAssetHeight);
     const photoPresentation = approvedImages.map((image) => {
       const style = getComputedStyle(image);
       return { rect: rect(image.getBoundingClientRect()), objectFit: style.objectFit, objectPosition: style.objectPosition };
