@@ -343,28 +343,34 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
   letter-spacing: -.032em;
 }
 
-/* Faceless cover: no portrait, so the frame carries type on the brand ground and
-   turns the second line into the pipeline it describes. */
-.reel-cover-typographic { background: var(--paper); color: var(--ink); }
-.reel-cover-plate {
-  position: absolute;
-  left: 0; top: 0;
-  width: 1080px; height: 1000px;
-  background: var(--ink);
-}
+/* Faceless cover: no portrait, so the frame is one ink field with the headline as the
+   only focus and the pipeline it describes set below it in brand blue. Everything sits
+   inside the safe zone (x 120–900, y 180–1620) so nothing is cropped in feed. */
+.reel-cover-typographic { background: var(--ink); color: var(--paper); }
+.reel-cover-plate { display: none; }
 .reel-cover-typographic .reel-cover-field {
-  top: 1000px;
-  min-height: 620px;
-  background: var(--blue);
+  position: absolute;
+  left: 120px;
+  top: 470px;
+  width: 780px;
+  min-height: 0;
+  padding: 0;
+  background: none;
 }
-.reel-cover-typographic .reel-cover-title { width: 656px; }
+.reel-cover-typographic .reel-cover-title {
+  position: relative;
+  width: 760px;
+  font-size: 132px;
+  letter-spacing: -.058em;
+  color: var(--paper);
+}
 .reel-cover-pipeline {
   position: relative;
-  width: 656px;
-  margin-top: 36px;
-  padding: 22px 26px;
-  font-size: 32px;
-  line-height: 1.24;
+  width: 700px;
+  margin-top: 92px;
+  padding: 30px 34px;
+  font-size: 34px;
+  line-height: 1.3;
   color: var(--paper);
-  border: 2px solid var(--paper);
+  background: var(--blue);
 }
