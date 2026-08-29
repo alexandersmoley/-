@@ -25,7 +25,7 @@
   "properties": {
     "$schema": { "type": "string" },
     "schemaVersion": { "const": 1 },
-    "id": { "const": "chatgpt-not-a-content-factory-reel" },
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+-reel$" },
     "platform": { "const": "instagram" },
     "format": { "const": "reels" },
     "status": { "enum": ["draft", "approved-for-render", "rendered"] },
@@ -57,7 +57,7 @@
       "additionalProperties": false,
       "required": ["path", "sha256"],
       "properties": {
-        "path": { "const": "content/chatgpt-not-a-content-factory-reel.md" },
+        "path": { "type": "string", "pattern": "^content/[a-z0-9-]+-reel\\.md$" },
         "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
       }
     },
@@ -95,7 +95,7 @@
     "cover": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["layoutFamily", "text", "asset"],
+      "required": ["layoutFamily", "text"],
       "properties": {
         "layoutFamily": { "const": "reel-cover-editorial" },
         "text": {
@@ -109,11 +109,11 @@
           "additionalProperties": false,
           "required": ["id", "path", "sha256", "width", "height", "treatment"],
           "properties": {
-            "id": { "const": "MAHTX_B6J9k" },
-            "path": { "const": "assets/photos/alexsmoley-photo-chair.jpg" },
-            "sha256": { "const": "266a019b6d3758edc8d22216ad1a0b5acb6e1a57ae64f7c42475de3a17a187b8" },
-            "width": { "const": 1440 },
-            "height": { "const": 1920 },
+            "id": { "type": "string", "minLength": 1 },
+            "path": { "type": "string", "pattern": "^assets/photos/.+$" },
+            "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+            "width": { "type": "integer", "minimum": 1 },
+            "height": { "type": "integer", "minimum": 1 },
             "treatment": { "type": "string", "minLength": 1 }
           }
         }

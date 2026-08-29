@@ -179,8 +179,9 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   await fs.mkdir(outputDirectory, { recursive: true });
   await fs.mkdir(renderDirectory, { recursive: true });
   const contentSourcePath = path.join(factoryRoot, reel.contentSource.path);
-  const coverAssetPath = path.join(factoryRoot, reel.cover.asset.path);
-  await assertFile(coverAssetPath, 'Approved Reel cover portrait');
+  // A cover may be typographic. Only pin an asset when the reel declares one.
+  const coverAssetPath = reel.cover.asset ? path.join(factoryRoot, reel.cover.asset.path) : null;
+  if (coverAssetPath) await assertFile(coverAssetPath, 'Approved Reel cover portrait');
   const markdownBefore = await fs.readFile(contentSourcePath, 'utf8');
   const approvedCopy = extractApprovedCopy(markdownBefore);
   const contentShaBefore = await sha256File(contentSourcePath);
@@ -189,7 +190,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   const coverCopyExact = JSON.stringify(reel.cover.text) === JSON.stringify(approvedCopy.cover);
   const captionSourceExact = captionBefore === approvedCopy.caption.join('\n\n');
   const fontUrls = Object.fromEntries(Object.entries(fontPaths).map(([key, value]) => [key, pathToFileURL(value).href]));
-  const coverAssetUrl = pathToFileURL(coverAssetPath).href;
+  const coverAssetUrl = coverAssetPath ? pathToFileURL(coverAssetPath).href : null;
 
   const html = renderReelHtml({ reel, stylesheet, fontUrls });
   const coverHtml = renderReelCoverHtml({ reel, stylesheet, fontUrls, coverAssetUrl });
@@ -260,7 +261,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   const audioStream = probe.streams.find((stream) => stream.codec_type === 'audio');
   const duration = Number(probe.format.duration);
   const contentShaAfter = await sha256File(contentSourcePath);
-  const coverAssetMetadata = await sharp(coverAssetPath).metadata();
+  const coverAssetMetadata = coverAssetPath ? await sharp(coverAssetPath).metadata() : null;
   const checks = {
     structuredReelValid: true,
     approvedForRender: reel.status === 'approved-for-render',
@@ -287,8 +288,10 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
     motionFramesDistinct: new Set(frameHashes).size === sampleTimes.length,
     storyboardCreated: storyboardDimensions.width === 930 && storyboardDimensions.height === 1050,
     coverDimensionsExact: (await sharp(coverPath).metadata()).width === 1080 && (await sharp(coverPath).metadata()).height === 1920,
-    coverAssetChecksumExact: await sha256File(coverAssetPath) === reel.cover.asset.sha256,
-    coverAssetDimensionsExact: coverAssetMetadata.width === reel.cover.asset.width && coverAssetMetadata.height === reel.cover.asset.height
+    coverAssetChecksumExact: coverAssetPath ? await sha256File(coverAssetPath) === reel.cover.asset.sha256 : true,
+    coverAssetDimensionsExact: coverAssetPath
+      ? coverAssetMetadata.width === reel.cover.asset.width && coverAssetMetadata.height === reel.cover.asset.height
+      : true
   };
   const report = {
     pipelineVersion: 1,

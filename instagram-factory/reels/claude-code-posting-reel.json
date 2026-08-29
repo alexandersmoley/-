@@ -1,0 +1,127 @@
+{
+  "$schema": "../schemas/reel.schema.json",
+  "schemaVersion": 1,
+  "id": "claude-code-posting-reel",
+  "platform": "instagram",
+  "format": "reels",
+  "status": "approved-for-render",
+  "publish": false,
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationSeconds": 25
+  },
+  "safeZone": {
+    "top": 180,
+    "right": 180,
+    "bottom": 300,
+    "left": 120
+  },
+  "contentSource": {
+    "path": "content/claude-code-posting-reel.md",
+    "sha256": "4b34f4d39c50b93c2e2eb2c0c05ce2adbd3fab0bd4be6d1d118ccb2bafeac773"
+  },
+  "captionSha256": "838234618b20a6e08b0307465d35ed20db5da273249072efcb652b6a130259c0",
+  "designTokens": {
+    "ink": "#101010",
+    "paper": "#f4f1e9",
+    "blue": "#1546e8",
+    "grid": "rgba(21, 70, 232, 0.105)"
+  },
+  "audio": {
+    "mode": "temporary-instrumental-guide",
+    "voiceOver": false,
+    "talkingHead": false,
+    "sampleRate": 48000,
+    "bpm": 108
+  },
+  "layoutFamily": "motion-editorial-system",
+  "scenes": [
+    {
+      "id": "scene-01",
+      "start": 0,
+      "end": 4,
+      "goal": "hook and the whole loop in one line",
+      "layoutFamily": "reel-kinetic-statement",
+      "text": [
+        "Я перестал выкладывать посты руками",
+        "Идея → публикация → аналитика",
+        "Четыре сервиса, один процесс"
+      ]
+    },
+    {
+      "id": "scene-02",
+      "start": 4,
+      "end": 8,
+      "goal": "idea lives in Todoist",
+      "layoutFamily": "reel-process-minimal",
+      "text": [
+        "Идея лежит в Todoist",
+        "тема → фактура → срок",
+        "Оттуда её забирает Claude Code"
+      ]
+    },
+    {
+      "id": "scene-03",
+      "start": 8,
+      "end": 12.5,
+      "goal": "GitHub holds the brief and freezes the copy",
+      "layoutFamily": "reel-process-build",
+      "text": [
+        "Материал собирается в GitHub",
+        "бриф → copy freeze → контрольные суммы",
+        "Текст заморожен: рендер не имеет права его менять"
+      ]
+    },
+    {
+      "id": "scene-04",
+      "start": 12.5,
+      "end": 17,
+      "goal": "Claude Code builds and gates on QA",
+      "layoutFamily": "reel-contrast-statement",
+      "text": [
+        "Дальше работает Claude Code",
+        "сборка → рендер → QA",
+        "Красный прогон — публикации нет"
+      ]
+    },
+    {
+      "id": "scene-05",
+      "start": 17,
+      "end": 21,
+      "goal": "Metricool publishes, the human approves",
+      "layoutFamily": "reel-system-diagram",
+      "text": [
+        "Публикует Metricool",
+        "Todoist → GitHub → Claude Code → Metricool → Instagram",
+        "Моё участие — одно «ок»"
+      ]
+    },
+    {
+      "id": "scene-06",
+      "start": 21,
+      "end": 25,
+      "goal": "analytics closes the loop, call to subscribe",
+      "layoutFamily": "reel-closing-editorial",
+      "text": [
+        "Аналитика возвращается в план",
+        "и цикл идёт заново",
+        "Подписывайтесь — показываю, что ломается и как чиню"
+      ]
+    }
+  ],
+  "cover": {
+    "layoutFamily": "reel-cover-editorial",
+    "text": [
+      "Посты выкладываю не я",
+      "Todoist → GitHub → Claude Code → Metricool"
+    ]
+  },
+  "caption": [
+    "Идея живёт в Todoist. Оттуда её забирает Claude Code, собирает материал в GitHub и рендерит картинки прямо в CI.",
+    "Перед публикацией текст замораживается контрольной суммой. Если рендер разойдётся с утверждённым текстом хоть на символ, прогон падает и публикации не будет.",
+    "Публикует Metricool. Аналитика возвращается в план, и цикл идёт заново.",
+    "Моё участие — одно «ок» и разбор того, что сломалось. Здесь показываю и то, и другое."
+  ]
+}

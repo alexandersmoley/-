@@ -116,10 +116,13 @@ export async function runReelCoverBrowserQa(page, { reel, expectedAssetUrl }) {
     }).map((node) => ({ className: node.className, rect: node.getBoundingClientRect().toJSON() }));
     const images = [...document.querySelectorAll('img')];
     const approvedImages = images.filter((image) => image.dataset.approvedAsset === expectedAssetId);
-    const approvedPhotoExact = images.length === 1 && approvedImages.length === 1
-      && approvedImages[0].src === expectedAssetUrl
-      && approvedImages[0].naturalWidth === expectedAssetWidth
-      && approvedImages[0].naturalHeight === expectedAssetHeight;
+    // A typographic cover declares no asset: then the correct result is no image at all.
+    const approvedPhotoExact = expectedAssetId === null
+      ? images.length === 0
+      : images.length === 1 && approvedImages.length === 1
+        && approvedImages[0].src === expectedAssetUrl
+        && approvedImages[0].naturalWidth === expectedAssetWidth
+        && approvedImages[0].naturalHeight === expectedAssetHeight;
     return {
       checks: {
         canvasExact: document.documentElement.scrollWidth === 1080 && document.documentElement.scrollHeight === 1920,
@@ -136,8 +139,8 @@ export async function runReelCoverBrowserQa(page, { reel, expectedAssetUrl }) {
     expectedText: reel.cover.text.map(normalizeText),
     safeZone: reel.safeZone,
     expectedAssetUrl,
-    expectedAssetId: reel.cover.asset.id,
-    expectedAssetWidth: reel.cover.asset.width,
-    expectedAssetHeight: reel.cover.asset.height
+    expectedAssetId: reel.cover.asset?.id ?? null,
+    expectedAssetWidth: reel.cover.asset?.width ?? null,
+    expectedAssetHeight: reel.cover.asset?.height ?? null
   });
 }

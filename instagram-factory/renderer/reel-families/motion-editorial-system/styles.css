@@ -342,3 +342,29 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
   font-size: 42px;
   letter-spacing: -.032em;
 }
+
+/* Faceless cover: no portrait, so the frame carries type on the brand ground and
+   turns the second line into the pipeline it describes. */
+.reel-cover-typographic { background: var(--paper); color: var(--ink); }
+.reel-cover-plate {
+  position: absolute;
+  left: 0; top: 0;
+  width: 1080px; height: 1000px;
+  background: var(--ink);
+}
+.reel-cover-typographic .reel-cover-field {
+  top: 1000px;
+  min-height: 620px;
+  background: var(--blue);
+}
+.reel-cover-typographic .reel-cover-title { width: 656px; }
+.reel-cover-pipeline {
+  position: relative;
+  width: 656px;
+  margin-top: 36px;
+  padding: 22px 26px;
+  font-size: 32px;
+  line-height: 1.24;
+  color: var(--paper);
+  border: 2px solid var(--paper);
+}

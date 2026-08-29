@@ -104,11 +104,22 @@ export function renderScenes(reel) {
 }
 
 export function renderCover(reel, { coverAssetUrl }) {
-  return `<section class="reel-cover" data-color>
-    <img class="reel-cover-photo" src="${escapeHtml(coverAssetUrl)}" alt="" data-approved-asset="${escapeHtml(reel.cover.asset.id)}">
+  // A reel may open on a photo or on type alone. A faceless cover carries the
+  // second line as a pipeline instead, so the frame still shows the mechanism.
+  const photo = reel.cover.asset
+    ? `<img class="reel-cover-photo" src="${escapeHtml(coverAssetUrl)}" alt="" data-approved-asset="${escapeHtml(reel.cover.asset.id)}">`
+    : '<div class="reel-cover-plate" data-color></div>';
+  // One text node either way: the cover QA compares [data-content] nodes against
+  // reel.cover.text, so the pipeline stays a single line and is styled, not split.
+  const second = contentNode(
+    reel.cover.text[1],
+    reel.cover.asset ? 'reel-cover-tools text-sans' : 'reel-cover-pipeline text-sans'
+  );
+  return `<section class="reel-cover${reel.cover.asset ? '' : ' reel-cover-typographic'}" data-color>
+    ${photo}
     <div class="reel-cover-field" data-color>
       ${contentNode(reel.cover.text[0], 'reel-cover-title display-serif')}
-      ${contentNode(reel.cover.text[1], 'reel-cover-tools text-sans')}
+      ${second}
     </div>
   </section>`;
 }
