@@ -4,7 +4,7 @@
   "storyId": "story-04",
   "role": "unexpected-turn",
   "layoutFamily": "story-statement",
-  "generatedAt": "2026-08-29T17:46:51.737Z",
+  "generatedAt": "2026-08-29T17:53:03.647Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
