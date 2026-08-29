@@ -20,7 +20,7 @@
   },
   "contentSource": {
     "path": "content/claude-code-posting-reel.md",
-    "sha256": "4b34f4d39c50b93c2e2eb2c0c05ce2adbd3fab0bd4be6d1d118ccb2bafeac773"
+    "sha256": "372a4d06cc10880200f8ce4159b64fda918d734f42312b0a5ee9a6773f31b40b"
   },
   "captionSha256": "838234618b20a6e08b0307465d35ed20db5da273249072efcb652b6a130259c0",
   "designTokens": {
@@ -70,8 +70,8 @@
       "layoutFamily": "reel-process-build",
       "text": [
         "Материал собирается в GitHub",
-        "бриф → copy freeze → контрольные суммы",
-        "Текст заморожен: рендер не имеет права его менять"
+        "Текст заморожен контрольной суммой",
+        "бриф → copy freeze → рендер"
       ]
     },
     {

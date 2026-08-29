@@ -38,8 +38,22 @@ function sceneTwo(scene) {
   </section>`;
 }
 
+// The third scene draws its topology from the copy rather than from a fixed set of
+// tool names: a line like "A → B ← C" becomes nodes and arrows, anything else stays
+// plain text. Hardcoding the names painted a different reel's tools over this one.
+function sourceTopology(text) {
+  const tokens = String(text).split(/\s+([→←])\s+/u);
+  if (tokens.length < 3) return null;
+  const centre = Math.floor(tokens.length / 2);
+  return tokens.map((token, index) => {
+    if (token === '→' || token === '←') return `<span class="source-arrow">${token}</span>`;
+    const role = index === centre ? 'source-center' : 'source-side';
+    return `<span class="${role}">${escapeHtml(token)}</span>`;
+  }).join('');
+}
+
 function sceneThree(scene) {
-  const source = `<span class="source-side">${escapeHtml('ChatGPT')}</span><span class="source-arrow">→</span><span class="source-center">${escapeHtml('GitHub')}</span><span class="source-arrow">←</span><span class="source-side">${escapeHtml('Codex')}</span>`;
+  const source = sourceTopology(scene.text[2]);
   return `<section class="reel-scene scene-source" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
     ${grid()}
     ${contentNode(scene.text[0], 'source-title display-serif', null, animated('-.08', '.42', 'clip'))}
