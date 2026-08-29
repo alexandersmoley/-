@@ -10,7 +10,7 @@
     "width": 1080,
     "height": 1920,
     "fps": 30,
-    "durationSeconds": 25
+    "durationSeconds": 30
   },
   "safeZone": {
     "top": 180,
@@ -20,9 +20,9 @@
   },
   "contentSource": {
     "path": "content/claude-code-posting-reel.md",
-    "sha256": "372a4d06cc10880200f8ce4159b64fda918d734f42312b0a5ee9a6773f31b40b"
+    "sha256": "cf3036d42834c902d18a20463eff337ca113b30a8ac905b1921d09bce56c5587"
   },
-  "captionSha256": "838234618b20a6e08b0307465d35ed20db5da273249072efcb652b6a130259c0",
+  "captionSha256": "d159dbb66194bd4d1c168e050792d1cdef8bafbcfa85c14e90041146e833ce1b",
   "designTokens": {
     "ink": "#101010",
     "paper": "#f4f1e9",
@@ -41,72 +41,72 @@
     {
       "id": "scene-01",
       "start": 0,
-      "end": 4,
-      "goal": "hook and the whole loop in one line",
+      "end": 5,
+      "goal": "plain hook and the promise of four steps",
       "layoutFamily": "reel-kinetic-statement",
       "text": [
-        "Я перестал выкладывать посты руками",
-        "Идея → публикация → аналитика",
-        "Четыре сервиса, один процесс"
+        "Я не выкладываю посты руками",
+        "Пишу задачу → дальше всё сам",
+        "Четыре шага — показываю каждый"
       ]
     },
     {
       "id": "scene-02",
-      "start": 4,
-      "end": 8,
-      "goal": "idea lives in Todoist",
+      "start": 5,
+      "end": 10,
+      "goal": "step 1 — the idea goes into an ordinary to-do list",
       "layoutFamily": "reel-process-minimal",
       "text": [
-        "Идея лежит в Todoist",
-        "тема → фактура → срок",
-        "Оттуда её забирает Claude Code"
+        "Шаг 1. Записываю идею",
+        "В обычный список дел — Todoist",
+        "идея → задача в списке"
       ]
     },
     {
       "id": "scene-03",
-      "start": 8,
-      "end": 12.5,
-      "goal": "GitHub holds the brief and freezes the copy",
+      "start": 10,
+      "end": 15,
+      "goal": "step 2 — the approved text cannot be changed unnoticed",
       "layoutFamily": "reel-process-build",
       "text": [
-        "Материал собирается в GitHub",
-        "Текст заморожен контрольной суммой",
-        "бриф → copy freeze → рендер"
+        "Шаг 2. Утверждаю текст",
+        "Дальше его нельзя поменять незаметно — ни мне, ни роботу",
+        "мой текст → GitHub ← робот"
       ]
     },
     {
       "id": "scene-04",
-      "start": 12.5,
-      "end": 17,
-      "goal": "Claude Code builds and gates on QA",
+      "start": 15,
+      "end": 20,
+      "goal": "step 3 — the robot builds the images and checks itself",
       "layoutFamily": "reel-contrast-statement",
       "text": [
-        "Дальше работает Claude Code",
-        "сборка → рендер → QA",
-        "Красный прогон — публикации нет"
+        "Шаг 3. Картинки делает робот",
+        "Claude Code → картинки → проверка",
+        "Если что-то не так — пост не выйдет"
       ]
     },
     {
       "id": "scene-05",
-      "start": 17,
-      "end": 21,
-      "goal": "Metricool publishes, the human approves",
+      "start": 20,
+      "end": 25,
+      "goal": "step 4 — Metricool publishes, the human says one ok",
       "layoutFamily": "reel-system-diagram",
       "text": [
-        "Публикует Metricool",
-        "Todoist → GitHub → Claude Code → Metricool → Instagram",
-        "Моё участие — одно «ок»"
+        "Шаг 4. Публикует Metricool",
+        "Todoist → GitHub → Claude Code → Metricool",
+        "От меня — одно «ок»"
       ]
     },
     {
       "id": "scene-06",
-      "start": 21,
-      "end": 25,
-      "goal": "analytics closes the loop, call to subscribe",
+      "start": 25,
+      "end": 30,
+      "goal": "the numbers feed the next idea, call to subscribe",
       "layoutFamily": "reel-closing-editorial",
       "text": [
-        "Аналитика возвращается в план",
-        "и цикл идёт заново",
+        "Дальше смотрю, что зашло",
+        "цифры → следующая идея",
         "Подписывайтесь — показываю, что ломается и как чиню"
       ]
     }
@@ -119,9 +119,9 @@
     ]
   },
   "caption": [
-    "Идея живёт в Todoist. Оттуда её забирает Claude Code, собирает материал в GitHub и рендерит картинки прямо в CI.",
-    "Перед публикацией текст замораживается контрольной суммой. Если рендер разойдётся с утверждённым текстом хоть на символ, прогон падает и публикации не будет.",
-    "Публикует Metricool. Аналитика возвращается в план, и цикл идёт заново.",
-    "Моё участие — одно «ок» и разбор того, что сломалось. Здесь показываю и то, и другое."
+    "Я не выкладываю посты руками. Пишу задачу — дальше всё идёт само, а от меня остаётся одно «ок».",
+    "Шаг 1: идея попадает в обычный список дел, Todoist. Шаг 2: утверждённый текст ложится в GitHub, и после этого его нельзя поменять незаметно — ни мне, ни роботу. Шаг 3: Claude Code собирает картинки и сам себя проверяет: если что-то не сходится, пост просто не выйдет. Шаг 4: публикует Metricool.",
+    "Дальше я смотрю, что зашло, и из этих цифр берётся следующая идея.",
+    "Здесь показываю, как это устроено и что в нём ломается."
   ]
 }

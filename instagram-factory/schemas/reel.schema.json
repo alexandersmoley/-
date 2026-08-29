@@ -38,7 +38,7 @@
         "width": { "const": 1080 },
         "height": { "const": 1920 },
         "fps": { "const": 30 },
-        "durationSeconds": { "const": 25 }
+        "durationSeconds": { "type": "integer", "enum": [25, 30] }
       }
     },
     "safeZone": {
@@ -133,8 +133,8 @@
       "required": ["id", "start", "end", "goal", "layoutFamily", "text"],
       "properties": {
         "id": { "type": "string", "pattern": "^scene-0[1-6]$" },
-        "start": { "type": "number", "minimum": 0, "maximum": 25 },
-        "end": { "type": "number", "exclusiveMinimum": 0, "maximum": 25 },
+        "start": { "type": "number", "minimum": 0, "maximum": 30 },
+        "end": { "type": "number", "exclusiveMinimum": 0, "maximum": 30 },
         "goal": { "type": "string", "minLength": 1 },
         "layoutFamily": {
           "enum": [

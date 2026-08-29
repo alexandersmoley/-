@@ -143,7 +143,9 @@ export function renderCover(reel, { coverAssetUrl }) {
   </section>`;
 }
 
-export function timelineScript() {
+export function timelineScript(reel) {
+  // The reel declares its own length; a hardcoded 25 clipped every longer timeline.
+  const duration = reel.canvas.durationSeconds;
   return `
     (() => {
       const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
@@ -176,27 +178,30 @@ export function timelineScript() {
           const end = Number(scene.dataset.end);
           const local = time - start;
           const fadeIn = start === 0 ? 1 : clamp(local / .24);
-          const fadeOut = end === 25 ? 1 : clamp((end - time) / .24);
+          const fadeOut = end === ${duration} ? 1 : clamp((end - time) / .24);
           const visible = time >= start - .24 && time <= end + .24;
           scene.style.opacity = visible ? String(Math.min(fadeIn, fadeOut)) : '0';
           scene.style.visibility = visible ? 'visible' : 'hidden';
           scene.style.zIndex = visible ? '3' : '1';
           scene.querySelectorAll('[data-motion-item]').forEach((node) => applyMotion(node, local));
           if (scene.dataset.sceneId === 'scene-06') {
-            const finalProgress = ease((local - 1.25) / .28);
+            const finalLoopNode = scene.querySelector('[data-final-loop]');
+            const introHold = finalLoopNode ? 1.25 : 2;
+            const finalProgress = ease((local - introHold) / .28);
             const finalExit = ease((local - 2.72) / .24);
             const intro = scene.querySelector('[data-loop-intro]');
-            const finalLoop = scene.querySelector('[data-final-loop]');
+            const finalLoop = finalLoopNode;
             const cta = scene.querySelector('[data-loop-cta-phase]');
             // Without a final loop the call to action takes over the window that loop
-            // would have filled, otherwise the intro fades into an empty screen.
-            const ctaProgress = ease((local - (finalLoop ? 2.72 : 1.25)) / .28);
+            // would have filled, otherwise the intro fades into an empty screen. It waits
+            // for the intro to clear: both sit in the same place, so a crossfade smears.
+            const ctaProgress = ease((local - (finalLoop ? 2.72 : introHold + .34)) / .28);
             if (intro) intro.style.opacity = String(1 - finalProgress);
             if (finalLoop) finalLoop.style.opacity = String(finalProgress * (1 - finalExit));
             if (cta) cta.style.opacity = String(ctaProgress);
           }
         }
-        const phase = time / 25;
+        const phase = time / ${duration};
         axis.style.transform = 'translate3d(120px,' + (220 + phase * 1360) + 'px,0) scaleX(' + (.18 + phase * .82) + ')';
         axis.style.background = '#1546e8';
         document.body.dataset.renderTime = time.toFixed(4);
