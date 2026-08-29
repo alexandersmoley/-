@@ -1,7 +1,7 @@
 {
   "pipelineVersion": 1,
   "carouselId": "pinned-intro-carousel-v3",
-  "generatedAt": "2026-08-29T03:14:34.831Z",
+  "generatedAt": "2026-08-29T07:07:13.270Z",
   "passed": true,
   "checks": {
     "structuredSourceValid": true,
@@ -36,24 +36,24 @@
   },
   "failedChecks": [],
   "integrity": {
-    "contentSha256": "23d41e6978f2c55a2d31f5539a7d6ba3bf627488201235cc823e39126411650a",
-    "captionSha256": "5bfd1c77b3f78b404715bc123d134504b408d61e0041d2b034fb769ae6c5d12b",
+    "contentSha256": "c6132fbf7201cd5f348dbd20a389376ac135489a0f04aa77d72643c0a3c6b33e",
+    "captionSha256": "2775aeac133c5768a49341b643892f85506ac2a9d5361ba6ddff042f3e92ab4d",
     "assetId": "MAHTX_B6J9k",
-    "assetSha256": "266a019b6d3758edc8d22216ad1a0b5acb6e1a57ae64f7c42475de3a17a187b8"
+    "assetSha256": "6315d9f64f0fff131bd400d0631129bd45488a33e47610c4d8b1259caee21b83"
   },
   "contactSheet": {
     "path": "output/pinned-intro-carousel-v3/contact-sheet.png",
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/contact-sheet.png",
     "width": 984,
     "height": 648,
-    "sha256": "8ab3f37e00e3456c5df4fa0ca063c67da2db2276db61e8d673b8b2376313f646"
+    "sha256": "8f2a1f5a0828ada5bad9dfbda541694986e3434df4efde9cd72947c0c111459b"
   },
   "coverPreview": {
     "path": "output/pinned-intro-carousel-v3/cover-preview.png",
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/cover-preview.png",
     "width": 360,
     "height": 460,
-    "sha256": "ad6eabfd5996eae53e32b9661986152b66790dc150dd1d47a90528dce48b9ffc"
+    "sha256": "3463799294946eca8497f037f2387e4e2426bceb8b9659cccc13691afa48e715"
   },
   "slides": [
     {

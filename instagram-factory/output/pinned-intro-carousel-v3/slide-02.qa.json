@@ -4,7 +4,7 @@
   "itemId": "slide-02",
   "kind": "production-slide",
   "mode": "work-list",
-  "generatedAt": "2026-08-29T03:14:33.892Z",
+  "generatedAt": "2026-08-29T07:07:11.618Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -44,7 +44,7 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-02.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "6b4c65241304e0ab477c58ef677c6bad0538bd8e0742f782e6d633420b3182d0"
+    "sha256": "d02acbc26c8ea7d1e2a2d7e945198d6fd2ef6d1d54975365c3cc986fc0040651"
   },
   "browserQa": {
     "canvasRect": {
@@ -64,21 +64,21 @@
       "bottom": 1320
     },
     "visibleText": [
-      "Что я делаю",
+      "Чем я занимаюсь",
       "Пишу тексты",
       "Проектирую интерфейсы",
       "Собираю сайты",
       "Понемногу вайбкожу"
     ],
     "rawVisibleText": [
-      "Что я делаю",
+      "Чем я занимаюсь",
       "Пишу тексты",
       "Проектирую интерфейсы",
       "Собираю сайты",
       "Понемногу вайбкожу"
     ],
     "headlineTexts": [
-      "Что я делаю"
+      "Чем я занимаюсь"
     ],
     "type": [
       {

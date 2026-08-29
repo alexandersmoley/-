@@ -4,7 +4,7 @@
   "itemId": "slide-04",
   "kind": "production-slide",
   "mode": "current-task",
-  "generatedAt": "2026-08-29T03:14:34.194Z",
+  "generatedAt": "2026-08-29T07:07:12.216Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
@@ -44,7 +44,7 @@
     "url": "https://alexandersmoley.github.io/-/pinned-intro-carousel-v3/slide-04.png",
     "width": 1080,
     "height": 1440,
-    "sha256": "2d199c42582d61f43bce725e3c06abd59144d50d0eb59155d2e0b58522ea824b"
+    "sha256": "245e5e5ebec6f01151647570ef3126ef1cea6733e1c20b78710739832b77cac2"
   },
   "browserQa": {
     "canvasRect": {
@@ -64,15 +64,15 @@
       "bottom": 1320
     },
     "visibleText": [
-      "Сейчас проверяю, как использовать AI для производства контента",
-      "Не только генерировать текст, а выстроить процесс от темы до готовой публикации"
+      "Сейчас сам строю контент-завод с AI",
+      "Чтобы не только генерировать посты, а выстроить процесс от темы до аналитики"
     ],
     "rawVisibleText": [
-      "Сейчас проверяю, как использовать AI для производства контента",
-      "Не только генерировать текст, а выстроить процесс от темы до готовой публикации"
+      "Сейчас сам строю контент-завод с AI",
+      "Чтобы не только генерировать посты, а выстроить процесс от темы до аналитики"
     ],
     "headlineTexts": [
-      "Сейчас проверяю, как использовать AI для производства контента"
+      "Сейчас сам строю контент-завод с AI"
     ],
     "type": [
       {
@@ -82,18 +82,18 @@
         "lineHeight": 82.72,
         "clientWidth": 760,
         "scrollWidth": 760,
-        "clientHeight": 331,
-        "scrollHeight": 342,
+        "clientHeight": 165,
+        "scrollHeight": 177,
         "style": "normal",
         "weight": "400",
         "rect": {
           "x": 120,
           "y": 120,
           "width": 760,
-          "height": 330.875,
+          "height": 165.4375,
           "top": 120,
           "right": 880,
-          "bottom": 450.875,
+          "bottom": 285.4375,
           "left": 120
         }
       },
