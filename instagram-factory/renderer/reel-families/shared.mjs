@@ -21,9 +21,10 @@ export function pipeline(text, className, sceneStart, stageDelay = 0.28) {
   const html = parts.map((part, index) => {
     const at = (sceneStart + index * stageDelay).toFixed(2);
     const stage = `<span class="pipeline-node" data-motion-item data-at="${at}" data-duration="0.42" data-from="up">${escapeHtml(part)}</span>`;
-    if (index === parts.length - 1) return stage;
-    const arrowAt = (sceneStart + index * stageDelay + 0.14).toFixed(2);
-    return `${stage}<span class="pipeline-arrow" data-motion-item data-at="${arrowAt}" data-duration="0.32" data-from="clip"> → </span>`;
+    if (index === 0) return stage;
+    const arrowAt = (sceneStart + (index - 1) * stageDelay + 0.14).toFixed(2);
+    const arrow = `<span class="pipeline-arrow" data-motion-item data-at="${arrowAt}" data-duration="0.32" data-from="clip"> → </span>`;
+    return `<span class="pipeline-pair">${arrow}${stage}</span>`;
   }).join('');
   return contentNode(text, className, html);
 }

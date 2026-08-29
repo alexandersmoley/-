@@ -20,7 +20,7 @@
   },
   "contentSource": {
     "path": "content/claude-code-posting-reel.md",
-    "sha256": "30ed898c2a3bd587c0c66810699179cea7c9a77d637dbdb84fb2bfe622d86d7f"
+    "sha256": "39c10074e6ee3efeb7d98e9db4b81bae8a3bfc15da1d4f9e97d4663cd31b4360"
   },
   "captionSha256": "0cc7cec20252bbe1ee3b3aa1981cc02bf90b02291f91ed1df19ad50ce5c2db99",
   "designTokens": {
@@ -81,8 +81,8 @@
       "goal": "step 3 — the robot builds the images and checks itself",
       "layoutFamily": "reel-contrast-statement",
       "text": [
-        "Шаг 3. Картинки делает робот",
-        "Claude Code → картинки → проверка",
+        "Шаг 3. Картинки делает Claude Code",
+        "собирает → проверяет себя",
         "Если что-то не так — пост не выйдет"
       ]
     },

@@ -6,8 +6,9 @@ function splitPipeline(text, nodeClass, arrowClass, start = .2, delay = .42) {
   const parts = text.split(' → ');
   return parts.map((part, index) => {
     const node = `<span class="${nodeClass}" data-motion-item data-at="${(start + index * delay).toFixed(2)}" data-duration=".38" data-from="up">${escapeHtml(part)}</span>`;
-    if (index === parts.length - 1) return node;
-    return `${node}<span class="${arrowClass}" data-motion-item data-at="${(start + index * delay + .18).toFixed(2)}" data-duration=".24" data-from="clip">→</span>`;
+    if (index === 0) return node;
+    const arrow = `<span class="${arrowClass}" data-motion-item data-at="${(start + (index - 1) * delay + .18).toFixed(2)}" data-duration=".24" data-from="clip">→</span>`;
+    return `<span class="pipeline-pair">${arrow}${node}</span>`;
   }).join('');
 }
 
@@ -94,7 +95,7 @@ function sceneSix(scene, reel, { photoAssetUrl }) {
   const approvalLabels = hasFinalLoop
     ? scene.text[4].split(' / ').map((label) => `<span>${escapeHtml(label)}</span>`).join('')
     : '';
-  return `<section class="reel-scene scene-loop" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
+  return `<section class="reel-scene scene-loop${reel.photoAsset ? '' : ' scene-loop-ink'}" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
     ${grid()}
     <div data-loop-intro>
       ${contentNode(scene.text[0], 'loop-title display-serif', null, animated('-.08', '.4', 'left'))}
@@ -143,10 +144,11 @@ function coverEditorial(reel) {
 }
 
 function coverInk(reel) {
+  const chain = escapeHtml(reel.cover.text[1]).replaceAll(' → ', ' →\u00a0');
   return `<section class="reel-cover reel-cover-ink" data-color>
     ${grid()}
     ${contentNode(reel.cover.text[0], 'reel-cover-title display-serif')}
-    ${contentNode(reel.cover.text[1], 'reel-cover-pipeline text-sans')}
+    ${contentNode(reel.cover.text[1], 'reel-cover-pipeline text-sans', chain)}
   </section>`;
 }
 

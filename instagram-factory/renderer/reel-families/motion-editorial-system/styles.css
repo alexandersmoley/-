@@ -73,6 +73,8 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
   will-change: transform;
 }
 .pipeline-node, .pipeline-arrow { display: inline-block; }
+/* An arrow and the stage it points at wrap as one unit, so a line never ends on "→". */
+.pipeline-pair { display: flex; align-items: center; gap: 10px; }
 
 /* 01 — plan becomes a stored object */
 .scene-plan { color: var(--ink); background: var(--paper); }
@@ -280,6 +282,8 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
 .loop-short .pipeline-arrow { color: var(--paper); }
 [data-loop-cta-phase] { opacity: 0; }
 .loop-cta { left: 120px; top: 220px; width: 780px; font-size: 54px; letter-spacing: -.036em; }
+/* No closing portrait: the call to action is the whole frame, not a caption above one. */
+.scene-loop-ink .loop-cta { top: 620px; font-size: 88px; letter-spacing: -.048em; }
 .loop-photo {
   position: absolute;
   left: 120px;
