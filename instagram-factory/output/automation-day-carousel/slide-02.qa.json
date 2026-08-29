@@ -4,7 +4,7 @@
   "slideId": "slide-02",
   "layoutFamily": "process-diagram-carousel",
   "mode": "pipeline",
-  "generatedAt": "2026-08-29T17:41:11.759Z",
+  "generatedAt": "2026-08-29T17:46:55.249Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
