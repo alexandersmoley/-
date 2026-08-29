@@ -1,7 +1,7 @@
 {
   "pipelineVersion": 1,
   "carouselId": "pinned-intro-carousel-v2",
-  "generatedAt": "2026-08-29T17:53:13.419Z",
+  "generatedAt": "2026-08-29T17:58:30.640Z",
   "passed": true,
   "checks": {
     "structuredSourceValid": true,

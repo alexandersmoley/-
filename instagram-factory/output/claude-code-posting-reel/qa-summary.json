@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "claude-code-posting-reel",
   "source": "reels/claude-code-posting-reel.json",
-  "generatedAt": "2026-08-29T17:55:12.638Z",
+  "generatedAt": "2026-08-29T18:00:46.715Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -39,21 +39,21 @@
     "preview": {
       "path": "output/claude-code-posting-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/claude-code-posting-reel/preview.mp4",
-      "sha256": "e2db350eb23679bcecd5c9c45be560432f9acb53acd4a0cad1fe84e2e3f34bce",
+      "sha256": "f5cfed343f36ab043985165f903c448e28afa790175fdc50879807763d956578",
       "duration": 25,
       "fps": "30/1"
     },
     "cover": {
       "path": "output/claude-code-posting-reel/cover.png",
       "url": "https://alexandersmoley.github.io/-/claude-code-posting-reel/cover.png",
-      "sha256": "c0783a9af1da5c4d31fd6a6684e08e70db638c15973ec12ddb29275594a6377f",
+      "sha256": "f9ed9bc370551e602d1f8ca5da43f3a36dc2f969a2abae26b1d79cd62784e3bb",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
       "path": "output/claude-code-posting-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/claude-code-posting-reel/storyboard.png",
-      "sha256": "b5e08b0b2d1550f561e96d880c21fb690709cc416b8e988ac457f54250e3919a",
+      "sha256": "f8a72f8a87ffbbc939c8e914aab51bf5a3b33b9b70fcd0b98f19738e2c614651",
       "width": 930,
       "height": 1050
     },

@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "seriesId": "about-me-stories",
   "source": "stories/about-me-stories.json",
-  "generatedAt": "2026-08-29T17:53:08.677Z",
+  "generatedAt": "2026-08-29T17:58:25.637Z",
   "passed": true,
   "checks": {
     "structuredSeriesValid": true,
