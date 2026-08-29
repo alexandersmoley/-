@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "claude-code-posting-reel",
   "source": "reels/claude-code-posting-reel.json",
-  "generatedAt": "2026-08-29T18:56:07.269Z",
+  "generatedAt": "2026-08-29T19:02:29.709Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -32,28 +32,28 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/claude-code-posting-reel.md",
-    "contentSha256": "30ed898c2a3bd587c0c66810699179cea7c9a77d637dbdb84fb2bfe622d86d7f",
+    "contentSha256": "39c10074e6ee3efeb7d98e9db4b81bae8a3bfc15da1d4f9e97d4663cd31b4360",
     "captionSha256": "0cc7cec20252bbe1ee3b3aa1981cc02bf90b02291f91ed1df19ad50ce5c2db99"
   },
   "media": {
     "preview": {
       "path": "output/claude-code-posting-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/claude-code-posting-reel/preview.mp4",
-      "sha256": "71df444d8dee3e4bb6d12dfac48d543b15e359daacb752071dc7ac6d4a3544e0",
+      "sha256": "92885c9ea99796ed5d37ed98aa4355d3289d446ab59b21134d89d2c9fe29c872",
       "duration": 30,
       "fps": "30/1"
     },
     "cover": {
       "path": "output/claude-code-posting-reel/cover.png",
       "url": "https://alexandersmoley.github.io/-/claude-code-posting-reel/cover.png",
-      "sha256": "995d00f84ce2894ce6df80311ae2117562bf6d8615ce1da8c354530c794e726c",
+      "sha256": "9629e995a23631d4dffb27ef425405ec83cdfe828f0e82c1baecfba9fe879726",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
       "path": "output/claude-code-posting-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/claude-code-posting-reel/storyboard.png",
-      "sha256": "ea78cf14b1f78b33607c2b034882741c4f2debb02e3014ecad45457a93c4aac3",
+      "sha256": "daf9d806f7401671f0c10d9d40a0486bf69d3e2ce98b120d2d05e5a3e75bf001",
       "width": 930,
       "height": 1050
     },
@@ -113,8 +113,8 @@
         {
           "id": "scene-04",
           "text": [
-            "Шаг 3. Картинки делает робот",
-            "Claude Code → картинки → проверка",
+            "Шаг 3. Картинки делает Claude Code",
+            "собирает → проверяет себя",
             "Если что-то не так — пост не выйдет"
           ]
         },
@@ -163,6 +163,12 @@
           "lineHeight": 52.08
         },
         {
+          "className": "pipeline-pair",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
           "className": "pipeline-arrow",
           "family": "\"Inter Production\", sans-serif",
           "size": 42,
@@ -200,6 +206,12 @@
         },
         {
           "className": "pipeline-node",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 37,
+          "lineHeight": 45.88
+        },
+        {
+          "className": "pipeline-pair",
           "family": "\"Inter Production\", sans-serif",
           "size": 37,
           "lineHeight": 45.88
@@ -283,13 +295,7 @@
           "lineHeight": 52.08
         },
         {
-          "className": "production-arrow",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 42,
-          "lineHeight": 52.08
-        },
-        {
-          "className": "production-stage",
+          "className": "pipeline-pair",
           "family": "\"Inter Production\", sans-serif",
           "size": 42,
           "lineHeight": 52.08
@@ -331,13 +337,7 @@
           "lineHeight": 44.64
         },
         {
-          "className": "publish-arrow",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 36,
-          "lineHeight": 44.64
-        },
-        {
-          "className": "publish-stage",
+          "className": "pipeline-pair",
           "family": "\"Inter Production\", sans-serif",
           "size": 36,
           "lineHeight": 44.64
@@ -350,6 +350,30 @@
         },
         {
           "className": "publish-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "pipeline-pair",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "publish-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "publish-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "pipeline-pair",
           "family": "\"Inter Production\", sans-serif",
           "size": 36,
           "lineHeight": 44.64
@@ -391,6 +415,12 @@
           "lineHeight": 49.6
         },
         {
+          "className": "pipeline-pair",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
           "className": "pipeline-arrow",
           "family": "\"Inter Production\", sans-serif",
           "size": 40,
@@ -405,8 +435,8 @@
         {
           "className": "loop-cta text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
-          "size": 54,
-          "lineHeight": 66.96
+          "size": 88,
+          "lineHeight": 109.12
         }
       ],
       "unapprovedColors": [],

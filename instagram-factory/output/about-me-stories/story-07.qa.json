@@ -4,7 +4,7 @@
   "storyId": "story-07",
   "role": "human-layer",
   "layoutFamily": "story-photo-editorial",
-  "generatedAt": "2026-08-29T18:53:28.367Z",
+  "generatedAt": "2026-08-29T19:00:21.607Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
