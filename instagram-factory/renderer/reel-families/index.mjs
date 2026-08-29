@@ -24,7 +24,7 @@ export function renderReelHtml({ reel, stylesheet, fontUrls }) {
 </html>`;
 }
 
-export function renderReelCoverHtml({ reel, stylesheet, fontUrls }) {
+export function renderReelCoverHtml({ reel, stylesheet, fontUrls, coverAssetUrl }) {
   const css = stylesheet
     .replaceAll('__INTER_FONT_URL__', fontUrls.inter)
     .replaceAll('__CORMORANT_REGULAR_URL__', fontUrls.cormorantRegular)
@@ -37,6 +37,6 @@ export function renderReelCoverHtml({ reel, stylesheet, fontUrls }) {
   <title>${escapeHtml(reel.id)} — cover</title>
   <style>${css}</style>
 </head>
-<body>${renderCover(reel)}</body>
+<body>${renderCover(reel, { coverAssetUrl })}</body>
 </html>`;
 }

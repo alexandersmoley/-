@@ -2,80 +2,92 @@ import { contentNode, escapeHtml, grid, pipeline } from '../shared.mjs';
 
 const animated = (at, duration, from) => `data-motion-item data-at="${at}" data-duration="${duration}" data-from="${from}"`;
 
+function splitPipeline(text, nodeClass, arrowClass, start = .2, delay = .42) {
+  const parts = text.split(' → ');
+  return parts.map((part, index) => {
+    const node = `<span class="${nodeClass}" data-motion-item data-at="${(start + index * delay).toFixed(2)}" data-duration=".38" data-from="up">${escapeHtml(part)}</span>`;
+    if (index === parts.length - 1) return node;
+    return `${node}<span class="${arrowClass}" data-motion-item data-at="${(start + index * delay + .18).toFixed(2)}" data-duration=".24" data-from="clip">→</span>`;
+  }).join('');
+}
+
 function sceneOne(scene) {
-  const statement = escapeHtml(scene.text[1]).replace('не контент-завод', '<span class="blue-italic">не контент-завод</span>');
-  return `<section class="reel-scene scene-hook" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
+  return `<section class="reel-scene scene-plan" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
     ${grid()}
-    <div class="hook-rule" data-color aria-hidden="true"></div>
-    ${contentNode(scene.text[0], 'hook-kicker text-sans', null, animated('.08', '.46', 'left'))}
-    ${contentNode(scene.text[1], 'hook-statement display-serif', statement, animated('.42', '.72', 'clip'))}
-    <div class="hook-illustration" data-color aria-hidden="true">
-      <i class="hook-machine-rail hook-machine-rail-a" data-motion-item data-at=".78" data-duration=".58" data-from="clip"></i>
-      <i class="hook-machine-rail hook-machine-rail-b" data-motion-item data-at=".96" data-duration=".58" data-from="clip"></i>
-      <i class="hook-machine-rail hook-machine-rail-c" data-motion-item data-at="1.14" data-duration=".58" data-from="clip"></i>
-      ${Array.from({ length: 12 }, (_, index) => `<b class="hook-machine-node hook-machine-node-${index + 1}" data-motion-item data-at="${(1.08 + index * .055).toFixed(2)}" data-duration=".34" data-from="scale"></b>`).join('')}
-      <span class="hook-machine-block hook-machine-block-a" data-motion-item data-at="1.42" data-duration=".46" data-from="up"></span>
-      <span class="hook-machine-block hook-machine-block-b" data-motion-item data-at="1.58" data-duration=".46" data-from="up"></span>
-      <span class="hook-machine-block hook-machine-block-c" data-motion-item data-at="1.74" data-duration=".46" data-from="up"></span>
+    ${contentNode(scene.text[0], 'plan-title display-serif', null, animated('-.18', '.34', 'clip'))}
+    <div class="plan-modules" data-color aria-hidden="true">
+      ${Array.from({ length: 6 }, (_, index) => `<i data-motion-item data-at="${(.28 + index * .18).toFixed(2)}" data-duration=".34" data-from="up"></i>`).join('')}
+    </div>
+    ${pipeline(scene.text[1], 'plan-pipeline text-sans', .4, .34)}
+    <div class="plan-storage" data-color data-motion-item data-at="2.2" data-duration=".52" data-from="right">
+      ${contentNode(scene.text[2], 'plan-storage-label text-sans')}
     </div>
   </section>`;
 }
 
 function sceneTwo(scene) {
-  return `<section class="reel-scene scene-minimal" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
-    <div class="minimal-rail" data-rail data-color aria-hidden="true"></div>
-    ${pipeline(scene.text[0], 'minimal-pipeline display-serif', .15, .58)}
-    <div class="minimal-note" data-color>
-      ${contentNode(scene.text[1], 'minimal-caption text-sans', null, animated('1.05', '.58', 'up'))}
+  return `<section class="reel-scene scene-topic" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
+    ${grid()}
+    ${contentNode(scene.text[0], 'topic-title display-serif', null, animated('-.1', '.42', 'left'))}
+    <div class="topic-collapse" data-color aria-hidden="true">
+      ${Array.from({ length: 5 }, (_, index) => `<i class="topic-line topic-line-${index + 1}" data-motion-item data-at="${(.18 + index * .12).toFixed(2)}" data-duration=".42" data-from="${index % 2 ? 'right' : 'left'}"></i>`).join('')}
+      <b data-motion-item data-at="1.02" data-duration=".46" data-from="scale"></b>
     </div>
+    ${contentNode(scene.text[1], 'topic-return text-sans', null, animated('1.28', '.48', 'up'))}
+    ${pipeline(scene.text[2], 'topic-pipeline text-sans', 1.55, .34)}
   </section>`;
 }
 
 function sceneThree(scene) {
-  const parts = scene.text[0].split(' → ');
-  const stages = parts.map((part, index) => `
-    <span class="build-stage build-stage-${index + 1}" data-motion-item data-at="${(.2 + index * .47).toFixed(2)}" data-duration=".46" data-from="${index % 2 ? 'right' : 'left'}">
-      ${escapeHtml(part)}
-    </span>${index < parts.length - 1 ? `<span class="build-arrow build-arrow-${index + 1}" data-motion-item data-at="${(.4 + index * .47).toFixed(2)}" data-duration=".3" data-from="clip"> → </span>` : ''}`).join('');
-  return `<section class="reel-scene scene-build" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
+  const source = `<span class="source-side">${escapeHtml('ChatGPT')}</span><span class="source-arrow">→</span><span class="source-center">${escapeHtml('GitHub')}</span><span class="source-arrow">←</span><span class="source-side">${escapeHtml('Codex')}</span>`;
+  return `<section class="reel-scene scene-source" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
     ${grid()}
-    <div class="build-rail" data-rail data-color aria-hidden="true"></div>
-    ${contentNode(scene.text[0], 'build-pipeline text-sans', stages)}
-    ${contentNode(scene.text[1], 'build-conclusion display-serif blue-italic', null, animated('4.08', '.68', 'clip'))}
+    ${contentNode(scene.text[0], 'source-title display-serif', null, animated('-.08', '.42', 'clip'))}
+    ${contentNode(scene.text[1], 'source-context text-sans', null, animated('.38', '.52', 'up'))}
+    ${contentNode(scene.text[2], 'source-topology text-sans', source, animated('.92', '.62', 'clip'))}
+    <div class="source-approvals">
+      ${contentNode(scene.text[3], 'approval-chip text-sans', null, animated('1.25', '.34', 'scale'))}
+      ${contentNode(scene.text[4], 'approval-chip text-sans', null, animated('2.25', '.34', 'scale'))}
+    </div>
   </section>`;
 }
 
 function sceneFour(scene) {
-  const process = escapeHtml(scene.text[1]).replace('процесс', '<span class="blue-italic">процесс</span>');
-  return `<section class="reel-scene scene-contrast" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
-    <div class="contrast-paper" data-color></div>
-    <div class="contrast-blue" data-color data-panel></div>
-    ${contentNode(scene.text[0], 'contrast-first display-serif', null, animated('.18', '.66', 'left'))}
-    ${contentNode(scene.text[1], 'contrast-second display-serif', process, animated('1.08', '.76', 'clip'))}
-    <div class="contrast-rule" data-color aria-hidden="true"></div>
+  const stages = splitPipeline(scene.text[1], 'production-stage', 'production-arrow', .28, .46);
+  return `<section class="reel-scene scene-production" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
+    ${grid()}
+    ${contentNode(scene.text[0], 'production-title display-serif', null, animated('-.08', '.42', 'left'))}
+    ${contentNode(scene.text[1], 'production-pipeline text-sans', stages)}
+    ${contentNode(scene.text[2], 'production-approval text-sans', null, animated('3.15', '.4', 'scale'))}
   </section>`;
 }
 
 function sceneFive(scene) {
-  const parts = scene.text[0].split(' → ');
-  const stages = parts.map((part, index) => `
-    <span class="system-stage" data-motion-item data-at="${(.18 + index * .46).toFixed(2)}" data-duration=".42" data-from="up">
-      ${escapeHtml(part)}
-    </span>${index < parts.length - 1 ? `<span class="system-arrow" data-motion-item data-at="${(.38 + index * .46).toFixed(2)}" data-duration=".28" data-from="clip">→</span>` : ''}`).join('');
-  return `<section class="reel-scene scene-system" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
-    ${grid()}
-    <div class="system-rail" data-rail data-color aria-hidden="true"></div>
-    ${contentNode(scene.text[0], 'system-pipeline display-serif', stages)}
+  const flow = splitPipeline(scene.text[1], 'publish-stage', 'publish-arrow', .45, .54);
+  return `<section class="reel-scene scene-publish" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
+    ${contentNode(scene.text[0], 'publish-title display-serif', null, animated('-.08', '.42', 'clip'))}
+    <div class="publish-lock" data-color aria-hidden="true" data-motion-item data-at=".55" data-duration=".5" data-from="scale"></div>
+    ${contentNode(scene.text[1], 'publish-pipeline text-sans', flow, animated('1.55', '.36', 'clip'))}
+    ${contentNode(scene.text[2], 'publish-approval text-sans', null, animated('1.18', '.4', 'scale'))}
   </section>`;
 }
 
 function sceneSix(scene) {
-  return `<section class="reel-scene scene-closing" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
+  const finalLoop = splitPipeline(scene.text[3], 'loop-stage', 'loop-arrow', .05, .11);
+  const approvalLabels = scene.text[4].split(' / ').map((label) => `<span>${escapeHtml(label)}</span>`).join('');
+  return `<section class="reel-scene scene-loop" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
     ${grid()}
-    ${contentNode(scene.text[0], 'closing-intro text-sans', null, animated('.12', '.48', 'up'))}
-    ${contentNode(scene.text[1], 'closing-title display-serif blue-italic', null, animated('.42', '.72', 'clip'))}
-    <div class="closing-rule" data-color aria-hidden="true"></div>
-    ${contentNode(scene.text[2], 'closing-postscript text-sans', null, animated('1.28', '.56', 'up'))}
+    <div data-loop-intro>
+      ${contentNode(scene.text[0], 'loop-title display-serif', null, animated('-.08', '.4', 'left'))}
+      ${pipeline(scene.text[1], 'loop-short text-sans', .32, .38)}
+    </div>
+    <div data-loop-cta-phase>
+      ${contentNode(scene.text[2], 'loop-cta text-sans')}
+    </div>
+    <div class="loop-final" data-final-loop>
+      ${contentNode(scene.text[3], 'loop-full text-sans', finalLoop)}
+      ${contentNode(scene.text[4], 'loop-approvals text-sans', approvalLabels)}
+    </div>
   </section>`;
 }
 
@@ -91,21 +103,12 @@ export function renderScenes(reel) {
   }).join('');
 }
 
-export function renderCover(reel) {
-  const accent = escapeHtml(reel.cover.text[1]).replace('не контент-завод', '<span class="blue-italic">не контент-завод</span>');
+export function renderCover(reel, { coverAssetUrl }) {
   return `<section class="reel-cover" data-color>
-    ${grid()}
-    <div class="cover-system-line" data-color aria-hidden="true"></div>
-    ${contentNode(reel.cover.text[0], 'reel-cover-kicker text-sans')}
-    ${contentNode(reel.cover.text[1], 'reel-cover-title display-serif', accent)}
-    <div class="cover-illustration" data-color aria-hidden="true">
-      <i class="cover-machine-rail cover-machine-rail-a"></i>
-      <i class="cover-machine-rail cover-machine-rail-b"></i>
-      <i class="cover-machine-rail cover-machine-rail-c"></i>
-      ${Array.from({ length: 12 }, (_, index) => `<b class="cover-machine-node cover-machine-node-${index + 1}"></b>`).join('')}
-      <span class="cover-machine-block cover-machine-block-a"></span>
-      <span class="cover-machine-block cover-machine-block-b"></span>
-      <span class="cover-machine-block cover-machine-block-c"></span>
+    <img class="reel-cover-photo" src="${escapeHtml(coverAssetUrl)}" alt="" data-approved-asset="${escapeHtml(reel.cover.asset.id)}">
+    <div class="reel-cover-field" data-color>
+      ${contentNode(reel.cover.text[0], 'reel-cover-title display-serif')}
+      ${contentNode(reel.cover.text[1], 'reel-cover-tools text-sans')}
     </div>
   </section>`;
 }
@@ -125,10 +128,10 @@ export function timelineScript() {
         const from = node.dataset.from || 'up';
         let transform = 'none';
         let clipPath = 'inset(0 0 0 0)';
-        if (from === 'left') transform = 'translate3d(' + ((1 - progress) * -90) + 'px,0,0)';
-        if (from === 'right') transform = 'translate3d(' + ((1 - progress) * 90) + 'px,0,0)';
-        if (from === 'up') transform = 'translate3d(0,' + ((1 - progress) * 62) + 'px,0)';
-        if (from === 'scale') transform = 'scale(' + (.84 + progress * .16) + ')';
+        if (from === 'left') transform = 'translate3d(' + ((1 - progress) * -76) + 'px,0,0)';
+        if (from === 'right') transform = 'translate3d(' + ((1 - progress) * 76) + 'px,0,0)';
+        if (from === 'up') transform = 'translate3d(0,' + ((1 - progress) * 54) + 'px,0)';
+        if (from === 'scale') transform = 'scale(' + (.82 + progress * .18) + ')';
         if (from === 'clip') clipPath = 'inset(0 ' + ((1 - progress) * 100) + '% 0 0)';
         node.style.opacity = String(progress);
         node.style.transform = transform;
@@ -142,27 +145,28 @@ export function timelineScript() {
           const start = Number(scene.dataset.start);
           const end = Number(scene.dataset.end);
           const local = time - start;
-          const fadeIn = start === 0 ? 1 : clamp(local / .28);
-          const fadeOut = end === 25 ? 1 : clamp((end - time) / .28);
-          const visible = time >= start - .28 && time <= end + .28;
+          const fadeIn = start === 0 ? 1 : clamp(local / .24);
+          const fadeOut = end === 25 ? 1 : clamp((end - time) / .24);
+          const visible = time >= start - .24 && time <= end + .24;
           scene.style.opacity = visible ? String(Math.min(fadeIn, fadeOut)) : '0';
           scene.style.visibility = visible ? 'visible' : 'hidden';
           scene.style.zIndex = visible ? '3' : '1';
           scene.querySelectorAll('[data-motion-item]').forEach((node) => applyMotion(node, local));
-          scene.querySelectorAll('[data-rail]').forEach((rail) => {
-            const duration = Math.max(.5, end - start - .8);
-            rail.style.setProperty('--rail-progress', String(ease((local - .12) / duration)));
-          });
-          scene.querySelectorAll('[data-panel]').forEach((panel) => {
-            panel.style.setProperty('--panel-progress', String(ease((local - .66) / .8)));
-          });
+          if (scene.dataset.sceneId === 'scene-06') {
+            const finalProgress = ease((local - 1.25) / .28);
+            const finalExit = ease((local - 2.72) / .24);
+            const ctaProgress = ease((local - 2.72) / .28);
+            const intro = scene.querySelector('[data-loop-intro]');
+            const finalLoop = scene.querySelector('[data-final-loop]');
+            const cta = scene.querySelector('[data-loop-cta-phase]');
+            if (intro) intro.style.opacity = String(1 - finalProgress);
+            if (finalLoop) finalLoop.style.opacity = String(finalProgress * (1 - finalExit));
+            if (cta) cta.style.opacity = String(ctaProgress);
+          }
         }
         const phase = time / 25;
-        const axisX = 120 + Math.sin(phase * Math.PI * 4) * 82;
-        const axisY = 260 + phase * 1320;
-        const axisRotation = -8 + phase * 22;
-        axis.style.transform = 'translate3d(' + axisX + 'px,' + axisY + 'px,0) rotate(' + axisRotation + 'deg) scaleX(' + (.3 + phase * .7) + ')';
-        axis.style.background = (time >= 3 && time < 6) || (time >= 17 && time < 22) ? '#f4f1e9' : '#1546e8';
+        axis.style.transform = 'translate3d(120px,' + (220 + phase * 1360) + 'px,0) scaleX(' + (.18 + phase * .82) + ')';
+        axis.style.background = '#1546e8';
         document.body.dataset.renderTime = time.toFixed(4);
         return true;
       };

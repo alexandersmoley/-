@@ -49,7 +49,7 @@ export async function runReelBrowserQa(page, { reel }) {
       bottom: 1920 - safeZone.bottom
     };
     const safeZoneFailures = [];
-    const sampleTimes = [1.45, 4.45, 9.25, 14.45, 19.45, 23.55];
+    const sampleTimes = [3.1, 7.2, 11.8, 16.2, 20.4, 23.55];
     for (const time of sampleTimes) {
       window.renderAt(time);
       await new Promise((resolve) => requestAnimationFrame(() => resolve()));
@@ -104,8 +104,8 @@ export async function runReelBrowserQa(page, { reel }) {
   });
 }
 
-export async function runReelCoverBrowserQa(page, { reel }) {
-  return page.evaluate(({ expectedText, safeZone }) => {
+export async function runReelCoverBrowserQa(page, { reel, expectedAssetUrl }) {
+  return page.evaluate(({ expectedText, safeZone, expectedAssetUrl, expectedAssetId, expectedAssetWidth, expectedAssetHeight }) => {
     const normalize = (value) => String(value).replaceAll('\u00a0', ' ').replace(/\s+/gu, ' ').trim();
     const nodes = [...document.querySelectorAll('[data-content]')];
     const actualText = nodes.map((node) => normalize(node.dataset.sourceText));
@@ -114,6 +114,12 @@ export async function runReelCoverBrowserQa(page, { reel }) {
       const rect = node.getBoundingClientRect();
       return rect.left < safeRect.left || rect.right > safeRect.right || rect.top < safeRect.top || rect.bottom > safeRect.bottom;
     }).map((node) => ({ className: node.className, rect: node.getBoundingClientRect().toJSON() }));
+    const images = [...document.querySelectorAll('img')];
+    const approvedImages = images.filter((image) => image.dataset.approvedAsset === expectedAssetId);
+    const approvedPhotoExact = images.length === 1 && approvedImages.length === 1
+      && approvedImages[0].src === expectedAssetUrl
+      && approvedImages[0].naturalWidth === expectedAssetWidth
+      && approvedImages[0].naturalHeight === expectedAssetHeight;
     return {
       checks: {
         canvasExact: document.documentElement.scrollWidth === 1080 && document.documentElement.scrollHeight === 1920,
@@ -121,9 +127,17 @@ export async function runReelCoverBrowserQa(page, { reel }) {
         safeZoneExact: safeZoneFailures.length === 0,
         fontsLoaded: document.fonts.status === 'loaded',
         headlineWithoutTerminalPeriod: actualText.every((value) => !/[.…]\s*$/u.test(value)),
-        noPhotography: document.querySelectorAll('img, picture, video').length === 0
+        approvedPhotoExact,
+        noGeneratedMedia: document.querySelectorAll('picture, video, canvas, svg').length === 0
       },
-      details: { actualText, safeRect, safeZoneFailures }
+      details: { actualText, safeRect, safeZoneFailures, imageCount: images.length, approvedPhotoExact }
     };
-  }, { expectedText: reel.cover.text.map(normalizeText), safeZone: reel.safeZone });
+  }, {
+    expectedText: reel.cover.text.map(normalizeText),
+    safeZone: reel.safeZone,
+    expectedAssetUrl,
+    expectedAssetId: reel.cover.asset.id,
+    expectedAssetWidth: reel.cover.asset.width,
+    expectedAssetHeight: reel.cover.asset.height
+  });
 }

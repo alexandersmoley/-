@@ -39,20 +39,31 @@ function extractApprovedCopy(markdown) {
   const scenes = new Map();
   for (let index = 1; index <= 6; index += 1) {
     const number = String(index).padStart(2, '0');
-    const match = markdown.match(new RegExp(`## Scene ${number}\\n([\\s\\S]*?)(?=\\n## Scene|\\n# Cover)`, 'u'));
+    const match = markdown.match(new RegExp(`## Scene ${number}[^\\n]*\\n([\\s\\S]*?)(?=\\n## Scene|\\n# Cover)`, 'u'));
     if (!match) throw new Error(`Cannot extract Scene ${number} from reel brief`);
-    const textBlock = match[1].match(/- text_on_screen:\n([\s\S]*?)(?=\n- motion_direction:)/u);
-    if (!textBlock) throw new Error(`Cannot extract text_on_screen for Scene ${number}`);
-    scenes.set(`scene-${number}`, extractQuotedList(textBlock[1]));
+    const textBlock = match[1].match(/(?:- text_on_screen:|Текст:)\n([\s\S]*?)(?=\n(?:- motion_direction:|Motion:))/u);
+    if (!textBlock) throw new Error(`Cannot extract approved screen text for Scene ${number}`);
+    const copy = extractQuotedList(textBlock[1]);
+    if (number === '03') {
+      const approvals = [...match[1].matchAll(/"(ОК — (?:тема|текст))"/gu)].map((item) => item[1]);
+      copy.push(...new Set(approvals));
+    }
+    if (number === '06') {
+      const loop = match[1].match(/"(ChatGPT → Todoist → тема → ChatGPT → GitHub → Codex → ОК → публикация → аналитика → ChatGPT)"/u);
+      const approvals = match[1].match(/"(ОК тема \/ ОК текст \/ ОК дизайн \/ ОК публикация)"/u);
+      if (loop) copy.push(loop[1]);
+      if (approvals) copy.push(approvals[1]);
+    }
+    scenes.set(`scene-${number}`, copy);
   }
-  const coverMatch = markdown.match(/## text_on_cover\n([\s\S]*?)\n\n## cover_direction/u);
+  const coverMatch = markdown.match(/# Cover[\s\S]*?\nТекст:\n([\s\S]*?)(?=\n\n# Music)/u)
+    || markdown.match(/## text_on_cover\n([\s\S]*?)\n\n## cover_direction/u);
   if (!coverMatch) throw new Error('Cannot extract reel cover copy');
   const captionMatch = markdown.match(/# Caption\n\n([\s\S]*?)\n\n# Acceptance criteria/u);
-  if (!captionMatch) throw new Error('Cannot extract reel caption');
   return {
     scenes,
     cover: extractQuotedList(coverMatch[1]),
-    caption: captionMatch[1].trim().split('\n\n')
+    caption: captionMatch ? captionMatch[1].trim().split('\n\n') : []
   };
 }
 
@@ -84,7 +95,7 @@ function writeWaveHeader(buffer, dataLength, sampleRate, channels = 2, bitsPerSa
   buffer.writeUInt32LE(dataLength, 40);
 }
 
-async function createInstrumentalAudio(targetPath, { durationSeconds, sampleRate }) {
+async function createInstrumentalAudio(targetPath, { durationSeconds, sampleRate, bpm, scenes }) {
   const channels = 2;
   const frameCount = durationSeconds * sampleRate;
   const dataLength = frameCount * channels * 2;
@@ -94,7 +105,8 @@ async function createInstrumentalAudio(targetPath, { durationSeconds, sampleRate
     [110, 164.81, 220], [98, 146.83, 196], [130.81, 196, 261.63],
     [116.54, 174.61, 233.08], [98, 146.83, 220], [110, 164.81, 246.94]
   ];
-  const boundaries = [0, 3, 6, 12, 17, 22, 25];
+  const boundaries = [0, ...scenes.map((scene) => scene.end)];
+  const approvalAccents = [9.25, 10.25, 15.65, 19.35];
   let noiseState = 0x5a17c9;
   const noise = () => {
     noiseState = (noiseState * 1664525 + 1013904223) >>> 0;
@@ -110,14 +122,16 @@ async function createInstrumentalAudio(targetPath, { durationSeconds, sampleRate
     const pad = chord.reduce((sum, frequency, index) => (
       sum + Math.sin(Math.PI * 2 * frequency * time + index * .37) * (.052 - index * .008)
     ), 0) * Math.max(0, envelope);
-    const beatPosition = (time * 2) % 1;
+    const beatPosition = (time * bpm / 60) % 1;
     const pulse = beatPosition < .12 ? Math.sin(Math.PI * 2 * 74 * beatPosition) * Math.exp(-beatPosition * 27) * .12 : 0;
-    const tickPosition = (time * 4) % 1;
+    const tickPosition = (time * bpm / 30) % 1;
     const tick = tickPosition < .035 ? noise() * Math.exp(-tickPosition * 75) * .022 : 0;
     const transitionDistance = Math.min(...boundaries.slice(1, -1).map((boundary) => Math.abs(time - boundary)));
     const transition = transitionDistance < .16 ? Math.sin(Math.PI * 2 * 52 * time) * (1 - transitionDistance / .16) * .1 : 0;
-    const left = Math.max(-.92, Math.min(.92, pad + pulse + tick + transition));
-    const right = Math.max(-.92, Math.min(.92, pad * .96 + pulse + tick * .7 + transition));
+    const approvalDistance = Math.min(...approvalAccents.map((accent) => Math.abs(time - accent)));
+    const approval = approvalDistance < .13 ? Math.sin(Math.PI * 2 * 112 * time) * (1 - approvalDistance / .13) * .16 : 0;
+    const left = Math.max(-.92, Math.min(.92, pad + pulse + tick + transition + approval));
+    const right = Math.max(-.92, Math.min(.92, pad * .96 + pulse + tick * .7 + transition + approval));
     buffer.writeInt16LE(Math.round(left * 32767), 44 + frame * 4);
     buffer.writeInt16LE(Math.round(right * 32767), 46 + frame * 4);
   }
@@ -165,6 +179,8 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   await fs.mkdir(outputDirectory, { recursive: true });
   await fs.mkdir(renderDirectory, { recursive: true });
   const contentSourcePath = path.join(factoryRoot, reel.contentSource.path);
+  const coverAssetPath = path.join(factoryRoot, reel.cover.asset.path);
+  await assertFile(coverAssetPath, 'Approved Reel cover portrait');
   const markdownBefore = await fs.readFile(contentSourcePath, 'utf8');
   const approvedCopy = extractApprovedCopy(markdownBefore);
   const contentShaBefore = await sha256File(contentSourcePath);
@@ -173,9 +189,10 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   const coverCopyExact = JSON.stringify(reel.cover.text) === JSON.stringify(approvedCopy.cover);
   const captionSourceExact = captionBefore === approvedCopy.caption.join('\n\n');
   const fontUrls = Object.fromEntries(Object.entries(fontPaths).map(([key, value]) => [key, pathToFileURL(value).href]));
+  const coverAssetUrl = pathToFileURL(coverAssetPath).href;
 
   const html = renderReelHtml({ reel, stylesheet, fontUrls });
-  const coverHtml = renderReelCoverHtml({ reel, stylesheet, fontUrls });
+  const coverHtml = renderReelCoverHtml({ reel, stylesheet, fontUrls, coverAssetUrl });
   const htmlPath = path.join(renderDirectory, 'reel.html');
   const coverHtmlPath = path.join(renderDirectory, 'cover.html');
   const audioPath = path.join(renderDirectory, 'instrumental.wav');
@@ -183,7 +200,12 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   const coverPath = path.join(outputDirectory, 'cover.png');
   const storyboardPath = path.join(outputDirectory, 'storyboard.png');
   await Promise.all([fs.writeFile(htmlPath, html), fs.writeFile(coverHtmlPath, coverHtml)]);
-  await createInstrumentalAudio(audioPath, { durationSeconds: reel.canvas.durationSeconds, sampleRate: reel.audio.sampleRate });
+  await createInstrumentalAudio(audioPath, {
+    durationSeconds: reel.canvas.durationSeconds,
+    sampleRate: reel.audio.sampleRate,
+    bpm: reel.audio.bpm,
+    scenes: reel.scenes
+  });
 
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'load' });
@@ -204,7 +226,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   ], { stdio: ['pipe', 'ignore', 'pipe'] });
   let ffmpegError = '';
   ffmpeg.stderr.on('data', (chunk) => { ffmpegError += chunk; });
-  const sampleTimes = [2.3, 5.2, 11.2, 16.2, 21.5, 24.3];
+  const sampleTimes = [3.1, 7.2, 11.8, 16.2, 20.4, 23.55];
   const sampleFrames = new Map(sampleTimes.map((time) => [Math.round(time * reel.canvas.fps), time]));
   const storyboardFrames = [];
   const frameHashes = [];
@@ -229,7 +251,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   const coverPage = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   await coverPage.goto(pathToFileURL(coverHtmlPath).href, { waitUntil: 'load' });
   await coverPage.evaluate(async () => { await document.fonts.ready; });
-  const coverBrowserQa = await runReelCoverBrowserQa(coverPage, { reel });
+  const coverBrowserQa = await runReelCoverBrowserQa(coverPage, { reel, expectedAssetUrl: coverAssetUrl });
   await coverPage.screenshot({ path: coverPath, type: 'png', animations: 'disabled' });
   await coverPage.close();
 
@@ -238,6 +260,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   const audioStream = probe.streams.find((stream) => stream.codec_type === 'audio');
   const duration = Number(probe.format.duration);
   const contentShaAfter = await sha256File(contentSourcePath);
+  const coverAssetMetadata = await sharp(coverAssetPath).metadata();
   const checks = {
     structuredReelValid: true,
     approvedForRender: reel.status === 'approved-for-render',
@@ -256,10 +279,16 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
     frameRateExact: videoStream?.avg_frame_rate === '30/1',
     durationWithinBrief: duration >= 20 && duration <= 25.05,
     audioStreamPresent: audioStream?.codec_type === 'audio' && Number(audioStream.channels) === 2,
-    musicOnlyConfiguration: reel.audio.mode === 'original-instrumental-only' && reel.audio.voiceOver === false && reel.audio.talkingHead === false,
+    musicOnlyConfiguration: reel.audio.mode === 'temporary-instrumental-guide'
+      && reel.audio.voiceOver === false
+      && reel.audio.talkingHead === false
+      && reel.audio.bpm >= 100
+      && reel.audio.bpm <= 120,
     motionFramesDistinct: new Set(frameHashes).size === sampleTimes.length,
     storyboardCreated: storyboardDimensions.width === 930 && storyboardDimensions.height === 1050,
-    coverDimensionsExact: (await sharp(coverPath).metadata()).width === 1080 && (await sharp(coverPath).metadata()).height === 1920
+    coverDimensionsExact: (await sharp(coverPath).metadata()).width === 1080 && (await sharp(coverPath).metadata()).height === 1920,
+    coverAssetChecksumExact: await sha256File(coverAssetPath) === reel.cover.asset.sha256,
+    coverAssetDimensionsExact: coverAssetMetadata.width === reel.cover.asset.width && coverAssetMetadata.height === reel.cover.asset.height
   };
   const report = {
     pipelineVersion: 1,
@@ -278,7 +307,14 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
       preview: { path: path.relative(factoryRoot, videoPath), url: `${baseUrl}${reel.id}/preview.mp4`, sha256: await sha256File(videoPath), duration, fps: videoStream?.avg_frame_rate },
       cover: { path: path.relative(factoryRoot, coverPath), url: `${baseUrl}${reel.id}/cover.png`, sha256: await sha256File(coverPath), width: 1080, height: 1920 },
       storyboard: { path: path.relative(factoryRoot, storyboardPath), url: `${baseUrl}${reel.id}/storyboard.png`, sha256: await sha256File(storyboardPath), ...storyboardDimensions },
-      audio: { codec: audioStream?.codec_name, sampleRate: audioStream?.sample_rate, channels: audioStream?.channels, mode: reel.audio.mode }
+      audio: {
+        codec: audioStream?.codec_name,
+        sampleRate: audioStream?.sample_rate,
+        channels: audioStream?.channels,
+        mode: reel.audio.mode,
+        bpm: reel.audio.bpm,
+        replacementNote: 'Replace guide before publishing with a licensed instrumental electronic track at 100–120 BPM, no vocals'
+      }
     },
     browserQa,
     coverBrowserQa,
