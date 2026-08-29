@@ -240,6 +240,9 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
     if (sampleFrames.has(frame)) {
       storyboardFrames.push(png);
       frameHashes.push(sha256Text(png));
+      // The storyboard tiles are 270px wide. Typography defects do not survive that
+      // reduction, so each sampled frame is also kept at full size for review.
+      await fs.writeFile(path.join(outputDirectory, `frame-${String(storyboardFrames.length).padStart(2, '0')}.png`), png);
     }
     if (!ffmpeg.stdin.write(png)) await once(ffmpeg.stdin, 'drain');
     if ((frame + 1) % 150 === 0) console.log(`Rendered reel frames: ${frame + 1}/${totalFrames}`);
