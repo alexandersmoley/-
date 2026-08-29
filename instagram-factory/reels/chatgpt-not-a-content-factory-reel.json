@@ -20,9 +20,9 @@
   },
   "contentSource": {
     "path": "content/chatgpt-not-a-content-factory-reel.md",
-    "sha256": "ce8b26d1f986ddf02a48d21488f410b4860b659c6433ebf5c5a71013bc11db98"
+    "sha256": "123ecefa021fa87ba20b0ad4c7afa1a8cd43e237fec51ec5317105dd4e0ae2eb"
   },
-  "captionSha256": "5c4a821ce1c680f49c837f846b0e59d47a9e356e887ae612a8dac45b0d1b0bec",
+  "captionSha256": "5b08ad0686f54193ca1783bcf64dbef99419e018714f6d61ec7fb7cd1edaeac2",
   "designTokens": {
     "ink": "#101010",
     "paper": "#f4f1e9",
@@ -40,83 +40,89 @@
     {
       "id": "scene-01",
       "start": 0,
-      "end": 3,
-      "goal": "hook",
-      "layoutFamily": "reel-kinetic-statement",
+      "end": 4,
+      "goal": "build the content plan in ChatGPT and hand it to Todoist",
+      "layoutFamily": "reel-process-build",
       "text": [
-        "Написать пост через ChatGPT —",
-        "это ещё не контент-завод"
+        "Сначала собираю контент-план в ChatGPT",
+        "темы → форматы → порядок",
+        "План храню в Todoist"
       ]
     },
     {
       "id": "scene-02",
-      "start": 3,
-      "end": 6,
-      "goal": "show the simplistic model",
+      "start": 4,
+      "end": 8,
+      "goal": "take one topic from the plan back into editorial work",
       "layoutFamily": "reel-process-minimal",
       "text": [
-        "промпт → текст",
-        "Автоматизирован только один кусок"
+        "Из плана беру одну тему",
+        "Тема возвращается в ChatGPT",
+        "фактура → структура → текст → brief"
       ]
     },
     {
       "id": "scene-03",
-      "start": 6,
-      "end": 12,
-      "goal": "expand the real process",
-      "layoutFamily": "reel-process-build",
+      "start": 8,
+      "end": 12.5,
+      "goal": "show GitHub as the bridge between ChatGPT and Codex",
+      "layoutFamily": "reel-system-diagram",
       "text": [
-        "тема → фактура → текст → редактура → дизайн → QA → публикация → аналитика",
-        "Вот где начинается производство"
+        "Дальше brief уходит в GitHub",
+        "ToV / фирстиль / шрифты / референсы / правила / approved copy",
+        "ChatGPT → GitHub ← Codex"
       ]
     },
     {
       "id": "scene-04",
-      "start": 12,
+      "start": 12.5,
       "end": 17,
-      "goal": "state the core idea",
-      "layoutFamily": "reel-contrast-statement",
+      "goal": "show Codex production and design approval",
+      "layoutFamily": "reel-process-build",
       "text": [
-        "Автоматизировать нужно не пост",
-        "Нужно автоматизировать процесс"
+        "Потом работает Codex",
+        "brief → сборка → render → QA → preview",
+        "ОК — дизайн"
       ]
     },
     {
       "id": "scene-05",
       "start": 17,
-      "end": 22,
-      "goal": "show the actual factory pipeline",
+      "end": 21,
+      "goal": "show the publishing approval gate",
       "layoutFamily": "reel-system-diagram",
       "text": [
-        "идея → арт-дирекшен → GitHub → renderer → QA → PNG → Metricool → Instagram"
+        "После моего ок — публикация",
+        "Codex → ОК → publishing → Instagram",
+        "ОК — публикация"
       ]
     },
     {
       "id": "scene-06",
-      "start": 22,
+      "start": 21,
       "end": 25,
-      "goal": "closing",
+      "goal": "close the analytics loop and call to follow",
       "layoutFamily": "reel-closing-editorial",
       "text": [
-        "Вот это я и называю",
-        "контент-заводом",
-        "И пока он всё ещё ломается"
+        "После публикации смотрю результат",
+        "Instagram → аналитика → ChatGPT",
+        "Подписывайтесь. Буду показывать, что получается автоматизировать дальше"
       ]
     }
   ],
   "cover": {
     "layoutFamily": "reel-cover-editorial",
     "text": [
-      "Написать пост через ChatGPT —",
-      "не контент-завод"
+      "Как я собираю контент-завод",
+      "ChatGPT + Codex"
     ]
   },
   "caption": [
-    "Написать пост через ChatGPT сегодня могут почти все.",
-    "Но это ещё не контент-завод.",
-    "Контент-завод начинается не там, где появляется черновик текста, а там, где появляется система: тема, фактура, редактура, дизайн, проверка, публикация и аналитика.",
-    "После вчерашнего опыта я ещё раз убедился, что автоматизировать нужно не один пост, а всю производственную цепочку вокруг него.",
-    "Сейчас как раз этим и занимаюсь: пытаюсь собрать систему, которая помогает делать хороший контент быстрее и не даёт выпускать брак.",
-    "Пока получается не идеально. Но это уже гораздо больше похоже на завод, чем просто набор нейросетей."
+    "Сейчас собираю контент-завод на своём блоге.",
+    "Сначала делаю контент-план в ChatGPT и храню его в Todoist.",
+    "Потом беру одну тему: в ChatGPT собираю фактуру, структуру и текст, а утверждённый brief уходит в GitHub.",
+    "GitHub хранит правила проекта и связывает чат с Codex. Codex собирает материал, рендерит и проверяет его.",
+    "У меня остаются четыре точки: ок по теме, тексту, дизайну и публикации.",
+    "После публикации смотрю аналитику в чате и решаю, что менять дальше. Здесь буду показывать, как эта система развивается."
   ]
 }
