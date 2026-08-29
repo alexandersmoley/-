@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "chatgpt-not-a-content-factory-reel",
   "source": "reels/chatgpt-not-a-content-factory-reel.json",
-  "generatedAt": "2026-08-29T07:25:41.813Z",
+  "generatedAt": "2026-08-29T13:40:01.215Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -25,33 +25,35 @@
     "musicOnlyConfiguration": true,
     "motionFramesDistinct": true,
     "storyboardCreated": true,
-    "coverDimensionsExact": true
+    "coverDimensionsExact": true,
+    "coverAssetChecksumExact": true,
+    "coverAssetDimensionsExact": true
   },
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/chatgpt-not-a-content-factory-reel.md",
-    "contentSha256": "ce8b26d1f986ddf02a48d21488f410b4860b659c6433ebf5c5a71013bc11db98",
-    "captionSha256": "5c4a821ce1c680f49c837f846b0e59d47a9e356e887ae612a8dac45b0d1b0bec"
+    "contentSha256": "123ecefa021fa87ba20b0ad4c7afa1a8cd43e237fec51ec5317105dd4e0ae2eb",
+    "captionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "media": {
     "preview": {
       "path": "output/chatgpt-not-a-content-factory-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/preview.mp4",
-      "sha256": "b30ccc759f202da839c21ffdbc10b8f6369213fff7871b3d1067bab94ab0f854",
+      "sha256": "30ffe1c47ed72a1fe02bb7fd06c72371f51689e8dd4d1a00f2b40bb002fd0269",
       "duration": 25,
       "fps": "30/1"
     },
     "cover": {
       "path": "output/chatgpt-not-a-content-factory-reel/cover.png",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/cover.png",
-      "sha256": "abe5d333efd6527e06ea443f040f18a024480168840b081e8ea6f901f0978691",
+      "sha256": "1a89905876c44cc415acf74dd769e2bf7b014c3434e447b83f8da5c755b2ca71",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
       "path": "output/chatgpt-not-a-content-factory-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/storyboard.png",
-      "sha256": "a2a7a78ac2a7954b2a71824cc6753cc24f5d7b2a5ca9b2cabc2cf8568b9ea4ec",
+      "sha256": "e2c4e0e80da0e59e42ef07f24c228911e15745a2a414d3ce050a9edc1e4fe2a5",
       "width": 930,
       "height": 1050
     },
@@ -59,7 +61,9 @@
       "codec": "aac",
       "sampleRate": "48000",
       "channels": 2,
-      "mode": "original-instrumental-only"
+      "mode": "temporary-instrumental-guide",
+      "bpm": 110,
+      "replacementNote": "Replace guide before publishing with a licensed instrumental electronic track at 100–120 BPM, no vocals"
     }
   },
   "browserQa": {
@@ -83,43 +87,53 @@
         {
           "id": "scene-01",
           "text": [
-            "Написать пост через ChatGPT —",
-            "это ещё не контент-завод"
+            "Сначала собираю контент-план в ChatGPT",
+            "темы → форматы → порядок",
+            "План храню в Todoist"
           ]
         },
         {
           "id": "scene-02",
           "text": [
-            "промпт → текст",
-            "Автоматизирован только один кусок"
+            "Из плана беру одну тему",
+            "Тема возвращается в ChatGPT",
+            "фактура → структура → текст → brief"
           ]
         },
         {
           "id": "scene-03",
           "text": [
-            "тема → фактура → текст → редактура → дизайн → QA → публикация → аналитика",
-            "Вот где начинается производство"
+            "Дальше brief уходит в GitHub",
+            "ToV / фирстиль / шрифты / референсы / правила / approved copy",
+            "ChatGPT → GitHub ← Codex",
+            "ОК — тема",
+            "ОК — текст"
           ]
         },
         {
           "id": "scene-04",
           "text": [
-            "Автоматизировать нужно не пост",
-            "Нужно автоматизировать процесс"
+            "Потом работает Codex",
+            "brief → сборка → render → QA → preview",
+            "ОК — дизайн"
           ]
         },
         {
           "id": "scene-05",
           "text": [
-            "идея → арт-дирекшен → GitHub → renderer → QA → PNG → Metricool → Instagram"
+            "После моего ок — публикация",
+            "Codex → ОК → publishing → Instagram",
+            "ОК — публикация"
           ]
         },
         {
           "id": "scene-06",
           "text": [
-            "Вот это я и называю",
-            "контент-заводом",
-            "И пока он всё ещё ломается"
+            "После публикации смотрю результат",
+            "Instagram → аналитика → ChatGPT",
+            "Подписывайтесь. Буду показывать, что получается автоматизировать дальше",
+            "ChatGPT → Todoist → тема → ChatGPT → GitHub → Codex → ОК → публикация → аналитика → ChatGPT",
+            "ОК тема / ОК текст / ОК дизайн / ОК публикация"
           ]
         }
       ],
@@ -132,296 +146,512 @@
       "safeZoneFailures": [],
       "type": [
         {
-          "className": "hook-kicker text-sans reel-copy",
+          "className": "plan-title display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 100,
+          "lineHeight": 94
+        },
+        {
+          "className": "plan-pipeline text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
-          "size": 48,
-          "lineHeight": 59.52
-        },
-        {
-          "className": "hook-statement display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 142,
-          "lineHeight": 133.48
-        },
-        {
-          "className": "blue-italic",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 142,
-          "lineHeight": 133.48
-        },
-        {
-          "className": "minimal-pipeline display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 108,
-          "lineHeight": 101.52
+          "size": 42,
+          "lineHeight": 52.08
         },
         {
           "className": "pipeline-node",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 108,
-          "lineHeight": 101.52
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
         },
         {
           "className": "pipeline-arrow",
           "family": "\"Inter Production\", sans-serif",
-          "size": 48,
-          "lineHeight": 45.12
+          "size": 42,
+          "lineHeight": 52.08
         },
         {
           "className": "pipeline-node",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 108,
-          "lineHeight": 101.52
-        },
-        {
-          "className": "minimal-caption text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
-          "size": 39,
-          "lineHeight": 48.36
+          "size": 42,
+          "lineHeight": 52.08
         },
         {
-          "className": "build-pipeline text-sans reel-copy",
+          "className": "pipeline-arrow",
           "family": "\"Inter Production\", sans-serif",
-          "size": 55,
-          "lineHeight": 68.2
+          "size": 42,
+          "lineHeight": 52.08
         },
         {
-          "className": "build-stage build-stage-1",
+          "className": "pipeline-node",
           "family": "\"Inter Production\", sans-serif",
-          "size": 47,
-          "lineHeight": 58.28
+          "size": 42,
+          "lineHeight": 52.08
         },
         {
-          "className": "build-arrow build-arrow-1",
+          "className": "plan-storage-label text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
-          "size": 30,
-          "lineHeight": 30
+          "size": 44,
+          "lineHeight": 54.56
         },
         {
-          "className": "build-stage build-stage-2",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 47,
-          "lineHeight": 58.28
-        },
-        {
-          "className": "build-arrow build-arrow-2",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 30,
-          "lineHeight": 30
-        },
-        {
-          "className": "build-stage build-stage-3",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 47,
-          "lineHeight": 58.28
-        },
-        {
-          "className": "build-arrow build-arrow-3",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 30,
-          "lineHeight": 30
-        },
-        {
-          "className": "build-stage build-stage-4",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 47,
-          "lineHeight": 58.28
-        },
-        {
-          "className": "build-arrow build-arrow-4",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 30,
-          "lineHeight": 30
-        },
-        {
-          "className": "build-stage build-stage-5",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 47,
-          "lineHeight": 58.28
-        },
-        {
-          "className": "build-arrow build-arrow-5",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 30,
-          "lineHeight": 30
-        },
-        {
-          "className": "build-stage build-stage-6",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 47,
-          "lineHeight": 58.28
-        },
-        {
-          "className": "build-arrow build-arrow-6",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 30,
-          "lineHeight": 30
-        },
-        {
-          "className": "build-stage build-stage-7",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 47,
-          "lineHeight": 58.28
-        },
-        {
-          "className": "build-arrow build-arrow-7",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 30,
-          "lineHeight": 30
-        },
-        {
-          "className": "build-stage build-stage-8",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 47,
-          "lineHeight": 58.28
-        },
-        {
-          "className": "build-conclusion display-serif blue-italic reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 78,
-          "lineHeight": 73.32
-        },
-        {
-          "className": "contrast-first display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 103,
-          "lineHeight": 96.82
-        },
-        {
-          "className": "contrast-second display-serif reel-copy",
+          "className": "topic-title display-serif reel-copy",
           "family": "\"Cormorant Garamond Production\", serif",
           "size": 112,
           "lineHeight": 105.28
         },
         {
-          "className": "blue-italic",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 112,
-          "lineHeight": 105.28
-        },
-        {
-          "className": "system-pipeline display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 61,
-          "lineHeight": 57.34
-        },
-        {
-          "className": "system-stage",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 61,
-          "lineHeight": 57.34
-        },
-        {
-          "className": "system-arrow",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 24,
-          "lineHeight": 24
-        },
-        {
-          "className": "system-stage",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 61,
-          "lineHeight": 57.34
-        },
-        {
-          "className": "system-arrow",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 24,
-          "lineHeight": 24
-        },
-        {
-          "className": "system-stage",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 61,
-          "lineHeight": 57.34
-        },
-        {
-          "className": "system-arrow",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 24,
-          "lineHeight": 24
-        },
-        {
-          "className": "system-stage",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 61,
-          "lineHeight": 57.34
-        },
-        {
-          "className": "system-arrow",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 24,
-          "lineHeight": 24
-        },
-        {
-          "className": "system-stage",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 61,
-          "lineHeight": 57.34
-        },
-        {
-          "className": "system-arrow",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 24,
-          "lineHeight": 24
-        },
-        {
-          "className": "system-stage",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 61,
-          "lineHeight": 57.34
-        },
-        {
-          "className": "system-arrow",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 24,
-          "lineHeight": 24
-        },
-        {
-          "className": "system-stage",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 61,
-          "lineHeight": 57.34
-        },
-        {
-          "className": "system-arrow",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 24,
-          "lineHeight": 24
-        },
-        {
-          "className": "system-stage",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 61,
-          "lineHeight": 57.34
-        },
-        {
-          "className": "closing-intro text-sans reel-copy",
+          "className": "topic-return text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
           "size": 43,
           "lineHeight": 53.32
         },
         {
-          "className": "closing-title display-serif blue-italic reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 158,
-          "lineHeight": 148.52
-        },
-        {
-          "className": "closing-postscript text-sans reel-copy",
+          "className": "topic-pipeline text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
           "size": 37,
           "lineHeight": 45.88
+        },
+        {
+          "className": "pipeline-node",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 37,
+          "lineHeight": 45.88
+        },
+        {
+          "className": "pipeline-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 37,
+          "lineHeight": 45.88
+        },
+        {
+          "className": "pipeline-node",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 37,
+          "lineHeight": 45.88
+        },
+        {
+          "className": "pipeline-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 37,
+          "lineHeight": 45.88
+        },
+        {
+          "className": "pipeline-node",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 37,
+          "lineHeight": 45.88
+        },
+        {
+          "className": "pipeline-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 37,
+          "lineHeight": 45.88
+        },
+        {
+          "className": "pipeline-node",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 37,
+          "lineHeight": 45.88
+        },
+        {
+          "className": "source-title display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 94,
+          "lineHeight": 88.36
+        },
+        {
+          "className": "source-context text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 34,
+          "lineHeight": 42.16
+        },
+        {
+          "className": "source-topology text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 38,
+          "lineHeight": 47.12
+        },
+        {
+          "className": "source-side",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 38,
+          "lineHeight": 47.12
+        },
+        {
+          "className": "source-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 34,
+          "lineHeight": 42.16
+        },
+        {
+          "className": "source-center",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 76,
+          "lineHeight": 71.44
+        },
+        {
+          "className": "source-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 34,
+          "lineHeight": 42.16
+        },
+        {
+          "className": "source-side",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 38,
+          "lineHeight": 47.12
+        },
+        {
+          "className": "approval-chip text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "approval-chip text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "production-title display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 116,
+          "lineHeight": 109.04
+        },
+        {
+          "className": "production-pipeline text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "production-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "production-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "production-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "production-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "production-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "production-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "production-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "production-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "production-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "production-approval text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "publish-title display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 108,
+          "lineHeight": 101.52
+        },
+        {
+          "className": "publish-pipeline text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "publish-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "publish-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "publish-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "publish-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "publish-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "publish-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "publish-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "publish-approval text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
+          "className": "loop-title display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 96,
+          "lineHeight": 90.24
+        },
+        {
+          "className": "loop-short text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
+          "className": "pipeline-node",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
+          "className": "pipeline-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
+          "className": "pipeline-node",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
+          "className": "pipeline-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
+          "className": "pipeline-node",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
+          "className": "loop-cta text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 52,
+          "lineHeight": 64.48
+        },
+        {
+          "className": "loop-full text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "loop-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "loop-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 25,
+          "lineHeight": 31
+        },
+        {
+          "className": "loop-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "loop-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 25,
+          "lineHeight": 31
+        },
+        {
+          "className": "loop-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "loop-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 25,
+          "lineHeight": 31
+        },
+        {
+          "className": "loop-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "loop-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 25,
+          "lineHeight": 31
+        },
+        {
+          "className": "loop-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "loop-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 25,
+          "lineHeight": 31
+        },
+        {
+          "className": "loop-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "loop-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 25,
+          "lineHeight": 31
+        },
+        {
+          "className": "loop-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "loop-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 25,
+          "lineHeight": 31
+        },
+        {
+          "className": "loop-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "loop-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 25,
+          "lineHeight": 31
+        },
+        {
+          "className": "loop-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "loop-arrow",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 25,
+          "lineHeight": 31
+        },
+        {
+          "className": "loop-stage",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "loop-approvals text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
+        },
+        {
+          "className": "",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 32,
+          "lineHeight": 39.68
         }
       ],
       "unapprovedColors": [],
       "effectFailures": [],
       "sampleTimes": [
-        1.45,
-        4.45,
-        9.25,
-        14.45,
-        19.45,
+        3.1,
+        7.2,
+        11.8,
+        16.2,
+        20.4,
         23.55
       ]
     }
@@ -433,12 +663,13 @@
       "safeZoneExact": true,
       "fontsLoaded": true,
       "headlineWithoutTerminalPeriod": true,
-      "noPhotography": true
+      "approvedPhotoExact": true,
+      "noGeneratedMedia": true
     },
     "details": {
       "actualText": [
-        "Написать пост через ChatGPT —",
-        "не контент-завод"
+        "Как я собираю контент-завод",
+        "ChatGPT + Codex"
       ],
       "safeRect": {
         "left": 120,
@@ -446,7 +677,9 @@
         "right": 900,
         "bottom": 1620
       },
-      "safeZoneFailures": []
+      "safeZoneFailures": [],
+      "imageCount": 1,
+      "approvedPhotoExact": true
     }
   },
   "probe": {
