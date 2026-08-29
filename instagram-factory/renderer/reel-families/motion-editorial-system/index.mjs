@@ -45,10 +45,10 @@ function sceneThree(scene) {
     ${contentNode(scene.text[0], 'source-title display-serif', null, animated('-.08', '.42', 'clip'))}
     ${contentNode(scene.text[1], 'source-context text-sans', null, animated('.38', '.52', 'up'))}
     ${contentNode(scene.text[2], 'source-topology text-sans', source, animated('.92', '.62', 'clip'))}
-    <div class="source-approvals">
+    ${scene.text.length > 3 ? `<div class="source-approvals">
       ${contentNode(scene.text[3], 'approval-chip text-sans', null, animated('1.25', '.34', 'scale'))}
-      ${contentNode(scene.text[4], 'approval-chip text-sans', null, animated('2.25', '.34', 'scale'))}
-    </div>
+      ${scene.text.length > 4 ? contentNode(scene.text[4], 'approval-chip text-sans', null, animated('2.25', '.34', 'scale')) : ''}
+    </div>` : ''}
   </section>`;
 }
 
@@ -73,8 +73,13 @@ function sceneFive(scene) {
 }
 
 function sceneSix(scene) {
-  const finalLoop = splitPipeline(scene.text[3], 'loop-stage', 'loop-arrow', .05, .11);
-  const approvalLabels = scene.text[4].split(' / ').map((label) => `<span>${escapeHtml(label)}</span>`).join('');
+  // The schema allows one to five lines per scene, so the closing frame renders its
+  // full loop and approval chips only when the reel actually declares them.
+  const hasFinalLoop = scene.text.length > 4;
+  const finalLoop = hasFinalLoop ? splitPipeline(scene.text[3], 'loop-stage', 'loop-arrow', .05, .11) : '';
+  const approvalLabels = hasFinalLoop
+    ? scene.text[4].split(' / ').map((label) => `<span>${escapeHtml(label)}</span>`).join('')
+    : '';
   return `<section class="reel-scene scene-loop" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
     ${grid()}
     <div data-loop-intro>
@@ -84,10 +89,10 @@ function sceneSix(scene) {
     <div data-loop-cta-phase>
       ${contentNode(scene.text[2], 'loop-cta text-sans')}
     </div>
-    <div class="loop-final" data-final-loop>
+    ${hasFinalLoop ? `<div class="loop-final" data-final-loop>
       ${contentNode(scene.text[3], 'loop-full text-sans', finalLoop)}
       ${contentNode(scene.text[4], 'loop-approvals text-sans', approvalLabels)}
-    </div>
+    </div>` : ''}
   </section>`;
 }
 
