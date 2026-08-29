@@ -372,3 +372,26 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
 .cover-ok-2 { left: 692px; top: 86px; }
 .cover-ok-3 { left: 692px; top: 302px; }
 .cover-ok-4 { left: 86px; top: 302px; }
+
+/* Ink cover: no portrait, so the frame is one ink field with the headline as the only
+   focus and the pipeline it describes set below it in brand blue. Everything sits
+   inside the safe zone (x 120–900, y 180–1620) so nothing is cropped in feed. */
+.reel-cover-ink { background: var(--ink); color: var(--paper); }
+.reel-cover-ink .reel-grid i { background: rgba(244, 241, 233, .17); }
+.reel-cover-ink .reel-cover-title {
+  left: 120px;
+  top: 470px;
+  width: 760px;
+  font-size: 132px;
+  letter-spacing: -.058em;
+  color: var(--paper);
+}
+.reel-cover-ink .reel-cover-pipeline {
+  left: 120px;
+  top: 1090px;
+  width: 700px;
+  padding: 30px 34px;
+  font-size: 34px;
+  color: var(--paper);
+  background: var(--blue);
+}

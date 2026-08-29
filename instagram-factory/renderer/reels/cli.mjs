@@ -9,7 +9,7 @@ import sharp from 'sharp';
 import ffmpegPath from 'ffmpeg-static';
 import ffprobeStatic from 'ffprobe-static';
 import { renderReelCoverHtml, renderReelHtml } from '../reel-families/index.mjs';
-import { runReelBrowserQa, runReelCoverBrowserQa } from '../lib/reel-browser-qa.mjs';
+import { runReelBrowserQa, runReelCoverBrowserQa, sceneSampleTimes } from '../lib/reel-browser-qa.mjs';
 import { assertFile, listJsonFiles, sha256File } from '../lib/files.mjs';
 import { createPostValidator } from '../lib/validate.mjs';
 
@@ -106,7 +106,8 @@ async function createInstrumentalAudio(targetPath, { durationSeconds, sampleRate
     [116.54, 174.61, 233.08], [98, 146.83, 220], [110, 164.81, 246.94]
   ];
   const boundaries = [0, ...scenes.map((scene) => scene.end)];
-  const approvalAccents = [9.25, 10.25, 15.65, 19.35];
+  // One accent per scene, on the beat where that scene's closing line lands.
+  const approvalAccents = scenes.slice(1).map((scene) => scene.start + (scene.end - scene.start) * .75);
   let noiseState = 0x5a17c9;
   const noise = () => {
     noiseState = (noiseState * 1664525 + 1013904223) >>> 0;
@@ -179,8 +180,9 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   await fs.mkdir(outputDirectory, { recursive: true });
   await fs.mkdir(renderDirectory, { recursive: true });
   const contentSourcePath = path.join(factoryRoot, reel.contentSource.path);
-  const photoAssetPath = path.join(factoryRoot, reel.photoAsset.path);
-  await assertFile(photoAssetPath, 'Approved Reel closing photo');
+  // A reel may close on an approved portrait or on type alone. Only pin one when declared.
+  const photoAssetPath = reel.photoAsset ? path.join(factoryRoot, reel.photoAsset.path) : null;
+  if (photoAssetPath) await assertFile(photoAssetPath, 'Approved Reel closing photo');
   const markdownBefore = await fs.readFile(contentSourcePath, 'utf8');
   const approvedCopy = extractApprovedCopy(markdownBefore);
   const contentShaBefore = await sha256File(contentSourcePath);
@@ -189,7 +191,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   const coverCopyExact = JSON.stringify(reel.cover.text) === JSON.stringify(approvedCopy.cover);
   const captionSourceExact = captionBefore === approvedCopy.caption.join('\n\n');
   const fontUrls = Object.fromEntries(Object.entries(fontPaths).map(([key, value]) => [key, pathToFileURL(value).href]));
-  const photoAssetUrl = pathToFileURL(photoAssetPath).href;
+  const photoAssetUrl = photoAssetPath ? pathToFileURL(photoAssetPath).href : null;
 
   const html = renderReelHtml({ reel, stylesheet, fontUrls, photoAssetUrl });
   const coverHtml = renderReelCoverHtml({ reel, stylesheet, fontUrls });
@@ -210,7 +212,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'load' });
   await page.evaluate(async () => { await document.fonts.ready; });
-  const browserQa = await runReelBrowserQa(page, { reel, expectedAssetUrl: photoAssetUrl });
+  const browserQa = await runReelBrowserQa(page, { reel, photoAssetUrl });
   if (!everyTrue(browserQa.checks)) {
     throw new Error(`Reel browser QA failed: ${Object.entries(browserQa.checks).filter(([, value]) => !value).map(([key]) => key).join(', ')}\n${JSON.stringify(browserQa.details, null, 2)}`);
   }
@@ -226,7 +228,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   ], { stdio: ['pipe', 'ignore', 'pipe'] });
   let ffmpegError = '';
   ffmpeg.stderr.on('data', (chunk) => { ffmpegError += chunk; });
-  const sampleTimes = [3.1, 7.2, 11.8, 16.2, 20.4, 24.35];
+  const sampleTimes = sceneSampleTimes(reel);
   const sampleFrames = new Map(sampleTimes.map((time) => [Math.round(time * reel.canvas.fps), time]));
   const storyboardFrames = [];
   const frameHashes = [];
@@ -260,13 +262,15 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   const audioStream = probe.streams.find((stream) => stream.codec_type === 'audio');
   const duration = Number(probe.format.duration);
   const contentShaAfter = await sha256File(contentSourcePath);
-  const photoAssetMetadata = await sharp(photoAssetPath).metadata();
+  const photoAssetMetadata = photoAssetPath ? await sharp(photoAssetPath).metadata() : null;
   const checks = {
     structuredReelValid: true,
     approvedForRender: reel.status === 'approved-for-render',
     publishDisabled: reel.publish === false,
     sceneCountExact: reel.scenes.length === 6,
-    timelineExact: reel.scenes[0].start === 0 && reel.scenes.at(-1).end === 25 && reel.scenes.every((scene, index) => index === 0 || scene.start === reel.scenes[index - 1].end),
+    timelineExact: reel.scenes[0].start === 0
+      && reel.scenes.at(-1).end === reel.canvas.durationSeconds
+      && reel.scenes.every((scene, index) => index === 0 || scene.start === reel.scenes[index - 1].end),
     contentSourceChecksumExact: contentShaBefore === reel.contentSource.sha256,
     contentSourceUnchanged: contentShaBefore === contentShaAfter,
     sourceCopyExact,
@@ -277,7 +281,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
     coverBrowserQaPassed: everyTrue(coverBrowserQa.checks),
     mp4DimensionsExact: videoStream?.width === 1080 && videoStream?.height === 1920,
     frameRateExact: videoStream?.avg_frame_rate === '30/1',
-    durationWithinBrief: duration >= 20 && duration <= 25.05,
+    durationWithinBrief: duration >= reel.canvas.durationSeconds - 1 && duration <= reel.canvas.durationSeconds + .05,
     audioStreamPresent: audioStream?.codec_type === 'audio' && Number(audioStream.channels) === 2,
     musicOnlyConfiguration: reel.audio.mode === 'temporary-instrumental-guide'
       && reel.audio.voiceOver === false
@@ -285,10 +289,12 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
       && reel.audio.bpm >= 100
       && reel.audio.bpm <= 120,
     motionFramesDistinct: new Set(frameHashes).size === sampleTimes.length,
-    approvedPhotoChecksumExact: await sha256File(photoAssetPath) === reel.photoAsset.sha256,
-    approvedPhotoDimensionsExact: photoAssetMetadata.width === reel.photoAsset.width && photoAssetMetadata.height === reel.photoAsset.height,
     storyboardCreated: storyboardDimensions.width === 930 && storyboardDimensions.height === 1050,
-    coverDimensionsExact: (await sharp(coverPath).metadata()).width === 1080 && (await sharp(coverPath).metadata()).height === 1920
+    coverDimensionsExact: (await sharp(coverPath).metadata()).width === 1080 && (await sharp(coverPath).metadata()).height === 1920,
+    photoAssetChecksumExact: photoAssetPath ? await sha256File(photoAssetPath) === reel.photoAsset.sha256 : true,
+    photoAssetDimensionsExact: photoAssetPath
+      ? photoAssetMetadata.width === reel.photoAsset.width && photoAssetMetadata.height === reel.photoAsset.height
+      : true
   };
   const report = {
     pipelineVersion: 1,

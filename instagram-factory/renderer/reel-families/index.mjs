@@ -19,7 +19,7 @@ export function renderReelHtml({ reel, stylesheet, fontUrls, photoAssetUrl }) {
     <div class="system-axis" data-color aria-hidden="true"></div>
     ${renderScenes(reel, { photoAssetUrl })}
   </main>
-  <script>${timelineScript()}</script>
+  <script>${timelineScript(reel)}</script>
 </body>
 </html>`;
 }

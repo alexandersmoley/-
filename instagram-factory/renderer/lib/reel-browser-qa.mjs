@@ -3,8 +3,14 @@ const normalizeText = (value) => String(value)
   .replace(/\s+/gu, ' ')
   .trim();
 
-export async function runReelBrowserQa(page, { reel, expectedAssetUrl }) {
-  return page.evaluate(async ({ expectedScenes, safeZone, expectedAsset }) => {
+// Every scene gets one sample, taken three quarters of the way in, when its motion has
+// settled. Fixed timestamps belonged to one 25 s timeline and missed scenes in any other.
+export function sceneSampleTimes(reel) {
+  return reel.scenes.map((scene) => Number((scene.start + (scene.end - scene.start) * .75).toFixed(2)));
+}
+
+export async function runReelBrowserQa(page, { reel, photoAssetUrl }) {
+  return page.evaluate(async ({ expectedScenes, safeZone, sampleTimes, expectedAsset }) => {
     const normalize = (value) => String(value).replaceAll('\u00a0', ' ').replace(/\s+/gu, ' ').trim();
     const allowedFamilies = ['Inter Production', 'Cormorant Garamond Production'];
     const allowedColors = new Set([
@@ -42,14 +48,17 @@ export async function runReelBrowserQa(page, { reel, expectedAssetUrl }) {
       const style = getComputedStyle(node);
       return style.boxShadow !== 'none' || style.filter !== 'none' || style.backgroundImage !== 'none';
     }).map((node) => node.className || node.tagName);
+    // A reel may close on an approved portrait or on type alone. Either way the only
+    // image allowed in the whole timeline is the one the reel declares.
     const images = [...document.querySelectorAll('img')];
-    const approvedImages = images.filter((image) => image.dataset.approvedAsset === expectedAsset.id);
-    const approvedPhotoExact = images.length === 1
-      && approvedImages.length === 1
-      && approvedImages[0].closest('[data-scene-id]')?.dataset.sceneId === 'scene-06'
-      && approvedImages[0].src === expectedAsset.url
-      && approvedImages[0].naturalWidth === expectedAsset.width
-      && approvedImages[0].naturalHeight === expectedAsset.height;
+    const approvedPhotoExact = expectedAsset === null
+      ? images.length === 0
+      : images.length === 1
+        && images[0].dataset.approvedAsset === expectedAsset.id
+        && images[0].closest('[data-scene-id]')?.dataset.sceneId === 'scene-06'
+        && images[0].src === expectedAsset.url
+        && images[0].naturalWidth === expectedAsset.width
+        && images[0].naturalHeight === expectedAsset.height;
     const safeRect = {
       left: safeZone.left,
       top: safeZone.top,
@@ -57,15 +66,21 @@ export async function runReelBrowserQa(page, { reel, expectedAssetUrl }) {
       bottom: 1920 - safeZone.bottom
     };
     const safeZoneFailures = [];
-    const sampleTimes = [3.1, 7.2, 11.8, 16.2, 20.4, 24.35];
+    // A frame that renders nothing passes every other gate, so each sample also has to
+    // show at least one line of copy. The blank closing frame got through without this.
+    const blankFrames = [];
     for (const time of sampleTimes) {
       window.renderAt(time);
       await new Promise((resolve) => requestAnimationFrame(() => resolve()));
       const scene = scenes.find((item) => getComputedStyle(item).visibility === 'visible' && Number.parseFloat(item.style.opacity) > .5);
       if (!scene) {
         safeZoneFailures.push({ time, reason: 'no-visible-scene' });
+        blankFrames.push({ time, reason: 'no-visible-scene' });
         continue;
       }
+      const readable = [...scene.querySelectorAll('[data-content]')]
+        .filter((node) => Number.parseFloat(getComputedStyle(node).opacity) >= .5);
+      if (readable.length === 0) blankFrames.push({ time, scene: scene.dataset.sceneId, reason: 'no-visible-copy' });
       for (const node of scene.querySelectorAll('[data-content]')) {
         const style = getComputedStyle(node);
         if (Number.parseFloat(style.opacity) < .5) continue;
@@ -98,6 +113,7 @@ export async function runReelBrowserQa(page, { reel, expectedAssetUrl }) {
         mobileReadable: type.filter(({ className }) => String(className).includes('reel-copy')).every(({ size }) => size >= 32),
         lineHeightByRoleExact,
         safeZoneExact: safeZoneFailures.length === 0,
+        everySampledFrameCarriesCopy: blankFrames.length === 0,
         approvedColorsOnly: unapprovedColors.length === 0,
         approvedPhotographyOnly: approvedPhotoExact,
         noGeneratedMedia: document.querySelectorAll('picture, video, canvas, svg').length === 0,
@@ -105,17 +121,15 @@ export async function runReelBrowserQa(page, { reel, expectedAssetUrl }) {
         noUnauthorizedEffects: effectFailures.length === 0,
         renderFunctionAvailable: typeof window.renderAt === 'function'
       },
-      details: { sourceText, safeRect, safeZoneFailures, type, unapprovedColors, effectFailures, sampleTimes, imageCount: images.length, approvedPhotoExact }
+      details: { sourceText, safeRect, safeZoneFailures, blankFrames, type, unapprovedColors, effectFailures, sampleTimes, imageCount: images.length, approvedPhotoExact }
     };
   }, {
     expectedScenes: reel.scenes.map((scene) => ({ id: scene.id, text: scene.text.map(normalizeText) })),
     safeZone: reel.safeZone,
-    expectedAsset: {
-      id: reel.photoAsset.id,
-      url: expectedAssetUrl,
-      width: reel.photoAsset.width,
-      height: reel.photoAsset.height
-    }
+    sampleTimes: sceneSampleTimes(reel),
+    expectedAsset: reel.photoAsset
+      ? { id: reel.photoAsset.id, url: photoAssetUrl, width: reel.photoAsset.width, height: reel.photoAsset.height }
+      : null
   });
 }
 

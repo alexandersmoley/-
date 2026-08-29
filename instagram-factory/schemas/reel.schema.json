@@ -17,106 +17,237 @@
     "captionSha256",
     "designTokens",
     "audio",
-    "photoAsset",
     "layoutFamily",
     "scenes",
     "cover",
     "caption"
   ],
   "properties": {
-    "$schema": { "type": "string" },
-    "schemaVersion": { "const": 1 },
-    "id": { "const": "chatgpt-not-a-content-factory-reel" },
-    "platform": { "const": "instagram" },
-    "format": { "const": "reels" },
-    "status": { "enum": ["draft", "approved-for-render", "rendered"] },
-    "publish": { "const": false },
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+-reel$"
+    },
+    "platform": {
+      "const": "instagram"
+    },
+    "format": {
+      "const": "reels"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "approved-for-render",
+        "rendered"
+      ]
+    },
+    "publish": {
+      "const": false
+    },
     "canvas": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["width", "height", "fps", "durationSeconds"],
+      "required": [
+        "width",
+        "height",
+        "fps",
+        "durationSeconds"
+      ],
       "properties": {
-        "width": { "const": 1080 },
-        "height": { "const": 1920 },
-        "fps": { "const": 30 },
-        "durationSeconds": { "const": 25 }
+        "width": {
+          "const": 1080
+        },
+        "height": {
+          "const": 1920
+        },
+        "fps": {
+          "const": 30
+        },
+        "durationSeconds": {
+          "type": "integer",
+          "enum": [
+            25,
+            30
+          ]
+        }
       }
     },
     "safeZone": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["top", "right", "bottom", "left"],
+      "required": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ],
       "properties": {
-        "top": { "const": 180 },
-        "right": { "const": 180 },
-        "bottom": { "const": 300 },
-        "left": { "const": 120 }
+        "top": {
+          "const": 180
+        },
+        "right": {
+          "const": 180
+        },
+        "bottom": {
+          "const": 300
+        },
+        "left": {
+          "const": 120
+        }
       }
     },
     "contentSource": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["path", "sha256"],
+      "required": [
+        "path",
+        "sha256"
+      ],
       "properties": {
-        "path": { "const": "content/chatgpt-not-a-content-factory-reel.md" },
-        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        "path": {
+          "type": "string",
+          "pattern": "^content/[a-z0-9-]+-reel\\.md$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
       }
     },
-    "captionSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "captionSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
     "designTokens": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["ink", "paper", "blue", "grid"],
+      "required": [
+        "ink",
+        "paper",
+        "blue",
+        "grid"
+      ],
       "properties": {
-        "ink": { "const": "#101010" },
-        "paper": { "const": "#f4f1e9" },
-        "blue": { "const": "#1546e8" },
-        "grid": { "const": "rgba(21, 70, 232, 0.105)" }
+        "ink": {
+          "const": "#101010"
+        },
+        "paper": {
+          "const": "#f4f1e9"
+        },
+        "blue": {
+          "const": "#1546e8"
+        },
+        "grid": {
+          "const": "rgba(21, 70, 232, 0.105)"
+        }
       }
     },
     "audio": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["mode", "voiceOver", "talkingHead", "sampleRate", "bpm"],
+      "required": [
+        "mode",
+        "voiceOver",
+        "talkingHead",
+        "sampleRate",
+        "bpm"
+      ],
       "properties": {
-        "mode": { "const": "temporary-instrumental-guide" },
-        "voiceOver": { "const": false },
-        "talkingHead": { "const": false },
-        "sampleRate": { "const": 48000 },
-        "bpm": { "type": "integer", "minimum": 100, "maximum": 120 }
+        "mode": {
+          "const": "temporary-instrumental-guide"
+        },
+        "voiceOver": {
+          "const": false
+        },
+        "talkingHead": {
+          "const": false
+        },
+        "sampleRate": {
+          "const": 48000
+        },
+        "bpm": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 120
+        }
       }
     },
     "photoAsset": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "path", "sha256", "width", "height", "usage"],
+      "required": [
+        "id",
+        "path",
+        "sha256",
+        "width",
+        "height",
+        "usage"
+      ],
       "properties": {
-        "id": { "const": "MAHTX_B6J9k" },
-        "path": { "const": "assets/photos/alexsmoley-photo-chair.jpg" },
-        "sha256": { "const": "266a019b6d3758edc8d22216ad1a0b5acb6e1a57ae64f7c42475de3a17a187b8" },
-        "width": { "const": 1440 },
-        "height": { "const": 1920 },
-        "usage": { "const": "scene-06 closing only; full source frame; no generative redraw" }
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^assets/photos/.+$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "usage": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
-    "layoutFamily": { "const": "motion-editorial-system" },
+    "layoutFamily": {
+      "const": "motion-editorial-system"
+    },
     "scenes": {
       "type": "array",
       "minItems": 6,
       "maxItems": 6,
-      "items": { "$ref": "#/$defs/scene" }
+      "items": {
+        "$ref": "#/$defs/scene"
+      }
     },
     "cover": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["layoutFamily", "text"],
+      "required": [
+        "layoutFamily",
+        "text"
+      ],
       "properties": {
-        "layoutFamily": { "const": "reel-cover-editorial" },
+        "layoutFamily": {
+          "enum": [
+            "reel-cover-editorial",
+            "reel-cover-ink"
+          ]
+        },
         "text": {
           "type": "array",
           "minItems": 2,
           "maxItems": 2,
-          "items": { "type": "string", "minLength": 1 }
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     },
@@ -124,19 +255,43 @@
       "type": "array",
       "minItems": 0,
       "maxItems": 12,
-      "items": { "type": "string", "minLength": 1 }
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     }
   },
   "$defs": {
     "scene": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "start", "end", "goal", "layoutFamily", "text"],
+      "required": [
+        "id",
+        "start",
+        "end",
+        "goal",
+        "layoutFamily",
+        "text"
+      ],
       "properties": {
-        "id": { "type": "string", "pattern": "^scene-0[1-6]$" },
-        "start": { "type": "number", "minimum": 0, "maximum": 25 },
-        "end": { "type": "number", "exclusiveMinimum": 0, "maximum": 25 },
-        "goal": { "type": "string", "minLength": 1 },
+        "id": {
+          "type": "string",
+          "pattern": "^scene-0[1-6]$"
+        },
+        "start": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 30
+        },
+        "end": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 30
+        },
+        "goal": {
+          "type": "string",
+          "minLength": 1
+        },
         "layoutFamily": {
           "enum": [
             "reel-kinetic-statement",
@@ -151,7 +306,10 @@
           "type": "array",
           "minItems": 1,
           "maxItems": 5,
-          "items": { "type": "string", "minLength": 1 }
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     }
