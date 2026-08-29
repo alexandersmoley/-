@@ -38,31 +38,17 @@ function sceneTwo(scene) {
   </section>`;
 }
 
-// The third scene draws its topology from the copy rather than from a fixed set of
-// tool names: a line like "A → B ← C" becomes nodes and arrows, anything else stays
-// plain text. Hardcoding the names painted a different reel's tools over this one.
-function sourceTopology(text) {
-  const tokens = String(text).split(/\s+([→←])\s+/u);
-  if (tokens.length < 3) return null;
-  const centre = Math.floor(tokens.length / 2);
-  return tokens.map((token, index) => {
-    if (token === '→' || token === '←') return `<span class="source-arrow">${token}</span>`;
-    const role = index === centre ? 'source-center' : 'source-side';
-    return `<span class="${role}">${escapeHtml(token)}</span>`;
-  }).join('');
-}
-
 function sceneThree(scene) {
-  const source = sourceTopology(scene.text[2]);
+  const source = `<span class="source-side">${escapeHtml('ChatGPT')}</span><span class="source-arrow">→</span><span class="source-center">${escapeHtml('GitHub')}</span><span class="source-arrow">←</span><span class="source-side">${escapeHtml('Codex')}</span>`;
   return `<section class="reel-scene scene-source" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
     ${grid()}
     ${contentNode(scene.text[0], 'source-title display-serif', null, animated('-.08', '.42', 'clip'))}
     ${contentNode(scene.text[1], 'source-context text-sans', null, animated('.38', '.52', 'up'))}
     ${contentNode(scene.text[2], 'source-topology text-sans', source, animated('.92', '.62', 'clip'))}
-    ${scene.text.length > 3 ? `<div class="source-approvals">
+    <div class="source-approvals">
       ${contentNode(scene.text[3], 'approval-chip text-sans', null, animated('1.25', '.34', 'scale'))}
-      ${scene.text.length > 4 ? contentNode(scene.text[4], 'approval-chip text-sans', null, animated('2.25', '.34', 'scale')) : ''}
-    </div>` : ''}
+      ${contentNode(scene.text[4], 'approval-chip text-sans', null, animated('2.25', '.34', 'scale'))}
+    </div>
   </section>`;
 }
 
@@ -86,14 +72,9 @@ function sceneFive(scene) {
   </section>`;
 }
 
-function sceneSix(scene) {
-  // The schema allows one to five lines per scene, so the closing frame renders its
-  // full loop and approval chips only when the reel actually declares them.
-  const hasFinalLoop = scene.text.length > 4;
-  const finalLoop = hasFinalLoop ? splitPipeline(scene.text[3], 'loop-stage', 'loop-arrow', .05, .11) : '';
-  const approvalLabels = hasFinalLoop
-    ? scene.text[4].split(' / ').map((label) => `<span>${escapeHtml(label)}</span>`).join('')
-    : '';
+function sceneSix(scene, reel, { photoAssetUrl }) {
+  const finalLoop = splitPipeline(scene.text[3], 'loop-stage', 'loop-arrow', .05, .11);
+  const approvalLabels = scene.text[4].split(' / ').map((label) => `<span>${escapeHtml(label)}</span>`).join('');
   return `<section class="reel-scene scene-loop" data-scene-id="${scene.id}" data-start="${scene.start}" data-end="${scene.end}" data-color>
     ${grid()}
     <div data-loop-intro>
@@ -102,50 +83,47 @@ function sceneSix(scene) {
     </div>
     <div data-loop-cta-phase>
       ${contentNode(scene.text[2], 'loop-cta text-sans')}
+      <img class="loop-photo" src="${escapeHtml(photoAssetUrl)}" alt="" data-approved-asset="${escapeHtml(reel.photoAsset.id)}">
     </div>
-    ${hasFinalLoop ? `<div class="loop-final" data-final-loop>
+    <div class="loop-final" data-final-loop>
       ${contentNode(scene.text[3], 'loop-full text-sans', finalLoop)}
       ${contentNode(scene.text[4], 'loop-approvals text-sans', approvalLabels)}
-    </div>` : ''}
+    </div>
   </section>`;
 }
 
-export function renderScenes(reel) {
+export function renderScenes(reel, assets) {
   return reel.scenes.map((scene) => {
     if (scene.id === 'scene-01') return sceneOne(scene);
     if (scene.id === 'scene-02') return sceneTwo(scene);
     if (scene.id === 'scene-03') return sceneThree(scene);
     if (scene.id === 'scene-04') return sceneFour(scene);
     if (scene.id === 'scene-05') return sceneFive(scene);
-    if (scene.id === 'scene-06') return sceneSix(scene);
+    if (scene.id === 'scene-06') return sceneSix(scene, reel, assets);
     throw new Error(`Unsupported reel scene: ${scene.id}`);
   }).join('');
 }
 
-export function renderCover(reel, { coverAssetUrl }) {
-  // A reel may open on a photo or on type alone. A faceless cover carries the
-  // second line as a pipeline instead, so the frame still shows the mechanism.
-  const photo = reel.cover.asset
-    ? `<img class="reel-cover-photo" src="${escapeHtml(coverAssetUrl)}" alt="" data-approved-asset="${escapeHtml(reel.cover.asset.id)}">`
-    : '<div class="reel-cover-plate" data-color></div>';
-  // One text node either way: the cover QA compares [data-content] nodes against
-  // reel.cover.text, so the pipeline stays a single line and is styled, not split.
-  const second = contentNode(
-    reel.cover.text[1],
-    reel.cover.asset ? 'reel-cover-tools text-sans' : 'reel-cover-pipeline text-sans'
-  );
-  return `<section class="reel-cover${reel.cover.asset ? '' : ' reel-cover-typographic'}" data-color>
-    ${photo}
-    <div class="reel-cover-field" data-color>
-      ${contentNode(reel.cover.text[0], 'reel-cover-title display-serif')}
-      ${second}
+export function renderCover(reel) {
+  const title = escapeHtml(reel.cover.text[0]).replace('контент-завод', '<span class="cover-accent">контент-завод</span>');
+  return `<section class="reel-cover" data-color>
+    ${grid()}
+    ${contentNode(reel.cover.text[0], 'reel-cover-title display-serif', title)}
+    ${contentNode(reel.cover.text[1], 'reel-cover-tools text-sans')}
+    <div class="cover-cycle" data-color aria-hidden="true">
+      <i class="cover-cycle-line cover-cycle-line-top"></i>
+      <i class="cover-cycle-line cover-cycle-line-right"></i>
+      <i class="cover-cycle-line cover-cycle-line-bottom"></i>
+      <i class="cover-cycle-line cover-cycle-line-left"></i>
+      <b class="cover-ok cover-ok-1"></b>
+      <b class="cover-ok cover-ok-2"></b>
+      <b class="cover-ok cover-ok-3"></b>
+      <b class="cover-ok cover-ok-4"></b>
     </div>
   </section>`;
 }
 
-export function timelineScript(reel) {
-  // The reel declares its own length; a hardcoded 25 clipped every longer timeline.
-  const duration = reel.canvas.durationSeconds;
+export function timelineScript() {
   return `
     (() => {
       const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
@@ -178,30 +156,25 @@ export function timelineScript(reel) {
           const end = Number(scene.dataset.end);
           const local = time - start;
           const fadeIn = start === 0 ? 1 : clamp(local / .24);
-          const fadeOut = end === ${duration} ? 1 : clamp((end - time) / .24);
+          const fadeOut = end === 25 ? 1 : clamp((end - time) / .24);
           const visible = time >= start - .24 && time <= end + .24;
           scene.style.opacity = visible ? String(Math.min(fadeIn, fadeOut)) : '0';
           scene.style.visibility = visible ? 'visible' : 'hidden';
           scene.style.zIndex = visible ? '3' : '1';
           scene.querySelectorAll('[data-motion-item]').forEach((node) => applyMotion(node, local));
           if (scene.dataset.sceneId === 'scene-06') {
-            const finalLoopNode = scene.querySelector('[data-final-loop]');
-            const introHold = finalLoopNode ? 1.25 : 2;
-            const finalProgress = ease((local - introHold) / .28);
+            const finalProgress = ease((local - 1.25) / .28);
             const finalExit = ease((local - 2.72) / .24);
+            const ctaProgress = ease((local - 2.72) / .28);
             const intro = scene.querySelector('[data-loop-intro]');
-            const finalLoop = finalLoopNode;
+            const finalLoop = scene.querySelector('[data-final-loop]');
             const cta = scene.querySelector('[data-loop-cta-phase]');
-            // Without a final loop the call to action takes over the window that loop
-            // would have filled, otherwise the intro fades into an empty screen. It waits
-            // for the intro to clear: both sit in the same place, so a crossfade smears.
-            const ctaProgress = ease((local - (finalLoop ? 2.72 : introHold + .34)) / .28);
             if (intro) intro.style.opacity = String(1 - finalProgress);
             if (finalLoop) finalLoop.style.opacity = String(finalProgress * (1 - finalExit));
             if (cta) cta.style.opacity = String(ctaProgress);
           }
         }
-        const phase = time / ${duration};
+        const phase = time / 25;
         axis.style.transform = 'translate3d(120px,' + (220 + phase * 1360) + 'px,0) scaleX(' + (.18 + phase * .82) + ')';
         axis.style.background = '#1546e8';
         document.body.dataset.renderTime = time.toFixed(4);

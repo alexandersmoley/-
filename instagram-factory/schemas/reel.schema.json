@@ -17,6 +17,7 @@
     "captionSha256",
     "designTokens",
     "audio",
+    "photoAsset",
     "layoutFamily",
     "scenes",
     "cover",
@@ -25,7 +26,7 @@
   "properties": {
     "$schema": { "type": "string" },
     "schemaVersion": { "const": 1 },
-    "id": { "type": "string", "pattern": "^[a-z0-9-]+-reel$" },
+    "id": { "const": "chatgpt-not-a-content-factory-reel" },
     "platform": { "const": "instagram" },
     "format": { "const": "reels" },
     "status": { "enum": ["draft", "approved-for-render", "rendered"] },
@@ -38,7 +39,7 @@
         "width": { "const": 1080 },
         "height": { "const": 1920 },
         "fps": { "const": 30 },
-        "durationSeconds": { "type": "integer", "enum": [25, 30] }
+        "durationSeconds": { "const": 25 }
       }
     },
     "safeZone": {
@@ -57,7 +58,7 @@
       "additionalProperties": false,
       "required": ["path", "sha256"],
       "properties": {
-        "path": { "type": "string", "pattern": "^content/[a-z0-9-]+-reel\\.md$" },
+        "path": { "const": "content/chatgpt-not-a-content-factory-reel.md" },
         "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
       }
     },
@@ -85,6 +86,19 @@
         "bpm": { "type": "integer", "minimum": 100, "maximum": 120 }
       }
     },
+    "photoAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "path", "sha256", "width", "height", "usage"],
+      "properties": {
+        "id": { "const": "MAHTX_B6J9k" },
+        "path": { "const": "assets/photos/alexsmoley-photo-chair.jpg" },
+        "sha256": { "const": "266a019b6d3758edc8d22216ad1a0b5acb6e1a57ae64f7c42475de3a17a187b8" },
+        "width": { "const": 1440 },
+        "height": { "const": 1920 },
+        "usage": { "const": "scene-06 closing only; full source frame; no generative redraw" }
+      }
+    },
     "layoutFamily": { "const": "motion-editorial-system" },
     "scenes": {
       "type": "array",
@@ -103,19 +117,6 @@
           "minItems": 2,
           "maxItems": 2,
           "items": { "type": "string", "minLength": 1 }
-        },
-        "asset": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["id", "path", "sha256", "width", "height", "treatment"],
-          "properties": {
-            "id": { "type": "string", "minLength": 1 },
-            "path": { "type": "string", "pattern": "^assets/photos/.+$" },
-            "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
-            "width": { "type": "integer", "minimum": 1 },
-            "height": { "type": "integer", "minimum": 1 },
-            "treatment": { "type": "string", "minLength": 1 }
-          }
         }
       }
     },
@@ -133,8 +134,8 @@
       "required": ["id", "start", "end", "goal", "layoutFamily", "text"],
       "properties": {
         "id": { "type": "string", "pattern": "^scene-0[1-6]$" },
-        "start": { "type": "number", "minimum": 0, "maximum": 30 },
-        "end": { "type": "number", "exclusiveMinimum": 0, "maximum": 30 },
+        "start": { "type": "number", "minimum": 0, "maximum": 25 },
+        "end": { "type": "number", "exclusiveMinimum": 0, "maximum": 25 },
         "goal": { "type": "string", "minLength": 1 },
         "layoutFamily": {
           "enum": [

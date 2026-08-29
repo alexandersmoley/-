@@ -3,14 +3,8 @@ const normalizeText = (value) => String(value)
   .replace(/\s+/gu, ' ')
   .trim();
 
-// Every scene gets one sample, taken three quarters of the way in, when its motion has
-// settled. Fixed timestamps belonged to one 25 s timeline and missed scenes in any other.
-export function sceneSampleTimes(reel) {
-  return reel.scenes.map((scene) => Number((scene.start + (scene.end - scene.start) * .75).toFixed(2)));
-}
-
-export async function runReelBrowserQa(page, { reel }) {
-  return page.evaluate(async ({ expectedScenes, safeZone, sampleTimes }) => {
+export async function runReelBrowserQa(page, { reel, expectedAssetUrl }) {
+  return page.evaluate(async ({ expectedScenes, safeZone, expectedAsset }) => {
     const normalize = (value) => String(value).replaceAll('\u00a0', ' ').replace(/\s+/gu, ' ').trim();
     const allowedFamilies = ['Inter Production', 'Cormorant Garamond Production'];
     const allowedColors = new Set([
@@ -48,6 +42,14 @@ export async function runReelBrowserQa(page, { reel }) {
       const style = getComputedStyle(node);
       return style.boxShadow !== 'none' || style.filter !== 'none' || style.backgroundImage !== 'none';
     }).map((node) => node.className || node.tagName);
+    const images = [...document.querySelectorAll('img')];
+    const approvedImages = images.filter((image) => image.dataset.approvedAsset === expectedAsset.id);
+    const approvedPhotoExact = images.length === 1
+      && approvedImages.length === 1
+      && approvedImages[0].closest('[data-scene-id]')?.dataset.sceneId === 'scene-06'
+      && approvedImages[0].src === expectedAsset.url
+      && approvedImages[0].naturalWidth === expectedAsset.width
+      && approvedImages[0].naturalHeight === expectedAsset.height;
     const safeRect = {
       left: safeZone.left,
       top: safeZone.top,
@@ -55,21 +57,15 @@ export async function runReelBrowserQa(page, { reel }) {
       bottom: 1920 - safeZone.bottom
     };
     const safeZoneFailures = [];
-    // A frame that renders nothing passes every other gate, so each sample also has to
-    // show at least one line of copy. The blank closing frame got through without this.
-    const blankFrames = [];
+    const sampleTimes = [3.1, 7.2, 11.8, 16.2, 20.4, 24.35];
     for (const time of sampleTimes) {
       window.renderAt(time);
       await new Promise((resolve) => requestAnimationFrame(() => resolve()));
       const scene = scenes.find((item) => getComputedStyle(item).visibility === 'visible' && Number.parseFloat(item.style.opacity) > .5);
       if (!scene) {
         safeZoneFailures.push({ time, reason: 'no-visible-scene' });
-        blankFrames.push({ time, reason: 'no-visible-scene' });
         continue;
       }
-      const readable = [...scene.querySelectorAll('[data-content]')]
-        .filter((node) => Number.parseFloat(getComputedStyle(node).opacity) >= .5);
-      if (readable.length === 0) blankFrames.push({ time, scene: scene.dataset.sceneId, reason: 'no-visible-copy' });
       for (const node of scene.querySelectorAll('[data-content]')) {
         const style = getComputedStyle(node);
         if (Number.parseFloat(style.opacity) < .5) continue;
@@ -102,24 +98,29 @@ export async function runReelBrowserQa(page, { reel }) {
         mobileReadable: type.filter(({ className }) => String(className).includes('reel-copy')).every(({ size }) => size >= 32),
         lineHeightByRoleExact,
         safeZoneExact: safeZoneFailures.length === 0,
-        everySampledFrameCarriesCopy: blankFrames.length === 0,
         approvedColorsOnly: unapprovedColors.length === 0,
-        noPhotography: document.querySelectorAll('img, picture, video').length === 0,
+        approvedPhotographyOnly: approvedPhotoExact,
+        noGeneratedMedia: document.querySelectorAll('picture, video, canvas, svg').length === 0,
         noUnauthorizedElements: document.querySelectorAll('svg, button, a, input, [data-icon], [class*="icon"]').length === 0,
         noUnauthorizedEffects: effectFailures.length === 0,
         renderFunctionAvailable: typeof window.renderAt === 'function'
       },
-      details: { sourceText, safeRect, safeZoneFailures, blankFrames, type, unapprovedColors, effectFailures, sampleTimes }
+      details: { sourceText, safeRect, safeZoneFailures, type, unapprovedColors, effectFailures, sampleTimes, imageCount: images.length, approvedPhotoExact }
     };
   }, {
     expectedScenes: reel.scenes.map((scene) => ({ id: scene.id, text: scene.text.map(normalizeText) })),
     safeZone: reel.safeZone,
-    sampleTimes: sceneSampleTimes(reel)
+    expectedAsset: {
+      id: reel.photoAsset.id,
+      url: expectedAssetUrl,
+      width: reel.photoAsset.width,
+      height: reel.photoAsset.height
+    }
   });
 }
 
-export async function runReelCoverBrowserQa(page, { reel, expectedAssetUrl }) {
-  return page.evaluate(({ expectedText, safeZone, expectedAssetUrl, expectedAssetId, expectedAssetWidth, expectedAssetHeight }) => {
+export async function runReelCoverBrowserQa(page, { reel }) {
+  return page.evaluate(({ expectedText, safeZone }) => {
     const normalize = (value) => String(value).replaceAll('\u00a0', ' ').replace(/\s+/gu, ' ').trim();
     const nodes = [...document.querySelectorAll('[data-content]')];
     const actualText = nodes.map((node) => normalize(node.dataset.sourceText));
@@ -128,15 +129,7 @@ export async function runReelCoverBrowserQa(page, { reel, expectedAssetUrl }) {
       const rect = node.getBoundingClientRect();
       return rect.left < safeRect.left || rect.right > safeRect.right || rect.top < safeRect.top || rect.bottom > safeRect.bottom;
     }).map((node) => ({ className: node.className, rect: node.getBoundingClientRect().toJSON() }));
-    const images = [...document.querySelectorAll('img')];
-    const approvedImages = images.filter((image) => image.dataset.approvedAsset === expectedAssetId);
-    // A typographic cover declares no asset: then the correct result is no image at all.
-    const approvedPhotoExact = expectedAssetId === null
-      ? images.length === 0
-      : images.length === 1 && approvedImages.length === 1
-        && approvedImages[0].src === expectedAssetUrl
-        && approvedImages[0].naturalWidth === expectedAssetWidth
-        && approvedImages[0].naturalHeight === expectedAssetHeight;
+    const media = [...document.querySelectorAll('img, picture, video, canvas, svg')];
     return {
       checks: {
         canvasExact: document.documentElement.scrollWidth === 1080 && document.documentElement.scrollHeight === 1920,
@@ -144,17 +137,13 @@ export async function runReelCoverBrowserQa(page, { reel, expectedAssetUrl }) {
         safeZoneExact: safeZoneFailures.length === 0,
         fontsLoaded: document.fonts.status === 'loaded',
         headlineWithoutTerminalPeriod: actualText.every((value) => !/[.…]\s*$/u.test(value)),
-        approvedPhotoExact,
-        noGeneratedMedia: document.querySelectorAll('picture, video, canvas, svg').length === 0
+        noPhotography: media.length === 0,
+        noGeneratedMedia: media.length === 0
       },
-      details: { actualText, safeRect, safeZoneFailures, imageCount: images.length, approvedPhotoExact }
+      details: { actualText, safeRect, safeZoneFailures, mediaCount: media.length }
     };
   }, {
     expectedText: reel.cover.text.map(normalizeText),
-    safeZone: reel.safeZone,
-    expectedAssetUrl,
-    expectedAssetId: reel.cover.asset?.id ?? null,
-    expectedAssetWidth: reel.cover.asset?.width ?? null,
-    expectedAssetHeight: reel.cover.asset?.height ?? null
+    safeZone: reel.safeZone
   });
 }

@@ -261,7 +261,8 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
 .publish-arrow { padding: 0 4px; }
 
 /* 06 — analytics closes the loop */
-.scene-loop { color: var(--ink); background: var(--paper); }
+.scene-loop { color: var(--paper); background: var(--blue); }
+.scene-loop .reel-grid i { background: rgba(244, 241, 233, .17); }
 [data-loop-intro], .loop-final, [data-loop-cta-phase] { position: absolute; inset: 0; z-index: 4; }
 .loop-title { left: 120px; top: 220px; width: 780px; font-size: 96px; letter-spacing: -.052em; }
 .loop-short {
@@ -275,10 +276,20 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
   font-size: 40px;
   letter-spacing: -.032em;
 }
-.loop-short .pipeline-node { padding: 22px 18px; border-top: 2px solid var(--blue); }
-.loop-short .pipeline-arrow { color: var(--blue); }
+.loop-short .pipeline-node { padding: 22px 18px; border-top: 2px solid var(--paper); }
+.loop-short .pipeline-arrow { color: var(--paper); }
 [data-loop-cta-phase] { opacity: 0; }
-.loop-cta { left: 120px; top: 680px; width: 780px; font-size: 52px; letter-spacing: -.036em; }
+.loop-cta { left: 120px; top: 220px; width: 780px; font-size: 54px; letter-spacing: -.036em; }
+.loop-photo {
+  position: absolute;
+  left: 120px;
+  top: 540px;
+  width: 780px;
+  height: 1040px;
+  object-fit: contain;
+  object-position: 50% 50%;
+  border: 2px solid var(--paper);
+}
 .loop-final { opacity: 0; }
 .loop-full {
   left: 120px;
@@ -292,8 +303,8 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
   font-size: 32px;
   letter-spacing: -.022em;
 }
-.loop-stage { padding: 14px 12px; border: 1px solid var(--blue); white-space: nowrap; }
-.loop-arrow { color: var(--blue); font-size: 25px; }
+.loop-stage { padding: 14px 12px; border: 1px solid var(--paper); white-space: nowrap; }
+.loop-arrow { color: var(--paper); font-size: 25px; }
 .loop-approvals {
   left: 120px;
   top: 1080px;
@@ -304,73 +315,60 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
   font-size: 32px;
   letter-spacing: -.024em;
 }
-.loop-approvals span { padding: 20px 22px; color: var(--paper); background: var(--blue); }
+.loop-approvals span { padding: 20px 22px; color: var(--blue); background: var(--paper); }
 
-/* photo-led cover */
-.reel-cover { color: var(--paper); background: var(--ink); }
-.reel-cover-photo {
-  position: absolute;
-  inset: 0;
-  width: 1080px;
-  height: 1920px;
-  object-fit: cover;
-  object-position: 50% 50%;
+/* type-led cover */
+.reel-cover { color: var(--ink); background: var(--paper); }
+.reel-cover-title {
+  left: 120px;
+  top: 268px;
+  width: 780px;
+  font-size: 154px;
+  letter-spacing: -.062em;
 }
-.reel-cover-field {
+.cover-accent {
+  color: var(--blue);
+  font-style: italic;
+}
+.reel-cover-tools {
+  left: 120px;
+  top: 905px;
+  width: 780px;
+  padding-top: 28px;
+  border-top: 2px solid var(--blue);
+  font-size: 44px;
+  letter-spacing: -.032em;
+}
+.cover-cycle {
   position: absolute;
   z-index: 3;
   left: 120px;
-  top: 1050px;
+  top: 1180px;
   width: 780px;
-  min-height: 540px;
-  padding: 62px 62px 58px;
-  color: var(--paper);
-  background: var(--blue);
+  height: 390px;
+  border: 2px solid var(--blue);
 }
-.reel-cover-title {
-  position: relative;
-  width: 656px;
-  font-size: 112px;
-  letter-spacing: -.056em;
-}
-.reel-cover-tools {
-  position: relative;
-  width: 656px;
-  margin-top: 58px;
-  padding-top: 26px;
-  border-top: 2px solid var(--paper);
-  font-size: 42px;
-  letter-spacing: -.032em;
-}
-
-/* Faceless cover: no portrait, so the frame is one ink field with the headline as the
-   only focus and the pipeline it describes set below it in brand blue. Everything sits
-   inside the safe zone (x 120–900, y 180–1620) so nothing is cropped in feed. */
-.reel-cover-typographic { background: var(--ink); color: var(--paper); }
-.reel-cover-plate { display: none; }
-.reel-cover-typographic .reel-cover-field {
+.cover-cycle-line {
   position: absolute;
-  left: 120px;
-  top: 470px;
-  width: 780px;
-  min-height: 0;
-  padding: 0;
-  background: none;
-}
-.reel-cover-typographic .reel-cover-title {
-  position: relative;
-  width: 760px;
-  font-size: 132px;
-  letter-spacing: -.058em;
-  color: var(--paper);
-}
-.reel-cover-pipeline {
-  position: relative;
-  width: 700px;
-  margin-top: 92px;
-  padding: 30px 34px;
-  font-size: 34px;
-  line-height: 1.3;
-  color: var(--paper);
+  display: block;
   background: var(--blue);
 }
+.cover-cycle-line-top,
+.cover-cycle-line-bottom { left: 86px; width: 608px; height: 2px; }
+.cover-cycle-line-left,
+.cover-cycle-line-right { top: 86px; width: 2px; height: 218px; }
+.cover-cycle-line-top { top: 86px; }
+.cover-cycle-line-bottom { top: 302px; }
+.cover-cycle-line-left { left: 86px; }
+.cover-cycle-line-right { left: 692px; }
+.cover-ok {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  margin: -16px 0 0 -16px;
+  background: var(--blue);
+}
+.cover-ok-1 { left: 86px; top: 86px; }
+.cover-ok-2 { left: 692px; top: 86px; }
+.cover-ok-3 { left: 692px; top: 302px; }
+.cover-ok-4 { left: 86px; top: 302px; }

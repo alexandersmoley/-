@@ -20,7 +20,7 @@
   },
   "contentSource": {
     "path": "content/chatgpt-not-a-content-factory-reel.md",
-    "sha256": "123ecefa021fa87ba20b0ad4c7afa1a8cd43e237fec51ec5317105dd4e0ae2eb"
+    "sha256": "5a532b52c6210c9e73090f09c2c8a12abbe3e3e5e2351a74ff53d5e6e0c6e43b"
   },
   "captionSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "designTokens": {
@@ -35,6 +35,14 @@
     "talkingHead": false,
     "sampleRate": 48000,
     "bpm": 110
+  },
+  "photoAsset": {
+    "id": "MAHTX_B6J9k",
+    "path": "assets/photos/alexsmoley-photo-chair.jpg",
+    "sha256": "266a019b6d3758edc8d22216ad1a0b5acb6e1a57ae64f7c42475de3a17a187b8",
+    "width": 1440,
+    "height": 1920,
+    "usage": "scene-06 closing only; full source frame; no generative redraw"
   },
   "layoutFamily": "motion-editorial-system",
   "scenes": [
@@ -120,15 +128,7 @@
     "text": [
       "Как я собираю контент-завод",
       "ChatGPT + Codex"
-    ],
-    "asset": {
-      "id": "MAHTX_B6J9k",
-      "path": "assets/photos/alexsmoley-photo-chair.jpg",
-      "sha256": "266a019b6d3758edc8d22216ad1a0b5acb6e1a57ae64f7c42475de3a17a187b8",
-      "width": 1440,
-      "height": 1920,
-      "treatment": "large close portrait crop; original photo only; no generative redraw"
-    }
+    ]
   },
   "caption": []
 }
