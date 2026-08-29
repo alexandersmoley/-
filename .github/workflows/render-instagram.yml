@@ -5,6 +5,9 @@ on:
   push:
     paths:
       - "instagram-factory/assets/**"
+      # The inbox is a staging area handled by media-inbox.yml, which pushes to the same
+      # branch. Reacting to it too made both workflows race and this one lose the push.
+      - "!instagram-factory/assets/inbox/**"
       - "instagram-factory/content/**"
       - "instagram-factory/posts/**"
       - "instagram-factory/stories/**"
