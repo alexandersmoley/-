@@ -7,9 +7,11 @@ copy_approval: approved
 render: true
 publish: false
 publish_requires_approval: true
-status_note: перевыкладывается с исправленным обращением в закрывающем кадре
-previous_publication: https://www.instagram.com/reel/DcqZXNGFIEW/
+published_at: 2026-08-30T16:34:00+05:00
 published_via: metricool
+metricool_post_id: 368427866
+instagram_url: https://www.instagram.com/reel/DcqanvdjRq5/
+superseded_publication: https://www.instagram.com/reel/DcqZXNGFIEW/
 instagram_audio: "Midnight Dreamer — Giulio Cercato (audioId 534836465627737)"
 writing_contract: ../writing-contract.md
 canvas:
@@ -176,11 +178,14 @@ Motion:
 
 Первая версия опубликована 30 августа 2026 в 16:23 по Екатеринбургу через Metricool: https://www.instagram.com/reel/DcqZXNGFIEW/
 
-Заменяется: в закрывающем кадре «Подписывайтесь» исправлено на «Подписывайся» — обращение к одному человеку, а не к залу. Старый пост удаляется вручную, через API Metricool опубликованный рил не снимается.
+Действующая версия опубликована в 16:34: https://www.instagram.com/reel/DcqanvdjRq5/ — в закрывающем кадре «Подписывайтесь» исправлено на «Подписывайся», обращение к одному человеку, а не к залу.
 
-- Видео и обложка ушли по публичным ссылкам с GitHub Pages; обложка передана отдельным параметром `videoThumbnailUrl`, а не взята кадром из видео.
-- Музыка — `Midnight Dreamer`, Giulio Cercato, из каталога Instagram. Громкость видео выставлена в ноль, чтобы сгенерированный рендером инструментал не накладывался на трек.
+Первый пост остаётся в профиле до ручного удаления: через API Metricool опубликованный рил не снимается.
+
+- Обложка в обеих публикациях передана отдельным параметром `videoThumbnailUrl`, а не взята кадром из видео.
+- Музыка — `Midnight Dreamer`, Giulio Cercato, из каталога Instagram, id 534836465627737. Громкость видео выставлена в ноль, чтобы сгенерированный рендером инструментал не накладывался на трек.
 - Запрошенную автором `Vertebra` Janus Rasmussen подставить не удалось: по названию каталог отдаёт только чужие original_sound, по исполнителю совпадений нет. Вероятная причина — урезанная музыкальная библиотека бизнес-аккаунтов.
+
 
 # Acceptance criteria
 
