@@ -16,7 +16,9 @@ export const applyNonBreakingSpaces = (value) => {
   } while (result !== previous);
   return result
     .replace(/ (?=[—–])/gu, '\u00a0')
-    .replace(/\bGitHub Pages\b/gu, 'GitHub\u00a0Pages')
+    // Two-word product names never break across lines: "Drive" alone on a line reads as
+    // a different word than the product.
+    .replace(/\b(GitHub Pages|Google Drive|Claude Code)\b/gu, (name) => name.replace(' ', '\u00a0'))
     .replace(/\b(публичный) (URL|PNG)\b/giu, '$1\u00a0$2');
 };
 
