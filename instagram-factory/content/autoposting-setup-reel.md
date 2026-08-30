@@ -7,9 +7,9 @@ copy_approval: approved
 render: true
 publish: false
 publish_requires_approval: true
-published_at: 2026-08-30T16:23:00+05:00
+status_note: перевыкладывается с исправленным обращением в закрывающем кадре
+previous_publication: https://www.instagram.com/reel/DcqZXNGFIEW/
 published_via: metricool
-metricool_post_id: 368425926
 instagram_audio: "Midnight Dreamer — Giulio Cercato (audioId 534836465627737)"
 writing_contract: ../writing-contract.md
 canvas:
@@ -126,7 +126,7 @@ Motion:
 
 Текст:
 - "Мой закреп вышел именно так"
-- "Подписывайтесь — я строю контент-завод"
+- "Подписывайся — я строю контент-завод"
 
 Motion:
 - Первая строка появляется сверху, призыв раскрывается под ней и остаётся до конца.
@@ -174,7 +174,9 @@ Motion:
 
 # Публикация
 
-Опубликовано 30 августа 2026 в 16:23 по Екатеринбургу через Metricool, автопубликация.
+Первая версия опубликована 30 августа 2026 в 16:23 по Екатеринбургу через Metricool: https://www.instagram.com/reel/DcqZXNGFIEW/
+
+Заменяется: в закрывающем кадре «Подписывайтесь» исправлено на «Подписывайся» — обращение к одному человеку, а не к залу. Старый пост удаляется вручную, через API Metricool опубликованный рил не снимается.
 
 - Видео и обложка ушли по публичным ссылкам с GitHub Pages; обложка передана отдельным параметром `videoThumbnailUrl`, а не взята кадром из видео.
 - Музыка — `Midnight Dreamer`, Giulio Cercato, из каталога Instagram. Громкость видео выставлена в ноль, чтобы сгенерированный рендером инструментал не накладывался на трек.

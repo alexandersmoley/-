@@ -20,7 +20,7 @@
   },
   "contentSource": {
     "path": "content/autoposting-setup-reel.md",
-    "sha256": "60d06e64bd6f6a6fa265e8d65998559723c60f5ac51824d4bedd2cb239c04f92"
+    "sha256": "4f05b5021a6a37262559c767d74031b7ee66b12e42e7db1155a72cc1984e19f8"
   },
   "captionSha256": "01a7f2bb5878b20c033be74337ea0fb469c61ac15d2290f9f32e0183ca616629",
   "designTokens": {
@@ -119,7 +119,7 @@
       "layoutFamily": "instruction-cta",
       "text": [
         "Мой закреп вышел именно так",
-        "Подписывайтесь — я строю контент-завод"
+        "Подписывайся — я строю контент-завод"
       ],
       "accent": "я строю контент-завод"
     }
