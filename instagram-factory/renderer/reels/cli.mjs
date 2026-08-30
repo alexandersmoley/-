@@ -236,6 +236,9 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   ffmpeg.stderr.on('data', (chunk) => { ffmpegError += chunk; });
   const sampleTimes = sceneSampleTimes(reel);
   const sampleFrames = new Map(sampleTimes.map((time) => [Math.round(time * reel.canvas.fps), time]));
+  // The frame on each scene boundary, kept full size: a transition defect lives here and
+  // nowhere else, and it cannot be seen in a storyboard tile.
+  const boundaryFrames = new Map(reel.scenes.slice(1).map((scene, index) => [Math.round(scene.start * reel.canvas.fps), index + 1]));
   const storyboardFrames = [];
   const frameHashes = [];
   const totalFrames = reel.canvas.durationSeconds * reel.canvas.fps;
@@ -249,6 +252,9 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
       // The storyboard tiles are 270px wide. Typography defects do not survive that
       // reduction, so each sampled frame is also kept at full size for review.
       await fs.writeFile(path.join(outputDirectory, `frame-${String(storyboardFrames.length).padStart(2, '0')}.png`), png);
+    }
+    if (boundaryFrames.has(frame)) {
+      await fs.writeFile(path.join(outputDirectory, `boundary-${String(boundaryFrames.get(frame)).padStart(2, '0')}.png`), png);
     }
     if (!ffmpeg.stdin.write(png)) await once(ffmpeg.stdin, 'drain');
     if ((frame + 1) % 150 === 0) console.log(`Rendered reel frames: ${frame + 1}/${totalFrames}`);
