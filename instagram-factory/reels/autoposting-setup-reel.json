@@ -20,9 +20,9 @@
   },
   "contentSource": {
     "path": "content/autoposting-setup-reel.md",
-    "sha256": "017695b43b3fe48047710126aaedefdc5c57b43562b6ffa4f868af2878a35135"
+    "sha256": "6fa08a400f83b6983dc608888340df344f9456131b6945c79c750766ef72dcdc"
   },
-  "captionSha256": "fb25f769e00d7936839d60b8f4933fc6a7909d8960393cf8b2a06edbb1cc6dac",
+  "captionSha256": "d110aa5c6b275809b68b321276d63c3fbed37ba1fed5c49d1f715344d53c3fcd",
   "designTokens": {
     "ink": "#101010",
     "paper": "#f4f1e9",
@@ -36,6 +36,14 @@
     "sampleRate": 48000,
     "bpm": 110
   },
+  "photoAsset": {
+    "id": "MAHTX_B6J9k",
+    "path": "assets/photos/alexsmoley-photo-chair.jpg",
+    "sha256": "266a019b6d3758edc8d22216ad1a0b5acb6e1a57ae64f7c42475de3a17a187b8",
+    "width": 1440,
+    "height": 1920,
+    "usage": "scene-06 closing only; approved author portrait; no generative redraw"
+  },
   "layoutFamily": "instruction-cards",
   "scenes": [
     {
@@ -45,7 +53,7 @@
       "goal": "the promise: three connections and one sentence",
       "layoutFamily": "instruction-hook",
       "text": [
-        "Чтобы выложить пост, я не открываю инстаграм",
+        "Чтобы выложить пост, я не открываю Instagram",
         "Всё делается в чате Claude Code: три шага и одна фраза",
         "Дальше — что подключить и в каком порядке"
       ]
@@ -59,7 +67,7 @@
       "text": [
         "1",
         "Заведи аккаунты в четырёх сервисах",
-        "Metricool, Todoist, GitHub, Google Drive. Инстаграм привяжи к Metricool: нужен бизнес- или креатор-аккаунт"
+        "Metricool, Todoist, GitHub, Google Drive. Instagram привяжи к Metricool: нужен бизнес- или креатор-аккаунт"
       ]
     },
     {
@@ -94,7 +102,7 @@
       "layoutFamily": "instruction-phrase",
       "text": [
         "Дальше пишешь одну фразу",
-        "Собери карусель по брифу и опубликуй в инстаграм",
+        "Собери карусель по брифу и опубликуй в Instagram",
         "Claude Code собирает, проверяет и публикует"
       ]
     },
@@ -113,16 +121,16 @@
   "cover": {
     "layoutFamily": "instruction-cover",
     "text": [
-      "Как выложить пост, не открывая инстаграм",
+      "Как выложить пост, не открывая Instagram",
       "Всё делается в чате Claude Code: три шага и одна фраза"
     ]
   },
   "caption": [
-    "Показываю, как настроить автопостинг в инстаграм. Всё делается в чате Claude Code, программировать не нужно.",
-    "Шаг 1. Заводишь аккаунты в четырёх сервисах: Metricool, Todoist, GitHub и Google Drive. Инстаграм привязываешь к Metricool — через него Claude Code и будет публиковать. Аккаунт нужен бизнес или креатор: с личного автопубликация не работает, это ограничение самого инстаграма.",
+    "Показываю, как настроить автопостинг в Instagram. Всё делается в чате Claude Code, программировать не нужно.",
+    "Шаг 1. Заводишь аккаунты в четырёх сервисах: Metricool, Todoist, GitHub и Google Drive. Instagram привязываешь к Metricool — через него Claude Code и будет публиковать. Аккаунт нужен бизнес или креатор: с личного автопубликация не работает, это ограничение самого Instagram.",
     "Шаг 2. В настройках Claude Code подключаешь их как коннекторы: Metricool публикует, Todoist держит план тем, GitHub хранит материалы, Google Drive — фотографии. Это делается в интерфейсе, кода не нужно.",
     "Шаг 3. Просишь Claude Code положить материалы в GitHub: утверждённый текст поста и правила тона. Фото можно оставить в Google Drive, он заберёт их оттуда. Дальше Claude Code берёт текст из репозитория, а не выдумывает заново.",
-    "Дальше пишешь одну фразу: «Собери карусель по брифу и опубликуй в инстаграм». Claude Code собирает, проверяет и публикует.",
+    "Дальше пишешь одну фразу: «Собери карусель по брифу и опубликуй в Instagram». Claude Code собирает, проверяет и публикует.",
     "Мой закреп вышел именно так. Здесь я строю контент-завод и показываю, что в нём ломается по дороге."
   ]
 }

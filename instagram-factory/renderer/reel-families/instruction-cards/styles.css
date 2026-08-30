@@ -128,6 +128,20 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
 .card-cta .reel-grid i { background: rgba(244, 241, 233, .17); }
 .cta-note { left: 120px; top: 560px; width: 780px; font-size: 44px; letter-spacing: -.03em; }
 .cta-title { left: 120px; top: 700px; width: 780px; font-size: 116px; letter-spacing: -.055em; }
+/* With a portrait the text moves up and the photograph takes the lower half, sitting in
+   the blue field rather than bleeding to the edges. 3:4, so the source is not distorted. */
+.card-cta-photo .cta-note { top: 300px; }
+.card-cta-photo .cta-title { top: 400px; }
+.cta-photo {
+  position: absolute;
+  z-index: 4;
+  left: 120px;
+  top: 760px;
+  width: 600px;
+  height: 800px;
+  object-fit: cover;
+  object-position: 50% 35%;
+}
 
 /* Cover — type-led on paper, so it does not repeat the other reel's ink cover. */
 .card-cover { background: var(--paper); color: var(--ink); }

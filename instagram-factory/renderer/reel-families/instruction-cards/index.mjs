@@ -39,19 +39,25 @@ function phraseScene(scene) {
     ${scene.text.length > 2 ? contentNode(scene.text[2], 'phrase-note text-sans', null, animated('2.2', '.45', 'up')) : ''}`);
 }
 
-function ctaScene(scene) {
-  return sceneShell(scene, 'card-cta', `
+// The closing frame may end on the author's face. The portrait is optional: a reel
+// without one closes on type alone and the frame stays balanced either way.
+function ctaScene(scene, reel, { photoAssetUrl }) {
+  const photo = reel.photoAsset
+    ? `<img class="cta-photo" src="${escapeHtml(photoAssetUrl)}" alt="" data-approved-asset="${escapeHtml(reel.photoAsset.id)}" data-motion-item data-at=".9" data-duration=".6" data-from="up">`
+    : '';
+  return sceneShell(scene, `card-cta${reel.photoAsset ? ' card-cta-photo' : ''}`, `
     ${contentNode(scene.text[0], 'cta-note text-sans', null, animated('-.1', '.4', 'up'))}
-    ${contentNode(scene.text[1], 'cta-title display-serif', null, animated('.5', '.55', 'clip'))}`);
+    ${contentNode(scene.text[1], 'cta-title display-serif', null, animated('.5', '.55', 'clip'))}
+    ${photo}`);
 }
 
-export function renderScenes(reel) {
+export function renderScenes(reel, assets = {}) {
   let stepIndex = 0;
   return reel.scenes.map((scene) => {
     if (scene.layoutFamily === 'instruction-hook') return hookScene(scene);
     if (scene.layoutFamily === 'instruction-step') return stepScene(scene, stepIndex++);
     if (scene.layoutFamily === 'instruction-phrase') return phraseScene(scene);
-    if (scene.layoutFamily === 'instruction-cta') return ctaScene(scene);
+    if (scene.layoutFamily === 'instruction-cta') return ctaScene(scene, reel, assets);
     throw new Error(`Unsupported instruction-cards scene role: ${scene.layoutFamily}`);
   }).join('');
 }
