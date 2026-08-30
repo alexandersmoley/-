@@ -20,7 +20,7 @@
   },
   "contentSource": {
     "path": "content/autoposting-setup-reel.md",
-    "sha256": "6fa08a400f83b6983dc608888340df344f9456131b6945c79c750766ef72dcdc"
+    "sha256": "524700998dc74459e3fec971f09e95df535e5ff7715320f312ff34a9951adb53"
   },
   "captionSha256": "d110aa5c6b275809b68b321276d63c3fbed37ba1fed5c49d1f715344d53c3fcd",
   "designTokens": {
@@ -37,12 +37,12 @@
     "bpm": 110
   },
   "photoAsset": {
-    "id": "MAHTX_B6J9k",
-    "path": "assets/photos/alexsmoley-photo-chair.jpg",
-    "sha256": "266a019b6d3758edc8d22216ad1a0b5acb6e1a57ae64f7c42475de3a17a187b8",
-    "width": 1440,
-    "height": 1920,
-    "usage": "scene-06 closing only; approved author portrait; no generative redraw"
+    "id": "alexsmoley-portrait-blue",
+    "path": "assets/photos/alexsmoley-portrait-blue.jpg",
+    "sha256": "d4eaac9c873d81e5bdf023a5fcf6cf659d7b5e2baf8759761e5843d9e6bd537a",
+    "width": 640,
+    "height": 640,
+    "usage": "scene-06 closing only; author portrait supplied on a blue field; no generative redraw"
   },
   "layoutFamily": "instruction-cards",
   "scenes": [
