@@ -89,16 +89,22 @@ for (const host of HOSTS) {
 // 405 Method Not Allowed, which proves it exists without creating anything; 404 proves it does
 // not. This is how the create path is found without writing to the author's account.
 const CANDIDATE_PATHS = [
-  '/entry/create', '/entry', '/entry/draft', '/entry/drafts',
-  '/uploader/upload', '/subsite/me', '/user/me'
+  '/entry/create', '/entry/new', '/entry/draft', '/entry/drafts', '/entry',
+  '/entries', '/writing/create', '/writing',
+  '/uploader/upload', '/subsite/me', '/subsite/subscriptions'
 ];
-const liveBase = report.reachability.find((row) => row.answers && row.status !== 404)?.url
-  ?.replace(/\/subsite\/me$/u, '');
-if (liveBase) {
-  report.probedBase = liveBase;
+// Both live prefixes are probed: an endpoint retired from one may still exist on the other,
+// and guessing wrong would report "no such endpoint" for something that is simply elsewhere.
+const liveBases = [...new Set(report.reachability
+  .filter((row) => row.answers && row.status !== 404)
+  .map((row) => row.url.replace(/\/subsite\/me$/u, ''))
+  .filter((base) => base.includes('api.vc.ru')))];
+report.probedBases = liveBases;
+for (const base of liveBases) {
   for (const candidate of CANDIDATE_PATHS) {
-    const result = await attempt(`${liveBase}${candidate}`, { headers: authHeaders });
+    const result = await attempt(`${base}${candidate}`, { headers: authHeaders });
     report.entryEndpoints.push({
+      base,
       path: candidate,
       status: result.status,
       // 405 says the path is real and expects another verb — usually POST.
@@ -131,7 +137,10 @@ if (answering.length === 0 && intercepted.length > 0) {
 } else if (TOKEN && !report.authenticated) {
   report.conclusion = 'The API answers but the token was refused. Check that VC_RU_TOKEN is a current X-Device-Token for the author account.';
 } else if (TOKEN && report.authenticated) {
-  report.conclusion = 'The API answers and the token works. Next step: confirm the entry-creating endpoint and its draft flag before writing the draft step.';
+  const real = report.entryEndpoints.filter((row) => row.exists.startsWith('yes'));
+  report.conclusion = real.length > 0
+    ? `The token works and these endpoints exist: ${real.map((row) => row.path).join(', ')}. The draft step can be written against them.`
+    : 'The token works, but none of the probed entry paths exist. Entry creation is not in this API version, so the draft has to go through the local browser route instead.';
 } else {
   report.conclusion = 'The API answers. Add VC_RU_TOKEN as a repository secret and run again to confirm the token path.';
 }
