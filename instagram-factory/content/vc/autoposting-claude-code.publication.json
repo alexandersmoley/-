@@ -14,14 +14,14 @@
   "telegram": "https://t.me/a_smoley",
   "legalNote": "Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ. С 1 сентября 2025 года размещение рекламы на ресурсах с ограниченным доступом в России запрещено. В статье речь идёт о редакционном контенте, а не о рекламе.",
   "cover": {
-    "status": "todo",
+    "status": "rendered",
     "aspectRatio": "16:9",
     "recommendedSize": "1920x1080",
     "text": true,
     "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Подписи обязательны: схема должна читаться без подписи под картинкой. Текст — только тот, что объявлен в copy этого визуала; рендерер ничего не придумывает. Шрифты те же, что в остальном производстве: Cormorant Garamond для заголовка фигуры, Inter для подписей. Без псевдоинтерфейсов, AI-иконок, роботов, логотипов сервисов, декоративного шума. Молочный фон, чёрный, фирменный синий; синим отмечены точки, где решение принимает человек. Рендерить средствами проекта, не генератором картинок.",
     "path": "output/vc/autoposting-claude-code-vc/cover.png",
     "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/cover.png",
-    "sha256": "df12ff7e60f87be50ab578df572eb95247da18b3e09e1ad9b9617f4406764e5c",
+    "sha256": "823b6f040700c3bf83a8aa2ec5bcedf4f4612e7ef05367eab0b63aef53cd9f68",
     "renderedSize": "1920x1080",
     "copy": {
       "title": "Один материал проходит пять стадий",
@@ -38,12 +38,12 @@
   "illustrations": [
     {
       "id": "workflow",
-      "status": "todo",
+      "status": "rendered",
       "text": true,
       "brief": "Абстрактная редакционная схема без подписей: один материал проходит последовательные стадии от идеи к готовому выпуску. Показывать процесс сеткой, линиями и блоками, а не буквальными иконками сервисов. Синий использовать для человеческих точек согласования.",
       "path": "output/vc/autoposting-claude-code-vc/workflow.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/workflow.png",
-      "sha256": "9741a627cf5e05bb4a346a56b3dde50d12fc1af8d464c2e911175c61d16e264a",
+      "sha256": "4f848a2d4792969588efebb97b32a78b2220b777b98bcfc3cb33638badea70e7",
       "renderedSize": "1920x1080",
       "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Подписи обязательны: схема должна читаться без подписи под картинкой. Текст — только тот, что объявлен в copy этого визуала; рендерер ничего не придумывает. Шрифты те же, что в остальном производстве: Cormorant Garamond для заголовка фигуры, Inter для подписей. Без псевдоинтерфейсов, AI-иконок, роботов, логотипов сервисов, декоративного шума. Молочный фон, чёрный, фирменный синий; синим отмечены точки, где решение принимает человек. Рендерить средствами проекта, не генератором картинок.",
       "copy": {
@@ -105,12 +105,12 @@
     },
     {
       "id": "chatgpt-github-codex",
-      "status": "todo",
+      "status": "rendered",
       "text": true,
       "brief": "Три смысловых узла: редакционная работа, зафиксированный контекст, производство. Центральный узел — хранилище утверждённых решений. Без логотипов и текста. Визуально показать передачу материала между двумя рабочими зонами через центральный архив.",
       "path": "output/vc/autoposting-claude-code-vc/chatgpt-github-codex.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/chatgpt-github-codex.png",
-      "sha256": "da93cad8b72bf4ab97b8ab8d73199b534fe4a600f8b0a99ee32fc9f112d19d4c",
+      "sha256": "699873415d756f9b282ce9193a8266056c1095915242a01a116ed040014fce12",
       "renderedSize": "1920x1080",
       "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Подписи обязательны: схема должна читаться без подписи под картинкой. Текст — только тот, что объявлен в copy этого визуала; рендерер ничего не придумывает. Шрифты те же, что в остальном производстве: Cormorant Garamond для заголовка фигуры, Inter для подписей. Без псевдоинтерфейсов, AI-иконок, роботов, логотипов сервисов, декоративного шума. Молочный фон, чёрный, фирменный синий; синим отмечены точки, где решение принимает человек. Рендерить средствами проекта, не генератором картинок.",
       "copy": {
@@ -144,12 +144,12 @@
     },
     {
       "id": "multichannel",
-      "status": "todo",
+      "status": "rendered",
       "text": true,
       "brief": "Один утверждённый материал расходится в несколько самостоятельных форматов. Не рисовать соцсети и логотипы. Показать один исходный блок, который превращается в карточки, длинный материал, вертикальный формат и короткий пост.",
       "path": "output/vc/autoposting-claude-code-vc/multichannel.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/multichannel.png",
-      "sha256": "d02dd80f472d38fcdbe1ced850ad2a4d8a47910768b545338a22e590048c1735",
+      "sha256": "cabffc0151d93cdd6409e322783600aba959753bb43c42bf4f96391090a61966",
       "renderedSize": "1920x1080",
       "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Подписи обязательны: схема должна читаться без подписи под картинкой. Текст — только тот, что объявлен в copy этого визуала; рендерер ничего не придумывает. Шрифты те же, что в остальном производстве: Cormorant Garamond для заголовка фигуры, Inter для подписей. Без псевдоинтерфейсов, AI-иконок, роботов, логотипов сервисов, декоративного шума. Молочный фон, чёрный, фирменный синий; синим отмечены точки, где решение принимает человек. Рендерить средствами проекта, не генератором картинок.",
       "copy": {
@@ -184,7 +184,7 @@
     "vc-draft",
     "publish"
   ],
-  "nextAction": "re-render the four visuals with the declared labels, show them to the author, and only after his OK create the vc.ru draft. Publishing stays off while publish is false.",
+  "nextAction": "author reviews the four labelled visuals; only after his OK create the vc.ru draft. Publishing stays off while publish is false.",
   "visualsQa": "output/vc/autoposting-claude-code-vc/qa-summary.json",
   "visualsApprovedByAuthor": false
 }
