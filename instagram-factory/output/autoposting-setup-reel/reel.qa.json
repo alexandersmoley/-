@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "autoposting-setup-reel",
   "source": "reels/autoposting-setup-reel.json",
-  "generatedAt": "2026-08-30T07:09:14.012Z",
+  "generatedAt": "2026-08-30T07:24:26.552Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -32,14 +32,14 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/autoposting-setup-reel.md",
-    "contentSha256": "524700998dc74459e3fec971f09e95df535e5ff7715320f312ff34a9951adb53",
-    "captionSha256": "d110aa5c6b275809b68b321276d63c3fbed37ba1fed5c49d1f715344d53c3fcd"
+    "contentSha256": "fd83a7aa6e218f133821f520c8504d8a7ff1fba36cda3a4ea16bae26ad431350",
+    "captionSha256": "efad31dbe3bf837403be77778afb54ca8d1d2922b0bdc7b75ea6e504da0a6dc8"
   },
   "media": {
     "preview": {
       "path": "output/autoposting-setup-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/preview.mp4",
-      "sha256": "af0639ee6ce86f9ca76caea7d538f05d8b3b327f1286433f648e02835c24cd7a",
+      "sha256": "3e2004ffc5c0847038a249df57346a78881981a8fba9f7d8e6754d9f2b209247",
       "duration": 36,
       "fps": "30/1"
     },
@@ -53,7 +53,7 @@
     "storyboard": {
       "path": "output/autoposting-setup-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/storyboard.png",
-      "sha256": "4d77f582ab3365ae1f673c5cb968727ff4f59da4b5514c6bf3cab3aee3987cea",
+      "sha256": "b747d70b66286567284c267828c535238bf1c16e63b30e2c4cd9ad93865a380f",
       "width": 930,
       "height": 1050
     },
@@ -114,8 +114,8 @@
           "id": "scene-04",
           "text": [
             "3",
-            "Попроси Claude Code положить материалы в GitHub",
-            "Утверждённый текст поста и правила тона. Фото Claude Code заберёт из Google Drive"
+            "Обсуди тему — Claude Code соберёт бриф и положит в GitHub",
+            "Бриф — файл с темой, фактами и утверждённым текстом поста. Туда же правила тона, фото — из Google Drive"
           ]
         },
         {
