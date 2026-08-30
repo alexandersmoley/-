@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "autoposting-setup-reel",
   "source": "reels/autoposting-setup-reel.json",
-  "generatedAt": "2026-08-30T11:01:06.302Z",
+  "generatedAt": "2026-08-30T11:24:59.459Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -33,14 +33,14 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/autoposting-setup-reel.md",
-    "contentSha256": "b32254159d39621aeba112fb5e7b67ae70a4d910332c69ca1cd5ebd85aaf9a70",
+    "contentSha256": "60d06e64bd6f6a6fa265e8d65998559723c60f5ac51824d4bedd2cb239c04f92",
     "captionSha256": "01a7f2bb5878b20c033be74337ea0fb469c61ac15d2290f9f32e0183ca616629"
   },
   "media": {
     "preview": {
       "path": "output/autoposting-setup-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/preview.mp4",
-      "sha256": "915befea75a52f2d87c90b81143ba338a787569630cc3ef4867fd8623bcbeb71",
+      "sha256": "257506b0ad73d007f3bb5b6c71e7c2d47b7faca999618b7c927ebff2c0cc8d06",
       "duration": 36,
       "fps": "30/1"
     },
