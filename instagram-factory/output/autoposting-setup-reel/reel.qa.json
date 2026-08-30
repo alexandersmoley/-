@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "autoposting-setup-reel",
   "source": "reels/autoposting-setup-reel.json",
-  "generatedAt": "2026-08-30T06:26:42.823Z",
+  "generatedAt": "2026-08-30T06:41:15.076Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -32,15 +32,15 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/autoposting-setup-reel.md",
-    "contentSha256": "2d81d0391f628efba80ff9e6318976853f1dada629ae8f066506e9b9a56c0c56",
+    "contentSha256": "94cb7e60c3e6622169adec0375f7436e44da912508ab42323b7b6978a91faf93",
     "captionSha256": "154f3dcd5a7d0f6fe0a9ec88dd21ea35cd17e804bbac25e99e625e523e2fe10d"
   },
   "media": {
     "preview": {
       "path": "output/autoposting-setup-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/preview.mp4",
-      "sha256": "5ad680d2ec03ede08a7cc1a4a404ee1e1da28e1aab1bede971c61daf20129e91",
-      "duration": 30,
+      "sha256": "acd12b4b3817f9ece343f505210a59b587e3c348fbff866759ef19fe09a2889a",
+      "duration": 36,
       "fps": "30/1"
     },
     "cover": {
@@ -53,7 +53,7 @@
     "storyboard": {
       "path": "output/autoposting-setup-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/storyboard.png",
-      "sha256": "b799a8828d45e23d3673523f94b1c0ea5d705f7bcfad57ac6122e1e4176052f4",
+      "sha256": "b462b70998f805e975adb98b6ced9b492e4f7072f0294dfc8237858ecc2e2a69",
       "width": 930,
       "height": 1050
     },
@@ -249,12 +249,12 @@
       "unapprovedColors": [],
       "effectFailures": [],
       "sampleTimes": [
-        3.75,
-        8.75,
-        13.75,
-        18.75,
-        23.75,
-        28.75
+        4.5,
+        10.5,
+        16.5,
+        22.5,
+        28.5,
+        34.5
       ],
       "imageCount": 0,
       "approvedPhotoExact": true
@@ -306,7 +306,7 @@
       }
     ],
     "format": {
-      "duration": "30.000000"
+      "duration": "36.000000"
     }
   }
 }
