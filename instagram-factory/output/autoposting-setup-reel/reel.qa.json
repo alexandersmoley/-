@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "autoposting-setup-reel",
   "source": "reels/autoposting-setup-reel.json",
-  "generatedAt": "2026-08-30T07:24:26.552Z",
+  "generatedAt": "2026-08-30T07:28:51.588Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -39,21 +39,21 @@
     "preview": {
       "path": "output/autoposting-setup-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/preview.mp4",
-      "sha256": "3e2004ffc5c0847038a249df57346a78881981a8fba9f7d8e6754d9f2b209247",
+      "sha256": "c5dced8ccad66a452d0425d8bd065c6960afd2b4c7a44ea3dbff0d219e3fc6e5",
       "duration": 36,
       "fps": "30/1"
     },
     "cover": {
       "path": "output/autoposting-setup-reel/cover.png",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/cover.png",
-      "sha256": "84f598414b366aed7dbd7409863a3cd33d36e490ea3ef37de77ade485a56db1e",
+      "sha256": "25066d22e43b466d43f2aac906f20349a99939f0bfa215e04d30230da6663d5e",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
       "path": "output/autoposting-setup-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/storyboard.png",
-      "sha256": "b747d70b66286567284c267828c535238bf1c16e63b30e2c4cd9ad93865a380f",
+      "sha256": "e4e96fefecc623ce2df7f276956f8be94e0efab456e0e20ecce7850fa294b307",
       "width": 930,
       "height": 1050
     },
