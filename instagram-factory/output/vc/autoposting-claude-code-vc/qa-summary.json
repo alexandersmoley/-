@@ -1,7 +1,7 @@
 {
   "pipelineVersion": 1,
   "articleId": "autoposting-claude-code-vc",
-  "generatedAt": "2026-08-30T15:54:43.237Z",
+  "generatedAt": "2026-08-30T16:05:38.010Z",
   "passed": true,
   "source": "content/vc/autoposting-claude-code.publication.json",
   "visuals": [
@@ -9,7 +9,7 @@
       "id": "cover",
       "path": "output/vc/autoposting-claude-code-vc/cover.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/cover.png",
-      "sha256": "df12ff7e60f87be50ab578df572eb95247da18b3e09e1ad9b9617f4406764e5c",
+      "sha256": "823b6f040700c3bf83a8aa2ec5bcedf4f4612e7ef05367eab0b63aef53cd9f68",
       "width": 1920,
       "height": 1080
     },
@@ -17,7 +17,7 @@
       "id": "workflow",
       "path": "output/vc/autoposting-claude-code-vc/workflow.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/workflow.png",
-      "sha256": "9741a627cf5e05bb4a346a56b3dde50d12fc1af8d464c2e911175c61d16e264a",
+      "sha256": "4f848a2d4792969588efebb97b32a78b2220b777b98bcfc3cb33638badea70e7",
       "width": 1920,
       "height": 1080
     },
@@ -25,7 +25,7 @@
       "id": "chatgpt-github-codex",
       "path": "output/vc/autoposting-claude-code-vc/chatgpt-github-codex.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/chatgpt-github-codex.png",
-      "sha256": "da93cad8b72bf4ab97b8ab8d73199b534fe4a600f8b0a99ee32fc9f112d19d4c",
+      "sha256": "699873415d756f9b282ce9193a8266056c1095915242a01a116ed040014fce12",
       "width": 1920,
       "height": 1080
     },
@@ -33,7 +33,7 @@
       "id": "multichannel",
       "path": "output/vc/autoposting-claude-code-vc/multichannel.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/multichannel.png",
-      "sha256": "d02dd80f472d38fcdbe1ced850ad2a4d8a47910768b545338a22e590048c1735",
+      "sha256": "cabffc0151d93cdd6409e322783600aba959753bb43c42bf4f96391090a61966",
       "width": 1920,
       "height": 1080
     }
@@ -42,14 +42,27 @@
     "cover": {
       "checks": {
         "canvasExact": true,
-        "noText": true,
+        "copyExact": true,
+        "projectFontsOnly": true,
+        "nothingOverflows": true,
         "noMedia": true,
         "approvedColorsOnly": true,
         "noEffects": true
       },
       "details": {
         "unapproved": [],
-        "effects": []
+        "effects": [],
+        "missingFonts": [],
+        "overflowing": [],
+        "rendered": [
+          "Один материал проходит пять стадий",
+          "Тема",
+          "Текст",
+          "Сборка",
+          "Проверка",
+          "Публикация",
+          "Синим — то, что уже сделано"
+        ]
       },
       "dimensions": {
         "width": 1920,
@@ -59,14 +72,42 @@
     "workflow": {
       "checks": {
         "canvasExact": true,
-        "noText": true,
+        "copyExact": true,
+        "projectFontsOnly": true,
+        "nothingOverflows": true,
         "noMedia": true,
         "approvedColorsOnly": true,
         "noEffects": true
       },
       "details": {
         "unapproved": [],
-        "effects": []
+        "effects": [],
+        "missingFonts": [],
+        "overflowing": [],
+        "rendered": [
+          "Маршрут материала: от темы до публикации",
+          "Контент-план",
+          "Todoist",
+          "ОК: тема",
+          "Стоит ли делать",
+          "Текст",
+          "ChatGPT",
+          "ОК: текст",
+          "Так ли я хочу сказать",
+          "Бриф",
+          "GitHub",
+          "Сборка",
+          "Codex",
+          "Проверки",
+          "Автоматические",
+          "ОК: дизайн",
+          "Можно показывать",
+          "ОК: публикация",
+          "Готов выйти",
+          "Публикация",
+          "Metricool → Instagram",
+          "Синим — четыре решения, которые я оставил себе"
+        ]
       },
       "dimensions": {
         "width": 1920,
@@ -76,14 +117,40 @@
     "chatgpt-github-codex": {
       "checks": {
         "canvasExact": true,
-        "noText": true,
+        "copyExact": true,
+        "projectFontsOnly": true,
+        "nothingOverflows": true,
         "noMedia": true,
         "approvedColorsOnly": true,
         "noEffects": true
       },
       "details": {
         "unapproved": [],
-        "effects": []
+        "effects": [],
+        "missingFonts": [],
+        "overflowing": [],
+        "rendered": [
+          "Две рабочие зоны и один общий архив",
+          "Редактура",
+          "ChatGPT",
+          "Тема",
+          "Фактура",
+          "Структура",
+          "Текст",
+          "Редактура",
+          "утверждённый текст",
+          "GitHub",
+          "Утверждённый текст",
+          "Правила тона",
+          "Фирстиль",
+          "готовые файлы",
+          "Производство",
+          "Codex",
+          "Макеты",
+          "Проверки",
+          "Экспорт",
+          "Синим — утверждённый контекст, из которого работают обе стороны"
+        ]
       },
       "dimensions": {
         "width": 1920,
@@ -93,14 +160,32 @@
     "multichannel": {
       "checks": {
         "canvasExact": true,
-        "noText": true,
+        "copyExact": true,
+        "projectFontsOnly": true,
+        "nothingOverflows": true,
         "noMedia": true,
         "approvedColorsOnly": true,
         "noEffects": true
       },
       "details": {
         "unapproved": [],
-        "effects": []
+        "effects": [],
+        "missingFonts": [],
+        "overflowing": [],
+        "rendered": [
+          "Одна тема — несколько самостоятельных материалов",
+          "Главный бриф",
+          "Одна утверждённая фактура",
+          "Instagram",
+          "Карусель",
+          "vc.ru",
+          "Лонгрид",
+          "Telegram",
+          "Пост",
+          "Блог",
+          "Статья",
+          "Синим — общий источник, из которого собирается каждый формат"
+        ]
       },
       "dimensions": {
         "width": 1920,
