@@ -19,19 +19,20 @@ function cover() {
   </section>`;
 }
 
-// The route of one material, with the human approval points marked in blue.
+// The route of one material, with the human approval points marked in blue. Eight equal
+// stages on one spine: the brief asks for consecutive stages from idea to finished issue,
+// so nothing here varies in size — only whether a stage is mine to approve.
 function workflow() {
-  const steps = [
-    { height: 120, human: false }, { height: 190, human: true }, { height: 150, human: false },
-    { height: 230, human: true }, { height: 170, human: false }, { height: 260, human: true },
-    { height: 140, human: false }, { height: 200, human: true }
-  ];
+  const humanStages = new Set([1, 3, 5, 7]);
   return `<section class="frame frame-workflow">
     ${grid()}
-    <div class="track">
-      ${steps.map(({ height, human }) => `<div class="step${human ? ' step-human' : ''}" style="height:${height}px"></div>`).join('')}
-      <i class="track-line"></i>
+    <i class="rule rule-top"></i>
+    <div class="route">
+      <i class="route-line"></i>
+      ${Array.from({ length: 8 }, (_, index) =>
+        `<div class="stage-node${humanStages.has(index) ? ' stage-node-human' : ''}"></div>`).join('')}
     </div>
+    <i class="rule rule-bottom"></i>
   </section>`;
 }
 
