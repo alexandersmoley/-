@@ -1,38 +1,50 @@
 {
   "id": "autoposting-claude-code-vc",
   "platform": "vc.ru",
-  "status": "editorial-review",
+  "account": "https://vc.ru/id5738265",
+  "status": "approved-copy",
   "publish": false,
   "publishRequiresApproval": true,
   "articlePath": "content/vc/autoposting-claude-code.md",
   "sourceBrief": "content/topics/autoposting-vc-master-brief.md",
   "channelRules": "channels/vc-ru.md",
-  "title": "Как я публикую посты в Instagram, не открывая Instagram",
-  "subtitle": "Контент-план лежит в Todoist, материалы — в GitHub и Google Drive, публикация идёт через Metricool. Всё это я связал через Claude Code.",
-  "topic": null,
+  "title": "Как я собрал себе контент-завод на ChatGPT и Codex",
+  "subtitle": "Как у меня устроен путь от темы и брифа до сборки, проверки и публикации — и где я пока оставляю себе четыре ОК.",
+  "topic": "Личный опыт",
+  "telegram": "https://t.me/a_smoley",
+  "legalNote": "Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ. С 1 сентября 2025 года размещение рекламы на ресурсах с ограниченным доступом в России запрещено. В статье речь идёт о редакционном контенте, а не о рекламе.",
   "cover": {
     "status": "todo",
     "aspectRatio": "16:9",
-    "recommendedSize": "1920x1080"
+    "recommendedSize": "1920x1080",
+    "text": false,
+    "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Без текста внутри изображения, без псевдоинтерфейсов, AI-иконок, роботов, декоративного шума и случайных геометрических элементов. Обложка должна выглядеть как editorial/web-визуал alexsmoley.ru: молочный или светлый фон, фирменный насыщенный синий, чёрный, много воздуха, модульная композиция. Центральная идея — один материал проходит через несколько стадий производства. Рендерить средствами проекта, не генератором картинок."
   },
   "illustrations": [
     {
       "id": "workflow",
       "status": "todo",
-      "brief": "Todoist → тема → Claude Code → GitHub → сборка → QA → ОК → Metricool → Instagram"
+      "text": false,
+      "brief": "Абстрактная редакционная схема без подписей: один материал проходит последовательные стадии от идеи к готовому выпуску. Показывать процесс сеткой, линиями и блоками, а не буквальными иконками сервисов. Синий использовать для человеческих точек согласования."
     },
     {
-      "id": "brief-role",
+      "id": "chatgpt-github-codex",
       "status": "todo",
-      "brief": "редакционная работа → brief → production"
+      "text": false,
+      "brief": "Три смысловых узла: редакционная работа, зафиксированный контекст, производство. Центральный узел — хранилище утверждённых решений. Без логотипов и текста. Визуально показать передачу материала между двумя рабочими зонами через центральный архив."
+    },
+    {
+      "id": "multichannel",
+      "status": "todo",
+      "text": false,
+      "brief": "Один утверждённый материал расходится в несколько самостоятельных форматов. Не рисовать соцсети и логотипы. Показать один исходный блок, который превращается в карточки, длинный материал, вертикальный формат и короткий пост."
     }
   ],
   "approvalGates": [
-    "title-and-structure",
     "exact-copy",
     "visuals",
     "vc-draft",
     "publish"
   ],
-  "nextAction": "human editorial review"
+  "nextAction": "render vc visuals in project style, then create vc.ru draft; do not publish"
 }
