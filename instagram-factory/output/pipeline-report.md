@@ -32,7 +32,7 @@
 - Approved Reels rendered: 1
 - Reel canvas: 1080×1920, 30/1 fps
 - Reel duration: 25 seconds
-- Reel QA gates passed: 23/23
+- Reel QA gates passed: 24/24
 - Reel MP4: [output/chatgpt-not-a-content-factory-reel/preview.mp4](https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/preview.mp4)
 - Reel storyboard: [output/chatgpt-not-a-content-factory-reel/storyboard.png](https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/storyboard.png)
 
