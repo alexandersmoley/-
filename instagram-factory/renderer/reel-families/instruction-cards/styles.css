@@ -1,0 +1,145 @@
+@font-face {
+  font-family: "Inter Production";
+  src: url("__INTER_FONT_URL__") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "Cormorant Garamond Production";
+  src: url("__CORMORANT_REGULAR_URL__") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "Cormorant Garamond Production";
+  src: url("__CORMORANT_ITALIC_URL__") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: block;
+}
+
+:root {
+  --ink: #101010;
+  --paper: #f4f1e9;
+  --blue: #1546e8;
+  --grid: rgba(21, 70, 232, .105);
+  --display-leading: .94;
+  --body-leading: 1.24;
+}
+* { box-sizing: border-box; }
+html, body {
+  width: 1080px;
+  height: 1920px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper);
+}
+body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+.reel-frame, .reel-scene, .reel-cover {
+  position: absolute;
+  inset: 0;
+  width: 1080px;
+  height: 1920px;
+  overflow: hidden;
+}
+.reel-frame { isolation: isolate; background: var(--paper); }
+.reel-scene { opacity: 0; visibility: hidden; will-change: opacity; }
+.reel-copy { position: absolute; z-index: 5; margin: 0; }
+.display-serif {
+  font-family: "Cormorant Garamond Production", serif;
+  font-weight: 400;
+  line-height: var(--display-leading);
+}
+.text-sans {
+  font-family: "Inter Production", sans-serif;
+  font-weight: 400;
+  line-height: var(--body-leading);
+}
+[data-motion-item] { will-change: transform, opacity, clip-path; }
+.reel-grid { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.reel-grid i { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--grid); }
+/* This family numbers its steps instead of drawing a system, so the shared axis is off. */
+.system-axis { display: none; }
+
+
+/* Instruction cards — one step per frame, the numeral is the graphic.
+
+   Frames alternate paper and blue so a step change is visible before a word is read.
+   Everything sits inside the safe zone: x 120-900, y 180-1620. */
+.card-scene { background: var(--paper); color: var(--ink); }
+.card-rule {
+  position: absolute;
+  z-index: 4;
+  left: 120px;
+  top: 240px;
+  display: block;
+  width: 132px;
+  height: 4px;
+  background: var(--blue);
+}
+
+/* Hook — the promise, set as large as it will go on ink. */
+.card-hook { background: var(--ink); color: var(--paper); }
+.card-hook .reel-grid i { background: rgba(244, 241, 233, .17); }
+.hook-title { left: 120px; top: 330px; width: 780px; font-size: 148px; letter-spacing: -.06em; }
+.hook-lead { left: 120px; top: 1010px; width: 780px; font-size: 46px; letter-spacing: -.032em; }
+.hook-note { left: 120px; top: 1190px; width: 780px; font-size: 36px; letter-spacing: -.026em; color: var(--blue); }
+
+/* Steps — numeral, rule, instruction, specifics. */
+.card-step-even { background: var(--paper); color: var(--ink); }
+.card-step-odd { background: var(--blue); color: var(--paper); }
+.card-step-odd .reel-grid i { background: rgba(244, 241, 233, .17); }
+.step-number { left: 120px; top: 250px; width: 780px; font-size: 400px; letter-spacing: -.06em; }
+.card-step-even .step-number { color: var(--blue); }
+.step-rule {
+  position: absolute;
+  z-index: 4;
+  left: 120px;
+  top: 700px;
+  display: block;
+  width: 780px;
+  height: 3px;
+  background: currentColor;
+}
+.step-action { left: 120px; top: 762px; width: 780px; font-size: 96px; letter-spacing: -.05em; }
+.step-detail { left: 120px; top: 1120px; width: 740px; font-size: 42px; letter-spacing: -.03em; }
+
+/* Payoff — the sentence a viewer can copy, on a blue plate over ink. */
+.card-phrase { background: var(--ink); color: var(--paper); }
+.card-phrase .reel-grid i { background: rgba(244, 241, 233, .17); }
+.phrase-lead { left: 120px; top: 300px; width: 780px; font-size: 44px; letter-spacing: -.03em; color: var(--blue); }
+.phrase-plate {
+  position: absolute;
+  z-index: 4;
+  left: 120px;
+  top: 430px;
+  width: 780px;
+  min-height: 420px;
+  padding: 58px 56px;
+  background: var(--blue);
+}
+.phrase-quote { position: relative; width: 668px; font-size: 84px; letter-spacing: -.045em; color: var(--paper); }
+.phrase-note { left: 120px; top: 1090px; width: 780px; font-size: 38px; letter-spacing: -.028em; }
+
+/* Close — one line, nothing else. */
+.card-cta { background: var(--blue); color: var(--paper); }
+.card-cta .reel-grid i { background: rgba(244, 241, 233, .17); }
+.cta-note { left: 120px; top: 420px; width: 780px; font-size: 44px; letter-spacing: -.03em; }
+.cta-title { left: 120px; top: 560px; width: 780px; font-size: 116px; letter-spacing: -.055em; }
+
+/* Cover — type-led on paper, so it does not repeat the other reel's ink cover. */
+.card-cover { background: var(--paper); color: var(--ink); }
+.card-cover .card-rule { top: 220px; }
+.cover-title { left: 120px; top: 350px; width: 780px; font-size: 146px; letter-spacing: -.06em; }
+.cover-steps {
+  left: 120px;
+  top: 1180px;
+  width: 700px;
+  padding: 32px 38px;
+  font-size: 46px;
+  letter-spacing: -.032em;
+  color: var(--paper);
+  background: var(--blue);
+}

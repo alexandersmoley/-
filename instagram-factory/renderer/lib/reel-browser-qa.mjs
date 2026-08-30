@@ -106,7 +106,7 @@ export async function runReelBrowserQa(page, { reel, photoAssetUrl }) {
     return {
       checks: {
         canvasExact: document.documentElement.scrollWidth === 1080 && document.documentElement.scrollHeight === 1920,
-        sceneCountExact: scenes.length === 6,
+        sceneCountExact: scenes.length === expectedScenes.length,
         sceneTextExact,
         fontsLoaded: document.fonts.status === 'loaded',
         onlyApprovedFonts: type.every(({ family }) => allowedFamilies.some((approved) => family.includes(approved))),

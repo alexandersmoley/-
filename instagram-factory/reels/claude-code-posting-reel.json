@@ -4,7 +4,7 @@
   "id": "claude-code-posting-reel",
   "platform": "instagram",
   "format": "reels",
-  "status": "approved-for-render",
+  "status": "draft",
   "publish": false,
   "canvas": {
     "width": 1080,

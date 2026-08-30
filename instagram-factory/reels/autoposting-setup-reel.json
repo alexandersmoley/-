@@ -1,0 +1,128 @@
+{
+  "$schema": "../schemas/reel.schema.json",
+  "schemaVersion": 1,
+  "id": "autoposting-setup-reel",
+  "platform": "instagram",
+  "format": "reels",
+  "status": "approved-for-render",
+  "publish": false,
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationSeconds": 30
+  },
+  "safeZone": {
+    "top": 180,
+    "right": 180,
+    "bottom": 300,
+    "left": 120
+  },
+  "contentSource": {
+    "path": "content/autoposting-setup-reel.md",
+    "sha256": "3305a3440bd9aa2a453def4ce81bf91e9573af5cf43657c592c6a8c8838d0e4a"
+  },
+  "captionSha256": "da037d34b491f4b916721fa1f9d389f41dee4416411e9857340b87573bc6d938",
+  "designTokens": {
+    "ink": "#101010",
+    "paper": "#f4f1e9",
+    "blue": "#1546e8",
+    "grid": "rgba(21, 70, 232, 0.105)"
+  },
+  "audio": {
+    "mode": "temporary-instrumental-guide",
+    "voiceOver": false,
+    "talkingHead": false,
+    "sampleRate": 48000,
+    "bpm": 110
+  },
+  "layoutFamily": "instruction-cards",
+  "scenes": [
+    {
+      "id": "scene-01",
+      "start": 0,
+      "end": 5,
+      "goal": "the promise: three connections and one sentence",
+      "layoutFamily": "instruction-hook",
+      "text": [
+        "Чтобы выложить пост, я не открываю инстаграм",
+        "Три подключения и одна фраза",
+        "Дальше — что подключить и в каком порядке"
+      ]
+    },
+    {
+      "id": "scene-02",
+      "start": 5,
+      "end": 10,
+      "goal": "step 1 — Metricool publishes, connect the account",
+      "layoutFamily": "instruction-step",
+      "text": [
+        "1",
+        "Заведи Metricool и привяжи инстаграм",
+        "Публикует он. Нужен бизнес- или креатор-аккаунт"
+      ]
+    },
+    {
+      "id": "scene-03",
+      "start": 10,
+      "end": 15,
+      "goal": "step 2 — connectors in the chat, no code",
+      "layoutFamily": "instruction-step",
+      "text": [
+        "2",
+        "Подключи Клоду коннекторы Metricool и Todoist",
+        "Metricool публикует, Todoist держит план тем. Кода не нужно"
+      ]
+    },
+    {
+      "id": "scene-04",
+      "start": 15,
+      "end": 20,
+      "goal": "step 3 — what exactly goes into the repository",
+      "layoutFamily": "instruction-step",
+      "text": [
+        "3",
+        "Положи материалы в репозиторий",
+        "Утверждённый текст поста, фото и правила тона — чтобы ИИ брал их оттуда, а не выдумывал"
+      ]
+    },
+    {
+      "id": "scene-05",
+      "start": 20,
+      "end": 25,
+      "goal": "the sentence a viewer can copy",
+      "layoutFamily": "instruction-phrase",
+      "text": [
+        "Дальше пишешь одну фразу",
+        "Собери карусель по брифу и опубликуй в инстаграм",
+        "Он собирает, проверяет и публикует"
+      ]
+    },
+    {
+      "id": "scene-06",
+      "start": 25,
+      "end": 30,
+      "goal": "the pinned post came out this way, call to subscribe",
+      "layoutFamily": "instruction-cta",
+      "text": [
+        "Мой закреп вышел именно так",
+        "Подписывайтесь — собираю это дальше"
+      ]
+    }
+  ],
+  "cover": {
+    "layoutFamily": "instruction-cover",
+    "text": [
+      "Как выложить пост, не открывая инстаграм",
+      "Три шага и одна фраза"
+    ]
+  },
+  "caption": [
+    "Показываю, как настроить автопостинг в инстаграм, если не умеешь программировать.",
+    "Шаг 1. Заводишь Metricool и привязываешь инстаграм. Публиковать будет он. Аккаунт нужен бизнес или креатор: с личного автопубликация не работает, это ограничение самого инстаграма.",
+    "Шаг 2. В настройках Клода подключаешь коннекторы: Metricool — публикация, Todoist — план тем. Это делается в интерфейсе, кода не нужно.",
+    "Шаг 3. Кладёшь материалы в репозиторий: утверждённый текст поста, фото и правила тона. Тогда ИИ берёт текст оттуда, а не выдумывает заново.",
+    "Дальше пишешь одну фразу: «Собери карусель по брифу и опубликуй в инстаграм». Он собирает, проверяет и публикует.",
+    "Мой закреп вышел именно так. Здесь собираю это дальше и показываю, что ломается по дороге."
+  ]
+}

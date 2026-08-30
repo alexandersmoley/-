@@ -2,9 +2,9 @@
 id: claude-code-posting-reel
 platform: instagram
 format: reels
-status: approved-for-render
+status: draft
 copy_approval: approved
-render: true
+render: false
 publish: false
 publish_requires_approval: true
 writing_contract: ../writing-contract.md

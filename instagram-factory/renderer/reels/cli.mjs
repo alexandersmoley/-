@@ -8,7 +8,7 @@ import { chromium } from 'playwright';
 import sharp from 'sharp';
 import ffmpegPath from 'ffmpeg-static';
 import ffprobeStatic from 'ffprobe-static';
-import { renderReelCoverHtml, renderReelHtml } from '../reel-families/index.mjs';
+import { renderReelCoverHtml, renderReelHtml, stylesheetPathFor } from '../reel-families/index.mjs';
 import { runReelBrowserQa, runReelCoverBrowserQa, sceneSampleTimes } from '../lib/reel-browser-qa.mjs';
 import { assertFile, listJsonFiles, sha256File } from '../lib/files.mjs';
 import { createPostValidator } from '../lib/validate.mjs';
@@ -35,9 +35,9 @@ function extractQuotedList(block) {
   return [...block.matchAll(/^\s*-\s+"([^"]*)"\s*$/gmu)].map((match) => match[1]);
 }
 
-function extractApprovedCopy(markdown) {
+function extractApprovedCopy(markdown, sceneCount) {
   const scenes = new Map();
-  for (let index = 1; index <= 6; index += 1) {
+  for (let index = 1; index <= sceneCount; index += 1) {
     const number = String(index).padStart(2, '0');
     const match = markdown.match(new RegExp(`## Scene ${number}[^\\n]*\\n([\\s\\S]*?)(?=\\n## Scene|\\n# Cover)`, 'u'));
     if (!match) throw new Error(`Cannot extract Scene ${number} from reel brief`);
@@ -150,16 +150,22 @@ async function runProcess(command, args, options = {}) {
   return { stdout, stderr };
 }
 
+function storyboardGrid(frameCount) {
+  const columns = frameCount <= 6 ? 3 : 4;
+  return { columns, rows: Math.ceil(frameCount / columns) };
+}
+
 async function createStoryboard(frames, targetPath) {
   const thumbWidth = 270;
   const thumbHeight = 480;
   const gap = 30;
-  const width = gap * 4 + thumbWidth * 3;
-  const height = gap * 3 + thumbHeight * 2;
+  const { columns, rows } = storyboardGrid(frames.length);
+  const width = gap * (columns + 1) + thumbWidth * columns;
+  const height = gap * (rows + 1) + thumbHeight * rows;
   const composites = [];
   for (let index = 0; index < frames.length; index += 1) {
     const input = await sharp(frames[index]).resize(thumbWidth, thumbHeight, { fit: 'fill' }).png().toBuffer();
-    composites.push({ input, left: gap + (index % 3) * (thumbWidth + gap), top: gap + Math.floor(index / 3) * (thumbHeight + gap) });
+    composites.push({ input, left: gap + (index % columns) * (thumbWidth + gap), top: gap + Math.floor(index / columns) * (thumbHeight + gap) });
   }
   await sharp({ create: { width, height, channels: 4, background: '#f4f1e9' } }).composite(composites).png({ compressionLevel: 9 }).toFile(targetPath);
   return { width, height };
@@ -184,7 +190,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   const photoAssetPath = reel.photoAsset ? path.join(factoryRoot, reel.photoAsset.path) : null;
   if (photoAssetPath) await assertFile(photoAssetPath, 'Approved Reel closing photo');
   const markdownBefore = await fs.readFile(contentSourcePath, 'utf8');
-  const approvedCopy = extractApprovedCopy(markdownBefore);
+  const approvedCopy = extractApprovedCopy(markdownBefore, reel.scenes.length);
   const contentShaBefore = await sha256File(contentSourcePath);
   const captionBefore = reel.caption.join('\n\n');
   const sourceCopyExact = reel.scenes.every((scene) => JSON.stringify(scene.text) === JSON.stringify(approvedCopy.scenes.get(scene.id)));
@@ -252,6 +258,11 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   await page.close();
   if (ffmpegCode !== 0) throw new Error(`ffmpeg failed (${ffmpegCode}): ${ffmpegError.slice(-5000)}`);
   const storyboardDimensions = await createStoryboard(storyboardFrames, storyboardPath);
+  const expectedGrid = storyboardGrid(storyboardFrames.length);
+  const expectedStoryboard = {
+    width: 30 * (expectedGrid.columns + 1) + 270 * expectedGrid.columns,
+    height: 30 * (expectedGrid.rows + 1) + 480 * expectedGrid.rows
+  };
 
   const coverPage = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   await coverPage.goto(pathToFileURL(coverHtmlPath).href, { waitUntil: 'load' });
@@ -270,7 +281,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
     structuredReelValid: true,
     approvedForRender: reel.status === 'approved-for-render',
     publishDisabled: reel.publish === false,
-    sceneCountExact: reel.scenes.length === 6,
+    sceneCountWithinBrief: reel.scenes.length >= 5 && reel.scenes.length <= 8,
     timelineExact: reel.scenes[0].start === 0
       && reel.scenes.at(-1).end === reel.canvas.durationSeconds
       && reel.scenes.every((scene, index) => index === 0 || scene.start === reel.scenes[index - 1].end),
@@ -292,7 +303,8 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
       && reel.audio.bpm >= 100
       && reel.audio.bpm <= 120,
     motionFramesDistinct: new Set(frameHashes).size === sampleTimes.length,
-    storyboardCreated: storyboardDimensions.width === 930 && storyboardDimensions.height === 1050,
+    storyboardCreated: storyboardDimensions.width === expectedStoryboard.width
+      && storyboardDimensions.height === expectedStoryboard.height,
     coverDimensionsExact: (await sharp(coverPath).metadata()).width === 1080 && (await sharp(coverPath).metadata()).height === 1920,
     photoAssetChecksumExact: photoAssetPath ? await sha256File(photoAssetPath) === reel.photoAsset.sha256 : true,
     photoAssetDimensionsExact: photoAssetPath
@@ -344,12 +356,14 @@ async function main() {
   ]);
   const validate = await createPostValidator(schemaPath);
   const approved = await loadApprovedReels(validate);
-  const stylesheet = await fs.readFile(path.join(rendererDirectory, 'reel-families', 'motion-editorial-system', 'styles.css'), 'utf8');
   const launchOptions = { headless: true, args: ['--allow-file-access-from-files', '--force-color-profile=srgb', '--font-render-hinting=none'] };
   if (process.env.CHROME_PATH) launchOptions.executablePath = process.env.CHROME_PATH;
   const browser = await chromium.launch(launchOptions);
   try {
-    for (const item of approved) await renderReel({ browser, stylesheet, ...item });
+    for (const item of approved) {
+      const stylesheet = await fs.readFile(stylesheetPathFor(item.reel), 'utf8');
+      await renderReel({ browser, stylesheet, ...item });
+    }
   } finally {
     await browser.close();
   }

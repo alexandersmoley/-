@@ -216,12 +216,15 @@
       }
     },
     "layoutFamily": {
-      "const": "motion-editorial-system"
+      "enum": [
+        "motion-editorial-system",
+        "instruction-cards"
+      ]
     },
     "scenes": {
       "type": "array",
-      "minItems": 6,
-      "maxItems": 6,
+      "minItems": 5,
+      "maxItems": 8,
       "items": {
         "$ref": "#/$defs/scene"
       }
@@ -237,7 +240,8 @@
         "layoutFamily": {
           "enum": [
             "reel-cover-editorial",
-            "reel-cover-ink"
+            "reel-cover-ink",
+            "instruction-cover"
           ]
         },
         "text": {
@@ -276,7 +280,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^scene-0[1-6]$"
+          "pattern": "^scene-0[1-8]$"
         },
         "start": {
           "type": "number",
@@ -299,7 +303,11 @@
             "reel-process-build",
             "reel-contrast-statement",
             "reel-system-diagram",
-            "reel-closing-editorial"
+            "reel-closing-editorial",
+            "instruction-hook",
+            "instruction-step",
+            "instruction-phrase",
+            "instruction-cta"
           ]
         },
         "text": {
