@@ -1,0 +1,111 @@
+{
+  "pipelineVersion": 1,
+  "articleId": "autoposting-claude-code-vc",
+  "generatedAt": "2026-08-30T15:50:15.893Z",
+  "passed": true,
+  "source": "content/vc/autoposting-claude-code.publication.json",
+  "visuals": [
+    {
+      "id": "cover",
+      "path": "output/vc/autoposting-claude-code-vc/cover.png",
+      "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/cover.png",
+      "sha256": "df12ff7e60f87be50ab578df572eb95247da18b3e09e1ad9b9617f4406764e5c",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "workflow",
+      "path": "output/vc/autoposting-claude-code-vc/workflow.png",
+      "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/workflow.png",
+      "sha256": "9741a627cf5e05bb4a346a56b3dde50d12fc1af8d464c2e911175c61d16e264a",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "chatgpt-github-codex",
+      "path": "output/vc/autoposting-claude-code-vc/chatgpt-github-codex.png",
+      "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/chatgpt-github-codex.png",
+      "sha256": "da93cad8b72bf4ab97b8ab8d73199b534fe4a600f8b0a99ee32fc9f112d19d4c",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "id": "multichannel",
+      "path": "output/vc/autoposting-claude-code-vc/multichannel.png",
+      "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/multichannel.png",
+      "sha256": "d02dd80f472d38fcdbe1ced850ad2a4d8a47910768b545338a22e590048c1735",
+      "width": 1920,
+      "height": 1080
+    }
+  ],
+  "qa": {
+    "cover": {
+      "checks": {
+        "canvasExact": true,
+        "noText": true,
+        "noMedia": true,
+        "approvedColorsOnly": true,
+        "noEffects": true
+      },
+      "details": {
+        "unapproved": [],
+        "effects": []
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    "workflow": {
+      "checks": {
+        "canvasExact": true,
+        "noText": true,
+        "noMedia": true,
+        "approvedColorsOnly": true,
+        "noEffects": true
+      },
+      "details": {
+        "unapproved": [],
+        "effects": []
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    "chatgpt-github-codex": {
+      "checks": {
+        "canvasExact": true,
+        "noText": true,
+        "noMedia": true,
+        "approvedColorsOnly": true,
+        "noEffects": true
+      },
+      "details": {
+        "unapproved": [],
+        "effects": []
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      }
+    },
+    "multichannel": {
+      "checks": {
+        "canvasExact": true,
+        "noText": true,
+        "noMedia": true,
+        "approvedColorsOnly": true,
+        "noEffects": true
+      },
+      "details": {
+        "unapproved": [],
+        "effects": []
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      }
+    }
+  }
+}
