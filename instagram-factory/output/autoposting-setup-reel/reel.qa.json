@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "autoposting-setup-reel",
   "source": "reels/autoposting-setup-reel.json",
-  "generatedAt": "2026-08-30T06:45:43.210Z",
+  "generatedAt": "2026-08-30T06:57:14.315Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -32,28 +32,28 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/autoposting-setup-reel.md",
-    "contentSha256": "94cb7e60c3e6622169adec0375f7436e44da912508ab42323b7b6978a91faf93",
-    "captionSha256": "154f3dcd5a7d0f6fe0a9ec88dd21ea35cd17e804bbac25e99e625e523e2fe10d"
+    "contentSha256": "017695b43b3fe48047710126aaedefdc5c57b43562b6ffa4f868af2878a35135",
+    "captionSha256": "fb25f769e00d7936839d60b8f4933fc6a7909d8960393cf8b2a06edbb1cc6dac"
   },
   "media": {
     "preview": {
       "path": "output/autoposting-setup-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/preview.mp4",
-      "sha256": "f2efa301b9734ec96f6627bb5e3702dceff477fa59660f8bcffb24ae2a0c47e9",
+      "sha256": "aee81868ebc3dbf10f33fd4b321ae78aecce47a1742b7c550a4780b7aeb244e5",
       "duration": 36,
       "fps": "30/1"
     },
     "cover": {
       "path": "output/autoposting-setup-reel/cover.png",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/cover.png",
-      "sha256": "36fad2424a4473cb4c06ab6560da6c7b26ed880bf0bc9b5bf77b4c5e966dd96c",
+      "sha256": "8e67743252c969a6e9f0c4ca833b39e8cad60ce8d6f4c2921f87fe7edcd77a6f",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
       "path": "output/autoposting-setup-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/storyboard.png",
-      "sha256": "b462b70998f805e975adb98b6ced9b492e4f7072f0294dfc8237858ecc2e2a69",
+      "sha256": "41a0a513ceb6adc09c2eb6a99cfdd54d5f80289e0ed868ce1185be23887c5843",
       "width": 930,
       "height": 1050
     },
@@ -90,7 +90,7 @@
           "id": "scene-01",
           "text": [
             "Чтобы выложить пост, я не открываю инстаграм",
-            "Всё делается в чате: три шага и одна фраза",
+            "Всё делается в чате Claude Code: три шага и одна фраза",
             "Дальше — что подключить и в каком порядке"
           ]
         },
@@ -98,15 +98,15 @@
           "id": "scene-02",
           "text": [
             "1",
-            "Заведи Metricool и привяжи инстаграм",
-            "Публикует он. Нужен бизнес- или креатор-аккаунт"
+            "Заведи аккаунты в четырёх сервисах",
+            "Metricool, Todoist, GitHub, Google Drive. Инстаграм привяжи к Metricool: нужен бизнес- или креатор-аккаунт"
           ]
         },
         {
           "id": "scene-03",
           "text": [
             "2",
-            "Подключи к Claude четыре коннектора",
+            "Подключи их к Claude Code как коннекторы",
             "Metricool — публикация, Todoist — план тем, GitHub — материалы, Google Drive — фото"
           ]
         },
@@ -114,8 +114,8 @@
           "id": "scene-04",
           "text": [
             "3",
-            "Положи материалы в GitHub",
-            "Утверждённый текст поста и правила тона. Фото можно оставить в Google Drive"
+            "Попроси Claude Code положить материалы в GitHub",
+            "Утверждённый текст поста и правила тона. Фото Claude Code заберёт из Google Drive"
           ]
         },
         {
@@ -123,7 +123,7 @@
           "text": [
             "Дальше пишешь одну фразу",
             "Собери карусель по брифу и опубликуй в инстаграм",
-            "Он собирает, проверяет и публикует"
+            "Claude Code собирает, проверяет и публикует"
           ]
         },
         {
@@ -273,7 +273,7 @@
     "details": {
       "actualText": [
         "Как выложить пост, не открывая инстаграм",
-        "Всё делается в чате: три шага и одна фраза"
+        "Всё делается в чате Claude Code: три шага и одна фраза"
       ],
       "safeRect": {
         "left": 120,

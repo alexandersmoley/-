@@ -4,7 +4,7 @@
   "storyId": "story-03",
   "role": "proof / experience",
   "layoutFamily": "story-proof-list",
-  "generatedAt": "2026-08-30T06:43:56.328Z",
+  "generatedAt": "2026-08-30T06:55:25.750Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
