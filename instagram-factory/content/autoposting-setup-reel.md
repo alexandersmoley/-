@@ -2,11 +2,15 @@
 id: autoposting-setup-reel
 platform: instagram
 format: reels
-status: approved-for-render
+status: published
 copy_approval: approved
 render: true
 publish: false
 publish_requires_approval: true
+published_at: 2026-08-30T16:23:00+05:00
+published_via: metricool
+metricool_post_id: 368425926
+instagram_audio: "Midnight Dreamer — Giulio Cercato (audioId 534836465627737)"
 writing_contract: ../writing-contract.md
 canvas:
   width: 1080
@@ -167,6 +171,14 @@ Motion:
 Платный здесь только Claude Code. Metricool, Todoist, GitHub и Google Drive работают на бесплатных тарифах.
 
 Мой закреп вышел именно так. Здесь я строю контент-завод и показываю, что в нём ломается по дороге.
+
+# Публикация
+
+Опубликовано 30 августа 2026 в 16:23 по Екатеринбургу через Metricool, автопубликация.
+
+- Видео и обложка ушли по публичным ссылкам с GitHub Pages; обложка передана отдельным параметром `videoThumbnailUrl`, а не взята кадром из видео.
+- Музыка — `Midnight Dreamer`, Giulio Cercato, из каталога Instagram. Громкость видео выставлена в ноль, чтобы сгенерированный рендером инструментал не накладывался на трек.
+- Запрошенную автором `Vertebra` Janus Rasmussen подставить не удалось: по названию каталог отдаёт только чужие original_sound, по исполнителю совпадений нет. Вероятная причина — урезанная музыкальная библиотека бизнес-аккаунтов.
 
 # Acceptance criteria
 

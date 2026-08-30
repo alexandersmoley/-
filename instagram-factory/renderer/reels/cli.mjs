@@ -64,7 +64,7 @@ function extractApprovedCopy(markdown, sceneCount) {
   const coverMatch = markdown.match(/# Cover[\s\S]*?\nТекст:\n([\s\S]*?)(?=\n\nКурсив:|\n\n# Music)/u)
     || markdown.match(/## text_on_cover\n([\s\S]*?)\n\n## cover_direction/u);
   if (!coverMatch) throw new Error('Cannot extract reel cover copy');
-  const captionMatch = markdown.match(/# Caption\n\n([\s\S]*?)\n\n# Acceptance criteria/u);
+  const captionMatch = markdown.match(/# Caption\n\n([\s\S]*?)(?=\n\n# )/u);
   return {
     scenes,
     accents,
