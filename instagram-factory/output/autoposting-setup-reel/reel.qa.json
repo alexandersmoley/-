@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "autoposting-setup-reel",
   "source": "reels/autoposting-setup-reel.json",
-  "generatedAt": "2026-08-30T11:24:59.459Z",
+  "generatedAt": "2026-08-30T11:29:35.961Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -33,14 +33,14 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/autoposting-setup-reel.md",
-    "contentSha256": "60d06e64bd6f6a6fa265e8d65998559723c60f5ac51824d4bedd2cb239c04f92",
+    "contentSha256": "4f05b5021a6a37262559c767d74031b7ee66b12e42e7db1155a72cc1984e19f8",
     "captionSha256": "01a7f2bb5878b20c033be74337ea0fb469c61ac15d2290f9f32e0183ca616629"
   },
   "media": {
     "preview": {
       "path": "output/autoposting-setup-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/preview.mp4",
-      "sha256": "257506b0ad73d007f3bb5b6c71e7c2d47b7faca999618b7c927ebff2c0cc8d06",
+      "sha256": "a3863b267b092a2b205d2b57961d23042d55299f7437c0f3201fde990c71425e",
       "duration": 36,
       "fps": "30/1"
     },
@@ -54,7 +54,7 @@
     "storyboard": {
       "path": "output/autoposting-setup-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/storyboard.png",
-      "sha256": "6f7ff2adff1a97dbbc8f1fea0c4c0907ee2982aba738e4c70101ed5299efd98e",
+      "sha256": "bd1cd5f8981c44e12438769456170013d77f1df256f8482a7b57bb47b9273690",
       "width": 930,
       "height": 1050
     },
@@ -131,7 +131,7 @@
           "id": "scene-06",
           "text": [
             "Мой закреп вышел именно так",
-            "Подписывайтесь — я строю контент-завод"
+            "Подписывайся — я строю контент-завод"
           ]
         }
       ],
