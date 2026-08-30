@@ -1,0 +1,38 @@
+{
+  "id": "autoposting-claude-code-vc",
+  "platform": "vc.ru",
+  "status": "editorial-review",
+  "publish": false,
+  "publishRequiresApproval": true,
+  "articlePath": "content/vc/autoposting-claude-code.md",
+  "sourceBrief": "content/topics/autoposting-vc-master-brief.md",
+  "channelRules": "channels/vc-ru.md",
+  "title": "Как я публикую посты в Instagram, не открывая Instagram",
+  "subtitle": "Контент-план лежит в Todoist, материалы — в GitHub и Google Drive, публикация идёт через Metricool. Всё это я связал через Claude Code.",
+  "topic": null,
+  "cover": {
+    "status": "todo",
+    "aspectRatio": "16:9",
+    "recommendedSize": "1920x1080"
+  },
+  "illustrations": [
+    {
+      "id": "workflow",
+      "status": "todo",
+      "brief": "Todoist → тема → Claude Code → GitHub → сборка → QA → ОК → Metricool → Instagram"
+    },
+    {
+      "id": "brief-role",
+      "status": "todo",
+      "brief": "редакционная работа → brief → production"
+    }
+  ],
+  "approvalGates": [
+    "title-and-structure",
+    "exact-copy",
+    "visuals",
+    "vc-draft",
+    "publish"
+  ],
+  "nextAction": "human editorial review"
+}
