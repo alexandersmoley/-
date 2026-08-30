@@ -49,6 +49,7 @@ const report = {
   reachability: [],
   authenticated: null,
   entryEndpoints: [],
+  schemaEndpoints: [],
   draftSupport: 'unknown',
   conclusion: ''
 };
@@ -84,13 +85,38 @@ for (const host of HOSTS) {
   }
 }
 
+// 2. Which entry-related endpoints exist? Probed with GET only. A POST-only endpoint answers
+// 405 Method Not Allowed, which proves it exists without creating anything; 404 proves it does
+// not. This is how the create path is found without writing to the author's account.
+const CANDIDATE_PATHS = [
+  '/entry/create', '/entry', '/entry/draft', '/entry/drafts',
+  '/uploader/upload', '/subsite/me', '/user/me'
+];
+const liveBase = report.reachability.find((row) => row.answers && row.status !== 404)?.url
+  ?.replace(/\/subsite\/me$/u, '');
+if (liveBase) {
+  report.probedBase = liveBase;
+  for (const candidate of CANDIDATE_PATHS) {
+    const result = await attempt(`${liveBase}${candidate}`, { headers: authHeaders });
+    report.entryEndpoints.push({
+      path: candidate,
+      status: result.status,
+      // 405 says the path is real and expects another verb — usually POST.
+      exists: result.status === 405 ? 'yes (wrong method for GET)'
+        : result.status === 404 ? 'no'
+        : result.status === 401 || result.status === 403 ? 'unknown (needs auth)'
+        : 'answered'
+    });
+  }
+}
+
 // 2. What does the published schema say about creating an entry, and about drafts?
 for (const schemaUrl of SCHEMAS) {
   const result = await attempt(schemaUrl);
   if (!result.ok) continue;
   const text = result.body;
   for (const match of text.matchAll(/^\s{2}(\/[A-Za-z0-9_\/{}.-]*entry[A-Za-z0-9_\/{}.-]*):/gmu)) {
-    report.entryEndpoints.push({ schema: schemaUrl, path: match[1] });
+    report.schemaEndpoints.push({ schema: schemaUrl, path: match[1] });
   }
   if (/isDraft|is_draft|draft/iu.test(text)) report.draftSupport = 'schema mentions drafts';
   break;
