@@ -253,6 +253,10 @@
             "type": "string",
             "minLength": 1
           }
+        },
+        "accent": {
+          "type": "string",
+          "minLength": 1
         }
       }
     },
@@ -319,6 +323,10 @@
             "type": "string",
             "minLength": 1
           }
+        },
+        "accent": {
+          "type": "string",
+          "minLength": 1
         }
       }
     }

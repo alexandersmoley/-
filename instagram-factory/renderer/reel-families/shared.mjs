@@ -5,6 +5,18 @@ import {
 
 export { escapeHtml };
 
+// A line may set one fragment of itself in italic. The fragment is declared by the reel,
+// never guessed here, and the plain text stays byte-identical for the copy freeze.
+export function accentHtml(text, accent) {
+  if (!accent) return null;
+  const source = String(text);
+  const index = source.indexOf(accent);
+  if (index === -1) throw new Error(`Accent "${accent}" is not part of "${source}"`);
+  return escapeHtml(source.slice(0, index))
+    + `<i class="type-accent">${escapeHtml(accent)}</i>`
+    + escapeHtml(source.slice(index + accent.length));
+}
+
 export function contentNode(text, className, html = null, attributes = '') {
   const rendered = applyNonBreakingSpacesToHtml(html ?? escapeHtml(text));
   return `<div class="${className} reel-copy" data-content data-source-text="${escapeHtml(text)}" data-type data-color ${attributes}>${rendered}</div>`;

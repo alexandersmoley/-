@@ -68,6 +68,9 @@ body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: g
 
    Frames alternate paper and blue so a step change is visible before a word is read.
    Everything sits inside the safe zone: x 120-900, y 180-1620. */
+/* Cormorant italic as the accent inside a display line, per design-direction. */
+.type-accent { font-style: italic; }
+
 .card-scene { background: var(--paper); color: var(--ink); }
 .card-rule {
   position: absolute;

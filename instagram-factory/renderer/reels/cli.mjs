@@ -35,8 +35,11 @@ function extractQuotedList(block) {
   return [...block.matchAll(/^\s*-\s+"([^"]*)"\s*$/gmu)].map((match) => match[1]);
 }
 
+const extractAccent = (block) => (block.match(/\nКурсив:\n\s*-\s+"([^"]*)"/u) || [])[1] ?? null;
+
 function extractApprovedCopy(markdown, sceneCount) {
   const scenes = new Map();
+  const accents = new Map();
   for (let index = 1; index <= sceneCount; index += 1) {
     const number = String(index).padStart(2, '0');
     const match = markdown.match(new RegExp(`## Scene ${number}[^\\n]*\\n([\\s\\S]*?)(?=\\n## Scene|\\n# Cover)`, 'u'));
@@ -55,14 +58,18 @@ function extractApprovedCopy(markdown, sceneCount) {
       if (approvals) copy.push(approvals[1]);
     }
     scenes.set(`scene-${number}`, copy);
+    accents.set(`scene-${number}`, extractAccent(match[1]));
   }
-  const coverMatch = markdown.match(/# Cover[\s\S]*?\nТекст:\n([\s\S]*?)(?=\n\n# Music)/u)
+  const coverSection = markdown.match(/# Cover([\s\S]*?)\n# Music/u);
+  const coverMatch = markdown.match(/# Cover[\s\S]*?\nТекст:\n([\s\S]*?)(?=\n\nКурсив:|\n\n# Music)/u)
     || markdown.match(/## text_on_cover\n([\s\S]*?)\n\n## cover_direction/u);
   if (!coverMatch) throw new Error('Cannot extract reel cover copy');
   const captionMatch = markdown.match(/# Caption\n\n([\s\S]*?)\n\n# Acceptance criteria/u);
   return {
     scenes,
+    accents,
     cover: extractQuotedList(coverMatch[1]),
+    coverAccent: coverSection ? extractAccent(coverSection[1]) : null,
     caption: captionMatch ? captionMatch[1].trim().split('\n\n') : []
   };
 }
@@ -195,6 +202,8 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
   const captionBefore = reel.caption.join('\n\n');
   const sourceCopyExact = reel.scenes.every((scene) => JSON.stringify(scene.text) === JSON.stringify(approvedCopy.scenes.get(scene.id)));
   const coverCopyExact = JSON.stringify(reel.cover.text) === JSON.stringify(approvedCopy.cover);
+  const accentsExact = reel.scenes.every((scene) => (scene.accent ?? null) === approvedCopy.accents.get(scene.id))
+    && (reel.cover.accent ?? null) === approvedCopy.coverAccent;
   const captionSourceExact = captionBefore === approvedCopy.caption.join('\n\n');
   const fontUrls = Object.fromEntries(Object.entries(fontPaths).map(([key, value]) => [key, pathToFileURL(value).href]));
   const photoAssetUrl = photoAssetPath ? pathToFileURL(photoAssetPath).href : null;
@@ -295,6 +304,7 @@ async function renderReel({ browser, reel, sourcePath, stylesheet }) {
     contentSourceUnchanged: contentShaBefore === contentShaAfter,
     sourceCopyExact,
     coverCopyExact,
+    accentsExact,
     captionSourceExact,
     captionChecksumExact: sha256Text(captionBefore) === reel.captionSha256,
     browserQaPassed: everyTrue(browserQa.checks),
