@@ -5,7 +5,7 @@
   "variant": "benchmark-a",
   "benchmark": true,
   "source": "posts/pinned-intro.json",
-  "generatedAt": "2026-08-30T11:27:34.313Z",
+  "generatedAt": "2026-08-30T11:38:56.589Z",
   "passed": true,
   "checks": {
     "structuredPostValid": true,
