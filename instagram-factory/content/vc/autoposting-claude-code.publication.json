@@ -14,30 +14,46 @@
   "telegram": "https://t.me/a_smoley",
   "legalNote": "Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ. С 1 сентября 2025 года размещение рекламы на ресурсах с ограниченным доступом в России запрещено. В статье речь идёт о редакционном контенте, а не о рекламе.",
   "cover": {
-    "status": "todo",
+    "status": "rendered",
     "aspectRatio": "16:9",
     "recommendedSize": "1920x1080",
     "text": false,
-    "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Без текста внутри изображения, без псевдоинтерфейсов, AI-иконок, роботов, декоративного шума и случайных геометрических элементов. Обложка должна выглядеть как editorial/web-визуал alexsmoley.ru: молочный или светлый фон, фирменный насыщенный синий, чёрный, много воздуха, модульная композиция. Центральная идея — один материал проходит через несколько стадий производства. Рендерить средствами проекта, не генератором картинок."
+    "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Без текста внутри изображения, без псевдоинтерфейсов, AI-иконок, роботов, декоративного шума и случайных геометрических элементов. Обложка должна выглядеть как editorial/web-визуал alexsmoley.ru: молочный или светлый фон, фирменный насыщенный синий, чёрный, много воздуха, модульная композиция. Центральная идея — один материал проходит через несколько стадий производства. Рендерить средствами проекта, не генератором картинок.",
+    "path": "output/vc/autoposting-claude-code-vc/cover.png",
+    "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/cover.png",
+    "sha256": "df12ff7e60f87be50ab578df572eb95247da18b3e09e1ad9b9617f4406764e5c",
+    "renderedSize": "1920x1080"
   },
   "illustrations": [
     {
       "id": "workflow",
-      "status": "todo",
+      "status": "rendered",
       "text": false,
-      "brief": "Абстрактная редакционная схема без подписей: один материал проходит последовательные стадии от идеи к готовому выпуску. Показывать процесс сеткой, линиями и блоками, а не буквальными иконками сервисов. Синий использовать для человеческих точек согласования."
+      "brief": "Абстрактная редакционная схема без подписей: один материал проходит последовательные стадии от идеи к готовому выпуску. Показывать процесс сеткой, линиями и блоками, а не буквальными иконками сервисов. Синий использовать для человеческих точек согласования.",
+      "path": "output/vc/autoposting-claude-code-vc/workflow.png",
+      "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/workflow.png",
+      "sha256": "9741a627cf5e05bb4a346a56b3dde50d12fc1af8d464c2e911175c61d16e264a",
+      "renderedSize": "1920x1080"
     },
     {
       "id": "chatgpt-github-codex",
-      "status": "todo",
+      "status": "rendered",
       "text": false,
-      "brief": "Три смысловых узла: редакционная работа, зафиксированный контекст, производство. Центральный узел — хранилище утверждённых решений. Без логотипов и текста. Визуально показать передачу материала между двумя рабочими зонами через центральный архив."
+      "brief": "Три смысловых узла: редакционная работа, зафиксированный контекст, производство. Центральный узел — хранилище утверждённых решений. Без логотипов и текста. Визуально показать передачу материала между двумя рабочими зонами через центральный архив.",
+      "path": "output/vc/autoposting-claude-code-vc/chatgpt-github-codex.png",
+      "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/chatgpt-github-codex.png",
+      "sha256": "da93cad8b72bf4ab97b8ab8d73199b534fe4a600f8b0a99ee32fc9f112d19d4c",
+      "renderedSize": "1920x1080"
     },
     {
       "id": "multichannel",
-      "status": "todo",
+      "status": "rendered",
       "text": false,
-      "brief": "Один утверждённый материал расходится в несколько самостоятельных форматов. Не рисовать соцсети и логотипы. Показать один исходный блок, который превращается в карточки, длинный материал, вертикальный формат и короткий пост."
+      "brief": "Один утверждённый материал расходится в несколько самостоятельных форматов. Не рисовать соцсети и логотипы. Показать один исходный блок, который превращается в карточки, длинный материал, вертикальный формат и короткий пост.",
+      "path": "output/vc/autoposting-claude-code-vc/multichannel.png",
+      "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/multichannel.png",
+      "sha256": "d02dd80f472d38fcdbe1ced850ad2a4d8a47910768b545338a22e590048c1735",
+      "renderedSize": "1920x1080"
     }
   ],
   "approvalGates": [
@@ -46,5 +62,7 @@
     "vc-draft",
     "publish"
   ],
-  "nextAction": "render vc visuals in project style, then create vc.ru draft; do not publish"
+  "nextAction": "author reviews the four rendered visuals; only after his OK create the vc.ru draft. Publishing stays off while publish is false.",
+  "visualsQa": "output/vc/autoposting-claude-code-vc/qa-summary.json",
+  "visualsApprovedByAuthor": false
 }
