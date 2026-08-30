@@ -17,7 +17,10 @@
     "render:reels": "node renderer/reels/cli.mjs",
     "pages": "node scripts/build-pages.mjs",
     "pipeline": "node renderer/cli.mjs && node renderer/stories/cli.mjs && node renderer/carousels/cli.mjs && node renderer/carousels/pinned-intro-v2-cli.mjs && node renderer/carousels/pinned-intro-v3-cli.mjs && node renderer/reels/cli.mjs && node renderer/vc/cli.mjs && node scripts/build-pages.mjs",
-    "render:vc": "node renderer/vc/cli.mjs"
+    "render:vc": "node renderer/vc/cli.mjs",
+    "vc:draft": "node scripts/vc-draft.mjs",
+    "vc:draft:login": "node scripts/vc-draft.mjs --login",
+    "vc:draft:inspect": "node scripts/vc-draft.mjs --inspect"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "5.2.8",
