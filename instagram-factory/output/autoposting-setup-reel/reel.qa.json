@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "autoposting-setup-reel",
   "source": "reels/autoposting-setup-reel.json",
-  "generatedAt": "2026-08-30T06:19:13.595Z",
+  "generatedAt": "2026-08-30T06:26:42.823Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -32,28 +32,28 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/autoposting-setup-reel.md",
-    "contentSha256": "0e16145fa0331200b29461ec270a6344655cee68007201df1ecdaadea7e45ca5",
-    "captionSha256": "13a8c687f4388122e8781803178905b9f4eb0ca1c625b1ab9e10cbff3c8c58de"
+    "contentSha256": "2d81d0391f628efba80ff9e6318976853f1dada629ae8f066506e9b9a56c0c56",
+    "captionSha256": "154f3dcd5a7d0f6fe0a9ec88dd21ea35cd17e804bbac25e99e625e523e2fe10d"
   },
   "media": {
     "preview": {
       "path": "output/autoposting-setup-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/preview.mp4",
-      "sha256": "eb4fc1dff938f831aeb8d1237d3442a25811463311bdc99346f016f3164e9046",
+      "sha256": "5ad680d2ec03ede08a7cc1a4a404ee1e1da28e1aab1bede971c61daf20129e91",
       "duration": 30,
       "fps": "30/1"
     },
     "cover": {
       "path": "output/autoposting-setup-reel/cover.png",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/cover.png",
-      "sha256": "f5f1468434971374126fd7d4ca40a065159938accc452ba5702ef79ad5312a29",
+      "sha256": "36fad2424a4473cb4c06ab6560da6c7b26ed880bf0bc9b5bf77b4c5e966dd96c",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
       "path": "output/autoposting-setup-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/storyboard.png",
-      "sha256": "447925d4bdd118e8fdf0baa0c9e11c748fdf2ea85ac7b152053cbe388cb7e491",
+      "sha256": "b799a8828d45e23d3673523f94b1c0ea5d705f7bcfad57ac6122e1e4176052f4",
       "width": 930,
       "height": 1050
     },
@@ -90,7 +90,7 @@
           "id": "scene-01",
           "text": [
             "Чтобы выложить пост, я не открываю инстаграм",
-            "Три шага и одна фраза",
+            "Всё делается в чате: три шага и одна фраза",
             "Дальше — что подключить и в каком порядке"
           ]
         },
@@ -106,7 +106,7 @@
           "id": "scene-03",
           "text": [
             "2",
-            "Подключи Клоду четыре коннектора",
+            "Подключи к Claude четыре коннектора",
             "Metricool — публикация, Todoist — план тем, GitHub — материалы, Google Drive — фото"
           ]
         },
@@ -130,7 +130,7 @@
           "id": "scene-06",
           "text": [
             "Мой закреп вышел именно так",
-            "Подписывайтесь — собираю это дальше"
+            "Подписывайтесь — я строю контент-завод"
           ]
         }
       ],
@@ -146,8 +146,8 @@
         {
           "className": "hook-title display-serif reel-copy",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 148,
-          "lineHeight": 139.12
+          "size": 116,
+          "lineHeight": 109.04
         },
         {
           "className": "hook-lead text-sans reel-copy",
@@ -273,7 +273,7 @@
     "details": {
       "actualText": [
         "Как выложить пост, не открывая инстаграм",
-        "Три шага и одна фраза"
+        "Всё делается в чате: три шага и одна фраза"
       ],
       "safeRect": {
         "left": 120,
