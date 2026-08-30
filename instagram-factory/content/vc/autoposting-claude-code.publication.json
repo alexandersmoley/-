@@ -14,46 +14,168 @@
   "telegram": "https://t.me/a_smoley",
   "legalNote": "Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ. С 1 сентября 2025 года размещение рекламы на ресурсах с ограниченным доступом в России запрещено. В статье речь идёт о редакционном контенте, а не о рекламе.",
   "cover": {
-    "status": "rendered",
+    "status": "todo",
     "aspectRatio": "16:9",
     "recommendedSize": "1920x1080",
-    "text": false,
-    "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Без текста внутри изображения, без псевдоинтерфейсов, AI-иконок, роботов, декоративного шума и случайных геометрических элементов. Обложка должна выглядеть как editorial/web-визуал alexsmoley.ru: молочный или светлый фон, фирменный насыщенный синий, чёрный, много воздуха, модульная композиция. Центральная идея — один материал проходит через несколько стадий производства. Рендерить средствами проекта, не генератором картинок.",
+    "text": true,
+    "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Подписи обязательны: схема должна читаться без подписи под картинкой. Текст — только тот, что объявлен в copy этого визуала; рендерер ничего не придумывает. Шрифты те же, что в остальном производстве: Cormorant Garamond для заголовка фигуры, Inter для подписей. Без псевдоинтерфейсов, AI-иконок, роботов, логотипов сервисов, декоративного шума. Молочный фон, чёрный, фирменный синий; синим отмечены точки, где решение принимает человек. Рендерить средствами проекта, не генератором картинок.",
     "path": "output/vc/autoposting-claude-code-vc/cover.png",
     "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/cover.png",
     "sha256": "df12ff7e60f87be50ab578df572eb95247da18b3e09e1ad9b9617f4406764e5c",
-    "renderedSize": "1920x1080"
+    "renderedSize": "1920x1080",
+    "copy": {
+      "title": "Один материал проходит пять стадий",
+      "legend": "Синим — то, что уже сделано",
+      "stages": [
+        "Тема",
+        "Текст",
+        "Сборка",
+        "Проверка",
+        "Публикация"
+      ]
+    }
   },
   "illustrations": [
     {
       "id": "workflow",
-      "status": "rendered",
-      "text": false,
+      "status": "todo",
+      "text": true,
       "brief": "Абстрактная редакционная схема без подписей: один материал проходит последовательные стадии от идеи к готовому выпуску. Показывать процесс сеткой, линиями и блоками, а не буквальными иконками сервисов. Синий использовать для человеческих точек согласования.",
       "path": "output/vc/autoposting-claude-code-vc/workflow.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/workflow.png",
       "sha256": "9741a627cf5e05bb4a346a56b3dde50d12fc1af8d464c2e911175c61d16e264a",
-      "renderedSize": "1920x1080"
+      "renderedSize": "1920x1080",
+      "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Подписи обязательны: схема должна читаться без подписи под картинкой. Текст — только тот, что объявлен в copy этого визуала; рендерер ничего не придумывает. Шрифты те же, что в остальном производстве: Cormorant Garamond для заголовка фигуры, Inter для подписей. Без псевдоинтерфейсов, AI-иконок, роботов, логотипов сервисов, декоративного шума. Молочный фон, чёрный, фирменный синий; синим отмечены точки, где решение принимает человек. Рендерить средствами проекта, не генератором картинок.",
+      "copy": {
+        "title": "Маршрут материала: от темы до публикации",
+        "legend": "Синим — четыре решения, которые я оставил себе",
+        "nodes": [
+          {
+            "label": "Контент-план",
+            "note": "Todoist",
+            "human": false
+          },
+          {
+            "label": "ОК: тема",
+            "note": "Стоит ли делать",
+            "human": true
+          },
+          {
+            "label": "Текст",
+            "note": "ChatGPT",
+            "human": false
+          },
+          {
+            "label": "ОК: текст",
+            "note": "Так ли я хочу сказать",
+            "human": true
+          },
+          {
+            "label": "Бриф",
+            "note": "GitHub",
+            "human": false
+          },
+          {
+            "label": "Сборка",
+            "note": "Codex",
+            "human": false
+          },
+          {
+            "label": "Проверки",
+            "note": "Автоматические",
+            "human": false
+          },
+          {
+            "label": "ОК: дизайн",
+            "note": "Можно показывать",
+            "human": true
+          },
+          {
+            "label": "ОК: публикация",
+            "note": "Готов выйти",
+            "human": true
+          },
+          {
+            "label": "Публикация",
+            "note": "Metricool → Instagram",
+            "human": false
+          }
+        ]
+      }
     },
     {
       "id": "chatgpt-github-codex",
-      "status": "rendered",
-      "text": false,
+      "status": "todo",
+      "text": true,
       "brief": "Три смысловых узла: редакционная работа, зафиксированный контекст, производство. Центральный узел — хранилище утверждённых решений. Без логотипов и текста. Визуально показать передачу материала между двумя рабочими зонами через центральный архив.",
       "path": "output/vc/autoposting-claude-code-vc/chatgpt-github-codex.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/chatgpt-github-codex.png",
       "sha256": "da93cad8b72bf4ab97b8ab8d73199b534fe4a600f8b0a99ee32fc9f112d19d4c",
-      "renderedSize": "1920x1080"
+      "renderedSize": "1920x1080",
+      "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Подписи обязательны: схема должна читаться без подписи под картинкой. Текст — только тот, что объявлен в copy этого визуала; рендерер ничего не придумывает. Шрифты те же, что в остальном производстве: Cormorant Garamond для заголовка фигуры, Inter для подписей. Без псевдоинтерфейсов, AI-иконок, роботов, логотипов сервисов, декоративного шума. Молочный фон, чёрный, фирменный синий; синим отмечены точки, где решение принимает человек. Рендерить средствами проекта, не генератором картинок.",
+      "copy": {
+        "title": "Две рабочие зоны и один общий архив",
+        "legend": "Синим — утверждённый контекст, из которого работают обе стороны",
+        "leftTitle": "Редактура",
+        "leftNote": "ChatGPT",
+        "leftItems": [
+          "Тема",
+          "Фактура",
+          "Структура",
+          "Текст",
+          "Редактура"
+        ],
+        "vaultTitle": "GitHub",
+        "vaultItems": [
+          "Утверждённый текст",
+          "Правила тона",
+          "Фирстиль"
+        ],
+        "rightTitle": "Производство",
+        "rightNote": "Codex",
+        "rightItems": [
+          "Макеты",
+          "Проверки",
+          "Экспорт"
+        ],
+        "feedLeft": "утверждённый текст",
+        "feedRight": "готовые файлы"
+      }
     },
     {
       "id": "multichannel",
-      "status": "rendered",
-      "text": false,
+      "status": "todo",
+      "text": true,
       "brief": "Один утверждённый материал расходится в несколько самостоятельных форматов. Не рисовать соцсети и логотипы. Показать один исходный блок, который превращается в карточки, длинный материал, вертикальный формат и короткий пост.",
       "path": "output/vc/autoposting-claude-code-vc/multichannel.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/multichannel.png",
       "sha256": "d02dd80f472d38fcdbe1ced850ad2a4d8a47910768b545338a22e590048c1735",
-      "renderedSize": "1920x1080"
+      "renderedSize": "1920x1080",
+      "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Подписи обязательны: схема должна читаться без подписи под картинкой. Текст — только тот, что объявлен в copy этого визуала; рендерер ничего не придумывает. Шрифты те же, что в остальном производстве: Cormorant Garamond для заголовка фигуры, Inter для подписей. Без псевдоинтерфейсов, AI-иконок, роботов, логотипов сервисов, декоративного шума. Молочный фон, чёрный, фирменный синий; синим отмечены точки, где решение принимает человек. Рендерить средствами проекта, не генератором картинок.",
+      "copy": {
+        "title": "Одна тема — несколько самостоятельных материалов",
+        "legend": "Синим — общий источник, из которого собирается каждый формат",
+        "sourceTitle": "Главный бриф",
+        "sourceNote": "Одна утверждённая фактура",
+        "formats": [
+          {
+            "label": "Instagram",
+            "note": "Карусель"
+          },
+          {
+            "label": "vc.ru",
+            "note": "Лонгрид"
+          },
+          {
+            "label": "Telegram",
+            "note": "Пост"
+          },
+          {
+            "label": "Блог",
+            "note": "Статья"
+          }
+        ]
+      }
     }
   ],
   "approvalGates": [
@@ -62,7 +184,7 @@
     "vc-draft",
     "publish"
   ],
-  "nextAction": "author reviews the four rendered visuals; only after his OK create the vc.ru draft. Publishing stays off while publish is false.",
+  "nextAction": "re-render the four visuals with the declared labels, show them to the author, and only after his OK create the vc.ru draft. Publishing stays off while publish is false.",
   "visualsQa": "output/vc/autoposting-claude-code-vc/qa-summary.json",
   "visualsApprovedByAuthor": false
 }
