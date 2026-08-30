@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "autoposting-setup-reel",
   "source": "reels/autoposting-setup-reel.json",
-  "generatedAt": "2026-08-30T06:41:15.076Z",
+  "generatedAt": "2026-08-30T06:45:43.210Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -39,7 +39,7 @@
     "preview": {
       "path": "output/autoposting-setup-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/preview.mp4",
-      "sha256": "acd12b4b3817f9ece343f505210a59b587e3c348fbff866759ef19fe09a2889a",
+      "sha256": "f2efa301b9734ec96f6627bb5e3702dceff477fa59660f8bcffb24ae2a0c47e9",
       "duration": 36,
       "fps": "30/1"
     },
