@@ -93,18 +93,18 @@ export function timelineScript(reel) {
       window.renderAt = (seconds) => {
         const time = clamp(Number(seconds), 0, ${duration});
         document.documentElement.style.setProperty('--timeline', String(time / ${duration}));
-        for (const scene of scenes) {
+        scenes.forEach((scene, index) => {
           const start = Number(scene.dataset.start);
-          const end = Number(scene.dataset.end);
           const local = time - start;
-          const fadeIn = start === 0 ? 1 : clamp(local / .2);
-          const fadeOut = end === ${duration} ? 1 : clamp((end - time) / .2);
-          const visible = time >= start - .2 && time <= end + .2;
-          scene.style.opacity = visible ? String(Math.min(fadeIn, fadeOut)) : '0';
+          // Only ever fade in, never out: a scene stays opaque until the next one has
+          // covered it. Nothing is half-transparent, so the paper frame never shows.
+          const arrival = start === 0 ? 1 : clamp(local / .24);
+          const visible = time >= start - .24;
+          scene.style.opacity = visible ? String(arrival) : '0';
           scene.style.visibility = visible ? 'visible' : 'hidden';
-          scene.style.zIndex = visible ? '3' : '1';
+          scene.style.zIndex = String(3 + index);
           scene.querySelectorAll('[data-motion-item]').forEach((node) => applyMotion(node, local));
-        }
+        });
         // One progress line across the whole reel: the viewer can see how much is left.
         axis.style.transform = 'scaleX(' + (time / ${duration}) + ')';
         document.body.dataset.renderTime = time.toFixed(4);

@@ -10,7 +10,7 @@
     "width": 1080,
     "height": 1920,
     "fps": 30,
-    "durationSeconds": 30
+    "durationSeconds": 36
   },
   "safeZone": {
     "top": 180,
@@ -20,7 +20,7 @@
   },
   "contentSource": {
     "path": "content/autoposting-setup-reel.md",
-    "sha256": "2d81d0391f628efba80ff9e6318976853f1dada629ae8f066506e9b9a56c0c56"
+    "sha256": "94cb7e60c3e6622169adec0375f7436e44da912508ab42323b7b6978a91faf93"
   },
   "captionSha256": "154f3dcd5a7d0f6fe0a9ec88dd21ea35cd17e804bbac25e99e625e523e2fe10d",
   "designTokens": {
@@ -41,7 +41,7 @@
     {
       "id": "scene-01",
       "start": 0,
-      "end": 5,
+      "end": 6,
       "goal": "the promise: three connections and one sentence",
       "layoutFamily": "instruction-hook",
       "text": [
@@ -52,8 +52,8 @@
     },
     {
       "id": "scene-02",
-      "start": 5,
-      "end": 10,
+      "start": 6,
+      "end": 12,
       "goal": "step 1 — Metricool publishes, connect the account",
       "layoutFamily": "instruction-step",
       "text": [
@@ -64,8 +64,8 @@
     },
     {
       "id": "scene-03",
-      "start": 10,
-      "end": 15,
+      "start": 12,
+      "end": 18,
       "goal": "step 2 — connectors in the chat, no code",
       "layoutFamily": "instruction-step",
       "text": [
@@ -76,8 +76,8 @@
     },
     {
       "id": "scene-04",
-      "start": 15,
-      "end": 20,
+      "start": 18,
+      "end": 24,
       "goal": "step 3 — what exactly goes into the repository",
       "layoutFamily": "instruction-step",
       "text": [
@@ -88,8 +88,8 @@
     },
     {
       "id": "scene-05",
-      "start": 20,
-      "end": 25,
+      "start": 24,
+      "end": 30,
       "goal": "the sentence a viewer can copy",
       "layoutFamily": "instruction-phrase",
       "text": [
@@ -100,8 +100,8 @@
     },
     {
       "id": "scene-06",
-      "start": 25,
-      "end": 30,
+      "start": 30,
+      "end": 36,
       "goal": "the pinned post came out this way, call to subscribe",
       "layoutFamily": "instruction-cta",
       "text": [

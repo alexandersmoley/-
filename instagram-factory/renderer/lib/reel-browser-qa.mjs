@@ -72,7 +72,8 @@ export async function runReelBrowserQa(page, { reel, photoAssetUrl }) {
     for (const time of sampleTimes) {
       window.renderAt(time);
       await new Promise((resolve) => requestAnimationFrame(() => resolve()));
-      const scene = scenes.find((item) => getComputedStyle(item).visibility === 'visible' && Number.parseFloat(item.style.opacity) > .5);
+      // Scenes may be stacked, so the one on screen is the last visible, not the first.
+      const scene = scenes.filter((item) => getComputedStyle(item).visibility === 'visible' && Number.parseFloat(item.style.opacity) > .5).at(-1);
       if (!scene) {
         safeZoneFailures.push({ time, reason: 'no-visible-scene' });
         blankFrames.push({ time, reason: 'no-visible-scene' });
