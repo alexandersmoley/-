@@ -2,7 +2,7 @@
   "id": "autoposting-claude-code-vc",
   "platform": "vc.ru",
   "account": "https://vc.ru/id5738265",
-  "status": "approved-copy",
+  "status": "visuals-ready",
   "publish": false,
   "publishRequiresApproval": true,
   "articlePath": "content/vc/autoposting-claude-code.md",
@@ -14,7 +14,7 @@
   "telegram": "https://t.me/a_smoley",
   "legalNote": "Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ. С 1 сентября 2025 года размещение рекламы на ресурсах с ограниченным доступом в России запрещено. В статье речь идёт о редакционном контенте, а не о рекламе.",
   "cover": {
-    "status": "rendered",
+    "status": "approved",
     "aspectRatio": "16:9",
     "recommendedSize": "1920x1080",
     "text": true,
@@ -38,7 +38,7 @@
   "illustrations": [
     {
       "id": "workflow",
-      "status": "rendered",
+      "status": "approved",
       "text": true,
       "brief": "Абстрактная редакционная схема без подписей: один материал проходит последовательные стадии от идеи к готовому выпуску. Показывать процесс сеткой, линиями и блоками, а не буквальными иконками сервисов. Синий использовать для человеческих точек согласования.",
       "path": "output/vc/autoposting-claude-code-vc/workflow.png",
@@ -105,7 +105,7 @@
     },
     {
       "id": "chatgpt-github-codex",
-      "status": "rendered",
+      "status": "approved",
       "text": true,
       "brief": "Три смысловых узла: редакционная работа, зафиксированный контекст, производство. Центральный узел — хранилище утверждённых решений. Без логотипов и текста. Визуально показать передачу материала между двумя рабочими зонами через центральный архив.",
       "path": "output/vc/autoposting-claude-code-vc/chatgpt-github-codex.png",
@@ -144,7 +144,7 @@
     },
     {
       "id": "multichannel",
-      "status": "rendered",
+      "status": "approved",
       "text": true,
       "brief": "Один утверждённый материал расходится в несколько самостоятельных форматов. Не рисовать соцсети и логотипы. Показать один исходный блок, который превращается в карточки, длинный материал, вертикальный формат и короткий пост.",
       "path": "output/vc/autoposting-claude-code-vc/multichannel.png",
@@ -184,7 +184,8 @@
     "vc-draft",
     "publish"
   ],
-  "nextAction": "author reviews the four labelled visuals; only after his OK create the vc.ru draft. Publishing stays off while publish is false.",
+  "nextAction": "probe whether the vc.ru API can create a draft; then create the draft from this manifest. Publishing stays manual while publish is false.",
   "visualsQa": "output/vc/autoposting-claude-code-vc/qa-summary.json",
-  "visualsApprovedByAuthor": false
+  "visualsApprovedByAuthor": true,
+  "visualsApprovedAt": "2026-08-30"
 }

@@ -1,0 +1,38 @@
+name: Probe the vc.ru API
+
+# Read-only. This workflow never creates, uploads or publishes anything on vc.ru; it only asks
+# what the API allows, so the decision about how the factory drafts to vc.ru rests on facts.
+# Run it by hand from the Actions tab. VC_RU_TOKEN is optional: without it the probe still
+# reports whether the API answers, with it the probe also confirms the token is accepted.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: instagram-factory
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Probe
+        env:
+          VC_RU_TOKEN: ${{ secrets.VC_RU_TOKEN }}
+        run: node scripts/vc-api-probe.mjs
+
+      - name: Upload probe report
+        uses: actions/upload-artifact@v4
+        with:
+          name: vc-api-probe
+          path: instagram-factory/output/vc/api-probe.json
