@@ -20,7 +20,7 @@
   },
   "contentSource": {
     "path": "content/content-factory-dream-reel.md",
-    "sha256": "d18f3e2800bda37b1ea56e2bbed9d1e6a741a99ab3ab044dc3763af20ce3bc9b"
+    "sha256": "11ed9683aed5800e97e6bac1fdc9871489da2891853a3242478da22dc88927c6"
   },
   "captionSha256": "583d1458a92bdb2e6c7f46d2a25080d83abe39f4ebba5a8afdf9fe6cf2bbfe65",
   "designTokens": {
@@ -36,14 +36,14 @@
     "sampleRate": 48000,
     "bpm": 110
   },
-  "layoutFamily": "instruction-cards",
+  "layoutFamily": "continuous-flow",
   "scenes": [
     {
       "id": "scene-01",
       "start": 0,
       "end": 6,
       "goal": "show the dream as one AI request",
-      "layoutFamily": "instruction-hook",
+      "layoutFamily": "flow-intro",
       "text": [
         "Контент-завод моей мечты",
         "Я пишу AI одну просьбу",
@@ -56,7 +56,7 @@
       "start": 6,
       "end": 12,
       "goal": "AI takes the next topic and makes three channel versions",
-      "layoutFamily": "instruction-step",
+      "layoutFamily": "flow-branch",
       "text": [
         "1",
         "AI берёт следующую тему из плана",
@@ -69,7 +69,7 @@
       "start": 12,
       "end": 18,
       "goal": "AI prepares visual and checks the result",
-      "layoutFamily": "instruction-step",
+      "layoutFamily": "flow-build",
       "text": [
         "2",
         "AI готовит визуал",
@@ -82,7 +82,7 @@
       "start": 18,
       "end": 24,
       "goal": "one human approval before publication",
-      "layoutFamily": "instruction-step",
+      "layoutFamily": "flow-ok",
       "text": [
         "3",
         "Мне остаётся сказать «ОК»",
@@ -95,7 +95,7 @@
       "start": 24,
       "end": 30,
       "goal": "state the compact dream metric",
-      "layoutFamily": "instruction-phrase",
+      "layoutFamily": "flow-formula",
       "text": [
         "Вот к этому я и иду",
         "1 просьба → 1 ОК → 3 площадки",
@@ -108,7 +108,7 @@
       "start": 30,
       "end": 36,
       "goal": "public build and subscription call",
-      "layoutFamily": "instruction-cta",
+      "layoutFamily": "flow-close",
       "text": [
         "Я публично строю такой контент-завод",
         "Подписывайся и следи, получится ли довести всё до одной команды AI"
@@ -117,7 +117,7 @@
     }
   ],
   "cover": {
-    "layoutFamily": "instruction-cover",
+    "layoutFamily": "flow-cover",
     "text": [
       "Контент-завод моей мечты",
       "1 просьба → 1 ОК → 3 площадки"
