@@ -14,14 +14,14 @@
   "telegram": "https://t.me/a_smoley",
   "legalNote": "Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ. С 1 сентября 2025 года размещение рекламы на ресурсах с ограниченным доступом в России запрещено. В статье речь идёт о редакционном контенте, а не о рекламе.",
   "cover": {
-    "status": "todo",
+    "status": "rendered",
     "aspectRatio": "16:9",
     "recommendedSize": "1920x1080",
     "text": false,
     "artDirection": "Обложка публикации, а не схема из тела статьи. Без текста вообще: заголовок vc.ru показывает рядом сам, дублировать его нечем. Обложка должна работать превью в ленте, поэтому берёт крупной формой, а не деталями: пять стадий производства во всю высоту кадра с нарастающей синей заливкой — тот же приём, что во внутренних схемах, но без подписей и в предельно простом виде. Только утверждённые цвета: молочный фон, чёрный, фирменный синий. Без логотипов, псевдоинтерфейсов и декоративного шума. Рендерить средствами проекта, не генератором картинок.",
     "path": "output/vc/autoposting-claude-code-vc/cover.png",
     "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/cover.png",
-    "sha256": "823b6f040700c3bf83a8aa2ec5bcedf4f4612e7ef05367eab0b63aef53cd9f68",
+    "sha256": "9a4219312753d80254f4d45dd4424cfa74d8e71ed7102fe29dce6b51a88ab4d2",
     "renderedSize": "1920x1080",
     "placement": {
       "slot": "cover-field",
@@ -196,7 +196,7 @@
     "vc-draft",
     "publish"
   ],
-  "nextAction": "attach the four visuals per their placement, set the topic to «Личный опыт», save as draft. Publishing stays manual while publish is false.",
+  "nextAction": "author reviews the new text-free cover; the three illustrations are already approved. Then attach per placement and save as draft. Publishing stays manual.",
   "visualsQa": "output/vc/autoposting-claude-code-vc/qa-summary.json",
   "visualsApprovedByAuthor": true,
   "visualsApprovedAt": "2026-08-30"
