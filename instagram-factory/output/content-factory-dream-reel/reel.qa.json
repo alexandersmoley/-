@@ -1,0 +1,349 @@
+{
+  "pipelineVersion": 1,
+  "reelId": "content-factory-dream-reel",
+  "source": "reels/content-factory-dream-reel.json",
+  "generatedAt": "2026-08-31T10:41:23.133Z",
+  "passed": true,
+  "checks": {
+    "structuredReelValid": true,
+    "approvedForRender": true,
+    "publishDisabled": true,
+    "sceneCountWithinBrief": true,
+    "timelineExact": true,
+    "contentSourceChecksumExact": true,
+    "contentSourceUnchanged": true,
+    "sourceCopyExact": true,
+    "coverCopyExact": true,
+    "accentsExact": true,
+    "captionSourceExact": true,
+    "captionChecksumExact": true,
+    "browserQaPassed": true,
+    "coverBrowserQaPassed": true,
+    "mp4DimensionsExact": true,
+    "frameRateExact": true,
+    "durationWithinBrief": true,
+    "audioStreamPresent": true,
+    "musicOnlyConfiguration": true,
+    "motionFramesDistinct": true,
+    "storyboardCreated": true,
+    "coverDimensionsExact": true,
+    "photoAssetChecksumExact": true,
+    "photoAssetDimensionsExact": true
+  },
+  "failedChecks": [],
+  "integrity": {
+    "contentSource": "content/content-factory-dream-reel.md",
+    "contentSha256": "d18f3e2800bda37b1ea56e2bbed9d1e6a741a99ab3ab044dc3763af20ce3bc9b",
+    "captionSha256": "583d1458a92bdb2e6c7f46d2a25080d83abe39f4ebba5a8afdf9fe6cf2bbfe65"
+  },
+  "media": {
+    "preview": {
+      "path": "output/content-factory-dream-reel/preview.mp4",
+      "url": "https://alexandersmoley.github.io/-/content-factory-dream-reel/preview.mp4",
+      "sha256": "d4832c5c02e62ca652ef98c73f8693c95b4a622acdec3c9912588a5f186924bb",
+      "duration": 36,
+      "fps": "30/1"
+    },
+    "cover": {
+      "path": "output/content-factory-dream-reel/cover.png",
+      "url": "https://alexandersmoley.github.io/-/content-factory-dream-reel/cover.png",
+      "sha256": "eaa17c3e93c38b57d462967d8a50ef2db5c28a3669cba1978d2d513ded2abefa",
+      "width": 1080,
+      "height": 1920
+    },
+    "storyboard": {
+      "path": "output/content-factory-dream-reel/storyboard.png",
+      "url": "https://alexandersmoley.github.io/-/content-factory-dream-reel/storyboard.png",
+      "sha256": "c2481af79783ec3fcdefbab9a51ccfa895560a4cbba3ced1bf7dd5131038dcbd",
+      "width": 930,
+      "height": 1050
+    },
+    "audio": {
+      "codec": "aac",
+      "sampleRate": "48000",
+      "channels": 2,
+      "mode": "temporary-instrumental-guide",
+      "bpm": 110,
+      "replacementNote": "Replace guide before publishing with a licensed instrumental electronic track at 100–120 BPM, no vocals"
+    }
+  },
+  "browserQa": {
+    "checks": {
+      "canvasExact": true,
+      "sceneCountExact": true,
+      "sceneTextExact": true,
+      "fontsLoaded": true,
+      "onlyApprovedFonts": true,
+      "mobileReadable": true,
+      "lineHeightByRoleExact": true,
+      "safeZoneExact": true,
+      "everySampledFrameCarriesCopy": true,
+      "approvedColorsOnly": true,
+      "approvedPhotographyOnly": true,
+      "noGeneratedMedia": true,
+      "noUnauthorizedElements": true,
+      "noUnauthorizedEffects": true,
+      "renderFunctionAvailable": true
+    },
+    "details": {
+      "sourceText": [
+        {
+          "id": "scene-01",
+          "text": [
+            "Контент-завод моей мечты",
+            "Я пишу AI одну просьбу",
+            "Возьми следующую тему из контент-плана и сделай публикации для Instagram, Telegram и vc.ru"
+          ]
+        },
+        {
+          "id": "scene-02",
+          "text": [
+            "1",
+            "AI берёт следующую тему из плана",
+            "Собирает фактуру и делает три самостоятельные версии для Instagram, Telegram и vc.ru"
+          ]
+        },
+        {
+          "id": "scene-03",
+          "text": [
+            "2",
+            "AI готовит визуал",
+            "Проверяет результат и показывает мне финал"
+          ]
+        },
+        {
+          "id": "scene-04",
+          "text": [
+            "3",
+            "Мне остаётся сказать «ОК»",
+            "После этого материалы готовы к публикации, а результаты возвращаются в следующий контент-план"
+          ]
+        },
+        {
+          "id": "scene-05",
+          "text": [
+            "Вот к этому я и иду",
+            "1 просьба → 1 ОК → 3 площадки",
+            "Одна тема превращается в три самостоятельных материала"
+          ]
+        },
+        {
+          "id": "scene-06",
+          "text": [
+            "Я публично строю такой контент-завод",
+            "Подписывайся и следи, получится ли довести всё до одной команды AI"
+          ]
+        }
+      ],
+      "safeRect": {
+        "left": 120,
+        "top": 180,
+        "right": 900,
+        "bottom": 1620
+      },
+      "safeZoneFailures": [],
+      "blankFrames": [],
+      "type": [
+        {
+          "className": "hook-title display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 116,
+          "lineHeight": 109.04
+        },
+        {
+          "className": "type-accent",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 116,
+          "lineHeight": 109.04
+        },
+        {
+          "className": "hook-lead text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 46,
+          "lineHeight": 57.04
+        },
+        {
+          "className": "hook-note text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 36,
+          "lineHeight": 44.64
+        },
+        {
+          "className": "step-number display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 400,
+          "lineHeight": 376
+        },
+        {
+          "className": "step-action display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 96,
+          "lineHeight": 90.24
+        },
+        {
+          "className": "type-accent",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 96,
+          "lineHeight": 90.24
+        },
+        {
+          "className": "step-detail text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "step-number display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 400,
+          "lineHeight": 376
+        },
+        {
+          "className": "step-action display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 96,
+          "lineHeight": 90.24
+        },
+        {
+          "className": "type-accent",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 96,
+          "lineHeight": 90.24
+        },
+        {
+          "className": "step-detail text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "step-number display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 400,
+          "lineHeight": 376
+        },
+        {
+          "className": "step-action display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 96,
+          "lineHeight": 90.24
+        },
+        {
+          "className": "type-accent",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 96,
+          "lineHeight": 90.24
+        },
+        {
+          "className": "step-detail text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 42,
+          "lineHeight": 52.08
+        },
+        {
+          "className": "phrase-lead text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 44,
+          "lineHeight": 54.56
+        },
+        {
+          "className": "phrase-quote display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 84,
+          "lineHeight": 78.96
+        },
+        {
+          "className": "type-accent",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 84,
+          "lineHeight": 78.96
+        },
+        {
+          "className": "phrase-note text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 38,
+          "lineHeight": 47.12
+        },
+        {
+          "className": "cta-note text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 44,
+          "lineHeight": 54.56
+        },
+        {
+          "className": "cta-title display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 116,
+          "lineHeight": 109.04
+        },
+        {
+          "className": "type-accent",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 116,
+          "lineHeight": 109.04
+        }
+      ],
+      "unapprovedColors": [],
+      "effectFailures": [],
+      "sampleTimes": [
+        4.5,
+        10.5,
+        16.5,
+        22.5,
+        28.5,
+        34.5
+      ],
+      "imageCount": 0,
+      "approvedPhotoExact": true
+    }
+  },
+  "coverBrowserQa": {
+    "checks": {
+      "canvasExact": true,
+      "textExact": true,
+      "safeZoneExact": true,
+      "fontsLoaded": true,
+      "headlineWithoutTerminalPeriod": true,
+      "noPhotography": true,
+      "noGeneratedMedia": true
+    },
+    "details": {
+      "actualText": [
+        "Контент-завод моей мечты",
+        "1 просьба → 1 ОК → 3 площадки"
+      ],
+      "safeRect": {
+        "left": 120,
+        "top": 180,
+        "right": 900,
+        "bottom": 1620
+      },
+      "safeZoneFailures": [],
+      "mediaCount": 0
+    }
+  },
+  "probe": {
+    "programs": [],
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "avg_frame_rate": "30/1"
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "avg_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "36.000000"
+    }
+  }
+}

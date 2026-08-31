@@ -1,0 +1,133 @@
+{
+  "$schema": "../schemas/reel.schema.json",
+  "schemaVersion": 1,
+  "id": "content-factory-dream-reel",
+  "platform": "instagram",
+  "format": "reels",
+  "status": "approved-for-render",
+  "publish": false,
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationSeconds": 36
+  },
+  "safeZone": {
+    "top": 180,
+    "right": 180,
+    "bottom": 300,
+    "left": 120
+  },
+  "contentSource": {
+    "path": "content/content-factory-dream-reel.md",
+    "sha256": "11ed9683aed5800e97e6bac1fdc9871489da2891853a3242478da22dc88927c6"
+  },
+  "captionSha256": "583d1458a92bdb2e6c7f46d2a25080d83abe39f4ebba5a8afdf9fe6cf2bbfe65",
+  "designTokens": {
+    "ink": "#101010",
+    "paper": "#f4f1e9",
+    "blue": "#1546e8",
+    "grid": "rgba(21, 70, 232, 0.105)"
+  },
+  "audio": {
+    "mode": "temporary-instrumental-guide",
+    "voiceOver": false,
+    "talkingHead": false,
+    "sampleRate": 48000,
+    "bpm": 110
+  },
+  "layoutFamily": "continuous-flow",
+  "scenes": [
+    {
+      "id": "scene-01",
+      "start": 0,
+      "end": 6,
+      "goal": "show the dream as one AI request",
+      "layoutFamily": "flow-intro",
+      "text": [
+        "Контент-завод моей мечты",
+        "Я пишу AI одну просьбу",
+        "Возьми следующую тему из контент-плана и сделай публикации для Instagram, Telegram и vc.ru"
+      ],
+      "accent": "моей мечты"
+    },
+    {
+      "id": "scene-02",
+      "start": 6,
+      "end": 12,
+      "goal": "AI takes the next topic and makes three channel versions",
+      "layoutFamily": "flow-branch",
+      "text": [
+        "1",
+        "AI берёт следующую тему из плана",
+        "Собирает фактуру и делает три самостоятельные версии для Instagram, Telegram и vc.ru"
+      ],
+      "accent": "следующую тему"
+    },
+    {
+      "id": "scene-03",
+      "start": 12,
+      "end": 18,
+      "goal": "AI prepares visual and checks the result",
+      "layoutFamily": "flow-build",
+      "text": [
+        "2",
+        "AI готовит визуал",
+        "Проверяет результат и показывает мне финал"
+      ],
+      "accent": "готовит визуал"
+    },
+    {
+      "id": "scene-04",
+      "start": 18,
+      "end": 24,
+      "goal": "one human approval before publication",
+      "layoutFamily": "flow-ok",
+      "text": [
+        "3",
+        "Мне остаётся сказать «ОК»",
+        "После этого материалы готовы к публикации, а результаты возвращаются в следующий контент-план"
+      ],
+      "accent": "«ОК»"
+    },
+    {
+      "id": "scene-05",
+      "start": 24,
+      "end": 30,
+      "goal": "state the compact dream metric",
+      "layoutFamily": "flow-formula",
+      "text": [
+        "Вот к этому я и иду",
+        "1 просьба → 1 ОК → 3 площадки",
+        "Одна тема превращается в три самостоятельных материала"
+      ],
+      "accent": "1 ОК"
+    },
+    {
+      "id": "scene-06",
+      "start": 30,
+      "end": 36,
+      "goal": "public build and subscription call",
+      "layoutFamily": "flow-close",
+      "text": [
+        "Я публично строю такой контент-завод",
+        "Подписывайся и следи, получится ли довести всё до одной команды AI"
+      ],
+      "accent": "Подписывайся"
+    }
+  ],
+  "cover": {
+    "layoutFamily": "flow-cover",
+    "text": [
+      "Контент-завод моей мечты",
+      "1 просьба → 1 ОК → 3 площадки"
+    ],
+    "accent": "моей мечты"
+  },
+  "caption": [
+    "Я хочу дойти до одной просьбы AI: взять следующую тему из контент-плана, сделать самостоятельные версии для Instagram, Telegram и vc.ru, подготовить визуал, проверить всё и показать мне финал.",
+    "Мне останется сказать «ОК».",
+    "После публикации результаты должны вернуться в следующий контент-план.",
+    "Вот такой контент-завод я сейчас публично строю. Подписывайся и следи, получится ли довести всё до одной команды AI."
+  ]
+}

@@ -2,6 +2,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as motionEditorialSystem from './motion-editorial-system/index.mjs';
 import * as instructionCards from './instruction-cards/index.mjs';
+import * as continuousFlow from './continuous-flow/index.mjs';
 import { escapeHtml } from './shared.mjs';
 
 const familiesDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -10,7 +11,8 @@ const familiesDirectory = path.dirname(fileURLToPath(import.meta.url));
 // timeline, so a new format is a new directory rather than a branch inside an old one.
 const families = {
   'motion-editorial-system': motionEditorialSystem,
-  'instruction-cards': instructionCards
+  'instruction-cards': instructionCards,
+  'continuous-flow': continuousFlow
 };
 
 function familyOf(reel) {
