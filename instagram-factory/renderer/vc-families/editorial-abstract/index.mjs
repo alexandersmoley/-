@@ -25,14 +25,15 @@ function require(copy, keys, id) {
   }
 }
 
-// The article cover. Not a diagram: vc.ru prints the headline beside it, so there is nothing
-// for words to add here, and a cover is read as a thumbnail in a feed. It therefore carries one
-// large form instead of detail — the same five stages of production as the inside figures, but
-// full height, unlabelled, and stripped to the point where it survives being shrunk.
+// The article cover. Not a diagram and not a smaller version of one: it is read as a thumbnail
+// in a feed, next to other cards, at a fraction of its size. So it inverts the palette — the
+// whole frame is brand blue, the forms are paper — which gives it one large block of colour that
+// survives being shrunk and stands out against a feed of white cards. The idea is the same one
+// the article opens with, one material progressively made, but stated in the largest terms the
+// frame allows and with no text: vc.ru prints the headline beside it.
 function cover() {
   const fills = [0, 25, 50, 75, 100];
   return `<section class="frame frame-cover">
-    ${grid()}
     <div class="cover-row">
       ${fills.map((fill) => `<div class="cover-stage"><i class="cover-fill" style="height:${fill}%"></i></div>`).join('')}
     </div>

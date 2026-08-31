@@ -52,11 +52,13 @@ ul { list-style: none; }
   color: var(--blue);
 }
 
-/* Cover — five stages of production at full height, no text. Sized to survive a thumbnail:
-   one shape, high contrast, nothing that depends on reading. */
-.cover-row { position: absolute; left: 120px; top: 120px; width: 1680px; height: 840px; display: flex; gap: 40px; }
-.cover-stage { position: relative; flex: 1; border: 3px solid var(--ink); }
-.cover-fill { position: absolute; left: 0; right: 0; bottom: 0; display: block; background: var(--blue); }
+/* Cover — inverted so it reads as a thumbnail: the frame is blue, the forms are paper. Wide
+   columns, thick edges and no grid, because at feed size fine detail disappears and only the
+   mass of colour survives. */
+.frame-cover { background: var(--blue); }
+.cover-row { position: absolute; left: 90px; top: 90px; width: 1740px; height: 900px; display: flex; gap: 34px; }
+.cover-stage { position: relative; flex: 1; border: 6px solid var(--paper); }
+.cover-fill { position: absolute; left: 0; right: 0; bottom: 0; display: block; background: var(--paper); }
 
 /* Workflow — equal stages on one spine; the spine shows only in the gaps */
 .route { position: absolute; left: 100px; top: 420px; width: 1720px; display: flex; align-items: flex-start; gap: 14px; }
