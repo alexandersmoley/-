@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <title>Наблюдатель на участке</title>
+  <rect width="1920" height="1080" fill="#EFE9DE"/>
+  <circle cx="700" cy="520" r="400" fill="#F7DED7"/>
+
+  <!-- наблюдатель -->
+  <g>
+    <circle cx="700" cy="410" r="120" fill="#F2C230"/>
+    <path d="M520 1000 q0 -330 180 -330 q180 0 180 330 z" fill="#C8102E"/>
+    <rect x="640" y="700" width="150" height="110" rx="14" fill="#FFFFFF"/>
+    <text x="715" y="742" text-anchor="middle" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="700" fill="#C8102E">НАБЛЮ-</text>
+    <text x="715" y="782" text-anchor="middle" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="700" fill="#C8102E">ДАТЕЛЬ</text>
+    <!-- телефон в руке -->
+    <rect x="880" y="560" width="120" height="200" rx="18" fill="#22262B"/>
+    <rect x="896" y="580" width="88" height="160" rx="8" fill="#DCE3E8"/>
+    <circle cx="940" cy="612" r="22" fill="#C8102E"/>
+  </g>
+
+  <!-- урна и стол комиссии -->
+  <rect x="1220" y="600" width="480" height="300" rx="18" fill="#4A5A68"/>
+  <rect x="1180" y="546" width="560" height="66" rx="16" fill="#C8102E"/>
+  <rect x="1400" y="568" width="120" height="18" rx="9" fill="#8E1220"/>
+  <rect x="1150" y="900" width="620" height="26" rx="13" fill="#3A4854"/>
+
+  <!-- глаз-символ -->
+  <g transform="translate(1460 260)">
+    <path d="M-180 0 q180 -140 360 0 q-180 140 -360 0 z" fill="#FFFFFF" stroke="#22262B" stroke-width="14"/>
+    <circle cx="0" cy="0" r="62" fill="#C8102E"/>
+    <circle cx="0" cy="0" r="26" fill="#22262B"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <title>Переписанный протокол</title>
+  <rect width="1920" height="1080" fill="#EDE7DD"/>
+  <path d="M0 0 L620 0 L420 1080 L0 1080 Z" fill="#E3DACD"/>
+
+  <!-- планшет с протоколом -->
+  <g transform="rotate(-4 960 560)">
+    <rect x="620" y="180" width="680" height="800" rx="20" fill="#4A5A68"/>
+    <rect x="650" y="230" width="620" height="720" rx="10" fill="#FFFFFF"/>
+    <rect x="880" y="150" width="160" height="70" rx="16" fill="#3A4854"/>
+    <text x="960" y="330" text-anchor="middle" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif" font-size="52" font-weight="900" fill="#22262B">ПРОТОКОЛ</text>
+    <rect x="700" y="380" width="520" height="10" rx="5" fill="#D8DDE1"/>
+
+    <g font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif" font-size="46" fill="#4A5A68">
+      <rect x="700" y="440" width="300" height="12" rx="6" fill="#D8DDE1"/>
+      <text x="1060" y="466">1 240</text>
+      <rect x="700" y="540" width="300" height="12" rx="6" fill="#D8DDE1"/>
+      <text x="1060" y="566">  860</text>
+      <rect x="700" y="640" width="300" height="12" rx="6" fill="#D8DDE1"/>
+      <text x="1060" y="666">  412</text>
+    </g>
+    <!-- зачёркнуто и переписано красным -->
+    <path d="M1040 452 L1230 452" stroke="#C8102E" stroke-width="10" stroke-linecap="round"/>
+    <path d="M1040 552 L1230 552" stroke="#C8102E" stroke-width="10" stroke-linecap="round"/>
+    <text x="1060" y="520" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif" font-size="46" font-weight="900" fill="#C8102E" transform="rotate(-5 1060 520)">2 980</text>
+    <text x="1060" y="620" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif" font-size="46" font-weight="900" fill="#C8102E" transform="rotate(-5 1060 620)">  190</text>
+    <rect x="700" y="800" width="240" height="12" rx="6" fill="#D8DDE1"/>
+    <path d="M990 830 q60 -60 120 -6 q40 36 100 -20" fill="none" stroke="#22262B" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <!-- рука с ручкой -->
+  <g transform="rotate(24 1500 520)">
+    <rect x="1450" y="120" width="46" height="420" rx="12" fill="#22262B"/>
+    <path d="M1450 540 L1473 620 L1496 540 Z" fill="#C8102E"/>
+    <rect x="1440" y="300" width="66" height="70" rx="14" fill="#C8102E"/>
+  </g>
+</svg>
