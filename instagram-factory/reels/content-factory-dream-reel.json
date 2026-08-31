@@ -10,7 +10,7 @@
     "width": 1080,
     "height": 1920,
     "fps": 30,
-    "durationSeconds": 34
+    "durationSeconds": 36
   },
   "safeZone": {
     "top": 180,
@@ -19,8 +19,10 @@
     "left": 120
   },
   "contentSource": {
-    "path": "content/content-factory-dream-reel.md"
+    "path": "content/content-factory-dream-reel.md",
+    "sha256": "15a7a79e669608b892b47a4ef61d05e3485e9307e7573a9dab2fe63c8a36022f"
   },
+  "captionSha256": "583d1458a92bdb2e6c7f46d2a25080d83abe39f4ebba5a8afdf9fe6cf2bbfe65",
   "designTokens": {
     "ink": "#101010",
     "paper": "#f4f1e9",
@@ -32,83 +34,81 @@
     "voiceOver": false,
     "talkingHead": false,
     "sampleRate": 48000,
-    "bpm": 112
+    "bpm": 110
   },
-  "layoutFamily": "system-editorial-dream",
+  "layoutFamily": "instruction-cards",
   "scenes": [
     {
       "id": "scene-01",
       "start": 0,
-      "end": 5,
+      "end": 6,
       "goal": "show the dream as one AI request",
-      "layoutFamily": "type-led-command",
+      "layoutFamily": "instruction-hook",
       "text": [
         "Контент-завод моей мечты",
         "Я пишу AI одну просьбу",
         "Возьми следующую тему из контент-плана и сделай публикации для Instagram, Telegram и vc.ru"
       ],
-      "accent": "одну просьбу"
+      "accent": "моей мечты"
     },
     {
       "id": "scene-02",
-      "start": 5,
-      "end": 10,
-      "goal": "show what AI does next",
-      "layoutFamily": "editorial-process-list",
+      "start": 6,
+      "end": 12,
+      "goal": "AI takes the next topic and makes three channel versions",
+      "layoutFamily": "instruction-step",
       "text": [
-        "Дальше AI сам",
-        "берёт тему из плана",
-        "собирает фактуру",
-        "делает три версии",
-        "готовит визуал",
-        "проверяет результат"
+        "1",
+        "AI берёт следующую тему из плана",
+        "Собирает фактуру и делает три самостоятельные версии для Instagram, Telegram и vc.ru"
       ],
-      "accent": "AI сам"
+      "accent": "следующую тему"
     },
     {
       "id": "scene-03",
-      "start": 10,
-      "end": 15,
-      "goal": "reduce human action to one approval",
-      "layoutFamily": "approval-focus",
+      "start": 12,
+      "end": 18,
+      "goal": "AI prepares visual and checks the result",
+      "layoutFamily": "instruction-step",
       "text": [
-        "Мне остаётся посмотреть финал и сказать",
-        "ОК",
-        "Instagram / Telegram / vc.ru"
+        "2",
+        "AI готовит визуал",
+        "Проверяет результат и показывает мне финал"
       ],
-      "accent": "ОК"
+      "accent": "готовит визуал"
     },
     {
       "id": "scene-04",
-      "start": 15,
-      "end": 21,
-      "goal": "show one topic becoming three materials and analytics looping back",
-      "layoutFamily": "system-loop-diagram",
+      "start": 18,
+      "end": 24,
+      "goal": "one human approval before publication",
+      "layoutFamily": "instruction-step",
       "text": [
-        "Одна тема превращается в три самостоятельных материала",
-        "Instagram + Telegram + vc.ru",
-        "А результаты возвращаются в следующий контент-план"
+        "3",
+        "Мне остаётся сказать «ОК»",
+        "После этого материалы готовы к публикации, а результаты возвращаются в следующий контент-план"
       ],
-      "accent": "три самостоятельных материала"
+      "accent": "«ОК»"
     },
     {
       "id": "scene-05",
-      "start": 21,
-      "end": 27,
-      "goal": "state the compact target metric",
-      "layoutFamily": "number-led-statement",
+      "start": 24,
+      "end": 30,
+      "goal": "state the compact dream metric",
+      "layoutFamily": "instruction-phrase",
       "text": [
         "Вот к этому я и иду",
-        "1 просьба → 1 ОК → 3 площадки"
+        "1 просьба → 1 ОК → 3 площадки",
+        "Одна тема превращается в три самостоятельных материала"
       ],
-      "accent": "1 просьба → 1 ОК → 3 площадки"
+      "accent": "1 ОК"
     },
     {
       "id": "scene-06",
-      "start": 27,
-      "end": 34,
+      "start": 30,
+      "end": 36,
       "goal": "public build and subscription call",
-      "layoutFamily": "editorial-cta",
+      "layoutFamily": "instruction-cta",
       "text": [
         "Я публично строю такой контент-завод",
         "Подписывайся и следи, получится ли довести всё до одной команды AI"
@@ -117,12 +117,12 @@
     }
   ],
   "cover": {
-    "layoutFamily": "type-led-editorial-cover",
+    "layoutFamily": "instruction-cover",
     "text": [
       "Контент-завод моей мечты",
       "1 просьба → 1 ОК → 3 площадки"
     ],
-    "accent": "1 просьба → 1 ОК → 3 площадки"
+    "accent": "моей мечты"
   },
   "caption": [
     "Я хочу дойти до одной просьбы AI: взять следующую тему из контент-плана, сделать самостоятельные версии для Instagram, Telegram и vc.ru, подготовить визуал, проверить всё и показать мне финал.",
