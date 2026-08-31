@@ -19,7 +19,8 @@
     "left": 120
   },
   "contentSource": {
-    "path": "content/content-factory-dream-reel.md"
+    "path": "content/content-factory-dream-reel.md",
+    "sha256": "d18f3e2800bda37b1ea56e2bbed9d1e6a741a99ab3ab044dc3763af20ce3bc9b"
   },
   "captionSha256": "583d1458a92bdb2e6c7f46d2a25080d83abe39f4ebba5a8afdf9fe6cf2bbfe65",
   "designTokens": {
