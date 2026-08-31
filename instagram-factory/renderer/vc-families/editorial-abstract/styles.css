@@ -52,13 +52,34 @@ ul { list-style: none; }
   color: var(--blue);
 }
 
-/* Cover — inverted so it reads as a thumbnail: the frame is blue, the forms are paper. Wide
-   columns, thick edges and no grid, because at feed size fine detail disappears and only the
-   mass of colour survives. */
+/* Cover — one page, three states: empty, being filled, finished. Inverted palette so the card
+   is one solid block of brand colour in a feed, and sized so the three states stay separable
+   when the whole thing is 380px wide. */
 .frame-cover { background: var(--blue); }
-.cover-row { position: absolute; left: 90px; top: 90px; width: 1740px; height: 900px; display: flex; gap: 34px; }
-.cover-stage { position: relative; flex: 1; border: 6px solid var(--paper); }
-.cover-fill { position: absolute; left: 0; right: 0; bottom: 0; display: block; background: var(--paper); }
+.cover-line { position: absolute; left: 90px; top: 220px; width: 1740px; height: 640px; display: flex; align-items: center; gap: 0; }
+.page { position: relative; width: 470px; height: 640px; flex: none; }
+.page-empty { border: 8px solid var(--paper); }
+.page-filling { border: 8px solid var(--paper); }
+.page-filling .bar { position: absolute; left: 46px; height: 54px; background: var(--paper); }
+.bar-wide { top: 60px; width: 378px; }
+.bar-mid { top: 142px; width: 300px; }
+.bar-short { top: 224px; width: 200px; }
+.page-done { background: var(--paper); }
+.page-done i { position: absolute; background: var(--blue); display: block; }
+.done-title { left: 46px; top: 46px; width: 300px; height: 66px; }
+.done-image { left: 46px; top: 148px; width: 378px; height: 250px; }
+.done-line { left: 46px; height: 30px; }
+.done-line-1 { top: 434px; width: 378px; }
+.done-line-2 { top: 496px; width: 340px; }
+.done-line-3 { top: 558px; width: 240px; }
+
+/* The arrow between two states: a shaft and two strokes for the head. */
+.cover-arrow { position: relative; flex: 1; height: 60px; }
+.cover-arrow .shaft { position: absolute; left: 30px; right: 32px; top: 26px; height: 8px; background: var(--paper); }
+.cover-arrow .head-up,
+.cover-arrow .head-down { position: absolute; right: 30px; width: 44px; height: 8px; background: var(--paper); }
+.cover-arrow .head-up { top: 26px; transform: rotate(40deg); transform-origin: right center; }
+.cover-arrow .head-down { top: 26px; transform: rotate(-40deg); transform-origin: right center; }
 
 /* Workflow — equal stages on one spine; the spine shows only in the gaps */
 .route { position: absolute; left: 100px; top: 420px; width: 1720px; display: flex; align-items: flex-start; gap: 14px; }

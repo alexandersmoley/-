@@ -25,17 +25,26 @@ function require(copy, keys, id) {
   }
 }
 
-// The article cover. Not a diagram and not a smaller version of one: it is read as a thumbnail
-// in a feed, next to other cards, at a fraction of its size. So it inverts the palette — the
-// whole frame is brand blue, the forms are paper — which gives it one large block of colour that
-// survives being shrunk and stands out against a feed of white cards. The idea is the same one
-// the article opens with, one material progressively made, but stated in the largest terms the
-// frame allows and with no text: vc.ru prints the headline beside it.
+// The article cover. It has to carry a subject a cold reader recognises in a feed, not just a
+// rhythm: the article is about how a finished post gets made, so that is what the cover shows —
+// the same page three times, empty, being filled, finished. Palette inverted (blue field, paper
+// forms) so the card holds up at thumbnail size against a feed of white cards. No text: vc.ru
+// prints the headline beside it.
 function cover() {
-  const fills = [0, 25, 50, 75, 100];
+  const arrow = () => `<div class="cover-arrow" aria-hidden="true"><i class="shaft"></i><i class="head-up"></i><i class="head-down"></i></div>`;
   return `<section class="frame frame-cover">
-    <div class="cover-row">
-      ${fills.map((fill) => `<div class="cover-stage"><i class="cover-fill" style="height:${fill}%"></i></div>`).join('')}
+    <div class="cover-line">
+      <div class="page page-empty"></div>
+      ${arrow()}
+      <div class="page page-filling">
+        <i class="bar bar-wide"></i><i class="bar bar-mid"></i><i class="bar bar-short"></i>
+      </div>
+      ${arrow()}
+      <div class="page page-done">
+        <i class="done-title"></i>
+        <i class="done-image"></i>
+        <i class="done-line done-line-1"></i><i class="done-line done-line-2"></i><i class="done-line done-line-3"></i>
+      </div>
     </div>
   </section>`;
 }
