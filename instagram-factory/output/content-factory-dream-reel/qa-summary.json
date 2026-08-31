@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "content-factory-dream-reel",
   "source": "reels/content-factory-dream-reel.json",
-  "generatedAt": "2026-08-31T10:41:23.133Z",
+  "generatedAt": "2026-08-31T12:07:02.813Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -33,28 +33,28 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/content-factory-dream-reel.md",
-    "contentSha256": "d18f3e2800bda37b1ea56e2bbed9d1e6a741a99ab3ab044dc3763af20ce3bc9b",
+    "contentSha256": "11ed9683aed5800e97e6bac1fdc9871489da2891853a3242478da22dc88927c6",
     "captionSha256": "583d1458a92bdb2e6c7f46d2a25080d83abe39f4ebba5a8afdf9fe6cf2bbfe65"
   },
   "media": {
     "preview": {
       "path": "output/content-factory-dream-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/content-factory-dream-reel/preview.mp4",
-      "sha256": "d4832c5c02e62ca652ef98c73f8693c95b4a622acdec3c9912588a5f186924bb",
+      "sha256": "9fa000bfde3f2c9f591a8adba7c83abef6b9f47f36494f1ed1b8d62945a8f806",
       "duration": 36,
       "fps": "30/1"
     },
     "cover": {
       "path": "output/content-factory-dream-reel/cover.png",
       "url": "https://alexandersmoley.github.io/-/content-factory-dream-reel/cover.png",
-      "sha256": "eaa17c3e93c38b57d462967d8a50ef2db5c28a3669cba1978d2d513ded2abefa",
+      "sha256": "b0885e2ebe1eee21982b2fa3c988ae3b6bd4ad410d0fdf8fd8f6d0094579f30a",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
       "path": "output/content-factory-dream-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/content-factory-dream-reel/storyboard.png",
-      "sha256": "c2481af79783ec3fcdefbab9a51ccfa895560a4cbba3ced1bf7dd5131038dcbd",
+      "sha256": "4050ab31fc4c7310f71eea424081ed11d3733bf5b46cddd003bf54787b4e4407",
       "width": 930,
       "height": 1050
     },
@@ -145,142 +145,172 @@
       "blankFrames": [],
       "type": [
         {
-          "className": "hook-title display-serif reel-copy",
+          "className": "flow-title display-serif reel-copy",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 116,
-          "lineHeight": 109.04
+          "size": 128,
+          "lineHeight": 120.32
         },
         {
-          "className": "type-accent",
+          "className": "",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 116,
-          "lineHeight": 109.04
+          "size": 128,
+          "lineHeight": 120.32
         },
         {
-          "className": "hook-lead text-sans reel-copy",
+          "className": "flow-kicker text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
-          "size": 46,
-          "lineHeight": 57.04
+          "size": 40,
+          "lineHeight": 49.6
         },
         {
-          "className": "hook-note text-sans reel-copy",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 36,
-          "lineHeight": 44.64
-        },
-        {
-          "className": "step-number display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 400,
-          "lineHeight": 376
-        },
-        {
-          "className": "step-action display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
-        },
-        {
-          "className": "type-accent",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
-        },
-        {
-          "className": "step-detail text-sans reel-copy",
+          "className": "flow-command text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
           "size": 42,
           "lineHeight": 52.08
         },
         {
-          "className": "step-number display-serif reel-copy",
+          "className": "flow-number display-serif reel-copy",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 400,
-          "lineHeight": 376
+          "size": 500,
+          "lineHeight": 470
         },
         {
-          "className": "step-action display-serif reel-copy",
+          "className": "flow-heading display-serif reel-copy",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
+          "size": 106,
+          "lineHeight": 99.64
         },
         {
-          "className": "type-accent",
+          "className": "",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
+          "size": 106,
+          "lineHeight": 99.64
         },
         {
-          "className": "step-detail text-sans reel-copy",
+          "className": "flow-body text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
-          "size": 42,
-          "lineHeight": 52.08
+          "size": 39,
+          "lineHeight": 48.36
         },
         {
-          "className": "step-number display-serif reel-copy",
+          "className": "flow-number display-serif reel-copy",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 400,
-          "lineHeight": 376
+          "size": 500,
+          "lineHeight": 470
         },
         {
-          "className": "step-action display-serif reel-copy",
+          "className": "flow-heading display-serif reel-copy",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
+          "size": 106,
+          "lineHeight": 99.64
         },
         {
-          "className": "type-accent",
+          "className": "",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
+          "size": 106,
+          "lineHeight": 99.64
         },
         {
-          "className": "step-detail text-sans reel-copy",
+          "className": "flow-body text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
-          "size": 42,
-          "lineHeight": 52.08
+          "size": 39,
+          "lineHeight": 48.36
         },
         {
-          "className": "phrase-lead text-sans reel-copy",
+          "className": "flow-number display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 500,
+          "lineHeight": 470
+        },
+        {
+          "className": "ok-title display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 166,
+          "lineHeight": 156.04
+        },
+        {
+          "className": "",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 166,
+          "lineHeight": 156.04
+        },
+        {
+          "className": "flow-body text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
-          "size": 44,
-          "lineHeight": 54.56
+          "size": 39,
+          "lineHeight": 48.36
         },
         {
-          "className": "phrase-quote display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 84,
-          "lineHeight": 78.96
-        },
-        {
-          "className": "type-accent",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 84,
-          "lineHeight": 78.96
-        },
-        {
-          "className": "phrase-note text-sans reel-copy",
+          "className": "formula-lead text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
           "size": 38,
           "lineHeight": 47.12
         },
         {
-          "className": "cta-note text-sans reel-copy",
+          "className": "formula display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 94,
+          "lineHeight": 88.36
+        },
+        {
+          "className": "formula-part formula-part-1",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 94,
+          "lineHeight": 88.36
+        },
+        {
+          "className": "",
           "family": "\"Inter Production\", sans-serif",
-          "size": 44,
-          "lineHeight": 54.56
+          "size": 50,
+          "lineHeight": 47
         },
         {
-          "className": "cta-title display-serif reel-copy",
+          "className": "formula-part formula-part-2",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 116,
-          "lineHeight": 109.04
+          "size": 94,
+          "lineHeight": 88.36
         },
         {
-          "className": "type-accent",
+          "className": "",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 116,
-          "lineHeight": 109.04
+          "size": 94,
+          "lineHeight": 88.36
+        },
+        {
+          "className": "",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 50,
+          "lineHeight": 47
+        },
+        {
+          "className": "formula-part formula-part-3",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 94,
+          "lineHeight": 88.36
+        },
+        {
+          "className": "formula-note text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 38,
+          "lineHeight": 47.12
+        },
+        {
+          "className": "close-note text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
+          "className": "close-title display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 110,
+          "lineHeight": 103.4
+        },
+        {
+          "className": "",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 110,
+          "lineHeight": 103.4
         }
       ],
       "unapprovedColors": [],

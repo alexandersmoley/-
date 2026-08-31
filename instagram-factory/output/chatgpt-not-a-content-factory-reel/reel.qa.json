@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "chatgpt-not-a-content-factory-reel",
   "source": "reels/chatgpt-not-a-content-factory-reel.json",
-  "generatedAt": "2026-08-31T10:40:08.072Z",
+  "generatedAt": "2026-08-31T12:05:22.389Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -40,7 +40,7 @@
     "preview": {
       "path": "output/chatgpt-not-a-content-factory-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/preview.mp4",
-      "sha256": "1caa52a4e79da7234e3e00c60727c1f386956d374f2861df063d6121f5adda94",
+      "sha256": "5701977bbd1aa1dd7fe28342ca32fab1d37798c6220909beb4c4a5a71672654d",
       "duration": 25,
       "fps": "30/1"
     },
@@ -54,7 +54,7 @@
     "storyboard": {
       "path": "output/chatgpt-not-a-content-factory-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/chatgpt-not-a-content-factory-reel/storyboard.png",
-      "sha256": "f3e82282aeb9123c6c5a3dc6d18987b110481408e1a8078247f767fbbcbed3bc",
+      "sha256": "bac96e5ab216aa5325109b8fdf9943c992d40c69991fae8d5dd24971960fa9aa",
       "width": 930,
       "height": 1050
     },

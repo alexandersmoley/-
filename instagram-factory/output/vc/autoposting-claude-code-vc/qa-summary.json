@@ -1,7 +1,7 @@
 {
   "pipelineVersion": 1,
   "articleId": "autoposting-claude-code-vc",
-  "generatedAt": "2026-08-31T10:41:23.988Z",
+  "generatedAt": "2026-08-31T12:07:03.885Z",
   "passed": true,
   "source": "content/vc/autoposting-claude-code.publication.json",
   "visuals": [
@@ -9,7 +9,7 @@
       "id": "cover",
       "path": "output/vc/autoposting-claude-code-vc/cover.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/cover.png",
-      "sha256": "823b6f040700c3bf83a8aa2ec5bcedf4f4612e7ef05367eab0b63aef53cd9f68",
+      "sha256": "9a4219312753d80254f4d45dd4424cfa74d8e71ed7102fe29dce6b51a88ab4d2",
       "width": 1920,
       "height": 1080
     },
@@ -54,15 +54,7 @@
         "effects": [],
         "missingFonts": [],
         "overflowing": [],
-        "rendered": [
-          "Один материал проходит пять стадий",
-          "Тема",
-          "Текст",
-          "Сборка",
-          "Проверка",
-          "Публикация",
-          "Синим — то, что уже сделано"
-        ]
+        "rendered": []
       },
       "dimensions": {
         "width": 1920,
