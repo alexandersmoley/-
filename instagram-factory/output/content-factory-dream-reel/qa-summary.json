@@ -1,8 +1,8 @@
 {
   "pipelineVersion": 1,
-  "reelId": "autoposting-setup-reel",
-  "source": "reels/autoposting-setup-reel.json",
-  "generatedAt": "2026-08-31T10:39:11.147Z",
+  "reelId": "content-factory-dream-reel",
+  "source": "reels/content-factory-dream-reel.json",
+  "generatedAt": "2026-08-31T10:41:23.133Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -32,29 +32,29 @@
   },
   "failedChecks": [],
   "integrity": {
-    "contentSource": "content/autoposting-setup-reel.md",
-    "contentSha256": "9854bf2a497996dcecf5c4347aaa91688a57696ff78446f5b3656b3dd8c21473",
-    "captionSha256": "01a7f2bb5878b20c033be74337ea0fb469c61ac15d2290f9f32e0183ca616629"
+    "contentSource": "content/content-factory-dream-reel.md",
+    "contentSha256": "d18f3e2800bda37b1ea56e2bbed9d1e6a741a99ab3ab044dc3763af20ce3bc9b",
+    "captionSha256": "583d1458a92bdb2e6c7f46d2a25080d83abe39f4ebba5a8afdf9fe6cf2bbfe65"
   },
   "media": {
     "preview": {
-      "path": "output/autoposting-setup-reel/preview.mp4",
-      "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/preview.mp4",
-      "sha256": "c81b8603e0473aa93f379f65665578f6cc1cc0e093e0f6713161fc64e5ec0594",
+      "path": "output/content-factory-dream-reel/preview.mp4",
+      "url": "https://alexandersmoley.github.io/-/content-factory-dream-reel/preview.mp4",
+      "sha256": "d4832c5c02e62ca652ef98c73f8693c95b4a622acdec3c9912588a5f186924bb",
       "duration": 36,
       "fps": "30/1"
     },
     "cover": {
-      "path": "output/autoposting-setup-reel/cover.png",
-      "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/cover.png",
-      "sha256": "f9a5b0ff376b0ddda2933a7c95620bf93b52ab4885499ddbaa253d261eda5490",
+      "path": "output/content-factory-dream-reel/cover.png",
+      "url": "https://alexandersmoley.github.io/-/content-factory-dream-reel/cover.png",
+      "sha256": "eaa17c3e93c38b57d462967d8a50ef2db5c28a3669cba1978d2d513ded2abefa",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
-      "path": "output/autoposting-setup-reel/storyboard.png",
-      "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/storyboard.png",
-      "sha256": "bd1cd5f8981c44e12438769456170013d77f1df256f8482a7b57bb47b9273690",
+      "path": "output/content-factory-dream-reel/storyboard.png",
+      "url": "https://alexandersmoley.github.io/-/content-factory-dream-reel/storyboard.png",
+      "sha256": "c2481af79783ec3fcdefbab9a51ccfa895560a4cbba3ced1bf7dd5131038dcbd",
       "width": 930,
       "height": 1050
     },
@@ -90,48 +90,48 @@
         {
           "id": "scene-01",
           "text": [
-            "Чтобы выложить пост, я не открываю Instagram",
-            "Всё делается в чате Claude Code: три шага и одна фраза",
-            "Дальше — что подключить и в каком порядке"
+            "Контент-завод моей мечты",
+            "Я пишу AI одну просьбу",
+            "Возьми следующую тему из контент-плана и сделай публикации для Instagram, Telegram и vc.ru"
           ]
         },
         {
           "id": "scene-02",
           "text": [
             "1",
-            "Заведи аккаунты в четырёх сервисах",
-            "Metricool, Todoist, GitHub, Google Drive. Instagram привяжи к Metricool: нужен бизнес- или креатор-аккаунт"
+            "AI берёт следующую тему из плана",
+            "Собирает фактуру и делает три самостоятельные версии для Instagram, Telegram и vc.ru"
           ]
         },
         {
           "id": "scene-03",
           "text": [
             "2",
-            "Подключи их к Claude Code как коннекторы",
-            "Metricool — публикация, Todoist — план тем, GitHub — материалы, Google Drive — фото"
+            "AI готовит визуал",
+            "Проверяет результат и показывает мне финал"
           ]
         },
         {
           "id": "scene-04",
           "text": [
             "3",
-            "Обсуди тему — Claude Code соберёт бриф и положит в GitHub",
-            "Бриф — файл с темой, фактами и утверждённым текстом поста. Туда же правила тона, фото — из Google Drive"
+            "Мне остаётся сказать «ОК»",
+            "После этого материалы готовы к публикации, а результаты возвращаются в следующий контент-план"
           ]
         },
         {
           "id": "scene-05",
           "text": [
-            "Дальше пишешь одну фразу",
-            "Собери карусель по брифу и опубликуй в Instagram",
-            "Claude Code собирает, проверяет и публикует"
+            "Вот к этому я и иду",
+            "1 просьба → 1 ОК → 3 площадки",
+            "Одна тема превращается в три самостоятельных материала"
           ]
         },
         {
           "id": "scene-06",
           "text": [
-            "Мой закреп вышел именно так",
-            "Подписывайся — я строю контент-завод"
+            "Я публично строю такой контент-завод",
+            "Подписывайся и следи, получится ли довести всё до одной команды AI"
           ]
         }
       ],
@@ -293,7 +293,7 @@
         28.5,
         34.5
       ],
-      "imageCount": 1,
+      "imageCount": 0,
       "approvedPhotoExact": true
     }
   },
@@ -309,8 +309,8 @@
     },
     "details": {
       "actualText": [
-        "Как выложить пост, не открывая Instagram",
-        "Всё делается в чате Claude Code: три шага и одна фраза"
+        "Контент-завод моей мечты",
+        "1 просьба → 1 ОК → 3 площадки"
       ],
       "safeRect": {
         "left": 120,
