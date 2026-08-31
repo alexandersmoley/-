@@ -134,7 +134,7 @@ export function timelineScript(reel) {
         const camera = scene.querySelector('.flow-camera');
         if (camera) {
           const drift = clamp(local / Math.max(.001, end - start));
-          camera.style.transform = 'translate3d(0,' + ((drift - .5) * -34) + 'px,0) scale(' + (1 + drift * .012) + ')';
+          camera.style.transform = 'translate3d(0,' + ((drift - .5) * -24) + 'px,0)';
         }
 
         if (index === 0) {
@@ -155,7 +155,7 @@ export function timelineScript(reel) {
           const num = scene.querySelector('.flow-number');
           const lines = [...scene.querySelectorAll('.branch-lines i')];
           const labels = [...scene.querySelectorAll('.channel-labels span')];
-          const a = p(local, .0, 1.0), b = p(local, .5, 1.0), c = p(local, 1.2, 1.5);
+          const a = p(local, .0, 1.0), b = p(local, .5, 1.0);
           if (num) { num.style.opacity = a * .18; num.style.transform = 'translate3d(0,' + ((1-a)*55) + 'px,0)'; }
           if (heading) { heading.style.opacity = a; heading.style.transform = 'translate3d(0,' + ((1-a)*35) + 'px,0)'; }
           if (body) body.style.opacity = b;
@@ -175,7 +175,7 @@ export function timelineScript(reel) {
           modules.forEach((module, i) => {
             const q = p(local, .65 + i*.22, 1.25);
             const converge = p(local, 3.3, 1.6);
-            const shift = (i-1) * (1-converge) * 250;
+            const shift = (i-1) * (1-converge) * 235;
             module.style.opacity = q;
             module.style.transform = 'translate3d(' + shift + 'px,' + ((1-q)*45) + 'px,0) scale(' + (.9 + q*.1) + ')';
             const inner = module.querySelector('b'); if (inner) inner.style.transform = 'scaleX(' + p(local, 1.6+i*.18, 1.2) + ')';
@@ -189,7 +189,7 @@ export function timelineScript(reel) {
           const orbit = scene.querySelector('.ok-orbit');
           const a = p(local, .2, 1.2), b = p(local, 1.0, 1.2), c = p(local, 1.7, 1.8);
           if (num) num.style.opacity = a*.12;
-          if (title) { title.style.opacity = a; title.style.transform = 'scale(' + (.78 + a*.22) + ')'; }
+          if (title) { title.style.opacity = a; title.style.transform = 'scale(' + (.84 + a*.16) + ')'; title.style.transformOrigin = '120px center'; }
           if (body) body.style.opacity = b;
           if (orbit) { orbit.style.opacity = c; orbit.style.transform = 'rotate(' + (c*250) + 'deg) scale(' + (.72+c*.28) + ')'; }
         }
@@ -214,7 +214,7 @@ export function timelineScript(reel) {
           const a=p(local,.1,1.1), b=p(local,.75,1.5), c=p(local,1.2,3.0);
           if (note) { note.style.opacity=a; note.style.transform='translate3d(0,'+((1-a)*28)+'px,0)'; }
           if (title) { title.style.opacity=b; title.style.clipPath='inset(0 '+((1-b)*100)+'% 0 0)'; }
-          if (line) line.style.transform='translate3d('+(c*860-860)+'px,0,0)';
+          if (line) line.style.transform='translate3d('+(c*780-780)+'px,0,0)';
         }
       });
       document.body.dataset.renderTime = time.toFixed(4);
