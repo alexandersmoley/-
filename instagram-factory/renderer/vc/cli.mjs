@@ -96,11 +96,12 @@ async function renderArticleVisuals(browser, manifestPath, stylesheet, fontUrls)
   await fs.mkdir(renderDirectory, { recursive: true });
 
   const visuals = [
-    { id: 'cover', copy: manifest.cover.copy },
-    ...manifest.illustrations.map(({ id, copy }) => ({ id, copy }))
+    { id: 'cover', copy: manifest.cover.copy, text: manifest.cover.text },
+    ...manifest.illustrations.map(({ id, copy, text }) => ({ id, copy, text }))
   ];
-  for (const { id, copy } of visuals) {
-    if (!copy) throw new Error(`vc visual ${id} has no declared copy in the manifest`);
+  // A visual declaring text must bring the words with it; the cover declares none by design.
+  for (const { id, copy, text } of visuals) {
+    if (text && !copy) throw new Error(`vc visual ${id} declares text but has no copy in the manifest`);
   }
   const rendered = [];
   const qa = {};

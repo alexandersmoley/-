@@ -14,26 +14,20 @@
   "telegram": "https://t.me/a_smoley",
   "legalNote": "Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории РФ. С 1 сентября 2025 года размещение рекламы на ресурсах с ограниченным доступом в России запрещено. В статье речь идёт о редакционном контенте, а не о рекламе.",
   "cover": {
-    "status": "approved",
+    "status": "todo",
     "aspectRatio": "16:9",
     "recommendedSize": "1920x1080",
-    "text": true,
-    "artDirection": "Использовать только утверждённый фирстиль проекта из brand-system.md и design-direction.md. Подписи обязательны: схема должна читаться без подписи под картинкой. Текст — только тот, что объявлен в copy этого визуала; рендерер ничего не придумывает. Шрифты те же, что в остальном производстве: Cormorant Garamond для заголовка фигуры, Inter для подписей. Без псевдоинтерфейсов, AI-иконок, роботов, логотипов сервисов, декоративного шума. Молочный фон, чёрный, фирменный синий; синим отмечены точки, где решение принимает человек. Рендерить средствами проекта, не генератором картинок.",
+    "text": false,
+    "artDirection": "Обложка публикации, а не схема из тела статьи. Без текста вообще: заголовок vc.ru показывает рядом сам, дублировать его нечем. Обложка должна работать превью в ленте, поэтому берёт крупной формой, а не деталями: пять стадий производства во всю высоту кадра с нарастающей синей заливкой — тот же приём, что во внутренних схемах, но без подписей и в предельно простом виде. Только утверждённые цвета: молочный фон, чёрный, фирменный синий. Без логотипов, псевдоинтерфейсов и декоративного шума. Рендерить средствами проекта, не генератором картинок.",
     "path": "output/vc/autoposting-claude-code-vc/cover.png",
     "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/cover.png",
     "sha256": "823b6f040700c3bf83a8aa2ec5bcedf4f4612e7ef05367eab0b63aef53cd9f68",
     "renderedSize": "1920x1080",
-    "copy": {
-      "title": "Один материал проходит пять стадий",
-      "legend": "Синим — то, что уже сделано",
-      "stages": [
-        "Тема",
-        "Текст",
-        "Сборка",
-        "Проверка",
-        "Публикация"
-      ]
-    }
+    "placement": {
+      "slot": "cover-field",
+      "note": "Поле «Обложка» публикации, не в теле статьи."
+    },
+    "layoutFamily": "article-cover"
   },
   "illustrations": [
     {
@@ -101,6 +95,12 @@
             "human": false
           }
         ]
+      },
+      "placement": {
+        "slot": "in-body",
+        "afterHeading": "Что я называю контент-заводом",
+        "afterText": "Конкретные сервисы со временем наверняка поменяются. Меня больше интересует сама схема.",
+        "caption": "Весь маршрут целиком. Синие блоки — четыре решения, которые я принимаю сам."
       }
     },
     {
@@ -140,6 +140,12 @@
         ],
         "feedLeft": "утверждённый текст",
         "feedRight": "готовые файлы"
+      },
+      "placement": {
+        "slot": "in-body",
+        "afterHeading": "Шаг 4. ChatGPT и Codex связывает GitHub",
+        "afterText": "ChatGPT → GitHub ← Codex",
+        "caption": "То же самое подробнее: что лежит в GitHub и что каждая сторона оттуда берёт."
       }
     },
     {
@@ -175,6 +181,12 @@
             "note": "Статья"
           }
         ]
+      },
+      "placement": {
+        "slot": "in-body",
+        "afterHeading": "Следующий этап — несколько каналов из одной темы",
+        "afterText": "одна тема → главный бриф → Instagram / vc.ru / Telegram / блог",
+        "caption": "Куда это идёт дальше: один бриф — несколько самостоятельных материалов."
       }
     }
   ],
@@ -184,7 +196,7 @@
     "vc-draft",
     "publish"
   ],
-  "nextAction": "probe whether the vc.ru API can create a draft; then create the draft from this manifest. Publishing stays manual while publish is false.",
+  "nextAction": "attach the four visuals per their placement, set the topic to «Личный опыт», save as draft. Publishing stays manual while publish is false.",
   "visualsQa": "output/vc/autoposting-claude-code-vc/qa-summary.json",
   "visualsApprovedByAuthor": true,
   "visualsApprovedAt": "2026-08-30"

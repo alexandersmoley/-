@@ -25,20 +25,17 @@ function require(copy, keys, id) {
   }
 }
 
-// One material crossing five stages of production, progressively made.
-function cover(copy) {
-  require(copy, ['title', 'legend', 'stages'], 'cover');
+// The article cover. Not a diagram: vc.ru prints the headline beside it, so there is nothing
+// for words to add here, and a cover is read as a thumbnail in a feed. It therefore carries one
+// large form instead of detail — the same five stages of production as the inside figures, but
+// full height, unlabelled, and stripped to the point where it survives being shrunk.
+function cover() {
   const fills = [0, 25, 50, 75, 100];
   return `<section class="frame frame-cover">
     ${grid()}
-    ${head(copy)}
-    <div class="stage-row">
-      ${copy.stages.map((label, index) => `<div class="stage-cell">
-        <div class="stage"><i class="stage-fill" style="height:${fills[index] ?? 100}%"></i></div>
-        <p class="stage-label">${typeset(label)}</p>
-      </div>`).join('')}
+    <div class="cover-row">
+      ${fills.map((fill) => `<div class="cover-stage"><i class="cover-fill" style="height:${fill}%"></i></div>`).join('')}
     </div>
-    ${legend(copy)}
   </section>`;
 }
 
@@ -115,8 +112,10 @@ const compositions = { cover, workflow, 'chatgpt-github-codex': archive, multich
 // Every string the figure is allowed to show, in reading order. The QA gate compares this
 // against what the browser actually rendered, so a label cannot drift from the manifest.
 export function declaredText(id, copy) {
+  // The cover carries no text at all, so its declared text is empty and copyExact then requires
+  // the rendered frame to be empty too — the old noText gate, expressed the same way as the rest.
+  if (id === 'cover') return [];
   const parts = [copy.title];
-  if (id === 'cover') parts.push(...copy.stages);
   if (id === 'workflow') parts.push(...copy.nodes.flatMap((node) => [node.label, node.note]));
   if (id === 'chatgpt-github-codex') {
     parts.push(copy.leftTitle, copy.leftNote, ...copy.leftItems, copy.feedLeft,
