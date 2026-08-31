@@ -56,8 +56,14 @@ async function runVisualQa(page, expected) {
     });
     const rendered = textNodes.map((node) => norm(node.textContent));
 
-    const missingFonts = ['16px "Inter Production"', '16px "Cormorant Garamond Production"']
-      .filter((spec) => !document.fonts.check(spec));
+    // Only meaningful where there is type to set. A face with font-display: block is fetched
+    // when something needs it, so on a text-free visual — the cover — nothing ever requests it
+    // and document.fonts.check reports false for a page that is entirely correct. The gate
+    // exists to catch words rendered in a fallback face; with no words there is nothing to
+    // catch, so it does not apply.
+    const missingFonts = expected.length === 0 ? []
+      : ['16px "Inter Production"', '16px "Cormorant Garamond Production"']
+        .filter((spec) => !document.fonts.check(spec));
 
     // A label that outgrew its box, or one that left the safe area.
     // Tight display leading makes glyph ink sit a pixel or two outside its line box, which is
