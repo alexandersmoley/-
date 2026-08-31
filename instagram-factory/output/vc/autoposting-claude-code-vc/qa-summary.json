@@ -1,7 +1,7 @@
 {
   "pipelineVersion": 1,
   "articleId": "autoposting-claude-code-vc",
-  "generatedAt": "2026-08-31T12:13:27.592Z",
+  "generatedAt": "2026-08-31T12:25:56.749Z",
   "passed": true,
   "source": "content/vc/autoposting-claude-code.publication.json",
   "visuals": [
@@ -9,7 +9,7 @@
       "id": "cover",
       "path": "output/vc/autoposting-claude-code-vc/cover.png",
       "url": "https://alexandersmoley.github.io/-/vc/autoposting-claude-code-vc/cover.png",
-      "sha256": "9a4219312753d80254f4d45dd4424cfa74d8e71ed7102fe29dce6b51a88ab4d2",
+      "sha256": "c2441b5749c0732799e94b1d6a83a84211b803f9e8f64499753fb5f793b81bd4",
       "width": 1920,
       "height": 1080
     },

@@ -4,7 +4,7 @@
   "storyId": "story-02",
   "role": "what-i-do",
   "layoutFamily": "story-type-list",
-  "generatedAt": "2026-08-31T12:08:30.738Z",
+  "generatedAt": "2026-08-31T12:21:00.978Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,
