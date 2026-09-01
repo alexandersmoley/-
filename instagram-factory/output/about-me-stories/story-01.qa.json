@@ -4,7 +4,7 @@
   "storyId": "story-01",
   "role": "hook / заход",
   "layoutFamily": "story-type-intro",
-  "generatedAt": "2026-08-31T12:37:54.359Z",
+  "generatedAt": "2026-09-01T03:01:58.006Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,

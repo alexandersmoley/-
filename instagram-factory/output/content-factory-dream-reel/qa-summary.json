@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "content-factory-dream-reel",
   "source": "reels/content-factory-dream-reel.json",
-  "generatedAt": "2026-08-31T12:41:53.280Z",
+  "generatedAt": "2026-09-01T03:06:48.800Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -40,7 +40,7 @@
     "preview": {
       "path": "output/content-factory-dream-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/content-factory-dream-reel/preview.mp4",
-      "sha256": "9e8094a3407fd183d5685e37043c0c44da8a509833d5e365076508c10c23a5ed",
+      "sha256": "9fa000bfde3f2c9f591a8adba7c83abef6b9f47f36494f1ed1b8d62945a8f806",
       "duration": 36,
       "fps": "30/1"
     },
