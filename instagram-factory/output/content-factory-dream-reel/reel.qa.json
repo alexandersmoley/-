@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "content-factory-dream-reel",
   "source": "reels/content-factory-dream-reel.json",
-  "generatedAt": "2026-09-01T03:06:48.800Z",
+  "generatedAt": "2026-09-01T19:46:10.717Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,

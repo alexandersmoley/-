@@ -1,0 +1,41 @@
+{
+  "pipelineVersion": 1,
+  "accountId": "vc-account",
+  "generatedAt": "2026-09-01T19:46:11.959Z",
+  "passed": true,
+  "source": "content/vc/account.json",
+  "assets": [
+    {
+      "id": "account-cover",
+      "path": "output/vc/vc-account/account-cover.png",
+      "url": "https://alexandersmoley.github.io/-/vc/vc-account/account-cover.png",
+      "sha256": "079dbe273cc35ce1c9c4c66d9488d0b9bf109b62713fb531d97900d40ca9e668",
+      "width": 1920,
+      "height": 480
+    }
+  ],
+  "qa": {
+    "account-cover": {
+      "checks": {
+        "canvasExact": true,
+        "copyExact": true,
+        "projectFontsOnly": true,
+        "nothingOverflows": true,
+        "noMedia": true,
+        "approvedColorsOnly": true,
+        "noEffects": true
+      },
+      "details": {
+        "unapproved": [],
+        "effects": [],
+        "missingFonts": [],
+        "overflowing": [],
+        "rendered": []
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 480
+      }
+    }
+  }
+}
