@@ -117,14 +117,34 @@ function multichannel(copy) {
   </section>`;
 }
 
-const compositions = { cover, workflow, 'chatgpt-github-codex': archive, multichannel };
+// The account cover. Not about one article but about the blog as a whole, so the subject is the
+// line itself rather than a single material on it: the same page repeats across the whole width,
+// each one further along than the last.
+//
+// Everything is sized from the frame's own height rather than in fixed pixels, and the row is
+// wider than the frame at both ends. The banner size vc.ru wants could not be verified from
+// here, so the composition has to hold at any wide crop instead of at one assumed size — a first
+// version used fixed pixels and lost the whole point of the picture when the frame got shorter.
+function accountCover() {
+  const count = 12;
+  return `<section class="frame frame-account">
+    <div class="belt" aria-hidden="true">${
+      Array.from({ length: count }, (_, index) => {
+        const fill = Math.round((index / (count - 1)) * 100);
+        return `<div class="belt-page"><i style="height:${fill}%"></i></div>`;
+      }).join('')
+    }</div>
+  </section>`;
+}
+
+const compositions = { cover, workflow, 'chatgpt-github-codex': archive, multichannel, 'account-cover': accountCover };
 
 // Every string the figure is allowed to show, in reading order. The QA gate compares this
 // against what the browser actually rendered, so a label cannot drift from the manifest.
 export function declaredText(id, copy) {
   // The cover carries no text at all, so its declared text is empty and copyExact then requires
   // the rendered frame to be empty too — the old noText gate, expressed the same way as the rest.
-  if (id === 'cover') return [];
+  if (id === 'cover' || id === 'account-cover') return [];
   const parts = [copy.title];
   if (id === 'workflow') parts.push(...copy.nodes.flatMap((node) => [node.label, node.note]));
   if (id === 'chatgpt-github-codex') {
@@ -146,14 +166,16 @@ export function renderVisual(id, copy) {
   return composition(copy);
 }
 
-export function visualHtml(id, copy, stylesheet, fontUrls) {
+export function visualHtml(id, copy, stylesheet, fontUrls, size = null) {
+  // A non-article canvas declares its own size; article visuals keep the stylesheet defaults.
+  const canvas = size ? `:root{--canvas-w:${size.width}px;--canvas-h:${size.height}px}` : '';
   const css = stylesheet
     .replaceAll('__INTER_FONT_URL__', fontUrls.inter)
     .replaceAll('__CORMORANT_REGULAR_URL__', fontUrls.cormorantRegular)
     .replaceAll('__CORMORANT_ITALIC_URL__', fontUrls.cormorantItalic);
   return `<!doctype html>
 <html lang="ru">
-<head><meta charset="utf-8"><title>${escapeHtml(id)}</title><style>${css}</style></head>
+<head><meta charset="utf-8"><title>${escapeHtml(id)}</title><style>${css}${canvas}</style></head>
 <body>${renderVisual(id, copy)}</body>
 </html>`;
 }

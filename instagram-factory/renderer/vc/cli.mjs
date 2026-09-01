@@ -24,14 +24,15 @@ const fontPaths = {
 const normalise = (value) => String(value).replace(/\u00a0/gu, ' ').replace(/\s+/gu, ' ').trim();
 
 const everyTrue = (checks) => Object.values(checks).every(Boolean);
+const ARTICLE_CANVAS = { width: 1920, height: 1080 };
 
 // These figures have to be readable on their own, so they do carry text — but only the text
 // the manifest declares. QA states that rather than trusting it: the rendered words must equal
 // the declared words, the project's own fonts must actually be the ones painting them, and no
 // label may overflow its box or leave the safe area. Without the last two, a font that failed
 // to load or a label one word too long produces a broken figure that every other gate passes.
-async function runVisualQa(page, expected) {
-  return page.evaluate(({ expected }) => {
+async function runVisualQa(page, expected, size) {
+  return page.evaluate(({ expected, size }) => {
     const norm = (value) => String(value).replace(/\u00a0/gu, ' ').replace(/\s+/gu, ' ').trim();
     const allowed = new Set([
       'rgb(16, 16, 16)', 'rgb(244, 241, 233)', 'rgb(21, 70, 232)',
@@ -75,13 +76,14 @@ async function runVisualQa(page, expected) {
       const grownPast = node.scrollWidth > node.clientWidth + SLACK || node.scrollHeight > node.clientHeight + SLACK;
       const box = node.getBoundingClientRect();
       const outside = box.left < SAFE || box.top < SAFE
-        || box.right > 1920 - SAFE || box.bottom > 1080 - SAFE;
+        || box.right > size.width - SAFE || box.bottom > size.height - SAFE;
       return grownPast || outside;
     }).map((node) => `${node.className || node.tagName}: ${norm(node.textContent).slice(0, 40)}`);
 
     return {
       checks: {
-        canvasExact: document.documentElement.scrollWidth === 1920 && document.documentElement.scrollHeight === 1080,
+        canvasExact: document.documentElement.scrollWidth === size.width
+          && document.documentElement.scrollHeight === size.height,
         copyExact: JSON.stringify(rendered) === JSON.stringify(expected.map(norm)),
         projectFontsOnly: missingFonts.length === 0,
         nothingOverflows: overflowing.length === 0,
@@ -91,7 +93,7 @@ async function runVisualQa(page, expected) {
       },
       details: { unapproved, effects, missingFonts, overflowing, rendered }
     };
-  }, { expected });
+  }, { expected, size });
 }
 
 async function renderArticleVisuals(browser, manifestPath, stylesheet, fontUrls) {
@@ -118,13 +120,13 @@ async function renderArticleVisuals(browser, manifestPath, stylesheet, fontUrls)
     const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
     await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'load' });
     await page.evaluate(() => document.fonts.ready);
-    const report = await runVisualQa(page, declaredText(id, copy).map(normalise));
+    const report = await runVisualQa(page, declaredText(id, copy).map(normalise), ARTICLE_CANVAS);
     const pngPath = path.join(outputDirectory, `${id}.png`);
     await page.screenshot({ path: pngPath, type: 'png', animations: 'disabled' });
     await page.close();
     const meta = await sharp(pngPath).metadata();
     qa[id] = { ...report, dimensions: { width: meta.width, height: meta.height } };
-    if (!everyTrue(report.checks) || meta.width !== 1920 || meta.height !== 1080) {
+    if (!everyTrue(report.checks) || meta.width !== ARTICLE_CANVAS.width || meta.height !== ARTICLE_CANVAS.height) {
       throw new Error(`vc visual QA failed for ${id}: ${JSON.stringify(report, null, 2)}`);
     }
     rendered.push({
@@ -150,6 +152,58 @@ async function renderArticleVisuals(browser, manifestPath, stylesheet, fontUrls)
   return report;
 }
 
+// Account-level artwork: the profile banner, not tied to any one article. Same gates, but the
+// canvas comes from the declaration, since a banner is not 16:9 and its exact size on vc.ru
+// could not be verified from here.
+async function renderAccountAssets(browser, declarationPath, stylesheet, fontUrls) {
+  const declaration = JSON.parse(await fs.readFile(declarationPath, 'utf8'));
+  const outputDirectory = path.join(outputRoot, declaration.id);
+  const renderDirectory = path.join(renderRoot, declaration.id);
+  await fs.mkdir(outputDirectory, { recursive: true });
+  await fs.mkdir(renderDirectory, { recursive: true });
+
+  const rendered = [];
+  const qa = {};
+  for (const asset of declaration.assets) {
+    const size = { width: asset.width, height: asset.height };
+    const html = visualHtml(asset.layoutFamily, asset.copy, stylesheet, fontUrls, size);
+    const htmlPath = path.join(renderDirectory, `${asset.id}.html`);
+    await fs.writeFile(htmlPath, html);
+    const page = await browser.newPage({ viewport: size, deviceScaleFactor: 1 });
+    await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'load' });
+    await page.evaluate(() => document.fonts.ready);
+    const expected = declaredText(asset.layoutFamily, asset.copy).map(normalise);
+    const report = await runVisualQa(page, expected, size);
+    const pngPath = path.join(outputDirectory, `${asset.id}.png`);
+    await page.screenshot({ path: pngPath, type: 'png', animations: 'disabled' });
+    await page.close();
+    const meta = await sharp(pngPath).metadata();
+    qa[asset.id] = { ...report, dimensions: { width: meta.width, height: meta.height } };
+    if (!everyTrue(report.checks) || meta.width !== size.width || meta.height !== size.height) {
+      throw new Error(`vc account asset QA failed for ${asset.id}: ${JSON.stringify(report, null, 2)}`);
+    }
+    rendered.push({
+      id: asset.id,
+      path: path.relative(factoryRoot, pngPath),
+      url: `${baseUrl}vc/${declaration.id}/${asset.id}.png`,
+      sha256: await sha256File(pngPath),
+      width: meta.width,
+      height: meta.height
+    });
+  }
+  const report = {
+    pipelineVersion: 1,
+    accountId: declaration.id,
+    generatedAt: new Date().toISOString(),
+    passed: true,
+    source: path.relative(factoryRoot, declarationPath),
+    assets: rendered,
+    qa
+  };
+  await fs.writeFile(path.join(outputDirectory, 'qa-summary.json'), `${JSON.stringify(report, null, 2)}\n`);
+  return report;
+}
+
 async function main() {
   const entries = await fs.readdir(articlesDirectory);
   const manifests = entries.filter((name) => name.endsWith('.publication.json')).map((name) => path.join(articlesDirectory, name));
@@ -167,6 +221,11 @@ async function main() {
     for (const manifestPath of manifests) {
       const report = await renderArticleVisuals(browser, manifestPath, stylesheet, fontUrls);
       console.log(`Rendered ${report.visuals.length} vc visuals for ${report.articleId}.`);
+    }
+    const accountPath = path.join(articlesDirectory, 'account.json');
+    if (await fs.access(accountPath).then(() => true, () => false)) {
+      const account = await renderAccountAssets(browser, accountPath, stylesheet, fontUrls);
+      console.log(`Rendered ${account.assets.length} vc account asset(s).`);
     }
   } finally {
     await browser.close();
