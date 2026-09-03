@@ -1,0 +1,43 @@
+{
+  "id": "one-topic-three-channels",
+  "status": "prepared",
+  "sourceBrief": "../topics/one-topic-three-channels-master-brief.md",
+  "contract": "../../channels/multichannel-chrome-publishing.md",
+  "publishApproval": "not-given",
+  "note": "Подготовлено по разделу 16 контракта: production request не является разрешением публиковать. Каждый канал ждёт отдельного publish approval.",
+  "channels": {
+    "instagram": {
+      "enabled": true,
+      "format": "reel",
+      "account": "alexsmoley",
+      "status": "approved-for-render",
+      "publish": false,
+      "copySource": "../one-topic-three-channels-reel.md",
+      "structuredSource": "../../reels/one-topic-three-channels.json",
+      "assets": [],
+      "publishRoute": "metricool-api",
+      "publishedUrl": null
+    },
+    "telegram": {
+      "enabled": true,
+      "account": "https://t.me/a_smoley",
+      "status": "approved-copy",
+      "publish": false,
+      "copySource": "../telegram/one-topic-three-channels.md",
+      "assets": [],
+      "publishRoute": "chrome-web-telegram",
+      "publishedUrl": null
+    },
+    "vc_ru": {
+      "enabled": true,
+      "account": "https://vc.ru/id5738265",
+      "status": "approved-copy",
+      "publish": false,
+      "copySource": "../vc/one-topic-three-channels.md",
+      "assets": [],
+      "publishRoute": "chrome-browser",
+      "publishRouteReason": "Публичного эндпоинта создания записи у API нет: 404 на восьми проверенных путях при 401 там, где дело в авторизации. Подробности — в channels/vc-ru-draft-automation.md.",
+      "publishedUrl": null
+    }
+  }
+}
