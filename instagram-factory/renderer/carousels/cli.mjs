@@ -37,10 +37,10 @@ const canonicalMarkdownBlock = (value) => value
 // a null count means "the rest". Default: every line is its own paragraph.
 function structuredSlideBlock(slide) {
   const lines = slide.text;
-  const layout = slide.copyLayout ?? lines.map(() => [1]);
+  const layout = slide.copyLayout ?? lines.map(() => [1, '\n']);
   const paragraphs = [];
   let cursor = 0;
-  for (const [count, joiner = '\n'] of layout) {
+  for (const [count, joiner] of layout) {
     const take = count === null ? lines.length - cursor : count;
     paragraphs.push(lines.slice(cursor, cursor + take).join(joiner));
     cursor += take;

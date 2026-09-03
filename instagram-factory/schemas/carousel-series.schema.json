@@ -166,7 +166,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^slide-0[1-9]$"
+          "pattern": "^slide-(0[1-9]|1[0-2])$"
         },
         "mode": {
           "enum": [
@@ -195,7 +195,58 @@
             "type": "string",
             "minLength": 1
           }
+        },
+        "copyLayout": {
+          "description": "Как плоский массив text группируется в абзацы утверждённого markdown-блока. Каждая запись — [сколько строк взять, чем склеить]; склейка указывается явно. null вместо числа означает «все оставшиеся строки». Без copyLayout каждая строка становится отдельным абзацем.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "prefixItems": [
+              {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "items": false
+          }
+        },
+        "expectedSequence": {
+          "description": "Точная последовательность строк, которую слайд обязан содержать: гейт declaredSequencesExact сверяет её со срезом text по expectedSequenceRange. Порядок объявляется данными, а не зашит в код по id слайда.",
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "expectedSequenceRange": {
+          "description": "Полуинтервал [from, to) в массиве text, к которому относится expectedSequence. По умолчанию — весь массив.",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
         }
+      },
+      "dependentRequired": {
+        "expectedSequenceRange": [
+          "expectedSequence"
+        ]
       }
     }
   }
