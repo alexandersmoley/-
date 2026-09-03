@@ -18,19 +18,21 @@
         {
           "kind": "video",
           "url": "https://alexandersmoley.github.io/-/one-topic-three-channels-reel/preview.mp4",
-          "sha256": "599d139ace1200749a8e49f06ba5ba2d92d7b4c82f46232689574f397d8d2d0a",
+          "sha256": "aa8ce583885f95952a502290e604c3349c752cc2b9d648a27e47d6915272dd7a",
           "duration": 36
         },
         {
           "kind": "cover",
           "url": "https://alexandersmoley.github.io/-/one-topic-three-channels-reel/cover.png",
-          "sha256": "e9e65551b47a0c73c14cc2c383ed45e92504a0da791ca310578218dddc8605f5",
+          "sha256": "4e258688b0441de9310cfd335ded825c54af736e612586d9523e3bce0b10d9de",
           "size": "1080x1920"
         }
       ],
       "publishRoute": "metricool-api",
       "publishedUrl": null,
-      "qaSummary": "output/one-topic-three-channels-reel/qa-summary.json"
+      "qaSummary": "output/one-topic-three-channels-reel/qa-summary.json",
+      "layoutFamily": "parallel-tracks",
+      "qaGates": 24
     },
     "telegram": {
       "enabled": true,

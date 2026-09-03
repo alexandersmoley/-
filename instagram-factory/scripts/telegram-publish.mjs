@@ -54,21 +54,27 @@ console.log('--- начало ---');
 console.log(text);
 console.log('--- конец ---');
 
+const token = process.env.TELEGRAM_BOT_TOKEN;
+const chatId = process.env.TELEGRAM_CHAT_ID;
+
+// Asking Telegram who we are is a read. A dry run does it too, so that a missing, wrong or
+// revoked token is found while nothing can be sent, rather than on the run that publishes.
+if (token) {
+  const me = await fetch(`https://api.telegram.org/bot${token}/getMe`).then((r) => r.json());
+  if (!me.ok) throw new Error(`getMe не прошёл — токен неверен или отозван: ${JSON.stringify(me)}`);
+  console.log(`бот: @${me.result.username}`);
+} else {
+  console.log('бот: токена в окружении нет');
+}
+console.log(`канал в окружении: ${chatId ? chatId : 'не задан'}`);
+
 if (dryRun) {
   console.log('\n--dry-run: ничего не отправлено');
   process.exit(0);
 }
 
-const token = process.env.TELEGRAM_BOT_TOKEN;
-const chatId = process.env.TELEGRAM_CHAT_ID;
 if (!token) throw new Error('Нет TELEGRAM_BOT_TOKEN в окружении');
 if (!chatId) throw new Error('Нет TELEGRAM_CHAT_ID в окружении');
-
-// getMe first: a wrong or revoked token should fail before anything is sent, and the reply
-// tells us which bot is about to speak in the author's channel.
-const me = await fetch(`https://api.telegram.org/bot${token}/getMe`).then((r) => r.json());
-if (!me.ok) throw new Error(`getMe не прошёл: ${JSON.stringify(me)}`);
-console.log(`бот: @${me.result.username}`);
 
 const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
   method: 'POST',
