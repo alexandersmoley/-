@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import * as motionEditorialSystem from './motion-editorial-system/index.mjs';
 import * as instructionCards from './instruction-cards/index.mjs';
 import * as continuousFlow from './continuous-flow/index.mjs';
+import * as parallelTracks from './parallel-tracks/index.mjs';
 import { escapeHtml } from './shared.mjs';
 
 const familiesDirectory = path.dirname(fileURLToPath(import.meta.url));
@@ -12,7 +13,8 @@ const familiesDirectory = path.dirname(fileURLToPath(import.meta.url));
 const families = {
   'motion-editorial-system': motionEditorialSystem,
   'instruction-cards': instructionCards,
-  'continuous-flow': continuousFlow
+  'continuous-flow': continuousFlow,
+  'parallel-tracks': parallelTracks
 };
 
 function familyOf(reel) {

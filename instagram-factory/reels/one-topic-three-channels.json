@@ -20,9 +20,9 @@
   },
   "contentSource": {
     "path": "content/one-topic-three-channels-reel.md",
-    "sha256": "5ee719bc23170a3291fa3a1f5f45bd2b691f284b88bed5b1cddc4abdcc0a98ce"
+    "sha256": "36a713e2bf03e2c7fb52b2b3af5e94e58eea16e90fcf878579d081334101a04f"
   },
-  "captionSha256": "6037bacdc8db486416127ff2e7f0875772558d485336bb24e83fedde9cd4fbfa",
+  "captionSha256": "848cb571a6aff086df120ade2604a2335b1b3b3b32fdd9af36c374ec3c2fba20",
   "designTokens": {
     "ink": "#101010",
     "paper": "#f4f1e9",
@@ -44,31 +44,31 @@
     "height": 640,
     "usage": "scene-06 closing only; author portrait supplied on a blue field; no generative redraw"
   },
-  "layoutFamily": "instruction-cards",
+  "layoutFamily": "parallel-tracks",
   "scenes": [
     {
       "id": "scene-01",
       "start": 0,
       "end": 6,
-      "goal": "the result promise: one topic, three channels",
-      "layoutFamily": "instruction-hook",
+      "goal": "what happened: one topic, three channels, tracks still empty",
+      "layoutFamily": "tracks-open",
       "text": [
         "Я дал Claude Code одну тему на три площадки",
-        "Instagram, Telegram и vc.ru — из одной фактуры",
-        "Дальше: что вышло и где я всё ещё нужен"
+        "Instagram, Telegram и vc.ru",
+        "Дальше — что вышло на каждой и как это попадает в канал"
       ],
-      "accent": "одну тему на три площадки"
+      "accent": "одну тему"
     },
     {
       "id": "scene-02",
       "start": 6,
       "end": 12,
-      "goal": "Instagram: the reel itself, copy frozen",
-      "layoutFamily": "instruction-step",
+      "goal": "Instagram: this reel, published through Metricool",
+      "layoutFamily": "tracks-focus",
       "text": [
-        "1",
-        "Instagram — этот реел",
-        "Текст заморожен: сборка падает, если макет разошёлся с утверждённым текстом хоть на символ"
+        "Сюда ушёл этот реел",
+        "Instagram",
+        "Через Metricool. Я нажимаю кнопку, дальше без меня"
       ],
       "accent": "этот реел"
     },
@@ -76,69 +76,70 @@
       "id": "scene-03",
       "start": 12,
       "end": 18,
-      "goal": "Telegram: its own post from the same facts",
-      "layoutFamily": "instruction-step",
+      "goal": "Telegram: the short note, published by a bot",
+      "layoutFamily": "tracks-focus",
       "text": [
-        "2",
-        "Telegram — свой пост из той же фактуры",
-        "Каналы не получают копию друг друга. У каждого свой текст, фактура общая"
+        "Тут короткая записка о том же",
+        "Telegram",
+        "Уходит ботом, когда я подтверждаю текст"
       ],
-      "accent": "свой пост"
+      "accent": "короткая записка"
     },
     {
       "id": "scene-04",
       "start": 18,
       "end": 24,
-      "goal": "vc.ru: the long read and its four figures",
-      "layoutFamily": "instruction-step",
+      "goal": "vc.ru: the long read, published by hand in the browser",
+      "layoutFamily": "tracks-focus",
       "text": [
-        "3",
-        "vc.ru — разбор и четыре схемы",
-        "Схемы рисует рендерер проекта. Не генератор картинок"
+        "А тут разбор подлиннее и четыре схемы",
+        "vc.ru",
+        "Туда захожу в браузере руками. Другого входа нет"
       ],
-      "accent": "и четыре схемы"
+      "accent": "четыре схемы"
     },
     {
       "id": "scene-05",
       "start": 24,
       "end": 30,
-      "goal": "publishing differs per channel",
-      "layoutFamily": "instruction-phrase",
+      "goal": "the payoff: three channels, three different ways in",
+      "layoutFamily": "tracks-merge",
       "text": [
-        "Публикация оказалась разной",
-        "У vc.ru нет эндпоинта, чтобы создать запись",
-        "Проверил: 404 на восьми путях. Instagram уходит через Metricool по API, vc.ru и Telegram — через браузер"
+        "Публикуется всё по-разному",
+        "Три канала — три входа",
+        "Одной кнопки не существует: программа, бот и браузер"
       ],
-      "accent": "нет эндпоинта"
+      "accent": "по-разному"
     },
     {
       "id": "scene-06",
       "start": 30,
       "end": 36,
       "goal": "what still needs a person",
-      "layoutFamily": "instruction-cta",
+      "layoutFamily": "tracks-close",
       "text": [
-        "Четыре решения всё ещё мои",
-        "Подписывайся — я строю контент-завод"
+        "Тему, текст и картинки всё ещё выбираю я",
+        "Машина собирает, решаю я"
       ],
-      "accent": "я строю контент-завод"
+      "accent": "решаю я"
     }
   ],
   "cover": {
-    "layoutFamily": "instruction-cover",
+    "layoutFamily": "tracks-cover",
     "text": [
       "Одна тема — три материала",
-      "Instagram, Telegram и vc.ru из одной фактуры"
+      "Instagram, Telegram и vc.ru"
     ],
     "accent": "три материала"
   },
   "caption": [
-    "Попросил Claude Code взять одну тему и сделать материалы сразу для Instagram, Telegram и vc.ru. Этот реел — один из трёх.",
-    "Источник фактов один, тексты разные: копипасту между каналами правила проекта запрещают.",
-    "Интереснее всего оказалась публикация. Instagram уходит через Metricool по API. С vc.ru я рассчитывал так же и ошибся: публичного эндпоинта для создания записи там нет — проверил, 404 на восьми путях, при том что тот же API честно отвечает 401 там, где дело в токене. Значит пути просто нет. Туда и в Telegram — через браузер.",
-    "Макеты собирает рендерер проекта, и сборка падает, если отрисованные слова разошлись с утверждённым текстом, не загрузились шрифты или подпись вылезла из блока.",
-    "Но три дефекта я нашёл глазами при зелёных проверках: у стрелок наконечники висели отдельно от древка, черновик на обложке заполнялся снизу вверх, а баннер аккаунта на узком кропе терял всю мысль картинки.",
-    "Гейты ловят технику и не ловят смысл. Поэтому четыре решения пока мои: тема, текст, дизайн, публикация.",
-    "Разбор целиком — в статье на vc.ru, рабочая записка — в Telegram."
+    "Я дал Claude Code одну тему и попросил сделать материалы сразу для Instagram, Telegram и vc.ru. Этот реел — один из трёх.",
+    "Тема одна, а тексты разные. Копировать пост из канала в канал правила проекта запрещают, так что каждый написан заново под свою площадку.",
+    "Самое интересное оказалось не в текстах, а в публикации. В каждый канал ведёт свой вход, и одной кнопки на всех не существует.",
+    "Instagram уходит через Metricool: я подтверждаю, дальше без меня. В Telegram публикует бот, когда текст согласован. А на vc.ru я захожу в браузере руками — способа создать там запись из программы просто нет, я проверял.",
+    "Картинки и раскладку собирает программа из файлов, и сборка падает, если нарисованные слова разошлись с утверждённым текстом хоть на символ.",
+    "Но что она не ловит — так это смысл. Три ошибки в этом прогоне я нашёл глазами, когда все проверки были зелёными: у стрелок наконечники висели отдельно от древка, черновик на обложке заполнялся снизу вверх, а баннер аккаунта на узком экране терял всю мысль картинки.",
+    "Поэтому тему, текст и картинки пока выбираю я. Машина собирает.",
+    "Разбор целиком — в статье на vc.ru, короткая версия — в Telegram."
   ]
 }

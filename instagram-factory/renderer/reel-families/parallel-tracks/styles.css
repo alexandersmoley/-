@@ -1,0 +1,186 @@
+@font-face {
+  font-family: "Inter Production";
+  src: url("__INTER_FONT_URL__") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "Cormorant Garamond Production";
+  src: url("__CORMORANT_REGULAR_URL__") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+@font-face {
+  font-family: "Cormorant Garamond Production";
+  src: url("__CORMORANT_ITALIC_URL__") format("woff2");
+  font-style: italic;
+  font-weight: 400;
+  font-display: block;
+}
+
+:root {
+  --ink: #101010;
+  --paper: #f4f1e9;
+  --blue: #1546e8;
+  --grid: rgba(21, 70, 232, .105);
+  --display-leading: .94;
+  --body-leading: 1.24;
+}
+* { box-sizing: border-box; }
+html, body {
+  width: 1080px;
+  height: 1920px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper);
+}
+body { color: var(--ink); -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+.reel-frame, .reel-scene, .reel-cover {
+  position: absolute;
+  inset: 0;
+  width: 1080px;
+  height: 1920px;
+  overflow: hidden;
+}
+.reel-frame { isolation: isolate; background: var(--paper); }
+.reel-scene { opacity: 0; visibility: hidden; will-change: opacity; }
+.reel-copy { position: absolute; z-index: 5; margin: 0; }
+.display-serif {
+  font-family: "Cormorant Garamond Production", serif;
+  font-weight: 400;
+  line-height: var(--display-leading);
+}
+.text-sans {
+  font-family: "Inter Production", sans-serif;
+  font-weight: 400;
+  line-height: var(--body-leading);
+}
+[data-motion-item] { will-change: transform, opacity, clip-path; }
+.type-accent { font-style: italic; }
+
+.reel-grid { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.reel-grid i { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--grid); }
+
+.system-axis {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1080px;
+  height: 8px;
+  z-index: 9;
+  background: var(--blue);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+
+/* Every scene paints the same ground, so a crossfade between two of them shows no seam.
+   That is what lets the stage read as one continuous set rather than as separate cards. */
+.tracks-scene { background: var(--paper); color: var(--ink); }
+
+.tracks-stage { position: absolute; inset: 0; z-index: 2; }
+.track-rail {
+  position: absolute;
+  left: 120px;
+  width: 780px;
+  background: var(--grid);
+}
+/* The one moving object in the reel. Its top and height are set by the timeline. */
+.track-focus {
+  position: absolute;
+  left: 120px;
+  width: 780px;
+  z-index: 3;
+  background: var(--blue);
+  will-change: top, height, opacity;
+}
+.track-gap {
+  position: absolute;
+  left: 120px;
+  width: 780px;
+  z-index: 4;
+  background: var(--paper);
+}
+
+.tracks-lead {
+  left: 120px;
+  top: 200px;
+  width: 760px;
+  font-size: 92px;
+  letter-spacing: -.012em;
+}
+.tracks-sub {
+  left: 120px;
+  top: 500px;
+  width: 700px;
+  font-size: 42px;
+}
+.tracks-note {
+  left: 120px;
+  top: 1470px;
+  width: 740px;
+  font-size: 38px;
+}
+
+/* The channel name rides on the focus block, so it is paper on blue. Its top is written
+   in by the family from the track it belongs to. */
+.track-name {
+  left: 168px;
+  width: 684px;
+  font-size: 84px;
+  color: var(--paper);
+  letter-spacing: -.008em;
+}
+/* The merge frame lights every track, so its line sits in the middle one — centred across
+   the stage it would have been cut by a gap. */
+.track-name-wide { top: 948px; font-size: 76px; }
+
+/* The closing frame keeps the paper ground. The portrait is supplied on its own blue field,
+   and on a blue frame that square read as a near-miss of the frame colour; on paper it reads
+   as a deliberate tile. */
+.tracks-close { background: var(--paper); color: var(--ink); }
+.tracks-close .tracks-stage { opacity: 0; }
+.tracks-close-note {
+  left: 120px;
+  top: 240px;
+  width: 700px;
+  font-size: 40px;
+}
+.tracks-close-title {
+  left: 120px;
+  top: 400px;
+  width: 780px;
+  font-size: 104px;
+  letter-spacing: -.012em;
+}
+.tracks-photo {
+  position: absolute;
+  left: 240px;
+  top: 760px;
+  width: 600px;
+  height: 600px;
+  z-index: 4;
+  object-fit: cover;
+}
+
+.tracks-cover { background: var(--paper); color: var(--ink); }
+.cover-track {
+  position: absolute;
+  left: 120px;
+  width: 780px;
+  background: var(--blue);
+}
+.cover-title {
+  left: 120px;
+  top: 260px;
+  width: 780px;
+  font-size: 128px;
+  letter-spacing: -.014em;
+}
+.cover-note {
+  left: 168px;
+  width: 684px;
+  font-size: 48px;
+  color: var(--paper);
+}
