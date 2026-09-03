@@ -1,0 +1,61 @@
+# Publishes one approved Telegram post through a bot.
+#
+# Manual dispatch only. There is no push trigger and there must never be one: a publication
+# is a deliberate act by the author, not a side effect of a commit.
+#
+# Secrets required (Settings → Secrets and variables → Actions):
+#   TELEGRAM_BOT_TOKEN — from @BotFather. The bot must be an administrator of the channel.
+#   TELEGRAM_CHAT_ID   — the channel, e.g. @a_smoley
+#
+# The script refuses to send unless the manifest has publish:true for telegram, names the
+# channel in publishApproval, and has no publishedUrl yet.
+name: Publish approved Telegram post
+
+on:
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: Путь к манифесту публикации внутри instagram-factory
+        required: true
+        default: content/multichannel/one-topic-three-channels.publication.json
+      dry_run:
+        description: Показать текст и ничего не отправлять
+        type: boolean
+        default: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    defaults:
+      run:
+        working-directory: instagram-factory
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Send
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          node scripts/telegram-publish.mjs \
+            --manifest='${{ inputs.manifest }}' \
+            ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Record the published URL
+        if: ${{ !inputs.dry_run }}
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          if git diff --quiet; then
+            echo "манифест не изменился"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Записать URL опубликованного поста в Telegram"
+          git push
