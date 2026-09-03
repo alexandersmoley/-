@@ -3,9 +3,13 @@
 # Manual dispatch only. There is no push trigger and there must never be one: a publication
 # is a deliberate act by the author, not a side effect of a commit.
 #
-# Secrets required (Settings → Secrets and variables → Actions):
+# This route only works if the token is a repository secret. The author keeps it in the
+# macOS keychain instead, in which case the same script is run from his own terminal and
+# reads it from there — see scripts/telegram-publish.mjs.
+#
+# Secrets (Settings → Secrets and variables → Actions):
 #   TELEGRAM_BOT_TOKEN — from @BotFather. The bot must be an administrator of the channel.
-#   TELEGRAM_CHAT_ID   — the channel, e.g. @a_smoley
+#   TELEGRAM_CHAT_ID   — optional. Without it the channel is taken from the manifest.
 #
 # The script refuses to send unless the manifest has publish:true for telegram, names the
 # channel in publishApproval, and has no publishedUrl yet.

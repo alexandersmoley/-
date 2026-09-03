@@ -1,8 +1,13 @@
 // Publishes one approved Telegram post through a bot.
 //
-// The bot token never lives in this repository: it is read from the environment, which in
-// practice means a GitHub Actions secret. Nothing here logs it, writes it to a file, or puts
-// it in a URL that ends up in a log line.
+// The bot token never lives in this repository. It comes from one of two places, in order:
+// the environment (a GitHub Actions secret), or the macOS keychain when running on the
+// author's own machine. Nothing here logs it, writes it to a file, or puts it anywhere a
+// log line could pick it up — the keychain read passes the token through stdout of a child
+// process and straight into a variable.
+//
+// The channel is read from the manifest, so there is nothing to type and nothing to get
+// wrong: whatever account the manifest names for telegram is where the post goes.
 //
 // Three refusals guard the send, and each one is a stop rather than a warning:
 //   * the channel's publish flag in the manifest must be true;
@@ -14,7 +19,24 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
+
+const run = promisify(execFile);
+
+// On the author's machine the token lives in the login keychain rather than in a file.
+// Any failure here is silent on purpose: not finding it is a normal outcome that the
+// caller reports, and the error text from `security` is not worth putting in a log.
+async function tokenFromKeychain(service) {
+  if (process.platform !== 'darwin') return null;
+  try {
+    const { stdout } = await run('security', ['find-generic-password', '-s', service, '-w']);
+    return stdout.trim() || null;
+  } catch {
+    return null;
+  }
+}
 
 const factoryRoot = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const dryRun = process.argv.includes('--dry-run');
@@ -54,27 +76,37 @@ console.log('--- начало ---');
 console.log(text);
 console.log('--- конец ---');
 
-const token = process.env.TELEGRAM_BOT_TOKEN;
-const chatId = process.env.TELEGRAM_CHAT_ID;
+const serviceArg = process.argv.find((value) => value.startsWith('--keychain-service='));
+const keychainService = serviceArg ? serviceArg.slice('--keychain-service='.length) : 'telegram-bot-token';
+const token = process.env.TELEGRAM_BOT_TOKEN || await tokenFromKeychain(keychainService);
+const tokenSource = process.env.TELEGRAM_BOT_TOKEN ? 'окружение'
+  : token ? `связка ключей, служба «${keychainService}»`
+  : 'не найден';
+
+// The channel comes from the manifest. TELEGRAM_CHAT_ID stays as an override for the case
+// where the manifest names a public URL but the bot must post somewhere else.
+const chatId = process.env.TELEGRAM_CHAT_ID
+  || (channel.account?.match(/t\.me\/([A-Za-z0-9_]+)/u) ? `@${channel.account.match(/t\.me\/([A-Za-z0-9_]+)/u)[1]}` : null);
 
 // Asking Telegram who we are is a read. A dry run does it too, so that a missing, wrong or
 // revoked token is found while nothing can be sent, rather than on the run that publishes.
+console.log(`токен: ${tokenSource}`);
 if (token) {
   const me = await fetch(`https://api.telegram.org/bot${token}/getMe`).then((r) => r.json());
   if (!me.ok) throw new Error(`getMe не прошёл — токен неверен или отозван: ${JSON.stringify(me)}`);
   console.log(`бот: @${me.result.username}`);
-} else {
-  console.log('бот: токена в окружении нет');
 }
-console.log(`канал в окружении: ${chatId ? chatId : 'не задан'}`);
+console.log(`канал: ${chatId ?? 'не определён'}`);
 
 if (dryRun) {
   console.log('\n--dry-run: ничего не отправлено');
   process.exit(0);
 }
 
-if (!token) throw new Error('Нет TELEGRAM_BOT_TOKEN в окружении');
-if (!chatId) throw new Error('Нет TELEGRAM_CHAT_ID в окружении');
+if (!token) {
+  throw new Error(`Токен не найден: ни в TELEGRAM_BOT_TOKEN, ни в связке ключей под службой «${keychainService}». Другое имя службы — флагом --keychain-service=<имя>.`);
+}
+if (!chatId) throw new Error('Канал не определён: в манифесте нет ссылки вида t.me/<канал>, и TELEGRAM_CHAT_ID не задан');
 
 const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
   method: 'POST',
