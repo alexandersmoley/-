@@ -1,22 +1,36 @@
 {
   "id": "one-topic-three-channels",
-  "status": "prepared",
+  "status": "ready-for-publish-approval",
   "sourceBrief": "../topics/one-topic-three-channels-master-brief.md",
   "contract": "../../channels/multichannel-chrome-publishing.md",
   "publishApproval": "not-given",
-  "note": "Подготовлено по разделу 16 контракта: production request не является разрешением публиковать. Каждый канал ждёт отдельного publish approval.",
+  "note": "Все три канала подготовлены и показаны автору. Публикация ждёт явного approval по каждому каналу отдельно — раздел 7 контракта.",
   "channels": {
     "instagram": {
       "enabled": true,
       "format": "reel",
       "account": "alexsmoley",
-      "status": "approved-for-render",
+      "status": "rendered",
       "publish": false,
       "copySource": "../one-topic-three-channels-reel.md",
       "structuredSource": "../../reels/one-topic-three-channels.json",
-      "assets": [],
+      "assets": [
+        {
+          "kind": "video",
+          "url": "https://alexandersmoley.github.io/-/one-topic-three-channels-reel/preview.mp4",
+          "sha256": "599d139ace1200749a8e49f06ba5ba2d92d7b4c82f46232689574f397d8d2d0a",
+          "duration": 36
+        },
+        {
+          "kind": "cover",
+          "url": "https://alexandersmoley.github.io/-/one-topic-three-channels-reel/cover.png",
+          "sha256": "e9e65551b47a0c73c14cc2c383ed45e92504a0da791ca310578218dddc8605f5",
+          "size": "1080x1920"
+        }
+      ],
       "publishRoute": "metricool-api",
-      "publishedUrl": null
+      "publishedUrl": null,
+      "qaSummary": "output/one-topic-three-channels-reel/qa-summary.json"
     },
     "telegram": {
       "enabled": true,
