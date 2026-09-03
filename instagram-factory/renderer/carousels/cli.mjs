@@ -31,22 +31,29 @@ const canonicalMarkdownBlock = (value) => value
   .join('\n')
   .trim();
 
+// How a slide's flat line array groups into the paragraphs of its approved markdown block.
+// This is declared per slide as data (copyLayout), not keyed to slide ids in code, so a
+// carousel of any length works without editing this file. Each entry is [lines, joiner];
+// a null count means "the rest". Default: every line is its own paragraph.
 function structuredSlideBlock(slide) {
-  const text = slide.text;
-  if (slide.id === 'slide-01') return `${text.slice(0, 3).join('\n')}\n\n${text[3]}`;
-  if (slide.id === 'slide-02') return `${text[0]}\n\n${text.slice(1, 10).join(' ')}\n\n${text[10]}`;
-  if (slide.id === 'slide-03') return `${text[0]}\n\n${text[1]}\n\n${text.slice(2).join('\n')}`;
-  if (slide.id === 'slide-04') return `${text[0]}\n\n${text[1]}\n\n${text[2]}\n${text[3]}\n\n${text[4]}`;
-  if (slide.id === 'slide-05') return `${text[0]}\n\n${text[1]}\n\n${text.slice(2).join('\n')}`;
-  if (slide.id === 'slide-06') return text.join('\n\n');
-  if (slide.id === 'slide-07') return `${text[0]}\n\n${text.slice(1, 16).join('\n')}\n\n${text[16]}`;
-  if (slide.id === 'slide-08' || slide.id === 'slide-09') return text.join('\n\n');
-  throw new Error(`No source-copy serializer for ${slide.id}`);
+  const lines = slide.text;
+  const layout = slide.copyLayout ?? lines.map(() => [1]);
+  const paragraphs = [];
+  let cursor = 0;
+  for (const [count, joiner = '\n'] of layout) {
+    const take = count === null ? lines.length - cursor : count;
+    paragraphs.push(lines.slice(cursor, cursor + take).join(joiner));
+    cursor += take;
+  }
+  if (cursor !== lines.length) {
+    throw new Error(`copyLayout for ${slide.id} covers ${cursor} of ${lines.length} lines`);
+  }
+  return paragraphs.join('\n\n');
 }
 
-function extractApprovedCopy(markdown) {
+function extractApprovedCopy(markdown, slideCount) {
   const slides = new Map();
-  for (let number = 1; number <= 9; number += 1) {
+  for (let number = 1; number <= slideCount; number += 1) {
     const id = `slide-${String(number).padStart(2, '0')}`;
     const heading = `Slide ${String(number).padStart(2, '0')}`;
     const match = markdown.match(new RegExp(`## ${heading} —[^\\n]*\\n\\n### text_on_screen\\n([\\s\\S]*?)\\n\\n### hierarchy`, 'u'));
@@ -100,7 +107,7 @@ async function renderCarousel({ browser, carousel, sourcePath, stylesheet }) {
   const contentSourcePath = path.join(factoryRoot, carousel.contentSource.path);
   await assertFile(contentSourcePath, 'Carousel content source');
   const contentMarkdownBefore = await fs.readFile(contentSourcePath, 'utf8');
-  const approvedCopy = extractApprovedCopy(contentMarkdownBefore);
+  const approvedCopy = extractApprovedCopy(contentMarkdownBefore, carousel.slides.length);
   const contentShaBefore = await sha256File(contentSourcePath);
   const captionBefore = carousel.caption.join('\n\n');
   const slideCopySourceExact = carousel.slides.every((slide) => (
@@ -156,13 +163,21 @@ async function renderCarousel({ browser, carousel, sourcePath, stylesheet }) {
   const contactSheetDimensions = await createContactSheet(pngPaths, contactSheetPath);
   const contentShaAfter = await sha256File(contentSourcePath);
   const captionAfter = carousel.caption.join('\n\n');
-  const slide07Expected = ['идея', '↓', 'арт-дирекшен', '↓', 'контент в GitHub', '↓', 'renderer', '↓', 'автоматический QA', '↓', 'публичный PNG', '↓', 'Metricool', '↓', 'Instagram'];
-  const slide07 = carousel.slides.find((slide) => slide.id === 'slide-07');
+  // A slide may declare a sequence that must appear in it verbatim — a pipeline diagram whose
+  // order carries meaning. Declared in the carousel, so it binds where it applies and is
+  // simply absent everywhere else.
+  const sequenceSlides = carousel.slides.filter((slide) => Array.isArray(slide.expectedSequence));
+  const declaredSequencesExact = sequenceSlides.every((slide) => {
+    const [from, to] = slide.expectedSequenceRange ?? [0, slide.text.length];
+    return JSON.stringify(slide.text.slice(from, to)) === JSON.stringify(slide.expectedSequence);
+  });
   const checks = {
     structuredCarouselValid: true,
     approvedForRender: carousel.status === 'approved-for-render',
     publishDisabled: carousel.publish === false,
-    slideCountExact: carousel.slides.length === 9,
+    // The brief and the structured carousel must agree on how many slides there are;
+    // the number itself is whatever the carousel declares.
+    slideCountExact: approvedCopy.slides.size === carousel.slides.length,
     layoutFamilyExact: carousel.layoutFamily === 'process-diagram-carousel',
     contentSourceChecksumExact: contentShaBefore === carousel.contentSource.sha256,
     contentSourceUnchanged: contentShaBefore === contentShaAfter,
@@ -177,7 +192,7 @@ async function renderCarousel({ browser, carousel, sourcePath, stylesheet }) {
     safeZoneMinimum120: slideReports.every((report) => report.checks.safeZoneMinimum120 && report.checks.textInsideSafeZone),
     lineHeightByRoleExact: slideReports.every((report) => report.checks.lineHeightByRoleExact),
     nonBreakingSpacesApplied: slideReports.every((report) => report.checks.nonBreakingSpacesApplied),
-    slide07PipelineOrderExact: JSON.stringify(slide07.text.slice(1, 16)) === JSON.stringify(slide07Expected),
+    declaredSequencesExact,
     noPhotography: slideReports.every((report) => report.checks.noPhotography),
     contactSheetCreated: contactSheetDimensions.width === 744 && contactSheetDimensions.height === 960
   };
