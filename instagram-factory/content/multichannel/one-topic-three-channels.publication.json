@@ -4,7 +4,7 @@
   "sourceBrief": "../topics/one-topic-three-channels-master-brief.md",
   "contract": "../../channels/multichannel-chrome-publishing.md",
   "publishApproval": "not-given",
-  "note": "Все три канала подготовлены и показаны автору. Публикация ждёт явного approval по каждому каналу отдельно — раздел 7 контракта.",
+  "note": "Все три канала подготовлены. Публикация ждёт явного approval по каждому каналу отдельно — раздел 7 контракта. Маршруты: Instagram — Metricool, Telegram — бот, vc.ru — браузер.",
   "channels": {
     "instagram": {
       "enabled": true,
@@ -39,8 +39,9 @@
       "publish": false,
       "copySource": "../telegram/one-topic-three-channels.md",
       "assets": [],
-      "publishRoute": "chrome-web-telegram",
-      "publishedUrl": null
+      "publishRoute": "telegram-bot",
+      "publishedUrl": null,
+      "publishRouteReason": "Решение автора от 3 сентября: канал публикуется ботом после подтверждения текста, а не через браузер. Токен бота хранится только в secrets репозитория и никогда в файлах."
     },
     "vc_ru": {
       "enabled": true,
