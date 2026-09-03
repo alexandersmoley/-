@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "carouselId": "automation-day-carousel",
   "source": "carousels/automation-day-carousel.json",
-  "generatedAt": "2026-09-03T01:21:03.451Z",
+  "generatedAt": "2026-09-03T01:51:07.633Z",
   "passed": true,
   "checks": {
     "structuredCarouselValid": true,
@@ -23,7 +23,7 @@
     "safeZoneMinimum120": true,
     "lineHeightByRoleExact": true,
     "nonBreakingSpacesApplied": true,
-    "slide07PipelineOrderExact": true,
+    "declaredSequencesExact": true,
     "noPhotography": true,
     "contactSheetCreated": true
   },
