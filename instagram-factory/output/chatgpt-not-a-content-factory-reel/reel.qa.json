@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "chatgpt-not-a-content-factory-reel",
   "source": "reels/chatgpt-not-a-content-factory-reel.json",
-  "generatedAt": "2026-09-03T01:54:14.643Z",
+  "generatedAt": "2026-09-03T04:42:40.167Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,

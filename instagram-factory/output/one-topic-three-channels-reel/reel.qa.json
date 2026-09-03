@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "one-topic-three-channels-reel",
   "source": "reels/one-topic-three-channels.json",
-  "generatedAt": "2026-09-03T01:57:44.699Z",
+  "generatedAt": "2026-09-03T04:46:05.056Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -33,28 +33,28 @@
   "failedChecks": [],
   "integrity": {
     "contentSource": "content/one-topic-three-channels-reel.md",
-    "contentSha256": "5ee719bc23170a3291fa3a1f5f45bd2b691f284b88bed5b1cddc4abdcc0a98ce",
-    "captionSha256": "6037bacdc8db486416127ff2e7f0875772558d485336bb24e83fedde9cd4fbfa"
+    "contentSha256": "36a713e2bf03e2c7fb52b2b3af5e94e58eea16e90fcf878579d081334101a04f",
+    "captionSha256": "848cb571a6aff086df120ade2604a2335b1b3b3b32fdd9af36c374ec3c2fba20"
   },
   "media": {
     "preview": {
       "path": "output/one-topic-three-channels-reel/preview.mp4",
       "url": "https://alexandersmoley.github.io/-/one-topic-three-channels-reel/preview.mp4",
-      "sha256": "599d139ace1200749a8e49f06ba5ba2d92d7b4c82f46232689574f397d8d2d0a",
+      "sha256": "aa8ce583885f95952a502290e604c3349c752cc2b9d648a27e47d6915272dd7a",
       "duration": 36,
       "fps": "30/1"
     },
     "cover": {
       "path": "output/one-topic-three-channels-reel/cover.png",
       "url": "https://alexandersmoley.github.io/-/one-topic-three-channels-reel/cover.png",
-      "sha256": "e9e65551b47a0c73c14cc2c383ed45e92504a0da791ca310578218dddc8605f5",
+      "sha256": "4e258688b0441de9310cfd335ded825c54af736e612586d9523e3bce0b10d9de",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
       "path": "output/one-topic-three-channels-reel/storyboard.png",
       "url": "https://alexandersmoley.github.io/-/one-topic-three-channels-reel/storyboard.png",
-      "sha256": "24650328ec0a2952ce7a540788fd59876a2f1dafe6894c1d0ae9f87453f87d6d",
+      "sha256": "1e40ca4e1eb99256af6e2d08abe5872aa66d86025320d322a76804f026297acc",
       "width": 930,
       "height": 1050
     },
@@ -91,47 +91,47 @@
           "id": "scene-01",
           "text": [
             "Я дал Claude Code одну тему на три площадки",
-            "Instagram, Telegram и vc.ru — из одной фактуры",
-            "Дальше: что вышло и где я всё ещё нужен"
+            "Instagram, Telegram и vc.ru",
+            "Дальше — что вышло на каждой и как это попадает в канал"
           ]
         },
         {
           "id": "scene-02",
           "text": [
-            "1",
-            "Instagram — этот реел",
-            "Текст заморожен: сборка падает, если макет разошёлся с утверждённым текстом хоть на символ"
+            "Сюда ушёл этот реел",
+            "Instagram",
+            "Через Metricool. Я нажимаю кнопку, дальше без меня"
           ]
         },
         {
           "id": "scene-03",
           "text": [
-            "2",
-            "Telegram — свой пост из той же фактуры",
-            "Каналы не получают копию друг друга. У каждого свой текст, фактура общая"
+            "Тут короткая записка о том же",
+            "Telegram",
+            "Уходит ботом, когда я подтверждаю текст"
           ]
         },
         {
           "id": "scene-04",
           "text": [
-            "3",
-            "vc.ru — разбор и четыре схемы",
-            "Схемы рисует рендерер проекта. Не генератор картинок"
+            "А тут разбор подлиннее и четыре схемы",
+            "vc.ru",
+            "Туда захожу в браузере руками. Другого входа нет"
           ]
         },
         {
           "id": "scene-05",
           "text": [
-            "Публикация оказалась разной",
-            "У vc.ru нет эндпоинта, чтобы создать запись",
-            "Проверил: 404 на восьми путях. Instagram уходит через Metricool по API, vc.ru и Telegram — через браузер"
+            "Публикуется всё по-разному",
+            "Три канала — три входа",
+            "Одной кнопки не существует: программа, бот и браузер"
           ]
         },
         {
           "id": "scene-06",
           "text": [
-            "Четыре решения всё ещё мои",
-            "Подписывайся — я строю контент-завод"
+            "Тему, текст и картинки всё ещё выбираю я",
+            "Машина собирает, решаю я"
           ]
         }
       ],
@@ -145,142 +145,142 @@
       "blankFrames": [],
       "type": [
         {
-          "className": "hook-title display-serif reel-copy",
+          "className": "tracks-lead display-serif reel-copy",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 116,
-          "lineHeight": 109.04
+          "size": 92,
+          "lineHeight": 86.48
         },
         {
           "className": "type-accent",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 116,
-          "lineHeight": 109.04
+          "size": 92,
+          "lineHeight": 86.48
         },
         {
-          "className": "hook-lead text-sans reel-copy",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 46,
-          "lineHeight": 57.04
-        },
-        {
-          "className": "hook-note text-sans reel-copy",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 36,
-          "lineHeight": 44.64
-        },
-        {
-          "className": "step-number display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 400,
-          "lineHeight": 376
-        },
-        {
-          "className": "step-action display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
-        },
-        {
-          "className": "type-accent",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
-        },
-        {
-          "className": "step-detail text-sans reel-copy",
+          "className": "tracks-sub text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
           "size": 42,
           "lineHeight": 52.08
         },
         {
-          "className": "step-number display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 400,
-          "lineHeight": 376
-        },
-        {
-          "className": "step-action display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
-        },
-        {
-          "className": "type-accent",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
-        },
-        {
-          "className": "step-detail text-sans reel-copy",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 42,
-          "lineHeight": 52.08
-        },
-        {
-          "className": "step-number display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 400,
-          "lineHeight": 376
-        },
-        {
-          "className": "step-action display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
-        },
-        {
-          "className": "type-accent",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 96,
-          "lineHeight": 90.24
-        },
-        {
-          "className": "step-detail text-sans reel-copy",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 42,
-          "lineHeight": 52.08
-        },
-        {
-          "className": "phrase-lead text-sans reel-copy",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 44,
-          "lineHeight": 54.56
-        },
-        {
-          "className": "phrase-quote display-serif reel-copy",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 84,
-          "lineHeight": 78.96
-        },
-        {
-          "className": "type-accent",
-          "family": "\"Cormorant Garamond Production\", serif",
-          "size": 84,
-          "lineHeight": 78.96
-        },
-        {
-          "className": "phrase-note text-sans reel-copy",
+          "className": "tracks-note text-sans reel-copy",
           "family": "\"Inter Production\", sans-serif",
           "size": 38,
           "lineHeight": 47.12
         },
         {
-          "className": "cta-note text-sans reel-copy",
-          "family": "\"Inter Production\", sans-serif",
-          "size": 44,
-          "lineHeight": 54.56
-        },
-        {
-          "className": "cta-title display-serif reel-copy",
+          "className": "tracks-lead display-serif reel-copy",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 116,
-          "lineHeight": 109.04
+          "size": 92,
+          "lineHeight": 86.48
         },
         {
           "className": "type-accent",
           "family": "\"Cormorant Garamond Production\", serif",
-          "size": 116,
-          "lineHeight": 109.04
+          "size": 92,
+          "lineHeight": 86.48
+        },
+        {
+          "className": "track-name display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 84,
+          "lineHeight": 78.96
+        },
+        {
+          "className": "tracks-note text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 38,
+          "lineHeight": 47.12
+        },
+        {
+          "className": "tracks-lead display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 92,
+          "lineHeight": 86.48
+        },
+        {
+          "className": "type-accent",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 92,
+          "lineHeight": 86.48
+        },
+        {
+          "className": "track-name display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 84,
+          "lineHeight": 78.96
+        },
+        {
+          "className": "tracks-note text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 38,
+          "lineHeight": 47.12
+        },
+        {
+          "className": "tracks-lead display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 92,
+          "lineHeight": 86.48
+        },
+        {
+          "className": "type-accent",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 92,
+          "lineHeight": 86.48
+        },
+        {
+          "className": "track-name display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 84,
+          "lineHeight": 78.96
+        },
+        {
+          "className": "tracks-note text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 38,
+          "lineHeight": 47.12
+        },
+        {
+          "className": "tracks-lead display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 92,
+          "lineHeight": 86.48
+        },
+        {
+          "className": "type-accent",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 92,
+          "lineHeight": 86.48
+        },
+        {
+          "className": "track-name track-name-wide display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 76,
+          "lineHeight": 71.44
+        },
+        {
+          "className": "tracks-note text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 38,
+          "lineHeight": 47.12
+        },
+        {
+          "className": "tracks-close-note text-sans reel-copy",
+          "family": "\"Inter Production\", sans-serif",
+          "size": 40,
+          "lineHeight": 49.6
+        },
+        {
+          "className": "tracks-close-title display-serif reel-copy",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 104,
+          "lineHeight": 97.76
+        },
+        {
+          "className": "type-accent",
+          "family": "\"Cormorant Garamond Production\", serif",
+          "size": 104,
+          "lineHeight": 97.76
         }
       ],
       "unapprovedColors": [],
@@ -310,7 +310,7 @@
     "details": {
       "actualText": [
         "Одна тема — три материала",
-        "Instagram, Telegram и vc.ru из одной фактуры"
+        "Instagram, Telegram и vc.ru"
       ],
       "safeRect": {
         "left": 120,
