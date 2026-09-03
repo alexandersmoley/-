@@ -20,7 +20,7 @@
   },
   "contentSource": {
     "path": "content/one-topic-three-channels-reel.md",
-    "sha256": "86b751d55703ab38a17a7b5753b508ce56d3ffce097462ea59b3bafba93e12c7"
+    "sha256": "5ee719bc23170a3291fa3a1f5f45bd2b691f284b88bed5b1cddc4abdcc0a98ce"
   },
   "captionSha256": "6037bacdc8db486416127ff2e7f0875772558d485336bb24e83fedde9cd4fbfa",
   "designTokens": {
@@ -105,11 +105,11 @@
       "goal": "publishing differs per channel",
       "layoutFamily": "instruction-phrase",
       "text": [
-        "Публикация везде разная",
-        "Instagram уходит по API через Metricool",
-        "У vc.ru эндпоинта создания записи нет: 404 на восьми путях. Туда и в Telegram — через браузер"
+        "Публикация оказалась разной",
+        "У vc.ru нет эндпоинта, чтобы создать запись",
+        "Проверил: 404 на восьми путях. Instagram уходит через Metricool по API, vc.ru и Telegram — через браузер"
       ],
-      "accent": "везде разная"
+      "accent": "нет эндпоинта"
     },
     {
       "id": "scene-06",
