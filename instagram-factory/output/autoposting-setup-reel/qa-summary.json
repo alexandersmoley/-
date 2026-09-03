@@ -2,7 +2,7 @@
   "pipelineVersion": 1,
   "reelId": "autoposting-setup-reel",
   "source": "reels/autoposting-setup-reel.json",
-  "generatedAt": "2026-09-03T04:41:26.676Z",
+  "generatedAt": "2026-09-03T04:52:34.459Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
