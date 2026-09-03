@@ -4,7 +4,7 @@
   "storyId": "story-05",
   "role": "current-experiment",
   "layoutFamily": "story-process-diagram",
-  "generatedAt": "2026-09-01T19:41:18.964Z",
+  "generatedAt": "2026-09-03T01:20:56.357Z",
   "passed": true,
   "checks": {
     "pngDimensionsExact": true,

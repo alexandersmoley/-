@@ -1,8 +1,8 @@
 {
   "pipelineVersion": 1,
-  "reelId": "autoposting-setup-reel",
-  "source": "reels/autoposting-setup-reel.json",
-  "generatedAt": "2026-09-03T01:22:56.822Z",
+  "reelId": "one-topic-three-channels-reel",
+  "source": "reels/one-topic-three-channels.json",
+  "generatedAt": "2026-09-03T01:27:38.342Z",
   "passed": true,
   "checks": {
     "structuredReelValid": true,
@@ -32,29 +32,29 @@
   },
   "failedChecks": [],
   "integrity": {
-    "contentSource": "content/autoposting-setup-reel.md",
-    "contentSha256": "9854bf2a497996dcecf5c4347aaa91688a57696ff78446f5b3656b3dd8c21473",
-    "captionSha256": "01a7f2bb5878b20c033be74337ea0fb469c61ac15d2290f9f32e0183ca616629"
+    "contentSource": "content/one-topic-three-channels-reel.md",
+    "contentSha256": "5ee719bc23170a3291fa3a1f5f45bd2b691f284b88bed5b1cddc4abdcc0a98ce",
+    "captionSha256": "6037bacdc8db486416127ff2e7f0875772558d485336bb24e83fedde9cd4fbfa"
   },
   "media": {
     "preview": {
-      "path": "output/autoposting-setup-reel/preview.mp4",
-      "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/preview.mp4",
-      "sha256": "a3863b267b092a2b205d2b57961d23042d55299f7437c0f3201fde990c71425e",
+      "path": "output/one-topic-three-channels-reel/preview.mp4",
+      "url": "https://alexandersmoley.github.io/-/one-topic-three-channels-reel/preview.mp4",
+      "sha256": "599d139ace1200749a8e49f06ba5ba2d92d7b4c82f46232689574f397d8d2d0a",
       "duration": 36,
       "fps": "30/1"
     },
     "cover": {
-      "path": "output/autoposting-setup-reel/cover.png",
-      "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/cover.png",
-      "sha256": "f9a5b0ff376b0ddda2933a7c95620bf93b52ab4885499ddbaa253d261eda5490",
+      "path": "output/one-topic-three-channels-reel/cover.png",
+      "url": "https://alexandersmoley.github.io/-/one-topic-three-channels-reel/cover.png",
+      "sha256": "e9e65551b47a0c73c14cc2c383ed45e92504a0da791ca310578218dddc8605f5",
       "width": 1080,
       "height": 1920
     },
     "storyboard": {
-      "path": "output/autoposting-setup-reel/storyboard.png",
-      "url": "https://alexandersmoley.github.io/-/autoposting-setup-reel/storyboard.png",
-      "sha256": "bd1cd5f8981c44e12438769456170013d77f1df256f8482a7b57bb47b9273690",
+      "path": "output/one-topic-three-channels-reel/storyboard.png",
+      "url": "https://alexandersmoley.github.io/-/one-topic-three-channels-reel/storyboard.png",
+      "sha256": "24650328ec0a2952ce7a540788fd59876a2f1dafe6894c1d0ae9f87453f87d6d",
       "width": 930,
       "height": 1050
     },
@@ -90,47 +90,47 @@
         {
           "id": "scene-01",
           "text": [
-            "Чтобы выложить пост, я не открываю Instagram",
-            "Всё делается в чате Claude Code: три шага и одна фраза",
-            "Дальше — что подключить и в каком порядке"
+            "Я дал Claude Code одну тему на три площадки",
+            "Instagram, Telegram и vc.ru — из одной фактуры",
+            "Дальше: что вышло и где я всё ещё нужен"
           ]
         },
         {
           "id": "scene-02",
           "text": [
             "1",
-            "Заведи аккаунты в четырёх сервисах",
-            "Metricool, Todoist, GitHub, Google Drive. Instagram привяжи к Metricool: нужен бизнес- или креатор-аккаунт"
+            "Instagram — этот реел",
+            "Текст заморожен: сборка падает, если макет разошёлся с утверждённым текстом хоть на символ"
           ]
         },
         {
           "id": "scene-03",
           "text": [
             "2",
-            "Подключи их к Claude Code как коннекторы",
-            "Metricool — публикация, Todoist — план тем, GitHub — материалы, Google Drive — фото"
+            "Telegram — свой пост из той же фактуры",
+            "Каналы не получают копию друг друга. У каждого свой текст, фактура общая"
           ]
         },
         {
           "id": "scene-04",
           "text": [
             "3",
-            "Обсуди тему — Claude Code соберёт бриф и положит в GitHub",
-            "Бриф — файл с темой, фактами и утверждённым текстом поста. Туда же правила тона, фото — из Google Drive"
+            "vc.ru — разбор и четыре схемы",
+            "Схемы рисует рендерер проекта. Не генератор картинок"
           ]
         },
         {
           "id": "scene-05",
           "text": [
-            "Дальше пишешь одну фразу",
-            "Собери карусель по брифу и опубликуй в Instagram",
-            "Claude Code собирает, проверяет и публикует"
+            "Публикация оказалась разной",
+            "У vc.ru нет эндпоинта, чтобы создать запись",
+            "Проверил: 404 на восьми путях. Instagram уходит через Metricool по API, vc.ru и Telegram — через браузер"
           ]
         },
         {
           "id": "scene-06",
           "text": [
-            "Мой закреп вышел именно так",
+            "Четыре решения всё ещё мои",
             "Подписывайся — я строю контент-завод"
           ]
         }
@@ -309,8 +309,8 @@
     },
     "details": {
       "actualText": [
-        "Как выложить пост, не открывая Instagram",
-        "Всё делается в чате Claude Code: три шага и одна фраза"
+        "Одна тема — три материала",
+        "Instagram, Telegram и vc.ru из одной фактуры"
       ],
       "safeRect": {
         "left": 120,
