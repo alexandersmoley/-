@@ -1,4 +1,9 @@
 <!--
+    ВЕРСИЯ 3 — кнопка + поп-ап Тильды.
+    Заменяет версию 1 (FormSubmit) и версию 2 (Яндекс Форма).
+    Если в коде на сайте встречается formsubmit.co или forms.yandex.ru —
+    это старая версия, её нужно заменить целиком на эту.
+
     БЛОК ДЛЯ ТИЛЬДЫ  ·  вставлять в блок «T123 — HTML-код»
     ============================================================
     Заявки уходят на почту через родной сервис приёма данных Тильды.
@@ -257,6 +262,21 @@
     font-weight: 700;
     position: relative;
     z-index: 2;
+}
+
+.nabl2026 .apply-fallback {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-top: 18px;
+    color: var(--black);
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+
+.nabl2026 .apply-fallback a {
+    color: var(--black);
+    font-weight: 700;
 }
 
 .nabl2026 .agreement {
@@ -635,6 +655,8 @@
             <a href="#popup:zayavka" class="apply-btn">Подать заявку</a>
 
             <p class="apply-note">Заполнение занимает меньше минуты. Мы&nbsp;свяжемся с&nbsp;вами и&nbsp;пригласим на&nbsp;обучение.</p>
+
+            <p class="apply-fallback">Не&nbsp;получается отправить заявку? Напишите нам на&nbsp;<a href="mailto:nabl21ru@mail.ru?subject=Заявка%20наблюдателя">nabl21ru@mail.ru</a> — укажите ФИО, населённый пункт и&nbsp;телефон.</p>
 
             <p class="agreement">Отправляя заявку, вы&nbsp;соглашаетесь на&nbsp;обработку персональных данных. <a class="open-policy">Политика обработки персональных данных.</a></p>
         </div>
