@@ -209,6 +209,76 @@ function mergeSegments(hits, gapSeconds) {
   return merged;
 }
 
+function parseTimestamp(value) {
+  const match = value.match(/(\d{1,2}):(\d{2}):(\d{2})[,.](\d{1,3})/);
+  if (!match) {
+    return null;
+  }
+  const [, hours, minutes, seconds, millis] = match;
+  return (
+    Number(hours) * 3600 +
+    Number(minutes) * 60 +
+    Number(seconds) +
+    Number(millis.padEnd(3, '0')) / 1000
+  );
+}
+
+// Разбор SRT и VTT: блок без стрелки (шапка WEBVTT, NOTE) пропускается,
+// номер реплики и cue id игнорируются, разметка вида <c> вырезается.
+function parseCues(content) {
+  const segments = [];
+  for (const block of content.replace(/\r\n/g, '\n').split(/\n{2,}/)) {
+    const lines = block.split('\n').map((line) => line.trim()).filter(Boolean);
+    const arrowIndex = lines.findIndex((line) => line.includes('-->'));
+    if (arrowIndex === -1) {
+      continue;
+    }
+    const [left, right] = lines[arrowIndex].split('-->');
+    const start = parseTimestamp(left);
+    const end = parseTimestamp(right);
+    if (start === null || end === null) {
+      continue;
+    }
+    const text = lines
+      .slice(arrowIndex + 1)
+      .join(' ')
+      .replace(/<[^>]*>/g, '')
+      .trim();
+    if (text) {
+      segments.push({ start, end, text });
+    }
+  }
+  return segments;
+}
+
+async function loadSegments(file) {
+  const content = await fs.readFile(file, 'utf8');
+  if (path.extname(file).toLowerCase() === '.json') {
+    const transcript = JSON.parse(content);
+    return Array.isArray(transcript.segments) ? transcript.segments : [];
+  }
+  return parseCues(content);
+}
+
+// На один исходник может лежать и JSON от whisper, и субтитры из другого
+// инструмента. Берём что-то одно, иначе фрагменты задвоятся.
+function pickTranscripts(entries) {
+  const priority = { '.json': 0, '.srt': 1, '.vtt': 2 };
+  const chosen = new Map();
+  for (const entry of entries) {
+    const extension = path.extname(entry).toLowerCase();
+    if (!(extension in priority)) {
+      continue;
+    }
+    const stem = path.basename(entry, path.extname(entry));
+    const current = chosen.get(stem);
+    if (!current || priority[extension] < priority[path.extname(current).toLowerCase()]) {
+      chosen.set(stem, entry);
+    }
+  }
+  return [...chosen.values()].sort();
+}
+
 async function commandFind(options) {
   const keywords = readKeywords(options);
   const gapSeconds = Number(options.gap || 2);
@@ -217,12 +287,15 @@ async function commandFind(options) {
   const minDuration = Number(options['min-duration'] || 1.5);
 
   const entries = await fs.readdir(transcriptDirectory, { withFileTypes: true }).catch(() => []);
-  const transcripts = entries
-    .filter((entry) => entry.isFile() && entry.name.endsWith('.json'))
-    .map((entry) => path.join(transcriptDirectory, entry.name))
-    .sort();
+  const transcripts = pickTranscripts(
+    entries
+      .filter((entry) => entry.isFile())
+      .map((entry) => path.join(transcriptDirectory, entry.name)),
+  );
   if (transcripts.length === 0) {
-    throw new Error('Нет расшифровок — сначала запусти transcribe');
+    throw new Error(
+      `Нет расшифровок в ${path.relative(factoryRoot, transcriptDirectory)} — запусти transcribe или положи туда .srt/.vtt`,
+    );
   }
 
   const sourceDirectory = options.input ? path.resolve(String(options.input)) : null;
@@ -235,9 +308,8 @@ async function commandFind(options) {
   const report = [];
 
   for (const transcriptPath of transcripts) {
-    const stem = path.basename(transcriptPath, '.json');
-    const transcript = JSON.parse(await fs.readFile(transcriptPath, 'utf8'));
-    const segments = Array.isArray(transcript.segments) ? transcript.segments : [];
+    const stem = path.basename(transcriptPath, path.extname(transcriptPath));
+    const segments = await loadSegments(transcriptPath);
 
     const hits = [];
     for (const segment of segments) {
