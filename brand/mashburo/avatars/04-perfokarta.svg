@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Машбюро: перфокарта">
+  <rect width="512" height="512" fill="#14110F"/>
+  <path d="M0 0 H 96 L 0 96 Z" fill="#F2ECE1"/>
+    <rect x="157" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="385" y="76" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="81" y="174" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="233" y="174" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="174" width="46" height="66" rx="8" fill="#C8402E"/>
+    <rect x="157" y="272" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="233" y="272" width="46" height="66" rx="8" fill="#C8402E"/>
+    <rect x="385" y="272" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="81" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="309" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+    <rect x="385" y="370" width="46" height="66" rx="8" fill="#F2ECE1"/>
+</svg>

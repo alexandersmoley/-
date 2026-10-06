@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Машбюро: абзац с правленой строкой">
+  <rect width="512" height="512" fill="#F2ECE1"/>
+  <g fill="#14110F">
+    <rect x="106" y="150" width="300" height="30" rx="15"/>
+    <rect x="106" y="212" width="252" height="30" rx="15"/>
+    <rect x="106" y="336" width="300" height="30" rx="15"/>
+    <rect x="106" y="398" width="168" height="30" rx="15"/>
+  </g>
+  <rect x="106" y="274" width="216" height="30" rx="15" fill="#C8402E"/>
+</svg>
