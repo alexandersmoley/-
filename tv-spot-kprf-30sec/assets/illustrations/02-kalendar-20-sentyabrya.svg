@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <title>Три дня голосования — решает 20 сентября</title>
+  <rect width="1920" height="1080" fill="#F4EFE6"/>
+  <path d="M0 0 L1920 0 L1920 190 Q960 260 0 180 Z" fill="#C8102E"/>
+  <text x="960" y="128" text-anchor="middle" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif" font-size="76" font-weight="900" fill="#FFFFFF" letter-spacing="6">СЕНТЯБРЬ 2026</text>
+
+  <!-- 18 -->
+  <g>
+    <rect x="270" y="380" width="330" height="360" rx="28" fill="#FFFFFF"/>
+    <rect x="270" y="380" width="330" height="74" rx="28" fill="#C9CFD4"/>
+    <rect x="270" y="426" width="330" height="28" fill="#C9CFD4"/>
+    <text x="435" y="640" text-anchor="middle" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif" font-size="180" font-weight="900" fill="#B4BCC3">18</text>
+  </g>
+  <!-- 19 -->
+  <g>
+    <rect x="650" y="380" width="330" height="360" rx="28" fill="#FFFFFF"/>
+    <rect x="650" y="380" width="330" height="74" rx="28" fill="#C9CFD4"/>
+    <rect x="650" y="426" width="330" height="28" fill="#C9CFD4"/>
+    <text x="815" y="640" text-anchor="middle" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif" font-size="180" font-weight="900" fill="#B4BCC3">19</text>
+  </g>
+  <!-- 20 -->
+  <g>
+    <rect x="1040" y="330" width="470" height="460" rx="32" fill="#FFFFFF"/>
+    <rect x="1040" y="330" width="470" height="90" rx="32" fill="#C8102E"/>
+    <rect x="1040" y="388" width="470" height="32" fill="#C8102E"/>
+    <text x="1275" y="650" text-anchor="middle" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif" font-size="250" font-weight="900" fill="#22262B">20</text>
+    <ellipse cx="1275" cy="590" rx="215" ry="205" fill="none" stroke="#C8102E" stroke-width="24" transform="rotate(-6 1275 590)"/>
+  </g>
+
+  <!-- подпись -->
+  <text x="960" y="900" text-anchor="middle" font-family="Liberation Sans, DejaVu Sans, Arial, sans-serif" font-size="86" font-weight="900" fill="#C8102E" letter-spacing="4">ГОЛОСУЕМ 20 СЕНТЯБРЯ</text>
+  <rect x="560" y="930" width="800" height="12" rx="6" fill="#F2C230"/>
+</svg>

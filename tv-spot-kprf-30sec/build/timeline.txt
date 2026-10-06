@@ -1,0 +1,8 @@
+# Раскадровка 30-сек ролика: <файл кадра> <длительность, сек>
+# Сумма длительностей = 30.000. Правится после утверждения фонограммы.
+01-golos-urna.png                5.0
+02-kalendar-20-sentyabrya.png    5.5
+03-protokol-falsifikatsiya.png   6.0
+04-massovaya-yavka.png           5.5
+05-nabludatel.png                4.0
+06-endcard.png                   4.0

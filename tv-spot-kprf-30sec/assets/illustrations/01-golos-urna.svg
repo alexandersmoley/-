@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <title>Голос избирателя — бюллетень и урна</title>
+  <rect width="1920" height="1080" fill="#F4EFE6"/>
+  <circle cx="960" cy="520" r="410" fill="#F7DED7"/>
+  <path d="M0 1080 L1920 1080 L1920 940 Q960 1010 0 900 Z" fill="#C8102E"/>
+
+  <!-- урна -->
+  <rect x="700" y="580" width="520" height="360" rx="24" fill="#4A5A68"/>
+  <rect x="700" y="580" width="520" height="70" rx="24" fill="#3A4854"/>
+  <rect x="660" y="520" width="600" height="72" rx="18" fill="#C8102E"/>
+  <rect x="840" y="546" width="240" height="20" rx="10" fill="#8E1220"/>
+  <rect x="760" y="700" width="400" height="180" rx="14" fill="#5A6B7A"/>
+  <rect x="800" y="740" width="320" height="16" rx="8" fill="#7A8A98"/>
+  <rect x="800" y="784" width="240" height="16" rx="8" fill="#7A8A98"/>
+
+  <!-- бюллетень -->
+  <g transform="rotate(-9 960 330)">
+    <rect x="800" y="170" width="320" height="330" rx="12" fill="#FFFFFF"/>
+    <rect x="840" y="215" width="240" height="18" rx="9" fill="#C9CFD4"/>
+    <rect x="840" y="262" width="180" height="14" rx="7" fill="#D8DDE1"/>
+    <rect x="840" y="306" width="200" height="14" rx="7" fill="#D8DDE1"/>
+    <rect x="840" y="350" width="64" height="64" rx="8" fill="#FFFFFF" stroke="#4A5A68" stroke-width="8"/>
+    <path d="M852 384 l24 26 l44 -60" fill="none" stroke="#C8102E" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="944" y="366" width="136" height="16" rx="8" fill="#D8DDE1"/>
+  </g>
+
+
+  <!-- лучи -->
+  <g stroke="#C8102E" stroke-width="14" stroke-linecap="round" opacity="0.9">
+    <path d="M520 300 l70 46"/><path d="M470 470 l84 6"/><path d="M540 640 l74 -40"/>
+  </g>
+</svg>

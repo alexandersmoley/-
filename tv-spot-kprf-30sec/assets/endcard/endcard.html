@@ -1,0 +1,48 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Заставка 30-сек ролика</title>
+<style>
+  /* ---- Токены фирстиля. ВНИМАНИЕ: значения предварительные, --------------
+     сверить и заменить по PDF «gazeta3» (фирменный стиль). ---------------- */
+  :root{
+    --kprf-red:      #C8102E;
+    --kprf-red-deep: #8E1220;
+    --kprf-gold:     #F2C230;
+    --paper:         #F4EFE6;
+    --ink:           #22262B;
+    --font: "Liberation Sans", "DejaVu Sans", Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1920px;height:1080px;overflow:hidden}
+  body{font-family:var(--font);background:var(--kprf-red);color:#fff}
+  .frame{position:relative;width:1920px;height:1080px;overflow:hidden}
+  .frame::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 42%, rgba(255,255,255,.14), rgba(0,0,0,0) 62%)}
+  .bar-top{position:absolute;top:0;left:0;right:0;height:14px;background:var(--kprf-gold)}
+  .bar-bottom{position:absolute;bottom:96px;left:50%;transform:translateX(-50%);
+    width:640px;height:10px;border-radius:5px;background:var(--kprf-gold)}
+
+  /* Title-safe 90%: 96px по горизонтали, 54px по вертикали */
+  .safe{position:absolute;inset:54px 96px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center}
+
+  .logo-slot{width:300px;height:300px;border-radius:50%;background:#fff;color:var(--kprf-red);
+    display:flex;align-items:center;justify-content:center;
+    font-size:64px;font-weight:700;letter-spacing:2px;
+    /* Заменить на официальный логотип из фирстиля (SVG/PNG с альфой) */
+    outline:6px dashed rgba(200,16,46,.35);outline-offset:-18px}
+  .slogan{margin-top:52px;font-size:118px;line-height:1.02;font-weight:700;
+    letter-spacing:2px;text-transform:uppercase;text-shadow:0 4px 0 rgba(0,0,0,.12)}
+  .slogan em{font-style:normal;color:var(--kprf-gold);display:block}
+  .date{margin-top:34px;font-size:48px;font-weight:700;letter-spacing:5px;
+    padding:14px 40px;border:5px solid #fff;border-radius:10px}
+</style>
+<div class="frame">
+  <div class="bar-top"></div>
+  <div class="safe">
+    <div class="logo-slot">ЛОГО</div>
+    <div class="slogan">Голосуй<em>20 сентября</em></div>
+    <div class="date">ВЫБОРЫ В ЗАКСОБРАНИЕ И ГОСДУМУ</div>
+  </div>
+  <div class="bar-bottom"></div>
+</div>
