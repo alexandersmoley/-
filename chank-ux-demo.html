@@ -3,7 +3,7 @@
 <head>
 <meta name="robots" content="noindex,nofollow">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'none'; object-src 'none'">
-<!-- PUBLIC SYNTHETIC UX DEMO ONLY: no backend, no auth, no client data. Source: GitHub PR #30 -->
+<!-- PUBLIC SYNTHETIC UX DEMO ONLY; content-update and blog workflows, no backend/client data. Source: GitHub PR #30 -->
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Чанк — макет кабинета</title>
 <style>
@@ -89,6 +89,31 @@
  .chat-composer .attach,.chat-composer .send{min-width:44px;min-height:44px}
  .content.chat-mode{height:calc(100vh - 167px);height:calc(100dvh - 167px - env(safe-area-inset-top) - env(safe-area-inset-bottom))}
 }
+
+/* UX iteration: two business processes, one next action at a time */
+.entry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%;margin:22px auto 0}
+.entry-grid button{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:165px;border:1px solid #d9e3d8;background:#fbfcf9;border-radius:18px;padding:19px;text-align:left;color:#202c25}
+.entry-grid button:hover,.entry-grid button:focus-visible{border-color:#59826a;background:#f0f6ed}
+.entry-grid .entry-icon{width:36px;height:36px;border-radius:11px;background:#e3eddf;display:grid;place-items:center;color:#284b35}
+.entry-grid .entry-icon svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8}
+.entry-grid strong{font-size:18px;line-height:1.25;letter-spacing:-.035em}
+.entry-grid small{font-size:13px;color:#58665b;line-height:1.5}
+.entry-grid .entry-tail{font-size:12px;font-weight:700;color:#335f41;margin-top:auto}
+.entry-help{font-size:12px;color:#7c877d;text-align:center;margin:12px 0 0}
+.workflow-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:17px}
+.workflow-list button{border:1px solid #dbe2d8;background:#f8faf5;border-radius:12px;text-align:left;padding:12px;min-height:64px;color:inherit}
+.workflow-list button[aria-pressed=true]{border-color:#518165;background:#e8f2e5}
+.workflow-list button strong{display:block;font-size:14px}
+.workflow-list button small{font-size:11px}
+.next-action{padding:16px 18px;border:1px solid #cbdcca;background:#f1f6ee;border-radius:13px}
+.next-action strong{display:block;margin-bottom:6px;font-size:15px}
+.next-action p{font-size:13px;line-height:1.5;color:#496150}
+.process-switcher{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:14px}
+.process-switcher button{display:block;text-align:left;padding:13px;background:#f8faf7;color:#263b2d;border:1px solid #dbe2d8;border-radius:12px;min-height:61px}
+.process-switcher button[aria-pressed=true]{border-color:#476e50;background:#e8f2e5}
+.process-switcher button strong{display:block}.process-switcher button small{display:block}
+@media(max-width:630px){.entry-grid{grid-template-columns:1fr;margin-top:15px}.entry-grid button{min-height:112px;padding:13px;gap:5px}.entry-grid strong{font-size:16px}.entry-grid small{font-size:12px}.entry-grid .entry-icon{width:28px;height:28px}.chat-intro{margin:0 auto}.chat-empty-start{margin:auto 0}.workflow-list{grid-template-columns:1fr;gap:5px}.process-switcher button{min-height:52px;padding:10px}.process-switcher button strong{font-size:12px}}
+
 </style></head>
 <body>
 <a class="skip" href="#main">К содержанию</a>
@@ -113,8 +138,8 @@ const glyph=id=>'<span class="glyph">'+svg(id)+'</span>';
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
 const nav=[['chat','Чат','Чат'],['auto','Автоматизации','Сценарии'],['review','На проверке','Проверка'],['knowledge','База знаний','База'],['integration','Интеграции','Интеграции']];
-const types={site:'Актуализировать сайт',blog:'Вести блог',once:'Разовая задача'};
-const modes={now:'Сейчас',date:'Один раз по дате',recurring:'Регулярно'};
+const types={site:'Актуализация контента',blog:'Ведение блога'};
+const modes={recurring:'По расписанию',manual:'По запросу'};
 const zones=['Екатеринбург · UTC+5','Москва · UTC+3','UTC'];
 const outcomes={normal:'Обычный путь',source:'Источник недоступен',cms:'CMS недоступна',conflict:'Конфликт версии',partial:'Частичный успех'};
 const action=(id,label,style='',attr='')=>'<button type="button" class="btn '+style+'" data-action="'+id+'" '+attr+'>'+label+'</button>';
@@ -123,84 +148,129 @@ const panel=(content,cls='')=>'<section class="card '+cls+'">'+content+'</sectio
 const empty=(title,p,cta='')=>panel('<div class="empty"><h2>'+title+'</h2><p class="muted">'+p+'</p>'+(cta?'<div class="actions" style="justify-content:center">'+cta+'</div>':'')+'</div>');
 const heading=(title,p='',cta='')=>'<div class="heading"><div><h1 tabindex="-1" class="screen-title">'+title+'</h1>'+(p?'<p>'+p+'</p>':'')+'</div>'+cta+'</div>';
 const rules=rows=>'<dl class="rules">'+rows.map(([k,v])=>'<div><dt>'+k+'</dt><dd>'+v+'</dd></div>').join('')+'</dl>';
-const state={section:'chat',demo:false,wizard:null,paused:false,scenario:null,run:null,decision:null,history:[],outcome:'normal',integrationReturn:false,factOpen:false,messages:[],chatDraft:''};
+const makeSlot=()=>({scenario:null,run:null,decision:null,paused:false,history:[]});
+const state={section:'chat',demo:true,wizard:null,paused:false,scenario:null,run:null,decision:null,history:[],outcome:'normal',integrationReturn:false,factOpen:false,messages:[],chatDraft:'',activeType:'site',slots:{site:makeSlot(),blog:makeSlot()}};
+function persistSlot(){const slot=state.slots[state.activeType];if(slot){slot.scenario=state.scenario;slot.run=state.run;slot.decision=state.decision;slot.paused=state.paused;slot.history=state.history;}}
+function selectSlot(type){if(!types[type])return;persistSlot();const slot=state.slots[type];state.activeType=type;state.scenario=slot.scenario;state.run=slot.run;state.decision=slot.decision;state.paused=slot.paused;state.history=slot.history;}
+function scenarioCount(){persistSlot();return Object.values(state.slots).filter(slot=>slot.scenario).length}
+function blogOrSite(blog,site){return state.activeType==='blog'?blog:site;}
 function sampleDate(offset=1){const now=new Date();now.setUTCDate(now.getUTCDate()+offset);return now.toISOString().slice(0,10)}
-function draft(type){return {type,title:types[type],page:type==='blog'?'/blog':'/delivery',source:'Условия доставки · v4',mode:type==='once'?'now':'recurring',date:sampleDate(),time:'09:00',zone:zones[0],frequency:'Каждую неделю',editor:'Редактор проекта',step:0,furthest:0}}
-function dateLabel(d){if(d.mode==='now')return 'По ручному запуску';const [y,m,day]=d.date.split('-');return day+'.'+m+'.'+y+' в '+d.time+' · '+d.zone;}
+function draft(type){return {type,title:types[type],page:type==='blog'?'/blog':'/delivery',source:type==='blog'?'База знаний и запросы аудитории':'Условия доставки · v4',mode:'recurring',date:sampleDate(),time:'09:00',zone:zones[0],frequency:type==='blog'?'Каждую неделю':'Каждый день',editor:'Редактор проекта',step:0,furthest:0}}
+function dateLabel(d){if(d.mode==='manual')return 'По запросу';const [y,m,day]=d.date.split('-');return day+'.'+m+'.'+y+' в '+d.time+' · '+d.zone;}
 function announce(msg){const f=$('#feedback');f.textContent=msg;f.className=msg?'callout ok':'';if(msg)f.style.marginBottom='12px';else f.style.marginBottom='0';}
 function focusHeading(){requestAnimationFrame(()=>$('.screen-title')?.focus({preventScroll:true}));}
 function show(section){state.section=section;announce('');render();window.scrollTo(0,0);focusHeading();}
 function goWizard(step){state.wizard.step=step;state.wizard.furthest=Math.max(step,state.wizard.furthest);render();requestAnimationFrame(()=>{$('#step-title')?.focus({preventScroll:true});const feed=$('#chat-scroll');if(feed)feed.scrollTop=feed.scrollHeight;});}
 function quick(id,name,sub,icon){return '<button type="button" data-action="'+id+'">'+glyph(icon)+'<span><strong>'+name+'</strong><small>'+sub+'</small></span></button>';}
-function samplePanel(){return panel('<h2>Проверка макета</h2><p class="muted">Переключайте состояния на синтетических данных.</p><label class="label" style="margin-top:10px">Состояние<select id="outcome">'+Object.entries(outcomes).map(([k,v])=>'<option value="'+k+'" '+(state.outcome===k?'selected':'')+'>'+v+'</option>').join('')+'</select></label><details style="margin-top:12px"><summary>Варианты шапки</summary><div class="brand-compare"><div class="sample">Зелёный v11<i></i></div><div class="sample alt">Графит<i></i></div></div></details>','rail');}
-function homeRail(){return panel('<h2>'+ (state.demo?'Проект «Север»':'Рабочая область')+'</h2>'+rules([['Сценарии',state.scenario?'1':'0'],['На проверке',state.run?.status==='review'?'1':'0'],['Интеграции','Не подключены']])+ '<div class="actions">'+action('integration','Посмотреть интеграции','quiet small')+'</div>','rail');}
+function samplePanel(){return panel('<details><summary>Проверить нештатные ситуации</summary><p class="muted">Только в учебном режиме: ошибка источника, CMS или конфликт версии.</p><label class="label" style="margin-top:10px">Состояние<select id="outcome">'+Object.entries(outcomes).map(([k,v])=>'<option value="'+k+'" '+(state.outcome===k?'selected':'')+'>'+v+'</option>').join('')+'</select></label></details>','rail');}
+function homeRail(){persistSlot();return panel('<h2>Два процесса</h2>'+rules([['Актуализация',state.slots.site.scenario?'Настроена':'Не настроена'],['Блог',state.slots.blog.scenario?'Настроен':'Не настроен'],['На проверке',Object.values(state.slots).filter(x=>x.run?.status==='review').length+'']])+ '<div class="actions">'+action('auto','Открыть сценарии','quiet small')+'</div>','rail');}
 function message(role,text){return '<div class="chat-msg '+role+'">'+(role==='user'?'<div class="chat-user-text">'+esc(text)+'</div>':'<div class="chat-answer"><div class="speaker"><span class="ai-mark">ч</span>Чанк</div><p>'+esc(text)+'</p></div>')+'</div>';}
-function chatChoices(){return '<div class="chat-choices">'+action('start:site','Проверить актуальность сайта')+action('start:blog','Подготовить статьи в блог')+action('start:once','Разовая задача')+(state.demo?action('demo-run','Учебный сценарий'):action('demo','Открыть демопроект'))+'</div>';}
+function entry(type,title,description,icon){return '<button type="button" data-action="start:'+type+'"><span class="entry-icon">'+svg(icon)+'</span><strong>'+title+'</strong><small>'+description+'</small><span class="entry-tail">'+(state.slots[type].scenario?'Продолжить настройку':'Настроить процесс')+' →</span></button>';}
+function chatChoices(){return '<div class="entry-grid">'+entry('site','Актуализация контента','Проверять страницы, находить устаревшие сведения и готовить обновления.','site')+entry('blog','Ведение блога','Собирать темы, готовить статьи по плану и отправлять на проверку.','file')+'</div><p class="entry-help">Оба процесса можно настроить независимо. Все данные — учебные.</p>';}
 function chat(){
- const initial=state.messages.length===0&&!state.wizard;
- const greeting=initial?'<div class="chat-empty-start"><div class="chat-intro"><h1 class="screen-title" tabindex="-1">Что будем делать с контентом?</h1><p>Опишите задачу своими словами или выберите готовый сценарий.</p></div>'+chatChoices()+'</div>':'';
- const messages=state.messages.map(m=>message(m.role,m.text)).join('');
- const wizardMessage=state.wizard?'<div class="wizard-message"><div class="chat-answer"><div class="speaker"><span class="ai-mark">ч</span>Чанк · настройка сценария</div>'+wizard()+'</div></div>':'';
- const suggestions=!initial&&!state.wizard&&state.messages.length?'<div class="chat-choices">'+action('start:site','Обновлять сайт')+action('start:blog','Вести блог')+action('start:once','Разовая задача')+action('auto','Мои автоматизации')+'</div>':'';
- return '<section id="chat-workspace" class="chat-workspace" aria-label="Чат с Чанком"><div class="chat-topbar"><div><strong>Чанк</strong><span class="chat-sub">Работа с контентом компании</span></div>'+action('new-chat','+ Новый чат','small',state.wizard?'disabled title="Сначала завершите настройку сценария"':'')+'</div><div id="chat-scroll" class="chat-scroll"><div class="chat-thread">'+greeting+messages+wizardMessage+suggestions+'</div></div><div class="chat-composer-zone"><div class="chat-composer-inner"><form class="chat-composer" id="chat-composer"><button type="button" class="attach" data-action="attach-source" aria-label="Открыть базу знаний" title="Источники компании">+</button><textarea id="chat-prompt" name="prompt" rows="1" placeholder="Напишите задачу Чанку…" aria-label="Сообщение Чанку">'+esc(state.chatDraft)+'</textarea><button type="submit" class="send" aria-label="Отправить сообщение" title="Отправить">↑</button></form><div class="chat-footnote">UX-демо · ответы по готовым сценариям, AI не подключён</div></div></div></section>';
+  persistSlot();
+  const initial=state.messages.length===0&&!state.wizard;
+  const count=scenarioCount();
+  const greeting=initial?'<div class="chat-empty-start"><div class="chat-intro"><h1 class="screen-title" tabindex="-1">Что настроим в «Чанке»?</h1><p>Выберите один из двух процессов. Дальше покажу настройки, учебный результат и следующий шаг.</p></div>'+chatChoices()+'</div>':'';
+  const messages=state.messages.map(m=>message(m.role,m.text)).join('');
+  const wizardMessage=state.wizard?'<div class="wizard-message"><div class="chat-answer"><div class="speaker"><span class="ai-mark">ч</span>Чанк · настройка</div>'+wizard()+'</div></div>':'';
+  const suggestions=!initial&&!state.wizard?'<div class="chat-choices">'+action('start:site','Актуализация контента')+action('start:blog','Ведение блога')+(count?action('auto','Мои сценарии','primary'):'')+'</div>':'';
+  return '<section id="chat-workspace" class="chat-workspace" aria-label="Чат с Чанком"><div class="chat-topbar"><div><strong>Чанк</strong><span class="chat-sub">Актуализация и блог</span></div>'+action('new-chat','+ Новый чат','small',state.wizard?'disabled title="Сначала завершите настройку"':'')+'</div><div id="chat-scroll" class="chat-scroll"><div class="chat-thread">'+greeting+messages+wizardMessage+suggestions+'</div></div><div class="chat-composer-zone"><div class="chat-composer-inner"><form class="chat-composer" id="chat-composer"><button type="button" class="attach" data-action="attach-source" aria-label="Открыть базу знаний" title="Источники компании">+</button><textarea id="chat-prompt" name="prompt" rows="1" placeholder="Напишите: обновлять сайт или вести блог…" aria-label="Сообщение Чанку">'+esc(state.chatDraft)+'</textarea><button type="submit" class="send" aria-label="Отправить сообщение" title="Отправить">↑</button></form><div class="chat-footnote">UX-демо · данные учебные, AI и публикация не подключены</div></div></div></section>';
 }
 function sendChat(){
- const input=$('#chat-prompt');const value=(input?.value||'').trim();if(!value)return;
+ const input=$('#chat-prompt'),value=(input?.value||'').trim();if(!value)return;
  state.messages.push({role:'user',text:value});state.chatDraft='';
- const q=value.toLowerCase();let response='В этом макете пока нет подключения к AI. Могу показать настройку сайта, блога или разовой задачи с понятными шагами.';
- if(state.wizard){response='Сейчас мы настраиваем сценарий. Завершите шаги ниже; введённые параметры останутся в форме.';}
- else if(/блог|стать|контент.?план|публикац/.test(q)){response='Подготовим сценарий работы с блогом. Выберите источники, частоту и порядок согласования.';state.wizard=draft('blog');}
- else if(/сайт|обнов|актуал|страниц|цен|доставк/.test(q)){response='Настроим проверку страниц и подготовку правок. Публикация будет требовать отдельного решения.';state.wizard=draft('site');}
- else if(/разов|один раз|проверить текст/.test(q)){response='Создадим разовый сценарий. Можно будет сохранить его без расписания.';state.wizard=draft('once');}
- else if(/интеграц|cms|тильд|метрик|wordstat/.test(q)){response='Откройте интеграции. В демоверсии подключения отсутствуют — это будет явно показано.';}
- else if(/провер|соглас/.test(q)){response='Все решения редактора находятся в разделе «На проверке». Там отображается сравнение до и после правки.';}
- state.messages.push({role:'assistant',text:response});render();requestAnimationFrame(()=>{$('#chat-prompt')?.focus({preventScroll:true});const f=$('#chat-scroll');if(f)f.scrollTop=f.scrollHeight;});
+ const q=value.toLowerCase();
+ let response='В этой демоверсии можно настроить актуализацию контента или ведение блога. Выберите направление ниже — я проведу по шагам.';
+ if(state.wizard){response='Вы уже настраиваете процесс. Завершите шаги ниже или нажмите «Закрыть» — введённые параметры пока сохраняются только в мастере.';}
+ else if(/блог|стать|контент.?план|публикац|темы/.test(q)){selectSlot('blog');response='Настроим регулярную работу с блогом: темы и источники, расписание, согласование и учебная статья.';state.wizard=state.scenario?{...state.scenario,step:0,furthest:4}:draft('blog');}
+ else if(/сайт|обнов|актуал|страниц|цен|доставк/.test(q)){selectSlot('site');response='Настроим регулярную актуализацию: проверка источников, сравнение страницы и согласование обновления.';state.wizard=state.scenario?{...state.scenario,step:0,furthest:4}:draft('site');}
+ else if(/сценари|автоматизац|продолж|дальше/.test(q)){response='Открою ваши процессы: там можно запустить учебную проверку, посмотреть результат или перейти к согласованию.';state.messages.push({role:'assistant',text:response});show('auto');return;}
+ else if(/интеграц|cms|тильд|метрик|wordstat/.test(q)){response='Интеграции находятся в отдельном разделе. В демо внешние подключения отключены.';}
+ else if(/провер|соглас/.test(q)){response='После запуска проверка появится в разделе «На проверке». Если ничего нет, сначала создайте процесс.';}
+ state.messages.push({role:'assistant',text:response});show('chat');
 }
 function labelInput(k,name,type='text'){return '<label class="label">'+name+'<input name="'+k+'" type="'+type+'" required value="'+esc(state.wizard[k])+'"></label>';}
 function select(k,name,values){return '<label class="label">'+name+'<select name="'+k+'">'+values.map(v=>'<option '+(state.wizard[k]===v?'selected':'')+'>'+esc(v)+'</option>').join('')+'</select></label>';}
 function wizard(){
- const w=state.wizard, names=['Что делать?','Где и по какому источнику?','Когда запускать?','Кто утверждает?','Проверьте сценарий'], buttons=action('back','← Назад','quiet small',w.step===0?'disabled':'')+action('forward','Вперёд →','quiet small',w.step>=w.furthest?'disabled':'');
+ const w=state.wizard;
+ const names=['Выберите процесс','Что проверяем и откуда берём данные','Как часто выполнять','Кто согласовывает','Проверьте настройки'];
+ const buttons=action('back','← Назад','quiet small',w.step===0?'disabled':'')+action('forward','Вперёд →','quiet small',w.step>=w.furthest?'disabled':'');
  let form='';
- if(w.step===0)form=labelInput('title','Название сценария')+'<div class="tabs" aria-label="Задача">'+Object.entries(types).map(([id,name])=>action('type:'+id,name,'small','aria-pressed="'+(id===w.type)+'"')).join('')+'</div>';
- if(w.step===1)form=labelInput('page','Страница или раздел')+labelInput('source','Источник')+'<div class="callout"><strong>CMS не подключена</strong><br><small>Сохранить сценарий можно без доступа. В макете проверка использует учебные данные.</small><div class="actions">'+action('check-integrations','Проверить интеграции','small')+'</div></div>';
- if(w.step===2)form='<div class="tabs" aria-label="Режим запуска">'+Object.entries(modes).map(([id,name])=>action('mode:'+id,name,'small','aria-pressed="'+(id===w.mode)+'"')).join('')+'</div>'+(w.mode==='now'?'<p class="muted">Запуск начнётся после подтверждения.</p>':'<div class="split">'+labelInput('date',w.mode==='date'?'Дата':'Первый запуск','date')+labelInput('time','Время','time')+'</div>'+select('zone','Часовой пояс',zones)+(w.mode==='recurring'?select('frequency','Повтор',['Каждый день','Каждую неделю','Каждый месяц']):''));
- if(w.step===3)form=select('editor','Кто проверяет изменения',['Редактор проекта','Владелец проекта'])+'<div class="callout">Изменение страницы требует решения редактора.</div>';
- if(w.step===4)form=rules([['Сценарий',esc(w.title)],['Страница',esc(w.page)],['Источник',esc(w.source)],['Когда',modes[w.mode]],...(w.mode==='now'?[]:[['Следующий запуск',esc(dateLabel(w))]]),['Кто утверждает',esc(w.editor)]])+'<div class="callout">Результат — правка с источником и сравнением версий. Здесь запуск моделируется.</div>';
- return '<div class="wizard-card"><ol class="stepbar" aria-label="Шаг '+(w.step+1)+' из 5">'+names.map((_,i)=>'<li class="'+(i<=w.step?'done':'')+'"></li>').join('')+'</ol><div class="card-head"><div><small>Шаг '+(w.step+1)+' из 5</small><h2 id="step-title" tabindex="-1">'+names[w.step]+'</h2></div>'+action('cancel','Закрыть','quiet small')+'</div><form id="wizard" class="form" style="margin-top:12px">'+form+'<p class="field-note" id="field-error" role="alert" hidden></p><div class="actions" style="margin:0">'+(w.step<4?'<button type="submit" class="btn primary">Продолжить</button>':action('save','Сохранить черновик')+action('activate',w.mode==='now'?'Смоделировать запуск':'Активировать в демо','primary'))+'</div></form><div class="wizard-controls">'+buttons+'</div></div>';
+ if(w.step===0)form='<p class="muted">Выберите одну из двух постоянных задач. Их можно использовать вместе.</p><div class="workflow-list">'+Object.entries(types).map(([id,name])=>'<button type="button" data-action="type:'+id+'" aria-pressed="'+(id===w.type)+'"><strong>'+name+'</strong><small>'+(id==='blog'?'Темы → статьи → согласование → публикация':'Источники → проверка страниц → согласование → обновление')+'</small></button>').join('')+'</div>'+labelInput('title','Название процесса');
+ if(w.step===1)form=labelInput('page',w.type==='blog'?'Адрес раздела блога':'Адрес страницы или раздела')+labelInput('source',w.type==='blog'?'Источники тем и фактов':'Источник актуальных сведений')+'<div class="callout"><strong>Внешние источники пока не подключены.</strong><br><small>Для демонстрации можно продолжить с учебными данными.</small><div class="actions">'+action('check-integrations','Посмотреть интеграции','small')+'</div></div>';
+ if(w.step===2)form='<p class="muted">Как процесс будет работать после подключения сервера? В учебной версии результат можно получить сразу.</p><div class="tabs" aria-label="Режим работы">'+Object.entries(modes).map(([id,name])=>action('mode:'+id,name,'small','aria-pressed="'+(id===w.mode)+'"')).join('')+'</div>'+(w.mode==='manual'?'<p class="muted">Вы сможете запускать этот процесс из раздела «Автоматизации».</p>':'<div class="split">'+labelInput('date','Первый запуск','date')+labelInput('time','Время','time')+'</div>'+select('zone','Часовой пояс',zones)+select('frequency','Повтор',['Каждый день','Каждую неделю','Каждый месяц']));
+ if(w.step===3)form=select('editor','Кто утверждает результат',['Редактор проекта','Владелец проекта'])+'<div class="callout">Любой материал сначала попадает «На проверке». Учебная публикация возможна только после подтверждения.</div>';
+ if(w.step===4)form=rules([['Процесс',esc(w.title)],['Работа',types[w.type]],['Раздел',esc(w.page)],['Источник',esc(w.source)],['Режим',modes[w.mode]],...(w.mode==='manual'?[]:[['Следующий запуск',esc(dateLabel(w))]]),['Согласование',esc(w.editor)]])+'<div class="callout">После создания сразу покажем учебный результат: для сайта — предложение обновления страницы, для блога — черновик статьи. Никаких реальных публикаций.</div>';
+ return '<div class="wizard-card"><ol class="stepbar" aria-label="Шаг '+(w.step+1)+' из 5">'+names.map((_,i)=>'<li class="'+(i<=w.step?'done':'')+'"></li>').join('')+'</ol><div class="card-head"><div><small>Шаг '+(w.step+1)+' из 5 · '+types[w.type]+'</small><h2 id="step-title" tabindex="-1">'+names[w.step]+'</h2></div>'+action('cancel','Закрыть','quiet small')+'</div><form id="wizard" class="form" style="margin-top:12px">'+form+'<p class="field-note" id="field-error" role="alert" hidden></p><div class="actions" style="margin:0">'+(w.step<4?'<button type="submit" class="btn primary">Продолжить →</button>':action('activate','Создать и показать результат','primary')+action('save','Сохранить черновик','quiet'))+'</div></form><div class="wizard-controls">'+buttons+'</div></div>';
 }
-function automation(){const s=state.scenario,r=state.run;const c=s?'<div class="stack">'+panel('<div class="card-head"><div><small>Сценарий</small><h2>'+esc(s.title)+'</h2><p class="muted">'+esc(s.page)+'</p></div>'+badge(state.paused?'На паузе':s.active?'Активирован в демо':'Черновик',state.paused?'warn':'')+'</div>'+rules([['Режим',modes[s.mode]],['Следующий запуск',state.paused?'На паузе':s.active?esc(dateLabel(s)):'После активации'],['Повтор',s.mode==='recurring'?esc(s.frequency):'Один запуск']])+ '<div class="actions">'+action('run','Смоделировать запуск','primary')+(s.active&&s.mode!=='now'?action('pause',state.paused?'Возобновить':'Поставить на паузу'):'')+action('edit','Изменить')+'</div>')+(r?runCard():empty('Запусков ещё нет','История появится после первого запуска.'))+(state.history.length?panel('<h2>Предыдущие запуски</h2><ol class="timeline">'+state.history.map(x=>'<li>'+esc(x.time)+' · '+esc(runLabels[x.status])+'</li>').join('')+'</ol>'):'')+'</div>':empty('Сценариев пока нет','Выберите задачу в чате и сохраните сценарий.',action('start:site','Создать сценарий','primary'));return heading('Автоматизации','Сценарии, расписание и история запусков')+'<div class="layout">'+c+'<aside class="stack">'+(state.demo?samplePanel():homeRail())+'</aside></div>';}
+function automation(){
+ persistSlot();
+ const switcher='<div class="process-switcher">'+Object.entries(types).map(([id,title])=>{const slot=state.slots[id];return '<button type="button" data-action="choose:'+id+'" aria-pressed="'+(id===state.activeType)+'"><strong>'+title+'</strong><small>'+(slot.scenario?(slot.paused?'На паузе':slot.scenario.active?'Настроен':'Черновик'):'Не настроен')+'</small></button>'}).join('')+'</div>';
+ const s=state.scenario,r=state.run;
+ const content=s?'<div class="stack">'+panel('<div class="card-head"><div><small>Сохранённый процесс</small><h2>'+esc(s.title)+'</h2><p class="muted">'+esc(s.page)+'</p></div>'+badge(state.paused?'На паузе':s.active?'Активирован в демо':'Черновик',state.paused?'warn':'')+'</div>'+rules([['Режим',modes[s.mode]],['Следующий запуск',state.paused?'На паузе':s.active?esc(dateLabel(s)):'После активации'],['Повтор',s.mode==='recurring'?esc(s.frequency):'По запросу']])+ '<div class="actions">'+action('run','Показать учебный результат','primary',state.paused?'disabled title="Сначала возобновите процесс"':'')+(s.active?action('pause',state.paused?'Возобновить':'Поставить на паузу'):'')+action('edit','Изменить настройки')+'</div>')+(r?runCard():panel('<div class="next-action"><strong>Следующий шаг — учебный запуск</strong><p>Покажем, как выглядит результат и решение редактора. Реальных запросов к CMS не будет.</p><div class="actions">'+action('run','Показать результат','primary')+'</div></div>'))+(state.history.length?panel('<h2>История учебных запусков</h2><ol class="timeline">'+state.history.map(x=>'<li>'+esc(x.time)+' · '+esc(runLabels[x.status])+'</li>').join('')+'</ol>'):'')+'</div>'
+ :empty('Процесс ещё не настроен','Выберите актуализацию контента или ведение блога. После настройки пройдём полный учебный цикл.',action('start:'+state.activeType,'Настроить '+(state.activeType==='site'?'актуализацию':'блог'),'primary'));
+ return heading('Автоматизации','Актуализация и блог: расписания, запуски и результаты')+'<div class="layout"><div class="stack">'+switcher+content+'</div><aside class="stack">'+homeRail()+samplePanel()+'</aside></div>';
+}
 const runLabels={review:'Ждёт проверки',source:'Ошибка источника',cms:'Ошибка CMS',approved:'Решение принято',returned:'На доработке',partial:'Частичный успех',conflict:'Конфликт версии',checking:'Проверяем результат',unknown:'Результат не подтверждён',confirmed:'Подтверждено в демо'};
-function runCard(){const r=state.run;let extra='';if(r.status==='review')extra=action('review','Открыть правку','primary');if(r.status==='source')extra=action('knowledge','Открыть источник')+action('retry','Повторить в демо','primary');if(r.status==='cms')extra=action('integration','Проверить доступ')+action('retry-cms','Проверить результат','primary');if(r.status==='approved')extra=action('review','Открыть принятое решение');if(r.status==='partial')extra=action('retry-cms','Проверить результат');if(r.status==='conflict')extra=action('review','Сверить с новой версией','primary');return panel('<div class="card-head"><div><small>Учебный запуск · '+esc(r.time)+'</small><h2>Проверка страницы</h2></div>'+badge(runLabels[r.status],['source','cms','conflict'].includes(r.status)?'error':r.status==='partial'?'warn':'')+'</div><ol class="timeline">'+r.log.map(s=>'<li>'+esc(s)+'</li>').join('')+'</ol>'+(extra?'<div class="actions">'+extra+'</div>':''));}
+function runCard(){const r=state.run;let extra='';
+ if(r.status==='review')extra=action('review','Проверить материал →','primary');
+ if(r.status==='source')extra=action('knowledge','Посмотреть источник')+action('retry','Повторить учебный запуск','primary');
+ if(r.status==='cms'||r.status==='partial'||r.status==='unknown')extra=action('retry-cms','Проверить результат','primary')+action('integration','Интеграции');
+ if(r.status==='approved')extra=action('review','Продолжить к публикации →','primary');
+ if(r.status==='returned')extra=action('run','Повторить подготовку','primary');
+ if(r.status==='conflict')extra=action('review','Сверить материал','primary');
+ if(r.status==='confirmed')extra=action('run','Повторить учебный цикл')+action('chat','Вернуться в чат');
+ return panel('<div class="card-head"><div><small>Учебный запуск · '+esc(r.time)+'</small><h2>'+blogOrSite('Подготовка статьи','Актуализация страницы')+'</h2></div>'+badge(runLabels[r.status],['source','cms','conflict'].includes(r.status)?'error':r.status==='partial'?'warn':'')+'</div><ol class="timeline">'+r.log.map(s=>'<li>'+esc(s)+'</li>').join('')+'</ol>'+(r.status==='confirmed'?'<div class="next-action"><strong>Учебный цикл завершён</strong><p>Материал условно опубликован. Можно повторить проверку, вернуться к задачам или настроить второй процесс.</p></div>':'')+(extra?'<div class="actions">'+extra+'</div>':''));
+}
 function review(){
  const r=state.run;let c;
- if(!r||r.status==='source'){c=empty('Очередь пуста',r?'Проверка источника завершилась ошибкой. Правка не создана.':'Правки появятся здесь после проверки страницы.',action('auto','К сценариям'));}
- else{const changed=r.status==='conflict', done=state.decision;const v=r.version;
- const b=changed?'<div class="callout warn" role="alert"><strong>На странице уже версия '+(v+1)+'.</strong> Сверьте текущий текст и подготовьте предложение заново.</div>':'';
- const publish={approved:'Не отправлено',returned:'На доработке',cms:'Ошибка CMS',partial:'Отправлено в CMS, чтение результата не завершено',checking:'Проверяем результат',unknown:'Результат не подтверждён',confirmed:'Подтверждено в демо'};
- const compare='<div class="compare"><div><h3>Было · v'+v+'</h3><p>'+(v>3?'Доставка занимает до 4 рабочих дней.':'Доставка занимает до 7 рабочих дней.')+'</p></div><div><h3>Предлагается</h3><p>Доставка занимает до 5 рабочих дней.</p></div></div>';
- const controls=changed?action('refresh-version','Обновить сравнение','primary'):!done?action('approve','Утвердить правку','primary')+action('return-review','На доработку'):r.status==='approved'?action('publish','Смоделировать размещение','primary'):['cms','partial','unknown'].includes(r.status)?action('retry-cms','Проверить результат','primary'):'';
- c=panel('<div class="stack"><div class="card-head"><div><h2>Срок доставки</h2><p class="url muted">https://sever.example'+esc(state.scenario.page)+'</p></div>'+badge(done==='yes'?'Утверждена':done==='no'?'На доработке':'1 правка',done==='no'?'warn':'')+'</div>'+rules([['Источник',esc(state.scenario.source)],['Версия страницы','v'+v],['Решение редактора',done==='yes'?'Правка утверждена':done==='no'?'На доработке':'Ожидается'],['Публикация',publish[r.status]||'Ожидает согласования']])+b+(['cms','partial','unknown'].includes(r.status)?'<div class="callout warn" role="status">Результат записи неизвестен. Проверьте текущую версию страницы перед любым новым размещением.</div>':'')+compare+(controls?'<div class="actions" style="margin:0">'+controls+'</div>':'')+'</div>');}
- return heading('На проверке','Решения редактора и статус размещения')+'<div class="layout"><div class="stack">'+c+'</div><aside class="stack">'+(state.demo?samplePanel():homeRail())+'</aside></div>';
+ const switcher='<div class="process-switcher">'+Object.entries(types).map(([id,title])=>{const slot=state.slots[id];return '<button type="button" data-action="choose-review:'+id+'" aria-pressed="'+(id===state.activeType)+'"><strong>'+title+'</strong><small>'+(slot.run?runLabels[slot.run.status]:'Нет материалов')+'</small></button>'}).join('')+'</div>';
+ if(!r||r.status==='source'){c=empty('Пока нечего согласовывать',r?'Источник недоступен, материал не подготовлен. Повторите запуск после проверки.':'Сначала создайте процесс и запустите его в учебном режиме.',action('auto','Перейти к процессам','primary'));}
+ else{
+  const blog=state.activeType==='blog',changed=r.status==='conflict',done=state.decision,v=r.version;
+  const conflict=changed?'<div class="callout warn" role="alert"><strong>Версия материала изменилась.</strong> Проверьте новую версию до принятия решения.</div>':'';
+  const labels={approved:'Утверждён, не опубликован',returned:'На доработке',cms:'Ошибка CMS',partial:'Отправлен, проверка результата не завершена',checking:'Проверяем результат',unknown:'Результат не подтверждён',confirmed:'Опубликован в учебном режиме'};
+  const before=blog?'<h3>Тема и тезисы</h3><p>Как отличить актуальную информацию на сайте от устаревшей. Чек-лист проверки источников и дат.</p>':'<h3>Было · v'+v+'</h3><p>'+(v>3?'Доставка занимает до 4 рабочих дней.':'Доставка занимает до 7 рабочих дней.')+'</p>';
+  const after=blog?'<h3>Черновик статьи</h3><p>Как проверить актуальность информации на сайте: сверяем факты с первоисточником, проверяем даты, согласовываем изменения и публикуем только подтверждённый материал.</p>':'<h3>Предлагается</h3><p>Доставка занимает до 5 рабочих дней.</p>';
+  const compare='<div class="compare"><div>'+before+'</div><div>'+after+'</div></div>';
+  const controls=changed?action('refresh-version','Обновить материал','primary'):!done?action('approve',blog?'Утвердить статью':'Утвердить обновление','primary')+action('return-review','Вернуть на доработку'):r.status==='approved'?action('publish',blog?'Смоделировать публикацию статьи':'Смоделировать обновление страницы','primary'):['cms','partial','unknown'].includes(r.status)?action('retry-cms','Проверить результат','primary'):r.status==='returned'?action('run','Повторить подготовку','primary'):r.status==='confirmed'?action('auto','Вернуться к процессу','primary')+action('chat','Открыть чат'):'';
+  const title=blog?'Как проверить актуальность информации':'Срок доставки';
+  c=panel('<div class="stack"><div class="card-head"><div><h2>'+title+'</h2><p class="url muted">https://sever.example'+esc(state.scenario?.page||'/blog')+'</p></div>'+badge(r.status==='confirmed'?'Опубликовано в демо':done==='yes'?'Утверждено':done==='no'?'На доработке':'На проверке',done==='no'?'warn':'')+'</div>'+rules([['Источник',esc(state.scenario?.source||'Учебные данные')],['Версия материала','v'+v],['Решение редактора',done==='yes'?'Утверждено':done==='no'?'На доработке':'Ожидается'],['Публикация',labels[r.status]||'Не отправлено']])+conflict+(['cms','partial','unknown'].includes(r.status)?'<div class="callout warn">Результат записи неизвестен — сначала проверяем CMS, не отправляем второй раз.</div>':'')+compare+(r.status==='confirmed'?'<div class="next-action"><strong>Результат подтверждён в демо</strong><p>Это учебная симуляция. Никакая статья или страница не опубликована.</p></div>':'')+(controls?'<div class="actions">'+controls+'</div>':'')+'</div>');
+ }
+ return heading('На проверке','Согласование материалов и подтверждение публикации')+'<div class="layout"><div class="stack">'+switcher+c+'</div><aside class="stack">'+homeRail()+samplePanel()+'</aside></div>';
 }
-function knowledge(){const demo=state.demo;return heading('База знаний','Источники, факты и связанные страницы')+'<div class="layout"><div class="stack">'+(demo?panel('<div class="card-head"><div><small>Факт · доставка</small><h2>Срок доставки</h2><p>До 5 рабочих дней</p></div>'+badge(state.outcome==='source'?'Источник недоступен':'Проверен',state.outcome==='source'?'warn':'')+'</div>'+rules([['Источник','Условия доставки · v4'],['Проверка','12 ноября 2026'],['Связанная страница','/delivery']])+'<div class="actions">'+action('fact',state.factOpen?'Свернуть источник':'Сведения об источнике')+'</div>'+(state.factOpen?'<p class="callout" style="margin-top:10px">Учебный документ отдела логистики. В демо источник не загружается из внешней системы.</p>':'')):empty('Фактов пока нет','Укажите источник в сценарии. Учебный факт можно открыть в демопроекте.',action('demo','Открыть демопроект')))+panel('<h2>Правила бренда</h2><p class="muted">'+(demo?'В учебном проекте правила ещё не добавлены.':'Нет редполитики, ToV и брендбука.')+'</p>')+'</div><aside class="stack">'+homeRail()+'</aside></div>';}
+function knowledge(){
+ const blog=state.activeType==='blog';
+ return heading('База знаний','Источники, подтверждённые факты и редакционные правила')+'<div class="layout"><div class="stack">'+panel('<div class="card-head"><div><small>Учебный источник</small><h2>'+(blog?'Вопросы клиентов и информация о продукте':'Условия доставки')+'</h2><p>'+(blog?'Материалы для подготовки тематического плана':'Доставка — до 5 рабочих дней')+'</p></div>'+badge(state.outcome==='source'?'Источник недоступен':'Демо',state.outcome==='source'?'warn':'')+'</div>'+rules([['Источник',blog?'База знаний и запросы аудитории':'Условия доставки · v4'],['Проверка','Учебные сведения'],['Связанный раздел',blog?'/blog':'/delivery']])+'<div class="actions">'+action('fact',state.factOpen?'Свернуть источник':'Что за источник?')+action('auto','К процессу')+'</div>'+(state.factOpen?'<p class="callout" style="margin-top:10px">Этот источник существует только в макете. Данные извне не загружаются.</p>':''))+panel('<h2>Правила бренда</h2><p class="muted">Редполитика, Tone of Voice и брендбук появятся здесь после настройки настоящего проекта. В демо загрузка отключена.</p>')+'</div><aside class="stack">'+homeRail()+'</aside></div>';
+}
 function integrations(){const systems=[['CMS','Чтение страницы и её версии','Запись утверждённого изменения'],['Wordstat','Чтение данных о запросах','Запись не требуется'],['Яндекс Метрика','Чтение показателей страниц','Запись не требуется'],['AI-провайдер','Чтение статуса доступа и лимитов','Подготовка текста по запросу']];return heading('Интеграции','Доступы для сценариев',state.integrationReturn?action('return-wizard','← Вернуться к сценарию','primary'):'')+'<div class="layout"><div class="stack">'+systems.map(([n,r,w])=>panel('<div class="card-head"><div class="row">'+glyph('integration')+'<h2>'+n+'</h2></div>'+badge('Не подключено','warn')+'</div>'+rules([['Чтение',r],['Запись',w]]))).join('')+'</div><aside class="stack">'+panel('<h2>Доступы в макете</h2><p class="muted">Внешние системы отключены. Все сценарии используют синтетические данные.</p>','rail')+'</aside></div>';}
 function render(){
- const count=state.run?.status==='review'?1:0;
+ persistSlot();
+ const count=Object.values(state.slots).filter(x=>x.run?.status==='review').length;
  $('#nav').innerHTML=nav.map(([id,label,short])=>'<button type="button" data-action="'+id+'" aria-label="'+label+'" '+(state.section===id?'aria-current="page"':'')+'>'+svg(id)+'<span class="desktop-label">'+label+'</span><span class="mobile-label">'+short+'</span>'+(id==='review'&&count?'<span class="count" aria-hidden="true">'+count+'</span>':'')+'</button>').join('');
- $('#projectIcon').innerHTML=svg('project');$('#project').textContent=state.demo?'Проект «Север»':'Новый проект';$('#mode').textContent=state.demo?'Демопроект':'Макет';$('#switch').textContent=state.demo?'Пустой проект':'Демо';$('#switch').dataset.action=state.demo?'reset':'demo';
+ $('#projectIcon').innerHTML=svg('project');$('#project').textContent='Учебный проект';$('#mode').textContent='UX-демо';$('#switch').textContent='Сбросить демо';$('#switch').dataset.action='reset';
  $('#main').classList.toggle('chat-mode',state.section==='chat');
  $('#view').innerHTML=({chat,auto:automation,review,knowledge,integration:integrations}[state.section])();
  if(state.section==='chat'){requestAnimationFrame(()=>{const f=$('#chat-scroll');if(!f)return;const w=document.querySelector('.wizard-message');if(w){f.scrollTop += w.getBoundingClientRect().top - f.getBoundingClientRect().top - 16;}else{f.scrollTop=f.scrollHeight;}});}
 }
 function enableDemo(){state.demo=true;}
-function reset(demo){Object.assign(state,{demo,wizard:null,scenario:null,run:null,decision:null,history:[],paused:false,outcome:'normal',integrationReturn:false,factOpen:false,messages:[],chatDraft:''});show('chat');}
+function reset(demo){Object.assign(state,{demo:true,wizard:null,scenario:null,run:null,decision:null,history:[],paused:false,outcome:'normal',integrationReturn:false,factOpen:false,messages:[],chatDraft:'',activeType:'site',slots:{site:makeSlot(),blog:makeSlot()}});show('chat');}
+
 function persistFields(e){const w=state.wizard;if(w&&e.target.form?.id==='wizard'&&e.target.name in w)w[e.target.name]=e.target.value;}
 document.addEventListener('input',e=>{persistFields(e);if(e.target.id==='chat-prompt')state.chatDraft=e.target.value;});
 document.addEventListener('keydown',e=>{if(e.target.id==='chat-prompt'&&e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat();}});
 document.addEventListener('change',e=>{persistFields(e);if(e.target.id==='outcome'){state.outcome=e.target.value;announce('Состояние примера изменено. Оно применяется при следующем действии.');}});
 function checkStep(){const f=$('#wizard'),w=state.wizard;if(!f?.reportValidity())return false;if((w.step===0&&!w.title.trim())||(w.step===1&&(!w.page.trim()||!w.source.trim()))){const msg=$('#field-error');msg.hidden=false;msg.textContent='Заполните поля перед продолжением.';f.querySelector('input').focus();return false;}return true;}
 document.addEventListener('submit',e=>{if(e.target.id==='chat-composer'){e.preventDefault();sendChat();return;}if(e.target.id==='wizard'){e.preventDefault();if(checkStep()&&state.wizard.step<4)goWizard(state.wizard.step+1);}});
-function launch(){enableDemo();if(state.run)state.history.unshift(state.run);state.decision=null;state.run={time:new Intl.DateTimeFormat('ru-RU',{dateStyle:'short',timeStyle:'short'}).format(new Date()),status:state.outcome==='source'?'source':'review',version:3,log:['Учебный запуск начат',state.outcome==='source'?'Источник не ответил. Правка не создана.':'Найдено одно изменение. Правка ждёт решения редактора.']};show('auto');}
+function launch(){
+ enableDemo();if(state.paused){show('auto');announce('Процесс на паузе. Сначала возобновите его.');return;}
+ if(state.run)state.history.unshift(state.run);
+ state.decision=null;
+ const blog=state.activeType==='blog';
+ state.run={time:new Intl.DateTimeFormat('ru-RU',{dateStyle:'short',timeStyle:'short'}).format(new Date()),status:state.outcome==='source'?'source':'review',version:3,log:['Начат учебный запуск '+(blog?'ведения блога':'актуализации сайта'),state.outcome==='source'?'Источник не ответил. Материал не создан.':blog?'Сформирован черновик статьи. Требуется решение редактора.':'Найдено устаревшее сведение. Предложена правка страницы.']};
+ show('auto');
+}
 function publish(){
  const run=state.run;
  run.status=state.outcome==='cms'?'cms':state.outcome==='partial'?'partial':'checking';
@@ -222,35 +292,51 @@ function reconcile(run=state.run){
  },650);
 }
 document.addEventListener('click',e=>{
- const b=e.target.closest('[data-action]');if(!b)return;
+ const b=e.target.closest('[data-action]');if(!b||b.disabled)return;
  const [id,arg]=b.dataset.action.split(':');
  const w=state.wizard;
  if(nav.some(([key])=>key===id)){show(id);return;}
  switch(id){
- case 'start': state.messages.push({role:'user',text:types[arg]});state.messages.push({role:'assistant',text:'Настроим сценарий. Заполните шаги ниже — затем можно сохранить черновик или выбрать запуск.'});state.wizard=draft(arg);show('chat');break;
- case 'new-chat': if(!state.wizard){state.messages=[];state.chatDraft='';show('chat');}break;
- case 'attach-source': show('knowledge');break;
- case 'back': goWizard(w.step-1);break;
- case 'forward': if(checkStep())goWizard(w.step+1);break;
- case 'type': if(w.title===types[w.type])w.title=types[arg];w.type=arg;render();document.querySelector('[data-action="type:'+arg+'"]').focus();break;
- case 'mode': w.mode=arg;render();document.querySelector('[data-action="mode:'+arg+'"]').focus();break;
- case 'cancel': state.wizard=null;state.integrationReturn=false;show('chat');break;
- case 'check-integrations': state.integrationReturn=true;show('integration');break;
- case 'return-wizard': state.integrationReturn=false;show('chat');requestAnimationFrame(()=>$('#step-title').focus());break;
- case 'demo': reset(true);break;
- case 'reset': reset(false);break;
- case 'demo-run': state.messages.push({role:'user',text:'Открыть учебный сценарий'});state.messages.push({role:'assistant',text:'Проверим страницу доставки по условиям из демонстрационного источника.'});state.wizard=draft('site');show('chat');break;
- case 'save': case 'activate': if(state.run&&state.scenario?.title!==w.title){state.history.unshift(state.run);state.run=null;state.decision=null;}state.scenario={...w,active:id==='activate'};state.wizard=null;state.paused=false;state.integrationReturn=false;if(id==='activate')enableDemo();if(id==='activate'&&w.mode==='now'){launch();}else{show('auto');announce(id==='save'?'Черновик сохранён на время просмотра макета.':'Расписание активно в демо. Используйте «Смоделировать запуск», чтобы пройти дальше.');}break;
- case 'edit': state.wizard={...state.scenario,step:0,furthest:4};show('chat');break;
- case 'pause': state.paused=!state.paused;render();announce(state.paused?'Расписание поставлено на паузу.':'Расписание возобновлено.');$('[data-action="pause"]')?.focus();break;
- case 'run': launch();break;
- case 'retry': state.outcome='normal';launch();break;
- case 'approve': if(state.outcome==='conflict'&&state.run.version===3){state.run.status='conflict';state.run.log.push('Версия страницы изменилась перед согласованием.');render();announce('Обнаружен конфликт версии.');}else{state.decision='yes';state.run.status='approved';state.run.log.push('Редактор утвердил правку.');render();announce('Правка утверждена.');}break;
- case 'return-review': state.decision='no';state.run.status='returned';state.run.log.push('Редактор вернул правку на доработку.');render();announce('Правка отправлена на доработку.');break;
- case 'refresh-version': state.run.version++;state.run.status='review';render();announce('Сравнение обновлено. Проверьте правку ещё раз.');break;
- case 'publish': publish();break;
- case 'retry-cms': reconcile();break;
- case 'fact': state.factOpen=!state.factOpen;render();$('[data-action="fact"]')?.focus();break;
+ case 'start':{
+   if(!types[arg])break;
+   selectSlot(arg);
+   state.messages.push({role:'user',text:'Настроить: '+types[arg]});
+   state.messages.push({role:'assistant',text:'Пройдём пять коротких шагов, затем покажем учебный результат и решение редактора.'});
+   state.wizard=state.scenario?{...state.scenario,step:0,furthest:4}:draft(arg);
+   show('chat');break;
+ }
+ case 'choose':selectSlot(arg);show('auto');break;
+ case 'choose-review':selectSlot(arg);show('review');break;
+ case 'new-chat':if(!state.wizard){state.messages=[];state.chatDraft='';show('chat');}break;
+ case 'attach-source':show('knowledge');break;
+ case 'back':if(w&&w.step>0)goWizard(w.step-1);break;
+ case 'forward':if(w&&checkStep()&&w.step<w.furthest)goWizard(w.step+1);break;
+ case 'type':if(w&&types[arg]){if(w.title===types[w.type])w.title=types[arg];w.type=arg;w.page=arg==='blog'?'/blog':'/delivery';w.source=arg==='blog'?'База знаний и запросы аудитории':'Условия доставки · v4';render();document.querySelector('[data-action="type:'+arg+'"]')?.focus();}break;
+ case 'mode':if(w&&modes[arg]){w.mode=arg;render();document.querySelector('[data-action="mode:'+arg+'"]')?.focus();}break;
+ case 'cancel':state.wizard=null;state.integrationReturn=false;show('chat');break;
+ case 'check-integrations':state.integrationReturn=true;show('integration');break;
+ case 'return-wizard':state.integrationReturn=false;show('chat');requestAnimationFrame(()=>$('#step-title')?.focus());break;
+ case 'demo':case 'reset':reset(true);break;
+ case 'demo-run':selectSlot('site');state.wizard=draft('site');show('chat');break;
+ case 'save':case 'activate':
+   if(!w||!checkStep())break;
+   if(state.activeType!==w.type)selectSlot(w.type);
+   if(state.run&&state.scenario?.title!==w.title){state.history.unshift(state.run);state.run=null;state.decision=null;}
+   state.scenario={...w,active:id==='activate'};
+   state.wizard=null;state.paused=false;state.integrationReturn=false;
+   if(id==='activate'){enableDemo();launch();}
+   else{show('auto');announce('Черновик сохранён в памяти демо. Чтобы увидеть результат, нажмите «Показать учебный результат».');}
+   break;
+ case 'edit':if(state.scenario){state.wizard={...state.scenario,step:0,furthest:4};show('chat');}break;
+ case 'pause':state.paused=!state.paused;render();announce(state.paused?'Процесс поставлен на паузу.':'Процесс возобновлён.');break;
+ case 'run':if(state.scenario)launch();else show('chat');break;
+ case 'retry':state.outcome='normal';launch();break;
+ case 'approve':if(!state.run)break;if(state.outcome==='conflict'&&state.run.version===3){state.run.status='conflict';state.run.log.push('Версия изменилась перед согласованием.');render();announce('Конфликт версии. Обновите сравнение.');}else{state.decision='yes';state.run.status='approved';state.run.log.push('Редактор утвердил материал.');render();announce('Материал утверждён. Следующий шаг — учебная публикация.');}break;
+ case 'return-review':if(state.run){state.decision='no';state.run.status='returned';state.run.log.push('Редактор вернул материал на доработку.');render();announce('Вернули на доработку. Следующий шаг — повторная подготовка.');}break;
+ case 'refresh-version':if(state.run){state.run.version++;state.run.status='review';render();announce('Версия обновлена. Проверьте заново.');}break;
+ case 'publish':if(state.run)publish();break;
+ case 'retry-cms':if(state.run)reconcile();break;
+ case 'fact':state.factOpen=!state.factOpen;render();$('[data-action="fact"]')?.focus();break;
  }
 });
 render();
