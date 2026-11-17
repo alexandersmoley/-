@@ -1,0 +1,578 @@
+<!doctype html><html lang="ru" data-portable="true"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><title>Чанк · UX-демо v9 — исправление тупиков</title><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'"><style>
+:root{--ink:#202c25;--muted:#58665b;--pine:#1d3026;--pine-dark:#17271f;--line:#dbe2d8;--paper:#f4f6f0;--white:#fff;--soft:#edf2e9;--lime:#d9efad;--accent:#416448;--warn:#80531b;--error:#8d3b35;--nav:236px;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box}body{margin:0;font-size:14px;line-height:1.5}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:default}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid #507e50;outline-offset:3px} .side button:focus-visible{outline-color:var(--lime)}h1,h2,h3,p{margin:0;overflow-wrap:anywhere}h1{font-size:clamp(29px,4vw,44px);letter-spacing:-.055em;line-height:1.12}h2{font-size:21px;letter-spacing:-.03em;line-height:1.25}h3{font-size:15px;letter-spacing:-.015em}.muted,small{color:var(--muted)}small{font-size:12px}.shell{display:grid;grid-template-columns:var(--nav) minmax(0,1fr);min-height:100dvh}.side{position:sticky;top:0;height:100dvh;background:var(--pine);color:#edf2e9;padding:28px 16px 20px;display:flex;flex-direction:column}.identity{display:flex;align-items:center;gap:12px;padding:0 10px 28px}.identity strong{display:block;font-size:20px;letter-spacing:-.045em}.identity small{color:#b7c8bb}.logo-slot{width:43px;height:37px;border:1px dashed #829689;border-radius:7px;display:grid;place-items:center;color:#d7e4d8;font:600 11px system-ui;flex:none}.nav{display:grid;gap:4px}.nav button{display:flex;align-items:center;gap:11px;border:0;border-radius:8px;background:transparent;color:#e1ebe2;min-height:45px;text-align:left;padding:0 10px;font-weight:550}.nav button:hover{background:#30463a}.nav button[aria-current=page]{background:var(--lime);color:var(--pine-dark);font-weight:750}.nav svg,.glyph svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;flex:none}.nav .count{margin-left:auto;font-size:11px;background:#36513d;color:#fff;border-radius:20px;padding:0 6px}.nav [aria-current] .count{background:#33533b}.side-note{margin-top:auto;border-top:1px solid #4a5e50;padding:15px 9px 0;color:#bdcbbf;font-size:12px}.top{min-height:68px;display:flex;justify-content:space-between;align-items:center;padding:12px 32px;gap:12px;border-bottom:1px solid var(--line);background:#fafbf7}.project{display:flex;align-items:center;gap:10px;font-weight:650}.project-icon,.glyph{display:grid;place-items:center;width:35px;height:35px;border-radius:9px;background:#e5eddf;color:#345740;flex:none}.top-end,.row,.actions,.tags{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.badge{display:inline-flex;align-items:center;gap:6px;line-height:1.25;padding:5px 9px;border-radius:20px;background:var(--soft);color:#34523b;font-weight:650;font-size:12px}.badge.dot:before{content:"";width:6px;height:6px;border-radius:50%;background:#668647}.badge.warn{background:#fff2d9;color:var(--warn)}.badge.error{background:#faeae6;color:var(--error)}.badge.neutral{background:#ecf0eb;color:#455449}.content{max-width:1210px;margin:auto;padding:34px 32px 44px}.heading{margin-bottom:24px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}.heading p{color:var(--muted);margin-top:7px}.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(245px,300px);gap:18px;align-items:start}.stack{display:grid;gap:14px;min-width:0}.card{background:var(--white);border:1px solid var(--line);border-radius:13px;padding:19px;min-width:0}.card>p,.card>h3+p{margin-top:6px}.card .actions{margin-top:14px}.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.card-head>div{min-width:0}.card-head p{margin-top:4px}.chat{padding:0}.chat-head{padding:13px 17px;display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid var(--line)}.chat-body{padding:19px}.bubble{max-width:640px;background:var(--soft);padding:11px 14px;border-radius:4px 11px 11px 11px}.botline{display:flex;gap:9px;align-items:flex-start;margin-bottom:15px}.botline .glyph{height:31px;width:31px;border-radius:50%;background:#254231;color:#e5f2da}.quick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.quick button,.option{border:1px solid var(--line);background:#fafbf8;border-radius:9px;text-align:left;color:var(--ink);padding:11px;display:flex;align-items:flex-start;gap:9px;min-height:55px;width:100%;overflow-wrap:anywhere}.quick button:hover,.option:hover{border-color:#78947b;background:#eff5ea}.quick span,.option span{display:block;min-width:0}.quick strong,.option strong{display:block}.quick small,.option small{display:block;margin-top:2px}.quick .glyph{width:32px;height:32px}.btn{border:1px solid #cbd6c9;background:#fff;color:var(--ink);min-height:42px;border-radius:8px;padding:8px 12px;font-weight:650;display:inline-flex;justify-content:center;align-items:center;gap:5px;line-height:1.2;text-align:center}.btn:hover{background:var(--soft)}.btn.primary{background:#244633;color:white;border-color:#244633}.btn.primary:hover{background:#345943}.btn.quiet{border-color:transparent;background:transparent;color:#45604a}.btn:disabled{opacity:.48}.btn.small{min-height:37px;font-size:12px;padding:7px 9px}.callout{border:1px solid var(--line);background:#f6f8f3;border-radius:9px;padding:11px 13px}.callout.error{background:#fff0ed;border-color:#efd1ca;color:#733a34}.callout.warn{background:#fff5e3;border-color:#efddbc;color:#67491e}.callout.ok{background:#edf6e9;color:#31533b}.rules{display:grid;gap:0;margin:10px 0 0}.rules div{display:grid;grid-template-columns:minmax(90px,.8fr) minmax(0,1.2fr);gap:10px;padding:8px 0;border-top:1px solid #e7ece5}.rules dt{color:var(--muted)}.rules dd{margin:0;font-weight:600;overflow-wrap:anywhere}.rail h2{font-size:17px}.rail .list{margin-top:11px}.list{display:grid;gap:7px}.list button{justify-content:flex-start;text-align:left}.label{display:grid;gap:4px;font-weight:650}.label input,.label select,.label textarea,select.field{padding:10px;border:1px solid #aebcac;border-radius:8px;min-height:44px;width:100%;min-width:0;background:white;color:var(--ink)}.form{display:grid;gap:11px}.split,.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.compare>div{padding:13px;background:#f5f5f1;border:1px solid #e3e5dd;border-radius:9px}.compare>div+div{background:#eef6e9;border-color:#d7e5d3}.compare p{margin-top:5px}.stepbar{display:flex;gap:5px;list-style:none;padding:0;margin:0 0 14px}.stepbar li{height:4px;border-radius:8px;background:#e0e6dd;flex:1}.stepbar li.done{background:#5c835e}.timeline{margin:9px 0 0;padding:0;list-style:none}.timeline li{padding:8px 0;border-top:1px solid var(--line)}.field-note{color:var(--error);font-size:13px}.tabs{display:flex;gap:7px;flex-wrap:wrap}.tabs .btn[aria-pressed=true]{background:#e0ecd9;border-color:#a2b79c}.brand-compare{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.sample{border-radius:7px;padding:10px;color:white;background:var(--pine);font-size:12px}.sample.alt{background:#29302e}.sample i{display:block;width:24px;height:9px;border-radius:20px;background:var(--lime);margin-top:6px}.sample.alt i{background:#e8efda}.empty{padding:22px 14px;text-align:center}.empty p{margin-top:5px}.url{overflow-wrap:anywhere;font-size:13px}.skip{position:fixed;left:10px;top:-100px;background:white;padding:9px;z-index:5}.skip:focus{top:10px}#feedback:empty{display:none}.mobile-label{display:none}.screen-title:focus{outline:0}
+@media(max-width:970px){:root{--nav:189px}.content{padding-inline:20px}.top{padding-inline:20px}.layout{grid-template-columns:minmax(0,1fr) minmax(205px,235px)}}
+@media(max-width:790px){.layout{grid-template-columns:1fr}}
+@media(max-width:630px){.shell{display:block}.side{position:static;height:auto;padding:0}.side .identity{padding:11px 14px}.identity strong{font-size:16px}.identity small,.side-note{display:none}.logo-slot{height:30px;width:34px}.nav{position:fixed;z-index:3;bottom:0;left:0;right:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:4px 4px max(5px,env(safe-area-inset-bottom));background:var(--pine);border-top:1px solid #425649}.nav button{flex-direction:column;justify-content:center;gap:3px;padding:4px 1px;min-height:49px;font-size:10px;line-height:1.1;text-align:center;position:relative}.nav .count{position:absolute;top:2px;right:5px}.nav svg{width:17px;height:17px}.desktop-label{display:none}.mobile-label{display:inline}.top{min-height:52px;padding:7px 12px}.top .project-icon{display:none}.top-end{gap:4px}.top-end .badge{font-size:10px}.content{padding:21px 12px 86px}html{scroll-padding-bottom:70px}.heading{align-items:flex-start;margin-bottom:16px;flex-direction:column;gap:8px}.card{padding:13px}.chat{padding:0}.chat-body{padding:11px}.chat-head{padding:8px 10px}.chat-head strong{font-size:12px}.chat-head .actions{gap:2px}.chat-head .btn{font-size:11px;padding-inline:6px}.btn{min-height:44px}.btn.small{min-height:36px}.quick{gap:6px}.quick button{padding:8px;gap:6px}.quick .glyph{width:24px;height:24px}.quick .glyph svg{width:14px;height:14px}.quick strong{font-size:12px}.quick small{font-size:11px}.compare,.split{grid-template-columns:1fr}.rules div{gap:7px}.brand-compare{gap:5px}}
+
+/* Chat-first layout: retained five-section navigation, conversation is the primary workspace */
+.content.chat-mode{max-width:none;margin:0;padding:0;height:calc(100dvh - 68px);min-height:420px;overflow:hidden;background:#fff}
+.content.chat-mode #view{height:100%}
+.content.chat-mode #feedback:not(:empty){position:absolute;z-index:5;left:50%;top:82px;transform:translateX(-50%);box-shadow:0 8px 28px #1d302626;max-width:min(480px,90vw)}
+.chat-workspace{display:flex;flex-direction:column;height:100%;background:#fff;min-width:0}
+.chat-topbar{height:57px;flex:none;border-bottom:1px solid #eff1ed;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 25px;color:var(--ink)}
+.chat-topbar strong{font-size:15px;font-weight:700}
+.chat-topbar .chat-sub{color:#7b857c;margin-left:9px;font-size:12px}
+.chat-topbar .btn{background:transparent;border-color:#e5eae4}
+.chat-topbar .btn:disabled{opacity:.4}
+.chat-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-color:#dfe5df transparent}
+.chat-thread{max-width:794px;margin:0 auto;padding:38px 22px 32px;display:flex;flex-direction:column;gap:26px;min-height:100%}
+.chat-intro{text-align:center;margin:auto auto 28px;max-width:600px;padding:16px 0 0}
+.chat-intro h1{font-size:clamp(27px,3vw,34px);font-weight:620;letter-spacing:-.047em;margin:0 0 10px}
+.chat-intro p{font-size:14px;color:var(--muted)}
+.chat-msg{width:100%;display:flex;min-width:0}
+.chat-msg.user{justify-content:flex-end}
+.chat-msg .chat-user-text{padding:12px 17px;border-radius:20px;background:#eef1eb;max-width:min(74%,520px);white-space:pre-wrap;line-height:1.58;overflow-wrap:anywhere}
+.chat-msg.assistant{justify-content:flex-start}
+.chat-msg .chat-answer{width:100%;max-width:750px;min-width:0}
+.chat-answer .speaker{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:12px;color:#566b5d;font-weight:700}
+.chat-answer .speaker .ai-mark{width:21px;height:21px;display:grid;place-items:center;border:1px solid #c4d4c0;border-radius:7px;font-size:12px;background:#f1f5ee;color:#2f5135}
+.chat-answer p{font-size:15px;line-height:1.65;white-space:pre-wrap}
+.chat-choices{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+.chat-choices button{border:1px solid #dce4d9;background:#fff;border-radius:15px;padding:10px 14px;text-align:left;min-height:42px;font-weight:580;color:#294634;transition:background .15s}
+.chat-choices button:hover{background:#eff5ec}
+.chat-empty-start{display:flex;flex-direction:column;gap:26px;margin:auto 0}
+.chat-empty-start .chat-choices{justify-content:center}
+.chat-empty-start .chat-choices button{background:#f9fbf7}
+.wizard-message{display:flex;gap:0;min-width:0}
+.wizard-message .chat-answer{width:100%;min-width:0}
+.wizard-card{margin-top:8px;border:1px solid #dfe5dc;background:#fafbf8;border-radius:18px;padding:20px;max-width:700px}
+.wizard-card h2{font-size:21px}
+.wizard-card .form{gap:14px}
+.wizard-card .form .btn{min-height:42px}
+.wizard-controls{border-top:1px solid #e6eae3;display:flex;justify-content:space-between;padding-top:11px;margin-top:16px}
+.wizard-controls .btn{min-width:90px}
+.chat-composer-zone{flex:none;width:100%;padding:10px 22px 19px;background:#fff}
+.chat-composer-inner{max-width:794px;margin:0 auto}
+.chat-composer{border:1px solid #d9e1d7;border-radius:24px;box-shadow:0 3px 16px #23372c0a;background:#f8f9f6;padding:9px 9px 9px 15px;display:flex;align-items:flex-end;gap:9px}
+.chat-composer:focus-within{border-color:#9aaf98;box-shadow:0 0 0 2px #ceddc84d}
+.chat-composer textarea{resize:none;width:100%;min-height:47px;max-height:160px;background:transparent;border:0;outline:0;padding:13px 4px 10px;color:var(--ink);font-size:15px;line-height:1.48;box-shadow:none}
+.chat-composer textarea:focus{outline:0}
+.chat-composer button{flex:none;border:0;display:grid;place-items:center;cursor:pointer}
+.chat-composer .attach{height:36px;width:36px;border:1px solid #e1e7de;background:white;border-radius:50%;font-size:22px;line-height:1;color:#385141;margin-bottom:5px}
+.chat-composer .send{height:39px;width:39px;border-radius:50%;background:var(--pine);color:#fff;font-size:20px;line-height:1;margin-bottom:4px}
+.chat-composer .send:hover{background:#345943}
+.chat-footnote{text-align:center;color:#859188;font-size:11px;margin-top:8px}
+@media(max-width:630px){
+ .content.chat-mode{height:calc(100dvh - 52px - 52px - 63px - env(safe-area-inset-bottom));min-height:200px;padding:0}
+ .chat-topbar{height:49px;padding:0 12px}
+ .chat-topbar .chat-sub{display:none}
+ .chat-topbar .btn{font-size:11px;padding:6px 10px;min-height:33px}
+ .chat-thread{padding:22px 15px 16px;gap:21px}
+ .chat-intro{margin:auto auto 20px;padding-top:10px}
+ .chat-intro h1{font-size:27px}
+ .chat-choices{gap:7px}
+ .chat-choices button{font-size:12px;min-height:39px;padding:8px 11px}
+ .chat-msg .chat-user-text{max-width:86%;padding:11px 14px}
+ .chat-answer p{font-size:14px}
+ .wizard-card{padding:14px;border-radius:13px}
+ .wizard-card h2{font-size:19px}
+ .wizard-controls .btn{font-size:12px}
+ .chat-composer-zone{padding:7px 10px 7px}
+ .chat-composer{border-radius:20px;padding:7px 8px 6px 9px;gap:5px}
+ .chat-composer textarea{font-size:16px;padding:12px 2px 7px;min-height:47px}
+ .chat-composer .attach{height:33px;width:33px;margin-bottom:5px}
+ .chat-composer .send{height:36px;width:36px;margin-bottom:3px}
+ .chat-footnote{font-size:10px;margin-top:4px}
+}
+@media(max-width:630px){
+ .label input,.label select,.label textarea,select.field{font-size:16px}
+ .identity{padding-top:max(11px,env(safe-area-inset-top))}
+ .chat-composer .attach,.chat-composer .send{min-width:44px;min-height:44px}
+ .content.chat-mode{height:calc(100vh - 167px);height:calc(100dvh - 167px - env(safe-area-inset-top) - env(safe-area-inset-bottom))}
+}
+
+/* UX iteration: two business processes, one next action at a time */
+.entry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%;margin:22px auto 0}
+.entry-grid button{display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:165px;border:1px solid #d9e3d8;background:#fbfcf9;border-radius:18px;padding:19px;text-align:left;color:#202c25}
+.entry-grid button:hover,.entry-grid button:focus-visible{border-color:#59826a;background:#f0f6ed}
+.entry-grid .entry-icon{width:36px;height:36px;border-radius:11px;background:#e3eddf;display:grid;place-items:center;color:#284b35}
+.entry-grid .entry-icon svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8}
+.entry-grid strong{font-size:18px;line-height:1.25;letter-spacing:-.035em}
+.entry-grid small{font-size:13px;color:#58665b;line-height:1.5}
+.entry-grid .entry-tail{font-size:12px;font-weight:700;color:#335f41;margin-top:auto}
+.entry-help{font-size:12px;color:#7c877d;text-align:center;margin:12px 0 0}
+.workflow-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:17px}
+.workflow-list button{border:1px solid #dbe2d8;background:#f8faf5;border-radius:12px;text-align:left;padding:12px;min-height:64px;color:inherit}
+.workflow-list button[aria-pressed=true]{border-color:#518165;background:#e8f2e5}
+.workflow-list button strong{display:block;font-size:14px}
+.workflow-list button small{font-size:11px}
+.next-action{padding:16px 18px;border:1px solid #cbdcca;background:#f1f6ee;border-radius:13px}
+.next-action strong{display:block;margin-bottom:6px;font-size:15px}
+.next-action p{font-size:13px;line-height:1.5;color:#496150}
+.process-switcher{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:14px}
+.process-switcher button{display:block;text-align:left;padding:13px;background:#f8faf7;color:#263b2d;border:1px solid #dbe2d8;border-radius:12px;min-height:61px}
+.process-switcher button[aria-pressed=true]{border-color:#476e50;background:#e8f2e5}
+.process-switcher button strong{display:block}.process-switcher button small{display:block}
+@media(max-width:630px){.entry-grid{grid-template-columns:1fr;margin-top:15px}.entry-grid button{min-height:112px;padding:13px;gap:5px}.entry-grid strong{font-size:16px}.entry-grid small{font-size:12px}.entry-grid .entry-icon{width:28px;height:28px}.chat-intro{margin:0 auto}.chat-empty-start{margin:auto 0}.workflow-list{grid-template-columns:1fr;gap:5px}.process-switcher button{min-height:52px;padding:10px}.process-switcher button strong{font-size:12px}}
+
+
+/* Completion appears within a run, not in a new navigation section */
+.finish{display:grid;gap:17px;max-width:940px}
+.finish-head{padding:25px;background:#edf5eb;border:1px solid #c9ddc7;border-radius:17px}
+.finish-kicker{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:750;color:#386647}
+.finish-head h2{font-size:clamp(23px,4vw,31px);line-height:1.18;letter-spacing:-.045em;margin:8px 0}
+.finish-head p{font-size:14px;color:#496050;max-width:660px}
+.finish-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.finish-summary div{border:1px solid #e0e5dc;border-radius:11px;padding:12px;background:#fff;min-width:0}
+.finish-summary dt{font-size:11px;color:#778377;margin-bottom:5px}
+.finish-summary dd{margin:0;font-weight:650;overflow-wrap:anywhere;font-size:13px}
+.result-document{border:1px solid #dce5d9;border-radius:16px;background:white;padding:22px}
+.result-document header{margin-bottom:18px;padding-bottom:15px;border-bottom:1px solid #e3e9e0}
+.result-document header small{display:block;margin:0 0 8px}
+.result-document h2{font-size:clamp(20px,3vw,27px);margin-bottom:7px}
+.result-document h3{font-size:16px;margin:18px 0 6px}
+.result-document p{line-height:1.7;margin:0 0 11px;max-width:70ch}
+.result-document .result-url{overflow-wrap:anywhere;font-size:12px;color:#637769}
+.finish-actions{display:flex;flex-wrap:wrap;gap:8px}
+.finish-actions .btn{flex:none}
+@media(max-width:630px){.finish-head{padding:18px}.finish-summary{grid-template-columns:1fr}.result-document{padding:16px}.finish-actions .btn{flex:1 1 auto}}
+
+
+.client-result-link{padding:15px 18px;border:1px solid #d2dfd1;border-radius:13px;background:#f9fbf8;display:grid;gap:7px}
+.client-result-link strong{font-size:14px}.client-result-link small{font-size:12px;color:#586b5a}
+.client-result-link .result-address{font-size:12px;overflow-wrap:anywhere;color:#496656}
+.client-result-link .btn{width:max-content;max-width:100%;margin-top:5px;text-decoration:none;display:inline-flex;align-items:center}
+.client-site-page{max-width:900px;margin:0 auto;background:#fff;border:1px solid #e3e8e1;border-radius:16px;overflow:hidden}
+.client-site-head{padding:16px 24px;border-bottom:1px solid #e6e9e6;display:flex;justify-content:space-between;align-items:center}
+.client-site-head strong{font-size:21px}
+.client-site-body{padding:28px 24px 38px}.client-site-body h2{font-size:clamp(24px,4vw,38px);letter-spacing:-.045em;margin-bottom:20px}
+.client-site-body p{max-width:68ch;line-height:1.75;margin:0 0 12px}.client-site-body h3{margin:20px 0 9px}
+.client-site-note{padding:12px 24px;background:#f5f0df;color:#725c31;font-size:12px}
+@media(max-width:630px){.client-site-head,.client-site-note{padding:12px 15px}.client-site-body{padding:24px 15px}.client-result-link .btn{width:100%;justify-content:center}}
+
+main{min-width:0} .proto-note{font-size:11px;color:#6b756b} .notice{padding:12px 16px;border:1px solid #e3c998;background:#fff6e5;border-radius:10px;margin:12px 0} .review-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px} .review-grid article{padding:18px;border:1px solid var(--line);border-radius:12px;background:#fff} del{background:#fce4df;text-decoration:line-through} ins{background:#e5f1dc;text-decoration:none} .evidence{padding:18px;border-left:3px solid #597958;background:#f0f5ed;margin:16px 0}.evidence blockquote{margin:10px 0;font-size:19px} .form label{display:grid;gap:6px}.form input,.form select,.form textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:white}.check{display:flex;gap:10px;margin:14px 0;align-items:flex-start}.check input{width:20px;height:20px;flex:none}.stack{display:grid;gap:16px}.actions{margin-top:14px}.banner{padding:18px;background:#edf4e8;border-radius:12px}.timeline{padding-left:20px}.timeline li{margin:9px 0}.btn:disabled{opacity:.45}.link{border:0;background:none;color:#355c40;text-decoration:underline;padding:8px;cursor:pointer}#feedback{position:fixed;z-index:20;bottom:12px;left:calc(var(--nav) + 16px);background:#fff6e5;max-width:560px;border-radius:10px;box-shadow:0 3px 22px #0002;padding:0}#feedback:not(:empty){padding:12px 18px;border:1px solid #e3c998} .content:not(.chat-mode){max-width:1040px;margin:auto}.card p{margin-top:8px}.card h2{margin-bottom:8px} .mono{font-family:monospace;overflow-wrap:anywhere;font-size:12px}.chat-thread{justify-content:flex-start}.chat-empty-start{margin:auto 0}.wizard-card{background:#f9fbf7}.chat-footnote{color:#617266} .tagline{font-size:12px;color:#b7c8bb}.statusline{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0} .page-actions{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px} details{margin-top:18px} summary{cursor:pointer;min-height:44px;padding-top:12px} .proof{background:#ecf5e9;padding:14px;border-radius:9px}.scene-title{font-size:24px}.context{font-size:13px;color:#5e705f;margin:12px 0}.chat-msg.assistant .chat-answer{max-width:100%}.chat-scroll{scroll-behavior:auto}button,a{touch-action:manipulation}.chat-composer textarea{font-size:16px}.source-url{overflow-wrap:anywhere}.busy{pointer-events:none;opacity:.7}@media(max-width:630px){.review-grid{grid-template-columns:1fr}.content:not(.chat-mode){padding-bottom:100px}#feedback{left:10px;right:10px;bottom:75px}.nav button{font-size:9px;min-height:56px}.top{gap:4px}.project{font-size:12px}.top-end .badge{max-width:145px}.chat-thread{padding-top:18px}.chat-mode{padding-bottom:0!important}.identity{height:48px}.content.chat-mode{height:calc(100dvh - 48px - 52px - 65px)}.chat-composer-zone{padding-bottom:10px}.card{overflow-wrap:anywhere}.review-grid article{padding:13px}}
+
+.skip{top:0;clip-path:inset(50%);width:1px;height:1px;overflow:hidden}.skip:focus{top:10px;clip-path:none;width:auto;height:auto;overflow:visible}
+
+
+/* The composer is the primary control; stage review stays in the dialogue. */
+.composer-tools{margin:0 0 9px;padding:12px;border:1px solid var(--line);background:#fff;border-radius:15px;box-shadow:0 10px 30px #1d302610}
+.composer-tools[hidden]{display:none}
+.composer-tools>strong{display:block;font-size:12px;color:var(--muted);margin-bottom:9px}
+.composer-tool-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.composer-tool-buttons button{min-height:44px;border:1px solid var(--line);background:#f8fbf6;border-radius:9px;padding:9px 12px;text-align:left;color:var(--ink)}
+.composer-tool-buttons button:hover{border-color:#819e82;background:#eff7e9}
+.chat-inline-stage{display:grid;gap:12px;min-width:0}
+.chat-inline-stage .heading{margin:0}
+.chat-inline-stage .heading h1{font-size:22px;letter-spacing:-.035em}
+.chat-inline-stage .stack{gap:12px}
+.chat-inline-stage .card{padding:16px}
+.chat-inline-back{display:flex;align-items:center}
+.chat-inline-back .btn{font-size:12px;min-height:38px}
+.chat-choices{margin-top:10px}
+.chat-choices .btn{max-width:100%;white-space:normal}
+@media(max-width:630px){
+ .composer-tool-buttons{grid-template-columns:1fr;gap:5px}
+ .composer-tool-buttons button{min-height:43px}
+ .composer-tools{margin-bottom:6px;padding:9px}
+ .chat-inline-stage .heading h1{font-size:20px}
+ .chat-inline-stage .card{padding:12px}
+ .chat-inline-stage .review-grid{grid-template-columns:1fr}
+}
+
+
+/* Contextual actions and lightweight hints stay next to the composer. */
+.chat-hints{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 8px}
+.chat-hints button{border:1px solid #e0e9dd;border-radius:20px;background:#f7faf5;color:#4a6651;min-height:34px;padding:5px 12px;font-size:12px}
+.chat-hints button:hover,.chat-hints button:focus-visible{border-color:#8bac91;background:#eaf3e6}
+.composer-tools{max-height:min(320px,42dvh);overflow-y:auto;overscroll-behavior:contain}
+@media(max-width:630px){
+ .chat-hints{gap:5px;margin-bottom:5px}
+ .chat-hints button{font-size:11px;min-height:32px;padding:5px 10px}
+ .composer-tools{max-height:38dvh}
+}
+
+/* UX recovery: unavailable features are information, never inert buttons. */
+.entry-grid .entry-disabled{display:flex;flex-direction:column;gap:9px;min-height:144px;border:1px dashed #cbd7ca;background:#f4f5f2;color:#738076;border-radius:18px;padding:19px;text-align:left;cursor:default}
+.entry-grid .entry-disabled strong{font-size:17px;letter-spacing:-.03em;color:#68766a}
+.entry-grid .entry-disabled small{line-height:1.5;color:#768177}
+.chat-inline-stage #revise{padding:16px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.chat-inline-stage #revise textarea{font-size:16px}
+.chat-inline-stage #revise .btn{justify-self:start}
+@media(max-width:630px){.entry-grid .entry-disabled{min-height:95px;padding:13px}.entry-grid .entry-disabled strong{font-size:16px}}
+
+/* History is inspectable without re-running or mutating a past proposal. */
+.proposal-history{display:grid;gap:7px;margin-top:12px}
+.proposal-history-item{margin:0;border:1px solid var(--line);border-radius:10px;background:#fbfcfa;overflow:hidden}
+.proposal-history-item summary{min-height:48px;margin:0;padding:13px 12px;cursor:pointer;line-height:1.45;overflow-wrap:anywhere}
+.proposal-history-item[open] summary{border-bottom:1px solid var(--line);background:#eef3ea}
+.proposal-history-item .rules{margin:0;padding:6px 14px 13px}
+.proposal-history-item .rules dd{font-weight:500;white-space:pre-wrap}
+</style></head><body>
+<a class="skip" href="#main">К содержанию</a><div class="shell"><aside class="side"><div class="identity"><span class="logo-slot" aria-label="Место оригинала 03А">03А</span><div><strong>Чанк</strong><small>Личный кабинет</small></div></div><nav class="nav" id="nav" aria-label="Разделы кабинета"></nav><div class="side-note">Отдельный UX-прототип<br>Синтетический проект · не v11<br>На основе PR #30 и #45</div></aside><div><header class="top"><div class="project">Мастерская · учебный проект</div><div class="top-end"><span class="badge warn" id="demo-label">Прототип · все данные учебные</span></div></header><main id="main" class="content"><div id="view"></div></main></div></div><div id="feedback" role="status" aria-live="polite"></div><script type="module">// Isolated synthetic UX model. Never imported by the product runtime.
+const initial = () => ({revision:0, draft:null, messages:[], scenario:null, runs:[], proposals:[], deliveries:[], events:[], source:{revision:4,days:3}, cms:{revision:1,days:5,writes:0}, fault:'normal', receipts:{}});
+const fail = message => { throw new Error(message); };
+const log = (s,text,now) => s.events.unshift({text,at:new Date(now).toISOString(),actor:'Владелец · учебный проект'});
+const current = s => s.proposals.at(-1);
+function run(s,now) {
+  const r={id:`run-${s.runs.length+1}`,at:new Date(now).toISOString(),scenarioVersion:s.scenario.version,status:'На проверке'};
+  s.runs.push(r);
+  if(s.fault==='source') {r.status='Ошибка источника';log(s,'Источник недоступен. Материал и предложения не изменены.',now);return;}
+  if(s.proposals.some(p=>p.sourceRevision===s.source.revision&&p.before===s.cms.days&&p.after===s.source.days&&p.scenarioVersion===s.scenario.version&&p.expires>now)) {r.status='Без изменений';log(s,'Повторная проверка: новых предложений нет.',now);return;}
+  if(s.cms.days===s.source.days) {r.status='Без изменений';log(s,'Содержание актуально.',now);return;}
+  const p={id:`proposal-${s.proposals.length+1}`,runId:r.id,sourceRevision:s.source.revision,targetRevision:s.cms.revision,scenarioVersion:s.scenario.version,before:s.cms.days,after:s.source.days,state:'На проверке',copy:`Доставка занимает ${s.source.days} рабочих дня.`,created:now,expires:now+86400000,decision:null,evidenceViewed:false};
+  s.proposals.push(p);log(s,`Подготовлено предложение ${p.id}; версия источника ${p.sourceRevision}.`,now);
+}
+function live(s,p,now) {
+  if(!p||p.sourceRevision!==s.source.revision||p.targetRevision!==s.cms.revision||p.scenarioVersion!==s.scenario.version||now>p.expires) fail('Версия устарела. Нужны новая проверка и новое согласование.');
+  if(!s.scenario.selfReview) fail('Право самосогласования отключено. Нужен назначенный редактор.');
+}
+function command(original,c,now=Date.now()) {
+  if(typeof c.key!=='string'||!c.key||c.key.length>100) fail('Нужен ключ операции.');
+  const signature=JSON.stringify({action:c.action,payload:c.payload??{}});
+  const receipt=original.receipts[c.key];
+  if(receipt) {if(receipt!==signature) fail('Ключ уже использован для другой команды.');return original;}
+  if(c.revision!==original.revision) fail('Состояние изменилось в другом окне. Обновите экран и повторите действие.');
+  const s=structuredClone(original),d=c.payload??{},p=current(s);
+  switch(c.action) {
+    case 'message': {
+      const text=String(d.text??'').trim().slice(0,1000);
+      if(!text)fail('Введите сообщение.');
+      s.messages.push({role:'user',text});
+      let reply='';
+      if(/блог|статью для блога/i.test(text)){
+        reply='Ведение блога пока не входит в работающую часть этой учебной версии. Доступен полный сценарий актуализации сайта; в продукте блог будет отдельным процессом.';
+      }else if(/покажи результат|публикац|открой страницу|что опубликовано/i.test(text)){
+        const x=s.deliveries.at(-1);
+        reply=x?.status==='Подтверждено'?'Учебная запись подтверждена. Сейчас откроем результат и покажем страницу.':x?'Последний результат записи: '+x.status+'. Подтверждения публикации пока нет.':'Публикации ещё нет. Сначала запустите проверку, согласуйте предложение и отдельно подтвердите запись.';
+      }else if(/доработ|исправ|проверить предложени|правк/i.test(text)){
+        reply=s.proposals.length?'Последняя версия предложения и доступные действия показаны в карточке проверки.':'Предложений пока нет. Сначала запустите проверку источника.';
+      }else if(/источник|база знаний|подключ|интеграц/i.test(text)){
+        reply='Покажем сведения об учебном источнике и доступных подключениях. Реальные сервисы в этом демо не подключены.';
+      }else if(/что дальше|дальше|следующ|статус|состояни|помоги/i.test(text)){
+        reply=s.draft?'Можно продолжить настройку с того же шага.':s.scenario?'Показал текущее состояние процесса и ближайшее доступное действие.':'Начните с актуализации сайта — через меню «+» или кнопку ниже.';
+      }else if(/актуал|сайт|достав/i.test(text)){
+        if(s.draft)reply='Продолжим настройку. Черновик и введённые данные сохранены.';
+        else if(s.scenario)reply='Актуализация уже настроена. Ниже показаны состояние и ближайшие действия. Настройки можно изменить отдельно.';
+        else {s.draft={title:'Актуализация условий доставки',page:'/delivery',source:'Условия доставки',mode:'manual',time:'09:00',zone:'Europe/Moscow',at:'',selfReview:false,step:0};reply='Настроим актуализацию сайта. Выберем расписание и порядок проверки. Сохранение само по себе не запускает процесс.';}
+      }else{
+        reply='Это учебный чат без AI. Можно настроить актуализацию, запустить проверку, увидеть предложение и подтверждённый результат. Для выбора действий откройте «+».';
+      }
+      s.messages.push({role:'assistant',text:reply});break;
+    }
+    case 'draft': {
+      const v={...s.draft,...d};if(!['manual','at','recurring'].includes(v.mode)||!['Europe/Moscow','Asia/Yekaterinburg','UTC'].includes(v.zone))fail('Проверьте режим и часовой пояс.');
+      s.draft={title:String(v.title??'').slice(0,120),page:'/delivery',source:'Условия доставки',mode:v.mode,time:v.time,zone:v.zone,at:v.at,step:Math.max(0,Math.min(3,Number(v.step)||0)),selfReview:v.selfReview===true};break;
+    }
+    case 'save': {
+      if(!s.draft?.title.trim())fail('Укажите название.');if(!s.draft.selfReview)fail('Для учебного пилота явно разрешите самопроверку владельцем.');
+      let due=null;if(s.draft.mode==='at'){due=Date.parse(s.draft.at);if(!Number.isFinite(due)||due<=now)fail('Укажите будущую дату с часовым поясом.');}
+      s.scenario={...s.draft,version:(s.scenario?.version??0)+1,status:'Активен',due};s.draft=null;log(s,'Сохранён процесс «Актуализация сайта». CMS не изменена.',now);break;
+    }
+    case 'reset-demo': {Object.assign(s,initial());s.revision=original.revision;log(s,'Учебный проект очищен по явному подтверждению.',now);break;}
+    case 'discard-draft': if(!s.draft)fail('Нет открытого черновика.');s.draft=null;log(s,'Черновик настройки отменён. Сохранённый процесс не изменён.',now);break;
+    case 'edit': if(!s.scenario)fail('Сначала создайте процесс.');s.draft={...s.scenario,step:0};break;
+    case 'pause': if(!s.scenario)fail('Нет процесса.');s.scenario.status='Приостановлен';log(s,'Расписание приостановлено. Уже подготовленные предложения сохранены.',now);break;
+    case 'resume': if(!s.scenario)fail('Нет процесса.');s.scenario.status='Активен';log(s,'Расписание возобновлено.',now);break;
+    case 'run': if(!s.scenario||s.scenario.status!=='Активен')fail('Сначала включите процесс.');run(s,now);break;
+    case 'evidence': if(!p)fail('Нет предложения.');p.evidenceViewed=true;break;
+    case 'approve':
+      live(s,p,now);if(p.state!=='На проверке')fail('Решение уже принято.');
+      if(!p.evidenceViewed||d.evidenceConfirmed!==true||d.versionsConfirmed!==true||String(d.reason??'').trim().length<5)fail('Откройте доказательства, проверьте факты и версии, укажите основание.');
+      p.state='Согласовано';p.decision={actor:'Владелец',policy:'Предложенный owner-self-review',reason:String(d.reason).trim().slice(0,500),at:new Date(now).toISOString(),sourceRevision:p.sourceRevision,targetRevision:p.targetRevision};log(s,'Владелец явно согласовал неизменяемую версию. Запись в CMS ещё не выполнена.',now);break;
+    case 'return': live(s,p,now);if(p.state!=='На проверке')fail('Решение уже принято.');if(String(d.reason??'').trim().length<5)fail('Укажите причину возврата.');p.state='На доработке';p.returnReason=String(d.reason).slice(0,500);log(s,'Материал возвращён на доработку.',now);break;
+    case 'revise': {
+      if(!p||p.state!=='На доработке')fail('Сначала верните предложение на доработку.');
+      if(p.sourceRevision!==s.source.revision||p.targetRevision!==s.cms.revision||p.scenarioVersion!==s.scenario.version||now>p.expires)fail('Исходные версии или срок актуальности изменились. Запустите новую проверку.');
+      const copy=String(d.copy??'').trim(),reason=String(d.reason??'').trim();
+      if(copy.length<15||copy.length>500)fail('Укажите исправленный текст от 15 до 500 символов.');
+      if(!new RegExp('(^|\\D)'+p.after+'(\\D|$)').test(copy))fail('В тексте должен сохраниться подтверждённый срок доставки: '+p.after+' дня.');
+      if(copy===p.copy)fail('Текст не изменился. Внесите правку перед повторной проверкой.');
+      if(reason.length<5)fail('Кратко опишите, что исправлено.');
+      const r={id:`run-${s.runs.length+1}`,at:new Date(now).toISOString(),scenarioVersion:s.scenario.version,status:'На проверке'};
+      s.runs.push(r);
+      s.proposals.push({id:`proposal-${s.proposals.length+1}`,runId:r.id,sourceRevision:s.source.revision,targetRevision:s.cms.revision,scenarioVersion:s.scenario.version,before:p.before,after:p.after,copy,state:'На проверке',created:now,expires:now+86400000,decision:null,evidenceViewed:false,previousProposal:p.id,editorNote:reason});
+      log(s,'Подготовлена исправленная редакция. Требуется новая проверка доказательств и отдельное согласование.',now);break;
+    }
+    case 'deliver': {
+      if(!p||p.state!=='Согласовано')fail('Сначала согласуйте материал.');
+      const exists=s.deliveries.find(x=>x.proposalId===p.id);if(exists)fail('Запись уже запрошена. Откройте результат; повторная запись запрещена.');
+      live(s,p,now);const x={id:`delivery-${s.deliveries.length+1}`,proposalId:p.id,beforeRevision:s.cms.revision,status:'Проверяем результат',key:c.key};
+      s.deliveries.push(x);
+      if(s.fault==='cms'){x.status='Ошибка CMS';log(s,'CMS недоступна. Запись не выполнена. Нужна новая проверка перед повтором.',now);break;}
+      s.cms={revision:s.cms.revision+1,days:p.after,copy:p.copy??`Доставка занимает ${p.after} рабочих дня.`,writes:s.cms.writes+1,lastKey:x.key};
+      x.status=s.fault==='unknown'?'Результат не подтверждён':'Подтверждено';
+      if(x.status==='Подтверждено')x.proof={revision:s.cms.revision,days:s.cms.days,key:x.key,at:new Date(now).toISOString()};
+      log(s,x.proof?'Read-back: содержимое, версия и ключ записи совпали.':'Ответ потерян после записи. Повторная запись заблокирована; требуется read-back.',now);break;
+    }
+    case 'retry': {
+      const x=s.deliveries.at(-1);if(!x||x.status!=='Ошибка CMS')fail('Повтор недоступен: сначала проверьте результат записи.');
+      live(s,p,now);if(s.cms.revision!==x.beforeRevision||s.cms.days!==p.before)fail('Страница изменилась. Нужна новая проверка.');
+      if(s.fault==='cms')fail('CMS всё ещё недоступна.');
+      s.cms={revision:s.cms.revision+1,days:p.after,copy:p.copy??`Доставка занимает ${p.after} рабочих дня.`,writes:s.cms.writes+1,lastKey:x.key};
+      x.status='Подтверждено';x.proof={revision:s.cms.revision,days:s.cms.days,key:x.key,at:new Date(now).toISOString()};
+      log(s,'Явный повтор после проверки неизменности страницы; тот же ключ записи. Read-back совпал.',now);break;
+    }
+    case 'reconcile': {
+      const x=s.deliveries.at(-1);if(!x||x.status!=='Результат не подтверждён')fail('Нет неподтверждённой записи.');
+      const target=s.proposals.find(v=>v.id===x.proposalId);
+      if(s.cms.lastKey===x.key&&s.cms.revision===x.beforeRevision+1&&s.cms.days===target.after&&s.cms.copy===(target.copy??`Доставка занимает ${target.after} рабочих дня.`)){x.status='Подтверждено';x.proof={revision:s.cms.revision,days:s.cms.days,key:x.key,at:new Date(now).toISOString()};log(s,'Read-back подтвердил исходную запись. Повторной записи не было.',now);}else{x.status='Конфликт';log(s,'Read-back не совпал: требуется разбор конфликта.',now);}break;
+    }
+    case 'repair': {
+      if(!['source','cms'].includes(s.fault))fail('Подключение доступно. Учебное восстановление не требуется.');
+      const kind=s.fault==='source'?'источника':'CMS';
+      s.fault='normal';log(s,'Учебное подключение '+kind+' восстановлено. Реальные сервисы не подключались.',now);break;
+    }
+    case 'fixture':
+      if(!['normal','source','cms','unknown','conflict','expire','revoke'].includes(d.fault))fail('Неизвестный учебный случай.');
+      if(d.fault==='conflict'){s.source.revision++;s.source.days=s.source.days===3?2:3;log(s,'Учебный источник изменился; старое решение больше не актуально.',now);}
+      else if(d.fault==='expire'){if(p)p.expires=now-1;}
+      else if(d.fault==='revoke'){if(s.scenario)s.scenario.selfReview=false;}
+      else s.fault=d.fault;break;
+    default:fail('Неизвестная команда.');
+  }
+  s.revision++;s.receipts[c.key]=signature;return s;
+}
+function tick(original,now=Date.now()) {
+  if(!original.scenario||original.scenario.status!=='Активен'||!original.scenario.due||original.scenario.due>now)return original;
+  const s=structuredClone(original);run(s,now);s.scenario.due=null;s.revision++;return s;
+}
+
+
+const portable=location.protocol==='file:'||document.documentElement.dataset.portable==='true';
+const storageKey='chunk-unified-ux-public-v9';
+let state=portable?JSON.parse(localStorage.getItem(storageKey)??'null')??initial():await fetch('/api/state').then(r=>r.json());
+let busy=false;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const nav=[['chat','Чат','Чат','◌'],['auto','Автоматизации','Автоматизации','↻'],['review','На проверке','На проверке','✓'],['knowledge','База знаний','База знаний','▤'],['integration','Интеграции','Интеграции','⌁']];
+const btn=(a,t,primary=false,disabled=false)=>`<button type="button" class="btn ${primary?'primary':''}" data-action="${a}" ${disabled?'disabled':''}>${t}</button>`;
+const link=(h,t)=>`<a class="btn" href="#${h}">${t}</a>`;
+const badge=(s,kind='')=>`<span class="badge ${kind}">${esc(s)}</span>`;
+const card=html=>`<section class="card">${html}</section>`;
+const heading=(t,p)=>`<div class="heading"><div><h1 tabindex="-1">${t}</h1><p class="muted">${p}</p></div></div>`;
+const latest=()=>state.proposals.at(-1);
+const delivery=()=>state.deliveries.find(x=>x.proposalId===latest()?.id);
+const time=v=>v?new Date(v).toLocaleString('ru-RU',{timeZone:state.scenario?.zone??'Europe/Moscow'}):'По запросу';
+function route(){const [section='chat',part='']=location.hash.slice(1).split('/');return {section:nav.some(n=>n[0]===section)?section:'chat',part};}
+function go(h){const target=h==='chat'&&state.draft?'chat/'+state.draft.step:h;if(location.hash===`#${target}`)render();else location.hash=target;}
+function notify(text){$('#feedback').textContent=text;}
+async function send(action,payload={},key=crypto.randomUUID()) {
+  if(busy)return false;busy=true;document.body.classList.add('busy');
+  try {
+    const c={action,payload,key,revision:state.revision};
+    if(portable){state=command(state,c);localStorage.setItem(storageKey,JSON.stringify(state));}
+    else {const r=await fetch('/api/command',{method:'POST',headers:{'Content-Type':'application/json','X-Prototype':'1'},body:JSON.stringify(c)});const result=await r.json();if(!r.ok){state=await fetch('/api/state').then(r=>r.json());throw Error(result.error);}state=result;}
+    notify('');return true;
+  }catch(e){notify(e.message);render();return false;}finally{busy=false;document.body.classList.remove('busy');}
+}
+function message(role,text){return `<div class="chat-msg ${role}">${role==='user'?`<div class="chat-user-text">${esc(text)}</div>`:`<div class="chat-answer"><div class="speaker"><span class="ai-mark">ч</span>Чанк</div><p>${esc(text)}</p></div>`}</div>`;}
+const modes={manual:'По запросу',at:'Один раз по дате',recurring:'Регулярно'};
+function when(s){return s.mode==='manual'?'По запросу':s.mode==='at'?`${time(s.due??s.at)} · ${s.zone}`:`Каждый день в ${esc(s.time)} · ${s.zone}`;}
+function draftForm(){
+  const d=state.draft,step=Number(route().part)||0;
+  let fields='';
+  if(step===0)fields=`<label>Название процесса<input name="title" required maxlength="120" value="${esc(d.title)}"></label><label>Страница сайта<input value="https://masterskaya.example/delivery" readonly></label><p class="context">Для первого этапа доступна одна учебная страница. Другие адреса не запрашиваются.</p><label>Разрешённый источник<input value="Условия доставки · учебный документ" readonly></label><a href="#chat/connections">Посмотреть учебные подключения</a>`;
+  if(step===1)fields=`<label>Режим запуска<select name="mode">${Object.entries(modes).map(([k,v])=>`<option value="${k}" ${d.mode===k?'selected':''}>${v}</option>`).join('')}</select></label><label>Часовой пояс<select name="zone">${['Europe/Moscow','Asia/Yekaterinburg','UTC'].map(v=>`<option ${v===d.zone?'selected':''}>${v}</option>`).join('')}</select></label><div id="timing">${timingFields(d)}</div><p class="context">Сценарий и каждый запуск имеют отдельные состояния. Регулярность — режим актуализации, а не новый тип процесса.</p>`;
+  if(step===2)fields=`<div class="notice"><strong>Кто утверждает изменения?</strong><p>В учебном проекте вы работаете один. Вы можете разрешить себе утверждать правки, но каждую правку нужно будет проверить отдельно.</p></div><label class="check"><input type="checkbox" name="selfReview" ${d.selfReview?'checked':''}>Разрешить мне утверждать правки после проверки источников</label><p>Перед утверждением откройте источник, сравните тексты и подтвердите проверку. Запись в CMS будет отдельным действием.</p><p class="context">В командном проекте изменения должен утверждать назначенный проверяющий.</p>`;
+  if(step===3)fields=`<dl class="rules"><div><dt>Процесс</dt><dd>Актуализация сайта</dd></div><div><dt>Название</dt><dd>${esc(d.title)}</dd></div><div><dt>Страница</dt><dd>/delivery</dd></div><div><dt>Источник</dt><dd>Условия доставки · версия ${state.source.revision}</dd></div><div><dt>Когда</dt><dd>${when(d)}</dd></div><div><dt>Кто проверяет</dt><dd>Вы · после проверки источника</dd></div><div><dt>Результат</dt><dd>Предложение в «На проверке». Запись в учебную CMS — отдельное действие.</dd></div></dl>${d.mode==='recurring'?'<div class="notice">В прототипе регулярное расписание только показано. Его работа проверяется отдельно серверными тестами M3; здесь можно выполнить проверку по запросу или один раз по дате.</div>':''}`;
+  return `<div class="chat-msg assistant wizard-message"><div class="chat-answer"><div class="speaker">Чанк · настройка актуализации</div><section class="wizard-card"><small>Шаг ${step+1} из 4</small><h2>${['Что проверяем?','Когда запускать?','Кто проверяет?','Проверьте настройки'][step]}</h2><form id="wizard" class="form">${fields}</form><div class="wizard-controls">${step?btn('previous','← Назад'):btn('close-wizard','Свернуть настройку')}${step<3?btn('next','Дальше →',true):btn('save','Сохранить процесс',true)}${step?btn('close-wizard','Свернуть'):''}</div></section></div></div>`;
+}
+function localDateTime(iso,zone){
+  if(!iso||!Number.isFinite(Date.parse(iso)))return '';
+  const d=new Date(iso);
+  const parts=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:zone??'Europe/Moscow',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}).formatToParts(d).map(x=>[x.type,x.value]));
+  return parts.year+'-'+parts.month+'-'+parts.day+'T'+parts.hour+':'+parts.minute+':'+parts.second;
+}
+function timingFields(d){return d.mode==='at'?`<label>Когда запустить<input name="atLocal" type="datetime-local" step="1" required value="${esc(localDateTime(d.at,d.zone))}"></label><small>Выберите дату и местное время. Часовой пояс задаётся выше; мы сохраним его вместе с расписанием.</small>`:d.mode==='recurring'?`<label>Каждый день, местное время<input name="time" type="time" required value="${esc(d.time)}"></label>`:'<p class="context">После сохранения Чанк предложит запустить проверку прямо в чате. Сохранение настроек само по себе не запускает её.</p>';}
+
+function flowInChat(){
+  if(state.draft)return message('assistant','Настройка сохранена как черновик. Можно продолжить с того же шага или посмотреть другие разделы.')+'<div class="chat-choices">'+btn('resume-wizard','Продолжить настройку',true)+btn('discard-draft','Отменить черновик')+'</div>';
+  const s=state.scenario,p=latest(),x=delivery(),r=state.runs.at(-1);
+  if(!s)return '<div class="chat-choices">'+btn('start','Настроить актуализацию',true)+'</div>';
+  let note='',actions=[];
+  const more=link('auto','Посмотреть запуски');
+  const active=s.status==='Активен';
+  if(p?.state==='На доработке'&&stale(p)){
+    note='Версии изменились после возврата на доработку. Старая правка остаётся в истории, но её нельзя записывать. Нужна новая проверка источника.';
+    actions=[btn('run','Запустить новую проверку',true,!active),link('chat/review','Посмотреть историю'),more];
+  }else if(p?.state==='На доработке'){
+    note='Правка возвращена на доработку. Старое решение сохранено, страница не изменена. Можно отредактировать предложение и отправить новую версию на проверку.';
+    actions=[link('chat/review','Исправить предложение'),more];
+  }else if(p?.state==='На проверке'&&stale(p)){
+    note='Предложение устарело. Требуется новая проверка, прежде чем согласовывать или записывать изменения.';
+    actions=[btn('run','Получить актуальное предложение',true,!active),link('chat/review','Посмотреть предыдущую версию'),more];
+  }else if(p?.state==='На проверке'){
+    note=state.fault==='source'&&r?.status==='Ошибка источника'?'Источник сейчас недоступен. Предыдущая правка и её доказательства сохранены. Можно восстановить учебное подключение или рассмотреть уже полученное предложение.':r?.status==='Без изменений'?'Новых правок не найдено, но предыдущее предложение ещё ждёт решения.':'Нашлась правка страницы доставки. Откройте доказательства, сравните версии и решите, что делать.';
+    actions=state.fault==='source'&&r?.status==='Ошибка источника'?[link('chat/connections','Восстановить источник'),link('chat/review','Проверить сохранённую правку'),more]:[link('chat/review','Проверить правку'),btn('run','Проверить источник ещё раз',false,!active),more];
+  }else if(p?.state==='Согласовано'&&!x&&stale(p)){
+    note='После согласования изменился источник, страница или срок актуальности. Запись запрещена: получите новое предложение и согласуйте его снова.';
+    actions=[btn('run','Проверить источник заново',true,!active),link('chat/review','Посмотреть старое решение'),more];
+  }else if(p?.state==='Согласовано'&&!x){
+    note='Правка согласована, но не записана в учебную CMS. Для записи требуется отдельная команда.';
+    actions=[btn('deliver','Записать согласованную правку',true),link('chat/review','Открыть доказательства'),more];
+  }else if(x?.status==='Результат не подтверждён'){
+    note='Ответ CMS потерян. Запись могла состояться. Не отправляйте её повторно: сначала прочитаем страницу.';
+    actions=[btn('reconcile','Проверить запись',true),link('chat/result','Посмотреть детали'),more];
+  }else if(x?.status==='Ошибка CMS'){
+    note=state.fault==='cms'?'Учебная CMS недоступна. Сначала восстановите подключение, затем повторите запись.':'Подключение восстановлено. Перед повтором запись будет сверена с прежней версией и отправлена с тем же ключом.';
+    actions=state.fault==='cms'?[link('chat/connections','Восстановить CMS'),link('chat/result','Посмотреть ошибку'),more]:[btn('retry','Проверить и повторить запись',true),link('chat/result','Посмотреть ошибку'),more];
+  }else if(x?.status==='Конфликт'){
+    note='После повторного чтения данные не совпали. Автоматическая запись заблокирована; нужна новая проверка и решение.';
+    actions=[link('chat/result','Разобраться с расхождением'),more];
+  }else if(r?.status==='Ошибка источника'){
+    note='Источник недоступен. Контент сайта не изменён. Восстановите учебный источник и повторите проверку.';
+    actions=[link('chat/connections','Восстановить источник'),more];
+  }else if(x?.status==='Подтверждено'){
+    note=r?.status==='Без изменений'?'Повторная проверка завершена: новых изменений нет. Предыдущая запись подтверждена.':'Страница обновлена и подтверждена повторным чтением учебной CMS. Можно посмотреть результат или проверить новые изменения.';
+    actions=[link('chat/page','Открыть учебную страницу'),link('chat/result','Посмотреть результат'),btn('run','Проверить снова',false,!active),more];
+  }else if(r?.status==='Без изменений'){
+    note='Последняя проверка завершена: новых изменений нет. Предыдущие данные и история сохранены.';
+    actions=[btn('run','Проверить снова',true,!active),more];
+  }else if(s.mode==='at'&&s.due&&s.due>Date.now()){
+    note='Процесс сохранён. Запуск по расписанию назначен на '+time(s.due)+'. Для проверки сейчас используйте отдельную кнопку.';
+    actions=[btn('run','Проверить сейчас',true,!active),more,btn('edit','Изменить дату')];
+  }else if(s.mode==='recurring'){
+    note='Процесс сохранён. Ежедневный режим здесь показан как настройка, а фоновое выполнение в автономном HTML недоступно.';
+    actions=[btn('run','Проверить сейчас',true,!active),more,btn('edit','Изменить расписание')];
+  }else{
+    note='Процесс «'+s.title+'» сохранён. Проверка ещё не запускалась. Начните с проверки источника.';
+    actions=[btn('run','Запустить проверку',true,!active),more,btn('edit','Изменить настройки')];
+  }
+  if(!active){
+    note='Процесс приостановлен. Предложения, согласования и история сохранены. Для нового запуска сначала возобновите процесс.';
+    actions=[btn('resume','Возобновить процесс',true),link('chat/review','Посмотреть предложения'),more];
+  }
+  return message('assistant',note)+'<div class="chat-choices">'+actions.join('')+'</div>';
+}
+function inlineStage(){
+  const part=route().part;
+  if(!['review','result','connections','sources','page','reset'].includes(part))return '';
+  const back=link(state.draft?'chat/'+state.draft.step:'chat',state.draft?'Продолжить настройку':'Вернуться к диалогу');
+  let body='';
+  if(part==='review')body=review();
+  else if(part==='result')body=result();
+  else if(part==='connections')body=heading('Подключения','Учебный контур проекта')+card('<h2>Источник и CMS</h2><p>Источник: учебный документ «Условия доставки». Запись: /delivery только после отдельного согласования. AI и реальные сайты не подключены.</p><p class="context">Тестовые ошибки можно восстановить, не обращаясь к настоящим сервисам.</p>'+(state.fault==='source'||state.fault==='cms'?btn('repair','Восстановить учебное подключение',true):'<p>Оба учебных подключения доступны.</p>'));
+  else if(part==='sources')body=heading('Источники','База знаний проекта')+card(`<h2>Условия доставки</h2><p>Учебный источник v${state.source.revision}: срок доставки — ${state.source.days} рабочих дня. Достоверность требует проверки человеком.</p><p class="context">Полная история и документы остаются в разделе «База знаний».</p>`);
+  else if(part==='reset')body=heading('Начать демонстрацию заново','Только учебные данные этого прототипа')+card('<h2>Очистить демо?</h2><p>Будут удалены созданные процессы, черновики, переписка, история проверок и учебные записи CMS. Настоящие сайты и файлы не затрагиваются.</p><div class="actions">'+btn('reset-demo','Очистить учебный проект',true)+link('chat','Отмена, вернуться к чату')+'</div>');
+  else body=heading('Страница клиента','Внутренняя учебная имитация')+card(`<h2>Доставка</h2><p>${esc(state.cms.copy??`Доставка занимает ${state.cms.days} рабочих дня.`)}</p><small>Версия страницы: ${state.cms.revision}. Реальный сайт не менялся.</small><p>${link('chat/result','Посмотреть подтверждение записи')}</p>`);
+  return '<div class="chat-inline-stage"><div class="chat-inline-back">'+back+'</div>'+body+'</div>';
+}
+
+function chatTools(){
+  const s=state.scenario,p=latest(),x=delivery(),tools=[];
+  const add=(a,label)=>tools.push(`<button type="button" data-action="${a}">${esc(label)}</button>`);
+  if(state.draft){add('continue-edit','Продолжить настройку');}
+  else if(!s){add('start','Настроить актуализацию сайта');}
+  else {
+    if(s.status==='Приостановлен')add('resume','Возобновить процесс');
+    else if(state.fault==='source'||state.fault==='cms')add('integration','Восстановить учебное подключение');
+    else add('run','Запустить проверку');
+    if(p?.state==='На проверке'||p?.state==='На доработке')add('open-review',p.state==='На доработке'?'Исправить предложение':'Проверить предложение');
+    if(p?.state==='Согласовано'&&!x)add('deliver','Записать согласованную правку');
+    if(x?.status==='Результат не подтверждён')add('reconcile','Проверить результат записи');
+    if(x?.status==='Подтверждено')add('open-result','Посмотреть подтверждение');
+    add('edit','Изменить настройки');
+  }
+  add('knowledge','Посмотреть источники');
+  add('integration','Проверить подключения');
+  add('open-reset','Начать демо заново');
+  return tools.join('');
+}
+function destinationFor(text){
+  if(/результат|публикац|открой страницу/i.test(text)&&delivery())return 'chat/result';
+  if(/провер.*правк|исправ.*предложен|доработ/i.test(text)&&latest())return 'chat/review';
+  if(/подключ|интеграц/i.test(text))return 'chat/connections';
+  if(/источник|база знаний/i.test(text))return 'chat/sources';
+  return null;
+}
+async function dispatchPrompt(text){
+  const input=String(text??'').trim();
+  if(!input)return false;
+  if(state.draft&&$('#wizard')&&!(await saveDraft(Number(route().part)||0)))return false;
+  if(!(await send('message',{text:input})))return false;
+  if(/^(запусти|запустить|выполни) проверку[!. ]*$/i.test(input)&&state.scenario&&!state.draft&&state.scenario.status==='Активен'){
+    if(await send('run')){if(latest()?.runId===state.runs.at(-1)?.id&&state.runs.at(-1)?.status==='На проверке')go('chat/review');else go('chat');}
+    return true;
+  }
+  go(state.draft?'chat/'+state.draft.step:destinationFor(input)??'chat');
+  return true;
+}
+
+function chat(){
+  const welcome=`<div class="chat-empty-start"><div class="chat-intro"><h1>Что будем делать?</h1><p>Настройте работу с контентом в переписке.</p></div><div class="entry-grid"><button data-action="start"><strong>Актуализировать сайт</strong><small>Проверять источники и готовить изменения для согласования.</small><span class="entry-tail">Настроить →</span></button><div class="entry-disabled" aria-disabled="true"><strong>Вести блог</strong><small>Ещё не реализовано в этом прототипе. Кнопок без рабочего сценария здесь нет.</small></div></div></div>`;
+  const current=['review','result','connections','sources','page','reset'].includes(route().part)?inlineStage():state.draft&&route().part!=='home'?draftForm():state.messages.length||state.scenario||state.draft?flowInChat():'';
+  const empty=!state.messages.length&&!state.scenario&&!state.draft;
+  const hints=state.draft?['Что дальше?']:latest()?.state==='На доработке'?['Исправить предложение','Что дальше?']:delivery()?.status==='Подтверждено'?['Покажи результат','Что дальше?']:latest()?.state==='На проверке'?['Проверь правку','Что дальше?']:['Что дальше?','Покажи статус'];
+  return `<div class="chat-workspace"><div class="chat-topbar"><strong>Чанк · рабочий диалог</strong><span class="proto-note">Учебный диалог · без AI</span></div><div class="chat-scroll" id="chat-scroll"><div class="chat-thread">${empty?welcome:state.messages.map(m=>message(m.role,m.text)).join('')}${current}</div></div><div class="chat-composer-zone"><div class="chat-composer-inner"><div class="composer-tools" id="composer-tools" hidden><strong>Что сделать?</strong><div class="composer-tool-buttons">${chatTools()}</div></div><form id="composer" class="chat-composer-inner"><div class="chat-hints">${hints.map(t=>`<button type="button" data-prompt="${esc(t)}">${esc(t)}</button>`).join('')}</div><div class="chat-composer"><button type="button" class="attach" data-action="menu" aria-label="Открыть меню действий" aria-expanded="false" aria-controls="composer-tools">+</button><textarea aria-label="Сообщение Чанку" placeholder="Например: что дальше?" rows="1"></textarea><button class="send" aria-label="Отправить сообщение">↑</button></div><div class="chat-footnote">${portable?'Автономный макет: расписание без браузера не выполняется.':'Учебный локальный сервер · состояние сохраняется после закрытия браузера.'}</div></form></div></div></div>`;
+}
+function automations(){
+  const s=state.scenario;if(!s)return heading('Автоматизации','Постоянные процессы проекта')+card('<h2>Актуализация пока не настроена</h2>'+link('chat','Настроить в чате'));
+  return heading('Автоматизации','Актуализация сайта · история отдельных запусков')+`<div class="stack">`+card(`<div class="card-head"><h2>${esc(s.title)}</h2>${badge(s.status,s.status==='Активен'?'':'warn')}</div><dl class="rules"><div><dt>Когда</dt><dd>${when(s)}</dd></div><div><dt>Следующий запуск</dt><dd>${s.status==='Приостановлен'?'Расписание на паузе':s.mode==='recurring'?'Регулярность только показана в макете':time(s.due)}</dd></div><div><dt>Источник / страница</dt><dd>Условия доставки → /delivery</dd></div><div><dt>Кто проверяет</dt><dd>Владелец, явная проверка фактов</dd></div></dl><div class="actions">${btn('run','Запустить проверку',true,s.status!=='Активен')}${btn(s.status==='Активен'?'pause':'resume',s.status==='Активен'?'Приостановить':'Возобновить')}${btn('edit','Изменить через чат')}</div>`)+card(`<h2>Запуски</h2>${state.runs.length?state.runs.slice().reverse().map(r=>`<article class="banner"><div class="statusline">${badge(runViewStatus(r),r.status==='Ошибка источника'?'error':'')}<small>${esc(r.id)} · ${time(r.at)} · сценарий v${r.scenarioVersion}</small></div>${r.status==='Ошибка источника'?'<p>Источник недоступен. Сохранённый материал и предложения не изменены. Проверьте источник и запустите проверку снова.</p>':''}${state.proposals.some(p=>p.runId===r.id)?r.id===latest()?.runId?link('review','Открыть это предложение'):link('review','Посмотреть предыдущие версии'):''}</article>`).join(''):'<p>Запусков ещё нет. Сохранение сценария не выполняет команды.</p>'}`)+card(`<h2>Журнал</h2><ol class="timeline">${state.events.slice(0,15).map(e=>`<li>${esc(e.text)}<br><small>${time(e.at)} · ${esc(e.actor)}</small></li>`).join('')}</ol>`)+fixtures()+`</div>`;
+}
+function runViewStatus(r){const p=state.proposals.find(p=>p.runId===r.id);if(!p)return r.status;const x=state.deliveries.find(x=>x.proposalId===p.id);return x?.status??p.state;}
+function result(){const p=latest(),x=delivery();return heading('Результат запуска','Актуализация сайта · /delivery')+`<div class="stack">${p&&x?deliveryCard(p,x,false):card('<p>Запись ещё не запрошена.</p>'+link('chat','Продолжить процесс в чате'))}${card(link('review','Показать согласованную правку и доказательства'))}${fixtures()}</div>`;}
+function stale(p){return p.sourceRevision!==state.source.revision||p.targetRevision!==state.cms.revision||p.scenarioVersion!==state.scenario.version||Date.now()>p.expires;}
+function review(){
+  const p=latest();if(!p)return heading('На проверке','Предложения и решения проекта')+card('<h2>Пока нет предложений</h2><p>После проверки источника здесь появится конкретная правка.</p>'+link('chat',state.scenario?'Продолжить проверку в чате':'Настроить актуализацию в чате'));
+  const x=delivery(),old=stale(p)&&!x;
+  return heading('На проверке','Условия доставки · одно предложение для одной страницы')+`<div class="stack">`+card(`<div class="statusline">${badge(old?'Версия устарела':p.state,old?'error':'')}<small>${esc(p.id)} · ${esc(p.runId)}</small></div><h2>Сократить срок доставки с ${p.before} до ${p.after} дней</h2><p class="source-url">Страница: https://masterskaya.example/delivery</p><p>Изменение обнаружено в разрешённом источнике. Сведения пока считаются утверждением источника, а не доказанным фактом.</p><div class="review-grid"><article><small>Было · страница v${p.targetRevision}</small><p>Доставка занимает <del>${p.before} рабочих дней</del>.</p></article><article><small>Предлагается · материал ${esc(p.id)}</small><p><ins>${esc(p.copy??`Доставка занимает ${p.after} рабочих дня.`)}</ins></p></article></div><div class="actions">${btn('evidence',p.evidenceViewed?'Открыть доказательства ещё раз':'Открыть источник и доказательства',true)}</div>${p.evidenceViewed?`<section class="evidence"><h3>Источник: «Условия доставки» · v${p.sourceRevision}</h3><p>Снимок сохранён ${time(p.created)}. Учебный документ, источник не запрашивается по сети.</p><blockquote>«Доставка занимает ${p.after} рабочих дня».</blockquote><p>Факт «Срок доставки» → ${p.after} дня. Цитата совпадает с сохранённым текстом; достоверность требует вашей проверки.</p><p>Сценарий v${p.scenarioVersion} · страница v${p.targetRevision} · источник v${p.sourceRevision}. Срок актуальности: ${time(p.expires)}.</p></section>`:''}${old?`<div class="notice"><strong>Нельзя согласовать старую версию</strong><p>Источник, страница, сценарий или срок актуальности изменились. Старый снимок и история сохранены. Выполните новую проверку и рассмотрите новое предложение.</p>${btn('run','Получить новое предложение',true,state.scenario.status!=='Активен')}</div>`:''}${p.state==='На проверке'&&!old?`<form id="decision"><div class="notice"><strong>Проверьте правку перед записью</strong><p>Решение касается только этой версии. Утверждение ещё не меняет страницу сайта.</p></div><label class="check"><input name="evidenceConfirmed" type="checkbox" ${!p.evidenceViewed?'disabled':''}>Я открыл доказательства и проверил факт по источнику</label><label class="check"><input name="versionsConfirmed" type="checkbox">Я проверил страницу, текст изменения и версии</label><label class="label">Основание решения<textarea name="reason" rows="2" required minlength="5" placeholder="Что проверено и почему правка допустима"></textarea></label><div class="actions"><button class="btn primary" ${!p.evidenceViewed?'disabled':''}>Согласовать эту версию</button>${btn('return','Вернуть на доработку')}</div></form>`:''}${p.decision?`<p class="context">Решение: ${esc(p.decision.actor)} · ${time(p.decision.at)}<br>Основание: ${esc(p.decision.reason)}</p>`:''}${p.state==='На доработке'&&!old?`<div class="notice"><strong>Вернуть к согласованию</strong><p>Причина: ${esc(p.returnReason)}. Исправьте формулировку, сохранив подтверждённый срок доставки. Чанк создаст новую версию, которую потребуется проверить заново.</p></div><form id="revise" class="form"><label>Исправленный текст<textarea name="copy" rows="3" required minlength="15" maxlength="500">${esc(p.copy??`Доставка занимает ${p.after} рабочих дня.`)}</textarea></label><label>Что изменено?<textarea name="reason" required minlength="5" maxlength="500" rows="2" placeholder="Например: уточнил, от какого дня считать срок"></textarea></label><button class="btn primary">Подготовить новую версию</button></form>`:''}`)+
+  (p.state==='Согласовано'?deliveryCard(p,x,old):'')+card(`<h2>История предложений</h2><p class="context">Можно раскрыть любую версию. Просмотр истории не запускает проверку и не повторяет запись.</p><div class="proposal-history">${state.proposals.slice().reverse().map(v=>{const x=state.deliveries.find(item=>item.proposalId===v.id);return `<details class="proposal-history-item"><summary><strong>${esc(v.id)}</strong> · ${esc(v.state)} · источник v${v.sourceRevision}${x?' · CMS: '+esc(x.status):''}</summary><dl class="rules"><div><dt>Запуск</dt><dd>${esc(v.runId)}</dd></div><div><dt>До</dt><dd>Доставка занимает ${esc(v.before)} рабочих дней.</dd></div><div><dt>Редакция</dt><dd>${esc(v.copy??`Доставка занимает ${v.after} рабочих дня.`)}</dd></div><div><dt>Источник</dt><dd>Версия ${esc(v.sourceRevision)} · создано ${time(v.created)}</dd></div><div><dt>Решение</dt><dd>${v.decision?esc(v.decision.reason):v.returnReason?esc(v.returnReason):'Не согласовано'}</dd></div><div><dt>Запись</dt><dd>${x?.proof?'Подтверждена чтением CMS · страница v'+x.proof.revision:x?esc(x.status):'Не запрашивалась'}</dd></div></dl></details>`}).join('')}</div><div class="actions">${link('auto','К запускам и журналу')}${link('chat','Вернуться в чат')}</div>`)+fixtures()+`</div>`;
+}
+function deliveryCard(p,x,old){
+  if(!x)return card(`<h2>Следующий шаг: запись в учебную CMS</h2><p>Правка утверждена, но страница ещё не изменена. Перед записью проверим доступ и убедимся, что страница не успела измениться.</p><p>Изменится только /delivery в изолированном учебном хранилище.</p>${btn('deliver','Записать согласованную версию в тестовую CMS',true,old)}`);
+  if(x.status==='Подтверждено')return card(`<div class="proof"><small>Результат запуска</small><h2>Изменение записано и подтверждено</h2><p>Чанк повторно прочитал учебную страницу и сверил текст и версию записи.</p></div><article class="result-document"><h2>Доставка</h2><p>${esc(p.copy??`Доставка занимает ${p.after} рабочих дня.`)}</p><small>Учебная страница /delivery · версия ${x.proof.revision}</small></article><p class="mono">Ключ записи: ${esc(x.key)}</p><p class="context">Подтверждено ${time(x.proof.at)}. Это результат учебной записи, реальный сайт не изменён.</p><div class="actions">${link('chat/page','Открыть учебную страницу')}${link('auto','К истории запуска')}${link('chat','Продолжить в чате')}</div>`);
+  return card(`<h2>${esc(x.status)}</h2>${x.status==='Результат не подтверждён'?`<p>Ответ CMS потерян. Запись могла состояться. Не отправляйте её повторно: сначала прочитаем страницу и сверим квитанцию.</p>${btn('reconcile','Проверить результат через read-back',true)}`:x.status==='Ошибка CMS'?`<p>CMS недоступна, запись не выполнена. Версия и решение сохранены. После восстановления доступа проверим неизменность страницы и повторим с тем же ключом.</p>${btn('retry','Проверить и повторить запись',true)}`:'<p>Прочитанная страница не совпала с ожидаемой. Нужен разбор конфликта; повторная запись запрещена.</p>'}<div class="actions">${link('integration','Проверить подключение')}${link('auto','Открыть журнал')}</div>`);
+}
+function fixtures(){if(new URLSearchParams(location.search).get('debug')!=='1')return '';return `<details data-debug-fixtures="true"><summary>Проверка макета · учебные нештатные ситуации</summary><p class="context">Меняется только синтетический проект. Внешние запросы отсутствуют.</p><div class="actions">${[['normal','Без ошибок'],['source','Ошибка источника'],['cms','Ошибка CMS'],['unknown','Ответ потерян после записи'],['conflict','Новая версия источника'],['expire','Истёк срок доказательств'],['revoke','Отозвать самопроверку']].map(([k,v])=>btn('fixture:'+k,v)).join('')}</div><small>Текущий режим: ${esc(state.fault)}. Изменение источника/отзыв права — отдельные учебные события.</small></details>`;}
+function render(){
+  const {section,part}=route();
+  $('#nav').innerHTML=nav.map(([key,label,mobile,icon])=>`<button data-nav="${key}" aria-label="${label}" ${section===key?'aria-current="page"':''}><span aria-hidden="true">${icon}</span><span class="desktop-label">${label}</span><span class="mobile-label">${mobile}</span></button>`).join('');
+  $('#main').classList.toggle('chat-mode',section==='chat');
+  $('#view').innerHTML=section==='chat'?chat():section==='auto'?automations():section==='review'?part==='result'?result():part==='page'?heading('Учебная страница','Внутренняя имитация сайта клиента')+card(`<h2>Доставка</h2><p>${esc(state.cms.copy??`Доставка занимает ${state.cms.days} рабочих дня.`)}</p><p>Текущая версия: ${state.cms.revision}</p>${link('review','К подтверждению записи')}`):review():section==='knowledge'?heading('База знаний','Сохранённые источники проекта')+card(`<h2>Условия доставки</h2><p>Учебный источник v${state.source.revision}: доставка ${state.source.days} рабочих дня. Все сведения вымышлены.</p><p>Снимок, цитата и решение связаны версиями. Изменение источников и загрузка документов пока не входят в автономный макет.</p>${link('chat','Продолжить работу в чате')}${latest()?.state==='На проверке'?link('chat/review','Проверить сохранённую правку'):''}`):heading('Интеграции','Только изолированный учебный контур')+card(`<h2>Тестовая CMS</h2>${badge('Локальная имитация')}<p>Чтение /delivery и условная запись согласованной версии. Доступа к реальным сайтам нет.</p><h2>Источник</h2><p>Локальный документ с фиксированным адресом /delivery. Произвольные URL не поддерживаются.</p><h2>AI и внешние сервисы</h2><p>Не подключены. Настройка реального подключения в этом демо недоступна.</p>${state.fault==='source'||state.fault==='cms'?btn('repair','Восстановить учебное подключение',true):''}${link(state.draft?'chat/'+state.draft.step:'chat',state.draft?'Продолжить настройку':'Продолжить процесс в чате')}`);
+  if(portable)$('#demo-label').textContent='Автономный UX-макет · без сервера';
+  if(section==='chat')requestAnimationFrame(()=>{const area=$('#chat-scroll'),inline=$('.chat-inline-stage');if(inline)inline.scrollIntoView({block:'start'});else if(area)area.scrollTop=area.scrollHeight;});
+}
+function fields(){
+  const f=$('#wizard');if(!f)return {};
+  const d=Object.fromEntries(new FormData(f));
+  if(f.querySelector('[name=selfReview]'))d.selfReview=f.elements.selfReview.checked;
+  if(f.elements.atLocal){
+    const zone=d.zone??state.draft?.zone??'Europe/Moscow';
+    const offset={'Europe/Moscow':'+03:00','Asia/Yekaterinburg':'+05:00','UTC':'+00:00'}[zone];
+    if(!offset)throw Error('Для этого часового пояса нужен точный пересчёт времени.');
+    d.at=d.atLocal?d.atLocal+offset:'';
+    delete d.atLocal;
+  }
+  return d;
+}
+async function saveDraft(step){return send('draft',{...fields(),step});}
+document.addEventListener('click',async e=>{
+  const n=e.target.closest('[data-nav]');if(n){if(state.draft&&$('#wizard')&&!(await saveDraft(Number(route().part)||0)))return;go(n.dataset.nav);return;}
+  const a=e.target.closest('[data-action]')?.dataset.action;if(!a||busy)return;
+  if(a==='menu'){const m=$('#composer-tools');if(m){m.hidden=!m.hidden;const b=$('.attach');if(b)b.setAttribute('aria-expanded',String(!m.hidden));}return;}
+  if(a==='knowledge'){if(state.draft&&$('#wizard')&&!(await saveDraft(Number(route().part)||0)))return;go('chat/sources');return;}
+  if(a==='integration'){if(state.draft&&$('#wizard')&&!(await saveDraft(Number(route().part)||0)))return;go('chat/connections');return;}
+  if(a==='blog'){if(await send('message',{text:'Вести блог'}))go('chat');return;}
+  if(a==='continue-edit'||a==='resume-wizard'){go('chat/'+(state.draft?.step??0));return;}if(a==='close-wizard'){if(await saveDraft(Number(route().part)||0))go('chat/home');return;}if(a==='discard-draft'){if(await send('discard-draft'))go('chat');return;}
+  if(a==='open-review'){go('chat/review');return;}if(a==='open-result'){go('chat/result');return;}
+  if(a==='open-reset'){go('chat/reset');return;}
+  if(a==='reset-demo'){if(await send('reset-demo')){go('chat');notify('Учебный проект очищен. Можно начать заново.');}return;}
+  if(a==='start'){if(state.scenario){if(await send('edit'))go('chat/0');}else if(await send('message',{text:'Актуализировать сайт'}))go('chat/0');return;}
+  if(a==='next'||a==='previous'){const step=Number(route().part)||0;if(a==='next'&&!$('#wizard').reportValidity())return;if(await saveDraft(step+(a==='next'?1:-1)))go(`chat/${step+(a==='next'?1:-1)}`);return;}
+  if(a==='save'){if(await saveDraft(3)&&await send('save'))go('chat');return;}
+  if(a==='edit'){if(await send('edit'))go('chat/0');return;}
+  if(a==='evidence'){if(await send('evidence')){render();$('.evidence')?.scrollIntoView({block:'center'});}return;}
+  if(a==='return'){const f=$('#decision');if(!f?.reportValidity())return;if(await send('return',{reason:f.elements.reason.value})){if(route().section==='chat')go('chat/review');else render();}return;}
+  if(a.startsWith('fixture:')){await send('fixture',{fault:a.split(':')[1]});render();return;}
+  if(['run','pause','resume','deliver','reconcile','retry','repair'].includes(a)){const inChat=route().section==='chat';if(await send(a)){if(inChat){if(a==='run'&&latest()?.runId===state.runs.at(-1)?.id&&state.runs.at(-1)?.status==='На проверке')go('chat/review');else if(a==='repair')go('chat');else go('chat');}else if(a==='run'&&latest()?.runId===state.runs.at(-1)?.id)go('review');else if(['deliver','reconcile','retry'].includes(a))go('review/result');else render();}return;}
+});
+document.addEventListener('click',async e=>{
+ const prompt=e.target.closest('[data-prompt]')?.dataset.prompt;
+ if(!prompt||busy)return;
+ await dispatchPrompt(prompt);
+});
+document.addEventListener('click',async e=>{const a=e.target.closest('a[href^="#"]');if(a&&$('#wizard')){e.preventDefault();if(await saveDraft(Number(route().part)||0))go(a.hash.slice(1));}});
+document.addEventListener('change',e=>{if(e.target.name==='mode'){const d={...state.draft,...fields()};$('#timing').innerHTML=timingFields(d);}});
+document.addEventListener('submit',async e=>{
+  e.preventDefault();if(busy)return;
+  if(e.target.id==='composer'){const t=e.target.querySelector('textarea');if(await dispatchPrompt(t.value))t.value='';}
+  if(e.target.id==='decision'){const f=e.target;if(await send('approve',{evidenceConfirmed:f.elements.evidenceConfirmed.checked,versionsConfirmed:f.elements.versionsConfirmed.checked,reason:f.elements.reason.value})){if(route().section==='chat')go('chat');else render();}}
+  if(e.target.id==='revise'){const f=e.target;if(!f.reportValidity())return;if(await send('revise',{copy:f.elements.copy.value,reason:f.elements.reason.value})){if(route().section==='chat')go('chat/review');else render();}}
+});
+window.addEventListener('hashchange',()=>{notify('');render();window.scrollTo(0,0);});
+if(!location.hash)history.replaceState(null,'','#chat');
+render();
+setInterval(async()=>{if(busy||document.activeElement?.matches('input,textarea,select'))return;try{const s=portable?tick(state):await fetch('/api/state').then(r=>r.json());if(s.revision!==state.revision){state=s;if(portable)localStorage.setItem(storageKey,JSON.stringify(state));render();}}catch{/* retain last known state; a new command displays the error */}},1000);
+</script></body></html>
